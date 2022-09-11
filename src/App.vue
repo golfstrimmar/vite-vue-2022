@@ -1,21 +1,32 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+import Toolbar from './components/Toolbar.vue'
 </script>
 
+
+
+
 <template>
-  <HelloWorld  />
+  <q-layout view="hHh lpR fFf">
+
+<Toolbar/>
+
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+
+    <q-footer elevated class="bg-grey-8 text-white">
+      <q-toolbar>
+        <q-toolbar-title>
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          </q-avatar>
+          <div>Title</div>
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
+
+  </q-layout>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
