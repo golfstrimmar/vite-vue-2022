@@ -2,7 +2,7 @@
 </script>
 
 <template >
-<h1>kit</h1>
+<h3 class="text-h3  text-uppercase">kit</h3>
 </template> 
   
 

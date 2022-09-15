@@ -57,7 +57,9 @@ export default defineComponent({
 
 
 <template>
+  <h3 class="text-h3  text-uppercase">cards</h3>
   <div class="Swipers">
+    
     <swiper class="swiper" :modules="modules" :effect="'cards'" :grab-cursor="true">
       <swiper-slide v-for="card in cards_golova" :key="card.id" class="slide">
         <img :src="`${card.url}`" />
@@ -83,6 +85,8 @@ export default defineComponent({
 // @import '@/styles/variables.scss';
 // @import '@/styles/mixins.scss';
 // @import './style.scss';
+
+
 
 .flip-example {
   position: relative;
