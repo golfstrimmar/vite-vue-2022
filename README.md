@@ -12,3 +12,6 @@ npm run build
 https://medium.com/@rachidsakara/how-to-deploy-vue-js-applications-with-firebase-hosting-40cfa7f724e4
 
 https://deutsch-d26e4.web.app/
+
+
+https://coderlessons.com/tutorials/veb-razrabotka/izuchite-firebase/firebase-kratkoe-rukovodstvo

@@ -34,3 +34,40 @@ myApp.use(Quasar, {
 
 // Assumes you have a <div id="app"></div> in your index.html
 myApp.use(router).mount("#app");
+
+
+
+// =========================================
+
+// var playersRef = firebase.database().ref("players/");
+
+// playersRef.set({
+//   John: {
+//     number: 1,
+//     age: 30,
+//   },
+
+//   Amanda: {
+//     number: 2,
+//     age: 20,
+//   },
+// });
+
+// import { getDatabase } from "firebase/database";
+
+// const database = getDatabase();
+
+// console.log(database);
+
+// var ref = firebase.database().ref("players");
+
+// console.log(ref);
+
+import { doc, setDoc } from "firebase/firestore";
+
+// Add a new document in collection "cities"
+await setDoc(doc(db, "cities", "LA"), {
+  name: "Los Angeles",
+  state: "CA",
+  country: "USA",
+});
