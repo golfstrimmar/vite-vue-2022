@@ -27,7 +27,7 @@ const alert = ref(false)
         </q-card-section>
 
         <q-card-section class="q-pt-none">
-{{translation}}
+          {{translation}}
         </q-card-section>
 
         <q-card-actions align="right">

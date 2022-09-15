@@ -7,3 +7,8 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 npm run dev
 npm run build
+
+<!-- ========== как хостить на firebase============= -->
+https://medium.com/@rachidsakara/how-to-deploy-vue-js-applications-with-firebase-hosting-40cfa7f724e4
+
+https://deutsch-d26e4.web.app/

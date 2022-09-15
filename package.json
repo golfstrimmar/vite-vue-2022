@@ -15,6 +15,7 @@
     "@quasar/extras": "^1.15.3",
     "@vuelidate/core": "^2.0.0-alpha.44",
     "@vuelidate/validators": "^2.0.0-alpha.31",
+    "firebase": "^9.9.4",
     "quasar": "^2.7.7",
     "swiper": "^8.4.0",
     "vue": "^3.2.37",
