@@ -18,6 +18,8 @@ import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyCTr_tR1MbYjHurQgAfdgEntqZQ150rZyA",
   authDomain: "deutsch-d26e4.firebaseapp.com",
+  databaseURL:
+    "https://deutsch-d26e4-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "deutsch-d26e4",
   storageBucket: "deutsch-d26e4.appspot.com",
   messagingSenderId: "1002823720200",
@@ -25,6 +27,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
+
 
 const myApp = createApp(App)
 
@@ -38,6 +42,22 @@ myApp.use(router).mount("#app");
 
 
 // =========================================
+
+
+import { getDatabase, ref, push, get, onValue } from "firebase/database";
+
+
+const database = getDatabase();
+const postListRef = ref(database, "names");
+console.log(postListRef);
+onValue(
+  postListRef,
+  (snapshot) => {
+      console.log(snapshot)
+  }
+
+);
+
 
 // var playersRef = firebase.database().ref("players/");
 
@@ -63,11 +83,3 @@ myApp.use(router).mount("#app");
 
 // console.log(ref);
 
-import { doc, setDoc } from "firebase/firestore";
-
-// Add a new document in collection "cities"
-await setDoc(doc(db, "cities", "LA"), {
-  name: "Los Angeles",
-  state: "CA",
-  country: "USA",
-});
