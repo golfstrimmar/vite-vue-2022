@@ -15,6 +15,7 @@ import { ref } from "vue";
           <q-route-tab to="/" label="Home" />
           <q-route-tab to="/kit" label="Kit" />
           <q-route-tab to="/cards" label="Cards" />
+          <q-route-tab to="/todo" label="Todo" />
         </q-tabs>
       </q-toolbar>
     </q-header>
