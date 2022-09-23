@@ -30,6 +30,4 @@ let app = initializeApp(firebaseConfig);
 //   });
 
 
-
-const db = getDatabase();
-export default db;
+    

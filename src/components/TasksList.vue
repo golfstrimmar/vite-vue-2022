@@ -1,46 +1,77 @@
 <script setup>
-import { getDatabase, child, ref, set, get, onValue } from "firebase/database";
-import db from './../firebase'
+import { getDatabase, child, ref, query, set, get, onValue } from "firebase/database";
+import  './../firebase'
 
 // 
 
-let Names =[];
-const namesRef = ref(db, 'names');
-  onValue(namesRef, (snapshot) => {
-    console.log('snapshot' + snapshot.val());
-    var bigOne = document.getElementById('bigOne');
-    Names = [...snapshot.val()]
-    console.log(Names);
-    
-  });
 
-
-
-
-//  get(namesRef).then((snapshot) => {
-//   if (snapshot.exists()) {
-//     // bigOne.innerText = snapshot.val()
+// const namesRef = ref(db, 'names');
+//   onValue(namesRef, (snapshot) => {
+//     console.log('snapshot' + snapshot.val());
+//     var bigOne = document.getElementById('bigOne');
 //     Names = [...snapshot.val()]
 //     console.log(Names);
+    
+//   });
+
+
+
+// const dbRef = ref(getDatabase(), 'names');
+// get(dbRef).then(
+  
+// (snapshot) => {
+//   if (snapshot.exists()) {
+//     let snapshotValue = snapshot.val()
+//     var bigOne = document.getElementById('bigOne');
+//     bigOne.innerHTML = snapshotValue;
 //   } else {
 //     console.log("No data available");
 //   }
-// }).catch((error) => {
+// }
+
+
+    // (snapshot) => {
+    //   Names  = snapshot.val()
+    //   console.log(Names);  
+    //  }
+
+
+// ).catch((error) => {
 //   console.error(error);
 // });
 
-console.log('Names:' + Names);
+let Names = [];
+
+
+
+
+const db = getDatabase();
+const starCountRef = ref(db, `names`);
+onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val();
+  updateCount(data);
+});
+
+
+function updateCount( data) {
+  Names =  data
+  var bigOne = document.getElementById('bigOne');
+  bigOne.innerHTML = Names;
+}
+
+
 
 </script>
 <template>
   <div>
     <h2>taskList</h2>
-    <!-- <h2 id="bigOne"></h2> -->
-
+    <q-card><h2 id="bigOne"></h2></q-card>
    
-    <h4 v-for="name in Names" :key="name.key">
-      {{name}}
-    </h4>
+<div class="Names">
+  <q-card class="q-mb-md" v-for="name in Names" :key="name.key">
+    {{name}}
+  </q-card>
+</div>
   </div>
 </template>
 
