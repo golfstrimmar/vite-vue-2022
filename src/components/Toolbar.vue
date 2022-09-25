@@ -12,10 +12,8 @@ import { ref } from "vue";
             </q-avatar>
             <q-space />
         <q-tabs align="left">
-          <q-route-tab to="/" label="Home" />
-          <q-route-tab to="/kit" label="Kit" />
-          <q-route-tab to="/cards" label="Cards" />
-          <q-route-tab to="/todo" label="Todo" />
+          <q-route-tab to="/" label="Heimat" />
+          <q-route-tab to="/todo" label="Wörterbuch" />
         </q-tabs>
       </q-toolbar>
     </q-header>

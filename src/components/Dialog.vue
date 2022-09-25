@@ -15,7 +15,7 @@ const alert = ref(false)
 </script>
 
 <template>
-  <div class="q-pa-md q-gutter-sm">
+  <div class="">
     <!-- <q-btn label="Übersetzung" color="primary" @click="alert = true" /> -->
     <q-btn round color="indigo-5" icon="cached" @click="alert = true" />
     <q-dialog v-model="alert">
@@ -39,11 +39,20 @@ const alert = ref(false)
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .q-dialog__backdrop {
   z-index: -1;
   pointer-events: all;
   outline: 0;
   background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.q-btn {
+  font-size: 10px;
+
+}
+.q-btn--round {
+  min-width: 3em;
+  min-height: 3em;
 }
 </style>
