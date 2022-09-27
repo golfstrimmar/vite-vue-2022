@@ -8,7 +8,12 @@ const props = defineProps({
   translation: {
     type: String,
     required: false,
+  },
+  category: {
+    type: String,
+    required: false,
   }
+  
 });
 const alert = ref(false)
 
@@ -19,19 +24,19 @@ const alert = ref(false)
     <!-- <q-btn label="Übersetzung" color="primary" @click="alert = true" /> -->
     <q-btn round color="indigo-5" icon="cached" @click="alert = true" />
     <q-dialog v-model="alert">
-      <q-card>
-        <q-card-section>
+      <q-card class="q-pa-md">
+        <q-card-section v-if="category !== 'Kurz'"  align="center" class=" text-center">
           <div class="text-h6">
             {{title}}
           </div>
         </q-card-section>
 
-        <q-card-section class="q-pt-none">
+        <q-card-section class="q-pt-none text-center" align="center">
           {{translation}}
         </q-card-section>
 
-        <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup />
+        <q-card-actions align="center">
+          <q-btn  outline  label="OK" color="primary" v-close-popup />
         </q-card-actions>
       </q-card>
     </q-dialog>

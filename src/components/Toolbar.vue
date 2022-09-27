@@ -14,6 +14,7 @@ import { ref } from "vue";
         <q-tabs align="left">
           <q-route-tab to="/" label="Heimat" />
           <q-route-tab to="/todo" label="Wörterbuch" />
+          <q-route-tab to="/NewWordForm" label="Neue Wortform" />
         </q-tabs>
       </q-toolbar>
     </q-header>

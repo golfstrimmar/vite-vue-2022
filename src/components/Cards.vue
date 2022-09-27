@@ -1,14 +1,20 @@
 <script >
 import { defineComponent } from 'vue'
-import { Pagination, Navigation, EffectFlip, EffectCube, EffectCards } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/vue'
+// import { Pagination, Navigation, EffectFlip, EffectCube, EffectCards } from 'swiper'
+// import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 // import 'swiper/css/pagination'
 // import 'swiper/css/navigation'
-import 'swiper/css/effect-flip'
-import 'swiper/css/effect-cube'
+// import 'swiper/css/effect-flip'
+// import 'swiper/css/effect-cube'
 import 'swiper/css/effect-cards'
 import Dialog from './Dialog.vue'
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { EffectCards } from 'swiper'
+
+
+
 
 export default defineComponent({
   components: {
@@ -31,17 +37,25 @@ export default defineComponent({
       })
       return todosFamilie
     },
-    todosKörperteile(todos) {
-      const todosKörperteile = this.todos.filter(item => {
-        return item.category === 'Körperteile' ? item : null
+    todosKopf(todos) {
+      const todosKopf = this.todos.filter(item => {
+        return item.category === 'Kopf' ? item : null
       })
-      return todosKörperteile
+      return todosKopf
+    },
+    todosKurz(todos) {
+      const todosKurz = this.todos.filter(item => {
+        return item.category === 'Kurz' ? item : null
+      })
+      return todosKurz
     }
   },
   setup() {
     return {
-      effect: "cards",
-      modules: [Pagination, Navigation, EffectFlip, EffectCube, EffectCards],
+      // effect: "cards",
+      
+      // modules: [Pagination, Navigation, EffectFlip, EffectCube, EffectCards],
+      modules: [ EffectCards],
       // cards_golova: [
       //   { id: 1, url: 'https://www.memorysecrets.ru/article/flashcards_pictures/images/de_podborodok.png', title: 'Das Kinn', translation: ' Подбородок' },
       //   { id: 2, url: 'https://www.memorysecrets.ru/article/flashcards_pictures/images/de_guby.png', title: 'Die Lippe', translation: 'Губа' },
@@ -80,49 +94,57 @@ export default defineComponent({
 
 <template>
   <h3 class="text-h3  text-uppercase">das Wörterbuch</h3>
-  <div class="Swipers">
+   <div class="Swipers">
     <div class="Swipers-item" v-if="todosFamilie.length > 0">
       <h3 class="text-h4">Familie</h3>
-      <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
-        <swiper-slide v-for="todo in todosFamilie" :key="todo.id" :class="{'success-light': todo.done}" class="slide">
+      <swiper class="swiper " :modules="modules"  :effect="'cards'" :grab-cursor="true">
+        <swiper-slide v-for="todo in todosFamilie" :key="todo.id" :class="[todo.done ? 'success-light slide-indigo-3': 'slide-indigo-3']" class="slide">
           <img :src="todo.url" />
           <div class="row justify-between items-center slide-footer q-pr-sm q-pb-sm">
             <div class="slide-title ">{{todo.category}}</div>
             <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
-            <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" />
+            <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
           </div>
         </swiper-slide>
       </swiper>
     </div>
-    <div class="Swipers-item" v-if="todosKörperteile.length > 0">
-      <h3 class="text-h4">Körperteile</h3>
-      <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
-        <swiper-slide v-for="todo in todosKörperteile" :key="todo.id" :class="{'success-light': todo.done}"
+    <div class="Swipers-item" v-if="todosKopf.length > 0">
+      <h3 class="text-h4">Kopf</h3>
+      <swiper class="swiper "  :modules="modules" :effect="'cards'" :grab-cursor="true">
+        <swiper-slide v-for="todo in todosKopf" :key="todo.id" :class="[todo.done ? 'green-2 slide-green-2': 'slide-green-2']"
           class="slide">
           <img :src="todo.url" />
           <div class="row justify-between items-center slide-footer q-pr-sm q-pb-sm">
             <div class="slide-title ">{{todo.category}}</div>
             <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
-            <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" />
+            <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
           </div>
         </swiper-slide>
       </swiper>
     </div>
-  </div>
+    <div class="Swipers-item" v-if="todosKurz.length > 0">
+      <h3 class="text-h4">Kurz</h3>
+      <swiper class="swiper "  :modules="modules" :effect="'cards'" :grab-cursor="true">
+        <swiper-slide v-for="todo in todosKurz" :key="todo.id" :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+          class="slide justify-center items-center row ">
+          <div class="text-h4">{{todo.content}}</div>
+
+          <div class="row justify-between items-center slide-footer q-pr-sm q-pb-sm">
+            <div class="slide-title ">{{todo.category}}</div>
+            <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category"></Dialog>
+            <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
+  </div> 
 </template>
-
-
-
-
-
 
 
 <style lang="scss" scoped>
 // @import '@/styles/variables.scss';
 // @import '@/styles/mixins.scss';
 // @import './style.scss';
-
-
 
 .flip-example {
   position: relative;
@@ -140,9 +162,7 @@ export default defineComponent({
   box-sizing: content-box;
 
   .slide {
-    background: $indigo-1;
     border-radius: 10px;
-    box-shadow: inset 0 0 20px $indigo-5;
     position: relative;
 
     img {
@@ -188,5 +208,15 @@ export default defineComponent({
   padding: 0;
   min-width: 2em;
   min-height: 2em;
+}
+
+.slide-green-2{
+  background: $green-2;
+}
+.slide-indigo-3 {
+  background: $indigo-3;
+}
+.slide-light-blue-3 {
+  background: $light-blue-3;
 }
 </style>
