@@ -11,7 +11,11 @@ npm run build
 <!-- ========== как хостить на firebase============= -->
 https://medium.com/@rachidsakara/how-to-deploy-vue-js-applications-with-firebase-hosting-40cfa7f724e4
 
-https://deutsch-d26e4.web.app/
-
-
 https://coderlessons.com/tutorials/veb-razrabotka/izuchite-firebase/firebase-kratkoe-rukovodstvo
+
+
+1. npm run build
+2. должна быть папка public и в нее перенести все из папки dist
+3. firebase deploy
+
+https://deutsch-d26e4.web.app/
