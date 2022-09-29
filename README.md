@@ -16,6 +16,7 @@ https://coderlessons.com/tutorials/veb-razrabotka/izuchite-firebase/firebase-kra
 
 1. npm run build
 2. должна быть папка public и в нее перенести все из папки dist
-3. firebase deploy
+открыть консоль
+firebase deploy
 
 https://deutsch-d26e4.web.app/
