@@ -4,11 +4,10 @@
   },
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+
+    "port": 5000,
+    "host": "0.0.0.0"
   },
   "rewrites": [
     {
