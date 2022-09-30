@@ -100,8 +100,8 @@ export default defineComponent({
       <swiper class="swiper " :modules="modules"  :effect="'cards'" :grab-cursor="true">
         <swiper-slide v-for="todo in todosFamilie" :key="todo.id" :class="[todo.done ? 'success-light slide-indigo-3': 'slide-indigo-3']" class="slide">
           <img :src="todo.url" />
-          <div class="row justify-between items-center slide-footer q-pr-sm q-pb-sm">
-            <div class="slide-title ">{{todo.category}}</div>
+          <div class=" slide-footer ">
+            <!-- <div class="slide-title ">{{todo.category}}</div> -->
             <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
             <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
           </div>
@@ -114,8 +114,8 @@ export default defineComponent({
         <swiper-slide v-for="todo in todosKopf" :key="todo.id" :class="[todo.done ? 'green-2 slide-green-2': 'slide-green-2']"
           class="slide">
           <img :src="todo.url" />
-          <div class="row justify-between items-center slide-footer q-pr-sm q-pb-sm">
-            <div class="slide-title ">{{todo.category}}</div>
+          <div class=" slide-footer">
+            <!-- <div class="slide-title ">{{todo.category}}</div> -->
             <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
             <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
           </div>
@@ -129,8 +129,8 @@ export default defineComponent({
           class="slide justify-center items-center row ">
           <div class="text-h4">{{todo.content}}</div>
 
-          <div class="row justify-between items-center slide-footer q-pr-sm q-pb-sm">
-            <div class="slide-title ">{{todo.category}}</div>
+          <div class=" slide-footer  ">
+            <!-- <div class="slide-title ">{{todo.category}}</div> -->
             <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category"></Dialog>
             <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
           </div>
@@ -192,23 +192,20 @@ export default defineComponent({
 
 .slide-footer {
   position: absolute;
-  background: rgba(92, 92, 92, 0.3);
+  display: block;
+  width: calc(100% - 10px);
+  background: rgba(92, 92, 92, 0.5);
   bottom: 5px;
-  padding: 6px;
-  right: 5px;
-  left: auto;
+  right: auto;
+  left: 50%;
+  transform: translate(-50%);
   z-index: 5;
+  margin: 0 ;
   border-radius: 10px;
   column-gap: 10px;
   color: $blue-grey-1;
 }
 
-.q-btn--round {
-  border-radius: 50%;
-  padding: 0;
-  min-width: 2em;
-  min-height: 2em;
-}
 
 .slide-green-2{
   background: $green-2;

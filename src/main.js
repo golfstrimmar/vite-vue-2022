@@ -3,7 +3,7 @@ import { Quasar } from "quasar";
 import './style.css'
 import App from './App.vue'
 import router from "./router";
-
+import store from "./store/index";
 // Import icon libraries
 import '@quasar/extras/material-icons/material-icons.css'
 
@@ -25,7 +25,7 @@ myApp.use(Quasar, {
 })
 
 // Assumes you have a <div id="app"></div> in your index.html
-myApp.use(router).mount("#app");
+myApp.use(router).use(store).mount("#app");
 
 
 

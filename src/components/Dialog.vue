@@ -21,8 +21,7 @@ const alert = ref(false)
 
 <template>
   <div class="">
-    <!-- <q-btn label="Übersetzung" color="primary" @click="alert = true" /> -->
-    <q-btn round color="indigo-5" icon="cached" @click="alert = true" />
+    <q-btn light-dimmed   label="Übersetzung" @click="alert = true" />
     <q-dialog v-model="alert">
       <q-card class="q-pa-md">
         <q-card-section v-if="category !== 'Kurz'"  align="center" class=" text-center">
@@ -46,18 +45,21 @@ const alert = ref(false)
 
 <style lang="scss" scoped>
 .q-dialog__backdrop {
-  z-index: -1;
-  pointer-events: all;
-  outline: 0;
-  background: rgba(0, 0, 0, 0.8) !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+
+.myDialog{
+    min-width: 100%;
+      min-height: 100%;
+      border-radius: 10px;
 }
 
 .q-btn {
-  font-size: 10px;
 
-}
-.q-btn--round {
-  min-width: 3em;
-  min-height: 3em;
+  padding:  5px 0;
+  min-width: 100%;
+  min-height: 100%;
+  border-radius: 10px;
 }
 </style>
