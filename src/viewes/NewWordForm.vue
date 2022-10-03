@@ -112,6 +112,8 @@ onMounted(() => {
           label="Frage Änderbar" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Verben"
           label="Verben" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="männlichNominative"
+          label="männlichNominative" />
       </div>
         <q-btn label="Karte hinzufügen" type="submit" :disabled="!NewContentToDo" color="primary" />
     </q-form>

@@ -36,4 +36,13 @@ max-width: 100vw;
 overflow: hidden;
 padding: 0 40px 50px;
 }
+
+
+@media (max-width: 767px){
+  #app {
+      max-width: 100vw;
+      overflow: hidden;
+      padding: 0 10px 50px;
+    }
+}
 </style>
