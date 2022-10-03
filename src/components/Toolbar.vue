@@ -18,7 +18,7 @@ export default {
 
 
 <template>
-  <q-header reveal bordered class="bg-blue-grey-6  text-white" height-hint="98">
+  <q-header reveal bordered class="bg-brown-5  text-white" height-hint="98">
     <q-toolbar>
       <q-avatar>
         <img src="./../assets/img/flag-for-germany-svgrepo-com.svg">

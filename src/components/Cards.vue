@@ -48,14 +48,44 @@ export default defineComponent({
         return item.category === 'Kurz' ? item : null
       })
       return todosKurz
+    },
+    todosOrtesWo(todos) {
+      const todosOrtesWo = this.todos.filter(item => {
+        return item.category === 'OrtesWo' ? item : null
+      })
+      return todosOrtesWo
+    },
+    todosWohinAkkusativ(todos) {
+      const todosWohinAkkusativ = this.todos.filter(item => {
+        return item.category === 'WohinAkkusativ' ? item : null
+      })
+      return todosWohinAkkusativ
+    },
+    todosFrage(todos) {
+      const todosFrage = this.todos.filter(item => {
+        return item.category === 'Frage' ? item : null
+      })
+      return todosFrage
+    },
+    todosFrageÄnderbar(todos) {
+      const todosFrageÄnderbar = this.todos.filter(item => {
+        return item.category === 'FrageÄnderbar' ? item : null
+      })
+      return todosFrageÄnderbar
+    },
+    todosVerben(todos) {
+      const todosVerben = this.todos.filter(item => {
+        return item.category === 'Verben' ? item : null
+      })
+      return todosVerben
     }
   },
   setup() {
     return {
       // effect: "cards",
-      
+
       // modules: [Pagination, Navigation, EffectFlip, EffectCube, EffectCards],
-      modules: [ EffectCards],
+      modules: [EffectCards],
       // cards_golova: [
       //   { id: 1, url: 'https://www.memorysecrets.ru/article/flashcards_pictures/images/de_podborodok.png', title: 'Das Kinn', translation: ' Подбородок' },
       //   { id: 2, url: 'https://www.memorysecrets.ru/article/flashcards_pictures/images/de_guby.png', title: 'Die Lippe', translation: 'Губа' },
@@ -93,51 +123,141 @@ export default defineComponent({
 
 
 <template>
-  <h3 class="text-h3  text-uppercase">das Wörterbuch</h3>
-   <div class="Swipers">
-    <div class="Swipers-item" v-if="todosFamilie.length > 0">
-      <h3 class="text-h4">Familie</h3>
-      <swiper class="swiper " :modules="modules"  :effect="'cards'" :grab-cursor="true">
-        <swiper-slide v-for="todo in todosFamilie" :key="todo.id" :class="[todo.done ? 'success-light slide-indigo-3': 'slide-indigo-3']" class="slide">
-          <img :src="todo.url" />
-          <div class=" slide-footer ">
-            <!-- <div class="slide-title ">{{todo.category}}</div> -->
-            <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
-            <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
-          </div>
-        </swiper-slide>
-      </swiper>
-    </div>
-    <div class="Swipers-item" v-if="todosKopf.length > 0">
-      <h3 class="text-h4">Kopf</h3>
-      <swiper class="swiper "  :modules="modules" :effect="'cards'" :grab-cursor="true">
-        <swiper-slide v-for="todo in todosKopf" :key="todo.id" :class="[todo.done ? 'green-2 slide-green-2': 'slide-green-2']"
-          class="slide">
-          <img :src="todo.url" />
-          <div class=" slide-footer">
-            <!-- <div class="slide-title ">{{todo.category}}</div> -->
-            <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
-            <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
-          </div>
-        </swiper-slide>
-      </swiper>
-    </div>
-    <div class="Swipers-item" v-if="todosKurz.length > 0">
-      <h3 class="text-h4">Kurz</h3>
-      <swiper class="swiper "  :modules="modules" :effect="'cards'" :grab-cursor="true">
-        <swiper-slide v-for="todo in todosKurz" :key="todo.id" :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
-          class="slide justify-center items-center row ">
-          <div class="text-h4">{{todo.content}}</div>
+  <main>
+    <h3 class="text-h3  text-uppercase text-center">das Wörterbuch</h3>
+    <div class="Swipers">
+      <div class="Swipers-item" v-if="todosFamilie.length > 0">
+        <h3 class="Swipers-item--text text-h5 text-center">Familie</h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosFamilie" :key="todo.id"
+            :class="[todo.done ? 'success-light slide-indigo-3': 'slide-indigo-3']" class="slide">
+            <img :src="todo.url" />
+            <div class=" slide-footer ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosKopf.length > 0">
+        <h3 class="Swipers-item--text text-h5 text-center">Kopf</h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosKopf" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-green-2': 'slide-green-2']" class="slide">
+            <img :src="todo.url" />
+            <div class=" slide-footer">
+              <!--  <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
+              <!--  <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosKurz.length > 0">
+        <h3 class="Swipers-item--text text-h5 text-center">Adverbien usw.</h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosKurz" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
 
-          <div class=" slide-footer  ">
-            <!-- <div class="slide-title ">{{todo.category}}</div> -->
-            <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category"></Dialog>
-            <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
-          </div>
-        </swiper-slide>
-      </swiper>
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosOrtesWo.length > 0">
+        <h3 class="Swipers-item--text text-h5  text-center">Предлоги, которые отвечают на вопрос wo?</h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosOrtesWo" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosWohinAkkusativ.length > 0">
+        <h3 class="Swipers-item--text text-h5 text-center">Предлоги движения = Wohin & Akkusativ</h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosWohinAkkusativ" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosFrage.length > 0">
+        <h3 class="Swipers-item--text text-h5 text-center">Вопросительные слова.неизменяемые </h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosFrage" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosFrageÄnderbar.length > 0">
+        <h3 class="Swipers-item--text text-h5 text-center">Вопросительные слова.изменяемые </h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosFrageÄnderbar" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosVerben.length > 0">
+
+        <h3 class="Swipers-item--text text-h5 text-center">Die unregelmäßigen verben</h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosVerben" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :translation="todo.translation" :category="todo.category"></Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
-  </div> 
+  </main>
 </template>
 
 
@@ -149,17 +269,21 @@ export default defineComponent({
 .flip-example {
   position: relative;
 }
-
+h3{
+  text-shadow: 0 0 5px $amber-6;
+}
 .Swipers {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px 30px;
 }
 
 .swiper {
-  width: 400px;
+  max-width: 300px;
   height: 300px;
   box-sizing: content-box;
+  display: flex;
+  margin-top: auto;
 
   .slide {
     border-radius: 10px;
@@ -191,6 +315,7 @@ export default defineComponent({
 }
 
 .slide-footer {
+
   position: absolute;
   display: block;
   width: calc(100% - 10px);
@@ -200,20 +325,37 @@ export default defineComponent({
   left: 50%;
   transform: translate(-50%);
   z-index: 5;
-  margin: 0 ;
+  margin: 0;
   border-radius: 10px;
   column-gap: 10px;
   color: $blue-grey-1;
 }
 
 
-.slide-green-2{
+.slide-green-2 {
   background: $green-2;
+  box-shadow: inset 0 0 40px white;
 }
+
 .slide-indigo-3 {
   background: $indigo-3;
+  box-shadow: inset 0 0 40px white;
 }
+
 .slide-light-blue-3 {
-  background: $light-blue-3;
+  background: $amber-5;
+  box-shadow: inset 0 0 40px white;
+}
+
+.swiper-slide .text-h4 {
+  text-shadow: 0 0 2px rgb(235, 235, 235);
+}
+
+.Swipers-item {
+  display: flex;
+  flex-direction: column;
+}
+.Swipers-item--text{
+  text-shadow: 0 0 3px $amber-5;
 }
 </style>

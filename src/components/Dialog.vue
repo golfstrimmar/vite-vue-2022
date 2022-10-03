@@ -30,7 +30,7 @@ const alert = ref(false)
           </div>
         </q-card-section>
 
-        <q-card-section class="q-pt-none text-center" align="center">
+        <q-card-section class="q-pt-none text-center text-h6" align="center">
           {{translation}}
         </q-card-section>
 

@@ -12,7 +12,7 @@ import Cards from "../components/Cards.vue";
 
 
 const TodoesCollectionRef = collection(db, "todos")
-const ToDoesCollectionQuery = query(TodoesCollectionRef, orderBy('date', 'desc'));
+const ToDoesCollectionQuery = query(TodoesCollectionRef, orderBy('content'));
 const todos = ref([])
 const deliteToDo = (id) => {
   // todos.value = todos.value.filter(item => item.id != id)

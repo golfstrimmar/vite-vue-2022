@@ -102,6 +102,16 @@ onMounted(() => {
           label="Kopf" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Kurz"
           label="Kurz" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="OrtesWo"
+          label="Ortes Wo" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="WohinAkkusativ"
+          label="Wohin и Akkusativ" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Frage"
+          label="Frage" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="FrageÄnderbar"
+          label="Frage Änderbar" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Verben"
+          label="Verben" />
       </div>
         <q-btn label="Karte hinzufügen" type="submit" :disabled="!NewContentToDo" color="primary" />
     </q-form>
@@ -151,7 +161,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .q-gutter-y-md {
-  max-width: 700px;
   margin: 50px auto 0;
 }
 

@@ -15,7 +15,7 @@ import Toolbar from './components/Toolbar.vue'
     <q-page-container>
       <router-view />
     </q-page-container>
-
+<!-- 
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
@@ -25,8 +25,15 @@ import Toolbar from './components/Toolbar.vue'
           <div>Title</div>
         </q-toolbar-title>
       </q-toolbar>
-    </q-footer>
+    </q-footer> -->
 
   </q-layout>
 </template>
 
+<style lang="scss">
+#app{
+max-width: 100vw;
+overflow: hidden;
+padding: 0 40px 50px;
+}
+</style>
