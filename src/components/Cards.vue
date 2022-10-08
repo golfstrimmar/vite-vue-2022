@@ -12,6 +12,11 @@ import Dialog from './Dialog.vue'
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { EffectCards } from 'swiper'
+import Artikel from './Artikel.vue';
+import Possessive from './Possessive.vue';
+import Personal from './Personal.vue';
+import Reflexiv from './Reflexiv.vue';
+import Modalverben from './Modalverben.vue';
 
 
 
@@ -20,7 +25,12 @@ export default defineComponent({
   components: {
     Swiper,
     SwiperSlide,
-    Dialog
+    Dialog,
+    Artikel,
+    Possessive,
+    Personal,
+    Reflexiv,
+    Modalverben
   },
   props: {
     todos: Array
@@ -92,11 +102,11 @@ export default defineComponent({
       })
       return todosOrtesWo
     },
-    todosWohinAkkusativ(todos) {
-      const todosWohinAkkusativ = this.todos.filter(item => {
-        return item.category === 'WohinAkkusativ' ? item : null
+    todosAkkusativ(todos) {
+      const todosAkkusativ = this.todos.filter(item => {
+        return item.category === 'Akkusativ' ? item : null
       })
-      return todosWohinAkkusativ
+      return todosAkkusativ
     },
     todosFrage(todos) {
       const todosFrage = this.todos.filter(item => {
@@ -116,6 +126,24 @@ export default defineComponent({
       })
       return todosVerben
     },
+    todosDativ(todos) {
+      const todosDativ = this.todos.filter(item => {
+        return item.category === 'Dativ' ? item : null
+      })
+      return todosDativ
+    },
+    todosDatAkk(todos) {
+      const todosDatAkk = this.todos.filter(item => {
+        return item.category === 'DatAkk' ? item : null
+      })
+      return todosDatAkk
+    },
+    todosSome(todos) {
+      const todosSome = this.todos.filter(item => {
+        return item.category === 'Some' ? item : null
+      })
+      return todosSome
+    },
     todosmännlichNominative(todos) {
       const todosmännlichNominative = this.todos.filter(item => {
         return item.category === 'männlichNominative' ? item : null
@@ -131,19 +159,19 @@ export default defineComponent({
 
 <template>
   <main>
-    <h3 class="text-h3  text-uppercase text-center">das Wörterbuch</h3>
+    <h2>das Wörterbuch</h2>
     <div class="Swipers">
-      <div class="Swipers-item" v-if="todosFamilie.length > 0">
+      <!-- <div class="Swipers-item" v-if="todosFamilie.length > 0">
         <h3 class="Swipers-item--text text-h5 text-center">Familie</h3>
         <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
           <swiper-slide v-for="todo in todosFamilie" :key="todo.id"
             :class="[todo.done ? 'success-light slide-indigo-3': 'slide-indigo-3']" class="slide">
             <img :src="todo.url" />
             <div class=" slide-footer ">
-              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <div class="slide-title ">{{todo.category}}</div> 
               <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
-              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
-            </div>
+              <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> 
+       </div>
           </swiper-slide>
         </swiper>
       </div>
@@ -154,17 +182,32 @@ export default defineComponent({
             :class="[todo.done ? 'green-2 slide-green-2': 'slide-green-2']" class="slide">
             <img :src="todo.url" />
             <div class=" slide-footer">
-              <!--  <div class="slide-title ">{{todo.category}}</div> -->
-              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
-              <!--  <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
-            </div>
+              <div class="slide-title ">{{todo.category}}</div> 
+            <Dialog class="myDialog" :title="todo.content" :translation="todo.translation"></Dialog>
+              <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" />
+         </div>
           </swiper-slide>
         </swiper>
-      </div>
-      <div class="Swipers-item" v-if="todosKurz.length > 0">
-        <h3 class="Swipers-item--text text-h5 text-center">Adverbien usw.</h3>
+      </div>-->
+
+
+      <div class="Swipers-item" v-if="todosDativ.length > 0">
+        <h3>Предлоги, которые всегда & Dativ </h3>
+        <ul class="Dativ-spans">
+          <span>ab</span>&nbsp;
+          <span>aus</span>&nbsp;
+          <span>außer</span>&nbsp;
+          <span>bei</span>&nbsp;
+          <span>entgegen</span>&nbsp;
+          <span>gegenüber</span>&nbsp;
+          <span>mit</span>&nbsp;
+          <span>nach</span>&nbsp;
+          <span>seit</span>&nbsp;
+          <span>von</span>&nbsp;
+          <span>zu</span>
+        </ul>
         <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
-          <swiper-slide v-for="todo in todosKurz" :key="todo.id"
+          <swiper-slide v-for="todo in todosDativ" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
             class="slide justify-center items-center row ">
             <div class="text-h4">{{todo.content}}</div>
@@ -178,8 +221,63 @@ export default defineComponent({
           </swiper-slide>
         </swiper>
       </div>
+      <div class="Swipers-item" v-if="todosAkkusativ.length > 0">
+        <h3>Предлоги, которые всегда & Akkusativ</h3>
+        <ul class="Dativ-spans">
+          <span>bis</span>&nbsp;
+          <span>durch</span>&nbsp;
+          <span>entlang</span>&nbsp;
+          <span>gegen</span>&nbsp;
+          <span>für</span>&nbsp;
+          <span>ohne</span>&nbsp;
+          <span>um</span>&nbsp;
+        </ul>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosAkkusativ" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosDatAkk.length > 0">
+        <h3>Предлоги, которые и & Akkusativ и & Dativ</h3>
+        <ul class="Dativ-spans">
+          <span>an</span>&nbsp;
+          <span>auf</span>&nbsp;
+          <span>in</span>&nbsp;
+          <span>vor</span>&nbsp;
+          <span>hinter</span>&nbsp;
+          <span>Über</span>&nbsp;
+          <span>Unter</span>&nbsp;
+          <span>Neben</span>&nbsp;
+          <span>Zwischen</span>&nbsp;
+        </ul>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosDatAkk" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" />-->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+
       <div class="Swipers-item" v-if="todosOrtesWo.length > 0">
-        <h3 class="Swipers-item--text text-h5  text-center">Предлоги, которые отвечают на вопрос wo?</h3>
+        <h3>Предлоги, которые отвечают на вопрос wo?</h3>
         <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
           <swiper-slide v-for="todo in todosOrtesWo" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
@@ -195,25 +293,9 @@ export default defineComponent({
           </swiper-slide>
         </swiper>
       </div>
-      <div class="Swipers-item" v-if="todosWohinAkkusativ.length > 0">
-        <h3 class="Swipers-item--text text-h5 text-center">Предлоги движения = Wohin & Akkusativ</h3>
-        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
-          <swiper-slide v-for="todo in todosWohinAkkusativ" :key="todo.id"
-            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
-            class="slide justify-center items-center row ">
-            <div class="text-h4">{{todo.content}}</div>
 
-            <div class=" slide-footer  ">
-              <!-- <div class="slide-title ">{{todo.category}}</div> -->
-              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
-              </Dialog>
-              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div>
       <div class="Swipers-item" v-if="todosFrage.length > 0">
-        <h3 class="Swipers-item--text text-h5 text-center">Вопросительные слова.неизменяемые </h3>
+        <h3>Вопросительные слова.неизменяемые </h3>
         <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
           <swiper-slide v-for="todo in todosFrage" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
@@ -230,7 +312,7 @@ export default defineComponent({
         </swiper>
       </div>
       <div class="Swipers-item" v-if="todosFrageÄnderbar.length > 0">
-        <h3 class="Swipers-item--text text-h5 text-center">Вопросительные слова.изменяемые </h3>
+        <h3>Вопросительные слова.изменяемые </h3>
         <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
           <swiper-slide v-for="todo in todosFrageÄnderbar" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
@@ -248,7 +330,7 @@ export default defineComponent({
       </div>
       <div class="Swipers-item" v-if="todosVerben.length > 0">
 
-        <h3 class="Swipers-item--text text-h5 text-center">Die unregelmäßigen verben</h3>
+        <h3>Die unregelmäßigen verben</h3>
         <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
           <swiper-slide v-for="todo in todosVerben" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
@@ -263,280 +345,57 @@ export default defineComponent({
           </swiper-slide>
         </swiper>
       </div>
-    </div>
+      <div class="Swipers-item" v-if="todosKurz.length > 0">
+        <h3>Adverbien usw.</h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosKurz" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4">{{todo.content}}</div>
 
-    <!-- ====================== -->
-    <h3 class="text-h3  text-uppercase text-center">Притяжательные местоимения </h3>
-    <h4 class="tabl-item__title">Nominativ = кто? (wer?) и что? (was?)</h4>
-    <div class="tabl">
-
-      <div class="tabl__item">
-
-        <div class="text-h5">Nominativ M</div>
-        <p><span class="red-12">Mein </span>Sohn ist 10 Jahre alt. — Моему сыну 10 лет.</p>
-        <p><span class="red-12">Dein </span>Sohn ist 10 Jahre alt. — Твоему сыну 10 лет.</p>
-        <p><span class="red-12">Sein </span>Sohn ist 10 Jahre alt. — Его сыну 10 лет.</p>
-        <p><span class="red-12">Ihr </span>Sohn ist 10 Jahre alt. -- Ее сыну 10 лет.</p>
-        <p><span class="red-12">Unser </span>Sohn ist 10 Jahre alt. — Нашему сыну 10 лет.</p>
-        <p><span class="red-12">Euer </span>Sohn ist 10 Jahre alt. — Вашему сыну 10 лет.</p>
-        <p><span class="red-12">Ihr </span>Sohn ist 10 Jahre alt. — Их сыну 10 лет.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Nominativ F</div>
-        <p><span class="red-12">Meine </span>Tochter ist 10 Jahre alt. -- Моей дочке 10 лет.</p>
-        <p><span class="red-12">Deine </span>Tochter ist 10 Jahre alt. — Твоей дочке 10 лет.</p>
-        <p><span class="red-12">Seine </span>Tochter ist 10 Jahre alt. -- Его дочке 10 лет.</p>
-        <p><span class="red-12">Ihre </span>Tochter ist 10 Jahre alt. -- Ее дочке 10 лет.</p>
-        <p><span class="red-12">Unsere </span>Tochter ist 10 Jahre alt. -- Нашей дочке 10 лет.</p>
-        <p><span class="red-12">Eure </span>Tochter ist 10 Jahre alt. — Вашей дочке 10 лет.</p>
-        <p><span class="red-12">Ihre </span>Tochter ist 10 Jahre alt. — Их дочке 10 лет.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Nominativ N</div>
-        <p><span class="red-12">Mein </span>Kind ist noch klein — Mой ребенок еще маленький</p>
-        <p><span class="red-12">Dein </span>Kind ist noch klein — Tвой ребенок еще маленький</p>
-        <p><span class="red-12">Sein </span>Kind ist noch klein — Его ребенок еще маленький</p>
-        <p><span class="red-12">Ihr </span>Kind ist noch klein — Ее ребенок еще маленький</p>
-        <p><span class="red-12">Unser </span>Kind ist noch klein — Наш ребенок еще маленький</p>
-        <p><span class="red-12">Euer </span>Kind ist noch klein — Ваш ребенок еще маленький</p>
-        <p><span class="red-12">Ihr </span>Kind ist noch klein — Их ребенок еще маленький</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Nominativ Pl</div>
-        <p><span class="red-12">Meine </span>Töchter sind zehn Jahre alt. -- Моим дочкам 10 лет.</p>
-        <p><span class="red-12">Deine </span>Töchter sind zehn Jahre alt. — Твоим дочкам 10 лет.</p>
-        <p><span class="red-12">Seine </span>Töchter sind zehn Jahre alt. -- Его дочкам 10 лет.</p>
-        <p><span class="red-12">Ihre </span>Töchter sind zehn Jahre alt. -- Ее дочкам 10 лет.</p>
-        <p><span class="red-12">Unsere </span>Töchter sind zehn Jahre alt. -- Нашим дочкам 10 лет.</p>
-        <p><span class="red-12">Eure </span>Töchter sind zehn Jahre alt. — Вашим дочкам 10 лет.</p>
-        <p><span class="red-12">Ihre </span>Töchter sind zehn Jahre alt. — Их дочкам 10 лет.</p>
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
     <!-- ====================== -->
-    <h4 class="tabl-item__title">Dativ = Кому? – Wem? Где? – Wo? Когда? – Wann?</h4>
-    <div class="tabl">
+    <Artikel></Artikel>
+    <!-- ====================== -->
+    <Possessive></Possessive>
+    <!-- ====================== -->
+    <Personal></Personal>
+    <!-- ====================== -->
+    <Reflexiv></Reflexiv>
+    <!-- ====================== -->
+    <Modalverben></Modalverben>
+    <!-- ====================== -->
+    <!-- <div class="Swipers-item" v-if="todosDativ.length > 0">
+      <h3>Modalverben</h3>
+      <swiper class="swiper swiper--Some" :modules="modules" :effect="'cards'" :grab-cursor="true">
+        <swiper-slide v-for="todo in todosSome" :key="todo.id"
+          :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+          class="slide justify-center items-center row ">
+          <div class="text-h4">{{todo.content}}</div>
 
-      <div class="tabl__item">
-        <div class="text-h5">Dativ M</div>
-        <p>Ich gebe <span class="red-12">meinem </span> Freund einen Bleistift. — Я даю моему другу карандаш.</p>
-        <p>Ich gebe <span class="red-12">deinem </span>Freund einen Bleistift. — Я даю твоему другу карандаш.</p>
-        <p>Ich gebe <span class="red-12">seinem </span>Freund einen Bleistift. — Я даю его другу карандаш.</p>
-        <p>Ich gebe <span class="red-12">ihrem </span>Freund einen Bleistift. — Я даю ее другу карандаш.</p>
-        <p>Ich gebe <span class="red-12">unserem </span>Freund einen Bleistift. — Я даю нашему другу карандаш.</p>
-        <p>Ich gebe <span class="red-12">euerem </span>Freund einen Bleistift. — Я даю вашему другу карандаш.</p>
-        <p>Ich gebe <span class="red-12">ihrem </span>Freund einen Bleistift. — Я даю их другу карандаш.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Dativ F</div>
-        <p>Ich gebe <span class="red-12">meiner </span>Freundin einen Bleistift. -- Я даю моей подруге карандаш.</p>
-        <p>Ich gebe <span class="red-12">deiner </span>Freundin einen Bleistift. -- Я даю твоей подруге карандаш.</p>
-        <p>Ich gebe <span class="red-12">seiner </span>Freundin einen Bleistift. -- Я даю его подруге карандаш.</p>
-        <p>Ich gebe <span class="red-12">ihrer </span>Freundin einen Bleistift. -- Я даю ее подруге карандаш.</p>
-        <p>Ich gebe <span class="red-12">unserer </span>Freundin einen Bleistift. -- Я даю нашей подруге карандаш.</p>
-        <p>Ich gebe <span class="red-12">eurer </span>Freundin einen Bleistift. -- Я даю вашей подруге карандаш.</p>
-        <p>Ich gebe <span class="red-12">ihrer </span>Freundin einen Bleistift. -- Я даю их подруге карандаш.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Dativ N</div>
-        <p>Ich gebe <span class="red-12">meinem </span>Kind einen Bleistift. — Я даю моему ребенку карандаш.</p>
-        <p>Ich gebe <span class="red-12">deinem </span>Kind einen Bleistift. — Я даю твоему ребенку карандаш.</p>
-        <p>Ich gebe <span class="red-12">seinem </span>Kind einen Bleistift. — Я даю его ребенку карандаш.</p>
-        <p>Ich gebe <span class="red-12">ihrem </span>Kind einen Bleistift. — Я даю ее ребенку карандаш.</p>
-        <p>Ich gebe <span class="red-12">unserem </span>Kind einen Bleistift. — Я даю нашему ребенку карандаш.</p>
-        <p>Ich gebe <span class="red-12">euerem </span>Kind einen Bleistift. — Я даю вашему ребенку карандаш.</p>
-        <p>Ich gebe <span class="red-12">ihrem </span>Kind einen Bleistift. — Я даю их ребенку карандаш.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Dativ Pl</div>
-        <p>Ich gebe <span class="red-12">meinen </span>Freundinnen einen Bleistift. -- Я даю моим подругам карандаш.</p>
-        <p>Ich gebe <span class="red-12">deinen </span>Freundinnen einen Bleistift. -- Я даю твоим подругам карандаш.
-        </p>
-        <p>Ich gebe <span class="red-12">seinen </span>Freundinnen einen Bleistift. -- Я даю его подругам карандаш.</p>
-        <p>Ich gebe <span class="red-12">ihren </span>Freundinnen einen Bleistift. -- Я даю ее подругам карандаш.</p>
-        <p>Ich gebe <span class="red-12">unseren </span>Freundinnen einen Bleistift. -- Я даю нашим подругам карандаш.
-        </p>
-        <p>Ich gebe <span class="red-12">euren </span>Freundinnen einen Bleistift. -- Я даю вашим подругам карандаш.</p>
-        <p>Ich gebe <span class="red-12">ihren </span>Freundinnen einen Bleistift. -- Я даю их подругам карандаш.</p>
-      </div>
-    </div>
-    <!-- ====================== -->
-    <!-- ====================== -->
-    <h4 class="tabl-item__title">Akkusativ = кого? (wen?), что? (was?) и куда? (wohin?).</h4>
-    <div class="tabl">
-      <div class="tabl__item">
-        <div class="text-h5">Akkusativ M</div>
-        <p>Er nimmt<span class="red-12"> meinen </span>Regenschirm. — Он берет мой зонт.</p>
-        <p>Er nimmt<span class="red-12"> deinen </span>Regenschirm. — Он берет твой зонт.</p>
-        <p>Er nimmt<span class="red-12"> seinen </span>Regenschirm. — Он берет его зонт.</p>
-        <p>Er nimmt<span class="red-12"> ihren </span>Regenschirm. — Он берет ее зонт.</p>
-        <p>Er nimmt<span class="red-12"> unseren </span>Regenschirm. — Он берет наш зонт.</p>
-        <p>Er nimmt<span class="red-12"> euren </span>Regenschirm. — Он берет ваш зонт.</p>
-        <p>Er nimmt<span class="red-12"> ihren </span>Regenschirm. — Он берет их зонт.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Akkusativ F</div>
-        <p>Er nimmt<span class="red-12"> meine </span>Kassete mit. -- Он забирает мою кассету.</p>
-        <p>Er nimmt<span class="red-12"> deine </span>Kassete mit. -- Он забирает твою кассету.</p>
-        <p>Er nimmt<span class="red-12"> seine </span>Kassete mit. -- Он забирает его кассету.</p>
-        <p>Er nimmt<span class="red-12"> ihre </span>Kassete mit. -- Он забирает ее кассету.</p>
-        <p>Er nimmt<span class="red-12"> unsere </span>Kassete mit. -- Он забирает нашу кассету.</p>
-        <p>Er nimmt<span class="red-12"> eure </span>Kassete mit. -- Он забирает вашу кассету.</p>
-        <p>Er nimmt<span class="red-12"> ihre </span>Kassete mit. -- Он забирает их кассету.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Akkusativ N</div>
-        <p>Er nimmt<span class="red-12"> mein </span> Bild mit. — Он забирает мою картину.</p>
-        <p>Er nimmt<span class="red-12"> dein </span>Bild mit. — Он забирает твою картину.</p>
-        <p>Er nimmt<span class="red-12"> sein </span>Bild mit. — Он забирает его картину.</p>
-        <p>Er nimmt<span class="red-12"> ihr </span>Bild mit. — Он забирает ее картину.</p>
-        <p>Er nimmt<span class="red-12"> unser </span>Bild mit. — Он забирает нашу картину.</p>
-        <p>Er nimmt<span class="red-12"> euer </span>Bild mit. — Он забирает вашу картину.</p>
-        <p>Er nimmt<span class="red-12"> ihr </span>Bild mit. — Он забирает их картину.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Akkusativ Pl</div>
-        <p>Wir lesen<span class="red-12"> meine </span>Zeitungen. — Мы читаем мои газеты.</p>
-        <p>Wir lesen<span class="red-12"> deine </span>Zeitungen. — Мы читаем твои газеты.</p>
-        <p>Wir lesen<span class="red-12"> seine </span>Zeitungen. — Мы читаем его газеты.</p>
-        <p>Wir lesen<span class="red-12"> ihre </span>Zeitungen. — Мы читаем ее газеты.</p>
-        <p>Wir lesen<span class="red-12"> unsere </span>Zeitungen. — Мы читаем наши газеты.</p>
-        <p>Wir lesen<span class="red-12"> eure </span>Zeitungen. — Мы читаем ваши газеты.</p>
-        <p>Wir lesen<span class="red-12"> ihre </span>Zeitungen. — Мы читаем их газеты.</p>
-      </div>
-    </div>
-    <!-- ====================== -->
-    <!-- ====================== -->
-    <h4 class="tabl-item__title">Genitiv = какой?, чей? (welcher? wessen?) употребляется для
-      существительного, стоящего определением при другом существительном. </h4>
-    <div class="tabl">
-      <div class="tabl__item">
-        <div class="text-h5">Genitiv M</div>
-        <p>Das Auto<span class="red-12"> meines </span>Bruders ist neu. — Машина моего брата новая.</p>
-        <p>Das Auto<span class="red-12"> deines </span>Bruders ist neu. — Машина твоего брата новая.</p>
-        <p>Das Auto<span class="red-12"> seines </span>Bruders ist neu. — Машина его брата новая.</p>
-        <p>Das Auto<span class="red-12"> ihres </span>Bruders ist neu. — Машина ее брата новая.</p>
-        <p>Das Auto<span class="red-12"> unseres </span>Bruders ist neu. — Машина нашего брата новая.</p>
-        <p>Das Auto<span class="red-12"> eueres </span>Bruders ist neu. — Машина вашего брата новая.</p>
-        <p>Das Auto<span class="red-12"> ihres </span>Bruders ist neu. — Машина их брата новая.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Genitiv F</div>
-        <p>Das Auto <span class="red-12">meiner </span>Schwester ist neu. -- Машина моей сестры новая.</p>
-        <p>Das Auto <span class="red-12">deiner </span>Schwester ist neu. -- Машина твоей сестры новая.</p>
-        <p>Das Auto <span class="red-12">seiner </span>Schwester ist neu. -- Машина его сестры новая.</p>
-        <p>Das Auto <span class="red-12">ihrer </span>Schwester ist neu. -- Машина ее сестры новая.</p>
-        <p>Das Auto <span class="red-12">unserer </span>Schwester ist neu. -- Машина нашей сестры новая.</p>
-        <p>Das Auto <span class="red-12">eurer </span>Schwester ist neu. -- Машина вашей сестры новая.</p>
-        <p>Das Auto <span class="red-12">ihrer </span>Schwester ist neu. -- Машина их сестры новая.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Genitiv N</div>
-        <p>Der Freund<span class="red-12"> meines </span>Kindes heißt Henri. -- Друга моего ребенка зовут Генри.</p>
-        <p>Der Freund<span class="red-12"> deines </span>Kindes heißt Henri. — Друга твоего ребенка зовут Генри.</p>
-        <p>Der Freund<span class="red-12"> seines </span>Kindes heißt Henri.—Друга его ребенка зовут Генри.</p>
-        <p>Der Freund<span class="red-12"> ihres </span>Kindes heißt Henri. -- Друга ее ребенка зовут Генри.</p>
-        <p>Der Freund<span class="red-12"> unseres </span>Kindes heißt Henri.—Друга нашего ребенка зовут Генри.</p>
-        <p>Der Freund<span class="red-12"> eueres </span>Kindes heißt Henri. — Друга вашего ребенка зовут Генри.</p>
-        <p>Der Freund<span class="red-12"> ihres </span>Kindes heißt Henri. — Друга их ребенка зовут Генри.</p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Genitiv Pl</div>
-        <p>Das Auto <span class="red-12">meiner </span>Schwestern ist neu. -- Машина моих сестер новая.</p>
-        <p>Das Auto <span class="red-12">deiner </span>Schwestern ist neu. -- Машина твоих сестер новая.</p>
-        <p>Das Auto <span class="red-12">seiner </span>Schwestern ist neu. -- Машина его сестер новая.</p>
-        <p>Das Auto <span class="red-12">ihrer </span>Schwestern ist neu. -- Машина ее сестер новая.</p>
-        <p>Das Auto <span class="red-12">unserer </span>Schwestern ist neu. -- Машина наших сестер новая.</p>
-        <p>Das Auto <span class="red-12">eurer </span>Schwestern ist neu. -- Машина ваших сестер новая.</p>
-        <p>Das Auto <span class="red-12">ihrer </span>Schwestern ist neu. -- Машина их сестер новая.</p>
-      </div>
-      <!-- ====================== -->
-
-    </div>
-    <!-- ====================== -->
-    <h3 class="text-h3  text-uppercase text-center">Личные местоимения </h3>
-
-    <div class="tabl">
-      <div class="tabl__item">
-        <div class="text-h5">Nominativ</div>
-        <p><span class="red-12">ich </span>winke — я машу </p>
-        <p><span class="red-12">du </span>winkst — ты машешь </p>
-        <p><span class="red-12">er </span>winkt — он машет </p>
-        <p><span class="red-12">sie </span>winkt — она машет </p>
-        <p><span class="red-12">es </span>winkt — оно машет </p>
-        <p><span class="red-12">wir </span> nähen — мы шьем</p>
-        <p><span class="red-12">ihr </span>näht — вы шьете </p>
-        <p><span class="red-12">sie </span>nähen — они шьют </p>
-        <p><span class="red-12">Sie </span>nähen — Вы шьете </p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Dativ</div>
-        <p>es scheint<span class="red-12"> mir </span> — мне кажется </p>
-        <p>es scheint<span class="red-12"> dir </span> — тебе кажется </p>
-        <p>es scheint<span class="red-12"> ihm </span> — ему кажется </p>
-        <p>es scheint<span class="red-12"> ihr </span> — ей кажется </p>
-        оно
-        <p>es scheint<span class="red-12"> ihm </span> — ему кажется </p>
-        <p>es scheint<span class="red-12"> uns </span> — нам кажется</p>
-        <p>es scheint<span class="red-12"> euch </span> — вам кажется </p>
-        <p>es scheint<span class="red-12"> ihnen </span> — им кажется </p>
-        <p>es scheint<span class="red-12"> Ihnen </span> — Вам кажется </p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Akkusativ</div>
-        <p>sie beschimpft <span class="red-12"> mich </span> — она ругает меня </p>
-        <p>sie beschimpft<span class="red-12"> dich </span> — она ругает тебя </p>
-        <p>sie beschimpft<span class="red-12"> ihn </span> — она ругает его </p>
-        <p>sie beschimpft<span class="red-12"> sie </span> — она ругает ее </p>
-        оно
-        <p>sie beschimpft<span class="red-12"> es </span> — она ругает его </p>
-        <p>sie retten <span class="red-12"> uns </span> — они спасают нас </p>
-        <p>wir retten<span class="red-12"> euch </span> — мы спасаем вас </p>
-        <p>sie retten<span class="red-12"> sie </span> — они спасают их </p>
-        <p>wir retten <span class="red-12"> Sie </span> — мы спасаем Вас </p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Genitiv</div>
-        <p>sie beschimpft <span class="red-12">meiner</span> — моего </p>
-        <p>sie beschimpft<span class="red-12"> deiner </span> — твоего </p>
-        <p>sie beschimpft<span class="red-12"> seiner </span> — его </p>
-        <p>sie beschimpft<span class="red-12"> ihrer </span> — ее </p>
-        оно
-        <p>sie beschimpft<span class="red-12"> seiner </span> — его </p>
-        <p>sie beschimpft <span class="red-12">unser</span> — нашего </p>
-        <p>sie beschimpft<span class="red-12"> eurer </span> — вашего </p>
-        <p>sie beschimpft<span class="red-12"> ihrer </span> — их </p>
-        <p>sie beschimpft<span class="red-12"> Ihrer </span> — Вашего </p>
-      </div>
-    </div>
-
-    <!-- ====================== -->
-    <h3 class="text-h3  text-uppercase text-center">Возвратные местоимения</h3>
-    <div class="tabl">
-      <div class="tabl__item">
-        <div class="text-h5">Akkusativ</div>
-        <p>Ich verliebe<span class="red-12"> mich</span>. -- Я влюбляюсь</p>
-        <p>Du bemühst<span class="red-12"> dich</span>. -- Ты стараешься. </p>
-        <p>Er hütet<span class="red-12"> sich</span> vor seiner Nachbarin. -- Он остерегается своей соседки.</p>
-        <p>Warum müssen wir <span class="red-12">uns</span> immer nach dir umschauen? -- Почему мы все время должны на
-          тебя оглядываться?</p>
-        <p>Ihr beeilt<span class="red-12"> euch</span> umsonst. -- </p>
-        <p>Sie zanken<span class="red-12"> sich</span> täglich. -- </p>
-      </div>
-      <div class="tabl__item">
-        <div class="text-h5">Dativ</div>
-        <p>Ich kaufe<span class="red-12"> mir</span> Hefte. -- Я покупаю тетради.</p>
-        <p>Du kaufst<span class="red-12"> dir</span> Hefte. -- Ты покупаешь тетради.</p>
-        <p>Er (sie, es) kauft<span class="red-12"> sich</span> Hefte. -- он (она, оно) покупает журналы.</p>
-        <p>Wir kaufen<span class="red-12"> uns</span> Hefte. -- Мы покупаем тетради.</p>
-        <p>Ihr kauft<span class="red-12"> euch</span> Hefte. -- Вы покупаете себе тетради.</p>
-        <p>Sie/Sie kaufen<span class="red-12"> sich</span> Hefte. -- Oни покупают журналы.</p>
-      </div>
-    </div>
+          <div class=" slide-footer  ">
+             <div class="slide-title ">{{todo.category}}</div> 
+            <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
+            </Dialog>
+             <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" />  
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div> -->
   </main>
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="scss" >
 // @import '@/styles/variables.scss';
 // @import '@/styles/mixins.scss';
 // @import './style.scss';
@@ -545,9 +404,6 @@ export default defineComponent({
   position: relative;
 }
 
-h3 {
-  text-shadow: 0 0 5px $amber-6;
-}
 
 .tabl {
   display: grid;
@@ -574,6 +430,41 @@ h3 {
     }
 
   }
+
+}
+
+
+h2 {
+  text-shadow: 0 0 5px #ffca28;
+  text-align: center;
+}
+
+h3 {
+  font-size: 28px !important;
+  text-align: center;
+  text-shadow: 0 0 5px $amber-6;
+  line-height: 1.1 !important;
+  margin: 5px 0;
+}
+
+h4 {
+  font-size: 15px !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+  color: $red-8
+}
+
+h6 {
+  text-shadow: 0 0 5px $red-6;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.Dativ-spans {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  color: $red-6;
+  font-weight: 800;
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -595,7 +486,7 @@ h3 {
 
 .swiper {
   max-width: 300px;
-  height: 300px;
+  height: 150px;
   box-sizing: content-box;
   display: flex;
   margin-top: auto;
@@ -675,8 +566,9 @@ h3 {
   text-shadow: 0 0 3px $amber-5;
 }
 
-.tabl-item__title {
-  color: $green-6
+.swiper--Some{
+max-width: 10000px;
+width: 100%;
 }
 
 @media (max-width: 767px) {

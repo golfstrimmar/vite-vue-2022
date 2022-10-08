@@ -88,7 +88,7 @@ onMounted(() => {
 
 <template>
   <div class="german-todo ">
-      <h2 class="text-h5 text-uppercase">Fügen Sie einer der Kategorien ein Wort hinzu</h2>
+    <h2 class="text-h5 text-uppercase">Fügen Sie einer der Kategorien ein Wort hinzu</h2>
 
     <q-form @submit.prevent="addTodo" class="q-gutter-y-md">
       <q-input filled v-model="NewUrlToDo" label="Das Bildchen Url" lazy-rules />
@@ -102,20 +102,25 @@ onMounted(() => {
           label="Kopf" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Kurz"
           label="Kurz" />
-        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="OrtesWo"
-          label="Ortes Wo" />
-        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="WohinAkkusativ"
-          label="Wohin и Akkusativ" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Dativ"
+          label="Dativ" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Akkusativ"
+          label="Akkusativ" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="DatAkk"
+          label="DatAkk" />
+
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Frage"
           label="Frage" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="FrageÄnderbar"
           label="Frage Änderbar" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Verben"
           label="Verben" />
-        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="männlichNominative"
-          label="männlichNominative" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye"
+          val="männlichNominative" label="männlichNominative" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye"
+          val="Some" label="Some" />
       </div>
-        <q-btn label="Karte hinzufügen" type="submit" :disabled="!NewContentToDo" color="primary" />
+      <q-btn label="Karte hinzufügen" type="submit" :disabled="!NewContentToDo" color="primary" />
     </q-form>
 
 
