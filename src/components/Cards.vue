@@ -17,6 +17,7 @@ import Possessive from './Possessive.vue';
 import Personal from './Personal.vue';
 import Reflexiv from './Reflexiv.vue';
 import Modalverben from './Modalverben.vue';
+import Zeigepronomen from './Zeigepronomen.vue';
 
 
 
@@ -30,7 +31,8 @@ export default defineComponent({
     Possessive,
     Personal,
     Reflexiv,
-    Modalverben
+    Modalverben,
+    Zeigepronomen
   },
   props: {
     todos: Array
@@ -96,12 +98,7 @@ export default defineComponent({
       })
       return todosKurz
     },
-    todosOrtesWo(todos) {
-      const todosOrtesWo = this.todos.filter(item => {
-        return item.category === 'OrtesWo' ? item : null
-      })
-      return todosOrtesWo
-    },
+    
     todosAkkusativ(todos) {
       const todosAkkusativ = this.todos.filter(item => {
         return item.category === 'Akkusativ' ? item : null
@@ -160,6 +157,67 @@ export default defineComponent({
 <template>
   <main>
     <h2>das Wörterbuch</h2>
+
+    <!-- <div class="">
+    <div  class="Wörterbuch-bunner bg-blue-grey-3">
+      Dativ
+    </div>
+    <q-tooltip>
+      I am groot!
+    </q-tooltip>
+    </div> -->
+
+    <!-- <div class="inline bg-blue-grey-3 rounded-borders cursor-pointer" style="max-width: 100px">
+  <div class=" flex flex-center text-center  q-pa-sm">
+    Dativ
+  </div>
+
+  <q-tooltip anchor="center right" self="center middle">
+    I am groot!
+  </q-tooltip> -->
+    <!-- </div> -->
+
+    <ul class="cheaps">
+        <li class="cheap">
+        <span>Genitiv</span>
+        <div class="cheap-tool">
+          = Genitiv = <br>
+          welcher? ( какой?, который?) <br>
+          wessen? (чей? чья? чье?)
+        </div>
+      </li>  
+      <li class="cheap">
+        <span>Akkusativ</span>
+        <div class="cheap-tool">
+          = Akkusativ = <br>
+          wen? (кого?)<br>
+          was? (что?) <br>
+          wohin? (куда?).
+        </div>
+      </li>
+       <li class="cheap">
+        <span>Dativ</span>
+        <div class="cheap-tool">
+          = Dativ = <br>
+          wo? ( где? )<br>
+          wem? ( кому?)<br>
+          mit wem? ( с кем?)<br>
+          womit? ( чем?) <br>
+          wann? (когда?)<br>
+          woher? ( откуда?)
+        </div>
+      </li> 
+      <li class="cheap">
+        <span>Nominativ</span>
+        <div class="cheap-tool">
+          = Nominativ = <br>
+          wer? (кто?) <br>
+          was? (что?)
+        </div>
+      </li>  
+    </ul>
+
+
     <div class="Swipers">
       <!-- <div class="Swipers-item" v-if="todosFamilie.length > 0">
         <h3 class="Swipers-item--text text-h5 text-center">Familie</h3>
@@ -276,23 +334,7 @@ export default defineComponent({
         </swiper>
       </div>
 
-      <div class="Swipers-item" v-if="todosOrtesWo.length > 0">
-        <h3>Предлоги, которые отвечают на вопрос wo?</h3>
-        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
-          <swiper-slide v-for="todo in todosOrtesWo" :key="todo.id"
-            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
-            class="slide justify-center items-center row ">
-            <div class="text-h4">{{todo.content}}</div>
-
-            <div class=" slide-footer  ">
-              <!-- <div class="slide-title ">{{todo.category}}</div> -->
-              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
-              </Dialog>
-              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div>
+     
 
       <div class="Swipers-item" v-if="todosFrage.length > 0">
         <h3>Вопросительные слова.неизменяемые </h3>
@@ -366,12 +408,14 @@ export default defineComponent({
     <!-- ====================== -->
     <Artikel></Artikel>
     <!-- ====================== -->
-    <Possessive></Possessive>
-    <!-- ====================== -->
     <Personal></Personal>
     <!-- ====================== -->
     <Reflexiv></Reflexiv>
     <!-- ====================== -->
+    <Zeigepronomen></Zeigepronomen>
+    <!-- ====================== -->
+    <Possessive></Possessive>
+  <!-- ====================== -->
     <Modalverben></Modalverben>
     <!-- ====================== -->
     <!-- <div class="Swipers-item" v-if="todosDativ.length > 0">
@@ -403,6 +447,55 @@ export default defineComponent({
 .flip-example {
   position: relative;
 }
+
+.cheaps {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  display: inline-flex;
+  gap: 10px;
+  position: fixed;
+  z-index: 100;
+  top: 200px;
+  left: -120px;
+  transform: rotate(-90deg);
+}
+
+.cheaps * {
+  list-style: none;
+}
+.cheap-tool {
+  position: absolute;
+  transform: translateY(-200px) rotate(90deg);
+  background: $blue-grey-5;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 20px;
+  white-space: nowrap;
+  text-align: center;
+  opacity: 0;
+  z-index: -200;
+  transition: all .3s;
+  width: 350px;
+}
+.cheap {
+  background: $grey-1;
+  position: relative;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: $blue-grey-5;
+  
+&:hover > .cheap-tool{
+  opacity: 1;
+  transform: translateY(200px) rotate(90deg) !important;
+}
+}
+
 
 
 .tabl {
@@ -473,7 +566,11 @@ h6 {
   }
 }
 
-
+.Wörterbuch-bunner {
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+}
 
 
 .Swipers {
@@ -566,9 +663,9 @@ h6 {
   text-shadow: 0 0 3px $amber-5;
 }
 
-.swiper--Some{
-max-width: 10000px;
-width: 100%;
+.swiper--Some {
+  max-width: 10000px;
+  width: 100%;
 }
 
 @media (max-width: 767px) {

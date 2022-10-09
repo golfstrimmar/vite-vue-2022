@@ -1,7 +1,6 @@
 <template>
   <div>
     <h3 class="text-h3  text-uppercase text-center">Притяжательные местоимения </h3>
-    <h4>Nominativ = кто? (wer?) и что? (was?)</h4>
     <div class="tabl">
     
       <div class="tabl__item">
@@ -48,7 +47,6 @@
       </div>
     </div>
     <!-- ====================== -->
-    <h4>Dativ = wem? (кому?) wann? (когда?) wo? (где?) wie? (как?)</h4>
     <div class="tabl">
     
       <div class="tabl__item">
@@ -96,7 +94,6 @@
     </div>
     <!-- ====================== -->
     <!-- ====================== -->
-    <h4>Akkusativ = кого? (wen?), что? (was?) и куда? (wohin?).</h4>
     <div class="tabl">
       <div class="tabl__item">
         <h6>Akkusativ M</h6>
@@ -141,8 +138,6 @@
     </div>
     <!-- ====================== -->
     <!-- ====================== -->
-    <h4>Genitiv = какой?, Который? (welcher? ) wessen? (чей? чья? чье?) употребляется для
-      существительного, стоящего определением при другом существительном. </h4>
     <div class="tabl">
       <div class="tabl__item">
         <h6>Genitiv M</h6>

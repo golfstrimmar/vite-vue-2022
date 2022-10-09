@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Modalverben </h3>
+    <h3 class=" text-uppercase text-center">Modalverben </h3>
     <div class="tabl">
       <div class="tabl__item">
         <h6>Präsens <span class="modal-span">müssen</span></h6>
@@ -15,7 +15,7 @@
       <div class="tabl__item">
         <h6>Präsens <span class="modal-span">können</span></h6>
         <p>Ich <span class="red-12">kann </span> dieses Problem lösen. – Я могу (способен) решить эту проблему.</p>
-        <p>Du <span class="red-12">kannst </span> dieses Problem lösen. – Я могу (способен) решить эту проблему.</p>
+        <p>Du <span class="red-12">kannst </span> dieses Problem lösen. – Ты можешь (способен) решить эту проблему.</p>
         <p>Er/sie/es/man <span class="red-12">kann</span> dieses Problem lösen. – он/она/оно/может решить эту проблему.</p>
         <p>Wir <span class="red-12">können</span> dieses Problem lösen. – мы (способен) решить эту проблему.</p>
         <p>Ihr <span class="red-12">könnt</span> dieses Problem lösen. – вы (способен) решить эту проблему.</p>
@@ -23,13 +23,13 @@
       </div>
       <div class="tabl__item">
         <h6>Präsens <span class="modal-span">dürfen</span></h6> 
-        <p> <span class="red-12">Darf</span> ich meinen Platz nehmen? – Разрешено ли мне занять мое место?</p>
-        <p> <span class="red-12">Darfst</span> du deinen Platz nehmen? – Разрешено ли тебе занимать твое место?</p>
-        <p><span class="red-12">Darf</span> er/es/man seinen Platz nehmen? – Разрешено ли ему занять его место?</p>
-        <p><span class="red-12">Darf</span> sie ihren Platz nehmen? – Разрешено ли ей занять ее место?</p>
-        <p> <span class="red-12">Dürfen</span> wir  unseren Platz nehmen? – Разрешено ли нам занять наше место?</p>
-        <p><span class="red-12">Dürft</span> ihr eueren Platz nehmen? – Разрешено ли вам занимать ваше место?</p>
-        <p> <span class="red-12">Dürfen</span> sie/Sie ihren Platz nehmen? – Разрешено ли им занимать их места?</p>
+        <p> <span class="red-12">Darf</span> ich meinen Platz einnehmen? – Разрешено ли мне занять мое место?</p>
+        <p> <span class="red-12">Darfst</span> du deinen Platz einnehmen? – Разрешено ли тебе занимать твое место?</p>
+        <p><span class="red-12">Darf</span> er/es/man seinen Platz einnehmen? – Разрешено ли ему занять его место?</p>
+        <p><span class="red-12">Darf</span> sie ihren Platz einnehmen? – Разрешено ли ей занять ее место?</p>
+        <p> <span class="red-12">Dürfen</span> wir  unseren Platz einnehmen? – Разрешено ли нам занять наше место?</p>
+        <p><span class="red-12">Dürft</span> ihr eueren Platz einnehmen? – Разрешено ли вам занимать ваше место?</p>
+        <p> <span class="red-12">Dürfen</span> sie/Sie ihren Platz einnehmen? – Разрешено ли им занимать их места?</p>
       </div>
       <div class="tabl__item">
         <h6>Präsens <span class="modal-span">sollen</span></h6>
@@ -138,7 +138,7 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss" >
 .modal-span {
   text-transform: uppercase !important;
   font-size: 20px !important;

@@ -1,7 +1,52 @@
 <template>
   <div>
-    <h3>Личные местоимения </h3>
-    
+    <h3 class=" text-uppercase text-center main-title">Личные местоимения </h3>
+        <ul class="point-sheet">
+          <li>
+            <span>ich </span>
+            <span>du </span>
+            <span>er</span>
+            <span>sie</span>
+            <span>es </span>
+            <span>wir</span>
+            <span>ihr</span>
+            <span>sie</span>
+            <span>Sie</span>
+          </li>
+          <li>
+            <span>mir</span>
+            <span>dir</span>
+            <span>ihm</span>
+            <span>ihr</span>
+            <span>ihm</span>
+            <span>uns</span>
+            <span>euch</span>
+            <span>ihnen</span>
+            <span>ihnen</span>
+          </li>
+          <li>
+            <span>mich</span>
+            <span>dich</span>
+            <span>ihn</span>
+            <span>sie</span>
+            <span>es</span>
+            <span>uns</span>
+            <span>euch</span>
+            <span>sie</span>
+            <span>Sie</span>
+          </li>
+          <li>
+            <span>meiner</span>
+            <span>deiner</span>
+            <span>seiner</span>
+            <span>ihrer</span>
+            <span>seiner</span>
+            <span>unser</span>
+            <span>eurer</span>
+            <span>ihrer</span>
+            <span>ihrer</span>
+          </li>
+        </ul>
     <div class="tabl">
       <div class="tabl__item">
         <h6>Nominativ</h6>
@@ -16,7 +61,7 @@
         <p><span class="red-12">Sie </span>nähen — Вы шьете </p>
       </div>
       <div class="tabl__item">
-        <h6>Dativ</h6>
+        <h6>Dativ  </h6>
         <p>es scheint<span class="red-12"> mir </span> — мне кажется </p>
         <p>es scheint<span class="red-12"> dir </span> — тебе кажется </p>
         <p>es scheint<span class="red-12"> ihm </span> — ему кажется </p>
@@ -58,3 +103,6 @@
 
   </div>
 </template>
+<style lang="scss" >
+
+</style>

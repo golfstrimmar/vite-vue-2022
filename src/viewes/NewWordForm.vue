@@ -108,7 +108,6 @@ onMounted(() => {
           label="Akkusativ" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="DatAkk"
           label="DatAkk" />
-
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Frage"
           label="Frage" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="FrageÄnderbar"
@@ -117,8 +116,8 @@ onMounted(() => {
           label="Verben" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye"
           val="männlichNominative" label="männlichNominative" />
-        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye"
-          val="Some" label="Some" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Some"
+          label="Some" />
       </div>
       <q-btn label="Karte hinzufügen" type="submit" :disabled="!NewContentToDo" color="primary" />
     </q-form>
