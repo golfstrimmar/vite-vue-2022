@@ -9,8 +9,8 @@
         <p>Er hütet<span class="red-12"> sich</span> vor seiner Nachbarin. -- Он остерегается своей соседки.</p>
         <p>Warum müssen wir <span class="red-12">uns</span> immer nach dir umschauen? -- Почему мы все время должны на
           тебя оглядываться?</p>
-        <p>Ihr beeilt<span class="red-12"> euch</span> umsonst. -- </p>
-        <p>Sie zanken<span class="red-12"> sich</span> täglich. -- </p>
+        <p>Ihr beeilt<span class="red-12"> euch</span> umsonst. -- вы напрасно торопитесь.</p>
+        <p>Sie zanken<span class="red-12"> sich</span> täglich. -- Они ссорятся каждый день.</p>
       </div>
       <div class="tabl__item">
         <h6>Dativ </h6>

@@ -18,6 +18,8 @@ import Personal from './Personal.vue';
 import Reflexiv from './Reflexiv.vue';
 import Modalverben from './Modalverben.vue';
 import Zeigepronomen from './Zeigepronomen.vue';
+import Interrogativpronomen from './Interrogativpronomen.vue';
+import Verben from './Verben.vue';
 
 
 
@@ -32,7 +34,9 @@ export default defineComponent({
     Personal,
     Reflexiv,
     Modalverben,
-    Zeigepronomen
+    Zeigepronomen,
+    Interrogativpronomen,
+    Verben
   },
   props: {
     todos: Array
@@ -98,7 +102,7 @@ export default defineComponent({
       })
       return todosKurz
     },
-    
+
     todosAkkusativ(todos) {
       const todosAkkusativ = this.todos.filter(item => {
         return item.category === 'Akkusativ' ? item : null
@@ -178,14 +182,14 @@ export default defineComponent({
     <!-- </div> -->
 
     <ul class="cheaps">
-        <li class="cheap">
+      <li class="cheap">
         <span>Genitiv</span>
         <div class="cheap-tool">
           = Genitiv = <br>
           welcher? ( какой?, который?) <br>
           wessen? (чей? чья? чье?)
         </div>
-      </li>  
+      </li>
       <li class="cheap">
         <span>Akkusativ</span>
         <div class="cheap-tool">
@@ -195,7 +199,7 @@ export default defineComponent({
           wohin? (куда?).
         </div>
       </li>
-       <li class="cheap">
+      <li class="cheap">
         <span>Dativ</span>
         <div class="cheap-tool">
           = Dativ = <br>
@@ -206,7 +210,7 @@ export default defineComponent({
           wann? (когда?)<br>
           woher? ( откуда?)
         </div>
-      </li> 
+      </li>
       <li class="cheap">
         <span>Nominativ</span>
         <div class="cheap-tool">
@@ -214,7 +218,7 @@ export default defineComponent({
           wer? (кто?) <br>
           was? (что?)
         </div>
-      </li>  
+      </li>
     </ul>
 
 
@@ -268,11 +272,11 @@ export default defineComponent({
           <swiper-slide v-for="todo in todosDativ" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
             class="slide justify-center items-center row ">
-            <div class="text-h4">{{todo.content}}</div>
+            <div class="text-h4 slide__content">{{todo.content}}</div>
 
             <div class=" slide-footer  ">
               <!-- <div class="slide-title ">{{todo.category}}</div> -->
-              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
               </Dialog>
               <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
             </div>
@@ -294,11 +298,11 @@ export default defineComponent({
           <swiper-slide v-for="todo in todosAkkusativ" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
             class="slide justify-center items-center row ">
-            <div class="text-h4">{{todo.content}}</div>
+            <div class="text-h4 slide__content">{{todo.content}}</div>
 
             <div class=" slide-footer  ">
               <!-- <div class="slide-title ">{{todo.category}}</div> -->
-              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
               </Dialog>
               <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
             </div>
@@ -322,7 +326,7 @@ export default defineComponent({
           <swiper-slide v-for="todo in todosDatAkk" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
             class="slide justify-center items-center row ">
-            <div class="text-h4">{{todo.content}}</div>
+            <div class="text-h4 slide__content">{{todo.content}}</div>
 
             <div class=" slide-footer  ">
               <!-- <div class="slide-title ">{{todo.category}}</div> -->
@@ -334,26 +338,10 @@ export default defineComponent({
         </swiper>
       </div>
 
-     
 
-      <div class="Swipers-item" v-if="todosFrage.length > 0">
-        <h3>Вопросительные слова.неизменяемые </h3>
-        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
-          <swiper-slide v-for="todo in todosFrage" :key="todo.id"
-            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
-            class="slide justify-center items-center row ">
-            <div class="text-h4">{{todo.content}}</div>
 
-            <div class=" slide-footer  ">
-              <!-- <div class="slide-title ">{{todo.category}}</div> -->
-              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
-              </Dialog>
-              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div>
-      <div class="Swipers-item" v-if="todosFrageÄnderbar.length > 0">
+
+      <!--  <div class="Swipers-item" v-if="todosFrageÄnderbar.length > 0">
         <h3>Вопросительные слова.изменяемые </h3>
         <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
           <swiper-slide v-for="todo in todosFrageÄnderbar" :key="todo.id"
@@ -362,14 +350,14 @@ export default defineComponent({
             <div class="text-h4">{{todo.content}}</div>
 
             <div class=" slide-footer  ">
-              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <div class="slide-title ">{{todo.category}}</div>
               <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
               </Dialog>
-              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+              <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> 
             </div>
           </swiper-slide>
         </swiper>
-      </div>
+      </div> -->
       <div class="Swipers-item" v-if="todosVerben.length > 0">
 
         <h3>Die unregelmäßigen verben</h3>
@@ -377,7 +365,7 @@ export default defineComponent({
           <swiper-slide v-for="todo in todosVerben" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
             class="slide justify-center items-center row ">
-            <div class="text-h4">{{todo.content}}</div>
+            <div class="text-h4 slide__content">{{todo.content}}</div>
 
             <div class=" slide-footer  ">
               <!-- <div class="slide-title ">{{todo.category}}</div> -->
@@ -393,11 +381,29 @@ export default defineComponent({
           <swiper-slide v-for="todo in todosKurz" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
             class="slide justify-center items-center row ">
-            <div class="text-h4">{{todo.content}}</div>
+            <div class="text-h4 slide__content">{{todo.content}}</div>
 
             <div class=" slide-footer  ">
               <!-- <div class="slide-title ">{{todo.category}}</div> -->
               <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+
+      <div class="Swipers-item" v-if="todosFrage.length > 0">
+        <h3>Вопросительные слова </h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosFrage" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4 slide__content">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
               </Dialog>
               <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
             </div>
@@ -415,9 +421,12 @@ export default defineComponent({
     <Zeigepronomen></Zeigepronomen>
     <!-- ====================== -->
     <Possessive></Possessive>
-  <!-- ====================== -->
+    <!-- ====================== -->
     <Modalverben></Modalverben>
     <!-- ====================== -->
+    <Interrogativpronomen></Interrogativpronomen>
+    <!-- ====================== -->
+    <Verben></Verben>
     <!-- <div class="Swipers-item" v-if="todosDativ.length > 0">
       <h3>Modalverben</h3>
       <swiper class="swiper swiper--Some" :modules="modules" :effect="'cards'" :grab-cursor="true">
@@ -463,6 +472,7 @@ export default defineComponent({
 .cheaps * {
   list-style: none;
 }
+
 .cheap-tool {
   position: absolute;
   transform: translateY(-200px) rotate(90deg);
@@ -478,6 +488,7 @@ export default defineComponent({
   transition: all .3s;
   width: 350px;
 }
+
 .cheap {
   background: $grey-1;
   position: relative;
@@ -489,11 +500,11 @@ export default defineComponent({
   border-radius: 8px;
   cursor: pointer;
   color: $blue-grey-5;
-  
-&:hover > .cheap-tool{
-  opacity: 1;
-  transform: translateY(200px) rotate(90deg) !important;
-}
+
+  &:hover>.cheap-tool {
+    opacity: 1;
+    transform: translateY(200px) rotate(90deg) !important;
+  }
 }
 
 
@@ -591,7 +602,7 @@ h6 {
   .slide {
     border-radius: 10px;
     position: relative;
-
+text-align: center;
     img {
       display: block;
       width: 100%;
@@ -633,7 +644,11 @@ h6 {
   column-gap: 10px;
   color: $blue-grey-1;
 }
-
+.slide__content{
+  padding: 0 10px;
+  line-height: 1.1!important;
+  font-size: 24px;
+}
 
 .slide-green-2 {
   background: $green-2;
