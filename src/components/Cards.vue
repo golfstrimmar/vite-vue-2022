@@ -647,7 +647,7 @@ text-align: center;
 .slide__content{
   padding: 0 10px;
   line-height: 1.1!important;
-  font-size: 24px;
+  font-size: 24px!important;
 }
 
 .slide-green-2 {
