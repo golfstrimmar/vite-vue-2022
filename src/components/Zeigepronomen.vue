@@ -1,6 +1,6 @@
 <template>
   <h3 class=" text-uppercase text-center main-title">Указательные местоимения. </h3>
-  <ul class="point-sheet">
+  <!-- <ul class="point-sheet">
     <li> dieser = этот </li>
     <li> jener = тот</li>
     <li> derjenige =тот самый</li>
@@ -8,7 +8,7 @@
     <li> solh ein = такой, такое</li>
     <li> ein solher = такой</li>
     <li> so ein  = такой</li>
-  </ul>
+  </ul> -->
   <div class="tabl">
 
     <div class="tabl__item">

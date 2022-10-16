@@ -1,8 +1,8 @@
 <template>
   <div>
     <h3 class=" text-uppercase text-center main-title">Личные местоимения </h3>
-        <ul class="point-sheet">
-          <li>
+        <!-- <ul class="point-sheet"> -->
+          <!-- <li>
             <span>ich </span>
             <span>du </span>
             <span>er</span>
@@ -46,7 +46,7 @@
             <span>ihrer</span>
             <span>ihrer</span>
           </li>
-        </ul>
+        </ul> -->
     <div class="tabl">
       <div class="tabl__item">
         <h6>Nominativ</h6>

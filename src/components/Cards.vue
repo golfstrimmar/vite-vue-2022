@@ -84,6 +84,30 @@ export default defineComponent({
 
   },
   computed: {
+    todosArtikel(todos) {
+      const todosArtikel = this.todos.filter(item => {
+        return item.category === 'Artikel' ? item : null
+      })
+      return todosArtikel
+    },
+    todosPersonal(todos) {
+      const todosPersonal = this.todos.filter(item => {
+        return item.category === 'Personal' ? item : null
+      })
+      return todosPersonal
+    },
+    todosReflexiv(todos) {
+      const todosReflexiv = this.todos.filter(item => {
+        return item.category === 'Reflexiv' ? item : null
+      })
+      return todosReflexiv
+    },
+    todosPossessive(todos) {
+      const todosPossessive = this.todos.filter(item => {
+        return item.category === 'Possessive' ? item : null
+      })
+      return todosPossessive
+    },
     todosFamilie(todos) {
       const todosFamilie = this.todos.filter(item => {
         return item.category === 'Familie' ? item : null
@@ -253,6 +277,78 @@ export default defineComponent({
       </div>-->
 
 
+      <div class="Swipers-item" v-if="todosArtikel.length > 0">
+        <h3>Artikel </h3>
+       
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosArtikel" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4 slide__content">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosPersonal.length > 0">
+        <h3>Personal </h3>
+       
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosPersonal" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4 slide__content">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosReflexiv.length > 0">
+        <h3>Reflexiv </h3>
+       
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosReflexiv" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4 slide__content">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosPossessive.length > 0">
+        <h3>Possessive</h3>
+       
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosPossessive" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4 slide__content">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
       <div class="Swipers-item" v-if="todosDativ.length > 0">
         <h3>Предлоги, которые всегда & Dativ </h3>
         <ul class="Dativ-spans">
@@ -330,9 +426,9 @@ export default defineComponent({
 
             <div class=" slide-footer  ">
               <!-- <div class="slide-title ">{{todo.category}}</div> -->
-              <Dialog class="myDialog" :title="todo.content" :translation="todo.translation" :category="todo.category">
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
               </Dialog>
-              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" />-->
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
             </div>
           </swiper-slide>
         </swiper>

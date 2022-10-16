@@ -96,10 +96,19 @@ onMounted(() => {
       <q-input filled v-model="NewTranstationToDo" label="Wort Auf Russisch" />
       <div class="text-subtitle1">Geben Sie die Kategorie an</div>
       <div class="">
-        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Familie"
+        <!-- <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Familie"
           label="Familie" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Kopf"
-          label="Kopf" />
+          label="Kopf" /> -->
+
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Artikel"
+          label="Artikel" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Personal"
+          label="Personal" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Reflexiv"
+          label="Reflexiv" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Possessive"
+          label="Possessive" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Kurz"
           label="Kurz" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Dativ"
