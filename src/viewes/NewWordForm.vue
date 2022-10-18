@@ -111,6 +111,8 @@ onMounted(() => {
           label="Possessive" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Kurz"
           label="Kurz" />
+        <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Sprechen"
+          label="Sprechen" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Dativ"
           label="Dativ" />
         <q-radio v-model="CategoryToDo" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="Akkusativ"

@@ -126,6 +126,12 @@ export default defineComponent({
       })
       return todosKurz
     },
+    todosSprechen(todos) {
+      const todosSprechen = this.todos.filter(item => {
+        return item.category === 'Sprechen' ? item : null
+      })
+      return todosSprechen
+    },
 
     todosAkkusativ(todos) {
       const todosAkkusativ = this.todos.filter(item => {
@@ -493,6 +499,23 @@ export default defineComponent({
         <h3>Вопросительные слова </h3>
         <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
           <swiper-slide v-for="todo in todosFrage" :key="todo.id"
+            :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
+            class="slide justify-center items-center row ">
+            <div class="text-h4 slide__content">{{todo.content}}</div>
+
+            <div class=" slide-footer  ">
+              <!-- <div class="slide-title ">{{todo.category}}</div> -->
+              <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
+              </Dialog>
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="Swipers-item" v-if="todosSprechen.length > 0">
+        <h3>Разговорные фразы </h3>
+        <swiper class="swiper " :modules="modules" :effect="'cards'" :grab-cursor="true">
+          <swiper-slide v-for="todo in todosSprechen" :key="todo.id"
             :class="[todo.done ? 'green-2 slide-light-blue-3': 'slide-light-blue-3']"
             class="slide justify-center items-center row ">
             <div class="text-h4 slide__content">{{todo.content}}</div>
