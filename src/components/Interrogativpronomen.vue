@@ -116,7 +116,7 @@
   <div class="tabl__item">
     <h6>Nominativ M</h6>
     <p>
-      <span class="red-12">Welcher</span> Mann? — какой мужчина?
+      <span class="red-12">Welcher</span> Mann? — какой мужчина ?
     </p>
     <p>
       <span class="red-12">Was für ein(er)</span> Mensch bist du?  --Что ты за человек?

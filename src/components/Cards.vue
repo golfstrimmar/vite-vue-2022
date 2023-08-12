@@ -407,7 +407,7 @@ export default defineComponent({
               <!-- <div class="slide-title ">{{todo.category}}</div> -->
               <Dialog class="myDialog"  :translation="todo.translation" :category="todo.category">
               </Dialog>
-              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" /> -->
+              <!-- <q-btn class="" round color="red" @click="deliteToDo(todo.id)" icon="cancel" />  -->
             </div>
           </swiper-slide>
         </swiper>
