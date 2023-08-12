@@ -3,6 +3,7 @@ header.header
 	.header-top
 		.header-top-search
 			img(src='svg/header-search.svg' alt='search')
+
 		a.header-logo(href='#!') Avion
 		.header-top-right
 			.header-top-right__cart
@@ -39,7 +40,7 @@ const menu = [
 	background: white;
 
 	&-logo {
-		color: #22202E;
+		
 		font-family: 'Playfair Display', serif;
 		font-size: 24px;
 		font-style: normal;
@@ -64,9 +65,7 @@ const menu = [
 
 	&-menu {
 		height: 62px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flex-center;
 		column-gap: 62px;
 
 		&__link {
