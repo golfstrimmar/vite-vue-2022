@@ -17,8 +17,8 @@
 
 <script setup>
 import { ref } from 'vue'
-import Button from '../components/ButtonEmpty.vue'
-import Product from '../components/Product.vue'
+import Button from '@/components/ButtonEmpty.vue'
+import Product from '@/components/Product.vue'
 
 const button = ref(
   {
@@ -64,5 +64,10 @@ const products = ref([
 
 .button-empty {
   margin: 48px auto 0;
+ color: #2A254B;
+  background: var(--light-grey, #F9F9F9);
+  	&:hover {
+			box-shadow: inset 0 0 8px lighten(#2A254B, 40%) ;
+		}
 }
 </style>

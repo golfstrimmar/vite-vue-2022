@@ -40,7 +40,7 @@ const props = defineProps({
 
 	&__name {
 		color: var(--dark-primary, #2A254B);
-		font-family: 'Playfair Display', serif;
+		font-family: var(--playfair);
 		font-size: 20px;
 		font-weight: 400;
 		line-height: 140%;

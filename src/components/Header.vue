@@ -41,7 +41,7 @@ const menu = [
 
 	&-logo {
 		
-		font-family: 'Playfair Display', serif;
+		font-family: var(--playfair);
 		font-size: 24px;
 		font-style: normal;
 		font-weight: 400;

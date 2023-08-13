@@ -8,6 +8,10 @@ const props = defineProps({
 		type: String,
 		required: true
 	},
+	link: {
+		type: String,
+		required: false
+	}
 })
 </script>
 
@@ -15,8 +19,7 @@ const props = defineProps({
 .button-empty {
 	width: 170px;
 	height: 56px;
-	background: #F9F9F9;
 	@include flex-center;
-	margin: auto 0 0 0;
+	
 }
 </style>
