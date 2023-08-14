@@ -4,16 +4,16 @@ header.header
 		.header-top-search
 			img(src='svg/header-search.svg' alt='search')
 
-		a.header-logo(href='#!') Avion
+		router-link.header-logo(to='/') Avion
 		.header-top-right
 			.header-top-right__cart
-				a(href='!#')
+				router-link(to='/cart')
 					img(src='/public/svg/header-cart.svg' alt='')
 			.header-top-right__user
-				a(href='!#')
+				router-link(to='user')
 					img(src='/public/svg/header-user.svg' alt='')
 	.header-menu
-		a.header-menu__link(:href='element.path' v-for='(element, i) in menu' :key='i')
+		router-link.header-menu__link(:to='element.path' v-for='(element, i) in menu' :key='i')
 			| {{ element.name }}
 </template>
 
@@ -38,7 +38,7 @@ const menu = [
 .header {
 	height: 132px;
 	background: white;
-
+        margin: 0 20px;
 	&-logo {
 		
 		font-family: var(--playfair);

@@ -8,23 +8,17 @@
       :title='product.title'
       :price='product.price'
     )
-  Button(
-    :text='button.text'
-    )
+  Button(type="button" to='/' color="light" class='products__link') View collection
 </template>
 
 
 
 <script setup>
 import { ref } from 'vue'
-import Button from '@/components/ButtonEmpty.vue'
+import Button from '@/components/Ui/button.vue'
 import Product from '@/components/Product.vue'
 
-const button = ref(
-  {
-    text: 'View collection',
-  },
-)
+
 
 const products = ref([
   {
@@ -60,14 +54,9 @@ const products = ref([
   grid-template-columns: repeat(4, 305px);
   column-gap: 20px;
   margin: 82px 0 0 0;
-}
 
-.button-empty {
-  margin: 48px auto 0;
- color: #2A254B;
-  background: var(--light-grey, #F9F9F9);
-  	&:hover {
-			box-shadow: inset 0 0 8px lighten(#2A254B, 40%) ;
-		}
+  &__link {
+    margin: 48px auto 0;
+  }
 }
 </style>

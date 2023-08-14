@@ -6,9 +6,9 @@
 		HeroInfo(
 			title="Luxury homeware for people who love timeless design quality" 
 			description="Shop the  Spring  collection today"
-			link = '#'
+			colorLink = 'light'
 			backGround='white'
-
+			typeLink='link'
 			)
 
 

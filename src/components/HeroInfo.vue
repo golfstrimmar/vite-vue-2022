@@ -1,16 +1,16 @@
 <template lang="pug">
 .container
+     
 	.hero-info(:style="{backgroundColor: backGround}")
 		.hero-info__title(:style='{color: colorTitle}') {{ title }}
 		.hero-info__discription(:style='{color: colorDescription}') {{description}}
-		ButtonEmpty( 
-			text='View collection' 
-			)
+		Button(:type="typeLink" to='/' :color= "colorLink") View collection
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import ButtonEmpty from './ButtonEmpty.vue'
+import { ref } from 'vue'
+import Button from '@/components/Ui/button.vue'
+
 const props = defineProps({
 	title: {
 		type: String,
@@ -20,7 +20,11 @@ const props = defineProps({
 		type: String,
 		required: false
 	},
-	link: {
+	typeLink: {
+		type: String,
+		required: false
+	},
+	colorLink: {
 		type: String,
 		required: false
 	},
@@ -36,12 +40,10 @@ const props = defineProps({
 	backGround: {
 		type: String,
 		default: '#fff'
-	}
-	
+	},
+		
 })
-const fonbutton = computed(() => {
-	return buttonFon
-})
+
 </script>
 
 <style scoped lang="scss">
@@ -69,6 +71,8 @@ const fonbutton = computed(() => {
 
 	}
 
-	&__link {}
+	button,.btn {
+		margin: auto 0 0 0;
+	}
 }
 </style>

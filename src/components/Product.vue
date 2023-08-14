@@ -1,9 +1,9 @@
 <template lang="pug">
 .product
-	a(href="#!").product__img
+	router-link(to="/").product__img
 		.imgs
 			img(:src='img'  :alt='title')
-	a(href="#!").product__name {{ title }}
+	router-link(to="/").product__name {{ title }}
 	span.product__price £{{ price }}
 
 </template>

@@ -9,9 +9,9 @@
 //   }
 // }
 
-:root{
+:root {
   --satoshi: "Satoshi", sans-serif;
-  --playfair: 'Playfair Display', serif;
+  --playfair: "Playfair Display", serif;
 }
 
 html * {
@@ -72,7 +72,7 @@ img {
 //   position: absolute;
 // }
 
- a {
+a {
   text-decoration: none;
   color: inherit;
   display: inline-block;
@@ -118,11 +118,12 @@ img {
 }
 .ttu {
   text-transform: uppercase;
-  ._hover {
-    &:hover {
-      color: lighten(rgba(9, 72, 207), 25%);
-      text-shadow: 0 0 14px white;
-    }
+}
+
+._hover {
+  &:hover {
+    color: lighten(rgba(9, 72, 207), 25%);
+    text-shadow: 0 0 14px white;
   }
 }
 

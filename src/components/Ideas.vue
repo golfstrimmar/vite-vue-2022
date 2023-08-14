@@ -8,6 +8,8 @@
 			colorTitle="#FFF"
 			colorDescription="#FFF"
 			backGround="#2A254B"
+			colorLink = 'dark'
+		  typeLink='button'
 			)
 		.ideas__item.rel
 			.imgs
@@ -16,7 +18,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import ButtonEmpty from '@/components/ButtonEmpty.vue'
+
 import HeroInfo from './HeroInfo.vue'
 
 </script>
@@ -43,15 +45,6 @@ import HeroInfo from './HeroInfo.vue'
 		min-height: 478px;
 	}
 
-	.button-empty {
-		margin: auto 0 0 0;
-		color: white;
-		background: rgba(249, 249, 249, 0.15);
-
-		&:hover {
-			box-shadow: inset 0 0 8px white;
-		}
-	}
 
 	.hero-info {
 		padding: 0 0 0 0;
