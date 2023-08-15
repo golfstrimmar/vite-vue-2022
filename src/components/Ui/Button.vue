@@ -1,13 +1,13 @@
 <template lang="pug">
 button(
   v-if="type=== 'button'" 
-  :class="['btn',{'btn--light':color ==='light','btn--dark':color === 'dark'}]"
+  :class="['btn',{'btn--white':color ==='white','btn--light':color ==='light','btn--dark':color === 'dark','btn--dark':color === 'dark'}]"
   ) 
   slot
-router-link.btn(
+router-link(
   v-else 
   :to='to'
-  :class="['btn',{'btn--light':color ==='light','btn--dark':color === 'dark'}]"
+  :class="['btn',{'btn--white':color ==='white','btn--light':color ==='light','btn--dark':color === 'dark','btn--dark-deep':color === 'dark-deep'}]"
   ) 
   slot 
 </template>
@@ -35,7 +35,6 @@ const props = defineProps({
   @include flex-center;
   transition: all .2s;
   cursor: pointer;
-  color: #2A254B;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -47,6 +46,15 @@ const props = defineProps({
       box-shadow: inset 0 0 8px darken(#F9F9F9, 20%);
     }
   }
+   &--white  {
+    color: #2A254B;
+    background: var(--white, #FFF); 
+    &:hover {
+       box-shadow: inset 0 0 8px darken(#F9F9F9, 40%);
+    }
+  }
+
+
   &--dark {
     color: white;
     background: rgba(249, 249, 249, 0.15);
@@ -54,5 +62,13 @@ const props = defineProps({
       box-shadow: inset 0 0 8px white;
     }
   }
+  &--dark-deep {
+    color: white;
+    background: #2A254B;
+    &:hover {
+      box-shadow: inset 0 0 8px white;
+    }
+  }
+ 
 }
 </style>

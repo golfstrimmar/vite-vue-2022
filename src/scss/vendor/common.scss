@@ -122,8 +122,8 @@ a {
 
 ._hover {
   &:hover {
-    color: lighten(rgba(9, 72, 207), 25%);
-    text-shadow: 0 0 14px white;
+    color: white;
+    text-shadow: 0 0 14px lighten(rgba(9, 72, 207), 25%);
   }
 }
 

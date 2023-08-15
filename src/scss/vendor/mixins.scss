@@ -1,10 +1,23 @@
-@mixin flex-column{
-	display: flex;
-	flex-direction: column;
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
 }
-@mixin flex-center{
-	display: flex;
-	justify-content: center;
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
+@mixin flex-aligne-center {
+  display: flex;
+  align-items: center;
+}
+@mixin hover {
+  &:hover {
+    color: lighten(rgba(9, 72, 207), 45%);
+    text-shadow: 0 0 14px lighten(rgba(9, 72, 207), 25%);
+  }
+}
 
+@mixin Playfair {
+  font-family: "Playfair Display", serif;
+}
