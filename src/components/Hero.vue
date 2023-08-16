@@ -24,27 +24,19 @@ import HeroInfo from './HeroInfo.vue'
 .hero {
 	position: relative;
 	min-height: 704px;
-	display: flex;
-	align-items: center;
+	@include flex-aligne-center;
 
 	.container {
 		z-index: 2;
-		display: flex;
-		align-items: center;
+		@include flex-aligne-center;
 		justify-content: end;
-	}
-
-	.button-empty {
-		margin: auto 0 0 0;
-		background: #F9F9F9;
-
-		&:hover {
-			box-shadow: inset 0 0 8px lighten(#2A254B, 40%) ;
-		}
 	}
 
 	.hero-info {
 		padding: 48px 61px 46px 56px;
+		max-width: 630px;
+		min-height: 444px;
 	}
 
-}</style>
+}
+</style>

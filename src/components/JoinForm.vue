@@ -22,39 +22,48 @@ const props = defineProps({
 <style scoped lang="scss">
 .join__form {
 	@include flex-aligne-center;
+	height: 56px;
 
 	input {
-		display: flex;
-		padding: 17px 205px 17px 32px;
-		align-items: center;
+		@include flex-aligne-center;
+		padding: 17px 0px 17px 32px;
 		flex: 1 0 0;
 		align-self: stretch;
+		transition: all .2s;
 
 		&::placeholder {
-			font-size: 16px;
-			font-weight: 400;
+			text-align: left;
 			opacity: 0.2;
 		}
 
 		&.white {
-			background: white;
-			color: #F9F9F9;
+			background: $white;
 
 			&::placeholder {
-				color: var(--dark-primary, #2A254B);
+				@include Text-Style-5;
+			}
+
+			&:hover {
+				background: lighten($primary, 40%);
 			}
 		}
+
 		&.dark {
-			background: rgba(255, 255, 255, 0.15);
-			color: #F9F9F9;
+			background: $light-grey-15;
 
 			&::placeholder {
 				opacity: 1;
-				color: var(--white, #FFF);
+				@include Text-Style-8;
+			}
+
+			&:hover {
+				background: lighten($primary, 40%);
 			}
 		}
 
 	}
+	}
 
-}
+
+
 </style>

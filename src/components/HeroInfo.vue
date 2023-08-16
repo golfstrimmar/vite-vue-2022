@@ -1,6 +1,6 @@
 <template lang="pug">
 .container
-     
+
 	.hero-info(:style="{backgroundColor: backGround}")
 		.hero-info__title(:style='{color: colorTitle}') {{ title }}
 		.hero-info__discription(:style='{color: colorDescription}') {{description}}
@@ -41,7 +41,7 @@ const props = defineProps({
 		type: String,
 		default: '#fff'
 	},
-		
+
 })
 
 </script>
@@ -52,26 +52,22 @@ const props = defineProps({
 	justify-content: center;
 	align-items: flex-start;
 	max-width: 630px;
-	min-height: 444px;
+
 
 	&__title {
-		font-family: var(--playfair);
-		font-size: 32px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 140%;
+		color: $dark;
+		@include Headings-H2;
 	}
 
 	&__discription {
 		margin: 20px 0 0 0;
-		font-size: 18px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 150%;
+		color: $dusk;
+		@include Body-Large;
 
 	}
 
-	button,.btn {
+	button,
+	.btn {
 		margin: auto 0 0 0;
 	}
 }

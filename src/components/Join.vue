@@ -28,6 +28,8 @@ import JoinForm from '@/components/JoinForm.vue'
 
 <style scoped lang="scss">
 .join {
+	margin: 60px 0 0 0;
+
 	&__body {
 		@include flex-column;
 		align-items: center;
@@ -38,23 +40,16 @@ import JoinForm from '@/components/JoinForm.vue'
 
 	&__title {
 		h2 {
-			color: var(--white, #FFF);
-			text-align: center;
-			font-family: var(--playfair);
-			font-size: 32px;
-			font-weight: 400;
-			line-height: 140%;
+			color: $white;
+			@include Headings-H2;
 		}
 	}
 
 	&__text {
-		color: var(--white, #FFF);
+		color: $white;
 		text-align: center;
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 150%;
+		@include Body-Large;
 		margin: 12px 10px 0;
-
 	}
 
 	&__blocks {
@@ -65,8 +60,7 @@ import JoinForm from '@/components/JoinForm.vue'
 	}
 
 	&__block {
-		display: flex;
-		align-items: center;
+		@include flex-aligne-center;
 		column-gap: 8px;
 
 		img {
@@ -75,19 +69,25 @@ import JoinForm from '@/components/JoinForm.vue'
 		}
 
 		span {
-			color: var(--white, #FFF);
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 150%;
-			/* 24px */
+			color: $white;
+			@include BodyMedium;
 		}
+		}
+	
+
+	&__form {
+		margin: 40px 0 0 0;
+		min-width: 472px;
 	}
+}
+
+@media (max-width: 767px) {
 	.join__form {
 		margin: 40px 0 0 0;
 		max-width: 472px;
-
+		width: 100%;
+		min-width: 0px;
 	}
-
-
 }
+
 </style>

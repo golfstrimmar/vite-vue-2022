@@ -51,8 +51,9 @@ const products = ref([
 <style lang="scss" scoped>
 .products {
   display: grid;
-  grid-template-columns: repeat(4, 305px);
-  column-gap: 20px;
+  grid-template-columns: repeat(auto-fit, 300px) ;
+  justify-content: center;
+  gap: 20px;
   margin: 82px 0 0 0;
 
   &__link {

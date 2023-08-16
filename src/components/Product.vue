@@ -39,21 +39,16 @@ const props = defineProps({
 	}
 
 	&__name {
-		color: var(--dark-primary, #2A254B);
-		font-family: var(--playfair);
-		font-size: 20px;
-		font-weight: 400;
-		line-height: 140%;
 		margin: 24px 0 0 0;
+		color: $dark-primary;
+		@include Headings-H4;
 
 	}
 
 	&__price {
-		font-size: 18px;
-		font-style: normal;
-		font-weight: 400;
-		color: var(--dark-primary, #2A254B);
-		margin: 10px 0 0 0;
+		color: $dark-primary;
+		@include Body-Large;
+		margin: 8px 0 0 0;
 	}
 
 }

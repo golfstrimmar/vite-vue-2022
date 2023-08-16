@@ -9,7 +9,7 @@
 			colorDescription="#FFF"
 			backGround="#2A254B"
 			colorLink = 'dark'
-		  typeLink='button'
+			typeLink='button'
 			)
 		.ideas__item.rel
 			.imgs
@@ -26,7 +26,7 @@ import HeroInfo from './HeroInfo.vue'
 <style lang="scss" >
 .ideas {
 	margin: 100px 0 0 0;
-	min-height: 478px;
+
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	column-gap: 10px;
@@ -36,7 +36,7 @@ import HeroInfo from './HeroInfo.vue'
 		padding: 64px 75px 54px 64px;
 		background: var(--dark-primary, #2A254B);
 		@include flex-column;
-
+		min-height: 478px;
 	}
 
 	.hero-info {
@@ -48,6 +48,19 @@ import HeroInfo from './HeroInfo.vue'
 
 	.hero-info {
 		padding: 0 0 0 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.ideas {
+		grid-template-columns: 1fr;
+
+		&__item {
+			padding: 34px 24px;
+			background: var(--dark-primary, #2A254B);
+			@include flex-column;
+			min-height: 278px;
+		}
 	}
 }
 </style>

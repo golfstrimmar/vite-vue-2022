@@ -5,12 +5,11 @@
 			h3 What makes our brand different
 		.about-brand__body
 			.about-brand__item(
-			v-for="(el,i) of AboutBrand"
-			:key="i"
-		)
-				img(:src="el.img"  :alt="el.title" )
-				h4 {{ el.title }}
-				p {{ el.text }}
+				v-for="(item,index) in AboutBrand" :key="index"
+				)
+				img(:src="item.img"  :alt="item.title" )
+				h4 {{item.title}}
+				p {{item.text}}
 		
 </template>
 
@@ -38,10 +37,7 @@ const AboutBrand = [
 		text: 'Order before 3pm and get your order the next day as standard'
 	}
 ]
-// components: {},
-// props: {},
-// data: () => ({}),
-// methods: {},
+
 </script>
 
 <style lang="scss" scoped>
@@ -49,47 +45,39 @@ const AboutBrand = [
 	padding: 80px 0 0 0;
 
 	&__title {
-text-align: center;
+		text-align: center;
+
 		h3 {
-			color: #2A254B;
-			font-size: 24px;
-			font-weight: 400;
-			line-height: 140%;
+			color: $dark-primary;
+			@include Headings-H3;
 		}
 	}
 }
 
 .about-brand__body {
 	display: grid;
-	grid-template-columns: repeat(4, 305px);
+	grid-template-columns: repeat(auto-fit, 300px) ;
 	column-gap: 22px;
 	row-gap: 22px;
-margin: 36px 0 0 0;
+	margin: 36px 0 0 0;
+	justify-content: center;
 }
 
 .about-brand__item {
-	background: #F9F9F9;
-	display: flex;
+	background: $light-grey;
 	padding: 48px;
-	flex-direction: column;
 	align-items: flex-start;
 	gap: 10px;
+	@include flex-column;
 
 	h4 {
-		font-family: 'Playfair Display', serif;
-		color: #2A254B;
-		font-size: 20px;
-		font-weight: 400;
-		line-height: 140%;
+		color: $dark-primary;
+		@include Headings-H4;
 	}
 
 	p {
-		color: var(--dark-primary, #2A254B);
-		font-family: Satoshi;
-		font-size: 16px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 150%;
+		color: $dark-primary;
+		@include BodyMedium;
 	}
 }
 </style>

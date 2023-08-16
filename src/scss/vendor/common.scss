@@ -9,17 +9,14 @@
 //   }
 // }
 
-:root {
-  --satoshi: "Satoshi", sans-serif;
-  --playfair: "Playfair Display", serif;
-}
+
 
 html * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: var(--satoshi);
+  font-family: "Satoshi", sans-serif;
   //  font-family: 'Playfair Display', serif;
   font-size: 16px;
   margin: 0 0 0 0;
@@ -78,7 +75,7 @@ a {
   display: inline-block;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  color: #22202e;
+  color: $dark;
 }
 
 .imgs {
@@ -123,7 +120,7 @@ a {
 ._hover {
   &:hover {
     color: white;
-    text-shadow: 0 0 14px lighten(rgba(9, 72, 207), 25%);
+    text-shadow: 0 0 14px lighten($primary, 25%);
   }
 }
 
@@ -188,39 +185,16 @@ a {
 // }
 /* +++++++++++++++++++++++++++++++++++++ */
 
-// a.common__link {
-//   width: 104px;
-//   height: 104px;
-//   z-index: 50;
-//   border-radius: 100px;
-//   box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.15);
-//   background-color: rgba(9, 72, 207);
-//   opacity: 0;
-//   z-index: 50;
-//   svg {
-//     width: 50px;
-//     height: 50px;
-//     fill: $white;
-//     transition: all 0.3s;
-//   }
-//   &:hover {
-//     background-color: lighten(rgba(9, 72, 207), 25%);
-//     box-shadow: 0 4px 24px 0 rgba(9, 72, 207, 0.45);
-//     svg {
-//       fill: rgba(9, 72, 207);
-//     }
-//   }
-// }
-// @media (min-width: 901px) and (max-width: 1259px) {
-//   .container {
-//     margin: 0 20px;
-//     max-width: calc(100% - 40px);
-//   }
-// }
+@media (min-width: 901px) and (max-width: 1340px) {
+  .container {
+    margin: 0 20px;
+    max-width: calc(100% - 40px);
+  }
+}
 
-// @media (max-width: 900px) {
-//   .container {
-//     margin: 0 10px;
-//     max-width: calc(100% - 20px);
-//   }
-// }
+@media (max-width: 900px) {
+  .container {
+    margin: 0 10px;
+    max-width: calc(100% - 20px);
+  }
+}

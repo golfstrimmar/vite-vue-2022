@@ -31,44 +31,44 @@ const props = defineProps({
 
 <style lang="scss"  scoped>
 .btn {
-  padding: 16px 32px; 
+  padding: 16px 32px;
   @include flex-center;
   transition: all .2s;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 150%;
+  @include BodyMedium;
 
   &--light {
-    color: #2A254B;
-    background: #F9F9F9;
+    color: $dark-primary;
+    background-color: $light-grey;
     &:hover {
-      box-shadow: inset 0 0 8px darken(#F9F9F9, 20%);
+      box-shadow: inset 0 0 8px darken($light-grey, 20%);
     }
   }
-   &--white  {
-    color: #2A254B;
-    background: var(--white, #FFF); 
+
+  &--white {
+    color: $dark-primary;
+    background-color: $white;
     &:hover {
-       box-shadow: inset 0 0 8px darken(#F9F9F9, 40%);
+      box-shadow: inset 0 0 8px darken($light-grey, 40%);
     }
   }
 
 
   &--dark {
-    color: white;
-    background: rgba(249, 249, 249, 0.15);
+    color: $white;
+    background-color: $light-grey-15;
     &:hover {
-      box-shadow: inset 0 0 8px white;
+      box-shadow: inset 0 0 8px $white;
     }
   }
+
   &--dark-deep {
-    color: white;
-    background: #2A254B;
+    color: $white;
+    background-color: $dark-primary;
     &:hover {
-      box-shadow: inset 0 0 8px white;
+      box-shadow: inset 0 0 8px $white;
     }
   }
- 
+
 }
 </style>

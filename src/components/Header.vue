@@ -37,16 +37,11 @@ const menu = [
 <style lang="scss" scoped>
 .header {
 	height: 132px;
-	background: white;
-        margin: 0 20px;
+	background: $white;
+	margin: 0 20px;
+
 	&-logo {
-		
-		font-family: var(--playfair);
-		font-size: 24px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
-		text-align: center;
+		@include Text-Style;
 	}
 
 	&-top {
@@ -69,10 +64,11 @@ const menu = [
 		column-gap: 62px;
 
 		&__link {
-
+			@include Text-Style-2;
 			&:hover {
-				text-decoration: underline;
+				@include hover;
 			}
 		}
 	}
-}</style>
+}
+</style>
