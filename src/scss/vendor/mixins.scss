@@ -1,0 +1,123 @@
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-aligne-center {
+  display: flex;
+  align-items: center;
+}
+@mixin hover {
+  &:hover {
+    transition: all .2s;
+    cursor: pointer;
+    color: $dark-primary;
+    text-shadow: 0 0 14px lighten($grey-purple, 25%);
+  }
+}
+
+// =======================================
+
+@mixin Headings-H1 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  line-height: 1.4;
+ 
+}
+@mixin Text-Style-3 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  color: $white;
+ 
+}
+@mixin Headings-H2 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  line-height: 1.4;
+  
+}
+@mixin Text-Style {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  color: $dark;
+  
+}
+@mixin Headings-H3 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  line-height: 1.4;
+  
+}
+@mixin Headings-H4 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  line-height: 1.4;
+  
+}
+@mixin Text-Style-4 {
+  font-size: 18px;
+  color: $white;
+ 
+}
+@mixin Body-Large {
+  font-size: 18px;
+  line-height: 1.5;
+ 
+}
+@mixin Text-Style-6 {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  color: $white;
+ 
+}
+@mixin Text-Style-8 {
+  font-size: 16px;
+  color: $white;
+  
+}
+@mixin Text-Style-5 {
+  font-size: 16px;
+  color: $dark-primary;
+ 
+}
+@mixin Text-Style-2 {
+  font-size: 16px;
+  color: $grey-purple;
+ 
+}
+@mixin Headings-H5 {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  line-height: 1.4;
+ 
+}
+@mixin BodyMedium {
+  font-size: 16px;
+  line-height: 1.5;
+ 
+}
+@mixin Text-Style-7 {
+  font-size: 14px;
+  color: $white;
+ 
+}
+@mixin Headings-H6 {
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  line-height: 1.4;
+ 
+}
+@mixin BodySmall {
+  font-size: 14px;
+  line-height: 1.5;
+ 
+}
+@mixin Text-Style-9 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  color: $dark-primary;
+}
