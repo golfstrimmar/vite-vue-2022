@@ -53,7 +53,7 @@ const props = defineProps({
 	}
 }
 
-@media (max-width: 767px) {
+@media (min-width: 390px) and (max-width: 767px) {
 	.product {
 		min-height: 288px;
 
@@ -73,6 +73,15 @@ const props = defineProps({
 			color: $dark-primary;
 			@include Body-Large;
 			margin: 8px 0 0 0;
+		}
+	}
+}
+@media (max-width: 389px){
+	.product {
+		width: 100%;min-height: 270px;
+		max-width: 150px;
+	&__img {
+			min-height: 187px;
 		}
 	}
 }

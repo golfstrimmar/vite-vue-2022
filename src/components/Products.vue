@@ -88,11 +88,25 @@ const products = ref([
 }
 
 
-@media (max-width: 767px) {
+
+@media (min-width: 390px) and (max-width: 767px){
+
   .products {
     grid-template-columns: repeat(2, 163px);
     justify-content: center;
     gap: 20px 16px;
+    margin: 74px 0 0 0;
+
+    &__link {
+      margin: 40px auto 0;
+    }
+  }
+}
+@media (max-width: 389px) {
+  .products {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px 0;
     margin: 74px 0 0 0;
 
     &__link {

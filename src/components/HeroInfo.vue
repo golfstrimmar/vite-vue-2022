@@ -63,7 +63,7 @@ const props = defineProps({
 		}
 
 		.hero-info__text {
-			margin: 20px 0 0 0;
+			margin: 20px 0 80px 0;
 			text-align: left;
 			color: $dusk;
 			@include Body-Large;
