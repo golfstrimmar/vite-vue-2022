@@ -3,21 +3,7 @@
 	.hero-info__title
 		h2(:style='{color: colorTitle}') {{ title }}
 	p.hero-info__text(:style='{color: colorDescription}') {{description}}
-	//- a(href='#!').btn.btn--light.hero-info__button View collection
 	Button(:type="typeLink" to='/' :color= "colorLink").hero-info__button View collection
-
-
-
-
-
-
-
-//- .container
-
-//- 	.hero-info(:style="{backgroundColor: backGround}")
-//- 		.hero-info__title(:style='{color: colorTitle}') {{ title }}
-//- 		.hero-info__discription(:style='{color: colorDescription}') {{description}}
-//- 		Button(:type="typeLink" to='/' :color= "colorLink") View collection
 </template>
 
 <script setup>
@@ -157,4 +143,5 @@ const props = defineProps({
 			}
 		}
 	}
-}</style>
+}
+</style>

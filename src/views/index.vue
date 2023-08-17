@@ -1,10 +1,10 @@
 <template lang="pug">
 div 
   Hero
-  //- AboutBrand
-  //- Products
-  //- Ideas
-  //- Join
+  AboutBrand
+  Products
+  Ideas
+  Join
 </template>
 
 
@@ -12,10 +12,10 @@ div
 
 
 import Hero from '@/components/Hero.vue'
-// import AboutBrand from '@/components/AboutBrand.vue'
-// import Products from '@/components/Products.vue'
-// import Ideas from '@/components/Ideas.vue'
-// import Join from '@/components/Join.vue'
+import AboutBrand from '@/components/AboutBrand.vue'
+import Products from '@/components/Products.vue'
+import Ideas from '@/components/Ideas.vue'
+import Join from '@/components/Join.vue'
 
 </script>
 

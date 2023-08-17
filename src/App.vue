@@ -1,15 +1,14 @@
 <template lang="pug">
 div 
-  //- Header
+  Header
   router-view
-  //- Footer
+  Footer
 </template>
 
 
 <script setup>
-// import Header from '@/components/Header.vue'
-// import Footer from '@/components/Footer.vue'
-
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 </script>
 
 <style lang="scss" ></style>
