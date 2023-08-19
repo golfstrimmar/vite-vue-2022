@@ -1,33 +1,13 @@
-
-
-
 html * {
   box-sizing: border-box;
 }
 
 body {
   // font-family: "Satoshi", sans-serif;
-   font-family: 'Playfair Display', serif;
-  font-size: 180px;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  // background-color: white;
-
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; 
 }
 
-body{
-  background: red;
-}
-
-
-
-.wrapper {
-  overflow: hidden;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
 
 img {
   max-width: 100%;
@@ -57,7 +37,8 @@ img {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  position: relative;
+  position: relative; 
+  background-color: rgb(85, 30, 161);
 }
 
 // .container {
@@ -203,4 +184,3 @@ a {
 //   }
 // }
 /* +++++++++++++++++++++++++++++++++++++ */
-

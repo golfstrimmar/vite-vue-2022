@@ -1,7 +1,9 @@
 <template lang="pug">
-header 
-  SvgIcon(name='vite' )
-  h2 My favorit movies
+.header
+  .container
+    .header__body
+      SvgIcon(name='vite' )
+      h2 component Header
 
 </template>
 
@@ -11,12 +13,18 @@ import SvgIcon from '@/components/SvgIcon.vue'
 </script>
 
 <style lang="scss" scoped>
-header {
-  @include flex-aligne-center;
+body{
 
-  svg {
-    width: 30px;
-    height: 30px;
+}
+.header {
+  &__body {
+    @include flex-center;padding: 20px 0;
+    column-gap: 40px;
+    svg{
+      width: 30px;
+      height: 30px;
+    }
   }
+
 }
 </style>
