@@ -9,7 +9,7 @@
 import { ref } from 'vue'
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .hero{
   color: chartreuse;
 }
