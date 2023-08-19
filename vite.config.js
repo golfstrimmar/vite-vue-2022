@@ -5,7 +5,15 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import path from "path";
 
 export default defineConfig({
-  
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+              @import "./src/scss/main.scss";
+            `,
+      },
+    },
+  },
   plugins: [
     picm(),
     vue(),

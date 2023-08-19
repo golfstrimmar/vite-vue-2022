@@ -13,6 +13,7 @@ import SvgIcon from '@/components/SvgIcon.vue'
 <style lang="scss" scoped>
 header {
   @include flex-aligne-center;
+
   svg {
     width: 30px;
     height: 30px;

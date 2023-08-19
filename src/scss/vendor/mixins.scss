@@ -1,6 +1,3 @@
-body{
-  background-color: red;
-}
 
 @mixin flex-column {
   display: flex;
@@ -13,7 +10,7 @@ body{
 }
 @mixin flex-aligne-center {
   display: flex;
-  align-items: center;
+  align-items: center; 
 }
 @mixin hover {
   &:hover {
