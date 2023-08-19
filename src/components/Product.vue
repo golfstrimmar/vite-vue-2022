@@ -1,10 +1,10 @@
 <template lang="pug">
 
 .product
-	router-link(to="/").product__img
+	router-link(:to="`/${id}`").product__img
 		.imgs
 			img(:src='img'  :alt='title')
-	router-link(to="/").product__name {{ title }}
+	router-link(:to="`/${id}`").product__name {{ title }}
 	span.product__price £{{ price }}
 
 
@@ -13,6 +13,10 @@
 <script setup>
 
 const props = defineProps({
+	id:{
+		type: String,
+		required: true
+	},
 	img: {
 		type: String,
 		required: true

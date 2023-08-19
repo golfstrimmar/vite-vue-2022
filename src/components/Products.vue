@@ -6,26 +6,12 @@ section#products
       Product(
         v-for='product of products'
         :key='product.id'
+        :id='product.id'
         :img='product.img'
         :title='product.title'
         :price='product.price'
       )
     Button(type="button" to='/' color="light" class='products__link') View collection
-
-
-
-
-
-//- .container
-//-   .products
-//-     Product(
-//-       v-for='product of products'
-//-       :key='product.id'
-//-       :img='product.img'
-//-       :title='product.title'
-//-       :price='product.price'
-//-     )
-//-   Button(type="button" to='/' color="light" class='products__link') View collection
 </template>
 
 
@@ -35,34 +21,14 @@ import { ref } from 'vue'
 import Button from '@/components/Ui/button.vue'
 import Product from '@/components/Product.vue'
 
-
-
-const products = ref([
-  {
-    id: 1,
-    img: 'src/assets/img/products/i-1.webp',
-    title: 'The Dandy chair',
-    price: 250
-  },
-  {
-    id: 2,
-    img: 'src/assets/img/products/i-2.webp',
-    title: 'Rustic Vase Set',
-    price: 155
-  },
-  {
-    id: 3,
-    img: 'src/assets/img/products/i-3.webp',
-    title: 'The Silky Vase',
-    price: 125
-  },
-  {
-    id: 4,
-    img: 'src/assets/img/products/i-4.webp',
-    title: 'The Lucy Lamp',
-    price: 399
+const props = defineProps({
+  products: {
+    required: true
   }
-])
+});
+
+
+
 </script >
 
 <style lang="scss" scoped>
@@ -89,7 +55,7 @@ const products = ref([
 
 
 
-@media (min-width: 390px) and (max-width: 767px){
+@media (min-width: 390px) and (max-width: 767px) {
 
   .products {
     grid-template-columns: repeat(2, 163px);
@@ -102,6 +68,7 @@ const products = ref([
     }
   }
 }
+
 @media (max-width: 389px) {
   .products {
     grid-template-columns: 1fr;
