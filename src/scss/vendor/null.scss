@@ -37,7 +37,8 @@ body {
   // height: 100%;
   max-width: 100vw;
   text-size-adjust: 100%;
-  
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 
 input,
@@ -64,10 +65,14 @@ button::-moz-focus-inner {
   border: 0px;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   display: block;
 }
-
 
 a {
   text-decoration: none !important;
