@@ -1,7 +1,7 @@
 <template lang="pug">
 button(
   v-if="type=== 'button'" 
-  :class="['btn',{'btn--white':color ==='white','btn--light':color ==='light','btn--dark':color === 'dark','btn--dark':color === 'dark'}]"
+  :class="['btn',{'btn--white':color ==='white','btn--light':color ==='light','btn--dark':color === 'dark','btn--dark-deep':color === 'dark-deep'}]"
   ) 
   slot
 router-link(

@@ -23,7 +23,7 @@ import Loader from '@/components/Ui/Loader.vue'
 const popularProducts = ref([]);
 const loading = ref(true);
 
- onMounted(async () => {
+onMounted(async () => {
  popularProducts.value = await api.getPopularProducts();
  loading.value = false;
 });

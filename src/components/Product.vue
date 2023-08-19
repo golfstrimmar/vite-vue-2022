@@ -1,13 +1,10 @@
 <template lang="pug">
-
 .product
-	router-link(:to="`/${id}`").product__img
+	router-link(:to="`products/${id}`").product__img
 		.imgs
 			img(:src='img'  :alt='title')
-	router-link(:to="`/${id}`").product__name {{ title }}
+	router-link(:to="`products/${id}`").product__name {{ title }}
 	span.product__price £{{ price }}
-
-
 </template>
 
 <script setup>

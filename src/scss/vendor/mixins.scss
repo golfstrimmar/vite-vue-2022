@@ -20,104 +20,126 @@
   }
 }
 
-// =======================================
-
+// ====================================
+@mixin Text-Style-17 {
+  font-size: 16px;
+  color: $border-grey;
+}
+@mixin Text-Style-16 {
+  font-size: 24px;
+  color: $dark-primary;
+}
+@mixin Text-Style-10 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  color: $dark-primary;
+}
 @mixin Headings-H1 {
   font-family: "Playfair Display", serif;
   font-size: 36px;
   line-height: 1.4;
- 
 }
 @mixin Text-Style-3 {
   font-family: "Playfair Display", serif;
   font-size: 32px;
   color: $white;
- 
 }
 @mixin Headings-H2 {
   font-family: "Playfair Display", serif;
   font-size: 32px;
   line-height: 1.4;
-  
-}
-@mixin Text-Style {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
-  color: $dark;
-  
-}
-@mixin Headings-H3 {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
-  line-height: 1.4;
-  
-}
-@mixin Headings-H4 {
-  font-family: "Playfair Display", serif;
-  font-size: 20px;
-  line-height: 1.4;
-  
-}
-@mixin Text-Style-4 {
-  font-size: 18px;
-  color: $white;
- 
-}
-@mixin Body-Large {
-  font-size: 18px;
-  line-height: 1.5;
- 
-}
-@mixin Text-Style-6 {
-  font-family: "Playfair Display", serif;
-  font-size: 16px;
-  color: $white;
- 
-}
-@mixin Text-Style-8 {
-  font-size: 16px;
-  color: $white;
-  
-}
-@mixin Text-Style-5 {
-  font-size: 16px;
-  color: $dark-primary;
- 
-}
-@mixin Text-Style-2 {
-  font-size: 16px;
-  color: $grey-purple;
- 
-}
-@mixin Headings-H5 {
-  font-family: "Playfair Display", serif;
-  font-size: 16px;
-  line-height: 1.4;
- 
-}
-@mixin BodyMedium {
-  font-size: 16px;
-  line-height: 1.5;
- 
-}
-@mixin Text-Style-7 {
-  font-size: 14px;
-  color: $white;
- 
-}
-@mixin Headings-H6 {
-  font-family: "Playfair Display", serif;
-  font-size: 14px;
-  line-height: 1.4;
- 
-}
-@mixin BodySmall {
-  font-size: 14px;
-  line-height: 1.5;
- 
 }
 @mixin Text-Style-9 {
   font-family: "Playfair Display", serif;
   font-size: 24px;
   color: $dark-primary;
 }
+@mixin Text-Style {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  color: $dark;
+}
+@mixin Text-Style-11 {
+  font-family: Satoshi;
+  font-size: 24px;
+  color: #12131a;
+}
+@mixin Headings-H3 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  line-height: 1.4;
+}
+@mixin Headings-H4 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  line-height: 1.4;
+}
+@mixin Text-Style-4 {
+  font-size: 18px;
+  color: $white;
+}
+@mixin Body-Large {
+  font-size: 18px;
+  line-height: 1.5;
+}
+@mixin Text-Style-6 {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  color: $white;
+}
+@mixin Text-Style-12 {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  color: $dark-primary;
+}
+@mixin Text-Style-8 {
+  font-size: 16px;
+  color: $white;
+}
+@mixin Text-Style-5 {
+  font-size: 16px;
+  color: $dark-primary;
+}
+@mixin Text-Style-2 {
+  font-size: 16px;
+  color: $grey-purple;
+}
+@mixin Text-Style-15 {
+  font-size: 16px;
+  color: #cac6da;
+}
+@mixin Text-Style-13 {
+  font-size: 16px;
+  color: #505977;
+}
+@mixin Headings-H5 {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+@mixin BodyMedium {
+  font-size: 16px;
+  line-height: 1.5;
+}
+@mixin Text-Style-14 {
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  color: $dark-primary;
+}
+@mixin Text-Style-7 {
+  font-size: 14px;
+  color: $white;
+}
+@mixin Headings-H6 {
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+@mixin BodySmall {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
+
