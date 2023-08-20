@@ -10,6 +10,7 @@ header.header
 		.header-top-right
 			.header-top-right__cart
 				SvgIcon(name='header-cart' )
+				span.header-top-right__count(v-if="CartStore.cart.length") {{ CartStore.cart.length }}
 			.header-top-right__user
 				SvgIcon(name='header-user' )
 	.header-menu
@@ -21,6 +22,9 @@ header.header
 <script setup>
 import { ref } from 'vue';
 import SvgIcon from './SvgIcon.vue'
+import { useCartStore } from "@/store/cart.js";
+
+const CartStore = useCartStore()
 
 const isOpenedMobileMenu = ref(false)
 const menu = [
@@ -63,6 +67,8 @@ const menu = [
 		&-right__cart,
 		&-right__user,
 		&-mobile-menu {
+			position: relative;
+
 			svg {
 				width: 16px;
 				height: 16px;
@@ -77,6 +83,22 @@ const menu = [
 			display: flex;
 			align-items: center;
 			column-gap: 16px;
+			position: relative;
+
+			&__count {
+				position: absolute;
+				font-size: 14px;
+				line-height: 1;
+				color: $white;
+				top: -3px;
+				right: -17px;
+				left: auto;
+				background: $dusk;
+				width: 18px;
+				height: 18px;
+				border-radius: 100%;
+				@include flex-center;
+			}
 		}
 
 		&-mobile-menu {

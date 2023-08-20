@@ -1,6 +1,7 @@
 <template lang="pug">
 .productPage
 	ProductDtl(:product='currentProduct')
+	PopularProducts
 	AboutBrand
 	Join
 </template>
@@ -11,10 +12,17 @@ import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import api from "@/api.js";
 import ProductDtl from "@/components/ProductDtl.vue";
+import PopularProducts from "@/components/PopularProducts.vue";
 import AboutBrand from '@/components/AboutBrand.vue';
 import Join from '@/components/Join.vue';
+
+
+
+
 const route = useRoute()
 const router = useRouter()
+
+
 var productId = ref('')
 var currentProduct = ref({})
 
