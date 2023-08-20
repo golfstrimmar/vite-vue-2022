@@ -1,7 +1,3 @@
-html * {
-  box-sizing: border-box;
-}
-
 body {
   // font-family: "Satoshi", sans-serif;
   font-family: 'Playfair Display', serif;
@@ -34,27 +30,11 @@ img {
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
   position: relative; 
-  background-color: rgb(85, 30, 161);
 }
-
-// .container {
-//   // outline: 1px solid #4164ff;
-//
-//   width: 100%;
-//   margin: 0 auto;
-//
-// }
-
-// .inner {
-//   position: relative;
-// }
-// .svgSpriteWrap{
-//   position: absolute;
-// }
 
 a {
   text-decoration: none;
@@ -126,61 +106,3 @@ a {
   }
 }
 
-// .d-flex {
-//   display: flex;
-// }
-// .jucc {
-//   justify-content: center;
-// }
-// .alic {
-//   align-items: center;
-// }
-// .fdc {
-//   flex-direction: column;
-// }
-
-/* +++++++++++++++++++++++++++++++++++++ */
-// @media (prefers-reduced-motion: no-preference) {
-//   .top-animation {
-//     animation: wipe-enter 1.5s;
-//   }
-//   @keyframes wipe-enter {
-//     0% {
-//       transform: translate(0, -100px);
-//       opacity: 0;
-//     }
-//     100% {
-//       transform: translate(0, 0);
-//       opacity: 1;
-//     }
-//   }
-
-//   .left-animation {
-//     animation: left-enter 1.5s;
-//   }
-//   @keyframes left-enter {
-//     0% {
-//       transform: translate(-200px, 0);
-//       opacity: 0;
-//     }
-//     100% {
-//       transform: translate(0, 0);
-//       opacity: 1;
-//     }
-//   }
-
-//   .right-animation {
-//     animation: right-enter 1.5s;
-//   }
-//   @keyframes right-enter {
-//     0% {
-//       transform: translate(200px, 0);
-//       opacity: 0;
-//     }
-//     100% {
-//       transform: translate(0, 0);
-//       opacity: 1;
-//     }
-//   }
-// }
-/* +++++++++++++++++++++++++++++++++++++ */
