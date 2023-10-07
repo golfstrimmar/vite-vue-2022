@@ -1,3 +1,9 @@
+<template>
+  <div class="german-todo">
+    <Cards :todos="todos" @deliteToDo="deliteToDo"></Cards>
+  </div>
+</template>
+
 <script setup>
 import { ref, onMounted } from 'vue';
 import { db } from './../firebase';
@@ -8,9 +14,6 @@ import {
   deleteDoc, updateDoc
 } from "firebase/firestore";
 import Cards from "../components/Cards.vue";
-
-
-
 const TodoesCollectionRef = collection(db, "todos")
 const ToDoesCollectionQuery = query(TodoesCollectionRef, orderBy('content'));
 const todos = ref([])
@@ -46,12 +49,7 @@ onMounted(() => {
 })
 </script>
 
-<template>
-  <div class="german-todo">
 
-    <Cards :todos="todos" @deliteToDo="deliteToDo"></Cards>
-  </div>
-</template>
 
 <style lang="scss" scoped>
 .q-gutter-md {

@@ -25,7 +25,8 @@ export default {
       </q-avatar>
       <q-space />
       <q-tabs align="left">
-        <q-route-tab to="/" label="Heimat" />
+        <q-route-tab to="/" label="Startseite" />
+        <q-route-tab to="/artikel " label="Artikel" />
         <q-route-tab to="/todo" label="Wörterbuch" />
         <q-route-tab to="/NewWordForm" label="Neue Wortform" v-if="$store.state.user" />
         <q-route-tab to="/Login" label="Login" v-if="!$store.state.user" />
