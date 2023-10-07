@@ -1,14 +1,14 @@
 <template lang="pug">
-.hero 
-  .container
-    p container
-    h2 h2 component hero
-    .text-h2 Headline 4
+
+.container
+  Text
     
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import Text from '@/components/Text.vue';
+
 </script>
 
 <style lang="scss">

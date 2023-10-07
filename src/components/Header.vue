@@ -1,14 +1,4 @@
 <template lang="pug">
-//- header 
-//-   q-toolbar.bg-primary.text-white.q-my-md.shadow-2
-//-     q-btn.q-mr-sm(flat='' round='' dense='' )
-//-       SvgIcon(name='vite' )
-//-       SvgIcon(name='vue' )
-//-       q-space
-
-//-         router-link.text-subtitle1(v-for="link in links" :key="link.name" :to="link.href")
-//-           | {{ link.name }}
-
 header
   .container
     router-link(to="/")
@@ -17,10 +7,6 @@ header
 
     router-link(v-for="link in links" :key="link.name" :to="link.href")
       |{{ link.name }}
-    
-
-
-
 
 </template>
 
@@ -49,7 +35,9 @@ header {
     margin: 0 10px 0 0;
   }
 
-  .router-link-active {}
+  .router-link-active {
+    color: $deep-orange-4;
+  }
 
 }
 </style>
