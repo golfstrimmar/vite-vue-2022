@@ -1,7 +1,9 @@
 <template lang="pug">
 header 
-    SvgIcon(name='vite' )
-    h2 component Header
+  SvgIcon(name='vite' )
+  SvgIcon(name='vue' )
+
+  h2 component Header
 
 </template>
 
