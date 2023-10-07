@@ -16,6 +16,7 @@ import SvgIcon from '@/components/SvgIcon.vue'
 const links = ref([
   { name: "Home", href: "/" },
   { name: "Artikel", href: "/artikel" },
+  { name: "Personal", href: "/personal" },
 ]);
 </script>
 

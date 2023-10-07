@@ -1,7 +1,7 @@
 <template lang="pug">
 
 .container
-  h4 index
+  h4 Home
 </template>
 
 
