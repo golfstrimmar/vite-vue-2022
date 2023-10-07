@@ -1,11 +1,10 @@
 <template lang="pug">
-div.main
-  Hero
+Content
 </template>
 
 
 <script setup>
-import Hero from '@/components/Hero.vue'
+import Content from '@/components/Content.vue'
 </script>
 
 <style lang="scss" ></style>

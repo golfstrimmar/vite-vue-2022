@@ -1,5 +1,6 @@
 <template lang="pug">
-div.main
+
+.container
   h4 index
 </template>
 

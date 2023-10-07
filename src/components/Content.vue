@@ -12,5 +12,8 @@ import { ref } from 'vue'
 </script>
 
 <style lang="scss">
-.hero {}
+.hero {
+  // 
+
+}
 </style>
