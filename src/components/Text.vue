@@ -2,14 +2,7 @@
 ul.text
 	li
 		h3 Nominativ
-		span ein
-		span eine
-		span ein
-		span kein
-		span der
-		span die
-		span das
-		span die
+		span(v-for="item in Nominativ" :key='index') {{ item }}
 	li
 		h3 Dativ
 		span einem
@@ -43,10 +36,24 @@ ul.text
 </template>
 
 <script setup>
-// components: {},
-// props: {},
-// data: () => ({}),
-// methods: {},
+const props = defineProps({
+	Nominativ: {
+		type: Object,
+		required: false
+	},
+	Dativ: {
+		type: Object,
+		required: false
+	},
+	Accusativ: {
+		type: Object,
+		required: false
+	},
+	Genitiv: {
+		type: Object,
+		required: false
+	}
+})	
 </script>
 
 <style lang="scss" scoped>
