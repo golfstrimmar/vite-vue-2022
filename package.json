@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "quasar": "^2.7.7",
     "vue": "^3.2.37",
     "vue-router": "^4.2.4"
   },

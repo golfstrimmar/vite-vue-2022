@@ -7,12 +7,10 @@
 }
 
 body {
-  font-family: "Roboto-Regular", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  // font-family: "Roboto-Regular", sans-serif;
+  // font-size: 16px;
+  // font-weight: 400;
   //   background:rgb(225, 228, 250);
-  background-color: $white-three;
-  color: $greyish-brown;
 }
 
 .container {
@@ -30,12 +28,12 @@ body {
   position: absolute;
 }
 a {
-  color: $greyish-brown;
+  color: brown;
   display: inline-block;
   @include transition;
   cursor: pointer;
   &:hover {
-    color: lighten($emerald, 5%);
+    color: lighten(green, 5%);
   }
 }
 

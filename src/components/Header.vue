@@ -1,10 +1,16 @@
 <template lang="pug">
 header 
-  SvgIcon(name='vite' )
-  SvgIcon(name='vue' )
+  q-toolbar.bg-primary.text-white.q-my-md.shadow-2
+    q-btn.q-mr-sm(flat='' round='' dense='' )
+      SvgIcon(name='vite' )
+      SvgIcon(name='vue' )
+      q-space
 
-  router-link(v-for="link in links" :key="link.name" :to="link.href")
-    | {{ link.name }}
+        router-link.text-subtitle1(v-for="link in links" :key="link.name" :to="link.href")
+          | {{ link.name }}
+
+
+
 
 </template>
 
@@ -13,15 +19,12 @@ import { ref } from 'vue';
 import SvgIcon from '@/components/SvgIcon.vue'
 const links = ref([
   { name: "Home", href: "/" },
-  // { name: "KitTest", href: "/kit-test" },
+  { name: "Hero", href: "/hero" },
 ]);
 </script>
 
 <style lang="scss" scoped>
 header {
-  @include flex-aligne-center;
-  padding: 20px 10px;
-  background: rgb(143, 189, 250);
 
   svg {
     width: 30px;
@@ -29,12 +32,9 @@ header {
     margin: 0 10px 0 0;
   }
 
-  .router-link {
-    color: $greyish-brown;
-  }
 
-  // .router-link-active {
-  //   color: red;
-  // }
+  .router-link-active {
+    color: red;
+  }
 }
 </style>
