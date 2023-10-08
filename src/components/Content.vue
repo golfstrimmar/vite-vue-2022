@@ -1,22 +1,11 @@
 <template lang="pug">
 
 section#artikel.info
-  .info-section
-    h3 Nominativ
+  .info-section(v-for="block in items" :key="index")
+    h3 {{headers[items.indexOf(block)].title}}
     ul.text
-      Text( v-for="item in items[0]" :key="id" :item='item') 
-  .info-section
-    h3 Dativ
-    ul.text
-      Text( v-for="item in items[1]" :key="id" :item='item')  
-  .info-section
-    h3 Akkusativ
-    ul.text
-      Text( v-for="item in items[2]" :key="id" :item='item')  
-  .info-section
-    h3 Genitiv
-    ul.text
-      Text( v-for="item in items[3]" :key="id" :item='item') 
+      Text( v-for="item in block" :key="id" :item='item') 
+
 
 </template>
 
@@ -24,11 +13,16 @@ section#artikel.info
 import { ref } from 'vue';
 import Text from '@/components/Text.vue';
 const props = defineProps({
+  headers: {
+    type: Object,
+    required: false
+  },
   items: {
     type: Object,
     required: false
   }
-})	
+})
+
 </script>
 
 <style lang="scss">
@@ -39,9 +33,9 @@ const props = defineProps({
 // }
 .info {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(7, max-content);
   column-gap: 20px;
-  margin: 40px 0 0 0;
+  margin: 40px 0 20px 0;
 }
 
 .info-section {
@@ -49,6 +43,7 @@ const props = defineProps({
   overflow: hidden;
   background: $blue-13;
   padding: 0 3px 5px;
+  margin: 0 0 20px 0;
 }
 
 h3 {

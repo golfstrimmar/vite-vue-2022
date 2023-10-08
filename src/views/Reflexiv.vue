@@ -2,51 +2,41 @@
 .container
 	.page-title 
 		h2 Reflexivpronomen
-	Content(:items='Reflexiv')
+	Content(:items='Reflexiv' :headers='Headers')
 </template>
 
 
 <script setup>
 import { ref } from 'vue';
-import Content from '@/components/Content.vue'
+import Content from '@/components/Content.vue';
+const Headers = ref([
+	{ title: 'Dativ' },
+	{ title: 'Akkusativ' },
+
+]);
 const Reflexiv = ref([
-	[
-		{ id: 1, text: '' },
-		{ id: 2, text: '' },
-		{ id: 3, text: '' },
-		{ id: 4, text: '' },
-		{ id: 5, text: '' },
-		{ id: 6, text: '' },
-		{ id: 6, text: '' },
-		{ id: 7, text: '' },
-		{ id: 8, text: '' },
-	],
+
 	[
 		{ id: 1, text: 'mir' },
 		{ id: 2, text: 'dir' },
-		{ id: 3, text: 'sich' },
-		{ id: 4, text: 'uns' },
-		{ id: 5, text: 'euch' },
-		{ id: 6, text: 'sich' },
+		{ id: 3, marker: 'M', text: 'sich' },
+		{ id: 4, marker: 'F', text: 'sich' },
+		{ id: 5, marker: 'N', text: 'sich' },
+		{ id: 6, marker: 'P', text: 'uns' },
+		{ id: 7, marker: 'P', text: 'euch' },
+		{ id: 8, marker: 'P', text: 'sich' },
+		{ id: 9, marker: 'P', text: 'sich' },
 	],
 	[
 		{ id: 1, text: 'mich' },
 		{ id: 2, text: 'dich' },
-		{ id: 3, text: 'sich' },
-		{ id: 4, text: 'uns' },
-		{ id: 5, text: 'euch' },
-		{ id: 6, text: 'sich' },
-	],
-	[
-		{ id: 1, text: '' },
-		{ id: 2, text: '' },
-		{ id: 3, text: '' },
-		{ id: 4, text: '' },
-		{ id: 5, text: '' },
-		{ id: 6, text: '' },
-		{ id: 7, text: '' },
-		{ id: 8, text: '' },
-		{ id: 9, text: '' },
+		{ id: 3, marker: 'M', text: 'sich' },
+		{ id: 4, marker: 'F', text: 'sich' },
+		{ id: 5, marker: 'N', text: 'sich' },
+		{ id: 6, marker: 'P', text: 'uns' },
+		{ id: 7, marker: 'P', text: 'euch' },
+		{ id: 8, marker: 'P', text: 'sich' },
+		{ id: 9, marker: 'P', text: 'sich' },
 	]
 ]
 )

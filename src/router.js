@@ -5,6 +5,8 @@ import Personal from "@/views/Personal.vue";
 import Interrogativ from "@/views/Interrogativ.vue";
 import Reflexiv from "@/views/Reflexiv.vue";
 import Possesiv from "@/views/Possesiv.vue";
+import Zeigepronomen from "@/views/Zeigepronomen.vue";
+import Modal from "@/views/Modal.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,6 +17,8 @@ const router = createRouter({
     { path: "/interrogativ", name: "Interrogativ", component: Interrogativ },
     { path: "/reflexiv", name: "Reflexiv", component: Reflexiv },
     { path: "/possesiv", name: "Possesiv", component: Possesiv },
+    { path: "/zeigepron", name: "Zeige", component: Zeigepronomen },
+    { path: "/modal", name: "Modal", component: Modal },
   ],
 });
 

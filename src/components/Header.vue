@@ -20,6 +20,8 @@ const links = ref([
   { name: "Interrogativ", href: "/interrogativ" },
   { name: "Reflexiv", href: "/reflexiv" },
   { name: "Possesiv", href: "/possesiv" },
+  { name: "Zeige", href: "/zeigepron" },
+  { name: "Modal", href: "/modal" },
 ]);
 </script>
 

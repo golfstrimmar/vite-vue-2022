@@ -2,13 +2,20 @@
 .container
 	.page-title 
 		h2 Interrogativpronomen
-	Content(:items='Interrogativ')
+	Content(:items='Interrogativ' :headers='Headers')
 </template>
 
 
 <script setup>
 import { ref } from 'vue';
-import Content from '@/components/Content.vue'
+import Content from '@/components/Content.vue';
+const Headers = ref([
+	{ title: 'Nominativ' },
+	{ title: 'Dativ' },
+	{ title: 'Akkusativ' },
+	{ title: 'Genitiv' },
+
+]);
 const Interrogativ = ref([
 	[
 		{ id: 1, text: 'Wer' },
