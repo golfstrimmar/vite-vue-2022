@@ -17,6 +17,9 @@ const links = ref([
   { name: "Home", href: "/" },
   { name: "Artikel", href: "/artikel" },
   { name: "Personal", href: "/personal" },
+  { name: "Interrogativ", href: "/interrogativ" },
+  { name: "Reflexiv", href: "/reflexiv" },
+  { name: "Possesiv", href: "/possesiv" },
 ]);
 </script>
 
