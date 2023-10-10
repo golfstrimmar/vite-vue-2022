@@ -22,6 +22,8 @@ const links = ref([
   { name: "Possesiv", href: "/possesiv" },
   { name: "Zeige", href: "/zeigepron" },
   { name: "Modal", href: "/modal" },
+  { name: "Passiv", href: "/passiv" },
+  { name: "Konjunktiv-II", href: "/konjunktiv" },
 ]);
 </script>
 
