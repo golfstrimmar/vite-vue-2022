@@ -1,37 +1,46 @@
 <template lang="pug">
 .container
 	.page-title 
-		h2 würden     +      Infinitiv  
-		p In den meisten Fällen wird das Hilfsverb " werden " benutzt, um den Konjunktiv II zu bilden.
-		p " Werden " muss aber verändert werden, damit es den Konjunktiv II anzeigt.
-		p Die Form des Konjunktiv II wird vom Präteritum abgeleitet: werden = " wurden ".
-		p Die Präteritumsform "wurden" erhält einen Umlaut " würden ".
-	Content(:items='würdeformen' :headers='würde')
-	.page-title 
-		h2 Die Bildung des Konjunktivs II mit den Verbformen. 
-		h2 Präteritumform + Umlaut 
-		p Zu den wenigen Verben, die <span>IMMER</span> den Konjunktiv II in der Originalform verwenden, gehören:
-	Content(:items='Verbformen' :headers='Verbformentitle')
-	.page-title 
-		h2 die Modalverben +      Infinitiv  
-		h2 Präteritumform + Umlaut  +      Infinitiv  
-	Content(:items='Modalverben' :headers='Modalverbentitle')
-	.page-title 
-		h2 Konjunktiv II der Vergangenheit. 
-		h2 wären / hätten     +      Partizip II  
-	Content(:items='Vergangenheit' :headers='Vergangenheittitle')
-	.page-title 
-		h2 Konjunktiv II der Vergangenheit mit Modalverben. 
-		h2 hätten + Infinitiv + Modalverb im Infinitiv     
-	Content(:items='VergangenheitModalverben' :headers='VergangenheitModalverbentitle')
-	.page-title 
-		h2 Konjunktiv II der Gegenwart plus Passiv. 
-		h2 würden     +      Partizip II     +     werden  
-	Content(:items='Gegenwart' :headers='Gegenwarttitle')
-	.page-title 
-		h2 Konjunktiv II der Vergangenheit plus Passiv. 
-		h2 wären     +      Partizip II     +     worden    
-	Content(:items='VergangenheitPassiv' :headers='VergangenheitPassivtitle')
+		h2 Konjunktiv II
+	.page-block
+		.page-title--small 
+			h3 würden     +      Infinitiv  
+			p In den meisten Fällen wird das Hilfsverb " werden " benutzt, um den Konjunktiv II zu bilden.
+			p " Werden " muss aber verändert werden, damit es den Konjunktiv II anzeigt.
+			p Die Form des Konjunktiv II wird vom Präteritum abgeleitet: werden = " wurden ".
+			p Die Präteritumsform "wurden" erhält einen Umlaut " würden ".
+			Content(:items='würdeformen' :headers='würde')
+	.page-block
+		.page-title--small 
+			h3 Die Bildung des Konjunktivs II mit den Verbformen. 
+			h3 Präteritumform + Umlaut 
+			p Zu den wenigen Verben, die <span>IMMER</span> den Konjunktiv II in der Originalform verwenden, gehören:
+			Content(:items='Verbformen' :headers='Verbformentitle')
+	.page-block
+		.page-title--small 
+			h3 die Modalverben +      Infinitiv  
+			h3 Präteritumform + Umlaut  +      Infinitiv  
+			Content(:items='Modalverben' :headers='Modalverbentitle')
+	.page-block
+		.page-title--small 
+			h3 Konjunktiv II der Vergangenheit. 
+			h3 wären / hätten     +      Partizip II  
+			Content(:items='Vergangenheit' :headers='Vergangenheittitle')
+	.page-block
+		.page-title--small 
+			h3 Konjunktiv II der Vergangenheit mit Modalverben. 
+			h3 hätten + Infinitiv + Modalverb im Infinitiv     
+			Content(:items='VergangenheitModalverben' :headers='VergangenheitModalverbentitle')
+	.page-block
+		.page-title--small 
+			h3 Konjunktiv II der Gegenwart plus Passiv. 
+			h3 würden     +      Partizip II     +     werden  
+			Content(:items='Gegenwart' :headers='Gegenwarttitle')
+	.page-block
+		.page-title--small 
+			h3 Konjunktiv II der Vergangenheit plus Passiv. 
+			h3 wären     +      Partizip II     +     worden    
+			Content(:items='VergangenheitPassiv' :headers='VergangenheitPassivtitle')
 
 </template>
 

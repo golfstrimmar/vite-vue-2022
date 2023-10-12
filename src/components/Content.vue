@@ -34,8 +34,9 @@ const props = defineProps({
 .info {
   display: grid;
   grid-template-columns: repeat(7, max-content);
-  column-gap: 20px;
-  margin: 40px 0 20px 0;
+  grid-template-columns: repeat(auto-fill, minmax(min(270px, 100%), 1fr));
+  gap: 20px;
+  margin: 20px 0 0px 0;
 }
 
 .info-section {
@@ -43,17 +44,16 @@ const props = defineProps({
   overflow: hidden;
   background: $blue-13;
   padding: 0 3px 5px;
-  margin: 0 0 20px 0;
-}
 
-h3 {
-  font-weight: bold;
-  color: $blue-5;
-  background: $blue-2;
-  width: 100%;
-  border-radius: 5px;
-  text-align: center;
-  padding: 5px;
-  margin: 3px 0;
+  h3 {
+    font-weight: bold;
+    color: $blue-5;
+    background: $blue-2;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 3px 0;
+  }
 }
 </style>

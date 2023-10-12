@@ -26,13 +26,13 @@ li {
 	span {
 		font-size: 18px;
 		color: $light-blue-1;
-		white-space: nowrap;
 
 
 		&.marker {
 			@include flex-center;
 			z-index: 2;
 			position: relative;
+			width: 30px;
 
 			&::after {
 				content: '';

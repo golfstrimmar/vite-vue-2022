@@ -25,7 +25,7 @@ const Personal = ref([
 		{ id: 5, marker: 'N', text: 'es' },
 		{ id: 6, marker: 'P', text: 'wir' },
 		{ id: 6, marker: 'P', text: 'ihr' },
-		{ id: 7, text: 'sie' },
+		{ id: 7, marker: 'P', text: 'sie' },
 		{ id: 8, marker: 'P', text: 'Sie' },
 	],
 	[
@@ -36,7 +36,7 @@ const Personal = ref([
 		{ id: 5, marker: 'N', text: 'ihm' },
 		{ id: 6, marker: 'P', text: 'uns' },
 		{ id: 7, marker: 'P', text: 'euch' },
-		{ id: 8, text: 'ihnen' },
+		{ id: 8, marker: 'P', text: 'ihnen' },
 		{ id: 9, marker: 'P', text: 'Ihnen' },
 	],
 	[
@@ -47,7 +47,7 @@ const Personal = ref([
 		{ id: 5, marker: 'N', text: 'es' },
 		{ id: 6, marker: 'P', text: 'uns' },
 		{ id: 7, marker: 'P', text: 'euch' },
-		{ id: 8, text: 'sie' },
+		{ id: 8, marker: 'P', text: 'sie' },
 		{ id: 9, marker: 'P', text: 'Sie' },
 	],
 	[
@@ -58,7 +58,7 @@ const Personal = ref([
 		{ id: 5, marker: 'N', text: 'seiner' },
 		{ id: 6, marker: 'P', text: 'unser' },
 		{ id: 7, marker: 'P', text: 'eurer' },
-		{ id: 8, text: 'ihrer' },
+		{ id: 8, marker: 'P', text: 'ihrer' },
 		{ id: 9, marker: 'P', text: 'Ihrer' },
 	]
 ]

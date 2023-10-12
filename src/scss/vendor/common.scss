@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: 0 0 40px 0;
 }
 
 body {
@@ -67,13 +68,29 @@ a {
 }
 .page-title {
   margin: 15px 0 0;
-
+  background: $deep-purple-8;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 5px;
   h2 {
     font-family: "MuseoSansCyrl-300", sans-serif;
     font-size: 30px;
     font-weight: 300;
+    color: $deep-orange-4;
+    text-transform: uppercase;
+  }
+}
+.page-title--small {
+  h3 {
+    font-size: 20px;
     color: $blue-9;
   }
+}
+.page-block {
+  background: $deep-purple-1;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 30px 0 0 0;
 }
 /* +++++++++++++++++++++++++++++++++++++ */
 
@@ -151,17 +168,24 @@ a {
   text-transform: uppercase;
 }
 
-@media (min-width: 768px) and (max-width: 1259px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .container {
     margin: 0 20px;
     max-width: calc(100% - 40px);
   }
 }
 
+@media (max-width: 899px) {
+  .page-title {
+    h2 {
+      font-size: clamp(16px, 5vw, 30px);
+    }
+  }
+}
 @media (max-width: 767px) {
   .container {
-    margin: 0 20px;
-    max-width: calc(100% - 40px);
+    margin: 0 10px;
+    max-width: calc(100% - 20px);
   }
   .inner {
     padding: 85px 0 0 0;

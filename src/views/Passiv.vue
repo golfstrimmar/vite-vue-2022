@@ -1,11 +1,15 @@
 <template lang="pug">
 .container
 	.page-title 
-		h2 Vorgangspassivs
-	Content(:items='VorgangsPassiv' :headers='VorgangsHeaders')
-	.page-title 
-		h2 Zustandspassivs
-	Content(:items='ZustandPassiv' :headers='ZustandHeaders')
+		h2 Passiv
+	.page-block
+		.page-title--small 
+			h3 Vorgangspassivs
+		Content(:items='VorgangsPassiv' :headers='VorgangsHeaders')
+	.page-block
+		.page-title--small  
+			h3 Zustandspassivs
+		Content(:items='ZustandPassiv' :headers='ZustandHeaders')
 </template>
 
 

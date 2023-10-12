@@ -4,14 +4,17 @@ header
     router-link(to="/")
       SvgIcon(name='vite' )
       SvgIcon(name='vue' )
-
-    router-link(v-for="link in links" :key="link.name" :to="link.href")
-      |{{ link.name }}
+    transition(mode='easy-in-out' name='fade')
+      .header-links( v-if="burgerActive" )
+        router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
+          |{{ link.name }}
+    ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
+      span
 
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import SvgIcon from '@/components/SvgIcon.vue'
 const links = ref([
   { name: "Home", href: "/" },
@@ -25,6 +28,44 @@ const links = ref([
   { name: "Passiv", href: "/passiv" },
   { name: "Konjunktiv-II", href: "/konjunktiv" },
 ]);
+
+var burgerActive = ref();
+
+onMounted(() => {
+  if (window.innerWidth >= 900) {
+    burgerActive.value = true
+  } else {
+    burgerActive.value = false
+  }
+
+  window.addEventListener("resize", handleWindowSizeChange);
+  handleWindowSizeChange();
+});
+onUnmounted(() => {
+  window.removeEventListener("resize", handleWindowSizeChange);
+});
+
+
+const handleWindowSizeChange = () => {
+
+  if (window.innerWidth >= 900) {
+    burgerActive.value = true
+  } else {
+    burgerActive.value = false
+  }
+};
+const clickBurger = () => {
+  if (window.innerWidth <= 900) {
+
+    burgerActive.value = !burgerActive.value;
+    if (burgerActive.value) {
+      document.querySelector('body').classList.add("lock")
+    } else {
+      document.querySelector('body').classList.remove("lock")
+    }
+
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -47,5 +88,100 @@ header {
     color: $deep-orange-4;
   }
 
+  ._burger {
+    display: none;
+  }
+
+}
+
+.header-links {
+  display: inline-flex;
+  column-gap: 10px;
+  row-gap: 10px;
+  @include transition;
+}
+
+@media (max-width: 900px) {
+  .fade-enter-from {
+    transition: .2s all;
+    transform: translateX(-100vw);
+  }
+
+  // .v-enter-active,
+  .fade-enter-to {
+    transform: translateX(0);
+  }
+
+  .fade-leave-from {
+    transition: .2s all;
+    transform: translateX(0);
+  }
+
+  .fade-leave-to {
+    transform: translateX(-100vw);
+  }
+
+
+  .header-links {
+    display: inline-grid;
+    // grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    gap: 20px 0;
+    width: 100vw;
+
+    max-height: 100vh;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 100px 40px 40px 40px;
+    overflow: auto;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    align-items: top;
+
+  }
+
+  header {
+    a {
+      margin: 0;
+    }
+
+    ._burger {
+      z-index: 10001;
+      width: 20px;
+      height: 16px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0px;
+      display: block;
+
+      span,
+      &::after,
+      &::before {
+        background: $grey-3;
+        width: 20px;
+        height: 2px;
+      }
+
+      &._is-active {
+
+        span,
+        &::after,
+        &::before {
+          background: $grey-3;
+        }
+
+        &:hover span,
+        &:hover::after,
+        &:hover::before {
+          background-color: rgb(138, 138, 138);
+        }
+      }
+    }
+  }
 }
 </style>
