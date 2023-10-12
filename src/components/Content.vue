@@ -56,4 +56,13 @@ const props = defineProps({
     margin: 3px 0;
   }
 }
+
+@media (max-width: 899px) {
+  .info-section {
+    h3 {
+      font-size: clamp(14px, 3vw, 16px);
+    }
+  }
+
+}
 </style>
