@@ -12,4 +12,8 @@
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.plaza__line {
+	margin: 0 0 10px 0;
+}
+</style>

@@ -1,17 +1,17 @@
 <template lang="pug">
-input(type='text' v-model='inputValue' :class="[(inputValue == Antwort) ? '_is-active' : '']" v-if="Antwort !== ''" )
+input(type='text' v-model='inputValue' :class="[(inputValue == Antwort) ? '_is-active' : '']" v-if="Antwort !== undefined" )
 </template>
 <script setup>
 import { ref } from 'vue';
 var inputValue = ref('');
 const props = defineProps({
-
 	Antwort: {
 		type: String,
 		required: false
 	}
+})
 
-})	
+
 </script>
 
 <style lang="scss" scoped>
