@@ -3,28 +3,7 @@
   .page-title 
     h2 der Artikel
   Plaza
-  Button(text="umrühren").mixButton
-  Slot(v-for="item in SlotData.sort((a,b) => Math.random() - 0.5) " :key="index")
-    template(#s1)
-      span {{ item.t0 }}
-      Input(:Antwort = 'item.t1' ) 
-    template(#s2)  
-      span {{ item.t2 }} 
-      Input(:Antwort = 'item.t3' ) 
-    template(#s3)
-      span {{ item.t4 }}
-      Input(:Antwort = 'item.t5' ) 
-    template(#s4) 
-      span {{ item.t6 }}
-      Input(:Antwort = 'item.t7' ) 
-    template(#s5)
-      span  {{ item.t8 }}
-      Input(:Antwort = 'item.t9' ) 
-    template(#s6) 
-      span {{ item.t10 }}
-      Input(:Antwort = 'item.t11' ) 
-      span {{ item.t12 }}
-
+  Slot(:SlotData='SlotData')
 
   .page-block
     .page-title--small 
@@ -59,9 +38,20 @@ import { ref, computed } from 'vue';
 import Content from '@/components/Content.vue';
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
-import Input from '@/components/Input.vue';
-import Button from '@/components/Button.vue';
 
+
+// setup(props) {
+// const SlotDataMod = computed(
+//   () => {
+//     var temp = SlotData.value.sort((a, b) => Math.random() - 0.5);
+//     return temp;
+//   }
+
+// )
+
+
+// return { symbolId }
+// },
 const SlotData = ref([
   {
     t0: '',
@@ -70,221 +60,221 @@ const SlotData = ref([
     t3: 'des',
     t4: 'Wohnzimmers ist groß. ',
   },
-  {
-    t0: 'Wir erzählen  ',
-    t1: 'den',
-    t2: 'Kindern ',
-    t3: 'die',
-    t4: 'Geschichte.',
-  },
-  {
-    t0: 'Aber ',
-    t1: 'der',
-    t2: 'Frühling ist am allerbesten. ',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Tourismus bringt Geld in',
-    t3: 'die',
-    t4: 'Stadt.',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Fahrer hat Probleme, in ',
-    t3: 'den',
-    t4: 'Parkbereich zu gelangen. ',
-  },
-  {
-    t0: 'Ben war',
-    t1: 'der',
-    t2: 'beste investigative Journalist von allen.',
+  // {
+  //   t0: 'Wir erzählen  ',
+  //   t1: 'den',
+  //   t2: 'Kindern ',
+  //   t3: 'die',
+  //   t4: 'Geschichte.',
+  // },
+  // {
+  //   t0: 'Aber ',
+  //   t1: 'der',
+  //   t2: 'Frühling ist am allerbesten. ',
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'Der',
+  //   t2: 'Tourismus bringt Geld in',
+  //   t3: 'die',
+  //   t4: 'Stadt.',
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'Der',
+  //   t2: 'Fahrer hat Probleme, in ',
+  //   t3: 'den',
+  //   t4: 'Parkbereich zu gelangen. ',
+  // },
+  // {
+  //   t0: 'Ben war',
+  //   t1: 'der',
+  //   t2: 'beste investigative Journalist von allen.',
 
-  },
-  {
-    t0: 'Es ist',
-    t1: 'der',
-    t2: 'Bereich meines Lebens, wo ich mich als Teil',
-    t3: 'der',
-    t4: 'Menge fühle. ',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Neuling bleibt mit',
-    t3: 'dem',
-    t4: 'Mädchen draußen.',
+  // },
+  // {
+  //   t0: 'Es ist',
+  //   t1: 'der',
+  //   t2: 'Bereich meines Lebens, wo ich mich als Teil',
+  //   t3: 'der',
+  //   t4: 'Menge fühle. ',
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'Der',
+  //   t2: 'Neuling bleibt mit',
+  //   t3: 'dem',
+  //   t4: 'Mädchen draußen.',
 
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Körper beginnt zu verwesen und füllt sich mit Gas.',
-  },
-  {
-    t0: 'Das ist',
-    t1: 'der',
-    t2: 'Polizist, nach',
-    t3: 'dem',
-    t4: 'wir suchen. ',
-  },
-  {
-    t0: 'Und',
-    t1: 'die',
-    t2: 'Farbe',
-    t3: 'des',
-    t4: 'Teppichs passt zu ',
-    t5: 'den',
-    t6: 'Fasern,',
-    t7: 'die',
-    t8: 'wir fanden.',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Techniker,',
-    t3: 'der',
-    t4: '',
-    t5: 'die',
-    t6: 'Analyse machte, wurde tot aufgefunden.',
-  },
-  {
-    t0: 'Ich habe lediglich',
-    t1: 'den',
-    t2: 'Lichtschalter und',
-    t3: 'die',
-    t4: 'Abdeckung',
-    t5: 'des',
-    t6: 'Luftkanals angefasst.',
-  },
-  {
-    t0: 'Was wäre',
-    t1: 'das',
-    t2: 'Leben ohne',
-    t3: 'die',
-    t4: 'Möglichkeit dumme Entscheidungen zu treffen?',
-  },
-  {
-    t0: '',
-    t1: 'Die',
-    t2: 'Einheit wird aktiviert werden. ',
-  },
-  {
-    t0: 'Er hat Briefe an',
-    t1: 'die',
-    t2: 'Verbeamtungs-Kommission geschrieben. ',
-  },
-  {
-    t0: 'Was meint',
-    t1: 'die',
-    t2: 'Dichterin mit "wir gewöhnen uns"?',
-  },
-  {
-    t0: 'Um',
-    t1: 'die',
-    t2: 'Qualität machen wir uns später Gedanken.',
-  },
-  {
-    t0: 'Ich spiele nicht in',
-    t1: 'der',
-    t2: 'Mannschaft ihres Sohnes. ',
-  },
-  {
-    t0: 'Sie sehen heute noch schlechter aus als bei ',
-    t1: 'der',
-    t2: 'Konferenz.',
-  },
-  {
-    t0: 'Da Vinci hat Gräber geplündert, um',
-    t1: 'die',
-    t2: 'Anatomie zu studieren.',
-  },
-  {
-    t0: 'Ist da Zitrone auf ',
-    t1: 'dem',
-    t2: 'Hähnchen?',
-  },
-  {
-    t0: 'In',
-    t1: 'dem',
-    t2: 'Büchlein steht ',
-    t3: 'der',
-    t4: 'Name ',
-    t5: 'des',
-    t6: 'Kunden,',
-    t7: 'den',
-    t8: 'er eingestellt hat.',
-  },
-  {
-    t0: 'Ich brauche',
-    t1: 'das',
-    t2: 'Apartment.',
-  },
-  {
-    t0: 'Es trägt',
-    t1: 'das',
-    t2: 'Datum',
-    t3: 'des',
-    t4: '5. November.',
-  },
-  {
-    t0: 'Wie war ',
-    t1: 'das',
-    t2: 'Ergebnis?',
-  },
-  {
-    t0: 'auf',
-    t1: 'dem',
-    t2: 'Rücken \ auf',
-    t3: 'dem',
-    t4: 'Bauch liegen ',
-  },
-  {
-    t0: 'aus',
-    t1: 'dem',
-    t2: 'Haus gehen',
-  },
-  {
-    t0: '',
-    t1: 'den',
-    t2: 'Kopf in',
-    t3: 'den',
-    t4: 'Sand stecken ',
-  },
-  {
-    t0: 'mit',
-    t1: 'den',
-    t2: 'Füßen auf',
-    t3: 'den',
-    t4: 'Boden stampfen',
-  },
-  {
-    t0: '',
-    t1: 'der',
-    t2: 'Herr',
-    t3: 'des',
-    t4: 'Hauses',
-  },
-  {
-    t0: 'wegen',
-    t1: 'des',
-    t2: 'schlechten Wetters',
-  },
-  {
-    t0: 'an',
-    t1: 'der',
-    t2: 'Spitze',
-    t3: 'der',
-    t4: 'Kolonne',
-  },
-  {
-    t0: '',
-    t1: 'die',
-    t2: 'Übersättigung',
-    t3: 'des',
-    t4: 'Marktes',
-  }
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'Der',
+  //   t2: 'Körper beginnt zu verwesen und füllt sich mit Gas.',
+  // },
+  // {
+  //   t0: 'Das ist',
+  //   t1: 'der',
+  //   t2: 'Polizist, nach',
+  //   t3: 'dem',
+  //   t4: 'wir suchen. ',
+  // },
+  // {
+  //   t0: 'Und',
+  //   t1: 'die',
+  //   t2: 'Farbe',
+  //   t3: 'des',
+  //   t4: 'Teppichs passt zu ',
+  //   t5: 'den',
+  //   t6: 'Fasern,',
+  //   t7: 'die',
+  //   t8: 'wir fanden.',
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'Der',
+  //   t2: 'Techniker,',
+  //   t3: 'der',
+  //   t4: '',
+  //   t5: 'die',
+  //   t6: 'Analyse machte, wurde tot aufgefunden.',
+  // },
+  // {
+  //   t0: 'Ich habe lediglich',
+  //   t1: 'den',
+  //   t2: 'Lichtschalter und',
+  //   t3: 'die',
+  //   t4: 'Abdeckung',
+  //   t5: 'des',
+  //   t6: 'Luftkanals angefasst.',
+  // },
+  // {
+  //   t0: 'Was wäre',
+  //   t1: 'das',
+  //   t2: 'Leben ohne',
+  //   t3: 'die',
+  //   t4: 'Möglichkeit dumme Entscheidungen zu treffen?',
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'Die',
+  //   t2: 'Einheit wird aktiviert werden. ',
+  // },
+  // {
+  //   t0: 'Er hat Briefe an',
+  //   t1: 'die',
+  //   t2: 'Verbeamtungs-Kommission geschrieben. ',
+  // },
+  // {
+  //   t0: 'Was meint',
+  //   t1: 'die',
+  //   t2: 'Dichterin mit "wir gewöhnen uns"?',
+  // },
+  // {
+  //   t0: 'Um',
+  //   t1: 'die',
+  //   t2: 'Qualität machen wir uns später Gedanken.',
+  // },
+  // {
+  //   t0: 'Ich spiele nicht in',
+  //   t1: 'der',
+  //   t2: 'Mannschaft ihres Sohnes. ',
+  // },
+  // {
+  //   t0: 'Sie sehen heute noch schlechter aus als bei ',
+  //   t1: 'der',
+  //   t2: 'Konferenz.',
+  // },
+  // {
+  //   t0: 'Da Vinci hat Gräber geplündert, um',
+  //   t1: 'die',
+  //   t2: 'Anatomie zu studieren.',
+  // },
+  // {
+  //   t0: 'Ist da Zitrone auf ',
+  //   t1: 'dem',
+  //   t2: 'Hähnchen?',
+  // },
+  // {
+  //   t0: 'In',
+  //   t1: 'dem',
+  //   t2: 'Büchlein steht ',
+  //   t3: 'der',
+  //   t4: 'Name ',
+  //   t5: 'des',
+  //   t6: 'Kunden,',
+  //   t7: 'den',
+  //   t8: 'er eingestellt hat.',
+  // },
+  // {
+  //   t0: 'Ich brauche',
+  //   t1: 'das',
+  //   t2: 'Apartment.',
+  // },
+  // {
+  //   t0: 'Es trägt',
+  //   t1: 'das',
+  //   t2: 'Datum',
+  //   t3: 'des',
+  //   t4: '5. November.',
+  // },
+  // {
+  //   t0: 'Wie war ',
+  //   t1: 'das',
+  //   t2: 'Ergebnis?',
+  // },
+  // {
+  //   t0: 'auf',
+  //   t1: 'dem',
+  //   t2: 'Rücken \ auf',
+  //   t3: 'dem',
+  //   t4: 'Bauch liegen ',
+  // },
+  // {
+  //   t0: 'aus',
+  //   t1: 'dem',
+  //   t2: 'Haus gehen',
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'den',
+  //   t2: 'Kopf in',
+  //   t3: 'den',
+  //   t4: 'Sand stecken ',
+  // },
+  // {
+  //   t0: 'mit',
+  //   t1: 'den',
+  //   t2: 'Füßen auf',
+  //   t3: 'den',
+  //   t4: 'Boden stampfen',
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'der',
+  //   t2: 'Herr',
+  //   t3: 'des',
+  //   t4: 'Hauses',
+  // },
+  // {
+  //   t0: 'wegen',
+  //   t1: 'des',
+  //   t2: 'schlechten Wetters',
+  // },
+  // {
+  //   t0: 'an',
+  //   t1: 'der',
+  //   t2: 'Spitze',
+  //   t3: 'der',
+  //   t4: 'Kolonne',
+  // },
+  // {
+  //   t0: '',
+  //   t1: 'die',
+  //   t2: 'Übersättigung',
+  //   t3: 'des',
+  //   t4: 'Marktes',
+  // }
   // {
   //   t0: '',
   //   t1: '',
@@ -509,7 +499,7 @@ const UnbestimmteNegativ = ref([
 </script>
 
 <style lang="scss" >
-.mixButton {
+button.mixButton {
   margin: 0 0 20px 0;
   padding: 5px 10px;
   text-transform: uppercase;

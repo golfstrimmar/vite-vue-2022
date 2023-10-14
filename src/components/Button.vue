@@ -1,5 +1,5 @@
 <template lang="pug">
-button(type="button" @click='Button($event)').btn.btn-success.but-wave {{ text }}
+button(type="button" @click="$emit('someEvent') , Button($event)").btn.but-wave {{ text }}
 </template>
 
 <script setup>
@@ -10,7 +10,6 @@ const props = defineProps({
   }
 
 })
-
 
 const Button = (event) => {
   let target = event.target.closest(".but-wave");
@@ -30,4 +29,22 @@ const Button = (event) => {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+button {
+  border: 1px solid transparent;
+  outline: none;
+  display: inline-block;
+  color: $grey-11;
+  border-radius: 3px;
+  background-color: $blue-13;
+  @include flex-center;
+  @include transition;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 1);
+    background-color: $blue-4;
+  }
+}
+</style>
