@@ -3,6 +3,7 @@
   .page-title 
     h2 der Artikel
   Plaza
+  Button(text="umrühren").mixButton
   Slot(v-for="item in SlotData.sort((a,b) => Math.random() - 0.5) " :key="index")
     template(#s1)
       span {{ item.t0 }}
@@ -54,12 +55,12 @@
 
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import Content from '@/components/Content.vue';
 import Plaza from '@/components/Plaza.vue';
-import PlazaArtikel from '@/components/PlazaArtikel.vue';
 import Slot from '@/components/Slot.vue'
 import Input from '@/components/Input.vue';
+import Button from '@/components/Button.vue';
 
 const SlotData = ref([
   {
@@ -307,7 +308,6 @@ const SlotData = ref([
 ]
 
 )
-
 const Headersdas = ref([
   { title: '-chen' },
   { title: '- lein' },
@@ -420,7 +420,6 @@ const der = ref([
     { id: 2, text: 'der Diamant' },
   ],
 ])
-
 const Headers = ref([
   { title: 'Nominativ' },
   { title: 'Dativ' },
@@ -504,6 +503,15 @@ const UnbestimmteNegativ = ref([
   ],
 ]
 )
+
+
+
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss" >
+.mixButton {
+  margin: 0 0 20px 0;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+</style>
