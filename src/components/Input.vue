@@ -1,16 +1,15 @@
 <template lang="pug">
-input(type='text' v-model='lue' :class="[(lue == Antwort) ? '_is-active' : '']" v-if="Antwort !== undefined" )
+input(type='text' v-model='inputValue' :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch']" v-if="Antwort !== undefined" 
+)
 </template>
 <script setup>
-import { ref, computed, watch } from 'vue';
-import { toRefs } from "vue";
-
+import { ref, defineEmits, computed, watch, defineProps } from 'vue';
+const inputValue = ref('')
 
 
 const props = defineProps({
-	inputValue: {
-		type: String,
-		default: '',
+	reset: {
+		type: Boolean,
 		required: false
 	},
 	Antwort: {
@@ -19,19 +18,18 @@ const props = defineProps({
 	}
 })
 
-var lue = ref('');
+
+// const emit = defineEmits(['eventChange'])
+// const handleChange = ($event) => {
+// 	emit('eventChange', $event.target.value)
+// }
 
 
-watch(() => lue.value, (first, second) => {
-	console.log(
-		first,
-		second
-	);
-	if (first !== props.inputValue) {
-		lue.value == props.inputValue
-	}
-
+watch(() => props.reset, (newvalue, oldvalue) => {
+	inputValue.value = ''
 });
+
+
 
 </script>
 
@@ -53,6 +51,12 @@ input {
 		background: $green-2 !important;
 		box-shadow: inset 0 0 5px rgba(252, 253, 253, 0.884) !important;
 		color: $green-8;
+	}
+
+	&._is-falsch {
+		background: $deep-orange-13 !important;
+		box-shadow: inset 0 0 5px rgba(252, 253, 253, 0.884) !important;
+		color: $grey-14;
 	}
 }
 </style>

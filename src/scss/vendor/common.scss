@@ -67,15 +67,16 @@ a {
   display: none;
 }
 .page-title {
+  box-shadow: 0 0 8px $blue-grey-4;
   margin: 15px 0 0;
-  background: $deep-purple-8;
+  background: linear-gradient($deep-purple-2, $deep-purple-8, $deep-purple-2);
   text-align: center;
   padding: 5px 0;
   border-radius: 5px;
   h2 {
-    font-family: "MuseoSansCyrl-300", sans-serif;
+    font-family: "HouschkaPro-Bold", sans-serif;
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 800;
     color: $deep-orange-4;
     text-transform: uppercase;
   }
@@ -88,6 +89,7 @@ a {
 }
 .page-block {
   background: $deep-purple-1;
+  box-shadow: 0 0 8px $blue-grey-4;
   padding: 5px;
   border-radius: 5px;
   margin: 30px 0 0 0;
