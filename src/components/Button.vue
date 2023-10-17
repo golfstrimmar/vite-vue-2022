@@ -1,9 +1,13 @@
 <template lang="pug">
-button(type="button" @click="$emit('someEvent') , Button($event)").btn.but-wave {{ text }}
+button(:type = type @click="$emit('someEvent',text), Button($event)").btn.but-wave {{ text }}
 </template>
 
 <script setup>
 const props = defineProps({
+  type: {
+    type: String,
+    required: false
+  },
   text: {
     type: String,
     required: false

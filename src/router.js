@@ -9,6 +9,8 @@ import Zeigepronomen from "@/views/Zeigepronomen.vue";
 import Modal from "@/views/Modal.vue";
 import Passiv from "@/views/Passiv.vue";
 import Konjunktiv from "@/views/Konjunktiv-II.vue";
+import SignUp from "@/views/SignUp.vue";
+import SignIn from "@/views/SignIn.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,6 +25,8 @@ const router = createRouter({
     { path: "/modal", name: "Modal", component: Modal },
     { path: "/passiv", name: "Passiv", component: Passiv },
     { path: "/konjunktiv", name: "Konjunktiv", component: Konjunktiv },
+    { path: "/signup", name: "SignUp", component: SignUp },
+    { path: "/signin", name: "SignIn", component: SignIn },
   ],
 });
 

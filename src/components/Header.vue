@@ -27,6 +27,8 @@ const links = ref([
   { name: "Modal", href: "/modal" },
   { name: "Passiv", href: "/passiv" },
   { name: "Konjunktiv-II", href: "/konjunktiv" },
+  { name: "SignUp", href: "/signup" },
+  { name: "SignIn", href: "/signin" },
 ]);
 
 var burgerActive = ref();

@@ -1,6 +1,6 @@
 <template lang="pug">
 .training
-	Button(text="beispiele mischen" @someEvent="someEvent").mixButton
+	Button(type='text' text="beispiele mischen" @someEvent="someEvent").mixButton
 	.plaza__line(v-for="item in TempData " :key="index")
 		span {{ item.t0 }}
 		Input(:Antwort = 'item.t1'  :reset='reset' ) 
