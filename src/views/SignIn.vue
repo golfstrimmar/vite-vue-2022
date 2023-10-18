@@ -10,9 +10,10 @@
 			input#passwordValue(type='password' name='password2' v-model="passwordValue" placeholder=' Denzel Washington')
 			label.text-field__label(for='password2') geben Sie Ihr Passwort ein
 
-		Button(type='submit' text="Log in" ).mixButton
-	router-link(to="/signup" )
-		p Sind Sie nicht angemeldet? 
+		Button(type='submit' text="sign in" ).mixButton
+
+	p Sind Sie nicht angemeldet? 
+		router-link(to="/signup" ) sign up
 </template>
 
 <script setup>

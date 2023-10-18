@@ -1,5 +1,5 @@
 <template lang="pug">
-button(:type = type @click="$emit('someEvent',text), Button($event)").btn.but-wave {{ text }}
+button(:type = type @click="$emit('eventSubmit'), Button($event)").btn.but-wave {{ text }}
 </template>
 
 <script setup>
