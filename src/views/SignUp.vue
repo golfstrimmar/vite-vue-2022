@@ -22,6 +22,11 @@
 <script setup>
 import { ref } from 'vue'
 import Button from '@/components/Button.vue';
+import { useAuthStore } from '../store/auth'
+
+
+const useAuth = useAuthStore()
+
 // import InputField from '@/components/InputField.vue';
 
 var inputemailUp = ref('')
@@ -33,13 +38,10 @@ var inputpasswordUp = ref('')
 // 	inputpasswordUp.value = data
 // }
 
-const submit = (e) => {
-
-}
 
 
-const eventSubmit = (e) => {
-	console.log(inputemailUp.value, inputpasswordUp.value);
+const eventSubmit = async (e) => {
+	await useAuth.signup({ email: inputemailUp.value, password: inputpasswordUp.value })
 }
 
 
