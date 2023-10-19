@@ -11,6 +11,7 @@ import Passiv from "@/views/Passiv.vue";
 import Konjunktiv from "@/views/Konjunktiv-II.vue";
 import SignUp from "@/views/SignUp.vue";
 import SignIn from "@/views/SignIn.vue";
+import Tasks from "@/components/Tasks.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -27,6 +28,7 @@ const router = createRouter({
     { path: "/konjunktiv", name: "Konjunktiv", component: Konjunktiv },
     { path: "/signup", name: "SignUp", component: SignUp },
     { path: "/signin", name: "SignIn", component: SignIn },
+    { path: "/tasks", name: "Tasks", component: Tasks },
   ],
 });
 

@@ -8,6 +8,14 @@ header
       .header-links( v-if="burgerActive" )
         router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
           |{{ link.name }}
+        router-link(to="/signup" @click='clickBurger' v-if="!isLoggedIn") SignUp
+        router-link(to="/signin" @click='clickBurger' v-if="!isLoggedIn") SignIn
+        button.btn.btn-primary(type='text' @click='handleSignOut' v-if="isLoggedIn") Sign out
+        p(v-if="isLoggedIn" ) 
+          ul
+            li(v-for="user in taskStore.users" :key="id")
+              h4 {{ user.id }}
+              span {{ user.name }}
     ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
       span
 
@@ -16,6 +24,13 @@ header
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import SvgIcon from '@/components/SvgIcon.vue'
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { useRouter } from 'vue-router'
+import { useTaskStore } from "../store/taskStore"
+const taskStore = useTaskStore();
+const router = useRouter();
+
+
 const links = ref([
   { name: "Home", href: "/" },
   { name: "Artikel", href: "/artikel" },
@@ -27,11 +42,16 @@ const links = ref([
   { name: "Modal", href: "/modal" },
   { name: "Passiv", href: "/passiv" },
   { name: "Konjunktiv-II", href: "/konjunktiv" },
-  { name: "SignUp", href: "/signup" },
-  { name: "SignIn", href: "/signin" },
+  { name: "Tasks", href: "/tasks" },
+  // { name: "SignIn", href: "/signin" },
 ]);
 
 var burgerActive = ref();
+let auth;
+var userEmail = ref('');
+const isLoggedIn = ref(false)
+
+
 
 onMounted(() => {
   if (window.innerWidth >= 900) {
@@ -42,9 +62,33 @@ onMounted(() => {
 
   window.addEventListener("resize", handleWindowSizeChange);
   handleWindowSizeChange();
+
+  auth = getAuth()
+
+
+  onAuthStateChanged(auth, (user) => {
+
+    if (user) {
+      isLoggedIn.value = true
+    } else {
+      isLoggedIn.value = false
+    }
+
+  })
 });
+
+
+
+
+
+
+
+
+
 onUnmounted(() => {
   window.removeEventListener("resize", handleWindowSizeChange);
+
+
 });
 
 
@@ -68,6 +112,16 @@ const clickBurger = () => {
 
   }
 }
+
+const handleSignOut = () => {
+  signOut(auth).then(() => {
+    router.push('/')
+  })
+}
+
+
+
+
 </script>
 
 <style lang="scss" scoped>

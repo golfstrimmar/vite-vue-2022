@@ -40,42 +40,36 @@
   }
 }
 
-
 .input-field {
-	margin: 20px 0 0 0;
+  background: $deep-purple-1;
+  margin: 20px 0 0 0;
 }
-
-
 
 .input-field input[type="email"],
 .input-field input[type="password"] {
-	margin: 0 0 0 0;
-	background: $deep-purple-1;
-	box-shadow: 0 0 8px $blue-grey-4;
-	padding: 5px 0 5px 10px;
+  margin: 0 0 0 0;
+  box-shadow: 0 0 8px $blue-grey-4;
+  padding: 5px 0 5px 10px;
 
-	&+label {
-		font-size: 14px;
-		z-index: 20;
-		left: 10px;
-		cursor: pointer;
+  & + label {
+    font-size: 14px;
+    left: 10px;
+    cursor: pointer;
 
-		&:hover {
-			color: $blue-grey-4;
-		}
-	}
+    &:hover {
+      color: $blue-grey-4;
+    }
+  }
 
-	&:hover {
-		&+label {
-			color: $blue-grey-4;
-		}
-	}
+  &:hover {
+    & + label {
+      color: $blue-grey-4;
+    }
+  }
 
-	&:focus+label,
-	&:not(:placeholder-shown)+label {
-		transform: translateY(-220%);
-		color: $blue-grey-4;
-	}
-
+  &:focus + label,
+  &:not(:placeholder-shown) + label {
+    transform: translateY(-220%);
+    color: $blue-grey-4;
+  }
 }
-
