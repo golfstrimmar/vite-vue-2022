@@ -78,13 +78,6 @@ onMounted(() => {
 });
 
 
-
-
-
-
-
-
-
 onUnmounted(() => {
   window.removeEventListener("resize", handleWindowSizeChange);
 
