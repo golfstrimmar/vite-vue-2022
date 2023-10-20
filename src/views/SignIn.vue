@@ -10,7 +10,7 @@
 		.input-field
 			input#inputpasswordValue(type='password' name='password1' v-model="password" placeholder=' Denzel Washington')
 			label.text-field__label(for='password1') geben Sie Ihr Passwort ein
-		p._errMsg {{ errMsg }}
+		p._errMsg(v-if="errMsg !== ''" ) {{ errMsg }}
 		//- InputField(id="inputpasswordUp"  type='password' name='passwordUp'   :model='inputpasswordUp' text='geben Sie Ihr Passwort ein'  )
 		//- button(type='submit' text='sign up with Google' @click.prevent='registerGoogle' ).mixButton  sign up with Google
 
@@ -44,7 +44,7 @@ const register = () => {
 	const auth = getAuth();
 	signInWithEmailAndPassword(getAuth(), email.value, password.value)
 		.then((data) => {
-			errMsg.value = 'Successfully login!';
+			errMsg.value = 'Erfolgreich eingeloggt!';
 
 			userEmail.value = data.user.email
 			taskStore.newUser(userEmail.value)
@@ -58,17 +58,17 @@ const register = () => {
 
 			switch (error.code) {
 				case 'auth/invalid-email':
-					errMsg.value = 'invalid email';
+					errMsg.value = 'Ungültige E-Mail-Adresse';
 					break;
 				case 'auth/user-not-found':
-					errMsg.value = 'No account with that e-mail was faund';
+					errMsg.value = 'Kein Konto mit dieser E-Mail war fehlerhaft';
 					break;
 				case 'auth/wrong-password':
-					errMsg.value = 'Incorect password';
+					errMsg.value = 'Falsches Passwort';
 					break;
 
 				default:
-					errMsg.value = 'E-mail or password was inncorrect';
+					errMsg.value = 'E-Mail oder Passwort war nicht korrekt';
 					break;
 			}
 
@@ -94,8 +94,6 @@ form {
 
 p {
 	color: $blue-4;
-
-
 
 	a {
 		color: $blue-8;

@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 
 export const useTaskStore = defineStore("taskStore", {
   state: () => ({
-    name: "John",
+    name: "",
   }),
   getters: {
     newUser: (state) => {

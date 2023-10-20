@@ -10,7 +10,7 @@
 		.input-field
 			input#inputpasswordValue(type='password' name='password1' v-model="password" placeholder=' Denzel Washington')
 			label.text-field__label(for='password1') geben Sie Ihr Passwort ein
-		p._errMsg {{ errMsg }}
+		p._errMsg(v-if="errMsg !== ''") {{ errMsg }}
 		//- InputField(id="inputpasswordUp"  type='password' name='passwordUp'   :model='inputpasswordUp' text='geben Sie Ihr Passwort ein'  )
 		//- button(type='submit' text='sign up with Google' @click.prevent='registerGoogle' ).mixButton  sign up with Google
 		Button(type='submit' text='sign up' @someEvent="register"  ) 
@@ -41,7 +41,7 @@ const register = () => {
 	const auth = getAuth();
 	createUserWithEmailAndPassword(getAuth(), email.value, password.value)
 		.then((data) => {
-			errMsg.value = 'Successfully registered!';
+			errMsg.value = 'Erfolgreich registriert!';
 
 			userEmail.value = data.user.email
 			taskStore.newUser(userEmail.value)
@@ -57,17 +57,17 @@ const register = () => {
 			console.log(error.message);
 			switch (error.code) {
 				case 'auth/invalid-email':
-					errMsg.value = 'invalid email';
+					errMsg.value = 'Ungültige E-Mail-Adresse';
 					break;
 
 				case 'auth/weak-password':
-					errMsg.value = 'Password should be at least 6 characters';
+					errMsg.value = 'Passwort sollte mindestens 6 Zeichen lang sein';
 					break;
 				case 'auth/email-already-in-use':
-					errMsg.value = 'Email already in use';
+					errMsg.value = 'E-Mail bereits verwendet';
 					break;
 				default:
-					errMsg.value = 'E-mail or password was inncorrect';
+					errMsg.value = 'E-Mail oder Passwort war nicht korrekt';
 					break;
 			}
 		});
