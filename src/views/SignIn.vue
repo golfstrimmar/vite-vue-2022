@@ -10,7 +10,8 @@
 		.input-field
 			input#inputpasswordValue(type='password' name='password1' v-model="password" placeholder=' Denzel Washington')
 			label.text-field__label(for='password1') geben Sie Ihr Passwort ein
-		p._errMsg(v-if="errMsg !== ''" ) {{ errMsg }}
+		//- p._errMsg(v-if="errMsg !== ''" ) {{ errMsg }}
+		ErrMes( :errMsg= 'errMsg' :success='successLogin')
 		//- InputField(id="inputpasswordUp"  type='password' name='passwordUp'   :model='inputpasswordUp' text='geben Sie Ihr Passwort ein'  )
 		//- button(type='submit' text='sign up with Google' @click.prevent='registerGoogle' ).mixButton  sign up with Google
 
@@ -30,14 +31,13 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'vue-router'
 import { useTaskStore } from "../store/taskStore"
 const taskStore = useTaskStore();
-// import InputField from '@/components/InputField.vue';
-
+import ErrMes from '@/components/ErrMes.vue';
 var email = ref('')
 var password = ref('')
 var errMsg = ref('')
 const router = useRouter()
 var userEmail = ref('')
-
+var successLogin = ref(false)
 
 
 const register = () => {
@@ -48,7 +48,7 @@ const register = () => {
 
 			userEmail.value = data.user.email
 			taskStore.newUser(userEmail.value)
-
+			successLogin.value = true
 
 			setTimeout(() => {
 				router.push('/')

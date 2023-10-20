@@ -10,7 +10,8 @@
 		.input-field
 			input#inputpasswordValue(type='password' name='password1' v-model="password" placeholder=' Denzel Washington')
 			label.text-field__label(for='password1') geben Sie Ihr Passwort ein
-		p._errMsg(v-if="errMsg !== ''") {{ errMsg }}
+		//- p._errMsg(v-if="errMsg !== ''") {{ errMsg }}
+		ErrMes( :errMsg= 'errMsg' :success='successSignUp')
 		//- InputField(id="inputpasswordUp"  type='password' name='passwordUp'   :model='inputpasswordUp' text='geben Sie Ihr Passwort ein'  )
 		//- button(type='submit' text='sign up with Google' @click.prevent='registerGoogle' ).mixButton  sign up with Google
 		Button(type='submit' text='sign up' @someEvent="register"  ) 
@@ -28,21 +29,20 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'vue-router'
 import { useTaskStore } from "../store/taskStore"
 const taskStore = useTaskStore();
-// import InputField from '@/components/InputField.vue';
-
+import ErrMes from '@/components/ErrMes.vue';
 var email = ref('')
 var password = ref('')
 const router = useRouter()
 var errMsg = ref('')
 var userEmail = ref('')
-
+var successSignUp = ref(false)
 
 const register = () => {
 	const auth = getAuth();
 	createUserWithEmailAndPassword(getAuth(), email.value, password.value)
 		.then((data) => {
 			errMsg.value = 'Erfolgreich registriert!';
-
+			successSignUp.value = true
 			userEmail.value = data.user.email
 			taskStore.newUser(userEmail.value)
 			setTimeout(() => {
@@ -52,14 +52,10 @@ const register = () => {
 
 		})
 		.catch((error) => {
-
-			// alert(error.message)
-			console.log(error.message);
 			switch (error.code) {
 				case 'auth/invalid-email':
 					errMsg.value = 'Ungültige E-Mail-Adresse';
 					break;
-
 				case 'auth/weak-password':
 					errMsg.value = 'Passwort sollte mindestens 6 Zeichen lang sein';
 					break;

@@ -11,7 +11,6 @@
 import { useTaskStore } from "../store/taskStore"
 const taskStore = useTaskStore();
 
-
 </script>
 
 <style lang="scss" scoped>
