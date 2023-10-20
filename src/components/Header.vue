@@ -8,11 +8,11 @@ header.header
           SvgIcon(name='vue' )
       transition(mode='easy-in-out' name='fade')
         .header-links( v-if="Lg || burgerActive" )
-          router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
+          router-link(v-for="link in links" :key="link.name" :to="link.href" )
             |{{ link.name }}
           .auth-items
-            router-link(to="/signup" @click='clickBurger' v-if="!isLoggedIn") SignUp
-            router-link(to="/signin" @click='clickBurger' v-if="!isLoggedIn") SignIn
+            router-link(to="/signup"  v-if="!isLoggedIn") SignUp
+            router-link(to="/signin"  v-if="!isLoggedIn") SignIn
             Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn") 
             ._user(v-if="isLoggedIn" )
               span Ihre E-Mail-Adresse
@@ -63,13 +63,11 @@ const isLoggedIn = ref(false)
 onMounted(() => {
   if (window.innerWidth >= 1200) {
     Lg.value = true
+    burgerActive.value = false
   } else {
     Lg.value = false
   }
-
-
   window.addEventListener("resize", handleWindowSizeChange);
-  // handleWindowSizeChange();
   auth = getAuth()
   onAuthStateChanged(auth, (user) => {
     if (user) {
