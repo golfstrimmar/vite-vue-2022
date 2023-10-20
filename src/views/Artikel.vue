@@ -796,10 +796,4 @@ const UnbestimmteNegativ = ref([
 
 </script>
 
-<style lang="scss" >
-button.mixButton {
-  margin: 0 0 20px 0;
-  padding: 5px 10px;
-  text-transform: uppercase;
-}
-</style>
+<style lang="scss" ></style>

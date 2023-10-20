@@ -1,5 +1,5 @@
 <template lang="pug">
-button(:type = type @click="$emit('eventSubmit'), Button($event)").btn.but-wave {{ text }}
+button(:type = type @click.prevent="$emit('someEvent'), Button($event)").btn.but-wave.mixButton {{ text }}
 </template>
 
 <script setup>
@@ -44,6 +44,8 @@ button {
   @include flex-center;
   @include transition;
   cursor: pointer;
+  padding: 5px 10px;
+  text-transform: uppercase;
 
   &:hover {
     color: white;

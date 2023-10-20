@@ -10,12 +10,10 @@ header
           |{{ link.name }}
         router-link(to="/signup" @click='clickBurger' v-if="!isLoggedIn") SignUp
         router-link(to="/signin" @click='clickBurger' v-if="!isLoggedIn") SignIn
-        button.btn.btn-primary(type='text' @click='handleSignOut' v-if="isLoggedIn") Sign out
-        p(v-if="isLoggedIn" ) 
-          ul
-            li(v-for="user in taskStore.users" :key="id")
-              h4 {{ user.id }}
-              span {{ user.name }}
+        Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn") 
+        ._user(v-if="isLoggedIn" )
+          span Ihre E-Mail-Adresse
+          p {{ taskStore.name }}
     ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
       span
 
@@ -25,10 +23,15 @@ header
 import { ref, onMounted, onUnmounted } from 'vue';
 import SvgIcon from '@/components/SvgIcon.vue'
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import Button from '@/components/Button.vue';
 import { useRouter } from 'vue-router'
+const router = useRouter();
+
+
 import { useTaskStore } from "../store/taskStore"
 const taskStore = useTaskStore();
-const router = useRouter();
+
+
 
 
 const links = ref([
@@ -143,8 +146,21 @@ header {
 
 }
 
+._user {
+  span {
+    font-size: 14px;
+    color: $indigo-1;
+  }
+
+  p {
+    color: $indigo-1;
+    text-shadow: 0 0 5px $light-blue-1;
+  }
+}
+
 .header-links {
   display: inline-flex;
+  align-items: center;
   column-gap: 10px;
   row-gap: 10px;
   @include transition;

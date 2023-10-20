@@ -3,11 +3,11 @@ import { defineStore } from "pinia";
 
 export const useTaskStore = defineStore("taskStore", {
   state: () => ({
-    users: [{ id: 1, name: "John" }],
+    name: "John",
   }),
   getters: {
-    getUserById: (state) => {
-      return (userId) => state.users.find((user) => user.id === userId);
+    newUser: (state) => {
+      return (userEmail) => (state.name = userEmail);
     },
   },
 });
