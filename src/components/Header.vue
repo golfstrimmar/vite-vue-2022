@@ -1,21 +1,24 @@
 <template lang="pug">
-header
+header.header
   .container
-    router-link(to="/")
-      SvgIcon(name='vite' )
-      SvgIcon(name='vue' )
-    transition(mode='easy-in-out' name='fade')
-      .header-links( v-if="burgerActive" )
-        router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
-          |{{ link.name }}
-        router-link(to="/signup" @click='clickBurger' v-if="!isLoggedIn") SignUp
-        router-link(to="/signin" @click='clickBurger' v-if="!isLoggedIn") SignIn
-        Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn") 
-        ._user(v-if="isLoggedIn" )
-          span Ihre E-Mail-Adresse
-          p {{ taskStore.name }}
-    ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
-      span
+    .header__body
+      .logo 
+        router-link(to="/")
+          SvgIcon(name='vite' )
+          SvgIcon(name='vue' )
+      transition(mode='easy-in-out' name='fade')
+        .header-links( v-if="Lg || burgerActive" )
+          router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
+            |{{ link.name }}
+          .auth-items
+            router-link(to="/signup" @click='clickBurger' v-if="!isLoggedIn") SignUp
+            router-link(to="/signin" @click='clickBurger' v-if="!isLoggedIn") SignIn
+            Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn") 
+            ._user(v-if="isLoggedIn" )
+              span Ihre E-Mail-Adresse
+              p {{ taskStore.name }}
+      ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
+        span
 
 </template>
 
@@ -49,7 +52,8 @@ const links = ref([
   // { name: "SignIn", href: "/signin" },
 ]);
 
-var burgerActive = ref();
+var burgerActive = ref(false);
+var Lg = ref(false);
 let auth;
 var userEmail = ref('');
 const isLoggedIn = ref(false)
@@ -57,20 +61,17 @@ const isLoggedIn = ref(false)
 
 
 onMounted(() => {
-  if (window.innerWidth >= 900) {
-    burgerActive.value = true
+  if (window.innerWidth >= 1200) {
+    Lg.value = true
   } else {
-    burgerActive.value = false
+    Lg.value = false
   }
 
+
   window.addEventListener("resize", handleWindowSizeChange);
-  handleWindowSizeChange();
-
+  // handleWindowSizeChange();
   auth = getAuth()
-
-
   onAuthStateChanged(auth, (user) => {
-
     if (user) {
       isLoggedIn.value = true
     } else {
@@ -80,43 +81,33 @@ onMounted(() => {
   })
 });
 
+const handleWindowSizeChange = () => {
+  if (window.innerWidth >= 1200) {
+    Lg.value = true
+    burgerActive.value = false
+  } else {
+    Lg.value = false
+  }
+};
+
+const clickBurger = () => {
+  burgerActive.value = !burgerActive.value;
+  if (burgerActive.value) {
+    document.querySelector('body').classList.add("lock")
+  } else {
+    document.querySelector('body').classList.remove("lock")
+  }
+}
 
 onUnmounted(() => {
   window.removeEventListener("resize", handleWindowSizeChange);
-
-
 });
-
-
-const handleWindowSizeChange = () => {
-
-  if (window.innerWidth >= 900) {
-    burgerActive.value = true
-  } else {
-    burgerActive.value = false
-  }
-};
-const clickBurger = () => {
-  if (window.innerWidth <= 900) {
-
-    burgerActive.value = !burgerActive.value;
-    if (burgerActive.value) {
-      document.querySelector('body').classList.add("lock")
-    } else {
-      document.querySelector('body').classList.remove("lock")
-    }
-
-  }
-}
 
 const handleSignOut = () => {
   signOut(auth).then(() => {
     router.push('/')
   })
 }
-
-
-
 
 </script>
 
@@ -131,19 +122,42 @@ header {
     margin: 0 10px 0 0;
   }
 
-
-  a {
-    margin: 0 10px 0 0;
+  ._burger {
+    display: none;
   }
+}
+
+.header__body {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+
+.header-links {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
 
   .router-link-active {
     color: $deep-orange-4;
   }
+}
 
-  ._burger {
-    display: none;
+.auth-items {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  @include transition;
+
+  a {
+    color: $indigo-3;
+
+    &:hover {
+      color: $blue-1;
+    }
   }
-
 }
 
 ._user {
@@ -158,15 +172,9 @@ header {
   }
 }
 
-.header-links {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 10px;
-  row-gap: 10px;
-  @include transition;
-}
 
-@media (max-width: 900px) {
+
+@media (max-width: 1200px) {
   .fade-enter-from {
     transition: .2s all;
     transform: translateX(-100vw);
@@ -188,12 +196,10 @@ header {
 
 
   .header-links {
-    display: inline-grid;
-    // grid-auto-flow: row;
+    grid-auto-flow: row;
     grid-template-columns: 1fr;
     gap: 20px 0;
     width: 100vw;
-
     max-height: 100vh;
     min-height: 100vh;
     position: fixed;
@@ -245,6 +251,25 @@ header {
         &:hover::before {
           background-color: rgb(138, 138, 138);
         }
+      }
+    }
+  }
+
+  .auth-items {
+    justify-self: end;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: end;
+    column-gap: 10px;
+    row-gap: 10px;
+    @include transition;
+    margin: 40px 0 0 0;
+
+    a {
+      color: $indigo-3;
+
+      &:hover {
+        color: $blue-1;
       }
     }
   }
