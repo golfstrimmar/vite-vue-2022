@@ -7,7 +7,9 @@ header.header
           SvgIcon(name='flag-for-germany-svgrepo-com' )
           SvgIcon(name='vite' )
           SvgIcon(name='vue' )
-          SvgIcon(name='quasar-logo' )
+          //- SvgIcon(name='quasar-logo' )
+          SvgIcon(name='pug' )
+          SvgIcon(name='sass' )
       transition(mode='easy-in-out' name='f'  )
         .header-links(v-if="Lg || burgerActive" )
           router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
@@ -163,17 +165,33 @@ const handleSignOut = () => {
 .header__body {
   display: grid;
   grid-template-columns: max-content 1fr;
-  column-gap: 40px;
+  column-gap: 20px;
   align-items: center;
 }
 
 .header-links {
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 10px));
   align-items: center;
+  column-gap: 20px;
+
+  a {
+    white-space: nowrap;
+    line-height: 1.8;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid $blue-1;
+    }
+  }
 
   .router-link-active {
     color: $deep-orange-4;
+    border-bottom: 1px solid $deep-orange-4;
+
+    &:hover {
+      border-bottom: 1px solid $deep-orange-4;
+    }
   }
 }
 
@@ -241,7 +259,6 @@ const handleSignOut = () => {
   }
 
   .header-links {
-    grid-auto-flow: row;
     grid-template-columns: 1fr;
     gap: 20px 0;
     width: 100vw;
@@ -258,6 +275,24 @@ const handleSignOut = () => {
     z-index: 1000;
     align-items: top;
 
+  }
+
+  .header-links {
+    a {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: none;
+      }
+    }
+
+    .router-link-active {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: none;
+      }
+    }
   }
 
   .header {
@@ -357,5 +392,4 @@ const handleSignOut = () => {
   }
 
 
-}
-</style>
+}</style>
