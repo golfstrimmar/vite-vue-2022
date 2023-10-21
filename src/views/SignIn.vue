@@ -27,7 +27,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import Button from '@/components/Button.vue';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useRouter } from 'vue-router'
 import { useTaskStore } from "../store/taskStore"
 const taskStore = useTaskStore();
@@ -77,6 +77,54 @@ const register = () => {
 
 
 const registerGoogle = (e) => {
+	const provider = new GoogleAuthProvider();
+	const auth = getAuth();
+
+	signInWithPopup(auth, provider)
+		.then((result) => {
+			// const credential = GoogleAuthProvider.credentialFromResult(result);
+			// const token = credential.accessToken;
+			// const user = result.user;
+
+
+			errMsg.value = 'Erfolgreich eingeloggt!';
+			successLogin.value = true
+			userEmail.value = result.user.displayName
+			taskStore.newUser(userEmail.value)
+
+			console.log(result.user.displayName);
+
+			setTimeout(() => {
+				router.push('/')
+			}, 800);
+
+
+		}).catch((error) => {
+			// const errorCode = error.code;
+			// const errorMessage = error.message;
+			// const email = error.customData.email;
+			// const credential = GoogleAuthProvider.credentialFromError(error);
+
+			console.log(error);
+			// switch (error.code) {
+			// 	// case 'auth/invalid-email':
+			// 	// 	errMsg.value = 'Ungültige E-Mail-Adresse';
+			// 	// 	break;
+			// 	// case 'auth/user-not-found':
+			// 	// 	errMsg.value = 'Kein Konto mit dieser E-Mail war fehlerhaft';
+			// 	// 	break;
+			// 	// case 'auth/wrong-password':
+			// 	// 	errMsg.value = 'Falsches Passwort';
+			// 	// 	break;
+
+			// 	default:
+			// 		errMsg.value = errorMessage;
+			// 		break;
+			// }
+		});
+
+
+
 }
 onMounted(() => {
 })

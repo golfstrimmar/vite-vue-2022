@@ -15,7 +15,7 @@ header.header
             router-link(to="/signin"  v-if="!isLoggedIn") SignIn
             Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn") 
             ._user(v-if="isLoggedIn" )
-              span Ihre E-Mail-Adresse
+              span Kontoinformationen
               p {{ taskStore.name }}
       ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
         span
@@ -48,7 +48,7 @@ const links = ref([
   { name: "Modal", href: "/modal" },
   { name: "Passiv", href: "/passiv" },
   { name: "Konjunktiv-II", href: "/konjunktiv" },
-  // { name: "Tasks", href: "/tasks" },
+  { name: "Tasks", href: "/tasks" },
   // { name: "SignIn", href: "/signin" },
 ]);
 

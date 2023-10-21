@@ -25,7 +25,9 @@
 <script setup>
 import { ref } from 'vue'
 import Button from '@/components/Button.vue';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
+
 import { useRouter } from 'vue-router'
 import { useTaskStore } from "../store/taskStore"
 const taskStore = useTaskStore();
@@ -71,6 +73,36 @@ const register = () => {
 
 
 const registerGoogle = (e) => {
+	const provider = new GoogleAuthProvider();
+	const auth = getAuth();
+
+	signInWithPopup(auth, provider)
+		.then((result) => {
+			// const credential = GoogleAuthProvider.credentialFromResult(result);
+			// const token = credential.accessToken;
+			// const user = result.user;
+
+
+			errMsg.value = 'Erfolgreich registriert!';
+			successSignUp.value = true
+			userEmail.value = result.user.displayName
+			taskStore.newUser(userEmail.value)
+
+
+			setTimeout(() => {
+				router.push('/')
+			}, 800);
+
+
+		}).catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			const email = error.customData.email;
+			const credential = GoogleAuthProvider.credentialFromError(error);
+
+		});
+
+
 }
 
 

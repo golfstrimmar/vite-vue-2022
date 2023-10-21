@@ -4,7 +4,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { createPinia } from "pinia";
-
+// import "../node_modules/material-design-lite/material.min.js";
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyCTr_tR1MbYjHurQgAfdgEntqZQ150rZyA",
