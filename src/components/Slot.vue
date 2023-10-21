@@ -43,9 +43,6 @@ import { ref, onMounted } from 'vue';
 import Input from '@/components/Input.vue';
 import Button from '@/components/Button.vue';
 
-var reset = ref(true)
-var TempData = ref([])
-var TempData = props.SlotData
 
 const props = defineProps({
 	SlotData: {
@@ -54,6 +51,10 @@ const props = defineProps({
 	}
 
 })
+
+var reset = ref(true)
+var TempData = ref([])
+var TempData = props.SlotData
 
 const someEvent = (data) => {
 	TempData = TempData.sort((a, b) => Math.random() - 0.5);

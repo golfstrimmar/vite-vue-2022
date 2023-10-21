@@ -92,7 +92,6 @@ const registerGoogle = (e) => {
 			userEmail.value = result.user.displayName
 			taskStore.newUser(userEmail.value)
 
-			console.log(result.user.displayName);
 
 			setTimeout(() => {
 				router.push('/')
