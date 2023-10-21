@@ -8,8 +8,8 @@ header.header
           SvgIcon(name='vite' )
           SvgIcon(name='vue' )
           SvgIcon(name='quasar-logo' )
-      transition(mode='easy-in-out' name='fade')
-        .header-links( v-if="Lg || burgerActive" )
+      transition(mode='easy-in-out' name='f'  )
+        .header-links(v-if="Lg || burgerActive" )
           router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
             |{{ link.name }}
           .auth-items
@@ -93,11 +93,11 @@ const handleWindowSizeChange = () => {
 };
 
 const handleWindowScroll = () => {
-  if (window.innerWidth >= 1200) {
-    Lg.value = true
-    burgerActive.value = false
+  const header = document.querySelector('.header')
+  if (window.pageYOffset > 60) {
+    header.classList.add("responciveHeader");
   } else {
-    Lg.value = false
+    header.classList.remove("responciveHeader");
   }
 };
 
@@ -126,11 +126,16 @@ const handleSignOut = () => {
 </script>
 
 <style lang="scss" scoped>
-header {
+.header {
+  @include transition;
+  position: fixed;
+  width: 100%;
+  top: 0;
   background: $light-blue-9;
   padding: 10px 0;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.3)) !important;
+  z-index: 20000;
 
   svg {
     width: 30px;
@@ -201,25 +206,33 @@ header {
   }
 }
 
+.responciveHeader {
+  // height: 50px;
+  padding: 3px 0;
+  backdrop-filter: blur(15px);
 
+  @include transition;
+}
 
 @media (max-width: 1200px) {
-  .fade-enter-from {
+  .f-enter-from {
     transition: .2s all;
     transform: translateX(-100vw);
   }
 
   // .v-enter-active,
-  .fade-enter-to {
-    transform: translateX(0);
-  }
-
-  .fade-leave-from {
+  .f-enter-to {
     transition: .2s all;
     transform: translateX(0);
   }
 
-  .fade-leave-to {
+  .f-leave-from {
+    transition: .2s all;
+    transform: translateX(0);
+  }
+
+  .f-leave-to {
+    transition: .2s all;
     transform: translateX(-100vw);
   }
 
@@ -247,13 +260,13 @@ header {
 
   }
 
-  header {
+  .header {
     a {
       margin: 0;
     }
 
     ._burger {
-      z-index: 10001;
+      z-index: 20000;
       width: 30px;
       height: 30px;
       border-radius: 50%;
@@ -342,5 +355,7 @@ header {
       }
     }
   }
+
+
 }
 </style>
