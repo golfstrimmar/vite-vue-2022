@@ -203,11 +203,23 @@ const handleSignOut = () => {
   row-gap: 10px;
   @include transition;
 
+
   a {
     color: $indigo-3;
+    line-height: 1.8;
+    border-bottom: 1px solid transparent;
+
+    &.router-link-active {
+      &:hover {
+        color: $deep-orange-4;
+        border-bottom: 1px solid $deep-orange-4;
+      }
+    }
 
     &:hover {
       color: $blue-1;
+      line-height: 1.8;
+      border-bottom: 1px solid $blue-1;
     }
   }
 }
@@ -382,14 +394,9 @@ const handleSignOut = () => {
     @include transition;
     margin: 40px 0 0 0;
 
-    a {
-      color: $indigo-3;
 
-      &:hover {
-        color: $blue-1;
-      }
-    }
   }
 
 
-}</style>
+}
+</style>
