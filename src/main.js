@@ -4,7 +4,9 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { createPinia } from "pinia";
-// import "../node_modules/material-design-lite/material.min.js";
+// import { Quasar } from "quasar";
+// import "@quasar/extras/material-icons/material-icons.css";
+// import "./../node_modules/quasar/dist/quasar.css";
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyCTr_tR1MbYjHurQgAfdgEntqZQ150rZyA",
@@ -20,6 +22,7 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 const app = createApp(App);
-app.use(router);
-app.use(createPinia());
-app.mount("#app");
+app.use(router).use(createPinia()).mount("#app");
+// .use(Quasar, {
+//   plugins: {},
+// })

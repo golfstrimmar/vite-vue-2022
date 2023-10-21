@@ -4,21 +4,24 @@ header.header
     .header__body
       .logo 
         router-link(to="/")
+          SvgIcon(name='flag-for-germany-svgrepo-com' )
           SvgIcon(name='vite' )
           SvgIcon(name='vue' )
+          SvgIcon(name='quasar-logo' )
       transition(mode='easy-in-out' name='fade')
         .header-links( v-if="Lg || burgerActive" )
-          router-link(v-for="link in links" :key="link.name" :to="link.href" )
+          router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
             |{{ link.name }}
           .auth-items
-            router-link(to="/signup"  v-if="!isLoggedIn") SignUp
-            router-link(to="/signin"  v-if="!isLoggedIn") SignIn
-            Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn") 
+            router-link(to="/signup"  v-if="!isLoggedIn" @click='clickBurger') SignUp
+            router-link(to="/signin"  v-if="!isLoggedIn" @click='clickBurger') SignIn
+            Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" @click='clickBurger') 
             ._user(v-if="isLoggedIn" )
               span Kontoinformationen
               p {{ taskStore.name }}
       ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
         span
+        
 
 </template>
 
@@ -68,6 +71,7 @@ onMounted(() => {
     Lg.value = false
   }
   window.addEventListener("resize", handleWindowSizeChange);
+  window.addEventListener("scroll", handleWindowScroll);
   auth = getAuth()
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -88,13 +92,25 @@ const handleWindowSizeChange = () => {
   }
 };
 
-const clickBurger = () => {
-  burgerActive.value = !burgerActive.value;
-  if (burgerActive.value) {
-    document.querySelector('body').classList.add("lock")
+const handleWindowScroll = () => {
+  if (window.innerWidth >= 1200) {
+    Lg.value = true
+    burgerActive.value = false
   } else {
-    document.querySelector('body').classList.remove("lock")
+    Lg.value = false
   }
+};
+
+const clickBurger = () => {
+  if (window.innerWidth <= 1200) {
+    burgerActive.value = !burgerActive.value;
+    if (burgerActive.value) {
+      document.querySelector('body').classList.add("lock")
+    } else {
+      document.querySelector('body').classList.remove("lock")
+    }
+  }
+
 }
 
 onUnmounted(() => {
@@ -111,8 +127,10 @@ const handleSignOut = () => {
 
 <style lang="scss" scoped>
 header {
-  background: $indigo-8;
+  background: $light-blue-9;
   padding: 10px 0;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.3)) !important;
 
   svg {
     width: 30px;
@@ -125,9 +143,22 @@ header {
   }
 }
 
+.logo {
+  display: inline-block;
+  padding: 5px;
+  @include transition;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e0e0e06e;
+  }
+}
+
 .header__body {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: max-content 1fr;
+  column-gap: 40px;
   align-items: center;
 }
 
@@ -192,6 +223,9 @@ header {
     transform: translateX(-100vw);
   }
 
+  .header__body {
+    display: inline-block;
+  }
 
   .header-links {
     grid-auto-flow: row;
@@ -220,20 +254,45 @@ header {
 
     ._burger {
       z-index: 10001;
-      width: 20px;
-      height: 16px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       right: 0px;
       display: block;
+      @include transition;
+
+      &:hover {
+        background-color: #e0e0e06e;
+      }
+
+      span {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &::after {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }
+
+      &::before {
+        bottom: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       span,
       &::after,
       &::before {
         background: $grey-3;
-        width: 20px;
+        width: 18px;
         height: 2px;
+
       }
 
       &._is-active {
@@ -244,10 +303,22 @@ header {
           background: $grey-3;
         }
 
-        &:hover span,
-        &:hover::after,
-        &:hover::before {
-          background-color: rgb(138, 138, 138);
+        // &:hover span,
+        // &:hover::after,
+        // &:hover::before {
+        //   background-color: rgb(138, 138, 138);
+        // }
+
+        &::after {
+          top: 46%;
+          left: 21.5%;
+          transform: rotate(40deg);
+        }
+
+        &::before {
+          bottom: 48%;
+          left: 21.5%;
+          transform: rotate(-40deg);
         }
       }
     }

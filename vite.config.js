@@ -3,6 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import { plugin as picm } from "vite-plugin-vue-pug-with-css-modules";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import path from "path";
+import { quasar, transformAssetUrls } from "@quasar/vite-plugin";
 
 export default defineConfig({
   css: {
@@ -17,7 +18,9 @@ export default defineConfig({
   plugins: [
     picm(),
     vue(),
-
+    quasar({
+      // sassVariables: "./node_modules/@quasar/extras/",
+    }),
     createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), "src/assets/svg")],
       symbolId: "icon-[dir]-[name]",
