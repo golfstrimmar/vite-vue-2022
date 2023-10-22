@@ -7,6 +7,7 @@ header.header
           SvgIcon(name='flag-for-germany-svgrepo-com' )
           SvgIcon(name='vite' )
           SvgIcon(name='vue' )
+          SvgIcon(name='pinia' )
           //- SvgIcon(name='quasar-logo' )
           SvgIcon(name='pug' )
           SvgIcon(name='sass' )
