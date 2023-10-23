@@ -11,17 +11,30 @@ header.header
           //- SvgIcon(name='quasar-logo' )
           SvgIcon(name='pug' )
           SvgIcon(name='sass' )
-      transition(mode='easy-in-out' name='f'  )
-        .header-links(v-if="Lg || burgerActive" )
-          router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
-            |{{ link.name }}
-          .auth-items
-            router-link(to="/signup"  v-if="!isLoggedIn" @click='clickBurger') SignUp
-            router-link(to="/signin"  v-if="!isLoggedIn" @click='clickBurger') SignIn
-            Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" @click='clickBurger') 
-            ._user(v-if="isLoggedIn" )
-              span Kontoinformationen
-              p {{ taskStore.name }}
+      //- transition(mode='easy-in-out' name='f'  )
+      //-   .header-links(v-if="Lg || burgerActive" )
+      //-     router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
+      //-       |{{ link.name }}
+      //-     .auth-items
+      //-       router-link(to="/signup"  v-if="!isLoggedIn" @click='clickBurger') SignUp
+      //-       router-link(to="/signin"  v-if="!isLoggedIn" @click='clickBurger') SignIn
+      //-       Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" @click='clickBurger') 
+      //-       ._user(v-if="isLoggedIn" )
+      //-         span Kontoinformationen
+      //-         p {{ taskStore.name }}
+      .abschnitte
+        button(type="button"  @click='menuActiveFunction') {{menuActive}}
+        transition(mode='easy-in-out' name='lgf'  )
+          .header-links(v-if="Lg &&  menuActive")
+            router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
+              |{{ link.name }}
+            .auth-items
+              router-link(to="/signup"  v-if="!isLoggedIn" @click='clickBurger') SignUp
+              router-link(to="/signin"  v-if="!isLoggedIn" @click='clickBurger') SignIn
+              Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" @click='clickBurger') 
+              ._user(v-if="isLoggedIn" )
+                span Kontoinformationen
+                p {{ taskStore.name }}
       ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
         span
         
@@ -40,6 +53,12 @@ const router = useRouter();
 import { useTaskStore } from "../store/taskStore"
 const taskStore = useTaskStore();
 
+const menuActiveFunction = () => {
+  // if (window.innerWidth >= 1200) {
+  // Lg.value = true
+  menuActive.value = !menuActive.value;
+  // }
+}
 
 
 
@@ -59,6 +78,7 @@ const links = ref([
 ]);
 
 var burgerActive = ref(false);
+var menuActive = ref(false);
 var Lg = ref(false);
 let auth;
 var userEmail = ref('');
@@ -104,17 +124,17 @@ const handleWindowScroll = () => {
   }
 };
 
-const clickBurger = () => {
-  if (window.innerWidth <= 1200) {
-    burgerActive.value = !burgerActive.value;
-    if (burgerActive.value) {
-      document.querySelector('body').classList.add("lock")
-    } else {
-      document.querySelector('body').classList.remove("lock")
-    }
-  }
+// const clickBurger = () => {
+//   if (window.innerWidth <= 1200) {
+//     burgerActive.value = !burgerActive.value;
+//     if (burgerActive.value) {
+//       document.querySelector('body').classList.add("lock")
+//     } else {
+//       document.querySelector('body').classList.remove("lock")
+//     }
+//   }
 
-}
+// }
 
 onUnmounted(() => {
   window.removeEventListener("resize", handleWindowSizeChange);
@@ -129,6 +149,31 @@ const handleSignOut = () => {
 </script>
 
 <style lang="scss" scoped>
+.lgf-enter-from {
+  transition: .2s all;
+  transform: translateY(-100vw);
+}
+
+// .v-enter-active,
+.lgf-enter-to {
+  transition: .2s all;
+  transform: translateY(0);
+}
+
+.lgf-leave-from {
+  transition: .2s all;
+  transform: translateY(0);
+}
+
+.lgf-leave-to {
+  transition: .2s all;
+  transform: translateY(-100vw);
+}
+
+
+
+
+
 .header {
   @include transition;
   position: fixed;
@@ -147,7 +192,74 @@ const handleSignOut = () => {
   }
 
   ._burger {
-    display: none;
+    z-index: 20000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    display: block;
+    @include transition;
+
+    &:hover {
+      background-color: #e0e0e06e;
+    }
+
+    span {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+
+    &::before {
+      bottom: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    span,
+    &::after,
+    &::before {
+      background: $grey-3;
+      width: 18px;
+      height: 2px;
+
+    }
+
+    &._is-active {
+
+      span,
+      &::after,
+      &::before {
+        background: $grey-3;
+      }
+
+      // &:hover span,
+      // &:hover::after,
+      // &:hover::before {
+      //   background-color: rgb(138, 138, 138);
+      // }
+
+      &::after {
+        top: 46%;
+        left: 21.5%;
+        transform: rotate(40deg);
+      }
+
+      &::before {
+        bottom: 48%;
+        left: 21.5%;
+        transform: rotate(-40deg);
+      }
+    }
   }
 }
 
@@ -165,16 +277,26 @@ const handleSignOut = () => {
 
 .header__body {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: max-content max-content;
   column-gap: 20px;
   align-items: center;
 }
 
+.abschnitte {
+  padding: 0 20px;
+  position: relative;
+}
+
 .header-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(max-content, 10px));
-  align-items: center;
-  column-gap: 20px;
+  // grid-template-columns: repeat(auto-fit, minmax(max-content, 10px));
+  grid-template-columns: 1fr;
+  // align-items: center;
+  // column-gap: 20px;
+  position: absolute;
+  background: $light-blue-8;
+  // left: 0px;
+  padding: 0 10px 5px;
 
   a {
     white-space: nowrap;
@@ -195,6 +317,8 @@ const handleSignOut = () => {
     }
   }
 }
+
+
 
 .auth-items {
   justify-self: end;
@@ -313,76 +437,7 @@ const handleSignOut = () => {
       margin: 0;
     }
 
-    ._burger {
-      z-index: 20000;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 0px;
-      display: block;
-      @include transition;
 
-      &:hover {
-        background-color: #e0e0e06e;
-      }
-
-      span {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      &::after {
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, 50%);
-      }
-
-      &::before {
-        bottom: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      span,
-      &::after,
-      &::before {
-        background: $grey-3;
-        width: 18px;
-        height: 2px;
-
-      }
-
-      &._is-active {
-
-        span,
-        &::after,
-        &::before {
-          background: $grey-3;
-        }
-
-        // &:hover span,
-        // &:hover::after,
-        // &:hover::before {
-        //   background-color: rgb(138, 138, 138);
-        // }
-
-        &::after {
-          top: 46%;
-          left: 21.5%;
-          transform: rotate(40deg);
-        }
-
-        &::before {
-          bottom: 48%;
-          left: 21.5%;
-          transform: rotate(-40deg);
-        }
-      }
-    }
   }
 
   .auth-items {
