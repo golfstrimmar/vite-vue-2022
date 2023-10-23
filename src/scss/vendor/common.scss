@@ -67,15 +67,13 @@ a {
 .hidden {
   display: none;
 }
+
 .page-title {
   margin: 15px 0 0;
   // background: linear-gradient($deep-purple-2, $deep-purple-8, $deep-purple-2);
   text-align: center;
-  padding: 0 15px;
-  border-radius: 5px;
   display: inline-block;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.12);
+
   h2 {
     font-family: "HouschkaPro-Bold", sans-serif;
     font-size: 30px;
@@ -191,13 +189,6 @@ button.mixButton {
   }
 }
 
-@media (max-width: 899px) {
-  .page-title {
-    h2 {
-      font-size: clamp(16px, 5vw, 30px);
-    }
-  }
-}
 @media (max-width: 767px) {
   .container {
     margin: 0 10px;
@@ -205,5 +196,17 @@ button.mixButton {
   }
   .inner {
     padding: 85px 0 0 0;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 100px 0 0 0;
+  }
+  .page-title {
+    margin: 15px 0 0px 0;
+    h2 {
+      font-size: 25px;
+    }
   }
 }

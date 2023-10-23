@@ -125,9 +125,6 @@ p {
 	}
 }
 
-.page-title {
-	margin: 15px 0 40px 0;
-}
 
 
 .mixButton {

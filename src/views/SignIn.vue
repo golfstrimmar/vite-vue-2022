@@ -135,9 +135,7 @@ form {
 	margin: 0 0 30px 0;
 }
 
-.page-title {
-	margin: 15px 0 40px 0;
-}
+
 
 p {
 	color: $blue-4;
