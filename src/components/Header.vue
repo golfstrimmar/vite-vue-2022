@@ -150,24 +150,26 @@ const handleSignOut = () => {
 
 <style lang="scss" scoped>
 .lgf-enter-from {
-  transition: .2s all;
-  transform: translateY(-100vw);
+  transition: 2s all;
+  transform: scaleY(0);
+  transform-origin: top;
 }
 
 // .v-enter-active,
 .lgf-enter-to {
-  transition: .2s all;
-  transform: translateY(0);
+  transition: 2s all;
+  transform: scaleY(1);
+  transform-origin: top;
 }
 
 .lgf-leave-from {
-  transition: .2s all;
-  transform: translateY(0);
+  transition: 2s all;
 }
 
 .lgf-leave-to {
-  transition: .2s all;
-  transform: translateY(-100vw);
+  transition: 2s all;
+  transform: scaleY(0);
+  transform-origin: top;
 }
 
 
@@ -285,40 +287,46 @@ const handleSignOut = () => {
 .abschnitte {
   padding: 0 20px;
   position: relative;
-}
 
-.header-links {
-  display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(max-content, 10px));
-  grid-template-columns: 1fr;
-  // align-items: center;
-  // column-gap: 20px;
-  position: absolute;
-  background: $light-blue-8;
-  // left: 0px;
-  padding: 0 10px 5px;
-
-  a {
-    white-space: nowrap;
-    line-height: 1.8;
-    border-bottom: 1px solid transparent;
-
-    &:hover {
-      border-bottom: 1px solid $blue-1;
-    }
+  button {
+    z-index: 4;
+    position: relative;
   }
 
-  .router-link-active {
-    color: $deep-orange-4;
-    border-bottom: 1px solid $deep-orange-4;
 
-    &:hover {
+  .header-links {
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(max-content, 10px));
+    grid-template-columns: 1fr;
+    // align-items: center;
+    // column-gap: 20px;
+    position: absolute;
+    background: $light-blue-8;
+    // left: 0px;
+    // padding: 0 10px 5px;
+    z-index: 2;
+
+    a {
+      white-space: nowrap;
+      line-height: 1.8;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid $blue-1;
+      }
+    }
+
+    .router-link-active {
+      color: $deep-orange-4;
       border-bottom: 1px solid $deep-orange-4;
+
+      &:hover {
+        border-bottom: 1px solid $deep-orange-4;
+      }
     }
   }
+
 }
-
-
 
 .auth-items {
   justify-self: end;
