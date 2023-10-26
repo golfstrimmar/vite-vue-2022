@@ -167,10 +167,8 @@ const handleSignOut = () => {
   }
 
   &__links {
-    display: grid;
-    grid-template-columns: min-content;
+    @include flex-column;
     text-align: right;
-    justify-content: end;
     width: 100vw;
     max-height: 100vh;
     min-height: 100vh;
@@ -179,7 +177,6 @@ const handleSignOut = () => {
     left: 0;
     padding: 100px 40px 40px 40px;
     overflow: auto;
-
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(15px);
     z-index: 1000;
@@ -326,6 +323,7 @@ const handleSignOut = () => {
       }
     }
   }
+
 
 }
 
