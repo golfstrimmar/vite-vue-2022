@@ -166,34 +166,11 @@ const handleSignOut = () => {
     align-items: center;
   }
 
-  // a {
-  //   color: $indigo-1;
-  //   line-height: 1.8;
-  //   border-bottom: 1px solid transparent;
-
-  //   &.router-link-active {
-  //     &:hover {
-  //       color: $deep-orange-4;
-  //       border-bottom: 1px solid $deep-orange-4;
-  //     }
-  //   }
-
-  //   &:hover {
-  //     color: $blue-1;
-  //     line-height: 1.8;
-  //     border-bottom: 1px solid $blue-1;
-  //   }
-  // }
-
   &__links {
-
-    // grid-template-columns: repeat(auto-fit, minmax(max-content, 10px));
-    // align-items: center;
-    // column-gap: 20px;
-
     display: grid;
     grid-template-columns: min-content;
-    gap: 20px 0;
+    text-align: right;
+    justify-content: end;
     width: 100vw;
     max-height: 100vh;
     min-height: 100vh;
@@ -202,15 +179,15 @@ const handleSignOut = () => {
     left: 0;
     padding: 100px 40px 40px 40px;
     overflow: auto;
-    text-align: left;
+
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(15px);
     z-index: 1000;
-    align-items: top;
 
     a {
       white-space: nowrap;
       line-height: 1.8;
+      padding: 5px;
     }
 
   }
