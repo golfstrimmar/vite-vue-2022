@@ -1,14 +1,19 @@
 <template lang="pug">
-.page-block
-  .page-title--small 
-    h3 Masculine Article “der”
-  //- Content(:items='der' :headers='Headersder')
-  Tabs()
-  //- section.info
-//- .info-section(v-for="block in items" :key="index")
-//-   h3 {{headers[items.indexOf(block)].title}}
-//- ul.text
-//-   Text( v-for="item in block" :key="id" :item='item') 
+.page-block 
+  h2 {{title}}
+
+    //- Content(:items='der' :headers='Headersder')
+  p(v-for='element in items' :key='idex') {{ element.title }}
+    span {{ element.text }}
+    span {{ element.text1 }}
+
+
+    Tabs(:items= 'items' title='')
+    //- section.info
+    //- .info-section(v-for="block in items" :key="index")
+    //-   h3 {{headers[items.indexOf(block)].title}}
+    //- ul.text
+    //-   Text( v-for="item in block" :key="id"   :item='item') 
 
 
 </template>
@@ -18,8 +23,9 @@ import { ref } from 'vue';
 import Text from '@/components/Text.vue';
 import Tabs from '@/components/Tabs.vue';
 const props = defineProps({
-  headers: {
-    type: Object,
+
+  title: {
+    type: String,
     required: false
   },
   items: {

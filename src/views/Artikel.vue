@@ -3,21 +3,16 @@
   .page-title 
     h2 der Artikel
 
+  Tabs(:items= 'der' title='Masculine article “der”')
+  Tabs(:items= 'die' title='Feminine Article “die”')
+  Tabs(:items= 'das' title='Neuter Article “das”')
+  Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
+  Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
+  Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte Negativ Artikel' icons='icons')
 
-  Content(:items='der' :headers='Headersder')
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Feminine Article “die”
-  //-   Content(:items='die' :headers='Headersdie')
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Neuter Article “das”
-  //-   Content(:items='das' :headers='Headersdas')
   .page-block
     .page-title--small 
       h3 Bestimmte Artikel
-    Content(:items='Bestimmte' :headers='Headers')
     Plaza
     Slot(:SlotData='SlotDataBestimmte')
 
@@ -31,7 +26,7 @@
 
   .page-block
     .page-title--small 
-      h3 Unbestimmte Negativartikel
+      h3 Unbestimmte Negativ Artikel
     Content(:items='UnbestimmteNegativ' :headers='Headers')
     Plaza
     Slot(:SlotData='SlotDataNegativ')
@@ -43,24 +38,218 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import Content from '@/components/Content.vue';
+// import Content from '@/components/Content.vue';
+import Tabs from '@/components/Tabs.vue';
 
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
+const icons = ref(true)
+const der = ref([
 
+  {
+    title: '-ling',
+    text1: 'der Frühling',
+    text2: 'der Neuling'
+  },
+  {
+    title: '-ismus',
+    text1: 'der Tourismus',
+    text2: 'der Optimismus'
+  },
+  {
+    title: '-er',
+    text1: 'der Fahrer',
+    text2: 'der Körper'
+  },
+  {
+    title: '-ist',
+    text1: 'der Journalist ',
+    text2: 'der Polizist'
+  },
+  {
+    title: '-ich',
+    text1: 'der Bereich',
+    text2: 'der Teppich'
+  },
+  {
+    title: '-ant',
+    text1: 'der Laborant',
+    text2: 'der Diamant'
+  },
 
-// setup(props) {
-// const SlotDataMod = computed(
-//   () => {
-//     var temp = SlotData.value.sort((a, b) => Math.random() - 0.5);
-//     return temp;
-//   }
+])
+const die = ref([
+  {
+    title: '-ung',
+    text1: 'die Abdeckung',
+    text2: 'die Bildung',
+  },
+  {
+    title: '-keit',
+    text1: 'die Möglichkeit',
+    text2: 'die Tätigkeit',
+  },
+  {
+    title: '-heit',
+    text1: 'die Einheit',
+    text2: 'die Gewohnheit',
+  },
+  {
+    title: '-ion',
+    text1: 'die Kommission ',
+    text2: 'die Position'
+  },
+  {
+    title: '-in',
+    text1: 'die Bäckerin',
+    text2: 'die Dichterin'
+  },
 
-// )
+  {
+    title: '-tät',
+    text1: 'die Identität ',
+    text2: 'die Qualität'
+  },
 
+  {
+    title: '-schaft',
+    text1: 'die Mannschaft ',
+    text2: 'die Landschaft'
+  },
 
-// return { symbolId }
-// },
+  {
+    title: '-enz',
+    text1: 'die Effizienz',
+    text2: 'die Konferenz'
+  },
+
+  {
+    title: '-ie',
+    text1: 'die Anatomie ',
+    text2: 'die Biologie'
+  },
+
+])
+const das = ref([
+  {
+    title: '-chen',
+    text1: 'das Hähnchen',
+    text2: 'das Bäumchen'
+  },
+
+  {
+    title: '- lein',
+    text1: 'das Fräulein',
+    text2: 'das Büchlein'
+  },
+
+  {
+    title: '- ment',
+    text1: 'das Apartment',
+    text2: 'das Parlament'
+  },
+
+  {
+    title: '- um',
+    text1: 'das Studium ',
+    text2: 'das Datum'
+  },
+
+  {
+    title: '- nis',
+    text1: 'das Ergebnis',
+    text2: 'das Zeugnis'
+  },
+
+])
+const Bestimmte = ref([
+
+  {
+    title: 'Nominativ',
+    text1: 'der',
+    text2: 'die',
+    text3: 'das',
+    text4: 'die'
+  },
+  {
+    title: 'Dativ',
+    text1: 'dem',
+    text2: 'der',
+    text3: 'dem',
+    text4: 'den + n'
+  },
+  {
+    title: 'Akkusativ',
+    text1: 'den',
+    text2: 'die',
+    text3: 'das',
+    text4: 'die'
+  },
+  {
+    title: 'Genitiv',
+    text1: 'des + s/es',
+    text2: 'der',
+    text3: 'des + s/es',
+    text4: 'der'
+  },
+])
+const Unbestimmte = ref([
+  {
+    title: 'Nominativ',
+    text1: 'ein',
+    text2: 'eine',
+    text3: 'ein',
+  },
+  {
+    title: 'Dativ',
+    text1: 'einem',
+    text2: 'einer',
+    text3: 'einem',
+  },
+  {
+    title: 'Akkusativ',
+    text1: 'einen',
+    text2: 'eine',
+    text3: 'ein',
+  },
+  {
+    title: 'Genitiv',
+    text1: 'eines + s/es',
+    text2: 'einer',
+    text3: 'eines + s/es',
+  },
+])
+const UnbestimmteNegativ = ref([
+
+  {
+    title: 'Nominativ',
+    text1: 'kein',
+    text2: 'keine',
+    text3: 'kein',
+    text4: 'keine'
+  },
+  {
+    title: 'Dativ',
+    text1: 'keinem',
+    text2: 'keiner',
+    text3: 'keinem',
+    text4: 'keinen + n'
+  },
+  {
+    title: 'Akkusativ',
+    text1: 'keinen',
+    text2: 'keine',
+    text3: 'kein',
+    text4: 'keine'
+  },
+  {
+    title: 'Genitiv',
+    text1: 'keines + s / es',
+    text2: 'keiner',
+    text3: 'keines + s / es',
+    text4: 'keiner'
+  },
+])
 const SlotDataBestimmte = ref([
   {
     t0: '',
@@ -469,7 +658,6 @@ const SlotDataUnbestimmte = ref([
   },
 ]
 )
-
 const SlotDataNegativ = ref([
   {
     t0: 'Ich finde, das ist ',
@@ -590,207 +778,6 @@ const SlotDataNegativ = ref([
 
 )
 
-
-
-
-
-
-
-const Headersdas = ref([
-  { title: '-chen' },
-  { title: '- lein' },
-  { title: '- ment' },
-  { title: '- um' },
-  { title: '- nis' },
-])
-const das = ref([
-  [
-    { id: 1, text: 'das Hähnchen' },
-    { id: 2, text: 'das Bäumchen' },
-  ],
-  [
-    { id: 1, text: 'das Fräulein' },
-    { id: 2, text: 'das Büchlein' },
-  ],
-  [
-    { id: 1, text: 'das Apartment' },
-    { id: 2, text: 'das Parlament' },
-  ],
-  [
-    { id: 1, text: 'das Studium ' },
-    { id: 2, text: 'das Datum' },
-  ],
-  [
-    { id: 1, text: 'das Ergebnis' },
-    { id: 2, text: 'das Zeugnis' },
-  ]
-])
-const Headersdie = ref([
-  { title: '-ung' },
-  { title: '-keit' },
-  { title: '-heit' },
-  { title: '-ion' },
-  { title: '-in' },
-  { title: '-tät' },
-  { title: '-schaft' },
-  { title: '-enz' },
-  { title: '-ie' },
-])
-const die = ref([
-  [
-    { id: 1, text: 'die Abdeckung' },
-    { id: 2, text: 'die Bildung' },
-  ],
-  [
-    { id: 1, text: 'die Möglichkeit' },
-    { id: 2, text: 'die Tätigkeit' },
-  ],
-  [
-    { id: 1, text: 'die Einheit' },
-    { id: 2, text: 'die Gewohnheit' },
-  ],
-  [
-    { id: 1, text: 'die Kommission ' },
-    { id: 2, text: 'die Position' },
-  ],
-  [
-    { id: 1, text: 'die Bäckerin' },
-    { id: 2, text: 'die Dichterin' },
-  ],
-  [
-    { id: 1, text: 'die Identität ' },
-    { id: 2, text: 'die Qualität' },
-  ],
-  [
-    { id: 1, text: 'die Mannschaft ' },
-    { id: 2, text: 'die Landschaft' },
-  ],
-  [
-    { id: 1, text: 'die Effizienz' },
-    { id: 2, text: 'die Konferenz' },
-  ],
-  [
-    { id: 1, text: 'die Anatomie ' },
-    { id: 2, text: 'die Biologie' },
-  ]
-])
-const Headersder = ref([
-  { title: '-ling' },
-  { title: '-ismus' },
-  { title: '-er' },
-  { title: '-ist' },
-  { title: '-ich' },
-  { title: '-ant' },
-])
-const der = ref([
-  [
-    { id: 1, text: 'der Frühling' },
-    { id: 2, text: 'der Neuling' },
-  ],
-  [
-    { id: 1, text: 'der Tourismus' },
-    { id: 2, text: 'der Optimismus' },
-  ],
-  [
-    { id: 1, text: 'der Fahrer' },
-    { id: 2, text: 'der Körper' },
-  ],
-  [
-    { id: 1, text: 'der Journalist ' },
-    { id: 2, text: 'der Polizist' },
-  ],
-  [
-    { id: 1, text: 'der Bereich' },
-    { id: 2, text: 'der Teppich' },
-  ],
-  [
-    { id: 1, text: 'der Laborant ' },
-    { id: 2, text: 'der Diamant' },
-  ],
-])
-const Headers = ref([
-  { title: 'Nominativ' },
-  { title: 'Dativ' },
-  { title: 'Akkusativ' },
-  { title: 'Genitiv' },
-])
-const Bestimmte = ref([
-  [
-    { id: 1, marker: 'M', text: 'der' },
-    { id: 2, marker: 'F', text: 'die' },
-    { id: 3, marker: 'N', text: 'das' },
-    { id: 4, marker: 'P', text: 'die' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'dem' },
-    { id: 2, marker: 'F', text: 'der' },
-    { id: 3, marker: 'N', text: 'dem' },
-    { id: 4, marker: 'P', text: 'den + n' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'den' },
-    { id: 2, marker: 'F', text: 'die' },
-    { id: 3, marker: 'N', text: 'das' },
-    { id: 4, marker: 'P', text: 'die' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'des + s/es' },
-    { id: 2, marker: 'F', text: 'der' },
-    { id: 3, marker: 'N', text: 'des + s/es' },
-    { id: 4, marker: 'P', text: 'der' },
-  ],
-]
-)
-const Unbestimmte = ref([
-  [
-    { id: 1, marker: 'M', text: 'ein' },
-    { id: 2, marker: 'F', text: 'eine' },
-    { id: 3, marker: 'N', text: 'ein' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'einem' },
-    { id: 2, marker: 'F', text: 'einer' },
-    { id: 3, marker: 'N', text: 'einem' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'einen' },
-    { id: 2, marker: 'F', text: 'eine' },
-    { id: 3, marker: 'N', text: 'ein' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'eines + s/es' },
-    { id: 2, marker: 'F', text: 'einer' },
-    { id: 3, marker: 'N', text: 'eines + s/es' },
-  ]
-]
-)
-const UnbestimmteNegativ = ref([
-  [
-    { id: 1, marker: 'M', text: 'kein' },
-    { id: 2, marker: 'F', text: 'keine' },
-    { id: 3, marker: 'N', text: 'kein' },
-    { id: 4, marker: 'P', text: 'keine' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'keinem' },
-    { id: 2, marker: 'F', text: 'keiner' },
-    { id: 3, marker: 'N', text: 'keinem' },
-    { id: 4, marker: 'P', text: 'keinen + n' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'keinen' },
-    { id: 2, marker: 'F', text: 'keine' },
-    { id: 3, marker: 'N', text: 'kein' },
-    { id: 4, marker: 'P', text: 'keine' },
-  ],
-  [
-    { id: 1, marker: 'M', text: 'keines + s / es' },
-    { id: 2, marker: 'F', text: 'keiner' },
-    { id: 3, marker: 'N', text: 'keines + s / es' },
-    { id: 4, marker: 'P', text: 'keiner' },
-  ],
-]
-)
 
 
 
