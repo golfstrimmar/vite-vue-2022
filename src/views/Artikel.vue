@@ -3,18 +3,17 @@
   .page-title 
     h2 der Artikel
 
-  .page-block
-    .page-title--small 
-      h3 Masculine Article “der”
-    Content(:items='der' :headers='Headersder')
-  .page-block
-    .page-title--small 
-      h3 Feminine Article “die”
-    Content(:items='die' :headers='Headersdie')
-  .page-block
-    .page-title--small 
-      h3 Neuter Article “das”
-    Content(:items='das' :headers='Headersdas')
+
+  Content(:items='der' :headers='Headersder')
+
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3 Feminine Article “die”
+  //-   Content(:items='die' :headers='Headersdie')
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3 Neuter Article “das”
+  //-   Content(:items='das' :headers='Headersdas')
   .page-block
     .page-title--small 
       h3 Bestimmte Artikel
@@ -45,6 +44,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import Content from '@/components/Content.vue';
+
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 
