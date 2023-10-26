@@ -135,14 +135,9 @@ const handleSignOut = () => {
       rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.3)) !important;
   z-index: 20000;
 
-  svg {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px 0 0;
-  }
+
 
   .logo {
-    display: inline-block;
     padding: 5px;
     @include transition;
     border-radius: 5px;
@@ -154,6 +149,13 @@ const handleSignOut = () => {
 
     a {
       border: none;
+      display: inline-flex;
+      column-gap: 10px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 
@@ -324,15 +326,30 @@ const handleSignOut = () => {
 
 @media (max-width: 600px) {
   .header__body {
-    grid-template-columns: max-content;
-    gap: 20px 0px;
-    align-items: center;
+    display: block;
+    gap: 0px 0px;
   }
 
   .header .auth-items {
     justify-self: start;
     margin: 0;
   }
+
+  .header .logo {
+    display: inline-block;
+    margin: 0 0 5px 0;
+
+    a {
+      column-gap: 5px;
+
+
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
 }
 
 .f-enter-from {
