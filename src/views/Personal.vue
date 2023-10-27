@@ -2,15 +2,12 @@
 .container
   .page-title 
     h2 Personalpronomen
-
-  Tabs(:items= 'Personal' title='Personal' icons='icons')
-
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Bestimmte Artikel
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataBestimmte')
+  Tabs(:items= 'Personal' title='Personal' )
+  .page-block
+    .page-title--small 
+      h3 Training
+    Plaza
+    Slot(:SlotData='SlotDataPersonal')
 
   //- .page-block
   //-   .page-title--small 
@@ -39,7 +36,6 @@ import Tabs from '@/components/Tabs.vue';
 
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
-const icons = ref(true)
 
 const Personal = ref([
 
@@ -121,290 +117,208 @@ const Personal = ref([
     svg9: 'respect',
   },
 ])
-const Unbestimmte = ref([
-  {
-    title: 'Nominativ',
-    text1: 'ein',
-    text2: 'eine',
-    text3: 'ein',
-  },
-  {
-    title: 'Dativ',
-    text1: 'einem',
-    text2: 'einer',
-    text3: 'einem',
-  },
-  {
-    title: 'Akkusativ',
-    text1: 'einen',
-    text2: 'eine',
-    text3: 'ein',
-  },
-  {
-    title: 'Genitiv',
-    text1: 'eines + s/es',
-    text2: 'einer',
-    text3: 'eines + s/es',
-  },
-])
-const UnbestimmteNegativ = ref([
 
+const SlotDataPersonal = ref([
   {
-    title: 'Nominativ',
-    text1: 'kein',
-    text2: 'keine',
-    text3: 'kein',
-    text4: 'keine'
-  },
-  {
-    title: 'Dativ',
-    text1: 'keinem',
-    text2: 'keiner',
-    text3: 'keinem',
-    text4: 'keinen + n'
-  },
-  {
-    title: 'Akkusativ',
-    text1: 'keinen',
-    text2: 'keine',
-    text3: 'kein',
-    text4: 'keine'
-  },
-  {
-    title: 'Genitiv',
-    text1: 'keines + s / es',
-    text2: 'keiner',
-    text3: 'keines + s / es',
-    text4: 'keiner'
-  },
-])
-
-
-
-
-const SlotDataBestimmte = ref([
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Balkon',
-    t3: 'des',
-    t4: 'Wohnzimmers ist groß. ',
-  },
-  {
-    t0: 'Wir erzählen  ',
-    t1: 'den',
-    t2: 'Kindern ',
-    t3: 'die',
-    t4: 'Geschichte.',
-  },
-  {
-    t0: 'Aber ',
-    t1: 'der',
-    t2: 'Frühling ist am allerbesten. ',
+    t0: 'Hast',
+    t1: 'du',
+    t2: 'Pauli schon gebeten, sein Spielzeug aufzuräumen?',
   },
   {
     t0: '',
-    t1: 'Der',
-    t2: 'Tourismus bringt Geld in',
-    t3: 'die',
-    t4: 'Stadt.',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Fahrer hat Probleme, in ',
-    t3: 'den',
-    t4: 'Parkbereich zu gelangen. ',
-  },
-  {
-    t0: 'Ben war',
-    t1: 'der',
-    t2: 'beste investigative Journalist von allen.',
-
-  },
-  {
-    t0: 'Es ist',
-    t1: 'der',
-    t2: 'Bereich meines Lebens, wo ich mich als Teil',
-    t3: 'der',
-    t4: 'Menge fühle. ',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Neuling bleibt mit',
-    t3: 'dem',
-    t4: 'Mädchen draußen.',
-
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Körper beginnt zu verwesen und füllt sich mit Gas.',
-  },
-  {
-    t0: 'Das ist',
-    t1: 'der',
-    t2: 'Polizist, nach',
-    t3: 'dem',
-    t4: 'wir suchen. ',
-  },
-  {
-    t0: 'Und',
-    t1: 'die',
-    t2: 'Farbe',
-    t3: 'des',
-    t4: 'Teppichs passt zu ',
-    t5: 'den',
-    t6: 'Fasern,',
-    t7: 'die',
-    t8: 'wir fanden.',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Techniker,',
-    t3: 'der',
+    t1: 'Ich',
+    t2: 'habe',
+    t3: 'es',
     t4: '',
-    t5: 'die',
-    t6: 'Analyse machte, wurde tot aufgefunden.',
+    t5: 'ihm',
+    t6: 'schon zehn Mal gesagt, aber',
+    t7: 'er',
+    t8: 'gehorcht',
+    t9: 'mir',
+    t10: 'nicht!',
+
   },
   {
-    t0: 'Ich habe lediglich',
-    t1: 'den',
-    t2: 'Lichtschalter und',
-    t3: 'die',
-    t4: 'Abdeckung',
-    t5: 'des',
-    t6: 'Luftkanals angefasst.',
+    t0: 'Marion und ich,',
+    t1: 'wir',
+    t2: 'wollen am Wochenende an den See. Kannst',
+    t3: 'du',
+    t4: '',
+    t5: 'uns',
+    t6: 'deine große Picknickdecke borgen, damit',
+    t7: 'wir',
+    t8: 'nicht auf dem nassen Gras sitzen müssen? - Ja, gerne, ich kann',
+    t9: 'sie',
+    t10: '',
+    t11: 'euch',
+    t12: 'borgen.',
+
   },
   {
-    t0: 'Was wäre',
-    t1: 'das',
-    t2: 'Leben ohne',
-    t3: 'die',
-    t4: 'Möglichkeit dumme Entscheidungen zu treffen?',
+    t0: 'Paulchen möchte gern Chinesisch lernen.',
+    t1: 'Ich',
+    t2: 'kenne eine gute Lehrerin, die',
+    t3: 'ich',
+    t4: '',
+    t5: 'ihm',
+    t6: 'vermitteln könnte.',
+    t7: 'Du',
+    t8: 'hast doch ihre neue Nummer. Hilfst',
+    t9: 'du',
+    t10: '',
+    t11: 'mir',
+    t12: '',
+    t13: 'sie',
+    t14: 'zu kontaktieren?',
+  },
+  {
+    t0: 'Maria ist heute schnell aus dem Haus gegangen.',
+    t1: 'Sie',
+    t2: 'hat dabei ihre Schlüssel verloren. Hast ',
+    t3: 'du',
+    t4: '',
+    t5: 'sie',
+    t6: 'vielleicht wo gesehen?',
+  },
+  {
+    t0: 'Gestern hatte',
+    t1: 'ich',
+    t2: 'noch einen Kalender auf dem Tisch. Hat',
+    t3: 'ihn',
+    t4: 'wer genommen? Dann möge man',
+    t5: 'ihn',
+    t6: '',
+    t7: 'mir',
+    t8: 'bitte wieder bringen!',
+
+  },
+  {
+    t0: 'Wann bekomme',
+    t1: 'ich',
+    t2: 'denn endlich mein Essen? - Keine Sorge, Herr Monte, unser Koch bereitet',
+    t3: 'es',
+    t4: 'gerade zu und',
+    t5: 'wir',
+    t6: 'bringen',
+    t7: 'es',
+    t8: '',
+    t9: 'Ihnen',
+    t10: 'gleich.',
+
+  },
+  {
+    t0: 'Hallo,',
+    t1: 'ihr',
+    t2: 'zwei. Können',
+    t3: 'wir',
+    t4: 'vielleicht tauschen?',
+    t5: 'Ich',
+    t6: 'gebe',
+    t7: 'euch',
+    t8: 'meine Sticker und',
+    t9: 'ihr',
+    t10: 'gebt',
+    t11: 'mir',
+    t12: 'im Gegenzug eure Glasmurmeln. - Okay, machen',
+    t13: 'wir',
+    t14: '!',
+  },
+  {
+    t0: 'Kommst',
+    t1: 'du',
+    t2: 'morgen? - Weißt',
+    t3: 'du',
+    t4: ', morgen geht',
+    t5: 'es',
+    t6: 'nicht. Ich treffe morgen Klara, ',
+    t7: 'sie',
+    t8: 'will',
+    t9: 'mir',
+    t10: 'etwas zeigen,',
+    t11: 'ich',
+    t12: 'habe morgen daher leider keine Zeit.',
+
+  },
+  {
+    t0: '',
+    t1: ' Wem',
+    t2: 'gehört diese Katze?-',
+    t3: 'Sie',
+    t4: 'gehört dem Nachbarn.',
+    t5: 'Ihm',
+    t6: 'gehören auch noch zwei Hunde.Ich sehe',
+    t7: 'ihn',
+    t8: 'immerzu mit seinen Hunden spazieren.',
+    t9: 'Er',
+    t10: 'mag Tiere sehr und hält',
+    t11: 'sie',
+    t12: 'gut.',
+  },
+  {
+    t0: 'Entschuldigen',
+    t1: 'Sie',
+    t2: ', mein Herr,',
+    t3: 'ich',
+    t4: 'kann die Bahnhofsstraße nicht finden. Kennen',
+    t5: 'Sie',
+    t6: '',
+    t7: 'sie',
+    t8: '? Können',
+    t9: 'Sie',
+    t10: '',
+    t11: 'mir',
+    t12: 'helfen,',
+    t13: 'sie',
+    t14: 'zu finden? Das wäre sehr aufmerksam von',
+    t15: 'Ihnen',
+    t16: '.',
+  },
+  {
+    t0: 'Wenn',
+    t1: 'sie',
+    t2: 'die Schuld trägt, wird',
+    t3: 'sie',
+    t4: '',
+    t5: 'ihrer',
+    t6: 'überführt.',
+
   },
   {
     t0: '',
     t1: 'Die',
-    t2: 'Einheit wird aktiviert werden. ',
+    t2: 'Debatte ist kompliziert.',
+    t3: 'Er',
+    t4: 'möchte sich',
+    t5: 'ihrer',
+    t6: 'enthalten.',
   },
   {
-    t0: 'Er hat Briefe an',
-    t1: 'die',
-    t2: 'Verbeamtungs-Kommission geschrieben. ',
+    t0: 'Du warst großartig. Man wird sich',
+    t1: 'deiner',
+    t2: 'erinnern.',
   },
   {
-    t0: 'Was meint',
-    t1: 'die',
-    t2: 'Dichterin mit "wir gewöhnen uns"?',
-  },
-  {
-    t0: 'Um',
-    t1: 'die',
-    t2: 'Qualität machen wir uns später Gedanken.',
-  },
-  {
-    t0: 'Ich spiele nicht in',
-    t1: 'der',
-    t2: 'Mannschaft ihres Sohnes. ',
-  },
-  {
-    t0: 'Sie sehen heute noch schlechter aus als bei ',
-    t1: 'der',
-    t2: 'Konferenz.',
-  },
-  {
-    t0: 'Da Vinci hat Gräber geplündert, um',
-    t1: 'die',
-    t2: 'Anatomie zu studieren.',
-  },
-  {
-    t0: 'Ist da Zitrone auf ',
-    t1: 'dem',
-    t2: 'Hähnchen?',
-  },
-  {
-    t0: 'In',
-    t1: 'dem',
-    t2: 'Büchlein steht ',
-    t3: 'der',
-    t4: 'Name ',
-    t5: 'des',
-    t6: 'Kunden,',
-    t7: 'den',
-    t8: 'er eingestellt hat.',
-  },
-  {
-    t0: 'Ich brauche',
-    t1: 'das',
-    t2: 'Apartment.',
-  },
-  {
-    t0: 'Es trägt',
-    t1: 'das',
-    t2: 'Datum',
-    t3: 'des',
-    t4: '5. November.',
-  },
-  {
-    t0: 'Wie war ',
-    t1: 'das',
-    t2: 'Ergebnis?',
-  },
-  {
-    t0: 'auf',
-    t1: 'dem',
-    t2: 'Rücken \ auf',
-    t3: 'dem',
-    t4: 'Bauch liegen ',
-  },
-  {
-    t0: 'aus',
-    t1: 'dem',
-    t2: 'Haus gehen',
-  },
-  {
+
     t0: '',
-    t1: 'den',
-    t2: 'Kopf in',
-    t3: 'den',
-    t4: 'Sand stecken ',
+    t1: 'Sie',
+    t2: 'schämen sich',
+    t3: 'ihrer',
+    t4: '.',
   },
   {
-    t0: 'mit',
-    t1: 'den',
-    t2: 'Füßen auf',
-    t3: 'den',
-    t4: 'Boden stampfen',
+    t0: 'Wenn     ',
+    t1: 'ich',
+    t2: 'tot bin, werden',
+    t3: 'sie',
+    t4: '',
+    t5: 'meiner ',
+    t6: 'gedenken.',
   },
   {
-    t0: '',
-    t1: 'der',
-    t2: 'Herr',
-    t3: 'des',
-    t4: 'Hauses',
+    t0: 'Er wurde ausgelacht. Alle spotteten ',
+    t1: 'seiner',
+    t2: '.',
   },
-  {
-    t0: 'wegen',
-    t1: 'des',
-    t2: 'schlechten Wetters',
-  },
-  {
-    t0: 'an',
-    t1: 'der',
-    t2: 'Spitze',
-    t3: 'der',
-    t4: 'Kolonne',
-  },
-  {
-    t0: '',
-    t1: 'die',
-    t2: 'Übersättigung',
-    t3: 'des',
-    t4: 'Marktes',
-  }
   // {
   //   t0: '',
   //   t1: '',
@@ -429,287 +343,6 @@ const SlotDataBestimmte = ref([
 ]
 
 )
-const SlotDataUnbestimmte = ref([
-  {
-    t0: 'Wir waren gestern auf',
-    t1: 'einem',
-    t2: 'fantastischen Konzert.',
-  },
-  {
-    t0: '',
-    t1: 'ein',
-    t2: 'großes/nur',
-    t3: 'ein',
-    t4: 'geringes Echo finden',
-  },
-  {
-    t0: '',
-    t1: 'ein',
-    t2: 'Elternteil',
-
-  },
-  {
-    t0: 'jdm unterläuft ',
-    t1: 'ein',
-    t2: 'Fehler/',
-    t3: 'ein',
-    t4: 'Irrtum',
-
-  },
-  {
-    t0: 'Ich wohne in',
-    t1: 'einer',
-    t2: 'kleinen Wohnung.',
-  },
-  {
-    t0: 'Geld auf',
-    t1: 'ein',
-    t2: 'Konto einzahlen',
-
-  },
-
-  {
-    t0: 'Hast du ',
-    t1: 'einen',
-    t2: 'Bruder ?',
-
-  },
-  {
-    t0: 'Hast du Lust, mit mir in',
-    t1: 'ein',
-    t2: 'Café zu gehen?',
-
-  },
-  {
-    t0: 'Ich lebe in',
-    t1: 'einem',
-    t2: 'kleinen Dorf auf dem Land.',
-
-  },
-  {
-    t0: 'Haben Sie noch ',
-    t1: 'eine',
-    t2: 'Frage ? ',
-
-  },
-  {
-    t0: 'Ich habe ',
-    t1: 'eine',
-    t2: 'Stunde lang gewartet.',
-
-  },
-  {
-    t0: 'Nächstes Wochenende bin ich zu',
-    t1: 'einer',
-    t2: 'Hochzeitsfeier eingeladen.',
-
-  },
-  {
-    t0: 'Ich lerne seit ',
-    t1: 'einem',
-    t2: 'Jahr Deutsch.',
-
-  },
-  {
-    t0: 'Ich bleibe',
-    t1: 'einen',
-    t2: 'Monat in Berlin.',
-
-  },
-  {
-    t0: 'Hast du',
-    t1: 'ein',
-    t2: 'Lieblingslied ?',
-
-  },
-  {
-    t0: 'Ich habe die Information von ',
-    t1: 'einem',
-    t2: 'Nachbarn.',
-
-  },
-  {
-    t0: 'die Übernahme  ',
-    t1: 'eines',
-    t2: 'Auftrages',
-
-  },
-  {
-    t0: 'der Nutzen  ',
-    t1: 'eines',
-    t2: 'Produkts',
-
-  },
-  {
-    t0: 'Einstellung  ',
-    t1: 'eines',
-    t2: 'neuen Mitarbeiters',
-
-  },
-  {
-    t0: 'mit  ',
-    t1: 'einer',
-    t2: 'Geschwindigkeit von ...',
-
-  },
-  {
-    t0: 'Ich habe',
-    t1: 'einen',
-    t2: 'Text auf Deutsch geschrieben.',
-
-  },
-  {
-    t0: 'zu  ',
-    t1: 'einer',
-    t2: 'Einigung kommen',
-
-  },
-  {
-    t0: 'in  ',
-    t1: 'einer',
-    t2: 'Wohngemeinschaft leben',
-
-  },
-  {
-    t0: 'wie aus  ',
-    t1: 'einem',
-    t2: 'Munde',
-
-  },
-  {
-    t0: 'aus  ',
-    t1: 'einem',
-    t2: 'Geschäft aussteigen',
-
-  },
-  {
-    t0: 'mit  ',
-    t1: 'einem',
-    t2: 'Scheck bezahlen',
-
-  },
-]
-)
-const SlotDataNegativ = ref([
-  {
-    t0: 'Ich finde, das ist ',
-    t1: 'kein',
-    t2: 'gutes Buch.',
-  },
-  {
-    t0: 'Ich werde das auf ',
-    t1: 'keinen',
-    t2: 'Fall machen.',
-  },
-  {
-    t0: 'Hier in meinem Dorf gibt es leider ',
-    t1: 'keinen',
-    t2: 'Supermarkt.',
-  },
-  {
-    t0: 'Er hat sich mit ',
-    t1: 'keinem',
-    t2: 'Freund getroffen.',
-  },
-  {
-    t0: 'Zum Glück hat es ',
-    t1: 'kein',
-    t2: 'Gewitter gegeben.',
-  },
-  {
-    t0: 'Er will',
-    t1: 'keine',
-    t2: 'Fotos machen.',
-
-  },
-  {
-    t0: 'Sie isst ',
-    t1: 'kein',
-    t2: 'Fleisch.Sie ist Vegetarierin.',
-  },
-  {
-    t0: 'Danke, aber ich brauche',
-    t1: 'keine',
-    t2: 'Hilfe.',
-
-  },
-  {
-    t0: 'Ich spiele ',
-    t1: 'kein',
-    t2: 'Instrument. ',
-  },
-  {
-    t0: 'Ich möchte mehr Deutsch lernen, aber ich habe',
-    t1: 'keine',
-    t2: 'Zeit.',
-  },
-  {
-    t0: 'Ich mag ',
-    t1: 'keinen',
-    t2: 'Milchreis.',
-
-  },
-  {
-    t0: 'Heute habe ich',
-    t1: 'keine',
-    t2: 'Lust auf Sport.',
-  },
-  {
-    t0: '',
-    t1: 'keine',
-    t2: 'Ahnung!',
-  },
-  {
-    t0: 'Er verträgt',
-    t1: 'keine',
-    t2: 'Kritik.',
-  },
-  {
-    t0: 'Sie hat mich  ',
-    t1: 'keines',
-    t2: 'Blickes gewürdigt.',
-  },
-  {
-    t0: 'Er tut  ',
-    t1: 'keiner',
-    t2: 'Fliege was zuleide.',
-  },
-  {
-    t0: 'Ich bin mir  ',
-    t1: 'keiner',
-    t2: 'Schuld bewusst.',
-  },
-  {
-    t0: 'Unter  ',
-    t1: 'keiner',
-    t2: 'Bedingung werde ich das tun.',
-  },
-
-  // {
-  //   t0: '',
-  //   t1: '',
-  //   t2: '',
-  //   t3: '',
-  //   t4: '',
-  //   t5: '',
-  //   t6: '',
-  //   t7: '',
-  //   t8: '',
-  //   t9: '',
-  //   t10: '',
-  //   t11: '',
-  //   t12: '',
-  //   t13: '',
-  //   t14: '',
-  //   t15: '',
-  //   t16: '',
-  //   t17: '',
-  //   t18: '',
-  // },
-]
-
-)
-
 
 
 

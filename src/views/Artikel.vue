@@ -8,7 +8,7 @@
   Tabs(:items= 'das' title='Neuter Article “das”')
   Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
   Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
-  Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte Negativ Artikel' icons='icons')
+  Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
 
   .page-block
     .page-title--small 

@@ -3,6 +3,7 @@
   .tabs__item  
     .tabs__title(@click="tabopen=!tabopen") 
       h3 {{title}}
+      SvgIcon(name='click' )
     transition(mode='easy-in-out' name='o'  )
       .tabs__hidden(v-if="tabopen") 
         .tabs__wrap
@@ -36,6 +37,9 @@
               span(v-if="item.text9")
                 SvgIcon(:name='item.svg9' v-if="item.svg9")
                 span {{item.text9}}
+              span(v-if="item.text10")
+                SvgIcon(:name='item.svg10' v-if="item.svg10")
+                span {{item.text10}}
 
 
 
@@ -46,10 +50,7 @@ import Text from '@/components/Text.vue'; import SvgIcon from '@/components/SvgI
 import { ref } from 'vue';
 const tabopen = ref(false);
 const props = defineProps({
-  icons: {
-    type: Boolean,
-    required: false
-  },
+
   title: {
     type: String,
     required: false
@@ -77,9 +78,19 @@ const props = defineProps({
     z-index: 4;
     cursor: pointer;
     position: relative;
+    @include flex-aligne-center;
 
     h3 {
       color: $blue-1;
+      display: inline-block;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin: 0 0 0 10px;
+      display: inline-block;
+      opacity: .7;
     }
   }
 
@@ -104,7 +115,7 @@ const props = defineProps({
 
     li {
       display: grid;
-      grid-template-columns: 106px repeat(9, max-content);
+      grid-template-columns: 106px repeat(10, max-content);
       padding: 5px;
       align-items: center;
       column-gap: 20px;
@@ -116,6 +127,10 @@ const props = defineProps({
 
       &:last-child {
         padding: 5px 5px 10px 5px;
+      }
+
+      span {
+        white-space: nowrap;
       }
 
       h4 {

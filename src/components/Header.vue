@@ -49,7 +49,7 @@ const links = ref([
   { name: "Personal", href: "/personal" },
   { name: "Interrogativ", href: "/interrogativ" },
   { name: "Reflexiv", href: "/reflexiv" },
-  { name: "Possesiv", href: "/possesiv" },
+  { name: "Possessiv", href: "/possessiv" },
   { name: "Zeige", href: "/zeigepron" },
   { name: "Modal", href: "/modal" },
   { name: "Passiv", href: "/passiv" },
