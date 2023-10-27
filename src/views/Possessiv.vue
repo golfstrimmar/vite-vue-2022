@@ -2,7 +2,7 @@
 .container
   .page-title 
     h2 Possessivpronomen
-  Tabs(:items= 'Possessivmännlich' title='Possessiv männlich' )
+  Tabs(:items= 'Possessivmännlich' title='Possessiv männlichen' )
   Tabs(:items= 'Possessivweiblichen' title='Possessiv weiblichen' )
   Tabs(:items= 'Possessivneutrum' title='Possessiv neutrum' )
   Tabs(:items= 'Possessivplural' title='Possessiv plural' )
@@ -338,7 +338,179 @@ const Possessivplural = ref([
 
 
 const SlotDataPersonal = ref([
+  {
+    t0: 'Karl, wie heißt',
+    t1: 'dein',
+    t2: 'Cousin ?',
 
+
+  },
+
+  {
+    t0: '',
+    t1: 'Meine',
+    t2: 'Mutter kocht in',
+    t3: 'ihrer',
+    t4: 'Freizeit.',
+
+
+  },
+
+  {
+    t0: 'Wir treffen',
+    t1: 'unsere',
+    t2: 'Freunde im Kino.',
+
+
+  },
+
+  {
+    t0: 'Sind das die Brüder von Markus ? - Ja, das sind ',
+    t1: 'seine',
+    t2: 'Brüder.',
+
+  },
+
+  {
+    t0: 'Ich spreche mit ',
+    t1: 'meinem',
+    t2: ' Vater.',
+
+
+  },
+
+  {
+    t0: 'Hannes und Martin, habt ',
+    t1: 'ihr',
+    t2: '',
+    t3: 'eure',
+    t4: ' Sachen ?',
+
+
+  },
+
+  {
+    t0: 'Das sind Christina und',
+    t1: 'ihre',
+    t2: ' Schwester.',
+
+  },
+
+  {
+    t0: 'Du hast',
+    t1: 'deine',
+    t2: ' Tasche vergessen.',
+
+
+  },
+
+  {
+    t0: 'Sie spricht mit ',
+    t1: 'ihrer',
+    t2: ' Lehrerin.',
+
+  },
+  {
+    t0: 'Gibst du',
+    t1: 'deiner',
+    t2: ' Freundin auch ein Stück Kuchen ?',
+
+  },
+
+  {
+    t0: 'Ich danke',
+    t1: 'unserem',
+    t2: ' Deutschlehrer!',
+  },
+
+  {
+    t0: 'Wir gratulieren',
+    t1: 'unserer',
+    t2: ' Mutter zum Muttertag.',
+
+  },
+
+  {
+    t0: 'Julian hilft',
+    t1: 'seinem',
+    t2: ' Freund Andreas.',
+
+  },
+
+  {
+    t0: 'Katrin hilft',
+    t1: 'ihrer',
+    t2: ' Freundin Sarah.',
+
+  },
+
+  {
+    t0: 'Die Schüler geben',
+    t1: 'ihrer',
+    t2: ' Deutschlehrer',
+    t3: 'ihre',
+    t4: ' Hausaufgaben.',
+
+  },
+  {
+    t0: 'Frau Koch gibt',
+    t1: 'ihren',
+    t2: 'Kindern zu viele Süßigkeiten.',
+  },
+  {
+    t0: 'Wem vertraust du mehr ?',
+    t1: 'Seinen',
+    t2: '(er) oder',
+    t3: 'ihren',
+    t4: '(sie) Worten ?',
+
+  },
+  {
+    t0: '',
+    t1: 'Ihr',
+    t2: 'solltet',
+    t3: 'euren',
+    t4: '(ihr) Kindern bessere Manieren beibringen.',
+
+  },
+  {
+    t0: 'Sie hat',
+    t1: 'ihrem',
+    t2: 'Mann immer wieder verziehen.',
+
+  },
+  {
+    t0: '',
+    t1: 'Seinem',
+    t2: '(er) Wort vertraue ich nicht.',
+
+  },
+  {
+    t0: 'Könntest du bitte',
+    t1: 'deine',
+    t2: '(du) Hände waschen ?',
+
+  },
+  {
+    t0: 'Denjenigen,',
+    t1: 'dessen',
+    t2: 'Arbeit ich nicht morgen auf ',
+    t3: 'meinem',
+    t4: 'Schreibtisch finde, entlasse ich.',
+
+  },
+  {
+    t0: '',
+    t1: 'Seinem',
+    t2: ' (er) Hund würde er niemals etwas antun.',
+
+  },
+  {
+    t0: 'Tu das nicht! Das Auto gehört',
+    t1: 'meinem',
+    t2: '(ich) Arbeitgeber.',
+
+  },
   {
     t0: '',
     t1: '',
@@ -347,18 +519,57 @@ const SlotDataPersonal = ref([
     t4: '',
     t5: '',
     t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
+
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+
   },
   // {
   //   t0: '',
@@ -373,7 +584,7 @@ const SlotDataPersonal = ref([
   //   t9: '',
   //   t10: '',
   //   t11: '',
-  //   t12: '',
+  //   t12: '',+
   //   t13: '',
   //   t14: '',
   //   t15: '',
