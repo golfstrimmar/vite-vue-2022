@@ -169,28 +169,41 @@ const Bestimmte = ref([
     text1: 'der',
     text2: 'die',
     text3: 'das',
-    text4: 'die'
+    text4: 'die',
+    svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Dativ',
     text1: 'dem',
     text2: 'der',
     text3: 'dem',
-    text4: 'den + n'
+    text4: 'den + n', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Akkusativ',
     text1: 'den',
     text2: 'die',
     text3: 'das',
-    text4: 'die'
+    text4: 'die', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Genitiv',
     text1: 'des + s/es',
     text2: 'der',
     text3: 'des + s/es',
-    text4: 'der'
+    text4: 'der', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
 ])
 const Unbestimmte = ref([
@@ -198,25 +211,37 @@ const Unbestimmte = ref([
     title: 'Nominativ',
     text1: 'ein',
     text2: 'eine',
-    text3: 'ein',
+    text3: 'ein', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Dativ',
     text1: 'einem',
     text2: 'einer',
-    text3: 'einem',
+    text3: 'einem', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Akkusativ',
     text1: 'einen',
     text2: 'eine',
-    text3: 'ein',
+    text3: 'ein', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Genitiv',
     text1: 'eines + s/es',
     text2: 'einer',
-    text3: 'eines + s/es',
+    text3: 'eines + s/es', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
 ])
 const UnbestimmteNegativ = ref([
@@ -226,28 +251,40 @@ const UnbestimmteNegativ = ref([
     text1: 'kein',
     text2: 'keine',
     text3: 'kein',
-    text4: 'keine'
+    text4: 'keine', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Dativ',
     text1: 'keinem',
     text2: 'keiner',
     text3: 'keinem',
-    text4: 'keinen + n'
+    text4: 'keinen + n', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Akkusativ',
     text1: 'keinen',
     text2: 'keine',
     text3: 'kein',
-    text4: 'keine'
+    text4: 'keine', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
   {
     title: 'Genitiv',
     text1: 'keines + s / es',
     text2: 'keiner',
     text3: 'keines + s / es',
-    text4: 'keiner'
+    text4: 'keiner', svg1: 'man',
+    svg2: 'frau',
+    svg3: 'das',
+    svg4: 'group',
   },
 ])
 const SlotDataBestimmte = ref([

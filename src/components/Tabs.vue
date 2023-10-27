@@ -9,18 +9,33 @@
           ul
             li( v-for="item in items" :key="index" :item='item')
               h4 {{item.title}}
-              span
-                SvgIcon(name='man' v-if="props.icons")
+              span(v-if="item.text1")
+                SvgIcon(:name='item.svg1' v-if="item.svg1")
                 span {{item.text1}}
-              span
-                SvgIcon(name='frau' v-if="props.icons")
+              span(v-if="item.text2")
+                SvgIcon(:name='item.svg2' v-if="item.svg2")
                 span {{item.text2}}
-              span
-                SvgIcon(name='das' v-if="props.icons")
+              span(v-if="item.text3")
+                SvgIcon(:name='item.svg3' v-if="item.svg3")
                 span {{item.text3}}
-              span
-                SvgIcon(name='group' v-if="props.icons")
+              span(v-if="item.text4")
+                SvgIcon(:name='item.svg4' v-if="item.svg4")
                 span {{item.text4}}
+              span(v-if="item.text5")
+                SvgIcon(:name='item.svg5' v-if="item.svg5")
+                span {{item.text5}}
+              span(v-if="item.text6")
+                SvgIcon(:name='item.svg6' v-if="item.svg6")
+                span {{item.text6}}
+              span(v-if="item.text7")
+                SvgIcon(:name='item.svg7' v-if="item.svg7")
+                span {{item.text7}}
+              span(v-if="item.text8")
+                SvgIcon(:name='item.svg8' v-if="item.svg8")
+                span {{item.text8}}
+              span(v-if="item.text9")
+                SvgIcon(:name='item.svg9' v-if="item.svg9")
+                span {{item.text9}}
 
 
 
@@ -89,8 +104,11 @@ const props = defineProps({
 
     li {
       display: grid;
-      grid-template-columns: 160px repeat(4, 150px);
+      grid-template-columns: 106px repeat(9, max-content);
       padding: 5px;
+      align-items: center;
+      column-gap: 20px;
+
 
       &:first-child {
         padding: 10px 5px 5px 5px;
@@ -109,14 +127,14 @@ const props = defineProps({
       svg {
         width: 25px;
         height: 25px;
-        margin: 0 5px 0 0;
+        margin: 0 3px 0 0;
       }
     }
   }
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 950px) {
   .tabs {
 
 
@@ -126,6 +144,7 @@ const props = defineProps({
       li {
         grid-template-columns: max-content;
         margin: 0 0 10px 0;
+        gap: 3px;
 
         h4 {
           color: $blue-6;
