@@ -512,65 +512,45 @@ const SlotDataPersonal = ref([
 
   },
   {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
+    t0: 'Arbeitet  ',
+    t1: 'ihr',
+    t2: 'Bruder wirklich in Japan?',
+
+  },
+  {
+    t0: 'Wo arbeitet  ',
+    t1: 'Ihr',
+    t2: '(respect) Bruder eigentlich?',
+
+  },
+  {
+    t0: 'Wessen Tasche ist das? Mark, ist das',
+    t1: 'deine?',
+    t2: 'Nein,  ',
+    t3: 'meine',
+    t4: 'steht hier unter dem Tisch.',
 
   },
   {
     t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
+    t1: 'Mein',
+    t2: 'Auto ist bis morgen in der Werkstatt.Könntest du',
+    t3: 'mir',
+    t4: 'heute Abend',
+    t5: 'deins',
+    t6: 'leihen?',
 
   },
   {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-
+    t0: 'Hast du',
+    t1: 'meinen',
+    t2: 'Füller gesehen? Das hier ist',
+    t3: 'meiner',
+    t4: '.',
+    t5: 'Deinen',
+    t6: 'habe ich nicht gesehen.',
   },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
 
-  },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-
-  },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-
-  },
   // {
   //   t0: '',
   //   t1: '',
