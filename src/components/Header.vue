@@ -20,7 +20,7 @@ header.header
         router-link(to="/signin"  v-if="!isLoggedIn" ) SignIn
         Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" ) 
         ._user(v-if="isLoggedIn" )
-          span Kontoinformationen
+          span User info
           p {{ taskStore.name }}
       ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
         span
