@@ -5,7 +5,7 @@ import Personal from "@/views/Personal.vue";
 import Interrogativ from "@/views/Interrogativ.vue";
 import Reflexiv from "@/views/Reflexiv.vue";
 import Possessiv from "@/views/Possessiv.vue";
-import Zeigepronomen from "@/views/Zeigepronomen.vue";
+import Demonstrativ from "@/views/Demonstrativ.vue";
 import Modal from "@/views/Modal.vue";
 import Passiv from "@/views/Passiv.vue";
 import Konjunktiv from "@/views/Konjunktiv-II.vue";
@@ -22,7 +22,7 @@ const router = createRouter({
     { path: "/interrogativ", name: "Interrogativ", component: Interrogativ },
     { path: "/reflexiv", name: "Reflexiv", component: Reflexiv },
     { path: "/possessiv", name: "Possessiv", component: Possessiv },
-    { path: "/zeigepron", name: "Zeige", component: Zeigepronomen },
+    { path: "/demonstrativ", name: "Demonstrativ", component: Demonstrativ },
     { path: "/modal", name: "Modal", component: Modal },
     { path: "/passiv", name: "Passiv", component: Passiv },
     { path: "/konjunktiv", name: "Konjunktiv", component: Konjunktiv },

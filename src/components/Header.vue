@@ -50,7 +50,7 @@ const links = ref([
   { name: "Interrogativ", href: "/interrogativ" },
   { name: "Reflexiv", href: "/reflexiv" },
   { name: "Possessiv", href: "/possessiv" },
-  { name: "Zeige", href: "/zeigepron" },
+  { name: "Demonstrativ", href: "/demonstrativ" },
   { name: "Modal", href: "/modal" },
   { name: "Passiv", href: "/passiv" },
   { name: "Konjunktiv-II", href: "/konjunktiv" },

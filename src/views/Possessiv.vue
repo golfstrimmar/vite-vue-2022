@@ -361,7 +361,6 @@ const SlotDataPersonal = ref([
     t1: 'unsere',
     t2: 'Freunde im Kino.',
 
-
   },
 
   {
@@ -551,6 +550,50 @@ const SlotDataPersonal = ref([
     t6: 'habe ich nicht gesehen.',
   },
 
+  {
+    t0: 'Es bedarf   ',
+    t1: 'seines',
+    t2: 'Könnens, nicht',
+    t3: 'meines',
+    t4: '.',
+
+  },
+  {
+    t0: 'Das ist das Buch  ',
+    t1: 'eures',
+    t2: 'Bruders.',
+
+  },
+  {
+    t0: '',
+    t1: 'Unsere',
+    t2: ' Freunde haben eine Überraschung für ',
+    t3: 'dich',
+    t4: '.',
+
+  },
+  {
+    t0: 'Meinst du   ',
+    t1: 'seinen',
+    t2: 'Vater? – Nein, ich rede von',
+    t3: 'meinem',
+    t4: '.',
+
+  },
+  {
+    t0: 'Hier liegt ein Handy. Ist das  ',
+    t1: 'deins',
+    t2: '(du) ?',
+
+  },
+  {
+    t0: 'Da ist   ',
+    t1: 'ein',
+    t2: 'Stift. Ist das nicht',
+    t3: 'eurer',
+    t4: '(wir) ?',
+
+  },
   // {
   //   t0: '',
   //   t1: '',
@@ -564,7 +607,7 @@ const SlotDataPersonal = ref([
   //   t9: '',
   //   t10: '',
   //   t11: '',
-  //   t12: '',+
+  //   t12: '',
   //   t13: '',
   //   t14: '',
   //   t15: '',

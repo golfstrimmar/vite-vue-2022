@@ -289,227 +289,255 @@ const UnbestimmteNegativ = ref([
 ])
 const SlotDataBestimmte = ref([
   {
-    t0: '',
+    t0: 'Балкон у гостинной большой.',
     t1: 'Der',
     t2: 'Balkon',
     t3: 'des',
-    t4: 'Wohnzimmers ist groß. ',
+    t4: 'Wohnzimmers',
+    t5: 'ist',
+    t6: 'groß',
+    t7: '.',
   },
+
   {
-    t0: 'Wir erzählen  ',
-    t1: 'den',
-    t2: 'Kindern ',
-    t3: 'die',
-    t4: 'Geschichte.',
-  },
-  {
-    t0: 'Aber ',
-    t1: 'der',
-    t2: 'Frühling ist am allerbesten. ',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Tourismus bringt Geld in',
-    t3: 'die',
-    t4: 'Stadt.',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Fahrer hat Probleme, in ',
+    t0: 'Мы расказываем детям историю.',
+    t1: 'Wir',
+    t2: 'erzählen',
     t3: 'den',
-    t4: 'Parkbereich zu gelangen. ',
-  },
-  {
-    t0: 'Ben war',
-    t1: 'der',
-    t2: 'beste investigative Journalist von allen.',
-
-  },
-  {
-    t0: 'Es ist',
-    t1: 'der',
-    t2: 'Bereich meines Lebens, wo ich mich als Teil',
-    t3: 'der',
-    t4: 'Menge fühle. ',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Neuling bleibt mit',
-    t3: 'dem',
-    t4: 'Mädchen draußen.',
-
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Körper beginnt zu verwesen und füllt sich mit Gas.',
-  },
-  {
-    t0: 'Das ist',
-    t1: 'der',
-    t2: 'Polizist, nach',
-    t3: 'dem',
-    t4: 'wir suchen. ',
-  },
-  {
-    t0: 'Und',
-    t1: 'die',
-    t2: 'Farbe',
-    t3: 'des',
-    t4: 'Teppichs passt zu ',
-    t5: 'den',
-    t6: 'Fasern,',
-    t7: 'die',
-    t8: 'wir fanden.',
-  },
-  {
-    t0: '',
-    t1: 'Der',
-    t2: 'Techniker,',
-    t3: 'der',
-    t4: '',
+    t4: 'Kindern ',
     t5: 'die',
-    t6: 'Analyse machte, wurde tot aufgefunden.',
+    t6: 'Geschichte',
+    t7: '.',
   },
   {
-    t0: 'Ich habe lediglich',
-    t1: 'den',
-    t2: 'Lichtschalter und',
-    t3: 'die',
-    t4: 'Abdeckung',
-    t5: 'des',
-    t6: 'Luftkanals angefasst.',
+    t0: 'Но весна лучше всего.',
+    t1: 'Aber',
+    t2: 'der',
+    t3: 'Frühling',
+    t4: 'ist',
+    t5: 'am',
+    t6: 'allerbesten',
+    t7: '.',
+  },
+
+  {
+    t0: 'Туризм приносит в город деньги.',
+    t1: 'Der',
+    t2: 'Tourismus',
+    t3: 'bringt',
+    t4: 'Geld',
+    t5: 'in',
+    t6: 'die',
+    t7: 'Stadt',
+    t8: '.',
   },
   {
-    t0: 'Was wäre',
-    t1: 'das',
-    t2: 'Leben ohne',
-    t3: 'die',
-    t4: 'Möglichkeit dumme Entscheidungen zu treffen?',
+    t0: 'У водителя возникли проблемы с въездом в парковочную зону.',
+    t1: 'Der',
+    t2: 'Fahrer',
+    t3: 'hatte',
+    t4: 'Probleme',
+    t5: ',',
+    t6: 'den',
+    t7: 'Parkplatz',
+    t8: 'zu',
+    t9: 'betreten',
+    t10: '.',
   },
+
   {
-    t0: '',
-    t1: 'Die',
-    t2: 'Einheit wird aktiviert werden. ',
-  },
-  {
-    t0: 'Er hat Briefe an',
-    t1: 'die',
-    t2: 'Verbeamtungs-Kommission geschrieben. ',
-  },
-  {
-    t0: 'Was meint',
-    t1: 'die',
-    t2: 'Dichterin mit "wir gewöhnen uns"?',
-  },
-  {
-    t0: 'Um',
-    t1: 'die',
-    t2: 'Qualität machen wir uns später Gedanken.',
-  },
-  {
-    t0: 'Ich spiele nicht in',
-    t1: 'der',
-    t2: 'Mannschaft ihres Sohnes. ',
-  },
-  {
-    t0: 'Sie sehen heute noch schlechter aus als bei ',
-    t1: 'der',
-    t2: 'Konferenz.',
-  },
-  {
-    t0: 'Da Vinci hat Gräber geplündert, um',
-    t1: 'die',
-    t2: 'Anatomie zu studieren.',
-  },
-  {
-    t0: 'Ist da Zitrone auf ',
-    t1: 'dem',
-    t2: 'Hähnchen?',
-  },
-  {
-    t0: 'In',
-    t1: 'dem',
-    t2: 'Büchlein steht ',
+    t0: 'Бен был лучшим журналистом из всех.',
+    t1: 'Ben',
+    t2: 'war',
     t3: 'der',
-    t4: 'Name ',
-    t5: 'des',
-    t6: 'Kunden,',
-    t7: 'den',
-    t8: 'er eingestellt hat.',
+    t4: 'beste',
+    t5: 'Journalist',
+    t6: 'von',
+    t7: 'allen',
+    t8: '.',
+
+  },
+
+
+
+  {
+    t0: 'Это полицейский, которого мы ищем.',
+    t1: 'Das',
+    t2: 'ist',
+    t3: 'der',
+    t4: 'Polizist',
+    t5: ',',
+    t6: 'nach',
+    t7: 'dem',
+    t8: 'wir',
+    t9: 'suchen',
+    t10: '.',
+  },
+
+
+
+  {
+    t0: 'Техник, проводивший анализ, был найден мертвым.',
+    t1: 'Der',
+    t2: 'Techniker',
+    t3: ',',
+    t4: 'der',
+    t5: 'die',
+    t6: 'Analyse',
+    t7: 'machte',
+    t8: ',',
+    t9: 'wurde',
+    t10: 'tot',
+    t11: 'aufgefunden',
+    t12: '.',
+
+  },
+
+
+  {
+    t0: 'Какой была бы жизнь без возможности принимать глупые решения?',
+    t1: 'Was           ',
+    t2: 'wäre',
+    t3: 'das',
+    t4: 'Leben',
+    t5: 'ohne',
+    t6: 'die',
+    t7: 'Möglichkeit',
+    t8: 'dumme',
+    t9: 'Entscheidungen',
+    t10: 'zu',
+    t11: 'treffen',
+    t12: '?',
+  },
+
+
+  {
+    t0: 'О качестве мы подумаем позже.',
+    t1: 'Über',
+    t2: 'die',
+    t3: 'Qualität',
+    t4: 'werden',
+    t5: 'wir',
+    t6: 'später',
+    t7: 'nachdenken',
+    t8: '.',
+
+  },
+
+  {
+    t0: 'Я не играю в команде вашего сына.',
+    t1: 'Ich',
+    t2: 'spiele',
+    t3: 'nicht',
+    t4: 'in',
+    t5: 'der',
+    t6: 'Mannschaft',
+    t7: 'ihres',
+    t8: 'Sohnes',
+    t9: '.',
   },
   {
-    t0: 'Ich brauche',
-    t1: 'das',
-    t2: 'Apartment.',
+    t0: 'Есть ли на курице лимон?',
+    t1: 'Ist',
+    t2: 'da',
+    t3: 'Zitrone',
+    t4: 'auf',
+    t5: 'dem',
+    t6: 'Hähnchen',
+    t7: '?',
   },
   {
-    t0: 'Es trägt',
-    t1: 'das',
-    t2: 'Datum',
-    t3: 'des',
-    t4: '5. November.',
+    t0: 'Мне нужно попасть в квартиру',
+    t1: 'Ich    ',
+    t2: 'muss',
+    t3: 'in',
+    t4: 'das',
+    t5: 'Apartment',
+    t6: '.',
+
   },
+
+
   {
-    t0: 'Wie war ',
-    t1: 'das',
-    t2: 'Ergebnis?',
+    t0: 'Каков был результат?',
+    t1: 'Wie',
+    t2: 'war',
+    t3: 'das',
+    t4: 'Ergebnis',
+    t5: '?',
+
   },
+
   {
-    t0: 'auf',
-    t1: 'dem',
-    t2: 'Rücken \ auf',
-    t3: 'dem',
-    t4: 'Bauch liegen ',
+    t0: 'лежа на спине',
+    t1: 'auf',
+    t2: 'dem',
+    t3: 'Rücken',
+    t4: 'liegen',
+
   },
+
   {
-    t0: 'aus',
-    t1: 'dem',
-    t2: 'Haus gehen',
+    t0: 'выходить из дома',
+    t1: 'aus',
+    t2: 'dem',
+    t3: 'Haus',
+    t4: 'gehen',
+
   },
+
   {
-    t0: '',
+    t0: 'спрятать голову в песок',
     t1: 'den',
-    t2: 'Kopf in',
-    t3: 'den',
-    t4: 'Sand stecken ',
+    t2: 'Kopf',
+    t3: 'in',
+    t4: 'den',
+    t5: 'Sand',
+    t6: 'stecken',
+
   },
+
   {
-    t0: 'mit',
-    t1: 'den',
-    t2: 'Füßen auf',
-    t3: 'den',
-    t4: 'Boden stampfen',
+    t0: 'топать ногами по земле',
+    t1: 'mit',
+    t2: 'den',
+    t3: 'Füßen',
+    t4: 'auf',
+    t5: 'den',
+    t6: 'Boden',
+    t7: 'stampfen',
+
   },
+
   {
-    t0: '',
+    t0: 'хозяин дома',
     t1: 'der',
     t2: 'Herr',
     t3: 'des',
     t4: 'Hauses',
+
   },
+
+
   {
-    t0: 'wegen',
-    t1: 'des',
-    t2: 'schlechten Wetters',
+    t0: 'из-за плохой погоды',
+    t1: 'wegen   ',
+    t2: 'des',
+    t3: 'schlechten',
+    t4: 'Wetters',
+
   },
+
+
   {
-    t0: 'an',
-    t1: 'der',
-    t2: 'Spitze',
-    t3: 'der',
-    t4: 'Kolonne',
-  },
-  {
-    t0: '',
+    t0: 'перенасыщение рынка',
     t1: 'die',
     t2: 'Übersättigung',
     t3: 'des',
     t4: 'Marktes',
-  }
+
+  },
+
   // {
   //   t0: '',
   //   t1: '',
@@ -536,258 +564,364 @@ const SlotDataBestimmte = ref([
 )
 const SlotDataUnbestimmte = ref([
   {
-    t0: 'Wir waren gestern auf',
-    t1: 'einem',
-    t2: 'fantastischen Konzert.',
-  },
-  {
-    t0: '',
+    t0: 'найти отличный ответ',
     t1: 'ein',
-    t2: 'großes/nur',
+    t2: 'großes',
+    t3: 'Echo',
+    t4: 'finden',
+
+  },
+
+
+  {
+    t0: 'Я живу в маленькой квартире.',
+    t1: 'Ich',
+    t2: 'wohne',
+    t3: 'in',
+    t4: 'einer',
+    t5: 'kleinen',
+    t6: 'Wohnung',
+
+  },
+
+  {
+    t0: 'Внести деньги на счет',
+    t1: 'Geld    ',
+    t2: 'auf',
     t3: 'ein',
-    t4: 'geringes Echo finden',
-  },
-  {
-    t0: '',
-    t1: 'ein',
-    t2: 'Elternteil',
+    t4: 'Konto',
+    t5: 'einzahlen',
 
   },
+
   {
-    t0: 'jdm unterläuft ',
-    t1: 'ein',
-    t2: 'Fehler/',
+    t0: 'У тебя есть брат ?',
+    t1: 'Hast',
+    t2: 'du',
+    t3: 'einen',
+    t4: 'Bruder',
+    t5: '?',
+
+  },
+
+  {
+    t0: 'Не хочешь пойти со мной в кафе?',
+    t1: 'Hast',
+    t2: 'du',
+    t3: 'Lust',
+    t4: 'mit',
+    t5: 'mir',
+    t6: 'in',
+    t7: 'ein',
+    t8: 'Cafe',
+    t9: 'zu',
+    t10: 'gehen',
+    t11: '?',
+
+  },
+
+  {
+    t0: 'Я живу в маленькой деревне.',
+    t1: 'Ich',
+    t2: 'lebe',
+    t3: 'in',
+    t4: 'einem',
+    t5: 'kleinen',
+    t6: 'Dorf',
+    t7: '.',
+
+  },
+
+  {
+    t0: 'У вас есть еще вопрос?',
+    t1: 'Haben',
+    t2: 'Sie',
+    t3: 'noch',
+    t4: 'eine',
+    t5: 'Frage',
+    t6: '?',
+
+  },
+
+  {
+    t0: 'Я ждал час.',
+    t1: 'Ich',
+    t2: 'habe',
+    t3: 'eine',
+    t4: 'Stunde',
+    t5: 'lang',
+    t6: 'gewartet',
+    t7: '.',
+
+  },
+
+
+  {
+    t0: 'Я учу немецкий уже год.',
+    t1: 'Ich',
+    t2: 'lerne',
+    t3: 'seit',
+    t4: 'einem',
+    t5: 'Jahr',
+    t6: 'Deutsch',
+    t7: '.',
+
+  },
+
+  {
+    t0: 'Я остаюсь в Берлине на месяц.',
+    t1: 'Ich',
+    t2: 'bleibe',
+    t3: 'einen',
+    t4: 'Monat',
+    t5: 'in',
+    t6: 'Berlin',
+    t7: '.',
+
+  },
+
+  {
+    t0: 'У тебя есть любимая песня ?',
+    t1: 'Hast',
+    t2: 'du',
     t3: 'ein',
-    t4: 'Irrtum',
-
-  },
-  {
-    t0: 'Ich wohne in',
-    t1: 'einer',
-    t2: 'kleinen Wohnung.',
-  },
-  {
-    t0: 'Geld auf',
-    t1: 'ein',
-    t2: 'Konto einzahlen',
+    t4: 'Lieblingslied',
+    t5: '?',
 
   },
 
   {
-    t0: 'Hast du ',
-    t1: 'einen',
-    t2: 'Bruder ?',
+    t0: 'У меня есть информация от соседа.',
+    t1: 'Ich',
+    t2: 'habe',
+    t3: 'die',
+    t4: 'Information',
+    t5: 'von',
+    t6: 'einem',
+    t7: 'Nachbarn',
+    t8: '.',
 
   },
+
+
   {
-    t0: 'Hast du Lust, mit mir in',
-    t1: 'ein',
-    t2: 'Café zu gehen?',
+    t0: 'полезность продукта',
+    t1: 'der',
+    t2: 'Nutzen',
+    t3: 'eines',
+    t4: 'Produkts',
 
   },
+
+
   {
-    t0: 'Ich lebe in',
-    t1: 'einem',
-    t2: 'kleinen Dorf auf dem Land.',
+    t0: 'Я написал текст на немецком языке.',
+    t1: 'Ich',
+    t2: 'habe',
+    t3: 'einen',
+    t4: 'Text',
+    t5: 'auf',
+    t6: 'Deutsch',
+    t7: 'geschrieben',
+    t8: '.',
 
   },
+
+
   {
-    t0: 'Haben Sie noch ',
-    t1: 'eine',
-    t2: 'Frage ? ',
+    t0: 'уйти из бизнеса',
+    t1: 'aus',
+    t2: 'einem',
+    t3: 'Geschäft',
+    t4: 'aussteigen',
 
   },
+
   {
-    t0: 'Ich habe ',
-    t1: 'eine',
-    t2: 'Stunde lang gewartet.',
+    t0: 'заплатить чеком',
+    t1: 'mit',
+    t2: 'einem',
+    t3: 'Scheck',
+    t4: 'bezahlen',
 
   },
-  {
-    t0: 'Nächstes Wochenende bin ich zu',
-    t1: 'einer',
-    t2: 'Hochzeitsfeier eingeladen.',
 
-  },
-  {
-    t0: 'Ich lerne seit ',
-    t1: 'einem',
-    t2: 'Jahr Deutsch.',
-
-  },
-  {
-    t0: 'Ich bleibe',
-    t1: 'einen',
-    t2: 'Monat in Berlin.',
-
-  },
-  {
-    t0: 'Hast du',
-    t1: 'ein',
-    t2: 'Lieblingslied ?',
-
-  },
-  {
-    t0: 'Ich habe die Information von ',
-    t1: 'einem',
-    t2: 'Nachbarn.',
-
-  },
-  {
-    t0: 'die Übernahme  ',
-    t1: 'eines',
-    t2: 'Auftrages',
-
-  },
-  {
-    t0: 'der Nutzen  ',
-    t1: 'eines',
-    t2: 'Produkts',
-
-  },
-  {
-    t0: 'Einstellung  ',
-    t1: 'eines',
-    t2: 'neuen Mitarbeiters',
-
-  },
-  {
-    t0: 'mit  ',
-    t1: 'einer',
-    t2: 'Geschwindigkeit von ...',
-
-  },
-  {
-    t0: 'Ich habe',
-    t1: 'einen',
-    t2: 'Text auf Deutsch geschrieben.',
-
-  },
-  {
-    t0: 'zu  ',
-    t1: 'einer',
-    t2: 'Einigung kommen',
-
-  },
-  {
-    t0: 'in  ',
-    t1: 'einer',
-    t2: 'Wohngemeinschaft leben',
-
-  },
-  {
-    t0: 'wie aus  ',
-    t1: 'einem',
-    t2: 'Munde',
-
-  },
-  {
-    t0: 'aus  ',
-    t1: 'einem',
-    t2: 'Geschäft aussteigen',
-
-  },
-  {
-    t0: 'mit  ',
-    t1: 'einem',
-    t2: 'Scheck bezahlen',
-
-  },
 ]
 )
 const SlotDataNegativ = ref([
   {
-    t0: 'Ich finde, das ist ',
-    t1: 'kein',
-    t2: 'gutes Buch.',
-  },
-  {
-    t0: 'Ich werde das auf ',
-    t1: 'keinen',
-    t2: 'Fall machen.',
-  },
-  {
-    t0: 'Hier in meinem Dorf gibt es leider ',
-    t1: 'keinen',
-    t2: 'Supermarkt.',
-  },
-  {
-    t0: 'Er hat sich mit ',
-    t1: 'keinem',
-    t2: 'Freund getroffen.',
-  },
-  {
-    t0: 'Zum Glück hat es ',
-    t1: 'kein',
-    t2: 'Gewitter gegeben.',
-  },
-  {
-    t0: 'Er will',
-    t1: 'keine',
-    t2: 'Fotos machen.',
+    t0: 'Я не думаю, что это хорошая книга.',
+    t1: 'Ich',
+    t2: 'finde',
+    t3: ',',
+    t4: 'das',
+    t5: 'ist',
+    t6: 'kein',
+    t7: 'gutes',
+    t8: 'Buch',
+    t9: '.',
 
   },
+
   {
-    t0: 'Sie isst ',
-    t1: 'kein',
-    t2: 'Fleisch.Sie ist Vegetarierin.',
-  },
-  {
-    t0: 'Danke, aber ich brauche',
-    t1: 'keine',
-    t2: 'Hilfe.',
+    t0: 'Я ни за что не собираюсь этого делать.',
+    t1: 'Ich',
+    t2: 'werde ',
+    t3: 'das',
+    t4: 'auf',
+    t5: 'keinen',
+    t6: 'Fall',
+    t7: 'machen',
+    t8: '.',
 
   },
+
   {
-    t0: 'Ich spiele ',
-    t1: 'kein',
-    t2: 'Instrument. ',
-  },
-  {
-    t0: 'Ich möchte mehr Deutsch lernen, aber ich habe',
-    t1: 'keine',
-    t2: 'Zeit.',
-  },
-  {
-    t0: 'Ich mag ',
-    t1: 'keinen',
-    t2: 'Milchreis.',
+    t0: 'Hier',
+    t1: 'in',
+    t2: 'meinem',
+    t3: 'Dorf',
+    t4: 'gibt',
+    t5: 'es',
+    t6: 'leider',
+    t7: 'keinen',
+    t8: 'Supermarkt',
+    t9: '.',
 
   },
+
   {
-    t0: 'Heute habe ich',
+    t0: 'Он не встретился ни с одним другом.',
+    t1: 'Er',
+    t2: 'hat',
+    t3: 'sich',
+    t4: 'mit',
+    t5: 'keinem',
+    t6: 'Freund',
+    t7: 'getroffen',
+    t8: '.',
+
+  },
+
+
+  {
+    t0: 'К счастью, грозы не было.',
+    t1: 'Zum',
+    t2: 'Glück',
+    t3: 'hat',
+    t4: 'es',
+    t5: 'kein',
+    t6: 'Gewitter',
+    t7: 'gegeben',
+    t8: '.',
+
+  },
+
+  {
+    t0: 'Он не хочет фотографировать.',
+    t1: 'Er',
+    t2: 'will',
+    t3: 'keine',
+    t4: 'Fotos',
+    t5: 'machen',
+    t6: '.',
+
+  },
+
+  {
+    t0: 'Она не ест мяса. Она вегетарианка.',
+    t1: 'Sie',
+    t2: 'isst',
+    t3: 'kein',
+    t4: 'Fleisch',
+    t5: '.',
+    t6: 'Sie',
+    t7: 'ist',
+    t8: 'Vegetarierin',
+    t9: '.',
+
+  },
+
+  {
+    t0: 'Спасибо, но мне не нужна помощь.',
+    t1: 'Danke',
+    t2: ',',
+    t3: 'aber',
+    t4: 'ich',
+    t5: 'brauche',
+    t6: 'keine',
+    t7: 'Hilfe',
+    t8: '.',
+
+  },
+
+  {
+    t0: 'Я не играю ни на одном инструменте.',
+    t1: 'Ich',
+    t2: 'spiele',
+    t3: 'kein',
+    t4: 'Instrument',
+    t5: '.',
+
+  },
+
+  {
+    t0: 'Я хотел бы выучить больше немецкого, но у меня нет времени.',
+    t1: 'Ich',
+    t2: 'möchte',
+    t3: 'mehr',
+    t4: 'Deutsch',
+    t5: 'lernen',
+    t6: ',',
+    t7: 'aber',
+    t8: 'ich',
+    t9: 'habe',
+    t10: 'keine',
+    t11: 'Zeit',
+    t12: '.',
+
+  },
+
+  {
+    t0: 'Я не люблю рисовый пудинг.',
+    t1: 'Ich',
+    t2: 'mag',
+    t3: 'keinen',
+    t4: 'Milchreis',
+    t5: '.',
+  },
+
+  {
+    t0: 'Сегодня у меня нет желания заниматься спортом.',
+    t1: 'Heute',
+    t2: 'habe',
+    t3: 'ich',
+    t4: 'keine',
+    t5: 'Lust',
+    t6: 'auf',
+    t7: 'Sport',
+    t8: '.',
+  },
+
+  {
+    t0: 'понятия не имею!',
     t1: 'keine',
-    t2: 'Lust auf Sport.',
+    t2: 'Ahnung',
+    t3: '!',
+
   },
+
+
   {
-    t0: '',
-    t1: 'keine',
-    t2: 'Ahnung!',
-  },
-  {
-    t0: 'Er verträgt',
-    t1: 'keine',
-    t2: 'Kritik.',
-  },
-  {
-    t0: 'Sie hat mich  ',
-    t1: 'keines',
-    t2: 'Blickes gewürdigt.',
-  },
-  {
-    t0: 'Er tut  ',
-    t1: 'keiner',
-    t2: 'Fliege was zuleide.',
-  },
-  {
-    t0: 'Ich bin mir  ',
-    t1: 'keiner',
-    t2: 'Schuld bewusst.',
-  },
-  {
-    t0: 'Unter  ',
-    t1: 'keiner',
-    t2: 'Bedingung werde ich das tun.',
+    t0: 'Ни при каких условиях я этого не сделаю.',
+    t1: 'Unter',
+    t2: 'keiner',
+    t3: 'Bedingung',
+    t4: 'werde',
+    t5: 'ich',
+    t6: 'das',
+    t7: 'tun',
+    t8: '.',
   },
 
   // {
