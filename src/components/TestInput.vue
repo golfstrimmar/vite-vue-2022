@@ -1,5 +1,5 @@
 <template lang="pug">
-input(type = 'text' @input="$emit('update:modelValue', $event.target.value)" :value='modelValue')
+
 
 </template>
 

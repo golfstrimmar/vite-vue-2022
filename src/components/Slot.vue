@@ -1,6 +1,7 @@
 <template lang="pug">
 .training
 	Button(type='text' text="beispiele mischen" @someEvent="someEvent")
+	Button(type='text' text="focus" @click="elFocus")
 	.plaza__line(v-for="item in TempData " :key="index")
 		p {{ item.t0 }}
 		Input(:Antwort = 'item.t1'  :reset='reset' ) 
@@ -76,9 +77,7 @@ const someEvent = (data) => {
 	reset.value = !reset.value
 }
 
-// const eventChange = (data) => {
-// 	tempInputValue.value = data;
-// }
+
 
 
 

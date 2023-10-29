@@ -1,14 +1,21 @@
 <template lang="pug">
 .container
-  TestInput( v-model="age" )
-  p age:{{ age }}
+  input(ref='custominput' )
+  button(@click='InputFocus') submitData
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import TestInput from '@/components/TestInput.vue';
 
-const age = ref("fff")
+
+
+const custominput = ref(null)
+
+function InputFocus() {
+  custominput.value.focus()
+}
+
 
 
 </script>

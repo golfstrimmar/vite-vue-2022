@@ -22,7 +22,15 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 const app = createApp(App);
-app.use(router).use(createPinia()).mount("#app");
+
+app
+  .directive("focus", function (el) {
+    el.focus();
+    console.log(el);
+  })
+  .use(router)
+  .use(createPinia())
+  .mount("#app");
 // .use(Quasar, {
 //   plugins: {},
 // })

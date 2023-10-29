@@ -47,9 +47,9 @@
 			}
 
 			&:nth-child(2) {
-				background: $deep-orange-13 !important;
+				background: lighten($deep-orange-13, 20%);
 				box-shadow: inset 0 0 5px rgba(252, 253, 253, 0.884) !important;
-				color: $grey-14;
+				color: $grey-10;
 			}
 		}
 	}
