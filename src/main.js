@@ -26,7 +26,7 @@ const app = createApp(App);
 app
   .directive("focus", function (el) {
     el.focus();
-    console.log(el);
+    el.value = "focus";
   })
   .use(router)
   .use(createPinia())

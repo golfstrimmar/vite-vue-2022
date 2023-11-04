@@ -1,13 +1,14 @@
 <template lang="pug">
-input(type='text' v-focus  v-model='inputValue' :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch']" v-if="Antwort !== undefined")
+input(type='text'   v-model='inputValue'   :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch']" v-if="Antwort !== undefined")
 </template>
 <script setup>
-import { ref, defineEmits, computed, watch, defineProps, onMounted } from 'vue';
+import { ref, watch, defineProps } from 'vue';
 const inputValue = ref('')
 
 
 
 const props = defineProps({
+
 	reset: {
 		type: Boolean,
 		required: false
@@ -15,19 +16,24 @@ const props = defineProps({
 	Antwort: {
 		type: String,
 		required: false
-	}
-})
+	},
 
+})
 
 
 watch(() => props.reset, (newvalue, oldvalue) => {
 	inputValue.value = '';
 });
 
-onMounted(
-	() => {
-	}
-)
+
+// onMounted(
+// 	() => {
+// 		// if (props.focusActiv) {
+// 		// 	console.log(props.focusActiv);
+// 		// myinput.value.focus()
+// 		// }
+// 	}
+// )
 
 
 </script>
@@ -39,11 +45,11 @@ input {
 	border-radius: 5px;
 	// color: transparent;
 
-	&:focus {
-		background: lighten($deep-orange-1, 50%) !important;
-		color: $deep-orange-13;
-		box-shadow: inset 0 0 5px rgba(252, 253, 253, 0.884) !important;
-	}
+	// &:focus {
+	// 	background: lighten($deep-orange-1, 50%) !important;
+	// 	color: $deep-orange-13;
+	// 	box-shadow: inset 0 0 5px rgba(252, 253, 253, 0.884) !important;
+	// }
 
 
 	&._is-active {

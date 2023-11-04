@@ -3,47 +3,77 @@
   .page-title 
     h2 der Artikel
 
-  Tabs(:items= 'der' title='Masculine article “der”')
-  Tabs(:items= 'die' title='Feminine Article “die”')
-  Tabs(:items= 'das' title='Neuter Article “das”')
-  Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
-  Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
-  Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
+    Tabs(:items= 'der' title='Masculine article “der”')
+    Tabs(:items= 'die' title='Feminine Article “die”')
+    Tabs(:items= 'das' title='Neuter Article “das”')
+    Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
+    Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
+    Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
 
-  .page-block
-    .page-title--small 
-      h3 Bestimmte Artikel
-    Plaza
-    Slot(:SlotData='SlotDataBestimmte')
+    .page-block
+      .page-title--small 
+        h3 Bestimmte Artikel
+      Plaza
+      Slot(:SlotData='SlotDataBestimmte' :focusActiv='focusActiv')
 
-  .page-block
-    .page-title--small 
-      h3 Unbestimmte Artikel
-    Content(:items='Unbestimmte' :headers='Headers')
-    Plaza
-    Slot(:SlotData='SlotDataUnbestimmte')
+    .page-block
+      .page-title--small 
+        h3 Unbestimmte Artikel
+      Content(:items='Unbestimmte' :headers='Headers')
+      Plaza
+      Slot(:SlotData='SlotDataUnbestimmte')
 
 
-  .page-block
-    .page-title--small 
-      h3 Unbestimmte Negativ Artikel
-    Content(:items='UnbestimmteNegativ' :headers='Headers')
-    Plaza
-    Slot(:SlotData='SlotDataNegativ')
+    .page-block
+      .page-title--small 
+        h3 Unbestimmte Negativ Artikel
+      Content(:items='UnbestimmteNegativ' :headers='Headers')
+      Plaza
+      Slot(:SlotData='SlotDataNegativ')
 
 
 
 </template>
 
 
+
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 // import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
 
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 const icons = ref(true)
+const focusActiv = ref(true)
+
+
+
+
+// onMounted(() => {
+//   // if (focusActiv) {
+//   //   myInputs[0].value.focus();
+//   // }
+
+// });
+
+// const handlerInput = () => {
+//   if (inputValue.value == 'wir') {
+//     for (let i = 0; i < myInputs.length; ++i) {
+//       myInputs[i + 1].value.focus()
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
 const der = ref([
 
   {

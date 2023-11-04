@@ -8,7 +8,7 @@
 		p 
 			span die richtige Antwort 
 			span die falsche Antwort 
-
+	
 
 </template>
 

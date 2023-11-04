@@ -275,205 +275,330 @@ const Genitiv = ref([
 
 
 const SlotDataDemonstrativ = ref([
+  {
+    t0: 'Этот предмет мне нравится больше всего. (Fach Spaß)',
+    t1: 'Das',
+    t2: 'Fach',
+    t3: 'macht',
+    t4: 'mir',
+    t5: 'am',
+    t6: 'meisten',
+    t7: 'Spaß',
+    t8: '.',
 
-  // {
-  //   t0: '',
-  //   t1: 'Das',
-  //   t2: 'Fach macht',
-  //   t3: 'mir',
-  //   t4: 'am meisten Spaß.',
+  },
+  {
+    t0: 'Мне нравится этот фильм. (gefällt )',
+    t1: 'Dieser',
+    t2: 'Film',
+    t3: 'gefällt',
+    t4: 'mir',
+    t5: '.',
 
-  // },
-  // {
-  //   t0: '',
-  //   t1: 'Dieser',
-  //   t2: ' Film gefällt mir.',
+  },
 
-  // },
-  // {
-  //   t0: 'Sie ist ',
-  //   t1: 'diejenige',
-  //   t2: ', die dir weiterhelfen kann.',
+  {
+    t0: 'Она единственная , кто может тебе помочь. (weiterhelfen)',
+    t1: 'Sie',
+    t2: 'ist',
+    t3: 'diejenige',
+    t4: ',',
+    t5: 'die',
+    t6: 'dir',
+    t7: 'weiterhelfen',
+    t8: 'kann',
+    t9: '.',
 
-  // },
-  // {
-  //   t0: 'Das ist  ',
-  //   t1: 'dieselbe',
-  //   t2: 'Nachricht wie gestern.',
+  },
 
-  // },
-  // {
-  //   t0: '',
-  //   t1: 'Der',
-  //   t2: ' Urlaub war besonders toll.',
+  {
+    t0: 'Это та же новость, что и вчера.(Nachricht)',
+    t1: 'Das',
+    t2: 'ist',
+    t3: 'dieselbe',
+    t4: 'Nachricht',
+    t5: 'wie',
+    t6: 'gestern',
+    t7: '.',
 
-  // },
-  // {
-  //   t0: 'Tim hat mir seinen Freund Paul vorgestellt. ',
-  //   t1: 'Dessen',
-  //   t2: 'Haare sind blau gefärbt.',
+  },
 
-  // },
-  // {
-  //   t0: 'Ich habe viele Lehrer,  ',
-  //   t1: 'deren',
-  //   t2: 'Unterricht Spaß macht.',
+  {
+    t0: 'Отпуск был особенно замечательным.(Urlaub)',
+    t1: 'Urlaub',
+    t2: 'war',
+    t3: 'besonders',
+    t4: 'toll',
+    t5: '.',
 
-  // },
-  // {
-  //   t0: 'Die Menge ',
-  //   t1: 'derer',
-  //   t2: ', die einen tollen Unterricht gestalten, steigt.',
+  },
 
-  // },
-  // {
-  //   t0: 'Zu  ',
-  //   t1: 'denen',
-  //   t2: 'habe ich keinen Kontakt mehr.',
+  {
+    t0: 'Тим познакомил меня со своим другом Полом. Чьи волосы выкрашены в голубой цвет.(Tim Paul vorgestellt Haare gefärbt)',
+    t1: 'Tim',
+    t2: 'hat',
+    t3: 'mir',
+    t4: 'seinen',
+    t5: 'Freund',
+    t6: 'Paul',
+    t7: 'vorgestellt',
+    t8: '.',
+    t9: 'Dessen',
+    t10: 'Haare',
+    t11: 'sind',
+    t12: 'blau',
+    t13: 'gefärbt',
+    t14: '.',
 
-  // },
-  // {
-  //   t0: 'Du musst noch ',
-  //   t1: 'deine',
-  //   t2: 'Hausaufgaben machen. –',
-  //   t3: 'Das',
-  //   t4: 'weiß ich.',
+  },
 
-  // },
-  // {
-  //   t0: 'Wie findest du    ',
-  //   t1: 'den',
-  //   t2: 'Rock? –',
-  //   t3: 'Der',
-  //   t4: 'ist echt cool.',
+  {
+    t0: 'У меня много учителей, чьи занятия доставляют удовольствие.(Lehrer Unterricht)',
+    t1: 'Ich',
+    t2: 'habe',
+    t3: 'viele',
+    t4: 'Lehrer',
+    t5: ',',
+    t6: 'deren',
+    t7: 'Unterricht',
+    t8: 'Spaß',
+    t9: 'macht',
+    t10: '.',
 
-  // },
-  // {
-  //   t0: 'Die Schuhe  ',
-  //   t1: 'dieser',
-  //   t2: 'Frau sind schön.',
+  },
 
-  // },
-  // {
-  //   t0: '',
-  //   t1: 'Diese  ',
-  //   t2: ' Tasche mag ich nicht, aber',
-  //   t3: 'jene',
-  //   t4: 'ist wirklich cool.',
+  {
+    t0: 'Количество тех, кто создает отличные уроки, растет.(Menge Unterricht gestalten steigt)',
+    t1: 'Die',
+    t2: 'Menge',
+    t3: 'derer',
+    t4: ',',
+    t5: 'die',
+    t6: 'einen',
+    t7: 'tollen',
+    t8: 'Unterricht',
+    t9: 'gestalten',
+    t10: ',',
+    t11: 'steigt',
+    t12: '.',
 
-  // },
-  // {
-  //   t0: 'Gib das Handy ',
-  //   t1: 'demjenigen',
-  //   t2: ',  ',
-  //   t3: 'dem',
-  //   t4: 'es gehört.',
+  },
 
-  // },
-  // {
-  //   t0: ' Das ändert sich jedoch,',
-  //   t1: 'solch ein',
-  //   t2: ' wenn  kleiner Fortschritt eine Barriere für die wirklichen Lösungen errichtet.',
+  {
+    t0: 'У меня больше нет с ними никаких контактов.(Zu Kontakt)',
+    t1: 'Zu',
+    t2: 'denen',
+    t3: 'habe',
+    t4: 'ich',
+    t5: 'keinen',
+    t6: 'Kontakt',
+    t7: 'mehr',
+    t8: '.',
 
-  // },
-  // {
-  //   t0: 'Die Öffentlichkeit unserer Staaten forderte  ',
-  //   t1: 'solch ein',
-  //   t2: 'radikales Handeln, wie es dann erfolgte.',
+  },
 
-  // },
-  // {
-  //   t0: 'Im Interesse beider Seiten ist  ',
-  //   t1: 'solch ein',
-  //   t2: 'Ausschuss so bald wie möglich einzurichten.',
+  {
+    t0: 'Тебе еще нужно сделать домашнее задание . Я это знаю.(Hausaufgaben )',
+    t1: 'Du',
+    t2: 'musst',
+    t3: 'noch',
+    t4: 'deine',
+    t5: 'Hausaufgaben',
+    t6: 'machen',
+    t7: '.',
+    t8: 'Das',
+    t9: 'weiß',
+    t10: 'ich',
+    t11: '.',
 
-  // },
-  // {
-  //   t0: '',
-  //   t1: 'Dieselbe',
-  //   t2: ' Logik müsste auch für Boote gelten.',
+  },
 
-  // },
-  // {
-  //   t0: '',
-  //   t1: 'Dieselbe',
-  //   t2: ' Erwartung haben wir auch an den Rat.',
+  {
+    t0: 'Как тебе эта юбка? Он действительно классный.(Rock cool)',
+    t1: 'Wie',
+    t2: 'findest',
+    t3: 'du',
+    t4: 'den',
+    t5: 'Rock',
+    t6: '?',
+    t7: 'Der',
+    t8: 'ist',
+    t9: 'echt',
+    t10: 'cool',
+    t11: '.',
 
-  // },
-  // {
-  //   t0: '',
-  //   t1: 'Dieselbe ',
-  //   t2: ' Frage hätte ich Herrn Nielson stellen können, wenn er heute hier gewesen wäre.',
+  },
 
-  // },
-  // {
-  //   t0: 'Wir können  ',
-  //   t1: 'demjenigen',
-  //   t2: ', der diesen Punkt aufgeworfen hat, leider nichts anderes antworten.',
+  {
+    t0: 'Туфли этой женщины прекрасны. (Schuhe schön)',
+    t1: 'Die',
+    t2: 'Schuhe',
+    t3: 'dieser',
+    t4: 'Frau',
+    t5: 'sind',
+    t6: 'schön',
+    t7: '.',
 
-  // },
-  // {
-  //   t0: ' Aber es geht auch darum, mit Körpersprache  ',
-  //   t1: 'demjenigen',
-  //   t2: 'etwas mitzuteilen,  ',
-  //   t3: 'die',
-  //   t4: 'ihn betrachtet.',
+  },
 
-  // },
-  // {
-  //   t0: '',
-  //   t1: 'Dessen ',
-  //   t2: 'Verpflichtungen und Disziplin sind neu in Europa.',
+  {
+    t0: 'Мне не нравится эта сумка , но та действительно классная .(Tasche cool)',
+    t1: 'Diese',
+    t2: 'Tasche',
+    t3: 'mag',
+    t4: 'ich',
+    t5: 'nicht',
+    t6: ',',
+    t7: 'aber',
+    t8: 'jene',
+    t9: 'ist',
+    t10: 'wirklich',
+    t11: 'cool',
+    t12: '.',
 
-  // },
-  // {
-  //   t0: '',
-  //   t1: 'Dessen ',
-  //   t2: 'müssen Sie sich in jedem Fall bewusst sein.',
+  },
 
-  // },
-  // {
-  //   t0: 'Was wären',
-  //   t1: 'deren',
-  //   t2: 'Aufgaben?',
+  {
 
-  // },
-  // {
-  //   t0: 'Wir müssen  ',
-  //   t1: 'deren',
-  //   t2: 'Rechte respektieren.',
+    t0: 'Отдай телефон тому, кому он принадлежит.(Gib  gehört )',
+    t1: 'Gib',
+    t2: 'das',
+    t3: 'Handy',
+    t4: 'demjenigen',
+    t5: ',',
+    t6: 'dem',
+    t7: 'es',
+    t8: 'gehört',
+    t9: '.',
 
-  // },
-  // {
-  //   t0: 'Eine  ',
-  //   t1: 'solche',
-  //   t2: 'Feststellung ist schwer zu ertragen.',
+  },
 
-  // },
-  // {
-  //   t0: 'Aber Sie haben  ',
-  //   t1: 'solche',
-  //   t2: 'Situationen trainiert.',
 
-  // },
-  // {
-  //   t0: 'Eine  ',
-  //   t1: 'solche',
-  //   t2: 'Grenze ist die Anstiftung zur Gewalt.',
 
-  // },
-  // {
-  //   t0: 'Weil du  ',
-  //   t1: 'denselben',
-  //   t2: 'Mut besitzt wie jemand, den ich gut kenne.',
 
-  // },
-  // {
-  //   t0: 'Wiederholen wir, unter  ',
-  //   t1: 'denselben',
-  //   t2: 'Bedingungen.',
 
-  // },
+  {
+    t0: 'Та же логика должна применяться и к лодкам.(Logik  Boote gelten)',
+    t1: 'Dieselbe',
+    t2: 'Logik',
+    t3: 'müsste',
+    t4: 'auch',
+    t5: 'für',
+    t6: 'Boote',
+    t7: 'gelten',
+    t8: '.',
+
+  },
+
+  {
+    t0: 'То же самое мы ожидаем и от Совета.(Erwartung Rat)',
+    t1: 'Dieselbe',
+    t2: 'Erwartung',
+    t3: 'haben',
+    t4: 'wir',
+    t5: 'auch',
+    t6: 'an',
+    t7: 'den',
+    t8: 'Rat',
+    t9: '.',
+
+  },
+
+
+  {
+    t0: 'К сожалению, мы больше ничего не можем ответить тому, кто поднял этот вопрос.(Punkt aufgeworfen antworten)',
+    t1: 'Wir',
+    t2: 'können',
+    t3: 'demjenigen',
+    t4: ',',
+    t5: 'der',
+    t6: 'diesen',
+    t7: 'Punkt',
+    t8: 'aufgeworfen',
+    t9: 'hat',
+    t10: ',',
+    t11: 'leider',
+    t12: 'nichts',
+    t13: 'anderes',
+    t14: 'antworten',
+    t15: '.',
+
+  },
+
+
+
+  {
+    t0: 'Вы должны знать об этом в каждом конкретном случае.(bewusst sein)',
+    t1: 'Dessen',
+    t2: 'müssen',
+    t3: 'Sie',
+    t4: 'sich',
+    t5: 'jedem',
+    t6: 'Fall',
+    t7: 'bewusst',
+    t8: 'sein',
+    t9: '.',
+
+  },
+
+  {
+    t0: 'Каковы были бы их обязанности ?(wären Aufgaben)',
+    t1: 'Was',
+    t2: 'wären',
+    t3: 'deren',
+    t4: 'Aufgaben',
+    t5: '?',
+
+  },
+
+
+
+  {
+    t0: 'Такой вывод трудно вынести.(Feststellung schwer ertragen)',
+    t1: 'Eine',
+    t2: 'solche',
+    t3: 'Feststellung',
+    t4: 'ist',
+    t5: 'schwer',
+    t6: 'zu',
+    t7: 'ertragen',
+    t8: '.',
+
+  },
+
+  {
+    t0: 'Но их обучали таким ситуациям.(Situationen trainiert)',
+    t1: 'Aber',
+    t2: 'Sie',
+    t3: 'haben',
+    t4: 'solche',
+    t5: 'Situationen',
+    t6: 'trainiert',
+    t7: '.',
+
+  },
+
+
+  {
+    t0: 'Потому что ты обладаешь таким же мужеством, как и тот, кого я хорошо знаю. (Mut besitzt kenne)',
+    t1: 'Weil',
+    t2: 'du',
+    t3: 'denselben',
+    t4: 'Mut',
+    t5: 'besitzt',
+    t6: 'wie',
+    t7: 'jemand',
+    t8: ',',
+    t9: 'den',
+    t10: 'ich',
+    t11: 'gut',
+    t12: 'kenne',
+    t12: '.',
+
+  },
+
+
+
   {
     t0: 'Тот роман скучен.',
     t1: 'Jener',
