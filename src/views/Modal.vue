@@ -1,228 +1,1052 @@
 <template lang="pug">
 .container
-	.page-title 
-		h2 Modalverben
-	Content(:items='Modal' :headers='Headers')
+  .page-title 
+    h2 Modalverben
+  Tabs(:items= 'müssen' title='müssen' )
+  Tabs(:items= 'können' title='können' )
+  Tabs(:items= 'dürfen' title='dürfen' )
+  Tabs(:items= 'sollen' title='sollen' )
+  Tabs(:items= 'wollen' title='wollen' )
+  Tabs(:items= 'mögen' title='mögen' )
+  Tabs(:items= 'möchten' title='möchten' )
+
+  TabsTraining( title='müssen Training' :SlotData='SlotDatamüssen' )
+  TabsTraining( title='können Training' :SlotData='SlotDatakönnen' )
+  TabsTraining( title='dürfen Training' :SlotData='SlotDatadürfen' )
+  TabsTraining( title='sollen Training' :SlotData='SlotDatasollen' )
+  TabsTraining( title='wollen Training' :SlotData='SlotDatawollen' )
+  TabsTraining( title='mögen Training' :SlotData='SlotDatamögen' )
+  TabsTraining( title='möchten Training' :SlotData='SlotDatamöchten' )
+
+
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3 müssen   
+  //-   Plaza
+  //-   Slot(:SlotData='SlotDatamüssen')
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3  können Training
+  //-   Plaza
+  //-   Slot(:SlotData='SlotDatakönnen')
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3  dürfen Training
+  //-   Plaza
+  //-   Slot(:SlotData='SlotDatadürfen')
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3  sollen Training
+  //-   Plaza
+  //-   Slot(:SlotData='SlotDatasollen')
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3  wollen Training
+  //-   Plaza
+  //-   Slot(:SlotData='SlotDatawollen')
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3  mögen Training
+  //-   Plaza
+  //-   Slot(:SlotData='SlotDatamöchten')
+  //- .page-block
+  //-   .page-title--small 
+  //-     h3  möchten Training
+  //-   Plaza
+  //-   Slot(:SlotData='SlotDatamöchten')
+
+
+
+
+
 </template>
 
 
 <script setup>
-import { ref } from 'vue';
-import Content from '@/components/Content.vue'
-const Headers = ref([
-	{ title: 'müssen Präsens' },
-	{ title: 'können Präsens' },
-	{ title: 'dürfen Präsens' },
-	{ title: 'sollen Präsens' },
-	{ title: 'wollen Präsens' },
-	{ title: 'mögen Präsens' },
-	{ title: 'möchten Präsens' },
-	{ title: 'müssen Präteritum' },
-	{ title: 'können Präteritum' },
-	{ title: 'dürfen Präteritum' },
-	{ title: 'sollen Präteritum' },
-	{ title: 'wollen Präteritum' },
-	{ title: 'mögen Präteritum' },
-	{ title: 'möchten Präteritum' },
-	{ title: 'müssen Perfekt' },
-	{ title: 'können Perfekt' },
-	{ title: 'dürfen Perfekt' },
-	{ title: 'sollen Perfekt' },
-	{ title: 'wollen Perfekt' },
-	{ title: 'mögen Perfekt' },
-	{ title: 'möchten Perfekt' },
+import { ref, computed } from 'vue';
+// import Content from '@/components/Content.vue';
+import Tabs from '@/components/Tabs.vue';
+import TabsTraining from '@/components/TabsTraining.vue';
+
+import Plaza from '@/components/Plaza.vue';
+import Slot from '@/components/Slot.vue'
+
+const müssen = ref([
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es muss',
+    text2: 'du musst',
+    text3: 'ihr müsst',
+    text4: 'wir,sie,Sie müssen',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es musste',
+    text2: 'du musstest',
+    text3: 'ihr musstet',
+    text4: 'wir,sie,Sie mussten',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe gemusst',
+    text2: 'du hast gemusst',
+    text3: 'er,sie,es hat gemusst',
+    text4: 'ihr habt gemusst',
+    text5: 'wir,sie,Sie haben gemusst',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte gemusst',
+    text2: 'du hattest gemusst',
+    text3: 'ihr hattet gemusst',
+    text4: 'wir,sie,Sie hatten gemusst',
+
+  },
+  {
+    title: 'Futurum II',
+    text1: 'ich werde gemusst haben',
+    text2: 'du wirst gemusst haben',
+    text3: 'er wird gemusst haben',
+    text4: 'ihr werdet gemusst haben',
+    text5: 'wir,sie,Sie werden gemusst haben',
+
+  },
 ])
-const Modal = ref([
-	[
-		{ id: 1, text: 'ich muss' },
-		{ id: 2, text: 'du musst' },
-		{ id: 3, marker: 'M', text: 'er muss' },
-		{ id: 4, marker: 'F', text: 'sie muss' },
-		{ id: 5, marker: 'N', text: 'es muss' },
-		{ id: 6, marker: 'P', text: 'wir müssen' },
-		{ id: 6, marker: 'P', text: 'ihr müsst' },
-		{ id: 7, marker: 'P', text: 'sie müssen' },
-		{ id: 8, marker: 'P', text: 'Sie müssen' },
-	],
-	[
-		{ id: 1, text: 'ich kann' },
-		{ id: 2, text: 'du kannst' },
-		{ id: 3, marker: 'M', text: 'er kann' },
-		{ id: 4, marker: 'F', text: 'sie kann' },
-		{ id: 5, marker: 'N', text: 'es kann' },
-		{ id: 6, marker: 'P', text: 'wir können' },
-		{ id: 7, marker: 'P', text: 'ihr könnt' },
-		{ id: 8, marker: 'P', text: 'sie können' },
-		{ id: 9, marker: 'P', text: 'Sie können' },
-	],
-	[
-		{ id: 1, text: 'ich darf' },
-		{ id: 2, text: 'du darfst' },
-		{ id: 3, marker: 'M', text: 'er darf' },
-		{ id: 4, marker: 'F', text: 'sie darf' },
-		{ id: 5, marker: 'N', text: 'es darf' },
-		{ id: 6, marker: 'P', text: 'wir dürfen' },
-		{ id: 7, marker: 'P', text: 'ihr dürft' },
-		{ id: 8, marker: 'P', text: 'sie dürfen' },
-		{ id: 9, marker: 'P', text: 'Sie dürfen' },
-	],
-	[
-		{ id: 1, text: 'ich soll' },
-		{ id: 2, text: 'du sollst' },
-		{ id: 3, marker: 'M', text: 'er soll' },
-		{ id: 4, marker: 'F', text: 'sie soll' },
-		{ id: 5, marker: 'N', text: 'es soll' },
-		{ id: 6, marker: 'P', text: 'wir sollen' },
-		{ id: 7, marker: 'P', text: 'ihr sollt' },
-		{ id: 8, marker: 'P', text: 'sie sollen' },
-		{ id: 9, marker: 'P', text: 'Sie sollen' },
-	],
-	[
-		{ id: 1, text: 'ich will' },
-		{ id: 2, text: 'du willst' },
-		{ id: 3, marker: 'M', text: 'er will' },
-		{ id: 4, marker: 'F', text: 'sie will' },
-		{ id: 5, marker: 'N', text: 'es will' },
-		{ id: 6, marker: 'P', text: 'wir wollen' },
-		{ id: 7, marker: 'P', text: 'ihr wollt' },
-		{ id: 8, marker: 'P', text: 'sie wollen' },
-		{ id: 9, marker: 'P', text: 'Sie wollen' },
-	],
-	[
-		{ id: 1, text: 'ich mag' },
-		{ id: 2, text: 'du magst' },
-		{ id: 3, marker: 'M', text: 'er mag' },
-		{ id: 4, marker: 'F', text: 'sie mag' },
-		{ id: 5, marker: 'N', text: 'es mag' },
-		{ id: 6, marker: 'P', text: 'wir mögen' },
-		{ id: 7, marker: 'P', text: 'ihr mögt' },
-		{ id: 8, marker: 'P', text: 'sie mögen' },
-		{ id: 9, marker: 'P', text: 'Sie mögen' },
-	],
-	[
-		{ id: 1, text: 'ich	möcht(e)' },
-		{ id: 2, text: 'du möchtest' },
-		{ id: 3, marker: 'M', text: 'er möchte' },
-		{ id: 4, marker: 'F', text: 'sie möchte' },
-		{ id: 5, marker: 'N', text: 'es möchte' },
-		{ id: 6, marker: 'P', text: 'wir möchten' },
-		{ id: 7, marker: 'P', text: 'ihr möchtet' },
-		{ id: 8, marker: 'P', text: 'sie möchten' },
-		{ id: 9, marker: 'P', text: 'Sie möchten' },
-	],
+const können = ref([
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es kann',
+    text2: 'du kannst',
+    text3: 'ihr könnt',
+    text4: 'wir,sie,Sie können',
 
-	// ===================
-	[
-		{ id: 1, text: 'ich musste' },
-		{ id: 2, text: 'du musstest' },
-		{ id: 3, marker: 'M', text: 'er musste' },
-		{ id: 4, marker: 'F', text: 'sie musste' },
-		{ id: 5, marker: 'N', text: 'es musste' },
-		{ id: 6, marker: 'P', text: 'wir mussten' },
-		{ id: 7, marker: 'P', text: 'ihr musstet' },
-		{ id: 8, marker: 'P', text: 'sie mussten' },
-		{ id: 9, marker: 'P', text: 'Sie mussten' },
-	],
-	[
-		{ id: 1, text: 'ich konnte' },
-		{ id: 2, text: 'du konntest' },
-		{ id: 3, marker: 'M', text: 'er konnte' },
-		{ id: 4, marker: 'F', text: 'sie konnte' },
-		{ id: 5, marker: 'N', text: 'es konnte' },
-		{ id: 6, marker: 'P', text: 'wir konnten' },
-		{ id: 6, marker: 'P', text: 'ihr konntet' },
-		{ id: 7, marker: 'P', text: 'sie konnten' },
-		{ id: 8, marker: 'P', text: 'Sie konnten' },
-	],
-	[
-		{ id: 1, text: 'ich durfte' },
-		{ id: 2, text: 'du durftest' },
-		{ id: 3, marker: 'M', text: 'er durfte' },
-		{ id: 4, marker: 'F', text: 'sie durfte' },
-		{ id: 5, marker: 'N', text: 'es durfte' },
-		{ id: 6, marker: 'P', text: 'wir durften' },
-		{ id: 7, marker: 'P', text: 'ihr durftet' },
-		{ id: 8, marker: 'P', text: 'sie durften' },
-		{ id: 9, marker: 'P', text: 'Sie durften' },
-	],
-	[
-		{ id: 1, text: 'ich sollte' },
-		{ id: 2, text: 'du solltest' },
-		{ id: 3, marker: 'M', text: 'er sollte' },
-		{ id: 4, marker: 'F', text: 'sie sollte' },
-		{ id: 5, marker: 'N', text: 'es sollte' },
-		{ id: 6, marker: 'P', text: 'wir sollten' },
-		{ id: 7, marker: 'P', text: 'ihr solltet' },
-		{ id: 8, marker: 'P', text: 'sie sollten' },
-		{ id: 9, marker: 'P', text: 'Sie sollten' },
-	],
-	[
-		{ id: 1, text: 'ich wollte' },
-		{ id: 2, text: 'du wolltest' },
-		{ id: 3, marker: 'M', text: 'er wollte' },
-		{ id: 4, marker: 'F', text: 'sie wollte' },
-		{ id: 5, marker: 'N', text: 'es wollte' },
-		{ id: 6, marker: 'P', text: 'wir wollten' },
-		{ id: 7, marker: 'P', text: 'ihr wolltet' },
-		{ id: 8, marker: 'P', text: 'sie wollten' },
-		{ id: 9, marker: 'P', text: 'Sie wollten' },
-	],
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es konnte',
+    text2: 'du konntest',
+    text3: 'ihr konntet',
+    text4: 'wir,sie,Sie konnten',
 
-	[
-		{ id: 1, text: 'ich	mochte' },
-		{ id: 2, text: 'du mochtest' },
-		{ id: 3, marker: 'M', text: 'er mochte' },
-		{ id: 4, marker: 'F', text: 'sie mochte' },
-		{ id: 5, marker: 'N', text: 'es mochte' },
-		{ id: 6, marker: 'P', text: 'wir mochten' },
-		{ id: 7, marker: 'P', text: 'ihr mochtet' },
-		{ id: 8, marker: 'P', text: 'sie mochten' },
-		{ id: 9, marker: 'P', text: 'Sie mochten' },
-	],
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe gekonnt',
+    text2: 'du hast gekonnt',
+    text3: 'er,sie,es hat gekonnt',
+    text4: 'ihr habt gekonnt',
+    text5: 'wir,sie,Sie haben gekonnt',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte gekonnt',
+    text2: 'du hattest gekonnt',
+    text3: 'ihr hattet gekonnt',
+    text4: 'wir,sie,Sie hatten gekonnt',
 
-	[
-		{ id: 1, text: 'ich	möchtete' },
-		{ id: 2, text: 'du möchtetest' },
-		{ id: 3, marker: 'M', text: 'er möchtete' },
-		{ id: 4, marker: 'F', text: 'sie möchtete' },
-		{ id: 5, marker: 'N', text: 'es möchtete' },
-		{ id: 6, marker: 'P', text: 'wir möchteten' },
-		{ id: 7, marker: 'P', text: 'ihr möchtetet' },
-		{ id: 8, marker: 'P', text: 'sie möchteten' },
-		{ id: 9, marker: 'P', text: 'Sie möchteten' },
-	],
-	[
-		{ id: 1, text: 'ich	habe gemusst' },
+  },
+  {
+    title: 'Futurum II',
+    text1: 'ich werde gekonnt haben',
+    text2: 'du wirst gekonnt haben',
+    text3: 'er wird gekonnt haben',
+    text4: 'ihr werdet gekonnt haben',
+    text5: 'wir,sie,Sie werden gekonnt haben',
 
-	],
-	[
-		{ id: 1, text: 'ich	habe gekonnt' },
+  },
+])
+const dürfen = ref([
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es darf',
+    text2: 'du darfst',
+    text3: 'ihr dürft',
+    text4: 'wir,sie,Sie dürfen',
 
-	],
-	[
-		{ id: 1, text: 'ich	habe	gedurft' },
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es durfte',
+    text2: 'du durftest',
+    text3: 'ihr durftet',
+    text4: 'wir,sie,Sie durften',
 
-	],
-	[
-		{ id: 1, text: 'ich	habe	gesollt' },
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe gedurft',
+    text2: 'du hast gedurft',
+    text3: 'er,sie,es hat gedurft',
+    text4: 'ihr habt gedurft',
+    text5: 'wir,sie,Sie haben gedurft',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte gedurft',
+    text2: 'du hattest gedurft',
+    text3: 'ihr hattet gedurft',
+    text4: 'wir,sie,Sie hatten gedurft',
 
-	],
-	[
-		{ id: 1, text: 'ich	habe	gewollt' },
+  },
+  {
+    title: 'Futurum II',
+    text1: 'ich werde gedurft haben',
+    text2: 'du wirst gedurft haben',
+    text3: 'er wird gedurft haben',
+    text4: 'ihr werdet gedurft haben',
+    text5: 'wir,sie,Sie werden gedurft haben',
 
-	],
-	[
-		{ id: 1, text: 'ich	habe	gemocht' },
+  },
+])
+const sollen = ref([
 
-	],
-	[
-		{ id: 1, text: 'ich	habe	gemöchtet' },
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es soll',
+    text2: 'du sollst',
+    text3: 'ihr sollt',
+    text4: 'wir,sie,Sie sollen',
 
-	],
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es sollte',
+    text2: 'du solltest',
+    text3: 'ihr solltet',
+    text4: 'wir,sie,Sie sollten',
 
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe gesollt',
+    text2: 'du hast gesollt',
+    text3: 'er,sie,es hat gesollt',
+    text4: 'ihr habt gesollt',
+    text5: 'wir,sie,Sie haben gesollt',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte gesollt',
+    text2: 'du hattest gesollt',
+    text3: 'ihr hattet gesollt',
+    text4: 'wir,sie,Sie hatten gesollt',
+
+  },
+  {
+    title: 'Futurum II',
+    text1: 'ich werde gesollt haben',
+    text2: 'du wirst gesollt haben',
+    text3: 'er wird gesollt haben',
+    text4: 'ihr werdet gesollt haben',
+    text5: 'wir,sie,Sie werden gesollt haben',
+
+  },
+])
+const wollen = ref([
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es will',
+    text2: 'du willst',
+    text3: 'ihr wollt',
+    text4: 'wir,sie,Sie wollen',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es wollte',
+    text2: 'du wolltest',
+    text3: 'ihr wolltet',
+    text4: 'wir,sie,Sie wollten',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe gewollt',
+    text2: 'du hast gewollt',
+    text3: 'er,sie,es hat gewollt',
+    text4: 'ihr habt gewollt',
+    text5: 'wir,sie,Sie haben gewollt',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte gewollt',
+    text2: 'du hattest gewollt',
+    text3: 'ihr hattet gewollt',
+    text4: 'wir,sie,Sie hatten gewollt',
+
+  },
+  {
+    title: 'Futurum II',
+    text1: 'ich werde gewollt haben',
+    text2: 'du wirst gewollt haben',
+    text3: 'er wird gewollt haben',
+    text4: 'ihr werdet gewollt haben',
+    text5: 'wir,sie,Sie werden gewollt haben',
+
+  },
+])
+const mögen = ref([
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es mag',
+    text2: 'du magst',
+    text3: 'ihr mögt',
+    text4: 'wir,sie,Sie mögen',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es mochte',
+    text2: 'du mochtest',
+    text3: 'ihr mochtet',
+    text4: 'wir,sie,Sie mochten',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe gemocht',
+    text2: 'du hast gemocht',
+    text3: 'er,sie,es hat gemocht',
+    text4: 'ihr habt gemocht',
+    text5: 'wir,sie,Sie haben gemocht',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte gemocht',
+    text2: 'du hattest gemocht',
+    text3: 'ihr hattet gemocht',
+    text4: 'wir,sie,Sie hatten gemocht',
+
+  },
+  {
+    title: 'Futurum II',
+    text1: 'ich werde gemocht haben',
+    text2: 'du wirst gemocht haben',
+    text3: 'er wird gemocht haben',
+    text4: 'ihr werdet gemocht haben',
+    text5: 'wir,sie,Sie werden gemocht haben',
+
+  },
+])
+const möchten = ref([
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es möcht(e)',
+    text2: 'du möchtest',
+    text3: 'ihr möchtet',
+    text4: 'wir,sie,Sie möchten',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es möchtete',
+    text2: 'du möchtetest',
+    text3: 'ihr möchtetet',
+    text4: 'wir,sie,Sie möchteten',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe gemöchtet',
+    text2: 'du hast gemöchtet',
+    text3: 'er,sie,es hat gemöchtet',
+    text4: 'ihr habt gemöchtet',
+    text5: 'wir,sie,Sie haben gemöchtet',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte gemöchtet',
+    text2: 'du hattest gemöchtet',
+    text3: 'ihr hattet gemöchtet',
+    text4: 'wir,sie,Sie hatten gemöchtet',
+
+  },
+  {
+    title: 'Futurum II',
+    text1: 'ich werde gemöchtet haben',
+    text2: 'du wirst gemöchtet haben',
+    text3: 'er wird gemöchtet haben',
+    text4: 'ihr werdet gemöchtet haben',
+    text5: 'wir,sie,Sie werden gemöchtet haben',
+
+  },
+])
+
+
+
+const SlotDatamüssen = ref([
+  {
+    t0: 'Мне нужно вернуться в офис.(zurück Büro)',
+    t1: 'Ich',
+    t2: 'muss',
+    t3: 'zurück',
+    t4: 'zum',
+    t4: 'Büro',
+    t4: '.',
+
+  },
+  {
+    t0: 'Куда тебе нужно пойти?',
+    t1: 'Wohin',
+    t2: 'musst',
+    t3: 'du',
+    t4: '?',
+
+  },
+  {
+    t0: 'Должен быть порядок.(Ordnung)',
+    t1: 'Ordnung',
+    t2: 'muss',
+    t3: 'sein',
+    t4: '.',
+  },
+  {
+    t0: 'Тебе нужно было это говорить?()',
+    t1: 'Musstest',
+    t2: 'du',
+    t3: 'das',
+    t4: 'sagen',
+    t5: '?',
+
+  },
+  {
+    t0: ' За это им пришлось сесть в тюрьму.(Dafür Gefängnis)',
+    t1: 'Dafür',
+    t2: 'mussten',
+    t3: 'sie',
+    t4: 'ins',
+    t5: 'Gefängnis',
+    t6: '.',
+
+  },
+  {
+    t0: 'Вы должны были сделать все сами.(selbst)',
+    t1: 'Ihr',
+    t2: 'musstet',
+    t3: 'alles',
+    t4: 'selbst',
+    t5: 'machen',
+
+  },
+  {
+    t0: 'Нам пришлось вернуться к чертежной доске.(zurück Reißbrett)',
+    t1: 'Wir',
+    t2: 'mussten',
+    t3: 'zurück',
+    t4: 'ins',
+    t5: 'Reißbrett',
+    t6: '.',
+
+  },
+  {
+    t0: 'Сотруднику банка пришлось сесть в тюрьму за мошенничество.(Bankkaufmann Betrugs Gefängnis)',
+    t1: 'Der',
+    t2: 'Bankkaufmann',
+    t3: 'musste',
+    t4: 'wegen',
+    t5: 'Betrugs',
+    t6: 'ins',
+    t7: 'Gefängnis',
+    t8: '.',
+
+  },
+  {
+    t0: 'Вам не нужно было все разрушать!(zerstören)',
+    t1: 'Ihr',
+    t2: 'musstet',
+    t3: 'nicht',
+    t4: 'alles',
+    t5: 'zerstören',
+    t6: '!',
+
+  },
+  {
+    t0: 'Я это понимаю, но вам не нужно было его убивать.(verstehe töten)',
+    t1: 'Ich',
+    t2: 'verstehe',
+    t3: 'das',
+    t4: ',',
+    t5: 'aber',
+    t6: 'ihr',
+    t7: 'musstet',
+    t8: 'ihn',
+    t9: 'nicht',
+    t10: 'töten',
+    t11: '.',
+
+  },
+  {
+    t0: 'Вам никогда не приходилось делать этого раньше.(noch nie)',
+    t1: 'Das',
+    t2: 'hast',
+    t3: 'du',
+    t4: 'noch',
+    t5: 'nie',
+    t6: 'gemusst',
+    t7: '.',
+
+  },
+  {
+    t0: 'Вам не обязательно было этого делать.',
+    t1: 'Das',
+    t2: 'hattet',
+    t3: 'ihr',
+    t4: 'nicht',
+    t5: 'gemusst',
+    t6: '.',
+
+  },
+  {
+    t0: 'Ей бы пришлось это сделать, но...()',
+    t1: 'Sie',
+    t2: 'wird',
+    t3: 'gemusst',
+    t4: 'haben',
+    t5: ',',
+    t6: 'aber',
+    t7: '...',
+
+  },
+  {
+    t0: 'И вам придется открыть глаза.(Augen öffnen)',
+    t1: 'Und',
+    t2: 'ihr',
+    t3: 'müsst',
+    t4: 'Eure',
+    t5: 'Augen',
+    t6: 'öffnen',
+    t7: '.',
+
+  },
+  {
+    t0: 'Мне не нужно было этого делать, но я все равно это сделал.(tat trotzdem)',
+    t1: 'Ich',
+    t2: 'musste',
+    t3: 'nicht',
+    t4: ',',
+    t5: 'aber',
+    t6: 'tat',
+    t7: 'es',
+    t8: 'trotzdem',
+    t9: '.',
+
+  },
 
 ]
 )
+const SlotDatakönnen = ref([
+  {
+    t0: 'Том знает французский?(Tom französisch)',
+    t1: 'Kann',
+    t2: 'Tom',
+    t3: 'französisch',
+    t4: '?',
+
+  },
+  {
+    t0: 'Я ничего не могу с собой поделать.(anders)',
+    t1: 'Ich',
+    t2: 'kann',
+    t3: 'nicht',
+    t4: 'anders',
+    t5: '.',
+
+  },
+  {
+    t0: 'На скольких иностранных языках вы (ihr) говорите? (Fremdsprachen ihr)',
+    t1: 'Wie',
+    t2: 'viele',
+    t3: 'Fremdsprachen',
+    t4: 'könnt',
+    t5: 'ihr',
+    t6: '?',
+
+  },
+  {
+    t0: 'Каждый делает, что может.(Jeder tut)',
+    t1: 'Jeder',
+    t2: 'tut',
+    t3: ',',
+    t4: 'was',
+    t5: 'er',
+    t6: 'kann',
+    t7: '.',
+
+  },
+  {
+    t0: 'Я хочу, но не могу.(ja nicht)',
+    t1: 'Ich',
+    t2: 'möchte',
+    t3: 'ja',
+    t4: ',',
+    t5: 'aber',
+    t6: 'ich',
+    t7: 'kann',
+    t8: 'nicht',
+    t9: '.',
+
+  },
+
+  {
+    t0: 'Том мог делать все, что угодно.(Tom alles)',
+    t1: 'Tom',
+    t2: 'konnte',
+    t3: 'alles',
+
+  },
+
+  {
+    t0: 'Она бегло говорила по-французски.(fließend Französisch)',
+    t1: 'Sie',
+    t2: 'konnte',
+    t3: 'fließend',
+    t4: 'Französisch',
+    t5: '.',
+
+  },
+
+  {
+    t0: 'Мы не могли сделать больше. (mehr)',
+    t1: 'Wir   ',
+    t2: 'konnten',
+    t3: 'nicht',
+    t4: 'mehr',
+    t5: '.',
+
+  },
+
+  {
+    t0: 'Ян бежал так быстро, как мог. (Jan rannte schnell)',
+    t1: 'Jan',
+    t2: 'rannte',
+    t3: 'so',
+    t4: 'schnell',
+    t5: ',',
+    t6: 'wie',
+    t7: 'er',
+    t8: 'konnte',
+    t9: '.',
+
+  },
+
+  {
+    t0: 'Марафонец больше не мог и сдался на полпути. (Marathonläufer gab halber Strecke auf)',
+    t1: 'Der',
+    t2: 'Marathonläufer',
+    t3: 'konnte',
+    t4: 'nicht',
+    t5: 'mehr',
+    t6: 'und',
+    t7: 'gab',
+    t8: 'auf',
+    t9: 'halber',
+    t10: 'Strecke',
+    t11: 'auf',
+    t12: '.',
+
+  },
+
+  {
+    t0: 'В прошлый раз ты не смог. (zuvor)',
+    t1: 'Du',
+    t2: 'hast',
+    t3: 'es',
+    t4: 'zuvor',
+    t5: 'nicht',
+    t6: 'gekonnt',
+    t7: '.',
+
+  },
+
+  {
+    t0: 'Ты сделал мне величайший подарок, на который никто другой не был способен.(größte Geschenk sonst niemand hätte)',
+    t1: 'Du',
+    t2: 'hast',
+    t3: 'mir',
+    t4: 'das',
+    t5: 'größte',
+    t6: 'Geschenk',
+    t7: 'gemacht',
+    t8: ',',
+    t9: 'was',
+    t10: 'sonst',
+    t11: 'niemand',
+    t12: 'gekonnt',
+    t13: 'hätte',
+    t14: '.',
+
+  },
+
+  {
+    t0: 'Бьюсь об заклад, вы бы тоже не смогли этого сделать.(wette Ihr hättet)',
+    t1: 'Ich',
+    t2: 'wette',
+    t3: 'Ihr',
+    t4: 'hättet',
+    t5: 'es',
+    t6: 'auch',
+    t7: 'nicht',
+    t8: 'gekonnt',
+    t9: '.',
+
+  },
+
+  {
+    t0: 'То, что я не мог сделать тогда, я должен сделать сейчас. (damals jetzt)',
+    t1: 'Was',
+    t2: 'ich',
+    t3: 'damals',
+    t4: 'nicht',
+    t5: 'gekonnt',
+    t6: 'habe',
+    t7: ',',
+    t8: 'muss',
+    t9: 'ich',
+    t10: 'jetzt',
+    t11: 'tun',
+    t12: '.',
+  },
+
+
+
+])
+const SlotDatadürfen = ref([
+  {
+    t0: 'Поскольку мы не имеем права это хранить.(Da behalten)',
+    t1: 'Da',
+    t2: 'wir',
+    t3: 'es',
+    t4: 'nicht',
+    t5: 'behalten',
+    t6: 'dürfen',
+    t7: '.',
+  },
+  {
+    t0: 'Вам не следует оставаться здесь.(bleiben)',
+    t1: 'Hier',
+    t2: 'dürft',
+    t3: 'ihr',
+    t4: 'nicht',
+    t5: 'bleiben',
+    t6: '.',
+
+  },
+  {
+    t0: 'Ты никогда не должен терять надежду.(Hoffnung aufgeben)',
+    t1: 'Du',
+    t2: 'darfst',
+    t3: 'die',
+    t4: 'Hoffnung',
+    t5: 'nie',
+    t6: 'aufgeben',
+    t7: '.',
+
+  },
+  {
+    t0: 'Может ли у вашего спального мешка появиться новый владелец?(Schlafsack Besitzer)',
+    t1: 'Darf',
+    t2: 'dein',
+    t3: 'Schlafsack',
+    t4: 'einen',
+    t5: 'neuen',
+    t6: 'Besitzer',
+    t7: 'haben',
+    t8: '?',
+
+  },
+  {
+    t0: 'Нам обоим нельзя быть друзьями. (beide Freunde)',
+    t1: 'Wir',
+    t2: 'beide',
+    t3: 'dürfen',
+    t4: 'keine',
+    t5: 'Freunde',
+    t6: 'sein',
+    t7: '.',
+
+  },
+  {
+    t0: 'Ваши руки не должны касаться друг друга. (Hände berühren)',
+    t1: 'Eure',
+    t2: 'Hände',
+    t3: 'dürfen',
+    t4: 'sich',
+    t5: 'nicht',
+    t6: 'berühren',
+    t7: '.',
+
+  },
+  {
+    t0: 'Могу я пройти? (vorbei)',
+    t1: 'Darf',
+    t2: 'ich',
+    t3: 'bitte',
+    t4: 'vorbei',
+    t5: '?',
+
+  },
+  {
+    t0: 'Им не разрешено этого делать.()',
+    t1: 'Das',
+    t2: 'durften',
+    t3: 'sie',
+    t4: 'nicht',
+    t5: '.',
+
+  },
+  {
+    t0: 'Режиссеру не разрешили это сделать. (Regisseur)',
+    t1: 'Das',
+    t2: 'durfte',
+    t3: 'der',
+    t4: 'Regisseur',
+    t5: 'nicht',
+    t6: '.',
+
+  },
+  {
+    t0: 'Нам вообще нельзя терять времени.(überhaupt verlieren)',
+    t1: 'Wir',
+    t2: 'dürfen',
+    t3: 'überhaupt',
+    t4: 'keine',
+    t5: 'Zeit',
+    t6: 'verlieren',
+    t7: '.',
+
+  },
+  {
+    t0: 'Почему я тоже не могу этого сделать? ()',
+    t1: 'Warum',
+    t2: 'darf',
+    t3: 'ich',
+    t4: 'das',
+    t5: 'nicht',
+    t6: 'auch',
+    t7: '?',
+
+  },
+  {
+    t0: 'В бассейн без купальной шапочки вход запрещен. (Badehaube Schwimmbecken)',
+    t1: 'Ohne',
+    t2: 'Badehaube',
+    t3: 'darfst',
+    t4: 'du',
+    t5: 'nicht',
+    t6: 'ins',
+    t7: 'Schwimmbecken',
+    t8: '.',
+
+  },
+  {
+    t0: 'Вам позволено попрощаться. (Ihr Abschied nehmen)',
+    t1: 'Ihr',
+    t2: 'durftet',
+    t3: 'Abschied',
+    t4: 'nehmen',
+    t5: '.',
+
+  },
+
+])
+const SlotDatasollen = ref([
+  {
+    t0: 'В чем все это дело?(alles)',
+    t1: 'Was',
+    t2: 'soll',
+    t3: 'das',
+    t4: 'alles',
+    t5: '?',
+
+  },
+  {
+    t0: ' Она должна сесть в тюрьму пожизненно.(lebenslang Gefängnis)',
+    t1: 'Sie',
+    t2: 'soll',
+    t3: 'lebenslang',
+    t4: 'ins',
+    t5: 'Gefängnis',
+    t6: '.',
+
+  }, {
+    t0: 'Куда поставить пианино? (Klavier hin)',
+    t1: 'Wo',
+    t2: 'soll',
+    t3: 'das',
+    t4: 'Klavier',
+    t5: 'hin',
+    t6: '?',
+
+  }, {
+    t0: 'Я же говорил тебе больше этого не делать.(doch gesagt mehr )',
+    t1: 'Ich',
+    t2: 'habe',
+    t3: 'dir',
+    t4: 'doch',
+    t5: 'gesagt',
+    t6: ',',
+    t7: 'dass',
+    t8: 'du',
+    t9: 'das',
+    t10: 'nicht',
+    t11: 'mehr',
+    t12: 'sollst',
+    t13: '.',
+
+  },
+  {
+    t0: 'Том должен проснуться.(wach sein)',
+    t1: 'Tom',
+    t2: 'sollte',
+    t3: 'wach',
+    t4: 'sein',
+    t5: '.',
+
+  },
+  {
+    t0: 'Люди должны иметь реалистичные ожидания. (Menschen realistische Erwartungen)',
+    t1: 'Die',
+    t2: 'Menschen',
+    t3: 'sollten',
+    t4: 'realistische',
+    t5: 'Erwartungen',
+    t6: 'haben',
+    t7: '.',
+
+  },
+  {
+    t0: 'Тому уже пора этим заниматься. (Mittlerweile Tom eigentlich fertig)',
+    t1: 'Mittlerweile',
+    t2: 'sollte',
+    t3: 'Tom',
+    t4: 'eigentlich',
+    t5: 'damit',
+    t6: 'fertig',
+    t7: 'sein',
+    t8: '.',
+
+  },
+  {
+    t0: 'Тебе следует оставаться здесь до половины третьего. (halb hierbleiben)',
+    t1: 'Du',
+    t2: 'sollst',
+    t3: 'bis',
+    t4: 'halb',
+    t5: 'drei',
+    t6: 'hierbleiben',
+    t7: '.',
+
+  },
+  {
+    t0: 'У каждого должно быть хотя бы одно хобби. (Jeder mindestens Hobby )',
+    t1: 'Jeder',
+    t2: 'sollte',
+    t3: 'mindestens',
+    t4: 'ein',
+    t5: 'Hobby',
+    t6: 'haben',
+    t7: '.',
+
+  },
+  {
+    t0: 'Стоит ли нам для разнообразия пойти на греческий? (Abwechslung mal  Griechen)',
+    t1: 'Sollen',
+    t2: 'wir',
+    t3: 'zur',
+    t4: 'Abwechslung',
+    t5: 'mal',
+    t6: 'zum',
+    t7: 'Griechen',
+    t8: '?',
+
+  }, {
+    t0: 'Нам следует следить за этим.(Auge darauf )',
+    t1: 'Wir',
+    t2: 'sollten',
+    t3: 'ein',
+    t4: 'Auge',
+    t5: 'darauf',
+    t6: 'haben',
+    t7: '.',
+
+  }
+])
+const SlotDatawollen = ref([
+  {
+    t0: '()',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+])
+const SlotDatamögen = ref([
+  {
+    t0: '()',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+])
+const SlotDatamöchten = ref([
+  {
+    t0: '()',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+])
+
+
+
 </script>
 
 <style lang="scss" ></style>

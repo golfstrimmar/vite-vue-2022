@@ -3,33 +3,36 @@
   .page-title 
     h2 der Artikel
 
-    Tabs(:items= 'der' title='Masculine article “der”')
-    Tabs(:items= 'die' title='Feminine Article “die”')
-    Tabs(:items= 'das' title='Neuter Article “das”')
-    Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
-    Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
-    Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
+  Tabs(:items= 'der' title='Masculine article “der”')
+  Tabs(:items= 'die' title='Feminine Article “die”')
+  Tabs(:items= 'das' title='Neuter Article “das”')
+  Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
+  Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
+  Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
 
-    .page-block
-      .page-title--small 
-        h3 Bestimmte Artikel
-      Plaza
-      Slot(:SlotData='SlotDataBestimmte' :focusActiv='focusActiv')
+  TabsTraining( title='Bestimmte Artikel Training' :SlotData='SlotDataBestimmte' )
+  TabsTraining( title='Unbestimmte Artikel Training' :SlotData='SlotDataUnbestimmte' )
+  TabsTraining( title='Unbestimmte Negativ Artikel Training' :SlotData='SlotDataNegativ' )
+    //- .page-block
+    //-   .page-title--small 
+    //-     h3 Bestimmte Artikel
+    //-   Plaza
+    //-   Slot(:SlotData='SlotDataBestimmte' :focusActiv='focusActiv')
 
-    .page-block
-      .page-title--small 
-        h3 Unbestimmte Artikel
-      Content(:items='Unbestimmte' :headers='Headers')
-      Plaza
-      Slot(:SlotData='SlotDataUnbestimmte')
+    //- .page-block
+    //-   .page-title--small 
+    //-     h3 Unbestimmte Artikel
+    //-   Content(:items='Unbestimmte' :headers='Headers')
+    //-   Plaza
+    //-   Slot(:SlotData='SlotDataUnbestimmte')
 
 
-    .page-block
-      .page-title--small 
-        h3 Unbestimmte Negativ Artikel
-      Content(:items='UnbestimmteNegativ' :headers='Headers')
-      Plaza
-      Slot(:SlotData='SlotDataNegativ')
+    //- .page-block
+    //-   .page-title--small 
+    //-     h3 Unbestimmte Negativ Artikel
+    //-   Content(:items='UnbestimmteNegativ' :headers='Headers')
+    //-   Plaza
+    //-   Slot(:SlotData='SlotDataNegativ')
 
 
 
@@ -41,11 +44,10 @@
 import { ref, onMounted, computed } from 'vue';
 // import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
-
+import TabsTraining from '@/components/TabsTraining.vue';
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 const icons = ref(true)
-const focusActiv = ref(true)
 
 
 

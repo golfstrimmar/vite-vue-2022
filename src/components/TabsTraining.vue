@@ -7,46 +7,19 @@
     transition(mode='easy-in-out' name='o'  )
       .tabs__hidden(v-if="tabopen") 
         .tabs__wrap
-          ul
-            li( v-for="item in items" :key="index" :item='item')
-              h4 {{item.title}}
-              span(v-if="item.text1")
-                SvgIcon(:name='item.svg1' v-if="item.svg1")
-                span {{item.text1}}
-              span(v-if="item.text2")
-                SvgIcon(:name='item.svg2' v-if="item.svg2")
-                span {{item.text2}}
-              span(v-if="item.text3")
-                SvgIcon(:name='item.svg3' v-if="item.svg3")
-                span {{item.text3}}
-              span(v-if="item.text4")
-                SvgIcon(:name='item.svg4' v-if="item.svg4")
-                span {{item.text4}}
-              span(v-if="item.text5")
-                SvgIcon(:name='item.svg5' v-if="item.svg5")
-                span {{item.text5}}
-              span(v-if="item.text6")
-                SvgIcon(:name='item.svg6' v-if="item.svg6")
-                span {{item.text6}}
-              span(v-if="item.text7")
-                SvgIcon(:name='item.svg7' v-if="item.svg7")
-                span {{item.text7}}
-              span(v-if="item.text8")
-                SvgIcon(:name='item.svg8' v-if="item.svg8")
-                span {{item.text8}}
-              span(v-if="item.text9")
-                SvgIcon(:name='item.svg9' v-if="item.svg9")
-                span {{item.text9}}
-              span(v-if="item.text10")
-                SvgIcon(:name='item.svg10' v-if="item.svg10")
-                span {{item.text10}}
+          .page-block
+            Plaza
+            Slot(:SlotData='props.SlotData')
 
 
 
 </template>
 
 <script setup>
-import Text from '@/components/Text.vue'; import SvgIcon from '@/components/SvgIcon.vue'
+import Text from '@/components/Text.vue';
+import Plaza from '@/components/Plaza.vue';
+import Slot from '@/components/Slot.vue';
+import SvgIcon from '@/components/SvgIcon.vue'
 import { ref } from 'vue';
 const tabopen = ref(false);
 const props = defineProps({
@@ -55,7 +28,7 @@ const props = defineProps({
     type: String,
     required: false
   },
-  items: {
+  SlotData: {
     type: Object,
     required: false
   }
@@ -64,6 +37,14 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+.page-block {
+  margin: 0 0 0 0;
+}
+
+.plaza__top {
+  margin: 0;
+}
+
 .tabs {
   &__item {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
@@ -74,7 +55,7 @@ const props = defineProps({
 
   &__title {
     padding: 5px;
-    background: $blue-6;
+    background: $deep-purple-4;
     z-index: 4;
     cursor: pointer;
     position: relative;
@@ -147,6 +128,7 @@ const props = defineProps({
     }
   }
 }
+
 
 
 @media (max-width: 950px) {

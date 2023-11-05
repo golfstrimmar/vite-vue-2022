@@ -22,10 +22,9 @@
 .plaza {
 
 	&__top {
-		margin: 20px 0 20px 0;
 
 		p {
-			margin: 15px 0 0 0;
+			margin: 10px 0 0 0;
 
 			&:nth-child(3) {
 				display: grid;

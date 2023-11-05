@@ -86,6 +86,6 @@ onMounted(() => {
 }
 
 .mixButton {
-	margin: 0 0 30px 0;
+	margin: 10px 0;
 }
 </style>
