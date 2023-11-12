@@ -8,23 +8,16 @@
       h3 Training
     Plaza
     Slot(:SlotData='SlotDataPersonal')
-
-
-
-
-
 </template>
 
 
 <script setup>
-import { ref, computed } from 'vue';
 // import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
-
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 
-const Personal = ref([
+const Personal = [
 
   {
     title: 'Nominativ',
@@ -103,10 +96,10 @@ const Personal = ref([
     svg8: 'group',
     svg9: 'respect',
   },
-])
-const SlotDataPersonal = ref([
+]
+const SlotDataPersonal = [
   {
-    t0: 'Ты уже попросил Паули убрать его игрушки ? (Pauli gebeten seinen Spielzeug aufzuräumen)',
+    t0: 'Ты уже попросил Паули убрать его игрушки ? (Pauli schon gebeten  Spielzeug aufzuräumen)',
     t1: 'Hast',
     t2: 'du',
     t3: 'Pauli',
@@ -243,7 +236,7 @@ const SlotDataPersonal = ref([
 
   },
   {
-    t0: 'Я дам вам свои наклейки, а вы взамен отдадите мне свои стеклянные шарики.(gebe Sticker gebt Gegenzug Glasmurmeln)',
+    t0: 'Я дам вам (ich) свои наклейки, а вы взамен отдадите мне свои стеклянные шарики. (gebe Sticker gebt Gegenzug Glasmurmeln)',
     t1: 'Ich',
     t2: 'gebe',
     t3: 'euch',
@@ -260,7 +253,7 @@ const SlotDataPersonal = ref([
     t14: '.',
   },
   {
-    t0: 'Завтра я встречаюсь с Кларой, она хочет мне что-то показать, поэтому, к сожалению, завтра у меня нет времени.(treffe Klara zeigen Zeit)',
+    t0: 'Завтра я встречаюсь с Кларой, она хочет мне что-то показать, у меня завтра поэтому к сожалению   нет времени.(treffe Klara zeigen daher leider keine Zeit)',
     t1: 'Ich',
     t2: 'treffe',
     t3: 'morgen',
@@ -282,7 +275,7 @@ const SlotDataPersonal = ref([
     t18: '.',
   },
   {
-    t0: 'Он очень любит животных и хорошо их держит.(mag Tiere hält)',
+    t0: 'Он очень любит животных и хорошо их держит.(mag Tiere sehr hält)',
     t1: 'Er',
     t2: 'mag',
     t3: 'Tiere',
@@ -294,7 +287,7 @@ const SlotDataPersonal = ref([
     t9: '.',
   },
   {
-    t0: 'Можете ли вы помочь мне найти ее?(Können helfen finden)',
+    t0: 'Можете ли Вы помочь мне найти ее? (Können helfen finden)',
     t1: 'Können',
     t2: 'Sie',
     t3: 'mir',
@@ -306,7 +299,7 @@ const SlotDataPersonal = ref([
     t9: '?',
   },
   {
-    t0: 'Если она возьмет на себя вину, она будет передана ей.(Schuld trägt ihrer überführt)',
+    t0: 'Если она возьмет на себя вину, она будет передана ей. (Schuld trägt ihrer überführt)',
     t1: 'Wenn',
     t2: 'sie',
     t3: 'die',
@@ -320,7 +313,7 @@ const SlotDataPersonal = ref([
     t11: '.',
   },
   {
-    t0: 'Тебя будут помнить.(Man erinnern)',
+    t0: 'Тебя будут помнить. (Man  erinnern)',
     t1: 'Man',
     t2: 'wird',
     t3: 'sich',
@@ -329,7 +322,7 @@ const SlotDataPersonal = ref([
     t6: '.',
   },
   {
-    t0: 'Они стыдятся ее.(schämen sich)',
+    t0: 'Они стыдятся ее. (schämen sich )',
     t1: 'Sie',
     t2: 'schämen',
     t3: 'sich',
@@ -351,7 +344,6 @@ const SlotDataPersonal = ref([
   },
 
 ]
-)
 </script>
 
 <style lang="scss" ></style>

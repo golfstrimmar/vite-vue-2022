@@ -8,36 +8,15 @@
       h3 Training
     Plaza
     Slot(:SlotData='SlotDataInterrogativ')
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Unbestimmte Artikel
-  //-   Content(:items='Unbestimmte' :headers='Headers')
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataUnbestimmte')
-
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Unbestimmte Negativ Artikel
-  //-   Content(:items='UnbestimmteNegativ' :headers='Headers')
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataNegativ')
-
-
-
 </template>
 
 
 <script setup>
-import { ref, computed } from 'vue';
-// import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
-
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 
-const Interrogativ = ref([
+const Interrogativ = [
 
   {
     title: 'Nominativ',
@@ -122,8 +101,8 @@ const Interrogativ = ref([
     svg8: 'group',
     svg9: 'group',
   },
-])
-const SlotDataInterrogativ = ref([
+]
+const SlotDataInterrogativ = [
   {
     t0: 'Кто это сказал? (gesagt)',
     t1: 'Wer',
@@ -637,7 +616,7 @@ const SlotDataInterrogativ = ref([
   },
 
 
-])
+]
 
 
 

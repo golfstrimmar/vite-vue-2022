@@ -8,36 +8,15 @@
       h3 Training
     Plaza
     Slot(:SlotData='SlotDataReflexiv')
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Unbestimmte Artikel
-  //-   Content(:items='Unbestimmte' :headers='Headers')
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataUnbestimmte')
-
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Unbestimmte Negativ Artikel
-  //-   Content(:items='UnbestimmteNegativ' :headers='Headers')
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataNegativ')
-
-
-
 </template>
 
 
 <script setup>
-import { ref, computed } from 'vue';
-// import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
-
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 
-const Reflexiv = ref([
+const Reflexiv = [
 
   {
     title: 'Dativ',
@@ -78,9 +57,8 @@ const Reflexiv = ref([
     svg9: 'respect',
   },
 
-])
-
-const SlotDataReflexiv = ref([
+]
+const SlotDataReflexiv = [
 
   {
     t0: 'Я принимаю душ. (dusche)',
@@ -347,11 +325,4 @@ const SlotDataReflexiv = ref([
   //   t18: '',
   // },
 ]
-
-)
-
-
-
 </script>
-
-<style lang="scss" ></style>

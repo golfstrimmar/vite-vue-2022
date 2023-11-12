@@ -11,36 +11,15 @@
       h3 Training
     Plaza
     Slot(:SlotData='SlotDataPersonal')
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Unbestimmte Artikel
-  //-   Content(:items='Unbestimmte' :headers='Headers')
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataUnbestimmte')
-
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Unbestimmte Negativ Artikel
-  //-   Content(:items='UnbestimmteNegativ' :headers='Headers')
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataNegativ')
-
-
-
 </template>
 
 
 <script setup>
-import { ref } from 'vue';
-// import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
-
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 
-const Possessivmännlich = ref([
+const Possessivmännlich = [
 
   {
     title: 'Nominativ ',
@@ -112,8 +91,8 @@ const Possessivmännlich = ref([
     svg6: 'man',
     svg7: 'man',
   },
-])
-const Possessivweiblichen = ref([
+]
+const Possessivweiblichen = [
 
   {
     title: 'Nominativ ',
@@ -185,8 +164,8 @@ const Possessivweiblichen = ref([
     svg6: 'frau',
     svg7: 'frau',
   },
-])
-const Possessivneutrum = ref([
+]
+const Possessivneutrum = [
 
   {
     title: 'Nominativ ',
@@ -258,10 +237,8 @@ const Possessivneutrum = ref([
     svg6: 'das',
     svg7: 'das',
   },
-])
-
-
-const Possessivplural = ref([
+]
+const Possessivplural = [
 
   {
     title: 'Nominativ ',
@@ -333,11 +310,8 @@ const Possessivplural = ref([
     svg6: 'group',
     svg7: 'group',
   },
-])
-
-
-
-const SlotDataPersonal = ref([
+]
+const SlotDataPersonal = [
   {
     t0: 'Карл, как зовут твоего кузена ?(Karl heißt Cousin)',
     t1: 'Karl',
@@ -834,11 +808,4 @@ const SlotDataPersonal = ref([
   //   t18: '',
   // },
 ]
-
-)
-
-
-
 </script>
-
-<style lang="scss" ></style>

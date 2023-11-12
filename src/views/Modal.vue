@@ -17,61 +17,15 @@
   TabsTraining( title='wollen Training' :SlotData='SlotDatawollen' )
   TabsTraining( title='mögen Training' :SlotData='SlotDatamögen' )
   TabsTraining( title='möchten Training' :SlotData='SlotDatamöchten' )
-
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 müssen   
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDatamüssen')
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3  können Training
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDatakönnen')
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3  dürfen Training
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDatadürfen')
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3  sollen Training
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDatasollen')
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3  wollen Training
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDatawollen')
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3  mögen Training
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDatamöchten')
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3  möchten Training
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDatamöchten')
-
-
-
-
-
 </template>
-
-
 <script setup>
-import { ref, computed } from 'vue';
 // import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
 import TabsTraining from '@/components/TabsTraining.vue';
-
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 
-const müssen = ref([
+const müssen = [
 
   {
     title: 'Präsens',
@@ -114,8 +68,8 @@ const müssen = ref([
     text5: 'wir,sie,Sie werden gemusst haben',
 
   },
-])
-const können = ref([
+]
+const können = [
   {
     title: 'Präsens',
     text1: 'ich,er,sie,es kann',
@@ -157,8 +111,8 @@ const können = ref([
     text5: 'wir,sie,Sie werden gekonnt haben',
 
   },
-])
-const dürfen = ref([
+]
+const dürfen = [
   {
     title: 'Präsens',
     text1: 'ich,er,sie,es darf',
@@ -200,8 +154,8 @@ const dürfen = ref([
     text5: 'wir,sie,Sie werden gedurft haben',
 
   },
-])
-const sollen = ref([
+]
+const sollen = [
 
   {
     title: 'Präsens',
@@ -244,8 +198,8 @@ const sollen = ref([
     text5: 'wir,sie,Sie werden gesollt haben',
 
   },
-])
-const wollen = ref([
+]
+const wollen = [
 
   {
     title: 'Präsens',
@@ -288,8 +242,8 @@ const wollen = ref([
     text5: 'wir,sie,Sie werden gewollt haben',
 
   },
-])
-const mögen = ref([
+]
+const mögen = [
   {
     title: 'Präsens',
     text1: 'ich,er,sie,es mag',
@@ -331,8 +285,8 @@ const mögen = ref([
     text5: 'wir,sie,Sie werden gemocht haben',
 
   },
-])
-const möchten = ref([
+]
+const möchten = [
   {
     title: 'Präsens',
     text1: 'ich,er,sie,es möcht(e)',
@@ -374,19 +328,17 @@ const möchten = ref([
     text5: 'wir,sie,Sie werden gemöchtet haben',
 
   },
-])
+]
 
-
-
-const SlotDatamüssen = ref([
+const SlotDatamüssen = [
   {
     t0: 'Мне нужно вернуться в офис.(zurück Büro)',
     t1: 'Ich',
     t2: 'muss',
     t3: 'zurück',
     t4: 'zum',
-    t4: 'Büro',
-    t4: '.',
+    t5: 'Büro',
+    t6: '.',
 
   },
   {
@@ -480,7 +432,7 @@ const SlotDatamüssen = ref([
 
   },
   {
-    t0: 'Вам никогда не приходилось делать этого раньше.(noch nie)',
+    t0: 'Вам никогда не приходилось делать этого раньше. (noch nie)',
     t1: 'Das',
     t2: 'hast',
     t3: 'du',
@@ -501,7 +453,7 @@ const SlotDatamüssen = ref([
 
   },
   {
-    t0: 'Ей бы пришлось это сделать, но...()',
+    t0: 'Ей бы пришлось это сделать, но... ()',
     t1: 'Sie',
     t2: 'wird',
     t3: 'gemusst',
@@ -537,10 +489,9 @@ const SlotDatamüssen = ref([
   },
 
 ]
-)
-const SlotDatakönnen = ref([
+const SlotDatakönnen = [
   {
-    t0: 'Том знает французский?(Tom französisch)',
+    t0: 'Том знает французский? (Tom französisch)',
     t1: 'Kann',
     t2: 'Tom',
     t3: 'französisch',
@@ -548,7 +499,7 @@ const SlotDatakönnen = ref([
 
   },
   {
-    t0: 'Я ничего не могу с собой поделать.(anders)',
+    t0: 'Я ничего не могу с собой поделать. (anders)',
     t1: 'Ich',
     t2: 'kann',
     t3: 'nicht',
@@ -567,7 +518,7 @@ const SlotDatakönnen = ref([
 
   },
   {
-    t0: 'Каждый делает, что может.(Jeder tut)',
+    t0: 'Каждый делает, что может. (Jeder tut)',
     t1: 'Jeder',
     t2: 'tut',
     t3: ',',
@@ -713,8 +664,8 @@ const SlotDatakönnen = ref([
 
 
 
-])
-const SlotDatadürfen = ref([
+]
+const SlotDatadürfen = [
   {
     t0: 'Поскольку мы не имеем права это хранить.(Da behalten)',
     t1: 'Da',
@@ -852,8 +803,8 @@ const SlotDatadürfen = ref([
 
   },
 
-])
-const SlotDatasollen = ref([
+]
+const SlotDatasollen = [
   {
     t0: 'В чем все это дело?(alles)',
     t1: 'Was',
@@ -974,78 +925,431 @@ const SlotDatasollen = ref([
     t7: '.',
 
   }
-])
-const SlotDatawollen = ref([
+]
+const SlotDatawollen = [
   {
-    t0: '()',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-])
-const SlotDatamögen = ref([
-  {
-    t0: '()',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-])
-const SlotDatamöchten = ref([
-  {
-    t0: '()',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-])
+    t0: 'Ты хочешь детей?(Kinder)',
+    t1: 'Willst',
+    t2: 'du',
+    t3: 'Kinder',
+    t4: '?',
 
+  },
+  {
+    t0: 'Я хотел больше.(mehr)',
+    t1: 'Ich',
+    t2: 'wollte',
+    t3: 'mehr',
+    t4: '.',
 
+  },
+  {
+    t0: 'Чего вы хотите?',
+    t1: 'Was',
+    t2: 'wollt',
+    t3: 'ihr',
+    t4: '?',
+
+  },
+  {
+    t0: 'Кому горячего шоколада?(Schokolade)',
+    t1: 'Wer',
+    t2: 'will',
+    t3: 'eine',
+    t4: 'warme',
+    t5: 'Schokolade',
+    t6: '?',
+
+  },
+  {
+    t0: 'Мои адвокаты не хотели, чтобы я давал показания.(Rechtsanwälte aussage)',
+    t1: 'Meine',
+    t2: 'Rechtsanwälte',
+    t3: 'wollten',
+    t4: 'nicht',
+    t5: ',',
+    t6: 'dass',
+    t7: 'ich',
+    t8: 'aussage',
+    t9: '.',
+
+  },
+  {
+    t0: 'Хочешь знать, чего люди хотят больше обычного?(Leute sonst)',
+    t1: 'Wollen',
+    t2: 'Sie',
+    t3: 'wissen',
+    t4: ',',
+    t5: 'was',
+    t6: 'Leute',
+    t7: 'mehr',
+    t8: 'als',
+    t9: 'sonst',
+    t10: 'wollen',
+    t11: '?',
+
+  },
+  {
+    t0: 'Я просто подумал, что ты захочешь этого.(würdest)',
+    t1: 'Ich',
+    t2: 'dachte',
+    t3: 'nur',
+    t4: ',',
+    t5: 'du',
+    t6: 'würdest',
+    t7: 'das',
+    t8: 'haben',
+    t9: 'wollen',
+    t10: '.',
+
+  },
+  {
+    t0: 'Ты не хотел, чтобы я приходил.(nie herkomme)',
+    t1: 'Du',
+    t2: 'hast',
+    t3: 'nie',
+    t4: 'gewollt',
+    t5: ',',
+    t6: 'dass',
+    t7: 'ich',
+    t8: 'herkomme',
+    t9: '.',
+
+  },
+  {
+    t0: 'Запомни, ты сам этого хотел.(Vergiss )',
+    t1: 'Vergiss',
+    t2: 'nicht',
+    t3: ',',
+    t4: 'du',
+    t5: 'hast',
+    t6: 'es',
+    t7: 'so',
+    t8: 'gewollt',
+    t9: '.',
+
+  },
+  {
+    t0: 'Вы оба хотели, чтобы я оставался в стороне - и я остался. (raushalte)',
+    t1: 'Ihr ',
+    t2: 'beide',
+    t3: 'habt',
+    t4: 'gewollt',
+    t5: ',',
+    t6: 'dass',
+    t7: 'ich',
+    t8: 'mich',
+    t9: 'da',
+    t10: 'raushalte',
+    t11: 'und',
+    t12: 'das',
+    t13: 'habe',
+    t14: 'ich',
+    t15: '.',
+
+  },
+  {
+    t0: 'Почему вы от меня отказались?(Wieso ihr)',
+    t1: 'Wieso',
+    t2: 'habt',
+    t3: 'ihr',
+    t4: 'mich',
+    t5: 'nicht',
+    t6: 'gewollt',
+    t7: '?',
+
+  },
+  {
+    t0: 'Не думаю, что я хотела кого-то так сильно.(jemanden sehr)',
+    t1: 'Ich',
+    t2: 'glaube',
+    t3: ',',
+    t4: 'dass',
+    t5: 'ich',
+    t6: 'nie',
+    t7: 'jemanden',
+    t8: 'so',
+    t9: 'sehr',
+    t10: 'gewollt',
+    t11: 'habe',
+    t12: '.',
+
+  },
+  {
+    t0: 'Я это знаю, потому что однажды получил то, чего очень сильно хотел.(Einzige wirklich )',
+    t1: 'Es',
+    t2: 'war',
+    t3: 'das',
+    t4: 'Einzige',
+    t5: ',',
+    t6: 'was',
+    t7: 'ich',
+    t8: 'je',
+    t9: 'wirklich',
+    t10: 'gewollt',
+    t11: 'habe',
+    t12: '.',
+
+  },
+
+]
+const SlotDatamögen = [
+  {
+    t0: 'Я думал, тебе нравится, когда я так делаю.(mache)',
+    t1: 'Ich',
+    t2: 'dachte',
+    t3: 'du',
+    t4: 'magst',
+    t5: 'es',
+    t6: ',',
+    t7: 'wenn',
+    t8: 'ich',
+    t9: 'das',
+    t10: 'mache',
+    t11: '.',
+
+  },
+  {
+    t0: 'Можешь забрать их все, если хочешь.(alle)',
+    t1: 'Wenn',
+    t2: 'du',
+    t3: 'magst',
+    t4: ',',
+    t5: 'kannst',
+    t6: 'du',
+    t7: 'sie',
+    t8: 'alle',
+    t9: 'haben',
+    t10: '.',
+
+  },
+  {
+    t0: 'Вы можете считать, что я слишком зол.(denken wütend)',
+    t1: 'Ihr',
+    t2: 'mögt',
+    t3: 'denken',
+    t4: ',',
+    t5: 'ich',
+    t6: 'sei',
+    t7: 'zu',
+    t8: 'wütend',
+    t9: '.',
+
+  },
+  {
+    t0: 'Надеюсь, тайская кухня вам нравится.(hoffe Thai)',
+    t1: 'Ich',
+    t2: 'hoffe',
+    t3: ',',
+    t4: 'ihr',
+    t5: 'mögt',
+    t6: 'Thai',
+    t7: '.',
+
+  },
+  {
+    t0: 'Я знаю, что вы любите.()',
+    t1: 'Ich',
+    t2: 'weiß',
+    t3: ',',
+    t4: 'was',
+    t5: 'ihr',
+    t6: 'mögt',
+    t7: '.',
+
+  },
+  {
+    t0: 'Да, послушайте, она мне нравилась.(zu )',
+    t1: 'Ja',
+    t2: ',',
+    t3: 'hör',
+    t4: 'zu',
+    t5: ',',
+    t6: 'ich',
+    t7: 'mochte',
+    t8: 'sie',
+    t9: '.',
+
+  },
+  {
+    t0: 'Меня саму это ужасно удивило, но мне нравились эти девчонки.(total überrascht Mädels)',
+    t1: 'Es',
+    t2: 'hat',
+    t3: 'mich',
+    t4: 'total',
+    t5: 'überrascht',
+    t6: ',',
+    t7: 'aber',
+    t8: 'ich',
+    t9: 'mochte',
+    t10: 'diese',
+    t11: 'Mädels',
+    t12: '.',
+
+  },
+
+  {
+    t0: 'Да, но мне понравилась эта голубая рубашка.(Hemd)',
+    t1: 'Ja',
+    t2: ',',
+    t3: 'aber',
+    t4: 'ich',
+    t5: 'mochte',
+    t6: 'dieses',
+    t7: 'blaue',
+    t8: 'Hemd',
+    t9: '.',
+
+  },
+
+  {
+    t0: 'Девушка, которая мне понравилась, издевается надо мной.(Mädchen schikaniert mich)',
+    t1: 'Ein',
+    t2: 'Mädchen',
+    t3: ',',
+    t4: 'das',
+    t5: 'ich',
+    t6: 'mochte',
+    t7: ',',
+    t8: 'schikaniert',
+    t9: 'mich',
+    t10: '.',
+
+  },
+  {
+    t0: 'Какая музыка вам нравится?(Art Musik Sie)',
+    t1: 'Welche',
+    t2: 'Art',
+    t3: 'von',
+    t4: 'Musik',
+    t5: 'mögen',
+    t6: 'Sie',
+    t7: '?',
+
+  }
+]
+const SlotDatamöchten = [
+  {
+    t0: 'Она спрашивает, не хотите ли вы пойти со мной.(fragt mitkommen)',
+    t1: 'Sie     ',
+    t2: 'fragt',
+    t3: ',',
+    t4: 'ob',
+    t5: 'Sie',
+    t6: 'mitkommen',
+    t7: 'möchten',
+    t8: '.',
+
+  }, {
+    t0: 'С Вашего разрешения мы хотели бы Вас угостить.(Erlaubnis behandeln)',
+    t1: 'Mit',
+    t2: 'Eurer',
+    t3: 'Erlaubnis',
+    t4: 'möchten',
+    t5: 'wir',
+    t6: 'Euch',
+    t7: 'behandeln',
+    t8: '.',
+
+  }, {
+    t0: 'Ты занят и не хочешь, чтобы к тебе обращались в данный момент.(beschäftigt derzeit gestört)',
+    t1: 'Du',
+    t2: 'bist',
+    t3: 'beschäftigt',
+    t4: 'und',
+    t5: 'möchten',
+    t6: 'derzeit',
+    t7: 'nicht',
+    t8: 'gestört',
+    t9: 'werden',
+    t10: '.',
+
+  }, {
+    t0: 'Принесите все книги, какие захотите, к прилавку.(Bücher Theke)',
+    t1: 'Bringt',
+    t2: 'alle',
+    t3: 'Bücher',
+    t4: ',',
+    t5: 'die',
+    t6: 'ihr',
+    t7: 'möchtet',
+    t8: ',',
+    t9: 'an',
+    t10: 'die',
+    t11: 'Theke',
+    t12: '.',
+
+  }, {
+    t0: 'Вы можете идти, если хотите.()',
+    t1: 'Ihr',
+    t2: 'könnt',
+    t3: 'gehen',
+    t4: ',',
+    t5: 'wenn',
+    t6: 'ihr',
+    t7: 'möchtet',
+    t8: '.',
+
+  }, {
+    t0: 'Если вы хотите, чтобы они следовали за вами, вы должны стать частью их мира.(ihr folgen Teil Welt)',
+    t1: 'Wenn',
+    t2: 'ihr',
+    t3: 'möchtet',
+    t4: 'das',
+    t5: 'sie',
+    t6: 'euch',
+    t7: 'folgen',
+    t8: ',',
+    t9: 'müsst',
+    t10: 'Ihr',
+    t11: 'Teil',
+    t12: 'ihrer',
+    t13: 'Welt',
+    t14: 'werden',
+    t15: '.',
+  }, {
+    t0: 'После прошлой ночи, я уверен, вам не захочется задерживаться. (Nach Nacht überzeugt verweilen)',
+    t1: 'Nach',
+    t2: 'letzter',
+    t3: 'Nacht',
+    t4: ',',
+    t5: 'bin',
+    t6: 'ich',
+    t7: 'überzeugt',
+    t8: ',',
+    t9: 'Ihr',
+    t10: 'möchtet',
+    t11: 'nicht',
+    t12: 'verweilen',
+    t13: '.',
+  }, {
+    t0: 'Господа, не могли бы вы поделиться чем-нибудь с классом?(Herren Klasse)',
+    t1: 'Meine',
+    t2: 'Herren',
+    t3: ',',
+    t4: 'möchtet',
+    t5: 'ihr',
+    t6: 'der',
+    t7: 'Klasse',
+    t8: 'etwas',
+    t9: 'mitteilen',
+    t10: '?',
+
+  }, {
+    t0: 'Может быть, вы хотите, чтобы я думал именно так.(Vielleicht ihr genau denke)',
+    t1: 'Vielleicht',
+    t2: 'möchtet',
+    t3: 'ihr',
+    t4: ',',
+    t5: 'dass',
+    t6: 'ich',
+    t7: 'genau',
+    t8: 'das',
+    t9: 'denke',
+    t10: '.',
+
+  },
+]
 
 </script>
 

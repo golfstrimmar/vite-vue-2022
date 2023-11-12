@@ -33,13 +33,12 @@
 
 
 <script setup>
-import { ref } from 'vue';
 // import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 
-const Nom = ref([
+const Nom = [
 
   {
     title: 'männlichen',
@@ -96,8 +95,8 @@ const Nom = ref([
     svg5: 'group',
 
   },
-])
-const Dativ = ref([
+]
+const Dativ = [
 
   {
     title: 'männlichen',
@@ -154,8 +153,8 @@ const Dativ = ref([
     svg5: 'group',
 
   },
-])
-const Akkusativ = ref([
+]
+const Akkusativ = [
 
   {
     title: 'männlichen',
@@ -212,8 +211,8 @@ const Akkusativ = ref([
     svg5: 'group',
 
   },
-])
-const Genitiv = ref([
+]
+const Genitiv = [
 
   {
     title: 'männlichen',
@@ -270,11 +269,11 @@ const Genitiv = ref([
     svg5: 'group',
 
   },
-])
+]
 
 
 
-const SlotDataDemonstrativ = ref([
+const SlotDataDemonstrativ = [
   {
     t0: 'Этот предмет мне нравится больше всего. (Fach Spaß)',
     t1: 'Das',
@@ -922,7 +921,7 @@ const SlotDataDemonstrativ = ref([
   // },
 ]
 
-)
+
 
 
 

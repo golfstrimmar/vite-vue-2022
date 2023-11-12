@@ -1,156 +1,868 @@
 <template lang="pug">
 .container
-	.page-title 
-		h2 Passiv
-	.page-block
-		.page-title--small 
-			h3 Vorgangspassivs
-		Content(:items='VorgangsPassiv' :headers='VorgangsHeaders')
-	.page-block
-		.page-title--small  
-			h3 Zustandspassivs
-		Content(:items='ZustandPassiv' :headers='ZustandHeaders')
+  .page-title 
+    h2 Passiv
+    p Существует в 2 формах: 
+    p ✔️ несовершенный пассив или по-другому его называют пассив действия (Vorgangspassiv)
+    p 👌 Это значит, что действие, которое совершается над объектом не было завершено, мы не знаем его результат.
+    p Das Vorgangspassiv stellt den Vorgang, die Handlung oder das Geschehen in den Vordergrund.
+    p ✔️ совершенный пассив или по-другому пассив состояния (Zustandspassiv)
+    p 👌Это значит, что у нас уже есть результат какого-либо действия. Мы просто констатируем как факт, то что произошло.
+    p Das Zustandspassiv drückt ein Ergebnis bzw. einen Zustand aus.
+    p Некоторые формы пассивного состояния очень похожи на активные формы.
+    p Чтобы узнать, находится ли предложение в пассивном состоянии или в активном состоянии, установите его в пассивное состояние. 
+    p Если это возможно, то речь идет о пассиве состояния. Если это невозможно, предложение остается в активе.
+
+    p Manche Formen des Zustandspassivs ähneln sehr den Aktivformen.
+    p Um herauszufinden, ob ein Satz im Zustandspassiv oder im Aktiv steht, setzt du ihn ins Vorgangspassiv. Ist das möglich, 
+    p handelt es sich um das Zustandspassiv. Ist dies nicht möglich, steht der Satz im Aktiv.
+    p(style="color: red;font-weight: 800;") Многие формы пассива не преводятся дословно на русский или звучат некорректно!
+  Tabs(:items= 'Vorgangs' title='Das Vorgangspassiv' )
+  Tabs(:items= 'Zustand' title='Das Zustandspassiv' )
+  .page-title--small 
+    h2 Training Vorgangspassivs
+  TabsTraining( title='Vorgangspassivs Präsens' :SlotData='SlotVorgangspassivsPräsens' )
+  TabsTraining( title='Vorgangspassivs Präteritum' :SlotData='SlotVorgangspassivsPräteritum' )
+  TabsTraining( title='Vorgangspassivs Perfekt' :SlotData='SlotVorgangspassivsPerfekt' )
+  TabsTraining( title='Vorgangspassivs Plusquamperfekt' :SlotData='SlotVorgangspassivsPlusquamperfekt' )
+  TabsTraining( title='Vorgangspassivs Futurum ' :SlotData='SlotVorgangspassivsFuturum' )
+  .page-title--small 
+    h2 Training Zustandspassivs
+  TabsTraining( title='Zustandspassivs Präsens' :SlotData='SlotZustandspassivsPräsens' )
+  TabsTraining( title='Zustandspassivs Präteritum' :SlotData='SlotZustandspassivsPräteritum' )
+  TabsTraining( title='Zustandspassivs Perfekt' :SlotData='SlotZustandspassivsPerfekt' )
+  TabsTraining( title='Zustandspassivs Plusquamperfekt' :SlotData='SlotZustandspassivsPlusquamperfekt' )
+  TabsTraining( title='Zustandspassivs Futurum ' :SlotData='SlotZustandspassivsFuturum' )
+ 
+
+
+
 </template>
 
 
 <script setup>
-import { ref } from 'vue';
-import Content from '@/components/Content.vue'
-const VorgangsHeaders = ref([
-	{ title: 'Präsens' },
-	{ title: 'Präteritum' },
-	{ title: 'Perfekt' },
-	{ title: 'Plusquamperfekt' },
-	{ title: 'Futur' },
+import Tabs from '@/components/Tabs.vue';
+import TabsTraining from '@/components/TabsTraining.vue';
+import Plaza from '@/components/Plaza.vue';
+import Slot from '@/components/Slot.vue'
 
-])
-const VorgangsPassiv = ref([
-	[
-		{ id: 1, text: 'ich werde Pt2' },
-		{ id: 2, text: 'du wirst Pt2' },
-		{ id: 3, marker: 'M', text: 'er wird Pt2' },
-		{ id: 4, marker: 'F', text: 'sie wird Pt2' },
-		{ id: 5, marker: 'N', text: 'es wird Pt2' },
-		{ id: 6, marker: 'P', text: 'wir werden Pt2' },
-		{ id: 6, marker: 'P', text: 'ihr werdet Pt2' },
-		{ id: 7, marker: 'P', text: 'sie werden Pt2' },
-		{ id: 8, marker: 'P', text: 'Sie werden Pt2' },
-	],
-	[
-		{ id: 1, text: 'ich wurde Pt2' },
-		{ id: 2, text: 'du wurdest Pt2' },
-		{ id: 3, marker: 'M', text: 'er wurde Pt2' },
-		{ id: 4, marker: 'F', text: 'sie wurde Pt2' },
-		{ id: 5, marker: 'N', text: 'es wurde Pt2' },
-		{ id: 6, marker: 'P', text: 'wir wurden Pt2' },
-		{ id: 7, marker: 'P', text: 'ihr wurdet Pt2' },
-		{ id: 8, marker: 'P', text: 'sie wurden Pt2' },
-		{ id: 9, marker: 'P', text: 'Sie wurden Pt2' },
-	],
-	[
-		{ id: 1, text: 'ich bin Pt2 worden' },
-		{ id: 2, text: 'du bist Pt2 worden' },
-		{ id: 3, marker: 'M', text: 'er ist Pt2 worden' },
-		{ id: 4, marker: 'F', text: 'sie ist Pt2 worden' },
-		{ id: 5, marker: 'N', text: 'es ist Pt2 worden' },
-		{ id: 6, marker: 'P', text: 'wir sind Pt2 worden' },
-		{ id: 7, marker: 'P', text: 'ihr seid Pt2 worden' },
-		{ id: 8, marker: 'P', text: 'sie sind Pt2 worden' },
-		{ id: 9, marker: 'P', text: 'Sie sind Pt2 worden' },
-	],
-	[
-		{ id: 1, text: 'ich war Pt2 worden' },
-		{ id: 2, text: 'du warst Pt2 worden' },
-		{ id: 3, marker: 'M', text: 'er war Pt2 worden' },
-		{ id: 4, marker: 'F', text: 'sie war Pt2 worden' },
-		{ id: 5, marker: 'N', text: 'es war Pt2 worden' },
-		{ id: 6, marker: 'P', text: 'wir waren Pt2 worden' },
-		{ id: 7, marker: 'P', text: 'ihr wart Pt2 worden' },
-		{ id: 8, marker: 'P', text: 'sie waren Pt2 worden' },
-		{ id: 9, marker: 'P', text: 'Sie waren Pt2 worden' },
-	],
+const Vorgangs = [
 
-	[
-		{ id: 1, text: 'ich werde Pt2 werden' },
-		{ id: 2, text: 'du wirst Pt2 werden' },
-		{ id: 3, marker: 'M', text: 'er wird Pt2 werden' },
-		{ id: 4, marker: 'F', text: 'sie wird Pt2 werden' },
-		{ id: 5, marker: 'N', text: 'es wird Pt2 werden' },
-		{ id: 6, marker: 'P', text: 'wir werden Pt2 werden' },
-		{ id: 6, marker: 'P', text: 'ihr werdet Pt2 werden' },
-		{ id: 7, marker: 'P', text: 'sie werden Pt2 werden' },
-		{ id: 8, marker: 'P', text: 'Sie werden Pt2 werden' },
-	],
+  {
+    title: 'Präsens',
+    text1: 'ich werde Pt2',
+    text2: 'du wirst Pt2',
+    text3: 'er,sie,es wird Pt2',
+    text4: 'ihr werdet Pt2',
+    text5: 'wir,sie,Sie werden Pt2',
 
-])
-const ZustandHeaders = ref([
-	{ title: 'Präsens' },
-	{ title: 'Präteritum' },
-	{ title: 'Perfekt' },
-	{ title: 'Plusquamperfekt' },
-	{ title: 'Futur' },
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich wurde Pt2',
+    text2: 'du wurdest Pt2',
+    text3: 'er,sie,es wurde Pt2',
+    text4: 'ihr wurdet Pt2',
+    text5: 'wir,sie,Sie wurden Pt2',
 
-])
-const ZustandPassiv = ref([
-	[
-		{ id: 1, text: 'ich bin Pt2' },
-		{ id: 2, text: 'du bist Pt2' },
-		{ id: 3, marker: 'M', text: 'er ist Pt2' },
-		{ id: 4, marker: 'F', text: 'sie ist Pt2' },
-		{ id: 5, marker: 'N', text: 'es ist Pt2' },
-		{ id: 6, marker: 'P', text: 'wir sind Pt2' },
-		{ id: 6, marker: 'P', text: 'ihr seid Pt2' },
-		{ id: 7, marker: 'P', text: 'sie sind Pt2' },
-		{ id: 8, marker: 'P', text: 'Sie sind Pt2' },
-	],
-	[
-		{ id: 1, text: 'ich war Pt2' },
-		{ id: 2, text: 'du warst Pt2' },
-		{ id: 3, marker: 'M', text: 'er war Pt2' },
-		{ id: 4, marker: 'F', text: 'sie war Pt2' },
-		{ id: 5, marker: 'N', text: 'es war Pt2' },
-		{ id: 6, marker: 'P', text: 'wir waren Pt2' },
-		{ id: 7, marker: 'P', text: 'ihr wart Pt2' },
-		{ id: 8, marker: 'P', text: 'sie waren Pt2' },
-		{ id: 9, marker: 'P', text: 'Sie waren Pt2' },
-	],
-	[
-		{ id: 1, text: 'ich bin Pt2 gewesen' },
-		{ id: 2, text: 'du bist Pt2 gewesen' },
-		{ id: 3, marker: 'M', text: 'er ist Pt2 gewesen' },
-		{ id: 4, marker: 'F', text: 'sie ist Pt2 gewesen' },
-		{ id: 5, marker: 'N', text: 'es ist Pt2 gewesen' },
-		{ id: 6, marker: 'P', text: 'wir sind Pt2 gewesen' },
-		{ id: 7, marker: 'P', text: 'ihr seid Pt2 gewesen' },
-		{ id: 8, marker: 'P', text: 'sie sind Pt2 gewesen' },
-		{ id: 9, marker: 'P', text: 'Sie sind Pt2 gewesen' },
-	],
-	[
-		{ id: 1, text: 'ich war Pt2 gewesen' },
-		{ id: 2, text: 'du warst Pt2 gewesen' },
-		{ id: 3, marker: 'M', text: 'er war Pt2 gewesen' },
-		{ id: 4, marker: 'F', text: 'sie war Pt2 gewesen' },
-		{ id: 5, marker: 'N', text: 'es war Pt2 gewesen' },
-		{ id: 6, marker: 'P', text: 'wir waren Pt2 gewesen' },
-		{ id: 7, marker: 'P', text: 'ihr wart Pt2 gewesen' },
-		{ id: 8, marker: 'P', text: 'sie waren Pt2 gewesen' },
-		{ id: 9, marker: 'P', text: 'Sie waren Pt2 gewesen' },
-	],
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich bin Pt2 worden',
+    text2: 'du bist Pt2 worden',
+    text3: 'er,sie,es ist Pt2 worden',
+    text4: 'ihr seid Pt2 worden',
+    text5: 'wir,sie,Sie sind Pt2 worden',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich war Pt2 worden',
+    text2: 'du warst Pt2 worden',
+    text3: 'er,sie,es ist war Pt2 worden',
+    text4: 'ihr wart Pt2 worden',
+    text5: 'wir,sie,Sie waren Pt2 worden',
 
-	[
-		{ id: 1, text: 'ich werde Pt2 sein' },
-		{ id: 2, text: 'du wirst Pt2 sein' },
-		{ id: 3, marker: 'M', text: 'er wird Pt2 sein' },
-		{ id: 4, marker: 'F', text: 'sie wird Pt2 sein' },
-		{ id: 5, marker: 'N', text: 'es wird Pt2 sein' },
-		{ id: 6, marker: 'P', text: 'wir werden Pt2 sein' },
-		{ id: 6, marker: 'P', text: 'ihr werdet Pt2 sein' },
-		{ id: 7, marker: 'P', text: 'sie werden Pt2 sein' },
-		{ id: 8, marker: 'P', text: 'Sie werden Pt2 sein' },
-	],
+  },
+  {
+    title: 'Futur',
+    text1: 'ich werde Pt2 werden',
+    text2: 'du wirst Pt2 werden',
+    text3: 'er,sie,es wird Pt2 werden',
+    text4: 'ihr werdet Pt2 werden',
+    text5: 'wir,sie,Sie werden Pt2 werden',
+  },
+]
+const Zustand = [
+
+  {
+    title: 'Präsens',
+    text1: 'ich bin Pt2',
+    text2: 'du bist Pt2',
+    text3: 'er,sie,es ist Pt2',
+    text4: 'ihr seid Pt2',
+    text5: 'wir,sie,Sie sind Pt2',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich war Pt2',
+    text2: 'du warst Pt2',
+    text3: 'er,sie,es war Pt2',
+    text4: 'ihr wart Pt2',
+    text5: 'wir,sie,Sie waren Pt2',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich bin Pt2 gewesen',
+    text2: 'du bist Pt2 gewesen',
+    text3: 'er,sie,es ist Pt2 gewesen',
+    text4: 'ihr seid Pt2 gewesen',
+    text5: 'wir,sie,Sie sind Pt2 gewesen',
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich war Pt2 gewesen',
+    text2: 'du warst Pt2 gewesen',
+    text3: 'er,sie,es ist war Pt2 gewesen',
+    text4: 'ihr wart Pt2 gewesen',
+    text5: 'wir,sie,Sie waren Pt2 gewesen',
+
+  },
+  {
+    title: 'Futur',
+    text1: 'ich werde Pt2 sein',
+    text2: 'du wirst Pt2 sein',
+    text3: 'er,sie,es wird Pt2 sein',
+    text4: 'ihr werdet Pt2 sein',
+    text5: 'wir,sie,Sie werden Pt2 sein',
+  },
+]
+const SlotVorgangspassivsPräsens = [
+  {
+    t0: 'Он пострадаем. (verletzt)',
+    t1: 'Er',
+    t2: 'wird',
+    t3: 'verletzt',
+    t4: '.',
+
+  },
+  {
+    t0: 'Экзамен пишется.(Prüfung)',
+    t1: 'Die',
+    t2: 'Prüfung',
+    t3: 'wird',
+    t4: 'geschrieben',
+    t5: '.',
+
+  },
+  {
+    t0: 'Велосипед заблокироваем. (Fahrrad)',
+    t1: 'Das',
+    t2: 'Fahrrad',
+    t3: 'wird',
+    t4: 'abgeschlossen',
+    t5: '.',
+
+  },
+  {
+    t0: 'Картофель нарезается поваром.(Kartoffeln Koch)',
+    t1: 'Kartoffeln',
+    t2: 'werden',
+    t3: 'vom',
+    t4: 'Koch',
+    t5: 'geschnitten',
+    t6: '.',
+
+  },
+  {
+    t0: 'Сейчас десерт приносим.(Gleich Nachtisch)',
+    t1: 'Gleich',
+    t2: 'wird',
+    t3: 'der',
+    t4: 'Nachtisch',
+    t5: 'gebracht',
+    t6: '.',
+
+  },
+  {
+    t0: 'Ведется борьба с бедностью.(Armut gekämpft)',
+    t1: 'Es',
+    t2: 'wird',
+    t3: 'gegen',
+    t4: 'die',
+    t5: 'Armut',
+    t6: 'gekämpft',
+    t7: '.',
+
+  },
+  {
+    t0: 'Ожидается хорошая погода.(Wetter)',
+    t1: 'Es',
+    t2: 'wird',
+    t3: 'auf',
+    t4: 'gutes',
+    t5: 'Wetter',
+    t6: 'gewartet',
+    t7: '.',
+
+  },
+  {
+    t0: 'Билеты проверяются кондуктором.(Fahrkarten Schaffner)',
+    t1: 'Die',
+    t2: 'Fahrkarten',
+    t3: 'werden',
+    t4: 'vom',
+    t5: 'Schaffner',
+    t6: 'geprüft',
+    t7: '.',
+
+  },
+  {
+    t0: 'Здесь не курят.(Hier )',
+    t1: 'Hier',
+    t2: 'wird',
+    t3: 'nicht',
+    t4: 'geraucht',
+    t5: '.',
+
+  },
+  {
+    t0: 'А теперь - спать!(Jetzt)',
+    t1: 'Jetzt',
+    t2: 'wird',
+    t3: 'aber',
+    t4: 'geschlafen',
+    t5: '!',
+
+  },
+  {
+    t0: 'Цветы поливаются бабушкой.(Blumen Oma)',
+    t1: 'Die',
+    t2: 'Blumen',
+    t3: 'werden',
+    t4: 'von',
+    t5: 'der',
+    t6: 'Oma',
+    t7: 'gegossen',
+    t8: '.',
+
+  },
 
 ]
-)
+const SlotVorgangspassivsPräteritum = [
+  {
+    t0: 'Вы были создаваемы очень красивыми. (schön gemacht)',
+    t1: 'Ihr',
+    t2: 'wurdet',
+    t3: 'sehr',
+    t4: 'schön',
+    t5: 'gemacht',
+    t6: '.',
+
+  },
+  {
+    t0: 'Альпинисты были застигаемы врасплох грозой. (Bergsteiger Gewitter)',
+    t1: 'Die',
+    t2: 'Bergsteiger',
+    t3: 'wurden',
+    t4: 'von',
+    t5: 'einem',
+    t6: 'Gewitter',
+    t7: 'überrascht',
+    t8: '.',
+
+  },
+  {
+    t0: 'Мне ничего не подаривали.',
+    t1: 'Mir',
+    t2: 'wurde',
+    t3: 'nichts',
+    t4: 'geschenkt',
+    t5: '.',
+
+  },
+  {
+    t0: 'Я был вчера осмотрен врачем.(Arzt)',
+    t1: 'Ich',
+    t2: 'wurde',
+    t3: 'gestern',
+    t4: 'vom',
+    t5: 'Arzt',
+    t6: 'untersucht',
+    t7: '.',
+
+  },
+  {
+    t0: 'В Кельне шумели о карнавале.(Köln Karneval geschunkelt)',
+    t1: 'In',
+    t2: 'Köln',
+    t3: 'wurde',
+    t4: 'über',
+    t5: 'Karneval',
+    t6: 'geschunkelt',
+    t7: '.',
+
+  },
+  {
+    t0: 'В сентябре в Баварии был открываем Октоберфест.(Bayern Oktoberfest)',
+    t1: 'In',
+    t2: 'Bayern',
+    t3: 'wurde',
+    t4: 'das',
+    t5: 'Oktoberfest',
+    t6: 'eröffnet',
+    t7: '.',
+
+  },
+  {
+    t0: 'Осенью был картофель собираем.(Herbst Kartoffeln geerntet)',
+    t1: 'Im',
+    t2: 'Herbst',
+    t3: 'wurden',
+    t4: 'die',
+    t5: 'Kartoffeln',
+    t6: 'geerntet',
+    t7: '.',
+
+  },
+  {
+    t0: 'Автомобиль был строен в Вольфсбурге.(Auto Wolfsburg)',
+    t1: 'Das',
+    t2: 'Auto',
+    t3: 'wurde',
+    t4: 'in',
+    t5: 'Wolfsburg',
+    t6: 'gebaut',
+    t7: '.',
+
+  },
+  {
+    t0: 'Проблема обсуждалась многими сотрудниками.(Problem Angestellten)',
+    t1: 'Das',
+    t2: 'Problem',
+    t3: 'wurde',
+    t4: 'von',
+    t5: 'vielen',
+    t6: 'Angestellten',
+    t7: 'diskutiert',
+    t8: '.',
+
+  },
+  {
+    t0: 'Вы были выбираемы, чтобы обеспечить выживание человечества.(Überleben Menschheit sichern)',
+    t1: 'Ihr',
+    t2: 'wurdet',
+    t3: 'auserwählt',
+    t4: ',',
+    t5: 'um',
+    t6: 'das',
+    t7: 'Überleben',
+    t8: 'der',
+    t9: 'Menschheit',
+    t10: 'zu',
+    t11: 'sichern',
+    t12: '.',
+
+  },
+  {
+    t0: 'Если, конечно, вы не были подставляемы.(sei denn reingelegt)',
+    t1: 'Es',
+    t2: 'sei',
+    t3: 'denn',
+    t4: ',',
+    t5: 'ihr',
+    t6: 'wurdet',
+    t7: 'reingelegt',
+    t8: '.',
+
+  },
+
+]
+const SlotVorgangspassivsPerfekt = [
+  {
+    t0: 'Автомобиль был построен в Вольфсбурге.(Auto Wolfsburg)',
+    t1: 'Das',
+    t2: 'Auto',
+    t3: 'ist',
+    t4: 'in',
+    t5: 'Wolfsburg',
+    t6: 'gebaut',
+    t7: 'worden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Октоберфест открыт в Баварии.(Bayern Oktoberfest)',
+    t1: 'In',
+    t2: 'Bayern',
+    t3: 'ist',
+    t4: 'das',
+    t5: 'Oktoberfest',
+    t6: 'eröffnet',
+    t7: 'worden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Картофель собран осенью. (Herbst Kartoffeln geerntet)',
+    t1: 'Im',
+    t2: 'Herbst',
+    t3: 'sind',
+    t4: 'die',
+    t5: 'Kartoffeln',
+    t6: 'geerntet',
+    t7: 'worden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Я уже дважды был прооперирован. (schon zweimal)',
+    t1: 'Ich',
+    t2: 'bin',
+    t3: 'schon',
+    t4: 'zweimal',
+    t5: 'operiert',
+    t6: 'worden',
+    t7: '.',
+
+  },
+  {
+    t0: 'Окна разбиты ветром. (Fenster durch Wind)',
+    t1: 'Die',
+    t2: 'Fenster',
+    t3: 'sind',
+    t4: 'durch',
+    t5: 'den',
+    t6: 'Wind',
+    t7: 'gebrochen',
+    t8: 'worden',
+    t9: '.',
+
+  },
+  {
+    t0: 'Телевизор был отремонтирован мастером. (Fernseher Meister repariert)',
+    t1: 'Die',
+    t2: 'Fernseher',
+    t3: 'ist',
+    t4: 'vom',
+    t5: 'Meister',
+    t6: 'repariert',
+    t7: 'worden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Был ли построен мост? (Brücke gebaut)',
+    t1: 'Ist',
+    t2: 'die',
+    t3: 'Brücke',
+    t4: 'gebaut',
+    t5: 'worden',
+    t6: '?',
+
+  },
+
+]
+const SlotVorgangspassivsPlusquamperfekt = [
+  {
+    t0: 'Белье выстиралось. (Wäsche gewaschen)',
+    t1: 'Die',
+    t2: 'Wäsche',
+    t3: 'war',
+    t4: 'gewaschen',
+    t5: 'worden',
+    t6: '.',
+
+  },
+  {
+    t0: 'Проблема обсуждалась многими сотрудниками.(Problem vielen Angestellten diskutiert)',
+    t1: 'Das',
+    t2: 'Problem',
+    t3: 'war',
+    t4: 'von',
+    t5: 'vielen',
+    t6: 'Angestellten',
+    t7: 'diskutiert',
+    t8: 'worden',
+    t9: '.',
+
+  },
+  {
+    t0: 'Вчера меня осмотрел врач.(Arzt untersucht)',
+    t1: 'Ich',
+    t2: 'war',
+    t3: 'gestern',
+    t4: 'vom',
+    t5: 'Arzt',
+    t6: 'untersucht',
+    t7: 'worden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Текст был переведен двести лет назад.(Text zweihundert Jahren übersetzt)',
+    t1: 'Der       ',
+    t2: 'Text',
+    t3: 'war',
+    t4: 'vor',
+    t5: 'zweihundert',
+    t6: 'Jahren',
+    t7: 'übersetzt',
+    t8: 'worden',
+    t9: '.',
+
+  },
+  {
+    t0: 'Вы были очень красиво нарисованы.(sehr gemalt)',
+    t1: 'Ihr',
+    t2: 'wart',
+    t3: 'sehr',
+    t4: 'schön',
+    t5: 'gemalt',
+    t6: 'worden',
+    t7: '.',
+
+  },
+  {
+    t0: 'Эти вазы были изготовлены в Китае.(Vasen China hergestellt)',
+    t1: 'Diese',
+    t2: 'Vasen',
+    t3: 'waren',
+    t4: 'in',
+    t5: 'China',
+    t6: 'hergestellt',
+    t7: 'worden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Эта церковь была построена в шестнадцатом столетии.(Kirche sechzehnten Jahrhundert gebaut)',
+    t1: 'Diese',
+    t2: 'Kirche',
+    t3: 'war',
+    t4: 'im',
+    t5: 'sechzehnten',
+    t6: 'Jahrhundert',
+    t7: 'gebaut',
+    t8: 'worden',
+    t9: '.',
+
+  },
+
+]
+const SlotVorgangspassivsFuturum = [
+  {
+    t0: 'Завтра я буду осматриваем врачем.(morgen Arzt untersucht)',
+    t1: 'Ich',
+    t2: 'werde',
+    t3: 'morgen',
+    t4: 'vom',
+    t5: 'Arzt',
+    t6: 'untersucht',
+    t7: 'werden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Ты будешь хорошо подготавливаем учителями.(Lehrern vorbereitet)',
+    t1: 'Du',
+    t2: 'wirst',
+    t3: 'von',
+    t4: 'Lehrern',
+    t5: 'gut',
+    t6: 'vorbereitet',
+    t7: 'werden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Габи тоже будет приглашаема на вечеринку.(Gabi Party eingeladen)',
+    t1: 'Gabi',
+    t2: 'wird',
+    t3: 'auch',
+    t4: 'zur',
+    t5: 'Party',
+    t6: 'eingeladen',
+    t7: 'werden',
+    t8: '.',
+
+  },
+  {
+    t0: 'Вы будете очень красиво раскрашиваемы.(schön schön)',
+    t1: 'Ihr',
+    t2: 'werdet',
+    t3: 'sehr',
+    t4: 'schön',
+    t5: 'gemalt',
+    t6: 'werden',
+    t7: '.',
+
+  },
+  {
+    t0: 'Герр Майер, вы тоже будете приглашаемы.(Mayer eingeladen)',
+    t1: 'Herr',
+    t2: 'Mayer',
+    t3: ',',
+    t4: 'Sie',
+    t5: 'werden',
+    t6: 'auch',
+    t7: 'eingeladen',
+    t8: 'werden',
+    t9: '.',
+
+  },
+
+  {
+    t0: 'Пациент будет спасаем операцией.(Patient Operation)',
+    t1: 'Der',
+    t2: 'Patient',
+    t3: 'wird',
+    t4: 'durch',
+    t5: 'die',
+    t6: 'Operation',
+    t7: 'gerettet',
+    t8: 'werden',
+    t9: '.',
+
+  },
+
+]
+
+
+const SlotZustandspassivsPräsens = [
+  {
+    t0: 'Дверь закрыта.(Tür )',
+    t1: 'Die   .',
+    t2: 'Tür',
+    t3: 'ist',
+    t4: 'geschlossen',
+    t5: '.',
+
+  },
+  {
+    t0: 'Пациент прооперирован.(Patient)',
+    t1: 'Der',
+    t2: 'Patient',
+    t3: 'ist',
+    t4: 'operiert',
+    t5: '.',
+
+  },
+  {
+    t0: 'Автомобиль отремонтирован.(Auto)',
+    t1: 'Das',
+    t2: 'Auto',
+    t3: 'ist',
+    t4: 'repariert',
+    t5: '.',
+
+  },
+  {
+    t0: 'Кровати уже заправлены.(Betten bereits)',
+    t1: 'Die',
+    t2: 'Betten',
+    t3: 'sind',
+    t4: 'bereits',
+    t5: 'gemacht',
+    t6: '.',
+
+  },
+  {
+    t0: 'Магазины сегодня закрыты.(Heute Läden)',
+    t1: 'Heute',
+    t2: 'sind',
+    t3: 'die',
+    t4: 'Läden',
+    t5: 'geschlossen',
+    t6: '.',
+
+  },
+  {
+    t0: 'Во многих семьях телевизор включен всю ночь.(Haushalten Fernsehgerät Nacht eingeschaltet)',
+    t1: 'In',
+    t2: 'vielen',
+    t3: 'Haushalten',
+    t4: 'ist',
+    t5: 'das',
+    t6: 'Fernsehgerät',
+    t7: 'die',
+    t8: 'ganze',
+    t9: 'Nacht',
+    t10: 'über',
+    t11: 'eingeschaltet',
+    t12: '.',
+
+  },
+  {
+    t0: 'Японские АЭС закрыты.(japanischen Atomkraftwerke )',
+    t1: 'Die    ',
+    t2: 'japanischen',
+    t3: 'Atomkraftwerke',
+    t4: 'sind',
+    t5: 'abgeschaltet',
+    t6: '.',
+
+  },
+  {
+    t0: 'Магазин закрыт на три недели.(Geschäft drei Wochen lang)',
+    t1: 'Das',
+    t2: 'Geschäft',
+    t3: 'ist',
+    t4: 'drei',
+    t5: 'Wochen',
+    t6: 'lang',
+    t7: 'geschlossen',
+    t8: '.',
+
+  },
+]
+const SlotZustandspassivsPräteritum = [
+  {
+    t0: 'Вчера магазины были закрыты. (Gestern Läden)',
+    t1: 'Gestern',
+    t2: 'waren',
+    t3: 'die',
+    t4: 'Läden',
+    t5: 'geschlossen',
+    t6: '.',
+
+  },
+  {
+    t0: 'Мужчина получил серьезные ранения. (Mann schwer)',
+    t1: 'Der',
+    t2: 'Mann',
+    t3: 'war',
+    t4: 'schwer',
+    t5: 'verletzt',
+    t6: '.',
+
+  },
+  {
+    t0: 'Забор был свежепокрашен. (Zaun frisch gestrichen)',
+    t1: 'Der',
+    t2: 'Zaun',
+    t3: 'war',
+    t4: 'frisch',
+    t5: 'gestrichen',
+    t6: '.',
+
+  },
+  {
+    t0: 'Дверь была заперта. (Tür zugesperrt)',
+    t1: 'Die',
+    t2: 'Tür',
+    t3: 'war',
+    t4: 'zugesperrt',
+    t5: '.',
+
+  },
+  {
+    t0: 'Ты был прооперирован. ',
+    t1: 'Du',
+    t2: 'warst',
+    t3: 'operiert',
+    t4: '.',
+
+  },
+  {
+    t0: 'Экзамен был написан.()',
+    t1: 'Die',
+    t2: 'Prüfung',
+    t3: 'war',
+    t4: 'geschrieben',
+    t5: '.',
+
+  },
+
+]
+const SlotZustandspassivsPerfekt = [
+  {
+    t0: 'Магазины  уже закрыты. (  Gestern Läden )',
+    t1: 'Die     ',
+    t2: 'Läden',
+    t3: 'sind',
+    t4: 'geschlossen',
+    t5: 'gewesen',
+    t6: '.',
+
+  },
+  {
+    t0: 'Экзамен  уже  написан. (Prüfung)',
+    t1: 'Die',
+    t2: 'Prüfung',
+    t3: 'ist',
+    t4: 'geschrieben',
+    t5: 'gewesen',
+    t6: '.',
+  },
+]
+const SlotZustandspassivsPlusquamperfekt = [
+  {
+    t0: 'Экзамен уже был написан. (Prüfung geschrieben)',
+    t1: 'Die',
+    t2: 'Prüfung',
+    t3: 'war',
+    t4: 'geschrieben',
+    t5: 'gewesen',
+    t6: '.',
+
+  }, {
+    t0: 'Вчера магазины уже были закрыты. (Gestern Läden geschlossen)',
+    t1: 'Gestern',
+    t2: 'waren',
+    t3: 'die',
+    t4: 'Läden',
+    t5: 'geschlossen',
+    t6: 'gewesen',
+    t7: '.',
+
+  },
+]
+const SlotZustandspassivsFuturum = [
+  {
+    t0: 'Экзамен будет написан. (Prüfung geschrieben)',
+    t1: 'Die',
+    t2: 'Prüfung',
+    t3: 'wird',
+    t4: 'geschrieben',
+    t5: 'sein',
+    t6: '.',
+
+  },
+  {
+    t0: 'Кровати завтра тоже будут заправлены . (Betten morgen )',
+    t1: 'Die',
+    t2: 'Betten',
+    t3: 'werden',
+    t4: 'auch',
+    t5: 'morgen',
+    t6: 'gemacht',
+    t7: 'sein',
+    t8: '.',
+
+  },
+  {
+    t0: 'Завтра машину отремонтируют. (Auto morgen repariert)',
+    t1: 'Das',
+    t2: 'Auto',
+    t3: 'wird',
+    t4: 'morgen',
+    t5: 'repariert',
+    t6: 'sein',
+    t7: '.',
+  },
+]
+
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss" >
+.page-title--small {
+  margin: 20px 0 10px 0;
+
+  h2 {
+    color: $deep-purple-4;
+    font-style: 12px;
+  }
+}
+</style>

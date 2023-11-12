@@ -3,37 +3,19 @@
   .page-title 
     h2 der Artikel
 
-  Tabs(:items= 'der' title='Masculine article “der”')
-  Tabs(:items= 'die' title='Feminine Article “die”')
-  Tabs(:items= 'das' title='Neuter Article “das”')
+
   Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
   Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
   Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
 
+  Tabs(:items= 'der' title='Beispiele für den männlichen Artikel „der“')
+  Tabs(:items= 'die' title='Beispiele für den feminine Article “die”')
+  Tabs(:items= 'das' title='Beispiele für den neuter Article “das”')
+
+
   TabsTraining( title='Bestimmte Artikel Training' :SlotData='SlotDataBestimmte' )
   TabsTraining( title='Unbestimmte Artikel Training' :SlotData='SlotDataUnbestimmte' )
   TabsTraining( title='Unbestimmte Negativ Artikel Training' :SlotData='SlotDataNegativ' )
-    //- .page-block
-    //-   .page-title--small 
-    //-     h3 Bestimmte Artikel
-    //-   Plaza
-    //-   Slot(:SlotData='SlotDataBestimmte' :focusActiv='focusActiv')
-
-    //- .page-block
-    //-   .page-title--small 
-    //-     h3 Unbestimmte Artikel
-    //-   Content(:items='Unbestimmte' :headers='Headers')
-    //-   Plaza
-    //-   Slot(:SlotData='SlotDataUnbestimmte')
-
-
-    //- .page-block
-    //-   .page-title--small 
-    //-     h3 Unbestimmte Negativ Artikel
-    //-   Content(:items='UnbestimmteNegativ' :headers='Headers')
-    //-   Plaza
-    //-   Slot(:SlotData='SlotDataNegativ')
-
 
 
 </template>
@@ -41,13 +23,11 @@
 
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
 // import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
 import TabsTraining from '@/components/TabsTraining.vue';
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
-const icons = ref(true)
 
 
 
@@ -67,16 +47,7 @@ const icons = ref(true)
 //   }
 // }
 
-
-
-
-
-
-
-
-
-
-const der = ref([
+const der = [
 
   {
     title: '-ling',
@@ -109,8 +80,8 @@ const der = ref([
     text2: 'der Diamant'
   },
 
-])
-const die = ref([
+]
+const die = [
   {
     title: '-ung',
     text1: 'die Abdeckung',
@@ -161,8 +132,8 @@ const die = ref([
     text2: 'die Biologie'
   },
 
-])
-const das = ref([
+]
+const das = [
   {
     title: '-chen',
     text1: 'das Hähnchen',
@@ -193,8 +164,8 @@ const das = ref([
     text2: 'das Zeugnis'
   },
 
-])
-const Bestimmte = ref([
+]
+const Bestimmte = [
 
   {
     title: 'Nominativ',
@@ -237,8 +208,8 @@ const Bestimmte = ref([
     svg3: 'das',
     svg4: 'group',
   },
-])
-const Unbestimmte = ref([
+]
+const Unbestimmte = [
   {
     title: 'Nominativ',
     text1: 'ein',
@@ -275,8 +246,8 @@ const Unbestimmte = ref([
     svg3: 'das',
     svg4: 'group',
   },
-])
-const UnbestimmteNegativ = ref([
+]
+const UnbestimmteNegativ = [
 
   {
     title: 'Nominativ',
@@ -318,8 +289,8 @@ const UnbestimmteNegativ = ref([
     svg3: 'das',
     svg4: 'group',
   },
-])
-const SlotDataBestimmte = ref([
+]
+const SlotDataBestimmte = [
   {
     t0: 'Балкон у гостинной большой. (Balkon Wohnzimmer groß)',
     t1: 'Der',
@@ -593,8 +564,7 @@ const SlotDataBestimmte = ref([
   // },
 ]
 
-)
-const SlotDataUnbestimmte = ref([
+const SlotDataUnbestimmte = [
   {
     t0: 'найти отличный ответ(Echo finden)',
     t1: 'ein',
@@ -780,8 +750,7 @@ const SlotDataUnbestimmte = ref([
   },
 
 ]
-)
-const SlotDataNegativ = ref([
+const SlotDataNegativ = [
   {
     t0: 'Я не думаю, что это хорошая книга.(gutes Buch)',
     t1: 'Ich',
@@ -982,7 +951,6 @@ const SlotDataNegativ = ref([
   // },
 ]
 
-)
 
 
 
