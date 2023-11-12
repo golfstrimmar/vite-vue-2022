@@ -2,32 +2,68 @@
 .container
   .page-title 
     h2 Konjunktiv II
+
   .page-block
     .page-title--small
       h3 Bildung des Konjunktivs II.
     Tabs(:items= 'Gegenwart' title='Konjunktivs II der Gegenwart ' )
     Tabs(:items= 'Vergangenheit' title='Konjunktiv II der Vergangenheit.' )
-    Tabs(:items= 'GegenwartPassiv' title='Konjunktiv II der Gegenwart plus Passiv. ' )
-    Tabs(:items= 'VergangenheitPassiv' title='Konjunktiv II der Vergangenheit plus Passiv' )
+    Tabs(:items= 'FuturI' title='Konjunktiv II Futur I.' )
+    Tabs(:items= 'FuturII' title='Konjunktiv II Futur II.' )
+    .page-title--small 
+      h2 Training
+    TabsTraining( title='Gegenwart' :SlotData='SlotGegenwart' )
+    TabsTraining( title='Vergangenheit' :SlotData='SlotVergangenheit' )
+    TabsTraining( title='FuturI' :SlotData='SlotFuturI' )
+    TabsTraining( title='FuturII' :SlotData='SlotFuturII' )
+
+  .page-block
+    .page-title--small
+      h3 Bildung des Konjunktivs II Passiv.
+    Tabs(:items= 'GegenwartPassiv' title='Konjunktiv II der Gegenwart  Passiv. ' )
+    Tabs(:items= 'VergangenheitPassiv' title='Konjunktiv II der Vergangenheit  Passiv' )
+    Tabs(:items= 'FuturIPassiv' title='Konjunktiv II Futur I  Passiv' )
+    Tabs(:items= 'FuturIIPassiv' title='Konjunktiv II Futur II  Passiv' )
+    .page-title--small 
+      h2 Training
+    TabsTraining( title='Gegenwart Passiv' :SlotData='SlotGegenwartPassiv' )
+    TabsTraining( title='Vergangenheit Passiv' :SlotData='SlotVergangenheitPassiv' )
+    TabsTraining( title='FuturI Passiv' :SlotData='SlotFuturIPassiv' )
+    TabsTraining( title='FuturII Passiv' :SlotData='SlotFuturIIPassiv' )
+
+
   .page-block
     .page-title--small
       h3 Bildung des Konjunktivs II mit den Verbformen. 
     p Zu den wenigen Verben, die <span>IMMER</span> den Konjunktiv II in der Originalform verwenden, gehören:
     Tabs(:items= 'Verbformen' title='Konjunktivs II mit den Verbformen' )
+    .page-title--small 
+      h2 Training
+    TabsTraining( title='Verbformen' :SlotData='SlotVerbformen' )
+
+
+
   .page-block
     .page-title--small 
-      h3 Bildung des Konjunktivs II mit Modalverben. 
-    Tabs(:items= 'Modalverben' title='Konjunktivs II mit Modalverben' )
+      h3 Bildung des Konjunktivs II mit Modalverben.
+    Tabs(:items= 'GegenwartModalverben' title='Konjunktivs II der Gegenwart mit Modalverben ' )
     Tabs(:items= 'VergangenheitModalverben' title='Konjunktiv II der Vergangenheit mit Modalverben.' )
+    .page-title--small 
+      h2 Training
+    TabsTraining( title='Modalverben' :SlotData='SlotModalverben' )
+    TabsTraining( title='Vergangenheit Modalverben' :SlotData='SlotVergangenheitModalverben' )
+  .page-block
+    .page-title--small 
+      h3 Bildung des Konjunktivs II mit Modalverben Passiv. 
+    Tabs(:items= 'ModalverbenGegenwartPassiv' title='Konjunktivs II mit Modalverben Gegenwart Passiv' )
+    Tabs(:items= 'ModalverbenVergangenheitPassiv' title='Konjunktivs II mit Modalverben Vergangenheit Passiv' )
+    Tabs(:items= 'ModalverbenFuturIPassiv' title='Konjunktivs II mit Modalverben Futur I Passiv' )
+    Tabs(:items= 'ModalverbenFuturIIPassiv' title='Konjunktivs II mit Modalverben Futur II Passiv' )
+    .page-title--small 
+      h2 Training
+    TabsTraining( title='Modalverben Gegenwart Passiv' :SlotData='SlotModalverbenGegenwartPassiv' )
 
-
-  TabsTraining( title='müssen Training' :SlotData='SlotDatamüssen' )
-  TabsTraining( title='können Training' :SlotData='SlotDatakönnen' )
-  TabsTraining( title='dürfen Training' :SlotData='SlotDatadürfen' )
-  TabsTraining( title='sollen Training' :SlotData='SlotDatasollen' )
-  TabsTraining( title='wollen Training' :SlotData='SlotDatawollen' )
-  TabsTraining( title='mögen Training' :SlotData='SlotDatamögen' )
-  TabsTraining( title='möchten Training' :SlotData='SlotDatamöchten' )
+ 
 </template>
 <script setup>
 import Tabs from '@/components/Tabs.vue';
@@ -47,23 +83,552 @@ const Gegenwart = [
 ]
 const Vergangenheit = [
   {
-    title: 'wären / hätten  + Partizip II',
+    title: 'Konjunktivform von sein/ haben + Partizip II',
     text1: 'ich,er,sie,es wäre/hätte + Partizip II ',
     text2: 'du wärest/hättest + Partizip II',
     text3: 'ihr wäret/hättet + Partizip II',
     text4: 'wir,sie,Sie wären/hätten + Partizip II',
   },
 ]
-const GegenwartPassiv = [
+const FuturI = [
   {
-    title: 'würden + Partizip II+ werden',
-    text1: 'ich,er,sie,es würde + Partizip II + werden',
-    text2: 'du würdest + Partizip II + werden',
-    text3: 'ihr würdet + Partizip II + werden',
-    text4: 'wir,sie,Sie würden + Partizip II + werden',
+    title: 'Konjunktiv II von "werden" + Infinitiv ',
+    text1: 'ich,er,sie,es würde + Infinitiv ',
+    text2: 'du würdest + Infinitiv',
+    text3: 'ihr ihr würdet + Infinitiv',
+    text4: 'wir,sie,Sie würden + Infinitiv',
   },
 ]
+const FuturII = [
+  {
+    title: 'Konjunktiv II von "werden" + Partizip II + sein ',
+    text1: 'ich,er,sie,es würde + Partizip II + sein ',
+    text2: 'du würdest + Partizip II + sein ',
+    text3: 'ihr ihr würdet + Partizip II + sein ',
+    text4: 'wir,sie,Sie würden + Partizip II + sein ',
+  },
+]
+// ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+const SlotGegenwart = [
+  {
+    t0: 'Если бы я только жил во дворце. (doch nur Palast)',
+    t1: 'Würde',
+    t2: 'ich',
+    t3: 'doch',
+    t4: 'nur',
+    t5: 'in',
+    t6: 'einem',
+    t7: 'Palast',
+    t8: 'wohnen',
+    t9: '.',
 
+  },
+  {
+    t0: 'Я бы с удовольствием бы поехать в Зальцбург на выходных. (Wochenende gern Salzburg)',
+    t1: 'Ich',
+    t2: 'würde',
+    t3: 'am',
+    t4: 'Wochenende',
+    t5: 'so',
+    t6: 'gern',
+    t7: 'nach',
+    t8: 'Salzburg',
+    t9: 'fahren',
+    t10: '.',
+
+  }, {
+    t0: 'Она с удовольствием бы изучать немецкий язык в Австрии. (gern Österreich Deutsch)',
+    t1: 'Sie',
+    t2: 'würde',
+    t3: 'gern',
+    t4: 'in',
+    t5: 'Österreich',
+    t6: 'Deutsch',
+    t7: 'lernen',
+    t8: '.',
+
+  }, {
+    t0: 'Он с удовольствием бы купить машину. (gern Auto)',
+    t1: 'Er',
+    t2: 'würde',
+    t3: 'gern',
+    t4: 'ein',
+    t5: 'Auto',
+    t6: 'kaufen',
+    t7: '.',
+
+  }, {
+    t0: 'Мы бы навещать тебя каждый год. (jedes Jahr besuchen )',
+    t1: 'Wir',
+    t2: 'würden',
+    t3: 'dich',
+    t4: 'jedes',
+    t5: 'Jahr',
+    t6: 'besuchen',
+    t7: '.',
+
+  }, {
+    t0: 'Ты бы хотела хотя поплавать завтра на свежем воздухе, но, к сожалению, очень холодно, и это невозможно. (zwar draußen schwimmen leider sehr kalt geht)',
+    t1: 'Du',
+    t2: 'würdest',
+    t3: 'zwar',
+    t4: 'gern',
+    t5: 'morgen',
+    t6: 'draußen',
+    t7: 'schwimmen',
+    t8: ',',
+    t9: 'leider',
+    t10: 'ist',
+    t11: 'es',
+    t12: 'sehr',
+    t13: 'kalt',
+    t14: 'und',
+    t15: 'es',
+    t16: 'geht',
+    t17: 'nicht',
+    t18: '.',
+  }, {
+    t0: 'Когда бы вы пришли завтра? (ihr morgen)',
+    t1: 'Wann',
+    t2: 'würdet',
+    t3: 'ihr',
+    t4: 'morgen',
+    t5: 'kommen',
+    t6: '?',
+
+  }, {
+    t0: 'Если бы я зарабатывал достаточно денег, то купил бы себе новый мобильный телефон. (genug Geld verdienen neues Handy)',
+    t1: 'Wenn',
+    t2: 'ich',
+    t3: 'genug',
+    t4: 'Geld',
+    t5: 'verdienen',
+    t6: 'würde',
+    t7: ',',
+    t8: 'dann',
+    t9: 'würde',
+    t10: 'ich',
+    t11: 'mir',
+    t12: 'ein',
+    t13: 'neues',
+    t14: 'Handy',
+    t15: 'kaufen',
+    t16: '.',
+  }, {
+    t0: 'Если бы я пекла торт, я бы взяла его с собой на вечеринку. (Kuchen backen Party mitbringen)',
+    t1: 'Wenn',
+    t2: 'ich',
+    t3: 'einen',
+    t4: 'Kuchen',
+    t5: 'backen',
+    t6: 'würde',
+    t7: ',',
+    t8: 'würde',
+    t9: 'ich',
+    t10: 'ihn',
+    t11: 'zur',
+    t12: 'Party',
+    t13: 'mitbringen',
+    t14: '.',
+  }, {
+    t0: 'Если бы шел дождь, я бы взял с собой зонтик. (regnen Regenschirm mitnehmen)',
+    t1: 'Wenn',
+    t2: 'es',
+    t3: 'regnen',
+    t4: 'würde',
+    t5: ',',
+    t6: 'würde',
+    t7: 'ich',
+    t8: 'meinen',
+    t9: 'Regenschirm',
+    t10: 'mitnehmen',
+    t11: '.',
+
+  }, {
+    t0: 'Если бы я проголодался, я бы приготовил себе что-нибудь поесть. (hungrig etwas zu essen)',
+    t1: 'Wenn',
+    t2: 'ich',
+    t3: 'hungrig',
+    t4: 'wäre',
+    t5: ',',
+    t6: 'würde',
+    t7: 'ich',
+    t8: 'mir',
+    t9: 'etwas',
+    t10: 'zu',
+    t11: 'essen',
+    t12: 'machen',
+    t13: '.',
+
+  }
+]
+const SlotVergangenheit = [
+  {
+    t0: 'Вчера мне бы  купилось зеленую машину. (gestern gern grünes Auto)',
+    t1: 'Ich',
+    t2: 'hätte',
+    t3: 'gestern',
+    t4: 'gern',
+    t5: 'ein',
+    t6: 'grünes',
+    t7: 'Auto',
+    t8: 'gekauft',
+    t9: '.',
+  },
+  {
+    t0: 'Мне бы хотелось прийти вчера на курсы немецкого языка. (gern zum Deutschkurs)',
+    t1: 'Ich',
+    t2: 'wäre',
+    t3: 'gestern',
+    t4: 'gern',
+    t5: 'zum',
+    t6: 'Deutschkurs',
+    t7: 'gekommen',
+    t8: '.',
+
+  },
+  {
+    t0: 'Если бы ты вчера остался дома, ты бы больше расслабился. (gestern zu Hause geblieben entspannt)',
+    t1: 'Wenn',
+    t2: 'du',
+    t3: 'gestern',
+    t4: 'zu',
+    t5: 'Hause',
+    t6: 'geblieben',
+    t7: 'wärest',
+    t8: ',',
+    t9: 'hättest',
+    t10: 'du',
+    t11: 'dich',
+    t12: 'mehr',
+    t13: 'entspannt',
+    t14: '.',
+
+  },
+  {
+    t0: 'Если бы он чаще выходил на прогулки, он бы чувствовал себя лучше. (spazieren besser gefühlt)',
+    t1: 'Wenn',
+    t2: 'er',
+    t3: 'öfter',
+    t4: 'spazieren',
+    t5: 'gegangen',
+    t6: 'wäre',
+    t7: ',',
+    t8: 'hätte',
+    t9: 'er',
+    t10: 'sich',
+    t11: 'besser',
+    t12: 'gefühlt',
+    t13: '.',
+  },
+  {
+    t0: 'Если бы он спланировал свой распорядок дня, у него бы все получилось. (Tagesablauf alles gelungen)',
+    t1: 'Wenn',
+    t2: 'er',
+    t3: 'seinen',
+    t4: 'Tagesablauf',
+    t5: 'geplant',
+    t6: 'hätte',
+    t7: ',',
+    t8: 'wäre',
+    t9: 'es',
+    t10: 'ihm',
+    t11: 'alles',
+    t12: 'gelungen',
+    t13: '.',
+  },
+  {
+    t0: 'Если бы она прочитала эту книгу, она бы легко пересказала содержание. (Buch leicht den Inhalt nacherzählt)',
+    t1: 'Wenn',
+    t2: 'sie',
+    t3: 'dieses',
+    t4: 'Buch',
+    t5: 'gelesen',
+    t6: 'hätte',
+    t7: ',',
+    t8: '',
+    t9: 'hätte',
+    t10: 'sie',
+    t11: 'leicht',
+    t12: 'den',
+    t13: 'Inhalt',
+    t14: 'nacherzählt',
+    t15: '.',
+  },
+  {
+    t0: 'Если бы она поддержала его мнение, они бы не поссорились. (Meinung unterstützt gestritten)',
+    t1: 'Wenn',
+    t2: 'sie',
+    t3: 'seine',
+    t4: 'Meinung',
+    t5: 'unterstützt',
+    t6: 'hätte',
+    t7: ',',
+    t8: 'hätten',
+    t9: 'sie',
+    t10: 'sich',
+    t11: 'nicht',
+    t12: 'gestritten',
+    t13: '.',
+
+  },
+  {
+    t0: 'Если бы она испекла торт, она бы пригласила гостей. (Kuchen gebacken Gäste eingeladen)',
+    t1: 'Wenn',
+    t2: 'sie',
+    t3: 'den',
+    t4: 'Kuchen',
+    t5: 'gebacken',
+    t6: 'hätte',
+    t7: ',',
+    t8: 'hätte',
+    t9: 'sie',
+    t10: 'Gäste',
+    t11: 'eingeladen',
+    t12: '.',
+  },
+  {
+    t0: 'Если бы она поехала домой, она бы написала нам об этом. (Hause darüber)',
+    t1: 'Wenn',
+    t2: 'sie',
+    t3: 'nach',
+    t4: 'Hause',
+    t5: 'gefahren',
+    t6: 'wäre',
+    t7: ',',
+    t8: 'hätte',
+    t9: 'sie',
+    t10: 'uns',
+    t11: 'darüber',
+    t12: 'geschrieben',
+    t13: '.',
+  },
+  {
+    t0: 'Если бы она встретила его вчера, он бы рассказал ей эту историю. (gestern gestern Geschichte erzählt)',
+    t1: 'Wenn',
+    t2: 'sie',
+    t3: 'ihn',
+    t4: 'gestern',
+    t5: 'getroffen',
+    t6: 'hätte',
+    t7: ',',
+    t8: 'hätte',
+    t9: 'er',
+    t10: 'ihr',
+    t11: 'diese',
+    t12: 'Geschichte',
+    t13: 'erzählt',
+    t14: '.',
+  },
+  {
+    t0: 'Если бы ты выучил правила, ты бы лучше написал классную работу. (Regeln besser die Klassenarbeit)',
+    t1: 'Wenn',
+    t2: 'du',
+    t3: 'die',
+    t4: 'Regeln',
+    t5: 'gelernt',
+    t6: 'hättest',
+    t7: ',',
+    t8: 'hättest',
+    t9: 'du',
+    t10: 'besser',
+    t11: 'die',
+    t12: 'Klassenarbeit',
+    t13: 'geschrieben',
+    t14: '.',
+  },
+  {
+    t0: 'Если бы вы использовали этот рецепт, вы бы приготовили вкусный суп на обед. (Rezept verwendet leckere Suppe )',
+    t1: 'Wenn',
+    t2: 'du',
+    t3: 'dieses',
+    t4: 'Rezept',
+    t5: 'verwendet',
+    t6: 'hättest',
+    t7: ',',
+    t8: 'hättest',
+    t9: 'du',
+    t10: 'leckere',
+    t11: 'Suppe',
+    t12: 'zum',
+    t13: 'Mittagessen',
+    t14: 'gekocht',
+    t15: '.',
+  },
+  {
+    t0: 'Если бы я встал раньше, я бы не опоздал на автобус! (früher Bus verpasst)',
+    t1: 'Wäre',
+    t2: 'ich',
+    t3: 'früher',
+    t4: 'aufgestanden',
+    t5: ',',
+    t6: 'hätte',
+    t7: 'ich',
+    t8: 'den',
+    t9: 'Bus',
+    t10: 'nicht',
+    t11: 'verpasst',
+    t12: '!',
+  },
+  {
+    t0: 'Если бы я только больше тренировался, экзамен прошел бы для меня легче. (doch Prüfung einfacher verlaufen)',
+    t1: 'Hätte',
+    t2: 'ich',
+    t3: 'doch',
+    t4: 'nur',
+    t5: 'mehr',
+    t6: 'geübt',
+    t7: ',',
+    t8: 'dann',
+    t9: 'wäre',
+    t10: 'die',
+    t11: 'Prüfung',
+    t12: 'für',
+    t13: 'mich',
+    t14: 'einfacher',
+    t15: 'verlaufen',
+    t16: '.',
+  },
+  {
+    t0: 'В детстве мне хотелось чаще ездить в отпуск. (Kind öfter Urlaub)',
+    t1: 'Ich',
+    t2: 'wäre',
+    t3: 'als',
+    t4: 'Kind',
+    t5: 'gerne',
+    t6: 'öfter',
+    t7: 'in',
+    t8: 'den',
+    t9: 'Urlaub',
+    t10: 'gefahren',
+    t11: '.',
+  },
+  {
+    t0: 'Ей бы хотелось приехать, но у нее не было времени. (gerne Zeit)',
+    t1: 'Sie',
+    t2: 'wäre',
+    t3: 'gerne',
+    t4: 'gekommen',
+    t5: ',',
+    t6: 'aber',
+    t7: 'sie',
+    t8: 'hatte',
+    t9: 'keine',
+    t10: 'Zeit',
+    t11: '.',
+  },
+  {
+    t0: 'Мы бы уже прибыли, если бы ты поторопился. (angekommen mehr beeilt)',
+    t1: 'Wir',
+    t2: 'wären',
+    t3: 'jetzt',
+    t4: 'schon',
+    t5: 'angekommen',
+    t6: ',',
+    t7: 'wenn',
+    t8: 'du',
+    t9: 'dich',
+    t10: 'mehr',
+    t11: 'beeilt',
+    t12: 'hättest',
+    t13: '.',
+  },
+  {
+    t0: 'Я бы пошел в парк, если бы не шел дождь. (Park geregnet)',
+    t1: 'Ich',
+    t2: 'wäre',
+    t3: 'in',
+    t4: 'den',
+    t5: 'Park',
+    t6: 'gegangen',
+    t7: ',',
+    t8: 'wenn',
+    t9: 'es',
+    t10: 'nicht',
+    t11: 'geregnet',
+    t12: 'hätte',
+    t13: '.',
+
+  },
+  {
+    t0: 'Я бы пробежал марафон, если бы подготовился. (Marathon vorbereitet)',
+    t1: 'Ich',
+    t2: 'wäre',
+    t3: 'den',
+    t4: 'Marathon',
+    t5: 'gelaufen',
+    t6: ',',
+    t7: 'wenn',
+    t8: 'ich',
+    t9: 'mich',
+    t10: 'vorbereitet',
+    t11: 'hätte',
+    t12: '.',
+  },
+  {
+    t0: 'Я бы прыгнул с 10-метровой вышки, если бы меньше боялся. (10-Meter-Turm weniger Angst)',
+    t1: 'Ich',
+    t2: 'wäre',
+    t3: 'vom',
+    t4: '10-Meter-Turm',
+    t5: 'gesprungen',
+    t6: ',',
+    t7: 'wenn',
+    t8: 'ich',
+    t9: 'weniger',
+    t10: 'Angst',
+    t11: 'gehabt',
+    t12: 'hätte',
+    t13: '.',
+  },
+]
+const SlotFuturI = [
+  {
+    t0: 'Если бы сумка была больше, в нее поместилось бы больше бутылок. (Tasche Flaschen hineinpassen)',
+    t1: 'Wenn',
+    t2: 'die',
+    t3: 'Tasche',
+    t4: 'größer',
+    t5: 'wäre',
+    t6: ',',
+    t7: 'würden',
+    t8: 'mehr',
+    t9: 'Flaschen',
+    t10: 'hineinpassen',
+    t11: '.',
+
+  },
+]
+const SlotFuturII = [
+  {
+    t0: 'Если бы я был дома, я был бы лучше защищен. (Hause besser gewahrt)',
+    t1: 'Wenn',
+    t2: 'ich',
+    t3: 'zu',
+    t4: 'Hause',
+    t5: 'wäre',
+    t6: ',',
+    t7: 'würde',
+    t8: 'ich',
+    t9: 'besser',
+    t10: 'gewahrt',
+    t11: 'sein',
+    t12: '.',
+  },
+]
+// =============================================================
+// =============================================================
+// =============================================================
+// =============================================================
+const GegenwartPassiv = [
+  {
+    title: 'würden + Partizip II',
+    text1: 'ich,er,sie,es würde + Partizip II',
+    text2: 'du würdest + Partizip II',
+    text3: 'ihr würdet + Partizip II',
+    text4: 'wir,sie,Sie würden + Partizip II ',
+  },
+]
 const VergangenheitPassiv = [
   {
     title: 'wären + Partizip II + worden',
@@ -73,7 +638,108 @@ const VergangenheitPassiv = [
     text4: 'wir,sie,Sie wären + Partizip II + worden',
   },
 ]
+const FuturIPassiv = [
+  {
+    title: 'würden + Partizip II + werden',
+    text1: 'ich,er,sie,es würde + Partizip II + werden ',
+    text2: 'du würdest + Partizip II + werden',
+    text3: 'ihr würdet + Partizip II + werden',
+    text4: 'wir,sie,Sie würden + Partizip II + werden',
+  },
+]
+const FuturIIPassiv = [
+  {
+    title: 'würden + Partizip Perfekt + worden sein',
+    text1: 'ich,er,sie,es würde + Partizip Perfekt + worden sein',
+    text2: 'du würdest + Partizip Perfekt + worden sein',
+    text3: 'ihr würdet + Partizip Perfekt + worden sein',
+    text4: 'wir,sie,Sie würden + Partizip Perfekt + worden sein',
+  },
+]
+// ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+const SlotGegenwartPassiv = [
+  {
+    t0: 'Если бы дерево было левее, в нашем саду не было бы так много листьев. (Baum weiter Blätter Garten)',
+    t1: 'Wenn',
+    t2: 'der',
+    t3: 'Baum',
+    t4: 'weiter',
+    t5: 'links',
+    t6: 'stehen',
+    t7: 'würde',
+    t8: ',',
+    t9: 'wären',
+    t10: 'nicht',
+    t11: 'so',
+    t12: 'viele',
+    t13: 'Blätter',
+    t14: 'in',
+    t15: 'unserem',
+    t16: 'Garten',
+    t17: '.',
+  }, {
+    t0: 'Учитель будет спрошен учеником. (Lehrer Schüler)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'würde',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: '.',
+  }
+]
+const SlotVergangenheitPassiv = [
+  {
+    t0: 'Учитель был бы опрошен учеником.(Lehrer Schüler)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'wäre',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: 'worden',
+    t9: '.',
 
+  },
+]
+const SlotFuturIPassiv = [
+  {
+    t0: 'Учитель будет спрошен учеником. (Lehrer Schüler)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'würde',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: 'werden',
+    t9: '.',
+
+  },
+]
+const SlotFuturIIPassiv = [
+  {
+    t0: 'Учитель будет окончательно спрошен учеником. (Lehrer Schüler)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'würde',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: 'worden',
+    t9: 'sein',
+    t10: '.',
+
+  },
+]
+
+// =============================================================
+// =============================================================
+// =============================================================
+// =============================================================
 
 const Verbformen = [
   {
@@ -140,8 +806,65 @@ const Verbformen = [
     text4: 'wir,sie,Sie wüssten',
   },
 ]
+const SlotVerbformen = [
+  {
+    t0: 'Я хотел бы узнать больше об искусстве. (über Kunst)',
+    t1: 'Ich',
+    t2: 'wüsste',
+    t3: 'gern',
+    t4: 'mehr',
+    t5: 'über',
+    t6: 'Kunst',
+    t7: '.',
 
-const Modalverben = [
+  },
+  {
+    t0: 'На самом деле автобус должен был прийти в 10 утра. (Eigentlich )',
+    t1: 'Eigentlich',
+    t2: 'käme',
+    t3: 'der',
+    t4: 'Bus',
+    t5: 'um',
+    t6: '10',
+    t7: 'Uhr',
+    t8: '.',
+
+  },
+  {
+    t0: 'Мне также подойдет встреча в среду. (Termin Mittwoch)',
+    t1: 'Für',
+    t2: 'mich',
+    t3: 'ginge',
+    t4: 'auch',
+    t5: 'ein',
+    t6: 'Termin',
+    t7: 'am',
+    t8: 'Mittwoch',
+    t9: '.',
+
+  },
+  {
+    t0: 'Если бы вы писали аккуратнее, то я бы лучше прочитал ваш текст. (ordentlicher ordentlicher Text besser)',
+    t1: 'Wenn',
+    t2: 'du',
+    t3: 'ordentlicher',
+    t4: 'schriebest',
+    t5: ',',
+    t6: 'dann',
+    t7: 'läse',
+    t8: 'ich',
+    t9: 'deinen',
+    t10: 'Text',
+    t11: 'besser',
+    t12: '.',
+  },
+]
+// =============================================================
+// =============================================================
+// =============================================================
+// =============================================================
+
+const GegenwartModalverben = [
   {
     title: 'dürfen',
     text1: 'ich,er,sie,es dürfte + Infinitiv  ',
@@ -190,14 +913,14 @@ const VergangenheitModalverben = [
     title: 'dürfen',
     text1: 'ich,er,sie,es hätte + Infinitiv + dürfen',
     text2: 'du hättest + Infinitiv + dürfen',
-    text3: 'ihr ihr hättet + Infinitiv + dürfen',
+    text3: 'ihr hättet + Infinitiv + dürfen',
     text4: 'wir,sie,Sie hätten + Infinitiv + dürfen',
   },
   {
     title: 'können',
     text1: 'ich,er,sie,es hätte + Infinitiv + können',
     text2: 'du hättest + Infinitiv + können',
-    text3: 'ihr ihr hättet + Infinitiv + können',
+    text3: 'ihr hättet + Infinitiv + können',
     text4: 'wir,sie,Sie hätten + Infinitiv + können',
   },
 
@@ -205,14 +928,14 @@ const VergangenheitModalverben = [
     title: 'mögen',
     text1: 'ich,er,sie,es hätte + Infinitiv + mögen',
     text2: 'du hättest + Infinitiv + mögen',
-    text3: 'ihr ihr hättet + Infinitiv + mögen',
+    text3: 'ihr hättet + Infinitiv + mögen',
     text4: 'wir,sie,Sie hätten + Infinitiv + mögen',
   },
   {
     title: 'müssen',
     text1: 'ich,er,sie,es hätte + Infinitiv + müssen',
     text2: 'du hättest + Infinitiv + müssen',
-    text3: 'ihr ihr hättet + Infinitiv + müssen',
+    text3: 'ihr hättet + Infinitiv + müssen',
     text4: 'wir,sie,Sie hätten + Infinitiv + müssen',
   },
 
@@ -220,1044 +943,700 @@ const VergangenheitModalverben = [
     title: 'sollen',
     text1: 'ich,er,sie,es hätte + Infinitiv + sollen',
     text2: 'du hättest + Infinitiv + sollen',
-    text3: 'ihr ihr hättet + Infinitiv + sollen',
+    text3: 'ihr hättet + Infinitiv + sollen',
     text4: 'wir,sie,Sie hätten + Infinitiv + sollen',
   },
   {
     title: 'wollen',
     text1: 'ich,er,sie,es hätte + Infinitiv + wollen',
     text2: 'du hättest + Infinitiv + wollen',
-    text3: 'ihr ihr hättet + Infinitiv + wollen',
+    text3: 'ihr hättet + Infinitiv + wollen',
     text4: 'wir,sie,Sie hätten + Infinitiv + wollen',
   },
 
 ]
-
-
-
-
-
-
-const SlotDatamüssen = [
+// ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+const SlotModalverben = [
   {
-    t0: 'Мне нужно вернуться в офис.(zurück Büro)',
-    t1: 'Ich',
-    t2: 'muss',
-    t3: 'zurück',
-    t4: 'zum',
-    t5: 'Büro',
-    t6: '.',
-
-  },
-  {
-    t0: 'Куда тебе нужно пойти?',
-    t1: 'Wohin',
-    t2: 'musst',
-    t3: 'du',
-    t4: '?',
-
-  },
-  {
-    t0: 'Должен быть порядок.(Ordnung)',
-    t1: 'Ordnung',
-    t2: 'muss',
-    t3: 'sein',
-    t4: '.',
-  },
-  {
-    t0: 'Тебе нужно было это говорить?()',
-    t1: 'Musstest',
-    t2: 'du',
-    t3: 'das',
-    t4: 'sagen',
-    t5: '?',
-
-  },
-  {
-    t0: ' За это им пришлось сесть в тюрьму.(Dafür Gefängnis)',
-    t1: 'Dafür',
-    t2: 'mussten',
-    t3: 'sie',
-    t4: 'ins',
-    t5: 'Gefängnis',
-    t6: '.',
-
-  },
-  {
-    t0: 'Вы должны были сделать все сами.(selbst)',
-    t1: 'Ihr',
-    t2: 'musstet',
-    t3: 'alles',
-    t4: 'selbst',
-    t5: 'machen',
-
-  },
-  {
-    t0: 'Нам пришлось вернуться к чертежной доске.(zurück Reißbrett)',
-    t1: 'Wir',
-    t2: 'mussten',
-    t3: 'zurück',
-    t4: 'ins',
-    t5: 'Reißbrett',
-    t6: '.',
-
-  },
-  {
-    t0: 'Сотруднику банка пришлось сесть в тюрьму за мошенничество.(Bankkaufmann Betrugs Gefängnis)',
-    t1: 'Der',
-    t2: 'Bankkaufmann',
-    t3: 'musste',
-    t4: 'wegen',
-    t5: 'Betrugs',
-    t6: 'ins',
-    t7: 'Gefängnis',
-    t8: '.',
-
-  },
-  {
-    t0: 'Вам не нужно было все разрушать!(zerstören)',
-    t1: 'Ihr',
-    t2: 'musstet',
-    t3: 'nicht',
-    t4: 'alles',
-    t5: 'zerstören',
-    t6: '!',
-
-  },
-  {
-    t0: 'Я это понимаю, но вам не нужно было его убивать.(verstehe töten)',
-    t1: 'Ich',
-    t2: 'verstehe',
-    t3: 'das',
+    t0: 'Затем я спросил, можно ли мне позвонить, и позвонил в Скотланд-Ярд. (rief Scotland Yard)',
+    t1: 'Dann',
+    t2: 'fragte',
+    t3: 'ich',
     t4: ',',
-    t5: 'aber',
-    t6: 'ihr',
-    t7: 'musstet',
-    t8: 'ihn',
-    t9: 'nicht',
-    t10: 'töten',
-    t11: '.',
-
-  },
-  {
-    t0: 'Вам никогда не приходилось делать этого раньше. (noch nie)',
-    t1: 'Das',
-    t2: 'hast',
-    t3: 'du',
-    t4: 'noch',
-    t5: 'nie',
-    t6: 'gemusst',
-    t7: '.',
-
-  },
-  {
-    t0: 'Вам не обязательно было этого делать.',
-    t1: 'Das',
-    t2: 'hattet',
-    t3: 'ihr',
-    t4: 'nicht',
-    t5: 'gemusst',
-    t6: '.',
-
-  },
-  {
-    t0: 'Ей бы пришлось это сделать, но... ()',
-    t1: 'Sie',
-    t2: 'wird',
-    t3: 'gemusst',
-    t4: 'haben',
-    t5: ',',
-    t6: 'aber',
-    t7: '...',
-
-  },
-  {
-    t0: 'И вам придется открыть глаза.(Augen öffnen)',
-    t1: 'Und',
-    t2: 'ihr',
-    t3: 'müsst',
-    t4: 'Eure',
-    t5: 'Augen',
-    t6: 'öffnen',
-    t7: '.',
-
-  },
-  {
-    t0: 'Мне не нужно было этого делать, но я все равно это сделал.(tat trotzdem)',
-    t1: 'Ich',
-    t2: 'musste',
-    t3: 'nicht',
-    t4: ',',
-    t5: 'aber',
-    t6: 'tat',
-    t7: 'es',
-    t8: 'trotzdem',
-    t9: '.',
-
-  },
-
-]
-const SlotDatakönnen = [
-  {
-    t0: 'Том знает французский? (Tom französisch)',
-    t1: 'Kann',
-    t2: 'Tom',
-    t3: 'französisch',
-    t4: '?',
-
-  },
-  {
-    t0: 'Я ничего не могу с собой поделать. (anders)',
-    t1: 'Ich',
-    t2: 'kann',
-    t3: 'nicht',
-    t4: 'anders',
-    t5: '.',
-
-  },
-  {
-    t0: 'На скольких иностранных языках вы (ihr) говорите? (Fremdsprachen ihr)',
-    t1: 'Wie',
-    t2: 'viele',
-    t3: 'Fremdsprachen',
-    t4: 'könnt',
-    t5: 'ihr',
-    t6: '?',
-
-  },
-  {
-    t0: 'Каждый делает, что может. (Jeder tut)',
-    t1: 'Jeder',
-    t2: 'tut',
-    t3: ',',
-    t4: 'was',
-    t5: 'er',
-    t6: 'kann',
-    t7: '.',
-
-  },
-  {
-    t0: 'Я хочу, но не могу.(ja nicht)',
-    t1: 'Ich',
-    t2: 'möchte',
-    t3: 'ja',
-    t4: ',',
-    t5: 'aber',
+    t5: 'ob',
     t6: 'ich',
-    t7: 'kann',
-    t8: 'nicht',
-    t9: '.',
-
-  },
-
-  {
-    t0: 'Том мог делать все, что угодно.(Tom alles)',
-    t1: 'Tom',
-    t2: 'konnte',
-    t3: 'alles',
-
-  },
-
-  {
-    t0: 'Она бегло говорила по-французски.(fließend Französisch)',
-    t1: 'Sie',
-    t2: 'konnte',
-    t3: 'fließend',
-    t4: 'Französisch',
-    t5: '.',
-
-  },
-
-  {
-    t0: 'Мы не могли сделать больше. (mehr)',
-    t1: 'Wir   ',
-    t2: 'konnten',
-    t3: 'nicht',
-    t4: 'mehr',
-    t5: '.',
-
-  },
-
-  {
-    t0: 'Ян бежал так быстро, как мог. (Jan rannte schnell)',
-    t1: 'Jan',
-    t2: 'rannte',
-    t3: 'so',
-    t4: 'schnell',
-    t5: ',',
-    t6: 'wie',
-    t7: 'er',
-    t8: 'konnte',
-    t9: '.',
-
-  },
-
-  {
-    t0: 'Марафонец больше не мог и сдался на полпути. (Marathonläufer gab halber Strecke auf)',
-    t1: 'Der',
-    t2: 'Marathonläufer',
-    t3: 'konnte',
-    t4: 'nicht',
-    t5: 'mehr',
-    t6: 'und',
-    t7: 'gab',
-    t8: 'auf',
-    t9: 'halber',
-    t10: 'Strecke',
-    t11: 'auf',
-    t12: '.',
-
-  },
-
-  {
-    t0: 'В прошлый раз ты не смог. (zuvor)',
-    t1: 'Du',
-    t2: 'hast',
-    t3: 'es',
-    t4: 'zuvor',
-    t5: 'nicht',
-    t6: 'gekonnt',
-    t7: '.',
-
-  },
-
-  {
-    t0: 'Ты сделал мне величайший подарок, на который никто другой не был способен.(größte Geschenk sonst niemand hätte)',
-    t1: 'Du',
-    t2: 'hast',
-    t3: 'mir',
-    t4: 'das',
-    t5: 'größte',
-    t6: 'Geschenk',
-    t7: 'gemacht',
-    t8: ',',
-    t9: 'was',
-    t10: 'sonst',
-    t11: 'niemand',
-    t12: 'gekonnt',
-    t13: 'hätte',
+    t7: 'telefonieren',
+    t8: 'dürfte',
+    t9: 'und',
+    t10: 'rief',
+    t11: 'Scotland',
+    t12: 'Yard',
+    t13: 'an',
     t14: '.',
 
   },
-
   {
-    t0: 'Бьюсь об заклад, вы бы тоже не смогли этого сделать.(wette Ihr hättet)',
-    t1: 'Ich',
-    t2: 'wette',
-    t3: 'Ihr',
-    t4: 'hättet',
-    t5: 'es',
-    t6: 'auch',
-    t7: 'nicht',
-    t8: 'gekonnt',
-    t9: '.',
-
-  },
-
-  {
-    t0: 'То, что я не мог сделать тогда, я должен сделать сейчас. (damals jetzt)',
-    t1: 'Was',
+    t0: 'Если я могу вкратце объяснить? (erklären)',
+    t1: 'Wenn',
     t2: 'ich',
-    t3: 'damals',
-    t4: 'nicht',
-    t5: 'gekonnt',
-    t6: 'habe',
-    t7: ',',
-    t8: 'muss',
-    t9: 'ich',
-    t10: 'jetzt',
-    t11: 'tun',
-    t12: '.',
-  },
-
-
-
-]
-const SlotDatadürfen = [
-  {
-    t0: 'Поскольку мы не имеем права это хранить.(Da behalten)',
-    t1: 'Da',
-    t2: 'wir',
-    t3: 'es',
-    t4: 'nicht',
-    t5: 'behalten',
-    t6: 'dürfen',
-    t7: '.',
-  },
-  {
-    t0: 'Вам не следует оставаться здесь.(bleiben)',
-    t1: 'Hier',
-    t2: 'dürft',
-    t3: 'ihr',
-    t4: 'nicht',
-    t5: 'bleiben',
-    t6: '.',
-
-  },
-  {
-    t0: 'Ты никогда не должен терять надежду.(Hoffnung aufgeben)',
-    t1: 'Du',
-    t2: 'darfst',
-    t3: 'die',
-    t4: 'Hoffnung',
-    t5: 'nie',
-    t6: 'aufgeben',
-    t7: '.',
-
-  },
-  {
-    t0: 'Может ли у вашего спального мешка появиться новый владелец?(Schlafsack Besitzer)',
-    t1: 'Darf',
-    t2: 'dein',
-    t3: 'Schlafsack',
-    t4: 'einen',
-    t5: 'neuen',
-    t6: 'Besitzer',
-    t7: 'haben',
-    t8: '?',
-
-  },
-  {
-    t0: 'Нам обоим нельзя быть друзьями. (beide Freunde)',
-    t1: 'Wir',
-    t2: 'beide',
-    t3: 'dürfen',
-    t4: 'keine',
-    t5: 'Freunde',
-    t6: 'sein',
-    t7: '.',
-
-  },
-  {
-    t0: 'Ваши руки не должны касаться друг друга. (Hände berühren)',
-    t1: 'Eure',
-    t2: 'Hände',
-    t3: 'dürfen',
-    t4: 'sich',
-    t5: 'nicht',
-    t6: 'berühren',
-    t7: '.',
-
-  },
-  {
-    t0: 'Могу я пройти? (vorbei)',
-    t1: 'Darf',
-    t2: 'ich',
-    t3: 'bitte',
-    t4: 'vorbei',
-    t5: '?',
-
-  },
-  {
-    t0: 'Им не разрешено этого делать.()',
-    t1: 'Das',
-    t2: 'durften',
-    t3: 'sie',
-    t4: 'nicht',
-    t5: '.',
-
-  },
-  {
-    t0: 'Режиссеру не разрешили это сделать. (Regisseur)',
-    t1: 'Das',
-    t2: 'durfte',
-    t3: 'der',
-    t4: 'Regisseur',
-    t5: 'nicht',
-    t6: '.',
-
-  },
-  {
-    t0: 'Нам вообще нельзя терять времени.(überhaupt verlieren)',
-    t1: 'Wir',
-    t2: 'dürfen',
-    t3: 'überhaupt',
-    t4: 'keine',
-    t5: 'Zeit',
-    t6: 'verlieren',
-    t7: '.',
-
-  },
-  {
-    t0: 'Почему я тоже не могу этого сделать? ()',
-    t1: 'Warum',
-    t2: 'darf',
-    t3: 'ich',
-    t4: 'das',
-    t5: 'nicht',
-    t6: 'auch',
-    t7: '?',
-
-  },
-  {
-    t0: 'В бассейн без купальной шапочки вход запрещен. (Badehaube Schwimmbecken)',
-    t1: 'Ohne',
-    t2: 'Badehaube',
-    t3: 'darfst',
-    t4: 'du',
-    t5: 'nicht',
-    t6: 'ins',
-    t7: 'Schwimmbecken',
-    t8: '.',
-
-  },
-  {
-    t0: 'Вам позволено попрощаться. (Ihr Abschied nehmen)',
-    t1: 'Ihr',
-    t2: 'durftet',
-    t3: 'Abschied',
-    t4: 'nehmen',
-    t5: '.',
-
-  },
-
-]
-const SlotDatasollen = [
-  {
-    t0: 'В чем все это дело?(alles)',
-    t1: 'Was',
-    t2: 'soll',
-    t3: 'das',
-    t4: 'alles',
-    t5: '?',
-
-  },
-  {
-    t0: ' Она должна сесть в тюрьму пожизненно.(lebenslang Gefängnis)',
-    t1: 'Sie',
-    t2: 'soll',
-    t3: 'lebenslang',
-    t4: 'ins',
-    t5: 'Gefängnis',
-    t6: '.',
-
-  }, {
-    t0: 'Куда поставить пианино? (Klavier hin)',
-    t1: 'Wo',
-    t2: 'soll',
-    t3: 'das',
-    t4: 'Klavier',
-    t5: 'hin',
+    t3: 'kurz',
+    t4: 'erklären',
+    t5: 'dürfte',
     t6: '?',
 
-  }, {
-    t0: 'Я же говорил тебе больше этого не делать.(doch gesagt mehr )',
+  },
+  {
+    t0: 'Я думаю, что это может быть так. ',
     t1: 'Ich',
-    t2: 'habe',
-    t3: 'dir',
-    t4: 'doch',
-    t5: 'gesagt',
-    t6: ',',
-    t7: 'dass',
-    t8: 'du',
-    t9: 'das',
-    t10: 'nicht',
-    t11: 'mehr',
-    t12: 'sollst',
-    t13: '.',
-
-  },
-  {
-    t0: 'Том должен проснуться.(wach sein)',
-    t1: 'Tom',
-    t2: 'sollte',
-    t3: 'wach',
-    t4: 'sein',
-    t5: '.',
-
-  },
-  {
-    t0: 'Люди должны иметь реалистичные ожидания. (Menschen realistische Erwartungen)',
-    t1: 'Die',
-    t2: 'Menschen',
-    t3: 'sollten',
-    t4: 'realistische',
-    t5: 'Erwartungen',
-    t6: 'haben',
-    t7: '.',
-
-  },
-  {
-    t0: 'Тому уже пора этим заниматься. (Mittlerweile Tom eigentlich fertig)',
-    t1: 'Mittlerweile',
-    t2: 'sollte',
-    t3: 'Tom',
-    t4: 'eigentlich',
-    t5: 'damit',
-    t6: 'fertig',
+    t2: 'denke',
+    t3: ',',
+    t4: 'das',
+    t5: 'dürfte',
+    t6: 'so',
     t7: 'sein',
     t8: '.',
 
   },
   {
-    t0: 'Тебе следует оставаться здесь до половины третьего. (halb hierbleiben)',
-    t1: 'Du',
-    t2: 'sollst',
-    t3: 'bis',
-    t4: 'halb',
-    t5: 'drei',
-    t6: 'hierbleiben',
-    t7: '.',
-
-  },
-  {
-    t0: 'У каждого должно быть хотя бы одно хобби. (Jeder mindestens Hobby )',
-    t1: 'Jeder',
-    t2: 'sollte',
-    t3: 'mindestens',
-    t4: 'ein',
-    t5: 'Hobby',
-    t6: 'haben',
-    t7: '.',
-
-  },
-  {
-    t0: 'Стоит ли нам для разнообразия пойти на греческий? (Abwechslung mal  Griechen)',
-    t1: 'Sollen',
-    t2: 'wir',
-    t3: 'zur',
-    t4: 'Abwechslung',
-    t5: 'mal',
-    t6: 'zum',
-    t7: 'Griechen',
-    t8: '?',
-
-  }, {
-    t0: 'Нам следует следить за этим.(Auge darauf )',
-    t1: 'Wir',
-    t2: 'sollten',
-    t3: 'ein',
-    t4: 'Auge',
-    t5: 'darauf',
-    t6: 'haben',
-    t7: '.',
-
-  }
-]
-const SlotDatawollen = [
-  {
-    t0: 'Ты хочешь детей?(Kinder)',
-    t1: 'Willst',
-    t2: 'du',
-    t3: 'Kinder',
-    t4: '?',
-
-  },
-  {
-    t0: 'Я хотел больше.(mehr)',
-    t1: 'Ich',
-    t2: 'wollte',
-    t3: 'mehr',
-    t4: '.',
-
-  },
-  {
-    t0: 'Чего вы хотите?',
-    t1: 'Was',
-    t2: 'wollt',
-    t3: 'ihr',
-    t4: '?',
-
-  },
-  {
-    t0: 'Кому горячего шоколада?(Schokolade)',
-    t1: 'Wer',
-    t2: 'will',
-    t3: 'eine',
-    t4: 'warme',
-    t5: 'Schokolade',
-    t6: '?',
-
-  },
-  {
-    t0: 'Мои адвокаты не хотели, чтобы я давал показания.(Rechtsanwälte aussage)',
-    t1: 'Meine',
-    t2: 'Rechtsanwälte',
-    t3: 'wollten',
-    t4: 'nicht',
-    t5: ',',
-    t6: 'dass',
-    t7: 'ich',
-    t8: 'aussage',
-    t9: '.',
-
-  },
-  {
-    t0: 'Хочешь знать, чего люди хотят больше обычного?(Leute sonst)',
-    t1: 'Wollen',
-    t2: 'Sie',
-    t3: 'wissen',
-    t4: ',',
-    t5: 'was',
-    t6: 'Leute',
-    t7: 'mehr',
-    t8: 'als',
-    t9: 'sonst',
-    t10: 'wollen',
-    t11: '?',
-
-  },
-  {
-    t0: 'Я просто подумал, что ты захочешь этого.(würdest)',
-    t1: 'Ich',
-    t2: 'dachte',
-    t3: 'nur',
-    t4: ',',
-    t5: 'du',
-    t6: 'würdest',
-    t7: 'das',
-    t8: 'haben',
-    t9: 'wollen',
-    t10: '.',
-
-  },
-  {
-    t0: 'Ты не хотел, чтобы я приходил.(nie herkomme)',
-    t1: 'Du',
-    t2: 'hast',
-    t3: 'nie',
-    t4: 'gewollt',
-    t5: ',',
-    t6: 'dass',
-    t7: 'ich',
-    t8: 'herkomme',
-    t9: '.',
-
-  },
-  {
-    t0: 'Запомни, ты сам этого хотел.(Vergiss )',
-    t1: 'Vergiss',
-    t2: 'nicht',
-    t3: ',',
-    t4: 'du',
-    t5: 'hast',
-    t6: 'es',
-    t7: 'so',
-    t8: 'gewollt',
-    t9: '.',
-
-  },
-  {
-    t0: 'Вы оба хотели, чтобы я оставался в стороне - и я остался. (raushalte)',
-    t1: 'Ihr ',
-    t2: 'beide',
-    t3: 'habt',
-    t4: 'gewollt',
-    t5: ',',
-    t6: 'dass',
-    t7: 'ich',
-    t8: 'mich',
-    t9: 'da',
-    t10: 'raushalte',
-    t11: 'und',
-    t12: 'das',
-    t13: 'habe',
-    t14: 'ich',
-    t15: '.',
-
-  },
-  {
-    t0: 'Почему вы от меня отказались?(Wieso ihr)',
-    t1: 'Wieso',
-    t2: 'habt',
-    t3: 'ihr',
-    t4: 'mich',
-    t5: 'nicht',
-    t6: 'gewollt',
-    t7: '?',
-
-  },
-  {
-    t0: 'Не думаю, что я хотела кого-то так сильно.(jemanden sehr)',
-    t1: 'Ich',
-    t2: 'glaube',
-    t3: ',',
-    t4: 'dass',
-    t5: 'ich',
-    t6: 'nie',
-    t7: 'jemanden',
-    t8: 'so',
-    t9: 'sehr',
-    t10: 'gewollt',
-    t11: 'habe',
-    t12: '.',
-
-  },
-  {
-    t0: 'Я это знаю, потому что однажды получил то, чего очень сильно хотел.(Einzige wirklich )',
-    t1: 'Es',
-    t2: 'war',
-    t3: 'das',
-    t4: 'Einzige',
-    t5: ',',
-    t6: 'was',
-    t7: 'ich',
-    t8: 'je',
-    t9: 'wirklich',
-    t10: 'gewollt',
-    t11: 'habe',
-    t12: '.',
-
-  },
-
-]
-const SlotDatamögen = [
-  {
-    t0: 'Я думал, тебе нравится, когда я так делаю.(mache)',
-    t1: 'Ich',
-    t2: 'dachte',
-    t3: 'du',
-    t4: 'magst',
-    t5: 'es',
-    t6: ',',
-    t7: 'wenn',
-    t8: 'ich',
-    t9: 'das',
-    t10: 'mache',
-    t11: '.',
-
-  },
-  {
-    t0: 'Можешь забрать их все, если хочешь.(alle)',
-    t1: 'Wenn',
-    t2: 'du',
-    t3: 'magst',
-    t4: ',',
-    t5: 'kannst',
-    t6: 'du',
-    t7: 'sie',
-    t8: 'alle',
-    t9: 'haben',
-    t10: '.',
-
-  },
-  {
-    t0: 'Вы можете считать, что я слишком зол.(denken wütend)',
+    t0: 'Вероятно, у вас много общего. (gemeinsam)',
     t1: 'Ihr',
-    t2: 'mögt',
-    t3: 'denken',
-    t4: ',',
-    t5: 'ich',
-    t6: 'sei',
-    t7: 'zu',
-    t8: 'wütend',
-    t9: '.',
+    t2: 'dürftet',
+    t3: 'vieles',
+    t4: 'gemeinsam',
+    t5: 'haben',
+    t6: '.',
 
   },
   {
-    t0: 'Надеюсь, тайская кухня вам нравится.(hoffe Thai)',
-    t1: 'Ich',
-    t2: 'hoffe',
+    t0: 'Вы думаете, что можете обмануть. (ihr)',
+    t1: 'Ihr',
+    t2: 'glaubt',
     t3: ',',
     t4: 'ihr',
-    t5: 'mögt',
-    t6: 'Thai',
+    t5: 'dürftet',
+    t6: 'betrügen',
     t7: '.',
 
   },
   {
-    t0: 'Я знаю, что вы любите.()',
+    t0: 'Я сказал, что ты можешь прийти сюда. (herkommen)',
     t1: 'Ich',
-    t2: 'weiß',
+    t2: 'sagte',
     t3: ',',
-    t4: 'was',
-    t5: 'ihr',
-    t6: 'mögt',
+    t4: 'ihr',
+    t5: 'dürftet',
+    t6: 'hier',
+    t7: 'herkommen',
+    t8: '.',
+
+  },
+  {
+    t0: 'Вы можете помочь нам. ',
+    t1: 'Ihr',
+    t2: 'könntet',
+    t3: 'uns',
+    t4: 'helfen',
+    t5: '.',
+
+  },
+  {
+    t0: 'Вы могли бы сделать что-то подобное. (so etwas)',
+    t1: 'Ihr',
+    t2: 'könntet',
+    t3: 'so',
+    t4: 'etwas',
+    t5: 'machen',
+    t6: '.',
+
+  },
+  {
+    t0: 'Вы могли бы стать друзьями. (Freundinnen)',
+    t1: 'Ihr',
+    t2: 'könntet',
+    t3: 'Freundinnen',
+    t4: 'werden',
+    t5: '.',
+
+  },
+  {
+    t0: 'Вероятно, она думает, что это мог быть человек. (wohl menschlich)',
+    t1: 'Sie',
+    t2: 'meint',
+    t3: 'wohl',
+    t4: ',',
+    t5: 'es',
+    t6: 'könnte',
+    t7: 'menschlich',
+    t8: 'sein',
+    t9: '.',
+
+  },
+  {
+    t0: 'Да. Но, это мог быть и кто-то ещё. (auch jemand anderes)',
+    t1: 'Aber',
+    t2: 'es',
+    t3: 'könnte',
+    t4: 'auch',
+    t5: 'jemand',
+    t6: 'anderes',
+    t7: 'sein',
+    t8: '.',
+
+  },
+
+  {
+    t0: 'Работайте над чем хотите. (ihr)',
+    t1: 'Arbeitet',
+    t2: 'an',
+    t3: 'was',
+    t4: 'auch',
+    t5: 'immer',
+    t6: 'ihr',
+    t7: 'möchtet',
+    t8: '.',
+
+  },
+  {
+    t0: 'Если хочешь, у нас есть немного сосисок. (ein paar Würstchen ihr)',
+    t1: 'Wir',
+    t2: 'haben',
+    t3: 'ein',
+    t4: 'paar',
+    t5: 'Würstchen',
+    t6: ',',
+    t7: 'wenn',
+    t8: 'ihr',
+    t9: 'möchtet',
+    t10: '.',
+
+  },
+  {
+    t0: 'Совсем неплохо, но тебе придется заставить меня поверить тебе. (Gar übel erreichen Ihnen glaube)',
+    t1: 'Gar',
+    t2: 'nicht',
+    t3: 'übel',
+    t4: ',',
+    t5: 'aber',
+    t6: 'Sie',
+    t7: 'müssten',
+    t8: 'erreichen',
+    t9: ',',
+    t10: 'dass',
+    t11: 'ich',
+    t12: 'Ihnen',
+    t13: 'glaube',
+    t14: '.',
+
+  },
+
+  {
+    t0: 'Им придется посадить тебя в тележку. (Karre legen)',
+    t1: 'Sie',
+    t2: 'müssten',
+    t3: 'dich',
+    t4: 'in',
+    t5: 'eine',
+    t6: 'Karre',
+    t7: 'legen',
+    t8: '.',
+
+  },
+  {
+    t0: 'Им придется время от времени приезжать на Марс. (gelegentlich Mars)',
+    t1: 'Sie',
+    t2: 'müssten',
+    t3: 'gelegentlich',
+    t4: 'auf',
+    t5: 'den',
+    t6: 'Mars',
+    t7: 'kommen',
+    t8: '.',
+
+  },
+  {
+    t0: 'Я думаю, что это должно произойти вот так. (passieren)',
+    t1: 'Ich',
+    t2: 'denke',
+    t3: ',',
+    t4: 'es',
+    t5: 'sollte',
+    t6: 'so',
+    t7: 'passieren',
+    t8: '.',
+
+  },
+  {
+    t0: 'Ничего не произошло так, как должно было. (Nichts passiert)',
+    t1: 'Nichts',
+    t2: 'ist',
+    t3: 'passiert',
+    t4: 'wie',
+    t5: 'es',
+    t6: 'sollte',
     t7: '.',
 
   },
   {
-    t0: 'Да, послушайте, она мне нравилась.(zu )',
-    t1: 'Ja',
-    t2: ',',
-    t3: 'hör',
-    t4: 'zu',
-    t5: ',',
-    t6: 'ich',
-    t7: 'mochte',
-    t8: 'sie',
-    t9: '.',
-
-  },
-  {
-    t0: 'Меня саму это ужасно удивило, но мне нравились эти девчонки.(total überrascht Mädels)',
-    t1: 'Es',
-    t2: 'hat',
-    t3: 'mich',
-    t4: 'total',
-    t5: 'überrascht',
-    t6: ',',
-    t7: 'aber',
-    t8: 'ich',
-    t9: 'mochte',
-    t10: 'diese',
-    t11: 'Mädels',
-    t12: '.',
-
-  },
-
-  {
-    t0: 'Да, но мне понравилась эта голубая рубашка.(Hemd)',
-    t1: 'Ja',
-    t2: ',',
-    t3: 'aber',
-    t4: 'ich',
-    t5: 'mochte',
-    t6: 'dieses',
-    t7: 'blaue',
-    t8: 'Hemd',
-    t9: '.',
-
-  },
-
-  {
-    t0: 'Девушка, которая мне понравилась, издевается надо мной.(Mädchen schikaniert mich)',
-    t1: 'Ein',
-    t2: 'Mädchen',
-    t3: ',',
-    t4: 'das',
-    t5: 'ich',
-    t6: 'mochte',
-    t7: ',',
-    t8: 'schikaniert',
-    t9: 'mich',
-    t10: '.',
-
-  },
-  {
-    t0: 'Какая музыка вам нравится?(Art Musik Sie)',
-    t1: 'Welche',
-    t2: 'Art',
-    t3: 'von',
-    t4: 'Musik',
-    t5: 'mögen',
-    t6: 'Sie',
-    t7: '?',
-
-  }
-]
-const SlotDatamöchten = [
-  {
-    t0: 'Она спрашивает, не хотите ли вы пойти со мной.(fragt mitkommen)',
-    t1: 'Sie     ',
-    t2: 'fragt',
-    t3: ',',
-    t4: 'ob',
-    t5: 'Sie',
-    t6: 'mitkommen',
-    t7: 'möchten',
-    t8: '.',
-
-  }, {
-    t0: 'С Вашего разрешения мы хотели бы Вас угостить.(Erlaubnis behandeln)',
-    t1: 'Mit',
-    t2: 'Eurer',
-    t3: 'Erlaubnis',
-    t4: 'möchten',
-    t5: 'wir',
-    t6: 'Euch',
-    t7: 'behandeln',
-    t8: '.',
-
-  }, {
-    t0: 'Ты занят и не хочешь, чтобы к тебе обращались в данный момент.(beschäftigt derzeit gestört)',
-    t1: 'Du',
-    t2: 'bist',
-    t3: 'beschäftigt',
-    t4: 'und',
-    t5: 'möchten',
-    t6: 'derzeit',
-    t7: 'nicht',
-    t8: 'gestört',
-    t9: 'werden',
-    t10: '.',
-
-  }, {
-    t0: 'Принесите все книги, какие захотите, к прилавку.(Bücher Theke)',
-    t1: 'Bringt',
-    t2: 'alle',
-    t3: 'Bücher',
+    t0: 'Я сделал всё, что вы хотели. (tat alles ihr)',
+    t1: 'Ich',
+    t2: 'tat',
+    t3: 'alles',
     t4: ',',
-    t5: 'die',
+    t5: 'was',
     t6: 'ihr',
-    t7: 'möchtet',
-    t8: ',',
-    t9: 'an',
-    t10: 'die',
-    t11: 'Theke',
-    t12: '.',
+    t7: 'wolltet',
+    t8: '.',
 
-  }, {
-    t0: 'Вы можете идти, если хотите.()',
+  },
+
+  {
+    t0: 'Я думал, вы хотели настоящего ребенка. (echtes Kind)',
+    t1: 'Ich',
+    t2: 'dachte',
+    t3: ',',
+    t4: 'ihr',
+    t5: 'wolltet',
+    t6: 'ein',
+    t7: 'echtes',
+    t8: 'Kind',
+    t9: '.',
+
+  },
+
+  {
+    t0: 'Они хотели посмотреть, что я буду с этим делать. (damit mache)',
+    t1: 'Sie',
+    t2: 'wollten',
+    t3: 'sehen',
+    t4: ',',
+    t5: 'was',
+    t6: 'ich',
+    t7: 'damit',
+    t8: 'mache',
+    t9: '.',
+  },
+
+]
+const SlotVergangenheitModalverben = [
+  {
+    t0: 'Ему не следовало так врываться. (reinplatzen)',
+    t1: 'Er',
+    t2: 'hätte',
+    t3: 'nicht',
+    t4: 'so',
+    t5: 'reinplatzen',
+    t6: 'dürfen',
+    t7: '.',
+
+  },
+  {
+    t0: 'Ему никогда не следовало идти одному. (nie alleine )',
+    t1: 'Er',
+    t2: 'hätte',
+    t3: 'nie',
+    t4: 'alleine',
+    t5: 'gehen',
+    t6: 'dürfen',
+    t7: '.',
+
+  },
+  {
+    t0: 'Ему не следовало провоцировать ее. (nicht provozieren)',
+    t1: 'Er',
+    t2: 'hätte',
+    t3: 'sie',
+    t4: 'nicht',
+    t5: 'provozieren',
+    t6: 'dürfen',
+    t7: '.',
+
+  },
+  {
+    t0: 'Вам никогда не следовало выходить из дома. (Haus nie verlassen)',
     t1: 'Ihr',
-    t2: 'könnt',
-    t3: 'gehen',
-    t4: ',',
-    t5: 'wenn',
-    t6: 'ihr',
-    t7: 'möchtet',
+    t2: 'hättet',
+    t3: 'das',
+    t4: 'Haus',
+    t5: 'nie',
+    t6: 'verlassen',
+    t7: 'dürfen',
     t8: '.',
 
-  }, {
-    t0: 'Если вы хотите, чтобы они следовали за вами, вы должны стать частью их мира.(ihr folgen Teil Welt)',
-    t1: 'Wenn',
-    t2: 'ihr',
-    t3: 'möchtet',
-    t4: 'das',
-    t5: 'sie',
-    t6: 'euch',
-    t7: 'folgen',
-    t8: ',',
-    t9: 'müsst',
-    t10: 'Ihr',
-    t11: 'Teil',
-    t12: 'ihrer',
-    t13: 'Welt',
-    t14: 'werden',
-    t15: '.',
-  }, {
-    t0: 'После прошлой ночи, я уверен, вам не захочется задерживаться. (Nach Nacht überzeugt verweilen)',
-    t1: 'Nach',
-    t2: 'letzter',
-    t3: 'Nacht',
-    t4: ',',
-    t5: 'bin',
-    t6: 'ich',
-    t7: 'überzeugt',
-    t8: ',',
-    t9: 'Ihr',
-    t10: 'möchtet',
-    t11: 'nicht',
-    t12: 'verweilen',
-    t13: '.',
-  }, {
-    t0: 'Господа, не могли бы вы поделиться чем-нибудь с классом?(Herren Klasse)',
-    t1: 'Meine',
-    t2: 'Herren',
-    t3: ',',
-    t4: 'möchtet',
-    t5: 'ihr',
-    t6: 'der',
-    t7: 'Klasse',
-    t8: 'etwas',
-    t9: 'mitteilen',
-    t10: '?',
-
-  }, {
-    t0: 'Может быть, вы хотите, чтобы я думал именно так.(Vielleicht ihr genau denke)',
-    t1: 'Vielleicht',
-    t2: 'möchtet',
-    t3: 'ihr',
-    t4: ',',
-    t5: 'dass',
-    t6: 'ich',
-    t7: 'genau',
-    t8: 'das',
-    t9: 'denke',
-    t10: '.',
+  },
+  {
+    t0: 'Тебе не следовало приходить сюда. (herkommen)',
+    t1: 'Ihr',
+    t2: 'hättet',
+    t3: 'nicht',
+    t4: 'herkommen',
+    t5: 'dürfen',
+    t6: '.',
+  },
+  {
+    t0: 'Но ты мог бы уйти.()',
+    t1: 'Aber.',
+    t2: 'du',
+    t3: 'hättest',
+    t4: 'gehen',
+    t5: 'können',
+    t6: '.',
 
   },
+  {
+    t0: 'Или ты мог бы пойти с ним. ()',
+    t1: 'Oder',
+    t2: 'du',
+    t3: 'hättest',
+    t4: 'mit',
+    t5: 'ihm',
+    t6: 'gehen',
+    t7: 'können',
+    t8: '.',
+
+  },
+  {
+    t0: 'Чувак, мне бы очень хотелось побывать там. (Mann dabei sein)',
+    t1: 'Mann',
+    t2: ',',
+    t3: 'da',
+    t4: 'hätte',
+    t5: 'ich',
+    t6: 'dabei',
+    t7: 'sein',
+    t8: 'mögen',
+    t9: '.',
+
+  },
+  {
+    t0: 'Все могло пойти не так. (schief)',
+    t1: 'Es',
+    t2: 'hätte',
+    t3: 'auch',
+    t4: 'schief',
+    t5: 'gehen',
+    t6: 'können',
+    t7: '.',
+
+  },
+  {
+    t0: 'Это должно было быть здесь давно. (längst)',
+    t1: 'Es',
+    t2: 'hätte',
+    t3: 'längst',
+    t4: 'hier',
+    t5: 'sein',
+    t6: 'sollen',
+    t7: '.',
+
+  },
+  {
+    t0: 'Это не должно было так закончиться. (enden)',
+    t1: 'Es',
+    t2: 'hätte',
+    t3: 'nicht',
+    t4: 'so',
+    t5: 'enden',
+    t6: 'müssen',
+    t7: '.',
+  },
+  {
+    t0: 'Как будто ты хотел попасть в тюрьму. (Gefängnis)',
+    t1: 'Als',
+    t2: 'hättest',
+    t3: 'du',
+    t4: 'ins',
+    t5: 'Gefängnis',
+    t6: 'wollen',
+    t7: '.',
+
+  },
+  {
+    t0: 'Делай все так, как ты хотел, чтобы они делали. (Dinge machen)',
+    t1: 'Mach',
+    t2: 'die',
+    t3: 'Dinge',
+    t4: 'so',
+    t5: ',',
+    t6: 'wie',
+    t7: 'du',
+    t8: 'sie',
+    t9: 'hättest',
+    t10: 'machen',
+    t11: 'wollen',
+    t12: '.',
+  },
+
+
 ]
+
+// =============================================================
+// =============================================================
+// =============================================================
+// =============================================================
+const ModalverbenGegenwartPassiv = [
+  {
+    title: 'dürfen',
+    text1: 'ich,er,sie,es dürfte + Pt2 + werden',
+    text2: 'du dürftest +  + Pt2 + werden',
+    text3: 'ihr dürftet +  + Pt2 + werden',
+    text4: 'wir,sie,Sie dürften   + Pt2 + werden',
+  },
+  {
+    title: 'können',
+    text1: 'ich,er,sie,es könnte  + Pt2 + werden',
+    text2: 'du könntest  + Pt2 + werden',
+    text3: 'ihr könntet  + Pt2 + werden',
+    text4: 'wir,sie,Sie könnten   + Pt2 + werden',
+  },
+  {
+    title: 'mögen',
+    text1: 'ich,er,sie,es möchte  + Pt2 + werden ',
+    text2: 'du möchtest  + Pt2 + werden',
+    text3: 'ihr möchtet  + Pt2 + werden',
+    text4: 'wir,sie,Sie möchten   + Pt2 + werden',
+  },
+  {
+    title: 'müssen',
+    text1: 'ich,er,sie,es müsste + Pt2 + werden',
+    text2: 'du müsstest  + Pt2 + werden',
+    text3: 'ihr müsstet  + Pt2 + werden',
+    text4: 'wir,sie,Sie müssten   + Pt2 + werden',
+  },
+  {
+    title: 'sollen',
+    text1: 'ich,er,sie,es sollte  + Pt2 + werden ',
+    text2: 'du solltest  + Pt2 + werden',
+    text3: 'ihr solltet  + Pt2 + werden',
+    text4: 'wir,sie,Sie sollten   + Pt2 + werden',
+  },
+  {
+    title: 'wollen',
+    text1: 'ich,er,sie,es wollte  + Pt2 + werden ',
+    text2: 'du wolltest  + Pt2 + werden',
+    text3: 'ihr wolltet  + Pt2 + werden',
+    text4: 'wir,sie,Sie wollten   + Pt2 + werden',
+  },
+]
+const ModalverbenVergangenheitPassiv = [
+  {
+    title: 'dürfen',
+    text1: 'ich,er,sie,es hätte + Pt2 + werden dürfen',
+    text2: 'du hättest  + Pt2 + werden dürfen',
+    text3: 'ihr hättet  + Pt2 + werden dürfen',
+    text4: 'wir,sie,Sie hätten + Pt2 + werden dürfen',
+  },
+  {
+    title: 'können',
+    text1: 'ich,er,sie,es hätte + Pt2 + werden können',
+    text2: 'du hättest  + Pt2 + werden können',
+    text3: 'ihr hättet  + Pt2 + werden können',
+    text4: 'wir,sie,Sie hätten + Pt2 + werden können',
+  },
+  {
+    title: 'mögen',
+    text1: 'ich,er,sie,es hätte + Pt2 + werden mögen',
+    text2: 'du hättest  + Pt2 + werden mögen',
+    text3: 'ihr hättet  + Pt2 + werden mögen',
+    text4: 'wir,sie,Sie hätten + Pt2 + werden mögen',
+  },
+  {
+    title: 'mögen',
+    text1: 'ich,er,sie,es hätte + Pt2 + werden mögen',
+    text2: 'du hättest  + Pt2 + werden mögen',
+    text3: 'ihr hättet  + Pt2 + werden mögen',
+    text4: 'wir,sie,Sie hätten + Pt2 + werden mögen',
+  },
+  {
+    title: 'müssen',
+    text1: 'ich,er,sie,es hätte + Pt2 + werden müssen',
+    text2: 'du hättest  + Pt2 + werden müssen',
+    text3: 'ihr hättet  + Pt2 + werden müssen',
+    text4: 'wir,sie,Sie hätten + Pt2 + werden müssen',
+  },
+  {
+    title: 'sollen',
+    text1: 'ich,er,sie,es hätte + Pt2 + werden sollen',
+    text2: 'du hättest  + Pt2 + werden sollen',
+    text3: 'ihr hättet  + Pt2 + werden sollen',
+    text4: 'wir,sie,Sie hätten + Pt2 + werden sollen',
+  },
+  {
+    title: 'wollen',
+    text1: 'ich,er,sie,es hätte + Pt2 + werden wollen',
+    text2: 'du hättest  + Pt2 + werden wollen',
+    text3: 'ihr hättet  + Pt2 + werden wollen',
+    text4: 'wir,sie,Sie hätten + Pt2 + werden wollen',
+  },
+]
+const ModalverbenFuturIPassiv = [
+  {
+    title: 'dürfen',
+    text1: 'ich,er,sie,es würde + Pt2 + werden dürfen',
+    text2: 'du würdest  + Pt2 + werden dürfen',
+    text3: 'ihr würdet  + Pt2 + werden dürfen',
+    text4: 'wir,sie,Sie würden + Pt2 + werden dürfen',
+  },
+  {
+    title: 'können',
+    text1: 'ich,er,sie,es würde + Pt2 + werden können',
+    text2: 'du würdest  + Pt2 + werden können',
+    text3: 'ihr würdet  + Pt2 + werden können',
+    text4: 'wir,sie,Sie würden + Pt2 + werden können',
+  },
+  {
+    title: 'mögen',
+    text1: 'ich,er,sie,es würde + Pt2 + werden mögen',
+    text2: 'du würdest  + Pt2 + werden mögen',
+    text3: 'ihr würdet  + Pt2 + werden mögen',
+    text4: 'wir,sie,Sie würden + Pt2 + werden mögen',
+  },
+  {
+    title: 'mögen',
+    text1: 'ich,er,sie,es würde + Pt2 + werden mögen',
+    text2: 'du würdest  + Pt2 + werden mögen',
+    text3: 'ihr würdet  + Pt2 + werden mögen',
+    text4: 'wir,sie,Sie würden + Pt2 + werden mögen',
+  },
+  {
+    title: 'müssen',
+    text1: 'ich,er,sie,es würde + Pt2 + werden müssen',
+    text2: 'du würdest  + Pt2 + werden müssen',
+    text3: 'ihr würdet  + Pt2 + werden müssen',
+    text4: 'wir,sie,Sie würden + Pt2 + werden müssen',
+  },
+  {
+    title: 'sollen',
+    text1: 'ich,er,sie,es würde + Pt2 + werden sollen',
+    text2: 'du würdest  + Pt2 + werden sollen',
+    text3: 'ihr würdet  + Pt2 + werden sollen',
+    text4: 'wir,sie,Sie würden + Pt2 + werden sollen',
+  },
+  {
+    title: 'wollen',
+    text1: 'ich,er,sie,es würde + Pt2 + werden wollen',
+    text2: 'du würdest  + Pt2 + werden wollen',
+    text3: 'ihr würdet  + Pt2 + werden wollen',
+    text4: 'wir,sie,Sie würden + Pt2 + werden wollen',
+  },
+]
+const ModalverbenFuturIIPassiv = [
+  {
+    title: 'dürfen',
+    text1: 'ich,er,sie,es würde haben + Pt2 + werden dürfen',
+    text2: 'du würdest haben + Pt2 + werden dürfen',
+    text3: 'ihr würdet haben + Pt2 + werden dürfen',
+    text4: 'wir,sie,Sie würden haben + Pt2 + werden dürfen',
+  },
+  {
+    title: 'können',
+    text1: 'ich,er,sie,es würde haben + Pt2 + werden können',
+    text2: 'du würdest haben + Pt2 + werden können',
+    text3: 'ihr würdet haben + Pt2 + werden können',
+    text4: 'wir,sie,Sie würden haben + Pt2 + werden können',
+  },
+  {
+    title: 'mögen',
+    text1: 'ich,er,sie,es würde haben + Pt2 + werden mögen',
+    text2: 'du würdest haben + Pt2 + werden mögen',
+    text3: 'ihr würdet haben + Pt2 + werden mögen',
+    text4: 'wir,sie,Sie würden haben + Pt2 + werden mögen',
+  },
+  {
+    title: 'mögen',
+    text1: 'ich,er,sie,es würde haben + Pt2 + werden mögen',
+    text2: 'du würdest haben + Pt2 + werden mögen',
+    text3: 'ihr würdet haben + Pt2 + werden mögen',
+    text4: 'wir,sie,Sie würden haben + Pt2 + werden mögen',
+  },
+  {
+    title: 'müssen',
+    text1: 'ich,er,sie,es würde haben + Pt2 + werden müssen',
+    text2: 'du würdest haben + Pt2 + werden müssen',
+    text3: 'ihr würdet haben + Pt2 + werden müssen',
+    text4: 'wir,sie,Sie würden haben + Pt2 + werden müssen',
+  },
+  {
+    title: 'sollen',
+    text1: 'ich,er,sie,es würde haben + Pt2 + werden sollen',
+    text2: 'du würdest haben + Pt2 + werden sollen',
+    text3: 'ihr würdet haben + Pt2 + werden sollen',
+    text4: 'wir,sie,Sie würden haben + Pt2 + werden sollen',
+  },
+  {
+    title: 'wollen',
+    text1: 'ich,er,sie,es würde haben + Pt2 + werden wollen',
+    text2: 'du würdest haben + Pt2 + werden wollen',
+    text3: 'ihr würdet haben + Pt2 + werden wollen',
+    text4: 'wir,sie,Sie würden haben + Pt2 + werden wollen',
+  },
+]
+
+const SlotModalverbenGegenwartPassiv = [
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 

@@ -88,16 +88,16 @@ a {
   background: $deep-purple-1;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14),
     0 3px 1px -2px rgba(0, 0, 0, 0.12);
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
-  margin: 10px 0 0 0;
+  margin: 0 0 10px 0;
 }
-.page-title--small {
-  margin: 5px 0 10px 0;
 
+.page-title--small {
   h2 {
     color: $deep-purple-4;
     font-style: 12px;
+    padding: 5px 0;
   }
 }
 button.mixButton {
@@ -116,67 +116,7 @@ button.mixButton {
     // text-shadow: 0 0  14px white;
   }
 }
-/* +++++++++++++++++++++++++++++++++++++ */
-// @media (prefers-reduced-motion: no-preference) {
-//   .top-animation {
-//     animation: wipe-enter 1.5s;
-//   }
-//   @keyframes wipe-enter {
-//     0% {
-//       transform: translate(0, -100px);
-//       opacity: 0;
-//     }
-//     100% {
-//       transform: translate(0, 0);
-//       opacity: 1;
-//     }
-//   }
 
-//   .left-animation {
-//     animation: left-enter 1.5s;
-//   }
-//   @keyframes left-enter {
-//     0% {
-//       transform: translate(-200px, 0);
-//       opacity: 0;
-//     }
-//     100% {
-//       transform: translate(0, 0);
-//       opacity: 1;
-//     }
-//   }
-
-//   .right-animation {
-//     animation: right-enter 1.5s;
-//   }
-//   @keyframes right-enter {
-//     0% {
-//       transform: translate(200px, 0);
-//       opacity: 0;
-//     }
-//     100% {
-//       transform: translate(0, 0);
-//       opacity: 1;
-//     }
-//   }
-// }
-/* +++++++++++++++++++++++++++++++++++++ */
-// .soc {
-//   @include flex-aligne-center;
-//   column-gap: 7px;
-//   &__item {
-//     a {
-//       border-radius: 100%;
-//       &:hover {
-//         transform: scale(1.05);
-//       }
-//     }
-//     svg {
-//       width: 43px;
-//       height: 43px;
-//     }
-//   }
-// }
 .lock {
   overflow: hidden;
 }

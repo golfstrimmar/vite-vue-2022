@@ -9,14 +9,15 @@
   Tabs(:items= 'wollen' title='wollen' )
   Tabs(:items= 'mögen' title='mögen' )
   Tabs(:items= 'möchten' title='möchten' )
-
-  TabsTraining( title='müssen Training' :SlotData='SlotDatamüssen' )
-  TabsTraining( title='können Training' :SlotData='SlotDatakönnen' )
-  TabsTraining( title='dürfen Training' :SlotData='SlotDatadürfen' )
-  TabsTraining( title='sollen Training' :SlotData='SlotDatasollen' )
-  TabsTraining( title='wollen Training' :SlotData='SlotDatawollen' )
-  TabsTraining( title='mögen Training' :SlotData='SlotDatamögen' )
-  TabsTraining( title='möchten Training' :SlotData='SlotDatamöchten' )
+  .page-title--small 
+    h2 Training 
+  TabsTraining( title='müssen ' :SlotData='SlotDatamüssen' )
+  TabsTraining( title='können' :SlotData='SlotDatakönnen' )
+  TabsTraining( title='dürfen' :SlotData='SlotDatadürfen' )
+  TabsTraining( title='sollen' :SlotData='SlotDatasollen' )
+  TabsTraining( title='wollen' :SlotData='SlotDatawollen' )
+  TabsTraining( title='mögen' :SlotData='SlotDatamögen' )
+  TabsTraining( title='möchten' :SlotData='SlotDatamöchten' )
 </template>
 <script setup>
 // import Content from '@/components/Content.vue';
