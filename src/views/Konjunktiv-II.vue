@@ -3,14 +3,14 @@
   .page-title 
     h2 Konjunktiv II
   .page-block
-    .page-title
+    .page-title--small
       h3 Bildung des Konjunktivs II.
     Tabs(:items= 'Gegenwart' title='Konjunktivs II der Gegenwart ' )
     Tabs(:items= 'Vergangenheit' title='Konjunktiv II der Vergangenheit.' )
     Tabs(:items= 'GegenwartPassiv' title='Konjunktiv II der Gegenwart plus Passiv. ' )
     Tabs(:items= 'VergangenheitPassiv' title='Konjunktiv II der Vergangenheit plus Passiv' )
   .page-block
-    .page-title
+    .page-title--small
       h3 Bildung des Konjunktivs II mit den Verbformen. 
     p Zu den wenigen Verben, die <span>IMMER</span> den Konjunktiv II in der Originalform verwenden, gehören:
     Tabs(:items= 'Verbformen' title='Konjunktivs II mit den Verbformen' )

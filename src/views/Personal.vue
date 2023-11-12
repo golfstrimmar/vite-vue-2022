@@ -345,5 +345,3 @@ const SlotDataPersonal = [
 
 ]
 </script>
-
-<style lang="scss" ></style>

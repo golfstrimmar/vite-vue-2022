@@ -857,12 +857,7 @@ const SlotZustandspassivsFuturum = [
 </script>
 
 <style lang="scss" >
-.page-title--small {
-  margin: 20px 0 10px 0;
-
-  h2 {
-    color: $deep-purple-4;
-    font-style: 12px;
-  }
+p {
+  padding: 3px 0;
 }
 </style>
