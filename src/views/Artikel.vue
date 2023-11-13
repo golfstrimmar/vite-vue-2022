@@ -12,10 +12,11 @@
   Tabs(:items= 'die' title='Beispiele für den feminine Article “die”')
   Tabs(:items= 'das' title='Beispiele für den neuter Article “das”')
 
-
-  TabsTraining( title='Bestimmte Artikel Training' :SlotData='SlotDataBestimmte' )
-  TabsTraining( title='Unbestimmte Artikel Training' :SlotData='SlotDataUnbestimmte' )
-  TabsTraining( title='Unbestimmte Negativ Artikel Training' :SlotData='SlotDataNegativ' )
+  .page-title--small
+    h2 Training
+  TabsTraining( title='Bestimmte Artikel' :SlotData='SlotDataBestimmte' )
+  TabsTraining( title='Unbestimmte Artikel' :SlotData='SlotDataUnbestimmte' )
+  TabsTraining( title='Unbestimmte Negativ Artikel ' :SlotData='SlotDataNegativ' )
 
 
 </template>

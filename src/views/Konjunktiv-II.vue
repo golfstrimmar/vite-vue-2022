@@ -62,6 +62,9 @@
     .page-title--small 
       h2 Training
     TabsTraining( title='Modalverben Gegenwart Passiv' :SlotData='SlotModalverbenGegenwartPassiv' )
+    TabsTraining( title='Modalverben Vergangenheit Passiv' :SlotData='SlotModalverbenVergangenheitPassiv' )
+    TabsTraining( title='Modalverben FuturI Passiv' :SlotData='SlotModalverbenFuturIPassiv' )
+    TabsTraining( title='Modalverben FuturII Passiv' :SlotData='SlotModalverbenFuturIIPassiv' )
 
  
 </template>
@@ -1365,6 +1368,37 @@ const SlotVergangenheitModalverben = [
     t11: 'wollen',
     t12: '.',
   },
+  {
+    t0: 'Если бы мне разрешили работать в ресторане, я бы заработал денег. (Restaurant Geld verdienen)',
+    t1: 'Wenn',
+    t2: 'ich',
+    t3: 'im',
+    t4: 'Restaurant',
+    t5: 'hätte',
+    t6: 'arbeiten',
+    t7: 'dürfen',
+    t8: ',',
+    t9: 'würde',
+    t10: 'ich',
+    t11: 'Geld',
+    t12: 'verdienen',
+    t12: '.',
+  },
+  {
+    t0: 'Если бы я умел плавать, я бы пошел в открытый бассейн. (schwimmen Freibad)',
+    t1: 'Wenn',
+    t2: 'ich',
+    t3: 'hätte',
+    t4: 'schwimmen',
+    t5: 'können',
+    t6: ',',
+    t7: 'wäre',
+    t8: 'ich',
+    t9: 'ins',
+    t10: 'Freibad',
+    t11: 'gegangen',
+    t12: '.',
+  },
 
 
 ]
@@ -1573,70 +1607,112 @@ const ModalverbenFuturIIPassiv = [
 
 const SlotModalverbenGegenwartPassiv = [
   {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
+    t0: 'Учитель должен быть опрошен учеником. (Lehrer Schüler)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'müsste',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: 'werden',
+    t9: '.',
+
   },
   {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
+    t0: 'меня следует спросить ()',
+    t1: 'ich',
+    t2: 'müsste',
+    t3: 'gefragt',
+    t4: 'werden',
+
+  },
+  {
+    t0: 'его следует спросить (gefragt)',
+    t1: 'er',
+    t2: 'müsste',
+    t3: 'gefragt',
+    t4: 'werden',
+
+  },
+  {
+    t0: 'вас следует спросить (ihr gefragt)',
+    t1: 'ihr',
+    t2: 'müsstet',
+    t3: 'gefragt',
+    t4: 'werden',
+
+  },
+
+]
+const SlotModalverbenVergangenheitPassiv = [
+  {
+    t0: 'Учитель должен был быть опрошенным учеником. (Lehrer Schüler gefragt)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'hätte',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: 'werden',
+    t9: 'müssen',
+    t10: '.',
+
+  },
+  {
+    t0: 'мы должны были быть опрошены (gefragt)',
+    t1: 'wir',
+    t2: 'hätten',
+    t3: 'gefragt',
+    t4: 'werden',
+    t5: 'müssen',
+
+  },
+  {
+    t0: 'вы должны были быть опрошенными (gefragt)',
+    t1: 'ihr',
+    t2: 'hättet',
+    t3: 'gefragt',
+    t4: 'werden',
+    t5: 'sollen',
+
+  },
+
+]
+const SlotModalverbenFuturIPassiv = [
+  {
+    t0: 'мне позволили бы попросить (gefragt)',
+    t1: 'ich',
+    t2: 'würde',
+    t3: 'gefragt',
+    t4: 'werden',
+    t5: 'dürfen',
+
+  },
+
+  {
+    t0: 'вы бы будете опрошены (gefragt)',
+    t1: 'ihr',
+    t2: 'würdet',
+    t3: 'gefragt',
+    t4: 'werden',
+    t5: 'mögen',
+
   },
 ]
+const SlotModalverbenFuturIIPassiv = [
+  {
+    t0: 'вы бы будете окончательно опрошены (gefragt)',
+    t1: 'ihr',
+    t2: 'würdet',
+    t3: 'haben',
+    t4: 'gefragt',
+    t5: 'werden',
+    t6: 'mögen',
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  },
+]
 
 </script>
 
