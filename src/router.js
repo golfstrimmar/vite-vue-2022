@@ -9,7 +9,7 @@ import Demonstrativ from "@/views/Demonstrativ.vue";
 import Modal from "@/views/Modal.vue";
 import Passiv from "@/views/Passiv.vue";
 import Konjunktiv from "@/views/Konjunktiv-II.vue";
-import Rektion from "@/views/Rektion.vue";
+import Nomen from "@/views/Nomen.vue";
 import SignUp from "@/views/SignUp.vue";
 import SignIn from "@/views/SignIn.vue";
 import Tasks from "@/components/Tasks.vue";
@@ -27,7 +27,7 @@ const router = createRouter({
     { path: "/modal", name: "Modal", component: Modal },
     { path: "/passiv", name: "Passiv", component: Passiv },
     { path: "/konjunktiv", name: "Konjunktiv", component: Konjunktiv },
-    { path: "/rektion", name: "Rektion", component: Rektion },
+    { path: "/nomen", name: "Nomen", component: Nomen },
     { path: "/signup", name: "SignUp", component: SignUp },
     { path: "/signin", name: "SignIn", component: SignIn },
     { path: "/tasks", name: "Tasks", component: Tasks },
