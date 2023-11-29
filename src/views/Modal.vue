@@ -333,7 +333,7 @@ const möchten = [
 
 const SlotDatamüssen = [
   {
-    t0: 'Мне нужно вернуться в офис.(zurück Büro)',
+    t0: 'Мне нужно вернуться в офис.(zurück zum Büro)',
     t1: 'Ich',
     t2: 'muss',
     t3: 'zurück',
@@ -351,14 +351,14 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Должен быть порядок.(Ordnung)',
+    t0: 'Должен быть порядок. (Ordnung)',
     t1: 'Ordnung',
     t2: 'muss',
     t3: 'sein',
     t4: '.',
   },
   {
-    t0: 'Тебе нужно было это говорить?()',
+    t0: 'Тебе нужно было это говорить? (sagen)',
     t1: 'Musstest',
     t2: 'du',
     t3: 'das',
@@ -367,7 +367,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: ' За это им пришлось сесть в тюрьму.(Dafür Gefängnis)',
+    t0: ' За это им пришлось сесть в тюрьму. (Dafür ins Gefängnis)',
     t1: 'Dafür',
     t2: 'mussten',
     t3: 'sie',
@@ -377,7 +377,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Вы должны были сделать все сами.(selbst)',
+    t0: 'Вы должны были сделать все сами.(alles selbst)',
     t1: 'Ihr',
     t2: 'musstet',
     t3: 'alles',
@@ -396,7 +396,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Сотруднику банка пришлось сесть в тюрьму за мошенничество.(Bankkaufmann Betrugs Gefängnis)',
+    t0: 'Сотруднику банка пришлось сесть в тюрьму за мошенничество. (Bankkaufmann Betrugs ins Gefängnis)',
     t1: 'Der',
     t2: 'Bankkaufmann',
     t3: 'musste',
@@ -408,7 +408,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Вам не нужно было все разрушать!(zerstören)',
+    t0: 'Вам не нужно было все разрушать! (nicht alles zerstören)',
     t1: 'Ihr',
     t2: 'musstet',
     t3: 'nicht',
@@ -418,7 +418,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Я это понимаю, но вам не нужно было его убивать.(verstehe töten)',
+    t0: 'Я это понимаю, но вам не нужно было его убивать. (verstehe aber nicht töten)',
     t1: 'Ich',
     t2: 'verstehe',
     t3: 'das',
@@ -433,7 +433,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Вам никогда не приходилось делать этого раньше. (noch nie)',
+    t0: 'Вам никогда не приходилось делать этого раньше. (noch nie )',
     t1: 'Das',
     t2: 'hast',
     t3: 'du',
@@ -465,7 +465,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'И вам придется открыть глаза.(Augen öffnen)',
+    t0: 'И вам придется открыть глаза.(Eure Augen öffnen)',
     t1: 'Und',
     t2: 'ihr',
     t3: 'müsst',
@@ -476,7 +476,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Мне не нужно было этого делать, но я все равно это сделал.(tat trotzdem)',
+    t0: 'Мне не нужно было этого делать, но я все равно это сделал. (tat trotzdem)',
     t1: 'Ich',
     t2: 'musste',
     t3: 'nicht',
@@ -509,7 +509,7 @@ const SlotDatakönnen = [
 
   },
   {
-    t0: 'На скольких иностранных языках вы (ihr) говорите? (Fremdsprachen ihr)',
+    t0: 'На скольких иностранных языках вы (ihr) говорите? (viele Fremdsprachen ihr)',
     t1: 'Wie',
     t2: 'viele',
     t3: 'Fremdsprachen',
@@ -530,7 +530,7 @@ const SlotDatakönnen = [
 
   },
   {
-    t0: 'Я хочу, но не могу.(ja nicht)',
+    t0: 'Я хочу, но не могу. (ja nicht)',
     t1: 'Ich',
     t2: 'möchte',
     t3: 'ja',
@@ -552,7 +552,7 @@ const SlotDatakönnen = [
   },
 
   {
-    t0: 'Она бегло говорила по-французски.(fließend Französisch)',
+    t0: 'Она бегло говорила по-французски. (fließend Französisch)',
     t1: 'Sie',
     t2: 'konnte',
     t3: 'fließend',
@@ -562,7 +562,7 @@ const SlotDatakönnen = [
   },
 
   {
-    t0: 'Мы не могли сделать больше. (mehr)',
+    t0: 'Мы не могли сделать больше. (nicht mehr)',
     t1: 'Wir   ',
     t2: 'konnten',
     t3: 'nicht',
@@ -615,7 +615,7 @@ const SlotDatakönnen = [
   },
 
   {
-    t0: 'Ты сделал мне величайший подарок, на который никто другой не был способен.(größte Geschenk sonst niemand hätte)',
+    t0: 'Ты сделал мне величайший подарок, на который никто другой не был способен. (mir größte Geschenk sonst niemand hätte)',
     t1: 'Du',
     t2: 'hast',
     t3: 'mir',
@@ -634,7 +634,7 @@ const SlotDatakönnen = [
   },
 
   {
-    t0: 'Бьюсь об заклад, вы бы тоже не смогли этого сделать.(wette Ihr hättet)',
+    t0: 'Бьюсь об заклад, вы бы тоже не смогли этого сделать.(wette Ihr hättet es auch)',
     t1: 'Ich',
     t2: 'wette',
     t3: 'Ihr',
@@ -648,7 +648,7 @@ const SlotDatakönnen = [
   },
 
   {
-    t0: 'То, что я не мог сделать тогда, я должен сделать сейчас. (damals jetzt)',
+    t0: 'То, что я не мог сделать тогда, я должен сделать сейчас. (damals nicht  jetzt tun)',
     t1: 'Was',
     t2: 'ich',
     t3: 'damals',
@@ -668,7 +668,7 @@ const SlotDatakönnen = [
 ]
 const SlotDatadürfen = [
   {
-    t0: 'Поскольку мы не имеем права это хранить.(Da behalten)',
+    t0: 'Поскольку мы не имеем права это хранить. (Da behalten)',
     t1: 'Da',
     t2: 'wir',
     t3: 'es',
@@ -678,7 +678,7 @@ const SlotDatadürfen = [
     t7: '.',
   },
   {
-    t0: 'Вам не следует оставаться здесь.(bleiben)',
+    t0: 'Вам не следует оставаться здесь. (Hier nicht bleiben)',
     t1: 'Hier',
     t2: 'dürft',
     t3: 'ihr',
@@ -688,7 +688,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Ты никогда не должен терять надежду.(Hoffnung aufgeben)',
+    t0: 'Ты никогда не должен терять надежду. (Hoffnung nie aufgeben)',
     t1: 'Du',
     t2: 'darfst',
     t3: 'die',
@@ -699,7 +699,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Может ли у вашего спального мешка появиться новый владелец?(Schlafsack Besitzer)',
+    t0: 'Может ли у вашего спального мешка появиться новый владелец? (Schlafsack Besitzer)',
     t1: 'Darf',
     t2: 'dein',
     t3: 'Schlafsack',
@@ -711,7 +711,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Нам обоим нельзя быть друзьями. (beide Freunde)',
+    t0: 'Нам обоим нельзя быть друзьями. (beide keine Freunde)',
     t1: 'Wir',
     t2: 'beide',
     t3: 'dürfen',
@@ -722,7 +722,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Ваши руки не должны касаться друг друга. (Hände berühren)',
+    t0: 'Ваши руки не должны касаться друг друга. (Eure Hände berühren)',
     t1: 'Eure',
     t2: 'Hände',
     t3: 'dürfen',
@@ -733,7 +733,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Могу я пройти? (vorbei)',
+    t0: 'Могу я пройти? (bitte vorbei)',
     t1: 'Darf',
     t2: 'ich',
     t3: 'bitte',
@@ -742,7 +742,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Им не разрешено этого делать.()',
+    t0: 'Им не разрешено этого делать. (nicht)',
     t1: 'Das',
     t2: 'durften',
     t3: 'sie',
@@ -751,7 +751,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Режиссеру не разрешили это сделать. (Regisseur)',
+    t0: 'Режиссеру не разрешили это сделать. (Regisseur nicht)',
     t1: 'Das',
     t2: 'durfte',
     t3: 'der',
@@ -761,7 +761,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Нам вообще нельзя терять времени.(überhaupt verlieren)',
+    t0: 'Нам вообще нельзя терять времени. (überhaupt keine Zeit verlieren )',
     t1: 'Wir',
     t2: 'dürfen',
     t3: 'überhaupt',
@@ -772,7 +772,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Почему я тоже не могу этого сделать? ()',
+    t0: 'Почему я тоже не могу этого сделать? (Warum nicht auch)',
     t1: 'Warum',
     t2: 'darf',
     t3: 'ich',
@@ -783,7 +783,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'В бассейн без купальной шапочки вход запрещен. (Badehaube Schwimmbecken)',
+    t0: 'В бассейн без купальной шапочки вход запрещен. (Ohne Badehaube ins Schwimmbecken)',
     t1: 'Ohne',
     t2: 'Badehaube',
     t3: 'darfst',
@@ -807,7 +807,7 @@ const SlotDatadürfen = [
 ]
 const SlotDatasollen = [
   {
-    t0: 'В чем все это дело?(alles)',
+    t0: 'В чем все это дело? (Was alles)',
     t1: 'Was',
     t2: 'soll',
     t3: 'das',
@@ -816,7 +816,7 @@ const SlotDatasollen = [
 
   },
   {
-    t0: ' Она должна сесть в тюрьму пожизненно.(lebenslang Gefängnis)',
+    t0: ' Она должна сесть в тюрьму пожизненно. (lebenslang ins Gefängnis)',
     t1: 'Sie',
     t2: 'soll',
     t3: 'lebenslang',
@@ -834,7 +834,7 @@ const SlotDatasollen = [
     t6: '?',
 
   }, {
-    t0: 'Я же говорил тебе больше этого не делать.(doch gesagt mehr )',
+    t0: 'Я же говорил тебе больше этого не делать. (dir doch gesagt mehr )',
     t1: 'Ich',
     t2: 'habe',
     t3: 'dir',
@@ -851,7 +851,7 @@ const SlotDatasollen = [
 
   },
   {
-    t0: 'Том должен проснуться.(wach sein)',
+    t0: 'Том должен проснуться. (wach sein)',
     t1: 'Tom',
     t2: 'sollte',
     t3: 'wach',
@@ -871,7 +871,7 @@ const SlotDatasollen = [
 
   },
   {
-    t0: 'Тому уже пора этим заниматься. (Mittlerweile Tom eigentlich fertig)',
+    t0: 'Тому уже пора этим заниматься. (Mittlerweile Tom eigentlich damit fertig)',
     t1: 'Mittlerweile',
     t2: 'sollte',
     t3: 'Tom',
@@ -883,7 +883,7 @@ const SlotDatasollen = [
 
   },
   {
-    t0: 'Тебе следует оставаться здесь до половины третьего. (halb hierbleiben)',
+    t0: 'Тебе следует оставаться здесь до половины третьего. (halb drei hierbleiben)',
     t1: 'Du',
     t2: 'sollst',
     t3: 'bis',
@@ -905,7 +905,7 @@ const SlotDatasollen = [
 
   },
   {
-    t0: 'Стоит ли нам для разнообразия пойти на греческий? (Abwechslung mal  Griechen)',
+    t0: 'Стоит ли нам для разнообразия пойти на греческий? (Abwechslung mal Griechen)',
     t1: 'Sollen',
     t2: 'wir',
     t3: 'zur',
@@ -916,7 +916,7 @@ const SlotDatasollen = [
     t8: '?',
 
   }, {
-    t0: 'Нам следует следить за этим.(Auge darauf )',
+    t0: 'Нам следует следить за этим.(ein Auge darauf )',
     t1: 'Wir',
     t2: 'sollten',
     t3: 'ein',
@@ -929,7 +929,7 @@ const SlotDatasollen = [
 ]
 const SlotDatawollen = [
   {
-    t0: 'Ты хочешь детей?(Kinder)',
+    t0: 'Ты хочешь детей? (Kinder)',
     t1: 'Willst',
     t2: 'du',
     t3: 'Kinder',
@@ -937,7 +937,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Я хотел больше.(mehr)',
+    t0: 'Я хотел больше. (mehr)',
     t1: 'Ich',
     t2: 'wollte',
     t3: 'mehr',
@@ -953,7 +953,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Кому горячего шоколада?(Schokolade)',
+    t0: 'Кому горячего шоколада? (Wer warme Schokolade)',
     t1: 'Wer',
     t2: 'will',
     t3: 'eine',
@@ -963,7 +963,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Мои адвокаты не хотели, чтобы я давал показания.(Rechtsanwälte aussage)',
+    t0: 'Мои адвокаты не хотели, чтобы я давал показания. (Rechtsanwälte aussage)',
     t1: 'Meine',
     t2: 'Rechtsanwälte',
     t3: 'wollten',
@@ -976,7 +976,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Хочешь знать, чего люди хотят больше обычного?(Leute sonst)',
+    t0: 'Хочешь знать, чего люди хотят больше обычного? (Leute mehr als sonst)',
     t1: 'Wollen',
     t2: 'Sie',
     t3: 'wissen',
@@ -991,7 +991,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Я просто подумал, что ты захочешь этого.(würdest)',
+    t0: 'Я просто подумал, что ты захочешь этого. (nur würdest)',
     t1: 'Ich',
     t2: 'dachte',
     t3: 'nur',
@@ -1018,7 +1018,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Запомни, ты сам этого хотел.(Vergiss )',
+    t0: 'Запомни, ты сам этого хотел.(Vergiss nicht)',
     t1: 'Vergiss',
     t2: 'nicht',
     t3: ',',
@@ -1031,7 +1031,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Вы оба хотели, чтобы я оставался в стороне - и я остался. (raushalte)',
+    t0: 'Вы оба хотели, чтобы я оставался в стороне - и я остался. (beide mich raushalte)',
     t1: 'Ihr ',
     t2: 'beide',
     t3: 'habt',
@@ -1050,7 +1050,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Почему вы от меня отказались?(Wieso ihr)',
+    t0: 'Почему вы от меня отказались? (Wieso ihr mich nicht)',
     t1: 'Wieso',
     t2: 'habt',
     t3: 'ihr',
@@ -1061,7 +1061,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Не думаю, что я хотела кого-то так сильно.(jemanden sehr)',
+    t0: 'Не думаю, что я хотела кого-то так сильно. (nie jemanden sehr)',
     t1: 'Ich',
     t2: 'glaube',
     t3: ',',
@@ -1077,7 +1077,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Я это знаю, потому что однажды получил то, чего очень сильно хотел.(Einzige wirklich )',
+    t0: 'Я это знаю, потому что однажды получил то, чего очень сильно хотел. (Einzige je wirklich )',
     t1: 'Es',
     t2: 'war',
     t3: 'das',
@@ -1096,7 +1096,7 @@ const SlotDatawollen = [
 ]
 const SlotDatamögen = [
   {
-    t0: 'Я думал, тебе нравится, когда я так делаю.(mache)',
+    t0: 'Я думал, тебе нравится, когда я так делаю. (mache)',
     t1: 'Ich',
     t2: 'dachte',
     t3: 'du',
@@ -1111,7 +1111,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Можешь забрать их все, если хочешь.(alle)',
+    t0: 'Можешь забрать их все, если хочешь. (Wenn du alle)',
     t1: 'Wenn',
     t2: 'du',
     t3: 'magst',
@@ -1125,7 +1125,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Вы можете считать, что я слишком зол.(denken wütend)',
+    t0: 'Вы можете считать, что я слишком зол. (Ihr denken sei zu wütend)',
     t1: 'Ihr',
     t2: 'mögt',
     t3: 'denken',
@@ -1138,7 +1138,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Надеюсь, тайская кухня вам нравится.(hoffe Thai)',
+    t0: 'Надеюсь, тайская кухня вам нравится. (hoffe Thai)',
     t1: 'Ich',
     t2: 'hoffe',
     t3: ',',
@@ -1149,7 +1149,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Я знаю, что вы любите.()',
+    t0: 'Я знаю, что вы любите. ()',
     t1: 'Ich',
     t2: 'weiß',
     t3: ',',
@@ -1160,7 +1160,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Да, послушайте, она мне нравилась.(zu )',
+    t0: 'Да, послушайте, она мне нравилась. (Ja hör zu )',
     t1: 'Ja',
     t2: ',',
     t3: 'hör',
@@ -1173,7 +1173,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Меня саму это ужасно удивило, но мне нравились эти девчонки.(total überrascht Mädels)',
+    t0: 'Меня саму это ужасно удивило, но мне нравились эти девчонки. (total überrascht diese Mädels)',
     t1: 'Es',
     t2: 'hat',
     t3: 'mich',
@@ -1190,7 +1190,7 @@ const SlotDatamögen = [
   },
 
   {
-    t0: 'Да, но мне понравилась эта голубая рубашка.(Hemd)',
+    t0: 'Да, но мне понравилась эта голубая рубашка. (blaue Hemd)',
     t1: 'Ja',
     t2: ',',
     t3: 'aber',
@@ -1204,7 +1204,7 @@ const SlotDatamögen = [
   },
 
   {
-    t0: 'Девушка, которая мне понравилась, издевается надо мной.(Mädchen schikaniert mich)',
+    t0: 'Девушка, которая мне понравилась, издевается надо мной. (Mädchen schikaniert mich)',
     t1: 'Ein',
     t2: 'Mädchen',
     t3: ',',
@@ -1218,7 +1218,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Какая музыка вам нравится?(Art Musik Sie)',
+    t0: 'Какая музыка вам нравится? (Art Musik Sie)',
     t1: 'Welche',
     t2: 'Art',
     t3: 'von',
@@ -1231,7 +1231,7 @@ const SlotDatamögen = [
 ]
 const SlotDatamöchten = [
   {
-    t0: 'Она спрашивает, не хотите ли вы пойти со мной.(fragt mitkommen)',
+    t0: 'Она спрашивает, не хотите ли вы пойти со мной. (fragt mitkommen)',
     t1: 'Sie     ',
     t2: 'fragt',
     t3: ',',
@@ -1242,7 +1242,7 @@ const SlotDatamöchten = [
     t8: '.',
 
   }, {
-    t0: 'С Вашего разрешения мы хотели бы Вас угостить.(Erlaubnis behandeln)',
+    t0: 'С Вашего разрешения мы хотели бы Вас угостить. (Eurer Erlaubnis Euch behandeln)',
     t1: 'Mit',
     t2: 'Eurer',
     t3: 'Erlaubnis',
@@ -1253,7 +1253,7 @@ const SlotDatamöchten = [
     t8: '.',
 
   }, {
-    t0: 'Ты занят и не хочешь, чтобы к тебе обращались в данный момент.(beschäftigt derzeit gestört)',
+    t0: 'Ты занят и не хочешь, чтобы к тебе обращались в данный момент. (beschäftigt derzeit nicht gestört)',
     t1: 'Du',
     t2: 'bist',
     t3: 'beschäftigt',
@@ -1266,7 +1266,7 @@ const SlotDatamöchten = [
     t10: '.',
 
   }, {
-    t0: 'Принесите все книги, какие захотите, к прилавку.(Bücher Theke)',
+    t0: 'Принесите все книги, какие захотите, к прилавку. (alle Bücher an die Theke)',
     t1: 'Bringt',
     t2: 'alle',
     t3: 'Bücher',
@@ -1281,7 +1281,7 @@ const SlotDatamöchten = [
     t12: '.',
 
   }, {
-    t0: 'Вы можете идти, если хотите.()',
+    t0: 'Вы можете идти, если хотите. (gehen)',
     t1: 'Ihr',
     t2: 'könnt',
     t3: 'gehen',
@@ -1291,8 +1291,10 @@ const SlotDatamöchten = [
     t7: 'möchtet',
     t8: '.',
 
-  }, {
-    t0: 'Если вы хотите, чтобы они следовали за вами, вы должны стать частью их мира.(ihr folgen Teil Welt)',
+  },
+
+  {
+    t0: 'Если вы хотите, чтобы они следовали за вами, вы должны стать частью их мира. (ihr euch folgen Teil Welt)',
     t1: 'Wenn',
     t2: 'ihr',
     t3: 'möchtet',
@@ -1302,14 +1304,16 @@ const SlotDatamöchten = [
     t7: 'folgen',
     t8: ',',
     t9: 'müsst',
-    t10: 'Ihr',
+    t10: 'ihr',
     t11: 'Teil',
     t12: 'ihrer',
     t13: 'Welt',
     t14: 'werden',
     t15: '.',
-  }, {
-    t0: 'После прошлой ночи, я уверен, вам не захочется задерживаться. (Nach Nacht überzeugt verweilen)',
+  },
+
+  {
+    t0: 'После прошлой ночи, я уверен, вам не захочется задерживаться. (Nach letzter Nacht überzeugt Ihr verweilen)',
     t1: 'Nach',
     t2: 'letzter',
     t3: 'Nacht',
@@ -1323,8 +1327,10 @@ const SlotDatamöchten = [
     t11: 'nicht',
     t12: 'verweilen',
     t13: '.',
-  }, {
-    t0: 'Господа, не могли бы вы поделиться чем-нибудь с классом?(Herren Klasse)',
+  },
+
+  {
+    t0: 'Господа, не могли бы вы поделиться чем-нибудь с классом? (Meine Herren Klasse mitteilen)',
     t1: 'Meine',
     t2: 'Herren',
     t3: ',',
@@ -1336,8 +1342,10 @@ const SlotDatamöchten = [
     t9: 'mitteilen',
     t10: '?',
 
-  }, {
-    t0: 'Может быть, вы хотите, чтобы я думал именно так.(Vielleicht ihr genau denke)',
+  },
+
+  {
+    t0: 'Может быть, вы хотите, чтобы я думал именно так. (Vielleicht ihr genau denke)',
     t1: 'Vielleicht',
     t2: 'möchtet',
     t3: 'ihr',

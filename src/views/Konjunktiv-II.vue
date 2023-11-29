@@ -114,7 +114,7 @@ const FuturII = [
 // ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 const SlotGegenwart = [
   {
-    t0: 'Если бы я только жил во дворце. (doch nur Palast)',
+    t0: 'Если бы я только жил во дворце. (doch nur Palast wohnen)',
     t1: 'Würde',
     t2: 'ich',
     t3: 'doch',
@@ -127,7 +127,7 @@ const SlotGegenwart = [
 
   },
   {
-    t0: 'Я бы с удовольствием бы поехать в Зальцбург на выходных. (Wochenende gern Salzburg)',
+    t0: 'Я бы с удовольствием бы поехать в Зальцбург на выходных. (Wochenende so gern Salzburg)',
     t1: 'Ich',
     t2: 'würde',
     t3: 'am',
@@ -200,7 +200,7 @@ const SlotGegenwart = [
     t6: '?',
 
   }, {
-    t0: 'Если бы я зарабатывал достаточно денег, то купил бы себе новый мобильный телефон. (genug Geld verdienen neues Handy)',
+    t0: 'Если бы я зарабатывал достаточно денег, то купил бы себе новый мобильный телефон. (genug Geld verdienen neues Handy kaufen)',
     t1: 'Wenn',
     t2: 'ich',
     t3: 'genug',
@@ -279,7 +279,7 @@ const SlotVergangenheit = [
     t9: '.',
   },
   {
-    t0: 'Мне бы хотелось прийти вчера на курсы немецкого языка. (gern zum Deutschkurs)',
+    t0: 'Мне бы хотелось прийти вчера на курсы немецкого языка. (gern zum Deutschkurs gekommen)',
     t1: 'Ich',
     t2: 'wäre',
     t3: 'gestern',
@@ -309,7 +309,7 @@ const SlotVergangenheit = [
 
   },
   {
-    t0: 'Если бы он чаще выходил на прогулки, он бы чувствовал себя лучше. (spazieren besser gefühlt)',
+    t0: 'Если бы он чаще выходил на прогулки, он бы чувствовал себя лучше. (öfter spazieren besser gefühlt)',
     t1: 'Wenn',
     t2: 'er',
     t3: 'öfter',
@@ -391,7 +391,7 @@ const SlotVergangenheit = [
     t12: '.',
   },
   {
-    t0: 'Если бы она поехала домой, она бы написала нам об этом. (Hause darüber)',
+    t0: 'Если бы она поехала домой, она бы написала нам об этом. (Hause gefahren darüber geschrieben)',
     t1: 'Wenn',
     t2: 'sie',
     t3: 'nach',
@@ -407,7 +407,7 @@ const SlotVergangenheit = [
     t13: '.',
   },
   {
-    t0: 'Если бы она встретила его вчера, он бы рассказал ей эту историю. (gestern gestern Geschichte erzählt)',
+    t0: 'Если бы она встретила его вчера, он бы рассказал ей эту историю. ( gestern getroffen Geschichte erzählt)',
     t1: 'Wenn',
     t2: 'sie',
     t3: 'ihn',
@@ -424,7 +424,7 @@ const SlotVergangenheit = [
     t14: '.',
   },
   {
-    t0: 'Если бы ты выучил правила, ты бы лучше написал классную работу. (Regeln besser die Klassenarbeit)',
+    t0: 'Если бы ты выучил правила, ты бы лучше написал классную работу. (Regeln besser die Klassenarbeit geschrieben)',
     t1: 'Wenn',
     t2: 'du',
     t3: 'die',
@@ -441,7 +441,7 @@ const SlotVergangenheit = [
     t14: '.',
   },
   {
-    t0: 'Если бы вы использовали этот рецепт, вы бы приготовили вкусный суп на обед. (Rezept verwendet leckere Suppe )',
+    t0: 'Если бы вы использовали этот рецепт, вы бы приготовили вкусный суп на обед. (Rezept verwendet leckere Suppe Mittagessen)',
     t1: 'Wenn',
     t2: 'du',
     t3: 'dieses',
@@ -459,7 +459,7 @@ const SlotVergangenheit = [
     t15: '.',
   },
   {
-    t0: 'Если бы я встал раньше, я бы не опоздал на автобус! (früher Bus verpasst)',
+    t0: 'Если бы я встал раньше, я бы не опоздал на автобус! (früher aufgestanden Bus verpasst)',
     t1: 'Wäre',
     t2: 'ich',
     t3: 'früher',
@@ -474,7 +474,7 @@ const SlotVergangenheit = [
     t12: '!',
   },
   {
-    t0: 'Если бы я только больше тренировался, экзамен прошел бы для меня легче. (doch Prüfung einfacher verlaufen)',
+    t0: 'Если бы я только больше тренировался, экзамен прошел бы для меня легче. (doch nur mehr Prüfung einfacher verlaufen)',
     t1: 'Hätte',
     t2: 'ich',
     t3: 'doch',
@@ -521,7 +521,7 @@ const SlotVergangenheit = [
     t11: '.',
   },
   {
-    t0: 'Мы бы уже прибыли, если бы ты поторопился. (angekommen mehr beeilt)',
+    t0: 'Мы бы уже прибыли, если бы ты поторопился. (jetzt schon angekommen mehr beeilt)',
     t1: 'Wir',
     t2: 'wären',
     t3: 'jetzt',
@@ -537,7 +537,7 @@ const SlotVergangenheit = [
     t13: '.',
   },
   {
-    t0: 'Я бы пошел в парк, если бы не шел дождь. (Park geregnet)',
+    t0: 'Я бы пошел в парк, если бы не шел дождь. (Park gegangen geregnet)',
     t1: 'Ich',
     t2: 'wäre',
     t3: 'in',
@@ -554,7 +554,7 @@ const SlotVergangenheit = [
 
   },
   {
-    t0: 'Я бы пробежал марафон, если бы подготовился. (Marathon vorbereitet)',
+    t0: 'Я бы пробежал марафон, если бы подготовился. (Marathon gelaufen vorbereitet)',
     t1: 'Ich',
     t2: 'wäre',
     t3: 'den',
@@ -569,7 +569,7 @@ const SlotVergangenheit = [
     t12: '.',
   },
   {
-    t0: 'Я бы прыгнул с 10-метровой вышки, если бы меньше боялся. (10-Meter-Turm weniger Angst)',
+    t0: 'Я бы прыгнул с 10-метровой вышки, если бы меньше боялся. (10-Meter-Turm gesprungen weniger Angst)',
     t1: 'Ich',
     t2: 'wäre',
     t3: 'vom',
@@ -587,7 +587,7 @@ const SlotVergangenheit = [
 ]
 const SlotFuturI = [
   {
-    t0: 'Если бы сумка была больше, в нее поместилось бы больше бутылок. (Tasche Flaschen hineinpassen)',
+    t0: 'Если бы сумка была больше, в нее поместилось бы больше бутылок. (Tasche größer Flaschen hineinpassen)',
     t1: 'Wenn',
     t2: 'die',
     t3: 'Tasche',
@@ -662,7 +662,7 @@ const FuturIIPassiv = [
 // ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 const SlotGegenwartPassiv = [
   {
-    t0: 'Если бы дерево было левее, в нашем саду не было бы так много листьев. (Baum weiter Blätter Garten)',
+    t0: 'Если бы дерево было левее, в нашем саду не было бы так много листьев. (Baum weiter so viele Blätter Garten)',
     t1: 'Wenn',
     t2: 'der',
     t3: 'Baum',
@@ -681,7 +681,7 @@ const SlotGegenwartPassiv = [
     t16: 'Garten',
     t17: '.',
   }, {
-    t0: 'Учитель будет спрошен учеником. (Lehrer Schüler)',
+    t0: 'Учитель будет спрошен учеником. (Lehrer Schüler gefragt)',
     t1: 'Der',
     t2: 'Lehrer',
     t3: 'würde',
@@ -694,7 +694,7 @@ const SlotGegenwartPassiv = [
 ]
 const SlotVergangenheitPassiv = [
   {
-    t0: 'Учитель был бы опрошен учеником.(Lehrer Schüler)',
+    t0: 'Учитель был бы опрошен учеником.(Lehrer Schüler gefragt)',
     t1: 'Der',
     t2: 'Lehrer',
     t3: 'wäre',
@@ -709,7 +709,7 @@ const SlotVergangenheitPassiv = [
 ]
 const SlotFuturIPassiv = [
   {
-    t0: 'Учитель будет спрошен учеником. (Lehrer Schüler)',
+    t0: 'Учитель будет спрошен учеником. (Lehrer Schüler gefragt)',
     t1: 'Der',
     t2: 'Lehrer',
     t3: 'würde',
@@ -724,7 +724,7 @@ const SlotFuturIPassiv = [
 ]
 const SlotFuturIIPassiv = [
   {
-    t0: 'Учитель будет окончательно спрошен учеником. (Lehrer Schüler)',
+    t0: 'Учитель будет окончательно спрошен учеником. (Lehrer Schüler gefragt)',
     t1: 'Der',
     t2: 'Lehrer',
     t3: 'würde',
@@ -811,7 +811,7 @@ const Verbformen = [
 ]
 const SlotVerbformen = [
   {
-    t0: 'Я хотел бы узнать больше об искусстве. (über Kunst)',
+    t0: 'Я хотел бы узнать больше об искусстве. (gern über Kunst)',
     t1: 'Ich',
     t2: 'wüsste',
     t3: 'gern',
@@ -822,7 +822,7 @@ const SlotVerbformen = [
 
   },
   {
-    t0: 'На самом деле автобус должен был прийти в 10 утра. (Eigentlich )',
+    t0: 'На самом деле автобус должен был прийти в 10 утра. (käme Eigentlich )',
     t1: 'Eigentlich',
     t2: 'käme',
     t3: 'der',
@@ -834,7 +834,7 @@ const SlotVerbformen = [
 
   },
   {
-    t0: 'Мне также подойдет встреча в среду. (Termin Mittwoch)',
+    t0: 'Мне также подойдет встреча в среду. (ginge auch Termin am Mittwoch)',
     t1: 'Für',
     t2: 'mich',
     t3: 'ginge',
@@ -847,7 +847,7 @@ const SlotVerbformen = [
 
   },
   {
-    t0: 'Если бы вы писали аккуратнее, то я бы лучше прочитал ваш текст. (ordentlicher ordentlicher Text besser)',
+    t0: 'Если бы вы писали аккуратнее, то я бы лучше прочитал ваш текст. (ordentlicher schriebest läse Text besser)',
     t1: 'Wenn',
     t2: 'du',
     t3: 'ordentlicher',
@@ -961,7 +961,7 @@ const VergangenheitModalverben = [
 // ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 const SlotModalverben = [
   {
-    t0: 'Затем я спросил, можно ли мне позвонить, и позвонил в Скотланд-Ярд. (rief Scotland Yard)',
+    t0: 'Затем я спросил, можно ли мне позвонить, и позвонил в Скотланд-Ярд. (fragte ob telefonieren rief Scotland Yard an)',
     t1: 'Dann',
     t2: 'fragte',
     t3: 'ich',
@@ -1001,7 +1001,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вероятно, у вас много общего. (gemeinsam)',
+    t0: 'Вероятно, у вас много общего. (vieles gemeinsam)',
     t1: 'Ihr',
     t2: 'dürftet',
     t3: 'vieles',
@@ -1011,7 +1011,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вы думаете, что можете обмануть. (ihr)',
+    t0: 'Вы думаете, что можете обмануть. (ihr glaubt betrügen)',
     t1: 'Ihr',
     t2: 'glaubt',
     t3: ',',
@@ -1022,7 +1022,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Я сказал, что ты можешь прийти сюда. (herkommen)',
+    t0: 'Я сказал, что ты можешь прийти сюда. (sagte hier herkommen)',
     t1: 'Ich',
     t2: 'sagte',
     t3: ',',
@@ -1043,7 +1043,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вы могли бы сделать что-то подобное. (so etwas)',
+    t0: 'Вы могли бы сделать что-то подобное. (so etwas machen)',
     t1: 'Ihr',
     t2: 'könntet',
     t3: 'so',
@@ -1053,7 +1053,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вы могли бы стать друзьями. (Freundinnen)',
+    t0: 'Вы могли бы стать друзьями. (Ihr Freundinnen)',
     t1: 'Ihr',
     t2: 'könntet',
     t3: 'Freundinnen',
@@ -1062,7 +1062,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вероятно, она думает, что это мог быть человек. (wohl menschlich)',
+    t0: 'Вероятно, она думает, что это мог быть человек. (meint wohl menschlich)',
     t1: 'Sie',
     t2: 'meint',
     t3: 'wohl',
@@ -1088,7 +1088,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Работайте над чем хотите. (ihr)',
+    t0: 'Работайте над чем хотите. (auch immer ihr)',
     t1: 'Arbeitet',
     t2: 'an',
     t3: 'was',
@@ -1100,7 +1100,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Если хочешь, у нас есть немного сосисок. (ein paar Würstchen ihr)',
+    t0: 'Если хочешь, у нас есть немного сосисок. (Wir ein paar Würstchen ihr)',
     t1: 'Wir',
     t2: 'haben',
     t3: 'ein',
@@ -1133,7 +1133,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Им придется посадить тебя в тележку. (Karre legen)',
+    t0: 'Им придется посадить тебя в тележку. (dich Karre legen)',
     t1: 'Sie',
     t2: 'müssten',
     t3: 'dich',
@@ -1145,7 +1145,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Им придется время от времени приезжать на Марс. (gelegentlich Mars)',
+    t0: 'Им придется время от времени приезжать на Марс. (Sie gelegentlich Mars)',
     t1: 'Sie',
     t2: 'müssten',
     t3: 'gelegentlich',
@@ -1169,7 +1169,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Ничего не произошло так, как должно было. (Nichts passiert)',
+    t0: 'Ничего не произошло так, как должно было. (Nichts passiert wie es)',
     t1: 'Nichts',
     t2: 'ist',
     t3: 'passiert',
@@ -1193,7 +1193,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Я думал, вы хотели настоящего ребенка. (echtes Kind)',
+    t0: 'Я думал, вы хотели настоящего ребенка. (dachte echtes Kind)',
     t1: 'Ich',
     t2: 'dachte',
     t3: ',',
@@ -1222,7 +1222,7 @@ const SlotModalverben = [
 ]
 const SlotVergangenheitModalverben = [
   {
-    t0: 'Ему не следовало так врываться. (reinplatzen)',
+    t0: 'Ему не следовало так врываться. (nicht so reinplatzen)',
     t1: 'Er',
     t2: 'hätte',
     t3: 'nicht',
@@ -1267,7 +1267,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Тебе не следовало приходить сюда. (herkommen)',
+    t0: 'Тебе не следовало приходить сюда. (nicht herkommen)',
     t1: 'Ihr',
     t2: 'hättet',
     t3: 'nicht',
@@ -1276,7 +1276,7 @@ const SlotVergangenheitModalverben = [
     t6: '.',
   },
   {
-    t0: 'Но ты мог бы уйти.()',
+    t0: 'Но ты мог бы уйти.(gehen)',
     t1: 'Aber.',
     t2: 'du',
     t3: 'hättest',
@@ -1286,7 +1286,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Или ты мог бы пойти с ним. ()',
+    t0: 'Или ты мог бы пойти с ним. (Oder ihm gehen)',
     t1: 'Oder',
     t2: 'du',
     t3: 'hättest',
@@ -1298,7 +1298,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: ' Человек, мне бы очень хотелось побывать там. (Mann dabei sein)',
+    t0: ' Человек, мне бы очень хотелось побывать там. (Mann,  dabei sein)',
     t1: 'Mann',
     t2: ',',
     t3: 'da',
@@ -1311,7 +1311,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Все могло пойти не так. (schief)',
+    t0: 'Все могло пойти не так. (schief gehen)',
     t1: 'Es',
     t2: 'hätte',
     t3: 'auch',
@@ -1322,7 +1322,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Это должно было быть здесь давно. (längst)',
+    t0: 'Это должно было быть здесь давно. (längst hier sein)',
     t1: 'Es',
     t2: 'hätte',
     t3: 'längst',
@@ -1333,7 +1333,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Это не должно было так закончиться. (enden)',
+    t0: 'Это не должно было так закончиться. (nicht enden)',
     t1: 'Es',
     t2: 'hätte',
     t3: 'nicht',
@@ -1343,7 +1343,7 @@ const SlotVergangenheitModalverben = [
     t7: '.',
   },
   {
-    t0: 'Как будто ты хотел попасть в тюрьму. (Gefängnis)',
+    t0: 'Как будто ты хотел попасть в тюрьму. (Als ins Gefängnis)',
     t1: 'Als',
     t2: 'hättest',
     t3: 'du',
@@ -1354,7 +1354,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Делай все так, как ты хотел, чтобы они делали. (Dinge machen)',
+    t0: 'Делай все так, как ты хотел, чтобы они делали. (Mach Dinge so machen)',
     t1: 'Mach',
     t2: 'die',
     t3: 'Dinge',
@@ -1369,7 +1369,7 @@ const SlotVergangenheitModalverben = [
     t12: '.',
   },
   {
-    t0: 'Если бы мне разрешили работать в ресторане, я бы заработал денег. (Restaurant Geld verdienen)',
+    t0: 'Если бы мне разрешили работать в ресторане, я бы заработал денег. (Restaurant arbeiten Geld verdienen)',
     t1: 'Wenn',
     t2: 'ich',
     t3: 'im',
@@ -1385,7 +1385,7 @@ const SlotVergangenheitModalverben = [
     t12: '.',
   },
   {
-    t0: 'Если бы я умел плавать, я бы пошел в открытый бассейн. (schwimmen Freibad)',
+    t0: 'Если бы я умел плавать, я бы пошел в открытый бассейн. (schwimmen ins Freibad)',
     t1: 'Wenn',
     t2: 'ich',
     t3: 'hätte',
@@ -1607,7 +1607,7 @@ const ModalverbenFuturIIPassiv = [
 
 const SlotModalverbenGegenwartPassiv = [
   {
-    t0: 'Учитель должен быть опрошен учеником. (Lehrer Schüler)',
+    t0: 'Учитель должен быть опрошен учеником. (Lehrer von Schüler gefragt)',
     t1: 'Der',
     t2: 'Lehrer',
     t3: 'müsste',
@@ -1620,7 +1620,7 @@ const SlotModalverbenGegenwartPassiv = [
 
   },
   {
-    t0: 'меня следует спросить ()',
+    t0: 'меня следует спросить (gefragt)',
     t1: 'ich',
     t2: 'müsste',
     t3: 'gefragt',
@@ -1647,7 +1647,7 @@ const SlotModalverbenGegenwartPassiv = [
 ]
 const SlotModalverbenVergangenheitPassiv = [
   {
-    t0: 'Учитель должен был быть опрошенным учеником. (Lehrer Schüler gefragt)',
+    t0: 'Учитель должен был быть опрошенным учеником. (Lehrer von Schüler gefragt)',
     t1: 'Der',
     t2: 'Lehrer',
     t3: 'hätte',

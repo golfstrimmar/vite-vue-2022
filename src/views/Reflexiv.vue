@@ -81,7 +81,7 @@ const SlotDataReflexiv = [
   },
 
   {
-    t0: 'Том и Альберт ссорятся. (Albert streiten)',
+    t0: 'Том и Альберт ссорятся. (Tom Albert streiten)',
     t1: 'Tom',
     t2: 'und',
     t3: 'Albert',
@@ -120,7 +120,7 @@ const SlotDataReflexiv = [
   },
 
   {
-    t0: 'Я надеваю теплый свитер. (Pullover)',
+    t0: 'Я надеваю теплый свитер. (warmen Pullover)',
     t1: 'Ich',
     t2: 'ziehe',
     t3: 'mir',
@@ -155,7 +155,7 @@ const SlotDataReflexiv = [
   },
 
   {
-    t0: 'В детстве я всегда прятался от Санта-Клауса. (Weihnachtmann versteckt)',
+    t0: 'В детстве я всегда прятался от Санта-Клауса. (Kind Weihnachtmann versteckt)',
     t1: 'Als',
     t2: 'Kind',
     t3: 'habe',
@@ -170,7 +170,7 @@ const SlotDataReflexiv = [
   },
 
   {
-    t0: 'Когда ты сможешь запомнить цифры? (Zahlen merken)',
+    t0: 'Когда ты сможешь запомнить цифры? (uns mal Zahlen merken)',
     t1: 'Wann',
     t2: 'kannst',
     t3: 'du',
@@ -251,7 +251,7 @@ const SlotDataReflexiv = [
   },
 
   {
-    t0: 'Ты можешь себе представить, что когда-нибудь мы увидим на улицах только автомобили без водителей ? (vorstellen Autos Fahrer Straßen werden)',
+    t0: 'Ты можешь себе представить, что когда-нибудь мы увидим на улицах только автомобили без водителей ? (Kannst vorstellen mal nur noch Autos Fahrer Straßen werden)',
     t1: 'Kannst',
     t2: 'du',
     t3: 'dir',

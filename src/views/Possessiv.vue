@@ -392,7 +392,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Это Кристина и ее сестра.(Christina Schwester)',
+    t0: 'Это Кристина и ее сестра. (Christina Schwester)',
     t1: 'Das',
     t2: 'sind',
     t3: 'Christina',
@@ -404,7 +404,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Ты забыл свою сумку.()',
+    t0: 'Ты забыл свою сумку. (Tasche)',
     t1: 'Du',
     t2: 'hast',
     t3: 'deine',
@@ -415,7 +415,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Она разговаривает со своей учительницей.(Lehrerin )',
+    t0: 'Она разговаривает со своей учительницей. (Lehrerin )',
     t1: 'Sie',
     t2: 'spricht',
     t3: 'mit',
@@ -427,7 +427,7 @@ const SlotDataPersonal = [
 
 
   {
-    t0: 'Ты тоже даришь своей девушке кусочек торта ?(Gibst Stück Kuchen)',
+    t0: 'Ты тоже даришь своей девушке кусочек торта ? (Freundin Gibst Stück Kuchen)',
     t1: 'Gibst',
     t2: 'du',
     t3: 'deiner',
@@ -441,7 +441,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Я благодарю нашего учителя немецкого языка!(Deutschlehrer)',
+    t0: 'Я благодарю нашего учителя немецкого языка! (Deutschlehrer)',
     t1: 'Ich',
     t2: 'danke',
     t3: 'unserem',
@@ -451,7 +451,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Мы поздравляем нашу маму с Днем матери.(gratulieren Muttertag)',
+    t0: 'Мы поздравляем нашу маму с Днем матери. (gratulieren Muttertag)',
     t1: 'Wir',
     t2: 'gratulieren',
     t3: 'unserer',
@@ -463,7 +463,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Джулиан помогает своему другу Андреасу.(Julian hilft Andreas)',
+    t0: 'Джулиан помогает своему другу Андреасу. (Julian hilft Andreas)',
     t1: 'Julian',
     t2: 'hilft',
     t3: 'seinem',
@@ -474,7 +474,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Катрин помогает своей подруге Саре.(Katrin Sarah)',
+    t0: 'Катрин помогает своей подруге Саре. (Katrin Freundin Sarah)',
     t1: 'Katrin',
     t2: 'hilft',
     t3: 'ihrer',
@@ -485,7 +485,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Студенты дают домашнее задание своим учителям немецкого языка.(Schüler Deutschlehrer Hausaufgaben)',
+    t0: 'Студенты дают домашнее задание своим учителям немецкого языка. (Schüler Deutschlehrer Hausaufgaben)',
     t1: 'Die',
     t2: 'Schüler',
     t3: 'geben',
@@ -498,7 +498,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Миссис Кох дает своим детям слишком много сладостей.(Koch Süßigkeiten)',
+    t0: 'Миссис Кох дает своим детям слишком много сладостей. (Koch Süßigkeiten)',
     t1: 'Frau',
     t2: 'Koch',
     t3: 'gibt',
@@ -513,24 +513,21 @@ const SlotDataPersonal = [
 
 
   {
-    t0: 'Кому ты доверяешь больше ? Его (его) или ее (ее) слова ?(vertraust mehr Worten)',
+    t0: 'Кому ты доверяешь больше ? Его  или ее  слова ?(vertraust mehr Worten)',
     t1: 'Wem',
     t2: 'vertraust',
     t3: 'du',
     t4: 'mehr',
     t5: '?',
     t6: 'Seinen',
-    t7: '(er)',
-    t8: 'oder',
-    t9: 'ihren',
-    t10: '(sie)',
-    t11: 'Worten',
-    t12: '?',
-
+    t7: 'oder',
+    t8: 'ihren',
+    t9: 'Worten',
+    t10: '?',
   },
 
   {
-    t0: 'Вы должны научить своих детей лучшим манерам.(solltet Manieren beibringen)',
+    t0: 'Вы должны научить своих детей лучшим манерам. (solltet euren Kindern bessere Manieren beibringen)',
     t1: 'Ihr',
     t2: 'solltet',
     t3: 'euren',
@@ -543,7 +540,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Она снова и снова прощала своего мужа.(verziehen)',
+    t0: 'Она снова и снова прощала своего мужа. (Mann wieder verziehen)',
     t1: 'Sie',
     t2: 'hat',
     t3: 'ihrem',
@@ -556,7 +553,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Я не верю ни одному Его слову.(vertraue )',
+    t0: 'Я не верю ни одному Его слову. ( Wort vertraue )',
     t1: 'Seinem',
     t2: 'Wort',
     t3: 'vertraue',
@@ -567,7 +564,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Не мог бы ты, пожалуйста, вымыть руки ?(Könntest Hände waschen)',
+    t0: 'Не мог бы ты, пожалуйста, вымыть руки ? (Könntest bitte Hände waschen)',
     t1: 'Könntest',
     t2: 'du',
     t3: 'bitte',
@@ -579,7 +576,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Я увольняю человека, чью работу завтра не найду на своем столе.(Schreibtisch finde entlasse)',
+    t0: 'Я увольняю человека, чью работу завтра не найду на своем столе. (Denjenigen Arbeit morgen Schreibtisch finde entlasse)',
     t1: 'Denjenigen',
     t2: ',',
     t3: 'dessen',
@@ -599,7 +596,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Он никогда бы ничего не сделал со своей собакой.(Hund antun)',
+    t0: 'Он никогда бы ничего не сделал со своей собакой. (Hund niemals etwas antun)',
     t1: 'Seinem',
     t2: 'Hund',
     t3: 'würde',
@@ -612,7 +609,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Не делай этого! Машина принадлежит моему работодателю.(Tu Auto Arbeitgeber)',
+    t0: 'Не делай этого! Машина принадлежит моему работодателю. (Tu Auto Arbeitgeber)',
     t1: 'Tu',
     t2: 'das',
     t3: 'nicht',
@@ -627,7 +624,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Ваш брат действительно работает в Японии?(Arbeitet Japan)',
+    t0: 'Ваш брат действительно работает в Японии? (Arbeitet Bruder wirklich Japan)',
     t1: 'Arbeitet',
     t2: 'ihr',
     t3: 'Bruder',
@@ -639,7 +636,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Где на самом деле работает Ваш брат?(eigentlich)',
+    t0: 'Где на самом деле работает Ваш брат? (Ihr Bruder eigentlich)',
     t1: 'Wo',
     t2: 'arbeitet',
     t3: 'Ihr',
@@ -650,7 +647,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Чья это сумка? Марк, это твоя?(Mark )',
+    t0: 'Чья это сумка? Марк, это твоя? (Mark )',
     t1: 'Wessen',
     t2: 'Tasche',
     t3: 'ist',
@@ -666,7 +663,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Моя машина до завтра в мастерской.Не мог бы ты одолжить мне сегодня вечером?(Werkstatt Könntest leihen)',
+    t0: 'Моя машина до завтра в мастерской. Не мог бы ты одолжить мне сегодня вечером свою? (morgen Werkstatt Könntest leihen)',
     t1: 'Mein',
     t2: 'Auto',
     t3: 'ist',
@@ -708,7 +705,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Это требует его мастерства, а не моего .(bedarf Könnens )',
+    t0: 'Это требует его мастерства, а не моего. (bedarf Könnens )',
     t1: 'Es',
     t2: 'bedarf',
     t3: 'seines',
@@ -721,7 +718,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Это книга вашего брата.(Bruders)',
+    t0: 'Это книга вашего брата. (Bruders)',
     t1: 'Das',
     t2: 'ist',
     t3: 'das',
@@ -732,7 +729,7 @@ const SlotDataPersonal = [
 
   },
   {
-    t0: 'У наших друзей есть для тебя сюрприз.(Überraschung)',
+    t0: 'У наших друзей есть для тебя сюрприз. (Freunde Überraschung)',
     t1: 'Unsere',
     t2: 'Freunde',
     t3: 'haben',
@@ -744,7 +741,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Ты имеешь в виду его отца? - Нет, я говорю о своем .(rede)',
+    t0: 'Ты имеешь в виду его отца? - Нет, я говорю о своем. (Vater rede)',
     t1: 'Meinst',
     t2: 'du',
     t3: 'seinen',
@@ -760,7 +757,7 @@ const SlotDataPersonal = [
 
   },
   {
-    t0: 'Здесь лежит мобильный телефон. Это твое?()',
+    t0: 'Здесь лежит мобильный телефон. Это твое? (Handy)',
     t1: 'Hier',
     t2: 'liegt',
     t3: 'ein',

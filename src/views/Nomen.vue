@@ -21,7 +21,7 @@ import Slot from '@/components/Slot.vue'
 
 const SlotDativ = [
   {
-    t0: 'Перед сложными контрактами следует остерегаться. (Vor Verträgen sollte man sich )',
+    t0: 'Перед сложными контрактами следует остерегаться. (Vor komplizierten Verträgen sollte man sich )',
     t1: 'Vor',
     t2: 'komplizierten',
     t3: 'Verträgen',
@@ -34,7 +34,7 @@ const SlotDativ = [
     t10: '.',
 
   }, {
-    t0: 'Важно также проявлять уважение к конкурентам.(Konkurrenz )',
+    t0: 'Важно также проявлять уважение к конкурентам. (Konkurrenz Achtung entgegenzubringen)',
     t1: 'Es',
     t2: 'ist',
     t3: 'wichtig',

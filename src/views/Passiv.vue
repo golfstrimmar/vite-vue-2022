@@ -151,7 +151,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'Экзамен пишется.(Prüfung)',
+    t0: 'Экзамен пишется. (Prüfung)',
     t1: 'Die',
     t2: 'Prüfung',
     t3: 'wird',
