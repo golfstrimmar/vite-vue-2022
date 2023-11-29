@@ -275,7 +275,7 @@ const Genitiv = [
 
 const SlotDataDemonstrativ = [
   {
-    t0: 'Этот предмет мне нравится больше всего. (Fach Spaß)',
+    t0: 'Этот предмет мне нравится больше всего. (Fach macht Spaß)',
     t1: 'Das',
     t2: 'Fach',
     t3: 'macht',
@@ -287,7 +287,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Мне нравится этот фильм. (gefällt )',
+    t0: 'Мне нравится этот фильм. (Film gefällt )',
     t1: 'Dieser',
     t2: 'Film',
     t3: 'gefällt',
@@ -297,7 +297,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Она единственная , кто может тебе помочь. (weiterhelfen)',
+    t0: 'Она единственная , кто может тебе помочь. (weiterhelfen kann)',
     t1: 'Sie',
     t2: 'ist',
     t3: 'diejenige',
@@ -323,7 +323,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Отпуск был особенно замечательным.(Urlaub)',
+    t0: 'Отпуск был особенно замечательным.(Urlaub toll)',
     t1: 'Urlaub',
     t2: 'war',
     t3: 'besonders',
@@ -333,7 +333,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Тим познакомил меня со своим другом Полом. Чьи волосы выкрашены в голубой цвет.(Tim Paul vorgestellt Haare gefärbt)',
+    t0: 'Тим познакомил меня со своим другом Полом, чьи волосы выкрашены в голубой цвет. (Tim Paul vorgestellt Haare gefärbt)',
     t1: 'Tim',
     t2: 'hat',
     t3: 'mir',
@@ -341,8 +341,8 @@ const SlotDataDemonstrativ = [
     t5: 'Freund',
     t6: 'Paul',
     t7: 'vorgestellt',
-    t8: '.',
-    t9: 'Dessen',
+    t8: ',',
+    t9: 'dessen',
     t10: 'Haare',
     t11: 'sind',
     t12: 'blau',
@@ -352,7 +352,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'У меня много учителей, чьи занятия доставляют удовольствие.(Lehrer Unterricht)',
+    t0: 'У меня много учителей, чьи занятия доставляют удовольствие.( Lehrer Unterricht Spaß macht)',
     t1: 'Ich',
     t2: 'habe',
     t3: 'viele',
@@ -367,7 +367,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Количество тех, кто создает отличные уроки, растет.(Menge Unterricht gestalten steigt)',
+    t0: 'Количество тех, кто создает отличные уроки, растет. (Menge Unterricht gestalten steigt)',
     t1: 'Die',
     t2: 'Menge',
     t3: 'derer',
@@ -384,7 +384,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'У меня больше нет с ними никаких контактов.(Zu Kontakt)',
+    t0: 'У меня больше нет с ними никаких контактов. (Zu Kontakt)',
     t1: 'Zu',
     t2: 'denen',
     t3: 'habe',
@@ -397,7 +397,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Тебе еще нужно сделать домашнее задание . Я это знаю.(Hausaufgaben )',
+    t0: 'Тебе еще нужно сделать домашнее задание . Я это знаю.  (Hausaufgaben )',
     t1: 'Du',
     t2: 'musst',
     t3: 'noch',
@@ -413,7 +413,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Как тебе эта юбка? Он действительно классный.(Rock cool)',
+    t0: 'Как тебе эта юбка? Он действительно классный.  (Rock cool)',
     t1: 'Wie',
     t2: 'findest',
     t3: 'du',
@@ -429,7 +429,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Туфли этой женщины прекрасны. (Schuhe schön)',
+    t0: 'Туфли этой женщины прекрасны. (Schuhe Frau schön)',
     t1: 'Die',
     t2: 'Schuhe',
     t3: 'dieser',
@@ -441,7 +441,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Мне не нравится эта сумка , но та действительно классная .(Tasche cool)',
+    t0: 'Мне не нравится эта сумка , но та действительно классная.  (Tasche cool)',
     t1: 'Diese',
     t2: 'Tasche',
     t3: 'mag',
@@ -459,7 +459,7 @@ const SlotDataDemonstrativ = [
 
   {
 
-    t0: 'Отдай телефон тому, кому он принадлежит.(Gib  gehört )',
+    t0: 'Отдай телефон тому, кому он принадлежит. (Gib Handy  gehört )',
     t1: 'Gib',
     t2: 'das',
     t3: 'Handy',
@@ -477,7 +477,7 @@ const SlotDataDemonstrativ = [
 
 
   {
-    t0: 'Та же логика должна применяться и к лодкам.(Logik  Boote gelten)',
+    t0: 'Та же логика должна применяться и к лодкам.  (Logik müsste Boote gelten)',
     t1: 'Dieselbe',
     t2: 'Logik',
     t3: 'müsste',
@@ -490,7 +490,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'То же самое мы ожидаем и от Совета.(Erwartung Rat)',
+    t0: 'То же самое мы ожидаем и от Совета. (Erwartung Rat)',
     t1: 'Dieselbe',
     t2: 'Erwartung',
     t3: 'haben',
@@ -505,7 +505,7 @@ const SlotDataDemonstrativ = [
 
 
   {
-    t0: 'К сожалению, мы больше ничего не можем ответить тому, кто поднял этот вопрос.(Punkt aufgeworfen antworten)',
+    t0: 'К сожалению, мы больше ничего не можем ответить тому, кто поднял этот вопрос. (Punkt aufgeworfen anderes antworten)',
     t1: 'Wir',
     t2: 'können',
     t3: 'demjenigen',
@@ -527,7 +527,7 @@ const SlotDataDemonstrativ = [
 
 
   {
-    t0: 'Вы должны знать об этом в каждом конкретном случае.(bewusst sein)',
+    t0: 'Вы должны знать об этом в каждом конкретном случае. (müssen bewusst jedem Fall sein)',
     t1: 'Dessen',
     t2: 'müssen',
     t3: 'Sie',
@@ -541,7 +541,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Каковы были бы их обязанности ?(wären Aufgaben)',
+    t0: 'Каковы были бы их обязанности? (wären Aufgaben)',
     t1: 'Was',
     t2: 'wären',
     t3: 'deren',
@@ -553,7 +553,7 @@ const SlotDataDemonstrativ = [
 
 
   {
-    t0: 'Такой вывод трудно вынести.(Feststellung schwer ertragen)',
+    t0: 'Такой вывод трудно вынести. (Feststellung schwer ertragen)',
     t1: 'Eine',
     t2: 'solche',
     t3: 'Feststellung',
@@ -566,7 +566,7 @@ const SlotDataDemonstrativ = [
   },
 
   {
-    t0: 'Но их обучали таким ситуациям.(Situationen trainiert)',
+    t0: 'Но их обучали таким ситуациям. (Situationen trainiert)',
     t1: 'Aber',
     t2: 'Sie',
     t3: 'haben',
@@ -599,7 +599,7 @@ const SlotDataDemonstrativ = [
 
 
   {
-    t0: 'Тот роман скучен.',
+    t0: 'Тот роман скучен. (Roman langweilig)',
     t1: 'Jener',
     t2: 'Roman',
     t3: 'ist',
@@ -607,7 +607,7 @@ const SlotDataDemonstrativ = [
     t5: '.',
   },
   {
-    t0: 'Это тот же самый мужчина, что и на фото?',
+    t0: 'Это тот же самый мужчина, что и на фото? (Mann auf Foto)',
     t1: 'Ist',
     t2: 'das',
     t3: 'derselbe',
@@ -619,7 +619,7 @@ const SlotDataDemonstrativ = [
     t8: '?',
   },
   {
-    t0: 'Он такой интересный мужчина.',
+    t0: 'Он такой интересный мужчина. (Mann)',
     t1: 'Er',
     t2: 'ist',
     t3: 'solch ein',
@@ -629,7 +629,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Эта сумка мне нравится.',
+    t0: 'Эта сумка мне нравится. (Tasche gefält)',
     t1: 'Die',
     t2: 'Tasche',
     t3: 'gefält',
@@ -638,7 +638,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Это та сумка, про которую ты говорила?',
+    t0: 'Это та сумка, про которую ты говорила? (Tasche )',
     t1: 'Ist',
     t2: 'das',
     t3: 'jene',
@@ -653,7 +653,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Та же (самая) сумка лежит у меня на столе.',
+    t0: 'Та же (самая) сумка лежит у меня на столе. (Tasche jetzt Tich)',
     t1: 'Dieselbe',
     t2: 'Tasche',
     t3: 'liegt',
@@ -665,7 +665,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Такая сумка очень дорогая.',
+    t0: 'Такая сумка очень дорогая. (Tasche teuer)',
     t1: 'Solch',
     t2: 'eine',
     t3: 'Tasche',
@@ -676,7 +676,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'То платье, которое она мне подарила , мне не подходит.',
+    t0: 'То платье, которое она мне подарила , мне не подходит. (Kleid geschenkt passt)',
     t1: 'Jenes',
     t2: 'Kleid',
     t3: ',',
@@ -693,7 +693,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Это было то же самое платье, в котором она пришла.',
+    t0: 'Это было то же самое платье, в котором она пришла. (Kleid in kam)',
     t1: 'Es',
     t2: 'war',
     t3: 'dasselbe',
@@ -702,11 +702,11 @@ const SlotDataDemonstrativ = [
     t6: 'in',
     t7: 'dem',
     t8: 'sie',
-    t9: '.',
-
+    t9: 'kam',
+    t10: '.',
   },
   {
-    t0: 'Такое платье есть в любом цвете.',
+    t0: 'Такое платье есть в любом цвете. (Kleid Farbe)',
     t1: 'Solch',
     t2: 'ein',
     t3: 'Kleid',
@@ -718,7 +718,7 @@ const SlotDataDemonstrativ = [
     t9: '.',
   },
   {
-    t0: 'Те люди, которые знают мало говорят много.',
+    t0: 'Те люди, которые знают мало говорят много. (Leute wenig wissen sagen)',
     t1: 'Jene',
     t2: 'Leute',
     t3: ',',
@@ -732,7 +732,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Всегда одни и те же люди.',
+    t0: 'Всегда одни и те же люди. (Immer Leute)',
     t1: 'Immer',
     t2: 'dieselben',
     t3: 'Leute',
@@ -740,7 +740,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Такие люди не имеют никакого представления о политике.',
+    t0: 'Такие люди не имеют никакого представления о политике. (Leute Ahnung Politik)',
     t1: 'Solche',
     t2: 'Leute',
     t3: 'haben',
@@ -752,7 +752,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Я скажу этому мужчине, что ...',
+    t0: 'Я скажу этому мужчине, что ... (Mann)',
     t1: 'Ich',
     t2: 'sage',
     t3: 'dem',
@@ -763,7 +763,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Машина и дом принадлежат одному и тому же человеку.',
+    t0: 'Машина и дом принадлежат одному и тому же человеку. (Auto Haus Mann)',
     t1: 'Das',
     t2: 'Auto',
     t3: 'und',
@@ -776,7 +776,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'С таким мужчиной невозможно жить.',
+    t0: 'С таким мужчиной невозможно жить. (Mann leben)',
     t1: 'Mit',
     t2: 'solch',
     t3: 'einem',
@@ -789,7 +789,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Что в той сумке?',
+    t0: 'Что в той сумке? (Tasche)',
     t1: 'Was',
     t2: 'ist',
     t3: 'in',
@@ -799,7 +799,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Я приду с той же сумкой что и на прошлой неделе.',
+    t0: 'Я приду с той же сумкой что и на прошлой неделе. (Tasche letzte Woche)',
     t1: 'Ich',
     t2: 'komme',
     t3: 'mit',
@@ -812,7 +812,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Мы помогаем тем людям, которые и нам помогают.',
+    t0: 'Мы помогаем тем людям, которые и нам помогают. (Leuten )',
     t1: 'Wir',
     t2: 'helfen',
     t3: 'jenen',
@@ -826,7 +826,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Они нашли того мужчину,который был пропавший без вести.',
+    t0: 'Они нашли того мужчину,который был пропавший без вести. (Mann vermist gefunden)',
     t1: 'Sie',
     t2: 'haben',
     t3: 'jenen',
@@ -841,7 +841,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Мы избегаем этих людей.',
+    t0: 'Мы избегаем этих людей. (vermeiden Leute)',
     t1: 'Wir',
     t2: 'vermeiden',
     t3: 'diese',
@@ -850,7 +850,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Это только для тех Людей ,которые имеют деньги.',
+    t0: 'Это только для тех Людей ,которые имеют деньги. (Leute Geld)',
     t1: 'Das',
     t2: 'ist',
     t3: 'nur',
@@ -865,7 +865,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Он консультирует тех же самых людей что и я.',
+    t0: 'Он консультирует тех же самых людей что и я. (berät Leute)',
     t1: 'Er',
     t2: 'berät',
     t3: 'dieselben',
@@ -876,7 +876,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Таких людей я терпеть не могу.',
+    t0: 'Таких людей я терпеть не могу. (Leute gar nicht leiden)',
     t1: 'Solche',
     t2: 'Leute',
     t3: 'kann',
@@ -888,7 +888,7 @@ const SlotDataDemonstrativ = [
 
   },
   {
-    t0: 'Несмотря на таких людей я был успешен.',
+    t0: 'Несмотря на таких людей я был успешен. (Trotz Leute erfolgreich)',
     t1: 'Trotz',
     t2: 'solcher',
     t3: 'Leute',

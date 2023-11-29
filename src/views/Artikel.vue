@@ -577,7 +577,7 @@ const SlotDataUnbestimmte = [
 
 
   {
-    t0: 'Я живу в маленькой квартире.(wohne Wohnung)',
+    t0: 'Я живу в маленькой квартире.( Wohnung)',
     t1: 'Ich',
     t2: 'wohne',
     t3: 'in',
@@ -589,7 +589,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'Внести деньги на счет(Geld Konto einzahlen)',
+    t0: 'Внести деньги на счет (Geld Konto einzahlen)',
     t1: 'Geld',
     t2: 'auf',
     t3: 'ein',
@@ -599,7 +599,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'У тебя есть брат ?(Bruder)',
+    t0: 'У тебя есть брат? (Bruder)',
     t1: 'Hast',
     t2: 'du',
     t3: 'einen',
@@ -609,7 +609,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'Не хочешь пойти со мной в кафе?(Lust Cafe gehen)',
+    t0: 'Не хочешь пойти со мной в кафе? (Lust Cafe gehen)',
     t1: 'Hast',
     t2: 'du',
     t3: 'Lust',
@@ -625,7 +625,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'Я живу в маленькой деревне.(lebe kleinen Dorf)',
+    t0: 'Я живу в маленькой деревне. (lebe kleinen Dorf)',
     t1: 'Ich',
     t2: 'lebe',
     t3: 'in',
@@ -637,7 +637,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'У вас есть еще вопрос?(Frage)',
+    t0: 'У вас есть еще вопрос? (Frage)',
     t1: 'Haben',
     t2: 'Sie',
     t3: 'noch',
@@ -648,7 +648,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'Я ждал час.(Stunde lang gewartet)',
+    t0: 'Я ждал час. (Stunde lang gewartet)',
     t1: 'Ich',
     t2: 'habe',
     t3: 'eine',
@@ -661,7 +661,7 @@ const SlotDataUnbestimmte = [
 
 
   {
-    t0: 'Я учу немецкий уже год.(lerne Jahr Deutsch)',
+    t0: 'Я учу немецкий уже год.  (lerne Jahr Deutsch)',
     t1: 'Ich',
     t2: 'lerne',
     t3: 'seit',
@@ -673,7 +673,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'Я остаюсь в Берлине на месяц.(bleibe Monat Berlin)',
+    t0: 'Я остаюсь в Берлине на месяц. (bleibe Monat Berlin)',
     t1: 'Ich',
     t2: 'bleibe',
     t3: 'einen',
@@ -685,7 +685,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'У тебя есть любимая песня ?(Lieblingslied)',
+    t0: 'У тебя есть любимая песня? (Lieblingslied)',
     t1: 'Hast',
     t2: 'du',
     t3: 'ein',
@@ -695,7 +695,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'У меня есть информация от соседа.(Information Nachbarn)',
+    t0: 'У меня есть информация от соседа. (Information Nachbarn)',
     t1: 'Ich',
     t2: 'habe',
     t3: 'die',
@@ -709,7 +709,7 @@ const SlotDataUnbestimmte = [
 
 
   {
-    t0: 'полезность продукта(Nutzen Produkts)',
+    t0: 'полезность продукта (Nutzen Produkts)',
     t1: 'der',
     t2: 'Nutzen',
     t3: 'eines',
@@ -719,7 +719,7 @@ const SlotDataUnbestimmte = [
 
 
   {
-    t0: 'Я написал текст на немецком языке.(Text Deutsch geschrieben)',
+    t0: 'Я написал текст на немецком языке. (Text Deutsch geschrieben)',
     t1: 'Ich',
     t2: 'habe',
     t3: 'einen',
@@ -733,7 +733,7 @@ const SlotDataUnbestimmte = [
 
 
   {
-    t0: 'уйти из бизнеса(Geschäft aussteigen)',
+    t0: 'уйти из бизнеса  (Geschäft aussteigen)',
     t1: 'aus',
     t2: 'einem',
     t3: 'Geschäft',
@@ -742,7 +742,7 @@ const SlotDataUnbestimmte = [
   },
 
   {
-    t0: 'заплатить чеком(Scheck bezahlen)',
+    t0: 'заплатить чеком  (Scheck bezahlen)',
     t1: 'mit',
     t2: 'einem',
     t3: 'Scheck',
@@ -753,7 +753,7 @@ const SlotDataUnbestimmte = [
 ]
 const SlotDataNegativ = [
   {
-    t0: 'Я не думаю, что это хорошая книга.(gutes Buch)',
+    t0: 'Я не думаю, что это хорошая книга. (gutes Buch)',
     t1: 'Ich',
     t2: 'finde',
     t3: ',',
@@ -767,7 +767,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Я ни за что не собираюсь этого делать.(werde Fall machen)',
+    t0: 'Я ни за что не собираюсь этого делать. (werde Fall machen)',
     t1: 'Ich',
     t2: 'werde',
     t3: 'das',
@@ -781,7 +781,7 @@ const SlotDataNegativ = [
 
   {
 
-    t0: 'К сожалению, здесь, в моей деревне, нет супермаркета.(Hier Dorf leider Supermarkt)',
+    t0: 'К сожалению, здесь, в моей деревне, нет супермаркета. (Hier Dorf leider Supermarkt)',
     t1: 'Hier',
     t2: 'in',
     t3: 'meinem',
@@ -796,7 +796,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Он не встретился ни с одним другом.(sich Freund getroffen)',
+    t0: 'Он не встретился ни с одним другом. (sich Freund getroffen)',
     t1: 'Er',
     t2: 'hat',
     t3: 'sich',
@@ -810,7 +810,7 @@ const SlotDataNegativ = [
 
 
   {
-    t0: 'К счастью, грозы не было.(Glück Gewitter gegeben)',
+    t0: 'К счастью, грозы не было. (Glück Gewitter gegeben)',
     t1: 'Zum',
     t2: 'Glück',
     t3: 'hat',
@@ -823,7 +823,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Он не хочет фотографировать.(will Fotos machen)',
+    t0: 'Он не хочет фотографировать. (will Fotos machen)',
     t1: 'Er',
     t2: 'will',
     t3: 'keine',
@@ -834,7 +834,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Она не ест мяса. Она вегетарианка.(isst Fleisch Vegetarierin)',
+    t0: 'Она не ест мяса. Она вегетарианка. (isst Fleisch Vegetarierin)',
     t1: 'Sie',
     t2: 'isst',
     t3: 'kein',
@@ -848,7 +848,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Спасибо, но мне не нужна помощь.(brauche Hilfe)',
+    t0: 'Спасибо, но мне не нужна помощь. (brauche Hilfe)',
     t1: 'Danke',
     t2: ',',
     t3: 'aber',
@@ -861,7 +861,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Я не играю ни на одном инструменте.(spiele Instrument)',
+    t0: 'Я не играю ни на одном инструменте. (spiele Instrument)',
     t1: 'Ich',
     t2: 'spiele',
     t3: 'kein',
@@ -871,7 +871,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Я хотел бы выучить больше немецкого, но у меня нет времени.(Deutsch lernen Zeit)',
+    t0: 'Я хотел бы выучить больше немецкого, но у меня нет времени. (Deutsch lernen Zeit)',
     t1: 'Ich',
     t2: 'möchte',
     t3: 'mehr',
@@ -888,7 +888,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Я не люблю рисовый пудинг.(Milchreis)',
+    t0: 'Я не люблю рисовый пудинг. (Milchreis)',
     t1: 'Ich',
     t2: 'mag',
     t3: 'keinen',
@@ -897,7 +897,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Сегодня у меня нет желания заниматься спортом.(Heute Lust Sport)',
+    t0: 'Сегодня у меня нет желания заниматься спортом. (Heute Lust Sport)',
     t1: 'Heute',
     t2: 'habe',
     t3: 'ich',
@@ -909,7 +909,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'понятия не имею!(Ahnung)',
+    t0: 'понятия не имею! (Ahnung)',
     t1: 'keine',
     t2: 'Ahnung',
     t3: '!',
@@ -918,7 +918,7 @@ const SlotDataNegativ = [
 
 
   {
-    t0: 'Ни при каких условиях я этого не сделаю.(Unter Bedingung werde tun)',
+    t0: 'Ни при каких условиях я этого не сделаю. (Unter Bedingung werde tun)',
     t1: 'Unter',
     t2: 'keiner',
     t3: 'Bedingung',

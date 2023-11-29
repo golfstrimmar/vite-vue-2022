@@ -1298,7 +1298,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Чувак, мне бы очень хотелось побывать там. (Mann dabei sein)',
+    t0: ' Человек, мне бы очень хотелось побывать там. (Mann dabei sein)',
     t1: 'Mann',
     t2: ',',
     t3: 'da',

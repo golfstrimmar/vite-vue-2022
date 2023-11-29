@@ -19,6 +19,7 @@
     p Um herauszufinden, ob ein Satz im Zustandspassiv oder im Aktiv steht, setzt du ihn ins Vorgangspassiv. Ist das möglich, 
     p handelt es sich um das Zustandspassiv. Ist dies nicht möglich, steht der Satz im Aktiv.
     p(style="color: red;font-weight: 800;") Многие формы пассива не преводятся дословно на русский или звучат некорректно!
+    p(style="color: red;font-weight: 800;") Viele Formen des Passivs werden nicht wörtlich ins Russische übersetzt oder klingen falsch!
   Tabs(:items= 'Vorgangs' title='Das Vorgangspassiv' )
   Tabs(:items= 'Zustand' title='Das Zustandspassiv' )
   .page-title--small 
@@ -159,7 +160,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'Велосипед заблокироваем. (Fahrrad)',
+    t0: 'Велосипед заблокироваем. (Fahrrad abgeschlossen)',
     t1: 'Das',
     t2: 'Fahrrad',
     t3: 'wird',
@@ -168,7 +169,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'Картофель нарезается поваром.(Kartoffeln Koch)',
+    t0: 'Картофель нарезается поваром.(Kartoffeln Koch geschnitten)',
     t1: 'Kartoffeln',
     t2: 'werden',
     t3: 'vom',
@@ -178,7 +179,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'Сейчас десерт приносим.(Gleich Nachtisch)',
+    t0: 'Сейчас десерт приносим.(Gleich Nachtisch gebracht)',
     t1: 'Gleich',
     t2: 'wird',
     t3: 'der',
@@ -199,7 +200,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'Ожидается хорошая погода.(Wetter)',
+    t0: 'Ожидается хорошая погода.(Wetter gewartet)',
     t1: 'Es',
     t2: 'wird',
     t3: 'auf',
@@ -210,7 +211,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'Билеты проверяются кондуктором.(Fahrkarten Schaffner)',
+    t0: 'Билеты проверяются кондуктором.(Fahrkarten Schaffner geprüft)',
     t1: 'Die',
     t2: 'Fahrkarten',
     t3: 'werden',
@@ -221,7 +222,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'Здесь не курят.(Hier )',
+    t0: 'Здесь не курят.(Hier geraucht)',
     t1: 'Hier',
     t2: 'wird',
     t3: 'nicht',
@@ -230,7 +231,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'А теперь - спать!(Jetzt)',
+    t0: 'А теперь - спать!(Jetzt geschlafen)',
     t1: 'Jetzt',
     t2: 'wird',
     t3: 'aber',
@@ -239,7 +240,7 @@ const SlotVorgangspassivsPräsens = [
 
   },
   {
-    t0: 'Цветы поливаются бабушкой.(Blumen Oma)',
+    t0: 'Цветы поливаются бабушкой.(Blumen Oma gegossen)',
     t1: 'Die',
     t2: 'Blumen',
     t3: 'werden',
@@ -264,7 +265,7 @@ const SlotVorgangspassivsPräteritum = [
 
   },
   {
-    t0: 'Альпинисты были застигаемы врасплох грозой. (Bergsteiger Gewitter)',
+    t0: 'Альпинисты были застигаемы врасплох грозой. (Bergsteiger Gewitter überrascht)',
     t1: 'Die',
     t2: 'Bergsteiger',
     t3: 'wurden',
@@ -276,7 +277,7 @@ const SlotVorgangspassivsPräteritum = [
 
   },
   {
-    t0: 'Мне ничего не подаривали.',
+    t0: 'Мне ничего не подаривали. (geschenkt)',
     t1: 'Mir',
     t2: 'wurde',
     t3: 'nichts',
@@ -285,7 +286,7 @@ const SlotVorgangspassivsPräteritum = [
 
   },
   {
-    t0: 'Я был вчера осмотрен врачем.(Arzt)',
+    t0: 'Я был вчера осмотрен врачем.(Arzt untersucht)',
     t1: 'Ich',
     t2: 'wurde',
     t3: 'gestern',
@@ -307,7 +308,7 @@ const SlotVorgangspassivsPräteritum = [
 
   },
   {
-    t0: 'В сентябре в Баварии был открываем Октоберфест.(Bayern Oktoberfest)',
+    t0: 'В сентябре в Баварии был открываем Октоберфест.(Bayern Oktoberfest eröffnet)',
     t1: 'In',
     t2: 'Bayern',
     t3: 'wurde',
@@ -329,7 +330,7 @@ const SlotVorgangspassivsPräteritum = [
 
   },
   {
-    t0: 'Автомобиль был строен в Вольфсбурге.(Auto Wolfsburg)',
+    t0: 'Автомобиль был строен в Вольфсбурге.(Auto Wolfsburg gebaut)',
     t1: 'Das',
     t2: 'Auto',
     t3: 'wurde',
@@ -340,7 +341,7 @@ const SlotVorgangspassivsPräteritum = [
 
   },
   {
-    t0: 'Проблема обсуждалась многими сотрудниками.(Problem Angestellten)',
+    t0: 'Проблема обсуждалась многими сотрудниками.(Problem Angestellten diskutiert)',
     t1: 'Das',
     t2: 'Problem',
     t3: 'wurde',
@@ -352,7 +353,7 @@ const SlotVorgangspassivsPräteritum = [
 
   },
   {
-    t0: 'Вы были выбираемы, чтобы обеспечить выживание человечества.(Überleben Menschheit sichern)',
+    t0: 'Вы были выбираемы, чтобы обеспечить выживание человечества.(auserwählt Überleben Menschheit sichern)',
     t1: 'Ihr',
     t2: 'wurdet',
     t3: 'auserwählt',
@@ -367,23 +368,11 @@ const SlotVorgangspassivsPräteritum = [
     t12: '.',
 
   },
-  {
-    t0: 'Если, конечно, вы не были подставляемы.(sei denn reingelegt)',
-    t1: 'Es',
-    t2: 'sei',
-    t3: 'denn',
-    t4: ',',
-    t5: 'ihr',
-    t6: 'wurdet',
-    t7: 'reingelegt',
-    t8: '.',
-
-  },
 
 ]
 const SlotVorgangspassivsPerfekt = [
   {
-    t0: 'Автомобиль был построен в Вольфсбурге.(Auto Wolfsburg)',
+    t0: 'Автомобиль был построен в Вольфсбурге. (Auto Wolfsburg)',
     t1: 'Das',
     t2: 'Auto',
     t3: 'ist',
@@ -395,7 +384,7 @@ const SlotVorgangspassivsPerfekt = [
 
   },
   {
-    t0: 'Октоберфест открыт в Баварии.(Bayern Oktoberfest)',
+    t0: 'Октоберфест открыт в Баварии. (Bayern Oktoberfest eröffnet)',
     t1: 'In',
     t2: 'Bayern',
     t3: 'ist',
@@ -419,7 +408,7 @@ const SlotVorgangspassivsPerfekt = [
 
   },
   {
-    t0: 'Я уже дважды был прооперирован. (schon zweimal)',
+    t0: 'Я уже дважды был прооперирован. (schon zweimal operiert)',
     t1: 'Ich',
     t2: 'bin',
     t3: 'schon',
@@ -430,7 +419,7 @@ const SlotVorgangspassivsPerfekt = [
 
   },
   {
-    t0: 'Окна разбиты ветром. (Fenster durch Wind)',
+    t0: 'Окна разбиты ветром. (Fenster durch Wind gebrochen)',
     t1: 'Die',
     t2: 'Fenster',
     t3: 'sind',
@@ -504,7 +493,7 @@ const SlotVorgangspassivsPlusquamperfekt = [
   },
   {
     t0: 'Текст был переведен двести лет назад.(Text zweihundert Jahren übersetzt)',
-    t1: 'Der       ',
+    t1: 'Der',
     t2: 'Text',
     t3: 'war',
     t4: 'vor',
@@ -591,7 +580,7 @@ const SlotVorgangspassivsFuturum = [
 
   },
   {
-    t0: 'Вы будете очень красиво раскрашиваемы.(schön schön)',
+    t0: 'Вы будете очень красиво раскрашиваемы.(schön schön gemalt)',
     t1: 'Ihr',
     t2: 'werdet',
     t3: 'sehr',
@@ -616,7 +605,7 @@ const SlotVorgangspassivsFuturum = [
   },
 
   {
-    t0: 'Пациент будет спасаем операцией.(Patient Operation)',
+    t0: 'Пациент будет спасаем операцией.(Patient Operation gerettet)',
     t1: 'Der',
     t2: 'Patient',
     t3: 'wird',
@@ -634,8 +623,8 @@ const SlotVorgangspassivsFuturum = [
 
 const SlotZustandspassivsPräsens = [
   {
-    t0: 'Дверь закрыта.(Tür )',
-    t1: 'Die   .',
+    t0: 'Дверь закрыта.(Tür geschlossen)',
+    t1: 'Die',
     t2: 'Tür',
     t3: 'ist',
     t4: 'geschlossen',
@@ -643,7 +632,7 @@ const SlotZustandspassivsPräsens = [
 
   },
   {
-    t0: 'Пациент прооперирован.(Patient)',
+    t0: 'Пациент прооперирован.(Patient operiert)',
     t1: 'Der',
     t2: 'Patient',
     t3: 'ist',
@@ -652,7 +641,7 @@ const SlotZustandspassivsPräsens = [
 
   },
   {
-    t0: 'Автомобиль отремонтирован.(Auto)',
+    t0: 'Автомобиль отремонтирован.(Auto repariert)',
     t1: 'Das',
     t2: 'Auto',
     t3: 'ist',
@@ -661,7 +650,7 @@ const SlotZustandspassivsPräsens = [
 
   },
   {
-    t0: 'Кровати уже заправлены.(Betten bereits)',
+    t0: 'Кровати уже заправлены.(Betten bereits gemacht)',
     t1: 'Die',
     t2: 'Betten',
     t3: 'sind',
@@ -671,7 +660,7 @@ const SlotZustandspassivsPräsens = [
 
   },
   {
-    t0: 'Магазины сегодня закрыты.(Heute Läden)',
+    t0: 'Магазины сегодня закрыты.(Heute Läden geschlossen)',
     t1: 'Heute',
     t2: 'sind',
     t3: 'die',
@@ -697,8 +686,8 @@ const SlotZustandspassivsPräsens = [
 
   },
   {
-    t0: 'Японские АЭС закрыты.(japanischen Atomkraftwerke )',
-    t1: 'Die    ',
+    t0: 'Японские АЭС закрыты.(japanischen Atomkraftwerke abgeschaltet)',
+    t1: 'Die',
     t2: 'japanischen',
     t3: 'Atomkraftwerke',
     t4: 'sind',
@@ -707,7 +696,7 @@ const SlotZustandspassivsPräsens = [
 
   },
   {
-    t0: 'Магазин закрыт на три недели.(Geschäft drei Wochen lang)',
+    t0: 'Магазин закрыт на три недели.(Geschäft drei Wochen lang geschlossen)',
     t1: 'Das',
     t2: 'Geschäft',
     t3: 'ist',
@@ -721,7 +710,7 @@ const SlotZustandspassivsPräsens = [
 ]
 const SlotZustandspassivsPräteritum = [
   {
-    t0: 'Вчера магазины были закрыты. (Gestern Läden)',
+    t0: 'Вчера магазины были закрыты. (Gestern Läden geschlossen)',
     t1: 'Gestern',
     t2: 'waren',
     t3: 'die',
@@ -731,7 +720,7 @@ const SlotZustandspassivsPräteritum = [
 
   },
   {
-    t0: 'Мужчина получил серьезные ранения. (Mann schwer)',
+    t0: 'Мужчина получил серьезные ранения. (Mann schwer verletzt)',
     t1: 'Der',
     t2: 'Mann',
     t3: 'war',
@@ -760,7 +749,7 @@ const SlotZustandspassivsPräteritum = [
 
   },
   {
-    t0: 'Ты был прооперирован. ',
+    t0: 'Ты был прооперирован. (operiert)',
     t1: 'Du',
     t2: 'warst',
     t3: 'operiert',
@@ -768,7 +757,7 @@ const SlotZustandspassivsPräteritum = [
 
   },
   {
-    t0: 'Экзамен был написан.()',
+    t0: 'Экзамен был написан.(Prüfung geschrieben)',
     t1: 'Die',
     t2: 'Prüfung',
     t3: 'war',
@@ -780,17 +769,21 @@ const SlotZustandspassivsPräteritum = [
 ]
 const SlotZustandspassivsPerfekt = [
   {
-    t0: 'Магазины  уже закрыты. (  Gestern Läden )',
-    t1: 'Die     ',
-    t2: 'Läden',
-    t3: 'sind',
-    t4: 'geschlossen',
-    t5: 'gewesen',
-    t6: '.',
-
+    t0: 'Вчера магазины были закрыты уже в 8 утра. (Gestern Läden geschlossen)',
+    t1: 'Gestern',
+    t2: 'sind',
+    t3: 'die',
+    t4: 'Geschäfte',
+    t5: 'um',
+    t6: '8',
+    t7: 'Uhr',
+    t8: 'bereits',
+    t9: 'geschlossen',
+    t10: 'gewesen',
+    t11: '.',
   },
   {
-    t0: 'Экзамен  уже  написан. (Prüfung)',
+    t0: 'Экзамен уже написан. (Prüfung geschrieben)',
     t1: 'Die',
     t2: 'Prüfung',
     t3: 'ist',
@@ -833,7 +826,7 @@ const SlotZustandspassivsFuturum = [
 
   },
   {
-    t0: 'Кровати завтра тоже будут заправлены . (Betten morgen )',
+    t0: 'Кровати завтра тоже будут заправлены . (Betten gemacht morgen )',
     t1: 'Die',
     t2: 'Betten',
     t3: 'werden',

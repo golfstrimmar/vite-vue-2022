@@ -41,7 +41,7 @@ watch(() => props.reset, (newvalue, oldvalue) => {
 <style lang="scss" scoped>
 input {
 	display: inline-block;
-	max-width: 70px;
+	max-width: 110px;
 	border-radius: 5px;
 	// color: transparent;
 

@@ -122,7 +122,7 @@ const SlotDataInterrogativ = [
 
   },
   {
-    t0: 'Что ты ел?()',
+    t0: 'Что ты ел? (gegessen)',
     t1: 'Was',
     t2: 'hast',
     t3: 'du',
@@ -151,7 +151,7 @@ const SlotDataInterrogativ = [
 
   },
   {
-    t0: 'У Мануэлы есть собака. Какая у нее собака?(Manuela)',
+    t0: 'У Мануэлы есть собака. Какая у нее собака?(Manuela Hund)',
     t1: 'Manuela',
     t2: 'hat',
     t3: 'einen',
@@ -167,7 +167,7 @@ const SlotDataInterrogativ = [
 
   },
   {
-    t0: 'Какая (собака) принадлежит Мануэле, большая или маленькая?(gehört Manuela große kleine)',
+    t0: 'Какая (собака) принадлежит Мануэле, большая или маленькая? (gehört Manuela große kleine)',
     t1: 'Welcher',
     t2: '(Hund)',
     t3: 'gehört',
@@ -182,7 +182,7 @@ const SlotDataInterrogativ = [
 
   },
   {
-    t0: 'На какой машине ты ездишь? (fährst)',
+    t0: 'На какой машине ты ездишь? (Auto fährst)',
     t1: 'Was',
     t2: 'für',
     t3: 'ein',
@@ -201,7 +201,7 @@ const SlotDataInterrogativ = [
     t6: '?',
   },
   {
-    t0: 'Чьи туфли стоят у двери? (Schuhe stehen Tür)',
+    t0: 'Чьи туфли стоят у двери? (Schuhe stehen vor Tür)',
     t1: 'Wessen',
     t2: 'Schuhe',
     t3: 'stehen',
@@ -221,7 +221,7 @@ const SlotDataInterrogativ = [
 
   },
   {
-    t0: 'Что вы обычно едите на завтрак? (esst normalerweise Frühstück)',
+    t0: 'Что вы обычно едите на завтрак? (esst normalerweise zum Frühstück)',
     t1: 'Was',
     t2: 'esst',
     t3: 'ihr',
@@ -231,7 +231,7 @@ const SlotDataInterrogativ = [
     t7: '?',
   },
   {
-    t0: 'Кого мы должны поздравить? (gratulieren)',
+    t0: 'Кого мы должны поздравить? (sollen gratulieren)',
     t1: 'Wem',
     t2: 'sollen',
     t3: 'wir',
@@ -239,7 +239,7 @@ const SlotDataInterrogativ = [
     t5: '?',
   },
   {
-    t0: 'Оливия знакома с официантом. Кого знает Оливия? ()',
+    t0: 'Оливия знакома с официантом. Кого знает Оливия? (Olivia kennt Kellner)',
     t1: 'Olivia',
     t2: 'kennt',
     t3: 'den',
@@ -344,8 +344,8 @@ const SlotDataInterrogativ = [
     t10: '?',
   },
   {
-    t0: 'Мои друзья уехали в Берлин. Кто ездил в Берлин? (Freunde Berlin gefahren )',
-    t1: 'Meine          ?',
+    t0: 'Мои друзья уехали в Берлин. Кто ездил в Берлин? (Freunde nach Berlin gefahren )',
+    t1: 'Meine',
     t2: 'Freunde',
     t3: 'sind',
     t4: 'nach',
@@ -393,7 +393,7 @@ const SlotDataInterrogativ = [
     t13: '?',
   },
   {
-    t0: 'Для кого ты покупаешь лимонное мороженое? (Zitroneneis)',
+    t0: 'Для кого ты покупаешь лимонное мороженое? (Für Zitroneneis)',
     t1: 'Für',
     t2: 'wen',
     t3: 'kaufst',
@@ -402,7 +402,7 @@ const SlotDataInterrogativ = [
     t6: '?',
   },
   {
-    t0: 'С кем ты собираешься в отпуск? (fährst Urlaub)',
+    t0: 'С кем ты собираешься в отпуск? (Mit fährst Urlaub)',
     t1: 'Mit',
     t2: 'wem',
     t3: 'fährst',
@@ -413,7 +413,7 @@ const SlotDataInterrogativ = [
     t8: '?',
   },
   {
-    t0: 'Без чьей помощи ты смог бы решить эту задачу? (Hilfe konntest Aufgabe lösen)',
+    t0: 'Без чьей помощи ты смог бы решить эту задачу? (Ohne Hilfe konntest Aufgabe lösen)',
     t1: 'Ohne',
     t2: 'wessen',
     t3: 'Hilfe',
@@ -425,7 +425,7 @@ const SlotDataInterrogativ = [
     t9: '?',
   },
   {
-    t0: 'Какое имя вы выбрали для себя? (Namen entschieden)',
+    t0: 'Какое имя вы выбрали для себя? (Für Namen entschieden)',
     t1: 'Für',
     t2: 'welchen',
     t3: 'Namen',
@@ -436,7 +436,7 @@ const SlotDataInterrogativ = [
     t8: '?',
   },
   {
-    t0: 'На какой машине вы поедете к морю? (Auto Meer )',
+    t0: 'На какой машине вы поедете к морю? (Mit Auto werdet ihr Meer )',
     t1: 'Mit',
     t2: 'was',
     t3: 'für',
@@ -450,8 +450,8 @@ const SlotDataInterrogativ = [
     t11: '?',
   },
   {
-    t0: 'На какой автобус ты садишься по утрам? (Bus)',
-    t1: 'Welchen     ',
+    t0: 'На какой автобус ты садишься по утрам? (Bus nimmst morgens)',
+    t1: 'Welchen',
     t2: 'Bus',
     t3: 'nimmst',
     t4: 'du',
@@ -460,7 +460,7 @@ const SlotDataInterrogativ = [
 
   },
   {
-    t0: 'Какое имя тебе больше всего нравится для ребенка? ()',
+    t0: 'Какое имя тебе больше всего нравится для ребенка? (Name gefällt Baby besten)',
     t1: 'Welcher',
     t2: 'Name',
     t3: 'gefällt',
@@ -473,7 +473,7 @@ const SlotDataInterrogativ = [
     t10: '?',
   },
   {
-    t0: 'С кем бы ты хотел брать уроки танцев? (Tanzunterricht)',
+    t0: 'С кем бы ты хотел брать уроки танцев? (Mit möchtest Tanzunterricht nehmen)',
     t1: 'Mit',
     t2: 'wem',
     t3: 'möchtest',
@@ -494,7 +494,7 @@ const SlotDataInterrogativ = [
     t7: '?',
   },
   {
-    t0: 'Директор школы хотел бы знать, чей велосипед находится на школьном дворе. (Schulleiter möchte Fahrrad Schulhof)',
+    t0: 'Директор школы хотел бы знать, чей велосипед находится на школьном дворе. (Schulleiter möchte Fahrrad Schulhof liegt)',
     t1: 'Der',
     t2: 'Schulleiter',
     t3: 'möchte',
@@ -510,7 +510,7 @@ const SlotDataInterrogativ = [
     t13: '.',
   },
   {
-    t0: 'Она все еще не уверена, какой второй иностранный язык выбрать. (Fremdsprache wählen)',
+    t0: 'Она все еще не уверена, какой второй иностранный язык выбрать. ( zweite Fremdsprache wählen möchte)',
     t1: 'Sie',
     t2: 'ist',
     t3: 'sich',
@@ -528,7 +528,7 @@ const SlotDataInterrogativ = [
   },
   {
     t0: 'Я был шокирован, какой беспорядок! (schockiert Chaos)',
-    t1: 'Ich      ',
+    t1: 'Ich',
     t2: 'war',
     t3: 'schockiert',
     t4: ',',
@@ -539,7 +539,7 @@ const SlotDataInterrogativ = [
     t9: '!',
   },
   {
-    t0: 'Прежде всего я хочу поблагодарить человека, без помощи которого это было бы невозможно. (Menschen danken Hilfe unmöglich gewesen)',
+    t0: 'Прежде всего я хочу поблагодарить человека, без помощи которого это было бы невозможно. (möchte allem Menschen danken Hilfe unmöglich gewesen wäre)',
     t1: 'Ich',
     t2: 'möchte',
     t3: 'vor',
@@ -558,7 +558,7 @@ const SlotDataInterrogativ = [
     t16: '.',
   },
   {
-    t0: 'Она действительно трижды подумала, кому подарить этот подарок на Рождество. (dreimal überlegt Geschenk Weihnachten)',
+    t0: 'Она действительно трижды подумала, кому подарить этот подарок на Рождество. (wirklich dreimal überlegt Geschenk zu Weihnachten)',
     t1: 'Sie',
     t2: 'hat',
     t3: 'sich',
@@ -577,7 +577,7 @@ const SlotDataInterrogativ = [
     t16: '.',
   },
   {
-    t0: 'Без сомнения, детективу с самого начала было ясно, чей это след. (Zweifel Detektiv Anfang Fußabdruck)',
+    t0: 'Без сомнения, детективу с самого начала было ясно, чей это след. (Ohne Zweifel Detektiv Anfang klar Fußabdruck)',
     t1: 'Ohne',
     t2: 'Zweifel',
     t3: 'war',
@@ -595,7 +595,7 @@ const SlotDataInterrogativ = [
     t11: '.',
   },
   {
-    t0: 'Мои родители спрашивают меня каждый полдень, какую домашнюю работу я должен выполнить к завтрашнему дню. (Eltern Mittag Hausaufgaben erledigen)',
+    t0: 'Мои родители спрашивают меня каждый полдень, какую домашнюю работу я должен выполнить к завтрашнему дню. (Eltern Mittag Hausaufgaben bis morgen erledigen muss)',
     t1: 'Meine',
     t2: 'Eltern',
     t3: 'fragen',
