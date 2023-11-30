@@ -128,7 +128,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Не мог бы ты одолжить нам свое большое одеяло для пикника, чтобы нам не пришлось сидеть на мокрой траве? (Picknickdecke borgen nassen Gras sitzen müssen)',
+    t0: 'Не мог бы ты одолжить нам свое большое одеяло для пикника, чтобы нам не пришлось сидеть на мокрой траве? (Kannst große Picknickdecke borgen nassen Gras sitzen müssen)',
     t1: 'Kannst',
     t2: 'du',
     t3: 'uns',
