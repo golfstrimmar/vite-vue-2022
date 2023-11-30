@@ -21,7 +21,7 @@ import Slot from '@/components/Slot.vue'
 
 const SlotDativ = [
   {
-    t0: 'Перед сложными контрактами следует остерегаться. (Vor komplizierten Verträgen sollte man sich )',
+    t0: 'Перед сложными контрактами следует остерегаться. (Vor komplizierten Verträgen sollte man sich Acht)',
     t1: 'Vor',
     t2: 'komplizierten',
     t3: 'Verträgen',
@@ -47,7 +47,7 @@ const SlotDativ = [
     t10: '.',
 
   }, {
-    t0: 'У меня есть намерение сделать карьеру. (Absicht Karriere)',
+    t0: 'У меня есть намерение сделать карьеру. (Absicht Karriere machen)',
     t1: 'Ich',
     t2: 'habe',
     t3: 'die',
@@ -59,7 +59,7 @@ const SlotDativ = [
     t9: '.',
 
   }, {
-    t0: 'Все сотрудники могут в любое время изменить свой пароль. (Mitarbeitenden Passwort jederzeit)',
+    t0: 'Все сотрудники могут в любое время изменить свой пароль. (Mitarbeitenden Passwort jederzeit Änderung vornehmen)',
     t1: 'Аlle',
     t2: 'Mitarbeitenden',
     t3: 'können',
@@ -72,7 +72,7 @@ const SlotDativ = [
     t10: 'vornehmen',
     t11: '.',
   }, {
-    t0: 'Достижения группы находят признание во всем мире. (Leistungen Konzerns weltweit Anerkennung)',
+    t0: 'Достижения группы находят признание во всем мире. (Leistungen Konzerns finden weltweit Anerkennung)',
     t1: 'Die',
     t2: 'Leistungen',
     t3: 'des',
@@ -83,7 +83,7 @@ const SlotDativ = [
     t8: '.',
 
   }, {
-    t0: 'Марина отвечает всем требованиям, указанным в объявлении о вакансии. (Anforderungen Stellenausschreibung)',
+    t0: 'Марина отвечает всем требованиям, указанным в объявлении о вакансии. (Marina erfüllt Anforderungen Stellenausschreibung)',
     t1: 'Marina',
     t2: 'erfüllt',
     t3: 'alle',
@@ -93,7 +93,7 @@ const SlotDativ = [
     t7: 'Stellenausschreibung',
     t8: '.',
   }, {
-    t0: 'Мы уже отправили запрос в ремесленную мастерскую на ремонтные работы. (Renovierungsarbeiten bereits Anfrage Handwerksbetrieb)',
+    t0: 'Мы уже отправили запрос в ремесленную мастерскую на ремонтные работы. (Für Renovierungsarbeiten bereits Anfrage Handwerksbetrieb gestellt)',
     t1: 'Für',
     t2: 'die',
     t3: 'Renovierungsarbeiten',
@@ -109,7 +109,7 @@ const SlotDativ = [
     t13: '.',
 
   }, {
-    t0: 'Компания сделала мне отличное предложение. (Firma Angebot )',
+    t0: 'Компания сделала мне отличное предложение. (Firma Angebot gemacht)',
     t1: 'Die',
     t2: 'Firma',
     t3: 'hat',
@@ -121,7 +121,7 @@ const SlotDativ = [
     t9: '.',
 
   }, {
-    t0: 'Я займусь заказом клиента прямо сейчас. (Bestellung Kunden Angriff)',
+    t0: 'Я займусь заказом клиента прямо сейчас. (Bestellung Kunden Angriff nehmen)',
     t1: 'Ich',
     t2: 'werde',
     t3: 'die',
@@ -135,7 +135,7 @@ const SlotDativ = [
     t11: '.',
 
   }, {
-    t0: 'Мысль о моем первом дне на работе пугает меня. (Gedanke Arbeitstag Angst)',
+    t0: 'Мысль о моем первом дне на работе пугает меня. (Gedanke Arbeitstag macht Angst)',
     t1: 'Der',
     t2: 'Gedanke',
     t3: 'an',
@@ -148,7 +148,7 @@ const SlotDativ = [
     t10: '.',
 
   }, {
-    t0: 'Я очень обеспокоен тем, что этот вопрос будет решен быстро. (großes Anliegen Sache wird)',
+    t0: 'Я очень обеспокоен тем, что этот вопрос будет решен быстро. (großes Anliegen Sache geklärt wird)',
     t1: 'Es',
     t2: 'ist',
     t3: 'mir',
@@ -165,7 +165,7 @@ const SlotDativ = [
     t14: '.',
 
   }, {
-    t0: 'Вы имеете право на отпуск продолжительностью не менее 20 дней в году. (Anspruch Tage Urlaub)',
+    t0: 'Вы имеете право на отпуск продолжительностью не менее 20 дней в году. (haben Anspruch 20 Tage Urlaub)',
     t1: 'Sie',
     t2: 'haben',
     t3: 'Anspruch',
@@ -179,7 +179,7 @@ const SlotDativ = [
     t11: '.',
 
   }, {
-    t0: 'Мы должны использовать возможности финансирования через городской совет. (Fördermöglichkeiten Stadt Anspruch)',
+    t0: 'Мы должны использовать возможности финансирования через городской совет. (Fördermöglichkeiten Stadt strärke Anspruch nehmen)',
     t1: 'Wir',
     t2: 'sollten',
     t3: 'Fördermöglichkeiten',
@@ -193,7 +193,7 @@ const SlotDativ = [
     t11: '.',
 
   }, {
-    t0: 'Мартина Морена подала заявку на учредительный грант. (Antrag Gründungszuschuss)',
+    t0: 'Мартина Морена подала заявку на учредительный грант. (Martina Morena Antrag Gründungszuschuss gestellt)',
     t1: 'Martina',
     t2: 'Morena',
     t3: 'hat',
@@ -217,7 +217,7 @@ const SlotDativ = [
     t9: 'Anwendung',
     t10: '.',
   }, {
-    t0: 'Список адресов ждет меня. Я должен вернуться к работе. (Adressenliste Arbeit)',
+    t0: 'Список адресов ждет меня. Я должен вернуться к работе. (Adressenliste Arbeit gehen)',
     t1: 'Die',
     t2: 'Adressenliste',
     t3: 'wartet',
@@ -233,7 +233,7 @@ const SlotDativ = [
     t13: 'gehen',
     t14: '.',
   }, {
-    t0: 'Мы приобрели нового крупного клиента. Вы проделали очень хорошую работу. (großen Kunden Arbeit)',
+    t0: 'Мы приобрели нового крупного клиента. Вы проделали очень хорошую работу. (großen Kunden Arbeit geleistet)',
     t1: 'Wir',
     t2: 'haben',
     t3: 'einen',
@@ -250,7 +250,7 @@ const SlotDativ = [
     t14: 'geleistet',
     t15: '.',
   }, {
-    t0: 'Хранение данных о наших клиентах требует много работы. (Pflege Kundendaten Arbeit)',
+    t0: 'Хранение данных о наших клиентах требует много работы. (Pflege Kundendaten macht Arbeit)',
     t1: 'Die',
     t2: 'Pflege',
     t3: 'unserer',
@@ -260,7 +260,7 @@ const SlotDativ = [
     t7: 'Arbeit',
     t8: '.',
   }, {
-    t0: 'Пошли, перерыв окончен ! Давайте вернемся к работе. (Komm Pause Arbeit)',
+    t0: 'Пошли, перерыв окончен ! Давайте вернемся к работе. (Komm Pause Machen Arbeit)',
     t1: 'Komm',
     t2: ',',
     t3: 'die',
@@ -278,7 +278,7 @@ const SlotDativ = [
     t15: '.',
 
   }, {
-    t0: 'Где находится предложение для компании kraxel? (Angebot Firma)',
+    t0: 'Где находится предложение для компании kraxel? (Angebot Firma kraxel)',
     t1: 'Wo',
     t2: 'ist',
     t3: 'das',
@@ -290,7 +290,7 @@ const SlotDativ = [
     t9: '.',
 
   }, {
-    t0: 'Я пришел к выводу, что мы должны работать над компенсацией клиентам. (Auffassung Kunden Entschädigung)',
+    t0: 'Я пришел к выводу, что мы должны работать над компенсацией клиентам. (Auffassung Kunden Entschädigung arbeiten)',
     t1: 'Ich',
     t2: 'bin',
     t3: 'zu',
@@ -308,7 +308,7 @@ const SlotDativ = [
     t15: 'sollten',
     t16: '.',
   }, {
-    t0: 'С помощью небольшого анекдота вы легко завоюете внимание своих слушателей. (Anekdote Aufmerksamkeit Zuhörer)',
+    t0: 'С помощью небольшого анекдота вы легко завоюете внимание своих слушателей. (Anekdote gewinnen leicht Aufmerksamkeit Zuhörer)',
     t1: 'Mit',
     t2: 'einer',
     t3: 'kleinen',
@@ -322,7 +322,7 @@ const SlotDativ = [
     t11: 'Zuhörer',
     t12: '.',
   }, {
-    t0: 'Начальник дал поручение проверить все документы. (Chef Auftrag Dokumente)',
+    t0: 'Начальник дал поручение проверить все документы. (Chef Auftrag gegeben Dokumente überprüfen)',
     t1: 'Der',
     t2: 'Chef',
     t3: 'hat',
@@ -336,7 +336,7 @@ const SlotDativ = [
     t11: '.',
 
   }, {
-    t0: 'Он выразил свою обеспокоенность на встрече. (Meeting Besorgnis Ausdruck)',
+    t0: 'Он выразил свою обеспокоенность на встрече. (brachte Meeting Besorgnis Ausdruck)',
     t1: 'Er',
     t2: 'brachte',
     t3: 'im',
@@ -348,7 +348,7 @@ const SlotDativ = [
     t9: '.',
   },
   {
-    t0: 'Сегодня существует множество перспективных профессий на выбор. (zukunftsweisende Berufe zur Auswahl)',
+    t0: 'Сегодня существует множество перспективных профессий на выбор. (stehen zukunftsweisende Berufe zur Auswahl)',
     t1: 'Heute',
     t2: 'stehen',
     t3: 'viele',
@@ -359,7 +359,7 @@ const SlotDativ = [
     t8: '.',
 
   }, {
-    t0: 'Работы по техническому обслуживанию оказывают влияние на весь процесс эксплуатации. (Wartungsarbeiten Auswirkungen Betrieb)',
+    t0: 'Работы по техническому обслуживанию оказывают влияние на весь процесс эксплуатации. (Wartungsarbeiten haben Auswirkungen Betrieb)',
     t1: 'Die',
     t2: 'Wartungsarbeiten',
     t3: 'haben',
@@ -370,7 +370,7 @@ const SlotDativ = [
     t8: 'Betrieb',
     t9: '.',
   }, {
-    t0: 'Альтернативные модели работы в настоящее время привлекают большое внимание. (Alternative Arbeitsmodelle   Beachtung)',
+    t0: 'Альтернативные модели работы в настоящее время привлекают большое внимание. (Alternative Arbeitsmodelle  finden Beachtung)',
     t1: 'Alternative',
     t2: 'Arbeitsmodelle',
     t3: 'finden',
@@ -379,7 +379,7 @@ const SlotDativ = [
     t6: 'Beachtung',
     t7: '.',
   }, {
-    t0: 'Каждый может внести свой вклад в улучшение рабочих процессов. ( Beitrag zu Verbesserung der Arbeitsabläufe )',
+    t0: 'Каждый может внести свой вклад в улучшение рабочих процессов. ( Beitrag zu Verbesserung der Arbeitsabläufe leisten)',
     t1: 'Jeder',
     t2: 'kann',
     t3: 'einen',
@@ -391,7 +391,7 @@ const SlotDativ = [
     t9: 'leisten',
     t10: '.',
   }, {
-    t0: 'Ивонн работает социальным работником уже 20 лет. (Beruf Sozialarbeiter Jahren)',
+    t0: 'Ивонн работает социальным работником уже 20 лет. (Yvonne übt Beruf Sozialarbeiter 20 Jahren )',
     t1: 'Yvonne',
     t2: 'übt',
     t3: 'seinen',
@@ -405,7 +405,7 @@ const SlotDativ = [
     t11: 'aus',
     t12: '.',
   }, {
-    t0: 'Я всегда хотел получить профессию в отеле. (Beruf Hotel)',
+    t0: 'Я всегда хотел получить профессию в отеле. (schon immer Beruf Hotel ergreifen)',
     t1: 'Ich',
     t2: 'wollte',
     t3: 'schon',
@@ -418,7 +418,7 @@ const SlotDativ = [
     t10: '.',
 
   }, {
-    t0: 'Не могли бы вы сообщить мне, пожалуйста, если база данных обновлена. (Bescheid Datenbank aktualisiert)',
+    t0: 'Не могли бы вы сообщить мне, пожалуйста, если база данных обновлена. (Bescheid geben Datenbank aktualisiert)',
     t1: 'Können',
     t2: 'Sie',
     t3: 'mir',
@@ -433,7 +433,7 @@ const SlotDativ = [
     t12: '.',
 
   }, {
-    t0: 'Многие люди все еще слишком мало знают о правах трудящихся. (Rechte Arbeitsnehmenden Bescheid)',
+    t0: 'Многие люди все еще слишком мало знают о правах трудящихся. (Über Rechte Arbeitsnehmenden wissen Bescheid)',
     t1: 'Über',
     t2: 'die',
     t3: 'Rechte',
@@ -448,7 +448,7 @@ const SlotDativ = [
     t12: 'Bescheid',
     t13: '.',
   }, {
-    t0: 'Мы уже разместили наш заказ час назад и все еще ждем. (Bestellung Stunde)',
+    t0: 'Мы уже разместили наш заказ час назад и все еще ждем. (Bestellung bereits Stunde aufgegeben warten)',
     t1: 'Wir',
     t2: 'haben',
     t3: 'unsere',
@@ -464,7 +464,7 @@ const SlotDativ = [
     t13: 'noch',
     t14: '.',
   }, {
-    t0: 'Для решения проблемы рассматривается несколько вариантов. (Lösung Problems Möglichkeiten in Betracht)',
+    t0: 'Для решения проблемы рассматривается несколько вариантов. (Lösung Problems kommen Möglichkeiten in Betracht)',
     t1: 'Zur',
     t2: 'Lösung',
     t3: 'des',
@@ -477,7 +477,7 @@ const SlotDativ = [
     t10: '.',
 
   }, {
-    t0: 'Многие люди рассматривают возможность переезда из-за работы. (Leute  in Betracht  Arbeitsstelle)',
+    t0: 'Многие люди рассматривают возможность переезда из-за работы. (Leute sehen in Betracht  Arbeitsstelle umzuziehen)',
     t1: 'Viele',
     t2: 'Leute',
     t3: 'sehen',
@@ -489,7 +489,7 @@ const SlotDativ = [
     t9: 'umzuziehen',
     t10: '.',
   }, {
-    t0: 'С сегодняшнего дня в офисе введена в эксплуатацию новая система вентиляции. (Büro Lüftungsanlage in Betrieb)',
+    t0: 'С сегодняшнего дня в офисе введена в эксплуатацию новая система вентиляции. (Seit ist Büro Lüftungsanlage in Betrieb)',
     t1: 'Seit',
     t2: 'heute',
     t3: 'ist',
@@ -502,7 +502,7 @@ const SlotDativ = [
     t10: 'Betrieb',
     t11: '.',
   }, {
-    t0: 'Я ссылаюсь на ваше письмо от 13 февраля. (Bezug Schreiben Februar)',
+    t0: 'Я ссылаюсь на ваше письмо от 13 февраля. (nehme Bezug Schreiben 13. Februar)',
     t1: 'Ich',
     t2: 'nehme',
     t3: 'Bezug',
@@ -510,12 +510,11 @@ const SlotDativ = [
     t5: 'Ihr',
     t6: 'Schreiben',
     t7: 'vom',
-    t8: '13',
-    t9: '.',
-    t10: 'Februar',
-    t11: '.',
+    t8: '13.',
+    t9: 'Februar',
+    t10: '.',
   }, {
-    t0: 'Новому руководителю еще предстоит доказать свои знания. (Chefin Beweis)',
+    t0: 'Новому руководителю еще предстоит доказать свои знания. (Chefin kennen erst Beweis stellen)',
     t1: 'In',
     t2: 'die',
     t3: 'neue',
@@ -530,7 +529,7 @@ const SlotDativ = [
     t12: 'stellen',
     t13: '.',
   }, {
-    t0: 'Различные решения доступны для обсуждения. (Verschiedene Lösungen Diskussion)',
+    t0: 'Различные решения доступны для обсуждения. (Verschiedene Lösungen stehen Diskussion)',
     t1: 'Verschiedene',
     t2: 'Lösungen',
     t3: 'stehen',
@@ -538,7 +537,7 @@ const SlotDativ = [
     t5: 'Diskussion',
     t6: '.',
   }, {
-    t0: 'Рабочие сегодня находятся в крайне тяжелом положении. (Arbeitnehmende Unterburg)',
+    t0: 'Рабочие сегодня находятся в крайне тяжелом положении. (Arbeitnehmende stehen enorm Unterburg)',
     t1: 'Arbeitnehmende',
     t2: 'stehen',
     t3: 'heute',
@@ -546,7 +545,7 @@ const SlotDativ = [
     t5: 'Unterburg',
     t6: '.',
   }, {
-    t0: 'Преданность всей команды производит на меня большое впечатление. (Engagement Teams Eindruck)',
+    t0: 'Преданность всей команды производит на меня большое впечатление. (Engagement Teams macht Eindruck)',
     t1: 'Das',
     t2: 'Engagement',
     t3: 'des',
@@ -560,7 +559,7 @@ const SlotDativ = [
     t11: '.',
 
   }, {
-    t0: 'Я не хочу влиять на это решение. (Entscheidung Einfluss)',
+    t0: 'Я не хочу влиять на это решение. (möchte Entscheidung Einfluss nehmen)',
     t1: 'Ich',
     t2: 'möchte',
     t3: 'auf',
@@ -571,7 +570,7 @@ const SlotDativ = [
     t8: 'nehmen',
     t9: '.',
   }, {
-    t0: 'Мы должны, наконец, положить конец реструктуризации. (Umstrukturierung Ende)',
+    t0: 'Мы должны, наконец, положить конец реструктуризации. (Umstrukturierung Ende bringen)',
     t1: 'Wir',
     t2: 'müssen',
     t3: 'die',
@@ -582,7 +581,7 @@ const SlotDativ = [
     t8: 'bringen',
     t9: '.',
   }, {
-    t0: 'Я наконец принял решение уволиться. (Entschluss)',
+    t0: 'Я наконец принял решение уволиться. (Entschluss gefasst kündigen)',
     t1: 'Ich',
     t2: 'habe',
     t3: 'endlich',
@@ -593,7 +592,7 @@ const SlotDativ = [
     t8: 'kündigen',
     t9: '.',
   }, {
-    t0: 'Вы уже приняли решение по поводу новой должности? (Stelle Entscheidung)',
+    t0: 'Вы уже приняли решение по поводу новой должности? (Stelle Entscheidung getroffen)',
     t1: 'Haben',
     t2: 'sie',
     t3: 'wegen',
@@ -606,7 +605,7 @@ const SlotDativ = [
     t10: 'getroffen',
     t11: '?',
   }, {
-    t0: 'Мое заветное желание сбылось. (Wunsch Erfüllung)',
+    t0: 'Мое заветное желание сбылось. (gewürzter Wunsch Erfüllung gegangen)',
     t1: 'Mein',
     t2: 'gewürzter',
     t3: 'Wunsch',
@@ -616,7 +615,7 @@ const SlotDativ = [
     t7: 'gegangen',
     t8: '.',
   }, {
-    t0: 'Руководство компании выдало сотрудникам разрешение на работу в домашнем офисе. (Geschäftsführung Mitarbeitenden die Erlaubnis im Homeoffice)',
+    t0: 'Руководство компании выдало сотрудникам разрешение на работу в домашнем офисе. (Geschäftsführung erstellte Mitarbeitenden die Erlaubnis im Homeoffice arbeiten)',
     t1: 'Die',
     t2: 'Geschäftsführung',
     t3: 'erstellte',
@@ -630,7 +629,7 @@ const SlotDativ = [
     t11: 'arbeiten',
     t12: '.',
   }, {
-    t0: 'Я совершил ошибку, когда взял отпуск без консультации. (Fehler Rücksprache)',
+    t0: 'Я совершил ошибку, когда взял отпуск без консультации. (Fehler Rücksprache Urlaub nahm)',
     t1: 'Ich',
     t2: 'beging',
     t3: 'einen',
@@ -645,7 +644,7 @@ const SlotDativ = [
     t12: 'nahm',
     t13: '.',
   }, {
-    t0: 'Развитие последних лет привело к тому, что мы открываем новые рынки. (Entwicklung Jahre Folge Märkte)',
+    t0: 'Развитие последних лет привело к тому, что мы открываем новые рынки. (Entwicklung letzten Jahre Folge Märkte erschließen)',
     t1: 'Die',
     t2: 'Entwicklung',
     t3: 'der',
@@ -661,7 +660,7 @@ const SlotDativ = [
     t13: 'erschließen',
     t14: '.',
   }, {
-    t0: 'Он предъявляет очень много требований. (Forderungen)',
+    t0: 'Он предъявляет очень много требований. (stellt ganz Forderungen)',
     t1: 'Er',
     t2: 'stellt',
     t3: 'ganz',
@@ -671,7 +670,7 @@ const SlotDativ = [
     t7: '.',
 
   }, {
-    t0: 'На семинаре мы рассмотрим вопрос о том, как лучше всего справляться со стрессом на работе. (Seminar Fragen Arbeitsstress)',
+    t0: 'На семинаре мы рассмотрим вопрос о том, как лучше всего справляться со стрессом на работе. (Seminar gehen Fragen nach Arbeitsstress besten umgeht)',
     t1: 'Im',
     t2: 'Seminar',
     t3: 'gehen',
@@ -690,7 +689,7 @@ const SlotDativ = [
     t16: 'umgeht',
     t17: '.',
   }, {
-    t0: 'У него нет сомнений в том, что новые технологии важны для экономики. (Frage Technologien Wirtschaft)',
+    t0: 'У него нет сомнений в том, что новые технологии важны для экономики. (steht außer Frage Technologien Wirtschaft wichtig sind)',
     t1: 'Er',
     t2: 'steht',
     t3: 'außer',
@@ -706,7 +705,7 @@ const SlotDativ = [
     t13: 'sind',
     t14: '.',
   }, {
-    t0: 'Извините, могу я задать вам вопрос? (Entschuldigung Frage)',
+    t0: 'Извините, могу я задать вам вопрос? (Entschuldigung Frage stellen)',
     t1: 'Entschuldigung',
     t2: ',',
     t3: 'kann',
@@ -718,7 +717,7 @@ const SlotDativ = [
     t9: '?',
   },
   {
-    t0: 'Я много думаю о своем профессиональном будущем. (Gedanken Zukunft)',
+    t0: 'Я много думаю о своем профессиональном будущем. (mache Gedanken berufliche Zukunft)',
     t1: 'Ich',
     t2: 'mache',
     t3: 'mir',
@@ -730,7 +729,7 @@ const SlotDativ = [
     t9: 'Zukunft',
     t10: '.',
   }, {
-    t0: 'Реализация проекта находится под угрозой. (Realisierung Projekts Gefahr)',
+    t0: 'Реализация проекта находится под угрозой. (Realisierung Projekts ist Gefahr)',
     t1: 'Die',
     t2: 'Realisierung',
     t3: 'des',
@@ -740,7 +739,7 @@ const SlotDativ = [
     t7: 'Gefahr',
     t8: '.',
   }, {
-    t0: 'У вас уже была возможность связаться с IT. (Gelegenheit verständigen)',
+    t0: 'У вас уже была возможность связаться с IT. (Hatten bereits Gelegenheit  IT verständigen)',
     t1: 'Hatten',
     t2: 'sie',
     t3: 'bereits',
@@ -753,7 +752,7 @@ const SlotDativ = [
     t10: 'verständigen',
     t11: '.',
   }, {
-    t0: 'у нас состоялся интересный разговор с компанией-партнером о новом проекте. (Partnerfirma Gespräch Projekt)',
+    t0: 'у нас состоялся интересный разговор с компанией-партнером о новом проекте. (haben Partnerfirma interessantes Gespräch Projekt geführt)',
     t1: 'Wir',
     t2: 'haben',
     t3: 'mit',
@@ -769,7 +768,7 @@ const SlotDativ = [
     t13: 'geführt',
     t14: '.',
   }, {
-    t0: 'Никаких причин для этого решения не было предоставлено. (Entscheidung Gründe)',
+    t0: 'Никаких причин для этого решения не было предоставлено. (Entscheidung Gründe angegeben)',
     t1: 'Für',
     t2: 'diese',
     t3: 'Entscheidung',
@@ -779,7 +778,7 @@ const SlotDativ = [
     t7: 'angegeben',
     t8: '.',
   }, {
-    t0: 'Не отвечать на приветствие, считается очень грубым. (Gruß )',
+    t0: 'Не отвечать на приветствие, считается очень грубым. (Gruß erwidern gilt unhöflich)',
     t1: 'Einen',
     t2: 'Gruß',
     t3: 'nicht',
@@ -792,7 +791,7 @@ const SlotDativ = [
     t10: 'unhöflich',
     t11: '.',
   }, {
-    t0: 'Я был бы рад, если бы мне удалось заинтересовать вас нашими новыми продуктами. (Interesse Produkte)',
+    t0: 'Я был бы рад, если бы мне удалось заинтересовать вас нашими новыми продуктами. (freut Interesse Produkte wecken )',
     t1: 'Es',
     t2: 'freut',
     t3: 'mich',
@@ -809,7 +808,7 @@ const SlotDativ = [
     t14: 'konnte',
     t15: '.',
   }, {
-    t0: 'Тот, кто переходит на эту должность, принимает на себя определенные риски. (Stelle Risiken in Kauf)',
+    t0: 'Тот, кто переходит на эту должность, принимает на себя определенные риски. (Stelle wechselt nimmt Risiken in Kauf)',
     t1: 'Wer',
     t2: 'in',
     t3: 'die',
@@ -824,7 +823,7 @@ const SlotDativ = [
     t12: '.',
   },
   {
-    t0: 'Пожалуйста, примите к сведению, что частное использование Интернета в рабочее время запрещено. (Kenntnis Nutzung Internets Arbeitszeit)',
+    t0: 'Пожалуйста, примите к сведению, что частное использование Интернета в рабочее время запрещено. (nehmen Kenntnis private Nutzung Internets Arbeitszeit verboten)',
     t1: 'Bitte',
     t2: 'nehmen',
     t3: 'Sie',
@@ -844,7 +843,7 @@ const SlotDativ = [
     t17: 'ist',
     t18: '.',
   }, {
-    t0: 'На выставке можно легко связаться с новыми клиентами. (Messe Kunden Kontakt)',
+    t0: 'На выставке можно легко связаться с новыми клиентами. (Messe Kunden Kontakt aufnehmen)',
     t1: 'Auf',
     t2: 'einer',
     t3: 'Messe',
@@ -859,7 +858,7 @@ const SlotDativ = [
     t12: '.',
 
   }, {
-    t0: 'Она уже вступила в контакт с заявителем? (Bewerber Kontakt)',
+    t0: 'Она уже вступила в контакт с заявителем? (Bewerber Kontakt getreten)',
     t1: 'Ist',
     t2: 'sie',
     t3: 'schon',
@@ -871,7 +870,7 @@ const SlotDativ = [
     t9: 'getreten',
     t10: '?',
   }, {
-    t0: 'Кто несет расходы по несчастному случаю на производстве? (Kosten des Arbeitsunfalls)',
+    t0: 'Кто несет расходы по несчастному случаю на производстве? (trägt Kosten des Arbeitsunfalls)',
     t1: 'Wer',
     t2: 'trägt',
     t3: 'die',
@@ -880,7 +879,7 @@ const SlotDativ = [
     t6: 'Arbeitsunfalls',
     t7: '?',
   }, {
-    t0: 'Нынешняя минимальная заработная плата подвергается большой критике. (Mindestlohn Kritik)',
+    t0: 'Нынешняя минимальная заработная плата подвергается большой критике. (derzeitigen Mindestlohn Kritik geübt)',
     t1: 'An',
     t2: 'derzeitigen',
     t3: 'Mindestlohn',
@@ -890,7 +889,7 @@ const SlotDativ = [
     t7: 'geübt',
     t8: '.',
   }, {
-    t0: 'Я сейчас не в состоянии, ясно мыслить. (Lage)',
+    t0: 'Я сейчас не в состоянии, ясно мыслить. (gerade nicht Lage denken)',
     t1: 'Ich',
     t2: 'bin',
     t3: 'gerade',
@@ -904,7 +903,7 @@ const SlotDativ = [
     t11: 'denken',
     t12: '.',
   }, {
-    t0: 'Не всегда легко, поддерживать светскую беседу. (Small Talk am Laufen)',
+    t0: 'Не всегда легко, поддерживать светскую беседу. (immer einfach Small Talk am Laufen halten)',
     t1: 'Es',
     t2: 'ist',
     t3: 'nicht',
@@ -919,7 +918,7 @@ const SlotDativ = [
     t12: 'halten',
     t13: '.',
   }, {
-    t0: 'Ты в курсе последних событий? (Entwicklungen Laufenden)',
+    t0: 'Ты в курсе последних событий? (Bist neuesten Entwicklungen Laufenden)',
     t1: 'Bist',
     t2: 'du',
     t3: 'über',
@@ -931,7 +930,7 @@ const SlotDativ = [
     t9: 'Laufenden',
     t10: '?',
   }, {
-    t0: 'Все новые и новые устройства выводятся на рынок. (Geräte Markt)',
+    t0: 'Все новые и новые устройства выводятся на рынок. (Geräte Markt gebracht)',
     t1: 'Immer',
     t2: 'neue',
     t3: 'Geräte',
@@ -942,7 +941,7 @@ const SlotDativ = [
     t8: 'gebracht',
     t9: '.',
   }, {
-    t0: 'Он действительно старается, быстро изучить все рабочие процессы. (Mühe Arbeitsabläufe)',
+    t0: 'Он действительно старается, быстро изучить все рабочие процессы. (gibt Mühe Arbeitsabläufe lernen)',
     t1: 'Er',
     t2: 'gibt',
     t3: 'sich',
@@ -956,7 +955,7 @@ const SlotDativ = [
     t11: 'lernen',
     t12: '.',
   }, {
-    t0: 'Эти постоянные встречи действительно действуют мне на нервы. (ständigen Besprechungen Nerven)',
+    t0: 'Эти постоянные встречи действительно действуют мне на нервы. (ständigen gehen Besprechungen Nerven)',
     t1: 'Diese',
     t2: 'ständigen',
     t3: 'Besprechungen',
@@ -968,7 +967,7 @@ const SlotDativ = [
     t9: 'Nerven',
     t10: '.',
   }, {
-    t0: 'Несмотря на множество неудач он продолжал придерживаться своих планов. (Misserfolge Plänen)',
+    t0: 'Несмотря на множество неудач он продолжал придерживаться своих планов. (Trotz Misserfolge hielt Plänen fest)',
     t1: 'Trotz',
     t2: 'vieler',
     t3: 'Misserfolge',
@@ -980,7 +979,7 @@ const SlotDativ = [
     t9: 'fest',
     t10: '.',
   }, {
-    t0: 'В конце обучения необходимо сдать практический экзамен. (Ausbildung Prüfung)',
+    t0: 'В конце обучения необходимо сдать практический экзамен. (Ausbildung muss man Prüfung ablegen)',
     t1: 'Am',
     t2: 'Ende',
     t3: 'der',
@@ -1004,7 +1003,7 @@ const SlotDativ = [
     t8: 'entgegenzubringen',
     t9: '.',
   }, {
-    t0: 'Конкуренция играет большую роль во многих проблемах в команде. (Problemen im Team Konkurrenz Rolle)',
+    t0: 'Конкуренция играет большую роль во многих проблемах в команде. (Problemen im Team spielt Konkurrenz Rolle)',
     t1: 'Bei',
     t2: 'vielen',
     t3: 'Problemen',
@@ -1017,7 +1016,7 @@ const SlotDativ = [
     t10: 'Rolle',
     t11: '.',
   }, {
-    t0: 'Пожалуйста дайте мне еще отзыв о предложенной дате в 23. (Rückmeldung vorgeschlagenen Termin)',
+    t0: 'Пожалуйста дайте мне еще отзыв о предложенной дате в 23. (geben Rückmeldung vorgeschlagenen Termin)',
     t1: 'Bitte',
     t2: 'geben',
     t3: 'Sie',
@@ -1031,7 +1030,7 @@ const SlotDativ = [
     t11: '23',
     t12: '.',
   }, {
-    t0: 'Важно, проявлять уважение ко всей команде. (Rücksicht Team)',
+    t0: 'Важно, проявлять уважение ко всей команде. (Rücksicht ganze Team nehmen)',
     t1: 'Es',
     t2: 'ist',
     t3: 'wichtig',
@@ -1045,7 +1044,7 @@ const SlotDativ = [
     t11: 'nehmen',
     t12: '.',
   }, {
-    t0: 'Разговаривая с рассерженными клиентами, вы должны, прежде всего, сохранять спокойствие. (Gespräch Kunden Ruhe bewahren)',
+    t0: 'Разговаривая с рассерженными клиентами, вы должны, прежде всего, сохранять спокойствие. (Gespräch verärgerten Kunden sollten Ruhe bewahren)',
     t1: 'Im',
     t2: 'Gespräch',
     t3: 'mit',
@@ -1059,7 +1058,7 @@ const SlotDativ = [
     t11: 'bewahren',
     t12: '.',
   }, {
-    t0: 'Это было нехорошо, но ты уже снова берешь их под свою защиту. (Ordnung Schutz)',
+    t0: 'Это было нехорошо, но ты уже снова берешь их под свою защиту. (war Ordnung nimmst sie schon wieder  Schutz)',
     t1: 'Das',
     t2: 'war',
     t3: 'nicht',
@@ -1076,7 +1075,7 @@ const SlotDativ = [
     t14: 'Schutz',
     t15: '.',
   }, {
-    t0: 'Я очень обеспокоен и будущим компании. (Sorgen Zukunft Firma)',
+    t0: 'Я очень обеспокоен и будущим компании. (mache große Sorgen Zukunft Firma)',
     t1: 'Ich',
     t2: 'mache',
     t3: 'mir',
@@ -1090,7 +1089,7 @@ const SlotDativ = [
     t11: '.',
 
   }, {
-    t0: 'Мы не должны ставить под угрозу удовлетворение клиента. (Zufriedenheit Kundin aufs Spiel)',
+    t0: 'Мы не должны ставить под угрозу удовлетворение клиента. (Zufriedenheit Kundin aufs Spiel setzen)',
     t1: 'Wir',
     t2: 'dürfen',
     t3: 'die',
@@ -1103,7 +1102,7 @@ const SlotDativ = [
     t10: 'setzen',
     t11: '.',
   }, {
-    t0: 'Конфликты следует решать быстро. (Konflikte Sprache gebracht)',
+    t0: 'Конфликты следует решать быстро. (Konflikte Sprache gebracht werden)',
     t1: 'Konflikte',
     t2: 'sollten',
     t3: 'schnell',
@@ -1113,7 +1112,7 @@ const SlotDativ = [
     t7: 'werden',
     t8: '.',
   }, {
-    t0: 'Важно, чтобы проблемы внутри команды наконец обсуждались. (Probleme Team Sprache)',
+    t0: 'Важно, чтобы проблемы внутри команды наконец обсуждались. (Probleme Team Sprache kommen)',
     t1: 'Es',
     t2: 'ist',
     t3: 'wichtig',
@@ -1129,7 +1128,7 @@ const SlotDativ = [
     t13: 'kommen',
     t14: '.',
   }, {
-    t0: 'Как продвигается проект? Можете ли вы ввести меня в курс дела? (Projekt Stand)',
+    t0: 'Как продвигается проект? Можете ли вы ввести меня в курс дела? (läuft Projekt neuesten Stand bringen)',
     t1: 'Wie',
     t2: 'läuft',
     t3: 'das',
@@ -1146,7 +1145,7 @@ const SlotDativ = [
     t14: 'bringen',
     t15: '?',
   }, {
-    t0: 'Я придерживаюсь той точки зрения, что нам срочно нужна дополнительная поддержка. (Standpunkt Unterstützung)',
+    t0: 'Я придерживаюсь той точки зрения, что нам срочно нужна дополнительная поддержка. (stehe Standpunkt dringend  Unterstützung brauchen)',
     t1: 'Ich',
     t2: 'stehe',
     t3: 'auf',
@@ -1161,7 +1160,7 @@ const SlotDativ = [
     t12: 'brauchen',
     t13: '.',
   }, {
-    t0: 'Я не хочу комментировать этот вопрос. (Sache Stellung)',
+    t0: 'Я не хочу комментировать этот вопрос. (Sache Stellung nehmen)',
     t1: 'Ich',
     t2: 'möchte',
     t3: 'zu',
@@ -1172,7 +1171,7 @@ const SlotDativ = [
     t8: 'nehmen',
     t9: '.',
   }, {
-    t0: 'Какие внутренние договоренности по контракту были достигнуты с вами? (Verabredungen Vertrag)',
+    t0: 'Какие внутренние договоренности по контракту были достигнуты с вами? (internen Verabredungen Vertrag getroffen)',
     t1: 'Welche',
     t2: 'internen',
     t3: 'Verabredungen',
@@ -1185,7 +1184,7 @@ const SlotDativ = [
     t10: 'getroffen',
     t11: '?',
   }, {
-    t0: 'Работодатель несет ответственность за здоровье сотрудников. (Arbeitsgeber Verantwortung Gesundheit Mitarbeitenden)',
+    t0: 'Работодатель несет ответственность за здоровье сотрудников. (Arbeitsgeber trägt Verantwortung für Gesundheit Mitarbeitenden)',
     t1: 'Der',
     t2: 'Arbeitsgeber',
     t3: 'trägt',
@@ -1198,7 +1197,7 @@ const SlotDativ = [
     t10: 'Mitarbeitenden',
     t11: '.',
   }, {
-    t0: 'Обращайтесь в IT при возникновении технических проблем. (IT Problemen Verbindung)',
+    t0: 'Обращайтесь в IT при возникновении технических проблем. (Setzen Sie  technischen Problemen IT in Verbindung)',
     t1: 'Setzen',
     t2: 'Sie',
     t3: 'sich',
@@ -1212,7 +1211,7 @@ const SlotDativ = [
     t11: 'Verbindung',
     t12: '.',
   }, {
-    t0: 'Своими вопросами он поставил меня в неловкое положение. (Fragen Verlegenheit)',
+    t0: 'Своими вопросами он поставил меня в неловкое положение. (Fragen Verlegenheit gebracht)',
     t1: 'Mit',
     t2: 'seinen',
     t3: 'Fragen',
@@ -1224,7 +1223,7 @@ const SlotDativ = [
     t9: 'gebracht',
     t10: '.',
   }, {
-    t0: 'На проект не хватает денег. (Projekt Geld zur Verfügung)',
+    t0: 'На проект не хватает денег. (Für Projekt steht Geld zur Verfügung)',
     t1: 'Für',
     t2: 'das',
     t3: 'Projekt',
@@ -1236,7 +1235,7 @@ const SlotDativ = [
     t9: 'Verfügung',
     t10: '.',
   }, {
-    t0: 'Мы будем рады предоставить вам дополнительную документацию о процессе признания профессии. (Unterlagen Berufsanerkennungsverfahren Verfügung)',
+    t0: 'Мы будем рады предоставить вам дополнительную документацию о процессе признания профессии. (Gerne stellen weitere Unterlagen Berufsanerkennungsverfahren Verfügung)',
     t1: 'Gerne',
     t2: 'stellen',
     t3: 'wir',
@@ -1250,7 +1249,7 @@ const SlotDativ = [
     t11: 'Verfügung',
     t12: '.',
   }, {
-    t0: 'Я не могу понять эту проблему. (Problem Verständnis)',
+    t0: 'Я не могу понять эту проблему. (Problem Verständnis aufbringen)',
     t1: 'Ich',
     t2: 'kann',
     t3: 'für',
@@ -1262,7 +1261,7 @@ const SlotDativ = [
     t9: '.',
 
   }, {
-    t0: 'Если бы у меня был выбор, я бы всегда отдавал предпочтение работе с частичной занятостью. (die Wahl Teilzeitstelle Vorzug)',
+    t0: 'Если бы у меня был выбор, я бы всегда отдавал предпочтение работе с частичной занятостью. (die Wahl Teilzeitstelle Vorzug geben)',
     t1: 'Wenn',
     t2: 'ich',
     t3: 'die',
@@ -1281,7 +1280,7 @@ const SlotDativ = [
 
   },
   {
-    t0: 'С тех пор как они поссорились он избегает его. (Streit aus dem Weg)',
+    t0: 'С тех пор как они поссорились он избегает его. (Seit Streit geht aus dem Weg)',
     t1: 'Seit',
     t2: 'dem',
     t3: 'Streit',
@@ -1293,7 +1292,7 @@ const SlotDativ = [
     t9: 'Weg',
     t10: '.',
   }, {
-    t0: 'Благополучие гостей в нашем отеле находится в центре внимания. (Wohl der Gäste Hotel im Zentrum)',
+    t0: 'Благополучие гостей в нашем отеле находится в центре внимания. (Wohl der Gäste steht Hotel im Zentrum)',
     t1: 'Das',
     t2: 'Wohl',
     t3: 'der',
@@ -1307,7 +1306,7 @@ const SlotDativ = [
     t11: '.',
 
   }, {
-    t0: 'Показатели продаж напрямую связаны с маркетинговой акцией осенью. (Absatzzahlen direkten Zusammenhang  Marketing Aktion im Herbst)',
+    t0: 'Показатели продаж напрямую связаны с маркетинговой акцией осенью. (Absatzzahlen stehen direkten Zusammenhang  Marketing Aktion im Herbst)',
     t1: 'Die',
     t2: 'Absatzzahlen',
     t3: 'stehen',
@@ -1323,7 +1322,7 @@ const SlotDativ = [
     t13: '.',
 
   }, {
-    t0: 'У меня есть сомнения в эффективность временных рабочих мест. (Zweifel an das Wirksamkeit Arbeitsstellen)',
+    t0: 'У меня есть сомнения в эффективность временных рабочих мест. (Zweifel an das Wirksamkeit befristeten Arbeitsstellen)',
     t1: 'Ich',
     t2: 'habe',
     t3: 'Zweifel',
@@ -1336,7 +1335,7 @@ const SlotDativ = [
     t10: '.',
 
   }, {
-    t0: 'Нет никаких сомнений в том, что мы не смогли бы работать так же хорошо без компьютеров. (Zweifel Computer)',
+    t0: 'Нет никаких сомнений в том, что мы не смогли бы работать так же хорошо без компьютеров. (steht außer Zweifel Computer so gut)',
     t1: 'Es',
     t2: 'steht',
     t3: 'außer',
