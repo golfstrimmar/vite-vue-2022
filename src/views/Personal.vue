@@ -112,7 +112,7 @@ const SlotDataPersonal = [
     t10: '?',
   },
   {
-    t0: 'Я сказал ему, но он мне не подчиняется! (gesagt gehorcht)',
+    t0: 'Я сказал это ему, но он мне не подчиняется! (gesagt gehorcht)',
     t1: 'Ich',
     t2: 'habe',
     t3: 'es',
@@ -151,7 +151,7 @@ const SlotDataPersonal = [
 
 
   {
-    t0: 'Я знаю хорошего учителя, которому я мог бы его научить. (kenne Lehrerin vermitteln könnte)',
+    t0: 'Я знаю хорошего учителя, которому я мог бы его передать. (kenne Lehrerin vermitteln könnte)',
     t1: 'Ich',
     t2: 'kenne',
     t3: 'eine',
@@ -167,23 +167,7 @@ const SlotDataPersonal = [
 
   },
   {
-    t0: 'Я знаю хорошего учителя, которому я мог бы его научить. (kenne Lehrerin vermitteln könnte)',
-    t1: 'Ich',
-    t2: 'kenne',
-    t3: 'eine',
-    t4: 'gute',
-    t5: 'Lehrerin',
-    t6: ',',
-    t7: 'die',
-    t8: 'ich',
-    t9: 'ihm',
-    t10: 'vermitteln',
-    t11: 'könnte',
-    t12: '.',
-
-  },
-  {
-    t0: 'Ты поможешь мне связаться с ней?(Hilfst kontaktieren)',
+    t0: 'Ты поможешь мне связаться с ней? (Hilfst kontaktieren)',
     t1: 'Hilfst',
     t2: 'du',
     t3: 'mir',
@@ -194,8 +178,8 @@ const SlotDataPersonal = [
     t8: '?',
   },
   {
-    t0: 'В процессе она потеряла свои ключи. (verlor Schlüssel)',
-    t1: 'Dabei    ',
+    t0: 'В процессе она потеряла свои ключи. (Dabei verlor Schlüssel)',
+    t1: 'Dabei',
     t2: 'verlor',
     t3: 'sie',
     t4: 'ihre',
@@ -330,7 +314,7 @@ const SlotDataPersonal = [
     t5: '.',
   },
   {
-    t0: 'Когда я умру, они будут чтить мою память.(tot gedenken)',
+    t0: 'Когда я умру, они будут чтить мою память.(tot , werden sie gedenken)',
     t1: 'Wenn',
     t2: 'ich',
     t3: 'tot',
