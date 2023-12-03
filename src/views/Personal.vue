@@ -297,7 +297,7 @@ const SlotDataPersonal = [
     t11: '.',
   },
   {
-    t0: 'Тебя будут помнить. (Man  erinnern)',
+    t0: 'Тебя будут помнить. (Man sich erinnern)',
     t1: 'Man',
     t2: 'wird',
     t3: 'sich',
