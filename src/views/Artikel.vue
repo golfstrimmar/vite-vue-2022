@@ -314,7 +314,7 @@ const SlotDataBestimmte = [
     t7: '.',
   },
   {
-    t0: 'Но весна лучше всего. (Frühling allerbesten)',
+    t0: 'Но весна лучше всего. (Frühling am allerbesten)',
     t1: 'Aber',
     t2: 'der',
     t3: 'Frühling',
@@ -336,7 +336,7 @@ const SlotDataBestimmte = [
     t8: '.',
   },
   {
-    t0: 'У водителя возникли проблемы с въездом в парковочную зону. (Fahrer Probleme Parkplatz betreten)',
+    t0: 'У водителя возникли проблемы, парковочную зону заходить. (Fahrer Probleme Parkplatz betreten)',
     t1: 'Der',
     t2: 'Fahrer',
     t3: 'hatte',
@@ -381,7 +381,7 @@ const SlotDataBestimmte = [
 
 
   {
-    t0: 'Техник, проводивший анализ, был найден мертвым.(Techniker Analyse tot aufgefunden)',
+    t0: 'Техник, который делал анализ, был найден мертвым.(Techniker Analyse tot aufgefunden)',
     t1: 'Der',
     t2: 'Techniker',
     t3: ',',
@@ -399,7 +399,7 @@ const SlotDataBestimmte = [
 
 
   {
-    t0: 'Какой была бы жизнь без возможности принимать глупые решения?(wäre Leben Möglichkeit dumme Entscheidung treffen)',
+    t0: 'Что была бы за жизнь без возможности принимать глупые решения? (wäre Leben Möglichkeit dumme Entscheidung treffen)',
     t1: 'Was',
     t2: 'wäre',
     t3: 'das',
@@ -567,7 +567,7 @@ const SlotDataBestimmte = [
 
 const SlotDataUnbestimmte = [
   {
-    t0: 'найти отличный ответ(Echo finden)',
+    t0: 'найти отличный ответ (großes Echo finden)',
     t1: 'ein',
     t2: 'großes',
     t3: 'Echo',
@@ -577,7 +577,7 @@ const SlotDataUnbestimmte = [
 
 
   {
-    t0: 'Я живу в маленькой квартире.( Wohnung)',
+    t0: 'Я живу в маленькой квартире.( kleinen Wohnung)',
     t1: 'Ich',
     t2: 'wohne',
     t3: 'in',
@@ -753,7 +753,7 @@ const SlotDataUnbestimmte = [
 ]
 const SlotDataNegativ = [
   {
-    t0: 'Я не думаю, что это хорошая книга. (gutes Buch)',
+    t0: 'Я нахожу, что это не хорошая книга. (gutes Buch)',
     t1: 'Ich',
     t2: 'finde',
     t3: ',',
@@ -781,7 +781,7 @@ const SlotDataNegativ = [
 
   {
 
-    t0: 'К сожалению, здесь, в моей деревне, нет супермаркета. (Hier Dorf leider Supermarkt)',
+    t0: 'Здесь в моей деревне  нет к сожалению никакого супермаркета. (Hier Dorf leider Supermarkt)',
     t1: 'Hier',
     t2: 'in',
     t3: 'meinem',
@@ -897,7 +897,7 @@ const SlotDataNegativ = [
   },
 
   {
-    t0: 'Сегодня у меня нет желания заниматься спортом. (Heute Lust Sport)',
+    t0: 'Сегодня у меня нет желания заниматься спортом. (Heute Lust auf Sport)',
     t1: 'Heute',
     t2: 'habe',
     t3: 'ich',
