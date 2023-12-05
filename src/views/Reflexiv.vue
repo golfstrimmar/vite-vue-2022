@@ -155,7 +155,7 @@ const SlotDataReflexiv = [
   },
 
   {
-    t0: 'В детстве я всегда прятался от Санта-Клауса. (Kind Weihnachtmann versteckt)',
+    t0: 'Как ребенокä я всегда прятался от Санта-Клауса. (Kind Weihnachtmann versteckt)',
     t1: 'Als',
     t2: 'Kind',
     t3: 'habe',
@@ -184,7 +184,7 @@ const SlotDataReflexiv = [
   },
 
   {
-    t0: 'О чем вы только думали, ребята? (bloß gedacht)',
+    t0: 'О чем вы только думали, ребята? (Was bloß gedacht)',
     t1: 'Was',
     t2: 'habt',
     t3: 'ihr',
@@ -209,7 +209,7 @@ const SlotDataReflexiv = [
   },
 
   {
-    t0: 'Мне кажется, он всегда был очень крепок здоровьем. (gesundheitlich stark)',
+    t0: 'Мне думается, он всегда был очень крепок здоровьем. (Das immer gesundheitlich stark)',
     t1: 'Das',
     t2: 'denke',
     t3: 'ich',
@@ -217,16 +217,15 @@ const SlotDataReflexiv = [
     t5: ',',
     t6: 'er',
     t7: 'war',
-    t8: 'ja',
+    t8: 'immer',
     t9: 'gesundheitlich',
-    t10: 'immer',
-    t11: 'sehr',
-    t12: 'stark',
-    t13: '.',
+    t10: 'sehr',
+    t11: 'stark',
+    t12: '.',
   },
 
   {
-    t0: 'Я могу только удивляться некоторым людям , которые притворяются, когда им задают честный вопрос. (Leute wundern verstellen ehrliche Frage stellt)',
+    t0: 'Я могу только через  некоторых людей удивляться, которые притворяются, когда им задают честный вопрос. (über Leute wundern verstellen ehrliche Frage stellt)',
     t1: 'Ich',
     t2: 'kann',
     t3: 'mich',

@@ -485,7 +485,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Студенты дают домашнее задание своим учителям немецкого языка. (Schüler Deutschlehrer Hausaufgaben)',
+    t0: 'Студенты cдают домашнее задание своим учителям немецкого языка. (Schüler Deutschlehrer Hausaufgaben)',
     t1: 'Die',
     t2: 'Schüler',
     t3: 'geben',
@@ -527,7 +527,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Вы должны научить своих детей лучшим манерам. (solltet euren Kindern bessere Manieren beibringen)',
+    t0: 'Вы должны научить своих детей лучшим манерам. (solltet  Kindern bessere Manieren beibringen)',
     t1: 'Ihr',
     t2: 'solltet',
     t3: 'euren',
@@ -553,7 +553,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Я не верю ни одному Его слову. ( Wort vertraue )',
+    t0: 'Я не верю его слову. ( Wort vertraue )',
     t1: 'Seinem',
     t2: 'Wort',
     t3: 'vertraue',
@@ -636,7 +636,7 @@ const SlotDataPersonal = [
   },
 
   {
-    t0: 'Где на самом деле работает Ваш брат? (Ihr Bruder eigentlich)',
+    t0: 'Где на самом деле работает Ваш брат? ( Bruder eigentlich)',
     t1: 'Wo',
     t2: 'arbeitet',
     t3: 'Ihr',
@@ -678,13 +678,13 @@ const SlotDataPersonal = [
     t12: 'mir',
     t13: 'heute',
     t14: 'Abend',
-    t15: 'deins',
+    t15: 'deines',
     t16: 'leihen',
     t17: '?',
   },
 
   {
-    t0: 'Ты видел мой наполнитель? Это мое . Твоего я не видел.(Füller gesehen )',
+    t0: 'Ты видел мой наполнитель? Это здесь мое . Твоего я не видел.(Füller gesehen )',
     t1: 'Hast',
     t2: 'du',
     t3: 'meinen',
