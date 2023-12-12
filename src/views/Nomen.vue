@@ -34,7 +34,7 @@ const SlotDativ = [
     t10: '.',
 
   }, {
-    t0: 'Важно также проявлять уважение к конкурентам. (Konkurrenz Achtung entgegenzubringen)',
+    t0: 'Важно, также проявлять уважение к конкурентам. (Konkurrenz Achtung entgegenzubringen)',
     t1: 'Es',
     t2: 'ist',
     t3: 'wichtig',

@@ -22,6 +22,13 @@
     p(style="color: red;font-weight: 800;") Viele Formen des Passivs werden nicht wörtlich ins Russische übersetzt oder klingen falsch!
   Tabs(:items= 'Vorgangs' title='Das Vorgangspassiv' )
   Tabs(:items= 'Zustand' title='Das Zustandspassiv' )
+  Tabs(:items= 'VorgangsModalmüssen' title='Passiv mit Modalverb müssen' )
+  Tabs(:items= 'VorgangsModalkönnen' title='Passiv mit Modalverb können' )
+  Tabs(:items= 'VorgangsModaldürfen' title='Passiv mit Modalverb dürfen' )
+  Tabs(:items= 'VorgangsModalsollen' title='Passiv mit Modalverb sollen' )
+  Tabs(:items= 'VorgangsModalwollen' title='Passiv mit Modalverb wollen' )
+  Tabs(:items= 'VorgangsModalmögen' title='Passiv mit Modalverb mögen' )
+  Tabs(:items= 'VorgangsModalmöchten' title='Passiv mit Modalverb möchten' )
   .page-title--small 
     h2 Training Vorgangspassivs
   TabsTraining( title='Vorgangspassivs Präsens' :SlotData='SlotVorgangspassivsPräsens' )
@@ -36,6 +43,17 @@
   TabsTraining( title='Zustandspassivs Perfekt' :SlotData='SlotZustandspassivsPerfekt' )
   TabsTraining( title='Zustandspassivs Plusquamperfekt' :SlotData='SlotZustandspassivsPlusquamperfekt' )
   TabsTraining( title='Zustandspassivs Futurum ' :SlotData='SlotZustandspassivsFuturum' )
+
+  .page-title--small 
+    h2 Training Passiv mit Modalverben
+  TabsTraining( title='müssen' :SlotData='Slotmüssen' )
+  TabsTraining( title='können' :SlotData='Slotkönnen' )
+  TabsTraining( title='dürfen' :SlotData='Slotdürfen' )
+  TabsTraining( title='sollen' :SlotData='Slotsollen' )
+  TabsTraining( title='wollen' :SlotData='Slotwollen' )
+  TabsTraining( title='mögen' :SlotData='Slotmögen' )
+  TabsTraining( title='möchten' :SlotData='Slotmöchten' )
+ 
  
 
 
@@ -49,6 +67,571 @@ import TabsTraining from '@/components/TabsTraining.vue';
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
 
+
+
+const Slotmüssen = [
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+
+]
+const Slotkönnen = [
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+
+]
+const Slotdürfen = [
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+
+]
+const Slotsollen = [
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+
+]
+const Slotwollen = [
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+
+]
+const Slotmögen = [
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+
+]
+const Slotmöchten = [
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+  {
+    t0: '',
+    t1: '',
+    t2: '',
+    t3: '',
+    t4: '',
+    t5: '',
+    t6: '',
+    t7: '',
+    t8: '',
+    t9: '',
+    t10: '',
+    t11: '',
+    t12: '',
+    t13: '',
+    t14: '',
+    t15: '',
+    t16: '',
+    t17: '',
+    t18: '',
+  },
+
+]
+
+
+
+const VorgangsModalmöchten = [
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es möchte Pt2 werden',
+    text2: 'du möchtest Pt2 werden',
+    text3: 'ihr möchtet Pt2 werden',
+    text4: 'wir,sie,Sie möchten Pt2 werden',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es möchtete Pt2 werden',
+    text2: 'du möchtetest Pt2 werden',
+    text3: 'ihr möchtetet Pt2 werden',
+    text4: 'wir,sie,Sie möchteten Pt2 werden',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe Pt2 werden möchten',
+    text2: 'du hast Pt2 werden möchten',
+    text3: 'er,sie,es hat Pt2 werden möchten',
+    text4: 'ihr habt Pt2 werden möchten',
+    text5: 'wir,sie,Sie haben Pt2 werden möchten'
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte Pt2 werden möchten',
+    text2: 'du hattest Pt2 werden möchten',
+    text3: 'ihr hattet Pt2 werden möchten',
+    text4: 'wir,sie,Sie hatten Pt2 werden möchten'
+  },
+
+]
+const VorgangsModalmögen = [
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es mag Pt2 werden',
+    text2: 'du magst Pt2 werden',
+    text3: 'ihr mögt Pt2 werden',
+    text4: 'wir,sie,Sie mögen Pt2 werden',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es mochte Pt2 werden',
+    text2: 'du mochtest Pt2 werden',
+    text3: 'ihr mochtet Pt2 werden',
+    text4: 'wir,sie,Sie mochten Pt2 werden',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe Pt2 werden mögen',
+    text2: 'du hast Pt2 werden mögen',
+    text3: 'er,sie,es hat Pt2 werden mögen',
+    text4: 'ihr habt Pt2 werden mögen',
+    text5: 'wir,sie,Sie haben Pt2 werden mögen'
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte Pt2 werden mögen',
+    text2: 'du hattest Pt2 werden mögen',
+    text3: 'ihr hattet Pt2 werden mögen',
+    text4: 'wir,sie,Sie hatten Pt2 werden mögen'
+  },
+
+]
+const VorgangsModalwollen = [
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es will Pt2 werden',
+    text2: 'du willst Pt2 werden',
+    text3: 'ihr wollt Pt2 werden',
+    text4: 'wir,sie,Sie wollen Pt2 werden',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es wollte Pt2 werden',
+    text2: 'du wolltest Pt2 werden',
+    text3: 'ihr wolltet Pt2 werden',
+    text4: 'wir,sie,Sie wollten Pt2 werden',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe Pt2 werden wollen',
+    text2: 'du hast Pt2 werden wollen',
+    text3: 'er,sie,es hat Pt2 werden wollen',
+    text4: 'ihr habt Pt2 werden wollen',
+    text5: 'wir,sie,Sie haben Pt2 werden wollen'
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte Pt2 werden wollen',
+    text2: 'du hattest Pt2 werden wollen',
+    text3: 'ihr hattet Pt2 werden wollen',
+    text4: 'wir,sie,Sie hatten Pt2 werden wollen'
+  },
+
+]
+const VorgangsModalsollen = [
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es soll Pt2 werden',
+    text2: 'du sollst Pt2 werden',
+    text3: 'ihr sollt Pt2 werden',
+    text4: 'wir,sie,Sie sollen Pt2 werden',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es sollte Pt2 werden',
+    text2: 'du solltest Pt2 werden',
+    text3: 'ihr solltet Pt2 werden',
+    text4: 'wir,sie,Sie sollten Pt2 werden',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe Pt2 werden sollen',
+    text2: 'du hast Pt2 werden sollen',
+    text3: 'er,sie,es hat Pt2 werden sollen',
+    text4: 'ihr habt Pt2 werden sollen',
+    text5: 'wir,sie,Sie haben Pt2 werden sollen'
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte Pt2 werden sollen',
+    text2: 'du hattest Pt2 werden sollen',
+    text3: 'ihr hattet Pt2 werden sollen',
+    text4: 'wir,sie,Sie hatten Pt2 werden sollen'
+  },
+
+]
+const VorgangsModaldürfen = [
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es darf Pt2 werden',
+    text2: 'du darfst Pt2 werden',
+    text3: 'ihr dürft Pt2 werden',
+    text4: 'wir,sie,Sie dürfen Pt2 werden',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es durfte Pt2 werden',
+    text2: 'du durftest Pt2 werden',
+    text3: 'ihr durftet Pt2 werden',
+    text4: 'wir,sie,Sie durften Pt2 werden',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe Pt2 werden dürfen',
+    text2: 'du hast Pt2 werden dürfen',
+    text3: 'er,sie,es hat Pt2 werden dürfen',
+    text4: 'ihr habt Pt2 werden dürfen',
+    text5: 'wir,sie,Sie haben Pt2 werden dürfen'
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte Pt2 werden dürfen',
+    text2: 'du hattest Pt2 werden dürfen',
+    text3: 'ihr hattet Pt2 werden dürfen',
+    text4: 'wir,sie,Sie hatten Pt2 werden dürfen'
+  },
+
+]
+const VorgangsModalkönnen = [
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es kann Pt2 werden',
+    text2: 'du kannst Pt2 werden',
+    text3: 'ihr könnt Pt2 werden',
+    text4: 'wir,sie,Sie können Pt2 werden',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es konnte Pt2 werden',
+    text2: 'du konntest Pt2 werden',
+    text3: 'ihr konntet Pt2 werden',
+    text4: 'wir,sie,Sie konnten Pt2 werden',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe Pt2 werden können',
+    text2: 'du hast Pt2 werden können',
+    text3: 'er,sie,es hat Pt2 werden können',
+    text4: 'ihr habt Pt2 werden können',
+    text5: 'wir,sie,Sie haben Pt2 werden können'
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte Pt2 werden können',
+    text2: 'du hattest Pt2 werden können',
+    text3: 'ihr hattet Pt2 werden können',
+    text4: 'wir,sie,Sie hatten Pt2 werden können'
+  },
+
+]
+const VorgangsModalmüssen = [
+
+  {
+    title: 'Präsens',
+    text1: 'ich,er,sie,es muss Pt2 werden',
+    text2: 'du mussst Pt2 werden',
+    text3: 'ihr müsst Pt2 werden',
+    text4: 'wir,sie,Sie müssen Pt2 werden',
+
+  },
+  {
+    title: 'Präteritum',
+    text1: 'ich,er,sie,es musste Pt2 werden',
+    text2: 'du musstest Pt2 werden',
+    text3: 'ihr musstet Pt2 werden',
+    text4: 'wir,sie,Sie mussten Pt2 werden',
+
+  },
+  {
+    title: 'Perfekt',
+    text1: 'ich habe Pt2 werden müssen',
+    text2: 'du hast Pt2 werden müssen',
+    text3: 'er,sie,es hat Pt2 werden müssen',
+    text4: 'ihr habt Pt2 werden müssen',
+    text5: 'wir,sie,Sie haben Pt2 werden müssen'
+  },
+  {
+    title: 'Plusquamperfekt',
+    text1: 'ich,er,sie,es hatte Pt2 werden müssen',
+    text2: 'du hattest Pt2 werden müssen',
+    text3: 'ihr hattet Pt2 werden müssen',
+    text4: 'wir,sie,Sie hatten Pt2 werden müssen'
+  },
+
+]
 const Vorgangs = [
 
   {
@@ -141,6 +724,18 @@ const Zustand = [
     text5: 'wir,sie,Sie werden Pt2 sein',
   },
 ]
+
+
+
+
+
+
+
+
+
+
+
+
 const SlotVorgangspassivsPräsens = [
   {
     t0: 'Он пострадаем. (verletzt)',
@@ -253,6 +848,8 @@ const SlotVorgangspassivsPräsens = [
   },
 
 ]
+
+
 const SlotVorgangspassivsPräteritum = [
   {
     t0: 'Вы были создаваемы очень красивыми. (schön gemacht)',
@@ -433,7 +1030,7 @@ const SlotVorgangspassivsPerfekt = [
   },
   {
     t0: 'Телевизор был отремонтирован мастером. (Fernseher Meister repariert)',
-    t1: 'Die',
+    t1: 'De',
     t2: 'Fernseher',
     t3: 'ist',
     t4: 'vom',
@@ -580,7 +1177,7 @@ const SlotVorgangspassivsFuturum = [
 
   },
   {
-    t0: 'Вы будете очень красиво раскрашиваемы.(schön schön gemalt)',
+    t0: 'Вы будете очень красиво раскрашиваемы.(sehr schön gemalt)',
     t1: 'Ihr',
     t2: 'werdet',
     t3: 'sehr',
