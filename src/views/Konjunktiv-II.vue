@@ -680,7 +680,7 @@ const SlotGegenwartPassiv = [
     t16: 'Garten',
     t17: '.',
   }, {
-    t0: 'Учитель будет спрошен учеником. (Lehrer Schüler gefragt)',
+    t0: 'Учитель спрашиваем учеником. (Lehrer Schüler gefragt)',
     t1: 'Der',
     t2: 'Lehrer',
     t3: 'würde',
@@ -821,7 +821,7 @@ const SlotVerbformen = [
 
   },
   {
-    t0: 'На самом деле автобус должен был прийти в 10 утра. (käme Eigentlich )',
+    t0: 'На самом деле автобус должен был прийти в 10 утра. (Eigentlich käme )',
     t1: 'Eigentlich',
     t2: 'käme',
     t3: 'der',
@@ -833,7 +833,7 @@ const SlotVerbformen = [
 
   },
   {
-    t0: 'Мне также подойдет встреча в среду. (ginge auch Termin am Mittwoch)',
+    t0: 'Мне также подойдет встреча в среду. (Für ginge auch Termin am Mittwoch)',
     t1: 'Für',
     t2: 'mich',
     t3: 'ginge',
@@ -846,7 +846,7 @@ const SlotVerbformen = [
 
   },
   {
-    t0: 'Если бы вы писали аккуратнее, то я бы лучше прочитал ваш текст. (ordentlicher schriebest läse Text besser)',
+    t0: 'Если бы ты писал аккуратнее, то я бы лучше прочитал твой текст. (ordentlicher schriebest läse Text besser)',
     t1: 'Wenn',
     t2: 'du',
     t3: 'ordentlicher',
