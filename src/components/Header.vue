@@ -16,8 +16,8 @@ header.header
           router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
             |{{ link.name }}
       .auth-items
-        router-link(to="/signup"  v-if="!isLoggedIn" ) SignUp
-        router-link(to="/signin"  v-if="!isLoggedIn" ) SignIn
+        //- router-link(to="/signup"  v-if="!isLoggedIn" ) SignUp
+        //- router-link(to="/signin"  v-if="!isLoggedIn" ) SignIn
         Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" ) 
         ._user(v-if="isLoggedIn" )
           span User info
