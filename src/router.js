@@ -13,6 +13,7 @@ import Nomen from "@/views/Nomen.vue";
 import SignUp from "@/views/SignUp.vue";
 import SignIn from "@/views/SignIn.vue";
 import Tasks from "@/components/Tasks.vue";
+import Verben from "@/views/Verben.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -31,6 +32,7 @@ const router = createRouter({
     { path: "/signup", name: "SignUp", component: SignUp },
     { path: "/signin", name: "SignIn", component: SignIn },
     { path: "/tasks", name: "Tasks", component: Tasks },
+    { path: "/verben", name: "Verben", component: Verben },
   ],
 });
 

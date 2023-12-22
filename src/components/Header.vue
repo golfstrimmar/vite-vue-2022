@@ -55,6 +55,7 @@ const links = ref([
   { name: "Passiv", href: "/passiv" },
   { name: "Konjunktiv-II", href: "/konjunktiv" },
   { name: "Nomen", href: "/nomen" },
+  { name: "Verben", href: "/verben" },
   // { name: "Tasks", href: "/tasks" },
   // { name: "SignIn", href: "/signin" },
 ]);
