@@ -47,12 +47,7 @@
   .page-title--small 
     h2 Training Passiv mit Modalverben
   TabsTraining( title='müssen' :SlotData='Slotmüssen' )
-  TabsTraining( title='können' :SlotData='Slotkönnen' )
-  TabsTraining( title='dürfen' :SlotData='Slotdürfen' )
-  TabsTraining( title='sollen' :SlotData='Slotsollen' )
-  TabsTraining( title='wollen' :SlotData='Slotwollen' )
-  TabsTraining( title='mögen' :SlotData='Slotmögen' )
-  TabsTraining( title='möchten' :SlotData='Slotmöchten' )
+
  
  
 
@@ -71,319 +66,130 @@ import Slot from '@/components/Slot.vue'
 
 const Slotmüssen = [
   {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
+    t0: 'Мужчина должен быть прооперирован.',
+    t1: 'Der',
+    t2: 'Mann',
+    t3: 'muss',
+    t4: 'operiert',
+    t5: 'werden',
+    t6: '.',
   },
   {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
+    t0: 'Я должен быть прооперирован.',
+    t1: 'Ich',
+    t2: 'muss',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: '.',
   },
-
+  {
+    t0: 'Ты должен быть прооперирован.',
+    t1: 'Du',
+    t2: 'musst',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: '.',
+  },
+  {
+    t0: 'Мы должны быть прооперированы.',
+    t1: 'Wir',
+    t2: 'müssen',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: '.',
+  },
+  {
+    t0: 'Вы должны быть прооперированы. (ihr)',
+    t1: 'Ihr',
+    t2: 'müsst',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: '.',
+  },
+  {
+    t0: 'Вы должны были быть прооперированы. (ihr)',
+    t1: 'Ihr',
+    t2: 'musstet',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: '.',
+  },
+  {
+    t0: 'Вы должны были быть прооперированы. (sie)',
+    t1: 'Sie',
+    t2: 'mussten',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: '.',
+  },
+  {
+    t0: 'Ты должен был быть прооперирован.',
+    t1: 'Du',
+    t2: 'musstest',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: '.',
+  },
+  {
+    t0: 'Я должен был быть законченно прооперирован.',
+    t1: 'Ich',
+    t2: 'habe',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: 'müssen',
+    t6: '.',
+  },
+  {
+    t0: 'Ты должен был быть законченно прооперирован.',
+    t1: 'Du',
+    t2: 'hast',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: 'müssen',
+    t6: '.',
+  },
+  {
+    t0: 'Вы должны были быть законченно прооперирован. (Ihr)',
+    t1: 'Ihr',
+    t2: 'habt',
+    t3: 'operiert',
+    t4: 'werden',
+    t5: 'müssen',
+    t6: '.',
+  },
+  {
+    t0: 'Вчера тебе пришлось сделать законченно операцию.',
+    t1: 'Du',
+    t2: 'hattest',
+    t3: 'gestern',
+    t4: 'schon',
+    t5: 'operiert',
+    t6: 'werden',
+    t7: 'müssen',
+    t8: '.',
+  },
+  {
+    t0: 'Мужчине пришлось сделать операцию.',
+    t1: 'Der',
+    t2: 'Mann',
+    t3: 'hatte',
+    t4: 'operiert',
+    t5: 'werden',
+    t6: 'müssen',
+    t7: '.',
+  },
+  {
+    t0: 'Мужчина должен будет быть прооперирован.',
+    t1: 'Der',
+    t2: 'Mann',
+    t3: 'wird',
+    t4: 'operiert',
+    t5: 'werden',
+    t6: 'müssen',
+    t7: '.',
+  },
 ]
-const Slotkönnen = [
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
 
-]
-const Slotdürfen = [
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-
-]
-const Slotsollen = [
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-
-]
-const Slotwollen = [
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-
-]
-const Slotmögen = [
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-
-]
-const Slotmöchten = [
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-  {
-    t0: '',
-    t1: '',
-    t2: '',
-    t3: '',
-    t4: '',
-    t5: '',
-    t6: '',
-    t7: '',
-    t8: '',
-    t9: '',
-    t10: '',
-    t11: '',
-    t12: '',
-    t13: '',
-    t14: '',
-    t15: '',
-    t16: '',
-    t17: '',
-    t18: '',
-  },
-
-]
 
 
 
@@ -420,6 +226,14 @@ const VorgangsModalmöchten = [
     text3: 'ihr hattet Pt2 werden möchten',
     text4: 'wir,sie,Sie hatten Pt2 werden möchten'
   },
+  {
+    title: 'Futur I',
+    text1: 'ich werde Pt2 werden möchten',
+    text2: 'du wirst Pt2 werden möchten',
+    text3: 'er,sie,es wird Pt2 werden möchten',
+    text4: 'ihr werdet Pt2 werden möchten',
+    text5: 'wir,sie,Sie werden Pt2 werden möchten'
+  },
 
 ]
 const VorgangsModalmögen = [
@@ -454,6 +268,14 @@ const VorgangsModalmögen = [
     text2: 'du hattest Pt2 werden mögen',
     text3: 'ihr hattet Pt2 werden mögen',
     text4: 'wir,sie,Sie hatten Pt2 werden mögen'
+  },
+  {
+    title: 'Futur I',
+    text1: 'ich werde Pt2 werden mögen',
+    text2: 'du wirst Pt2 werden mögen',
+    text3: 'er,sie,es wird Pt2 werden mögen',
+    text4: 'ihr werdet Pt2 werden mögen',
+    text5: 'wir,sie,Sie werden Pt2 werden mögen'
   },
 
 ]
@@ -490,6 +312,14 @@ const VorgangsModalwollen = [
     text3: 'ihr hattet Pt2 werden wollen',
     text4: 'wir,sie,Sie hatten Pt2 werden wollen'
   },
+  {
+    title: 'Futur I',
+    text1: 'ich werde Pt2 werden wollen',
+    text2: 'du wirst Pt2 werden wollen',
+    text3: 'er,sie,es wird Pt2 werden wollen',
+    text4: 'ihr werdet Pt2 werden wollen',
+    text5: 'wir,sie,Sie werden Pt2 werden wollen'
+  },
 
 ]
 const VorgangsModalsollen = [
@@ -524,6 +354,14 @@ const VorgangsModalsollen = [
     text2: 'du hattest Pt2 werden sollen',
     text3: 'ihr hattet Pt2 werden sollen',
     text4: 'wir,sie,Sie hatten Pt2 werden sollen'
+  },
+  {
+    title: 'Futur I',
+    text1: 'ich werde Pt2 werden sollen',
+    text2: 'du wirst Pt2 werden sollen',
+    text3: 'er,sie,es wird Pt2 werden sollen',
+    text4: 'ihr werdet Pt2 werden sollen',
+    text5: 'wir,sie,Sie werden Pt2 werden sollen'
   },
 
 ]
@@ -560,7 +398,14 @@ const VorgangsModaldürfen = [
     text3: 'ihr hattet Pt2 werden dürfen',
     text4: 'wir,sie,Sie hatten Pt2 werden dürfen'
   },
-
+  {
+    title: 'Futur I',
+    text1: 'ich werde Pt2 werden dürfen',
+    text2: 'du wirst Pt2 werden dürfen',
+    text3: 'er,sie,es wird Pt2 werden dürfen',
+    text4: 'ihr werdet Pt2 werden dürfen',
+    text5: 'wir,sie,Sie werden Pt2 werden dürfen'
+  },
 ]
 const VorgangsModalkönnen = [
 
@@ -594,6 +439,14 @@ const VorgangsModalkönnen = [
     text2: 'du hattest Pt2 werden können',
     text3: 'ihr hattet Pt2 werden können',
     text4: 'wir,sie,Sie hatten Pt2 werden können'
+  },
+  {
+    title: 'Futur I',
+    text1: 'ich werde Pt2 werden können',
+    text2: 'du wirst Pt2 werden können',
+    text3: 'er,sie,es wird Pt2 werden können',
+    text4: 'ihr werdet Pt2 werden können',
+    text5: 'wir,sie,Sie werden Pt2 werden können'
   },
 
 ]
@@ -629,6 +482,14 @@ const VorgangsModalmüssen = [
     text2: 'du hattest Pt2 werden müssen',
     text3: 'ihr hattet Pt2 werden müssen',
     text4: 'wir,sie,Sie hatten Pt2 werden müssen'
+  },
+  {
+    title: 'Futur I',
+    text1: 'ich werde Pt2 werden müssen',
+    text2: 'du wirst Pt2 werden müssen',
+    text3: 'er,sie,es wird Pt2 werden müssen',
+    text4: 'ihr werdet Pt2 werden müssen',
+    text5: 'wir,sie,Sie werden Pt2 werden müssen'
   },
 
 ]
@@ -724,15 +585,6 @@ const Zustand = [
     text5: 'wir,sie,Sie werden Pt2 sein',
   },
 ]
-
-
-
-
-
-
-
-
-
 
 
 
@@ -848,8 +700,6 @@ const SlotVorgangspassivsPräsens = [
   },
 
 ]
-
-
 const SlotVorgangspassivsPräteritum = [
   {
     t0: 'Вы были создаваемы очень красивыми. (schön gemacht)',
@@ -1030,7 +880,7 @@ const SlotVorgangspassivsPerfekt = [
   },
   {
     t0: 'Телевизор был отремонтирован мастером. (Fernseher Meister repariert)',
-    t1: 'De',
+    t1: 'Der',
     t2: 'Fernseher',
     t3: 'ist',
     t4: 'vom',
@@ -1216,8 +1066,6 @@ const SlotVorgangspassivsFuturum = [
   },
 
 ]
-
-
 const SlotZustandspassivsPräsens = [
   {
     t0: 'Дверь закрыта.(Tür geschlossen)',
