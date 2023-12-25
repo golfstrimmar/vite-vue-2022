@@ -231,7 +231,7 @@ const SlotDativ = [
     t3: 'hat gefressen',
   },
   {
-    t0: 'frieren',
+    t0: 'frieren замерзать',
     t1: 'friert',
     t2: 'fror',
     t3: 'hat gefroren',
@@ -363,7 +363,7 @@ const SlotDativ = [
     t3: 'hat gehoben',
   },
   {
-    t0: 'heißen',
+    t0: 'heißen называть',
     t1: 'heißt',
     t2: 'hieß',
     t3: 'hat geheißen',
@@ -454,7 +454,7 @@ const SlotDativ = [
   },
   {
     t0: 'lügen',
-    t1: 'lügt	',
+    t1: 'lügt',
     t2: 'log',
     t3: 'hat gelogen',
   },
