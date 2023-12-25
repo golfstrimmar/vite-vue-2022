@@ -24,9 +24,12 @@ initializeApp(firebaseConfig);
 const app = createApp(App);
 
 app
-  .directive("focus", function (el) {
-    el.focus();
-    el.value = "focus";
+  .directive("focus", function (el, binding) {
+    // el.focus();
+    var value = binding.value;
+    if (value == "foo") {
+      el.value = "succsess";
+    }
   })
   .use(router)
   .use(createPinia())

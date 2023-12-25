@@ -1,5 +1,5 @@
 <template lang="pug">
-input(type='text'   v-model='inputValue' @focus="focusHandler()" @blur="blurHandler()"  :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]" v-if="Antwort !== undefined")
+input(type='text'   v-model='inputValue'  @focus="focusHandler()" @blur="blurHandler()"   :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]" v-if="Antwort !== undefined")
 </template>
 <script setup>
 import { ref, watch, defineProps, onMounted } from 'vue';
@@ -22,11 +22,9 @@ const props = defineProps({
 })
 const focusHandler = () => {
 	focused.value = true;
-	console.log(focused.value);
 }
 const blurHandler = () => {
 	focused.value = false;
-	console.log(focused.value);
 }
 
 watch(() => props.reset, (newvalue, oldvalue) => {
@@ -63,6 +61,7 @@ input {
 	&._is-light {
 		background: lighten($deep-orange-13, 30%) !important;
 		box-shadow: inset 0 0 5px rgb(253, 252, 252) !important;
+		border: 1px solid red;
 		color: $grey-10;
 	}
 
