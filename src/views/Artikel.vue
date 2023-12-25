@@ -293,6 +293,7 @@ const UnbestimmteNegativ = [
 ]
 const SlotDataBestimmte = [
   {
+    t: 'true',
     t0: 'Балкон у гостинной большой. (Balkon Wohnzimmer groß)',
     t1: 'Der',
     t2: 'Balkon',
@@ -567,6 +568,7 @@ const SlotDataBestimmte = [
 
 const SlotDataUnbestimmte = [
   {
+    t: 'true',
     t0: 'найти отличный ответ (großes Echo finden)',
     t1: 'ein',
     t2: 'großes',
@@ -753,6 +755,7 @@ const SlotDataUnbestimmte = [
 ]
 const SlotDataNegativ = [
   {
+    t: 'true',
     t0: 'Я нахожу, что это не хорошая книга. (gutes Buch)',
     t1: 'Ich',
     t2: 'finde',

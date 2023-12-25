@@ -6,31 +6,31 @@
 
 	.plaza__line(v-for="item in TempData " :key="index")
 		p {{ item.t0 }}
-		Input(:Antwort = 'item.t1' :reference='myinput1'  :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t2' :reference='myinput2' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t3' :reference='myinput3' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t4' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t5' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t6' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t7' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t8' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t9' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t10' :reset='reset' @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t11' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t12' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t13' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t14' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t15' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t16' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t17' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t18' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t19' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t20' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t21' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t22' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t23' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t24' :reset='reset'  @anwortPositiv='anwortPositiv') 
-		Input(:Antwort = 'item.t25' :reset='reset'  @anwortPositiv='anwortPositiv') 
+		Input(:Antwort = 'item.t1' @anwortPositiv="anwortPositiv" :focusAct='item.t' :reset='reset' ) 
+		Input(:Antwort = 'item.t2' :reset='reset' @anwortPositiv="anwortPositiv"  ) 
+		Input(:Antwort = 'item.t3' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t4' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t5' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t6' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t7' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t8' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t9' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t10' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t11' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t12' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t13' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t14' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t15' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t16' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t17' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t18' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t19' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t20' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t21' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t22' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t23' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t24' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t25' :reset='reset' @anwortPositiv="anwortPositiv") 
 
 </template>
 
@@ -40,19 +40,13 @@ import Input from '@/components/Input.vue';
 import Button from '@/components/Button.vue';
 
 var reset = ref(true)
+var antwort = ref(false)
+var switchFocus = ref(false)
 var TempData = ref([])
 var TempData = props.SlotData
 
-
-const HendleEventInput = () => {
-
-}
-
 const props = defineProps({
-	focusActiv: {
-		type: Boolean,
-		required: false
-	},
+
 	SlotData: {
 		type: Object,
 		required: false
@@ -60,8 +54,16 @@ const props = defineProps({
 
 })
 
+const anwortPositiv = (data) => {
+	antwort.value = data
+}
 
-
+// watch(() => antwort.value, (newvalue, oldvalue) => {
+// 	console.log(newvalue, oldvalue);
+// 	// if (newvalue !== oldvalue) {
+// 	switchFocus.value = true
+// 	// }
+// });
 
 const someEvent = (data) => {
 	TempData = TempData.sort((a, b) => Math.random() - 0.5);

@@ -1,14 +1,38 @@
 <template lang="pug">
-input(type='text'   v-model='inputValue'  @focus="focusHandler()" @blur="blurHandler()"   :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]" v-if="Antwort !== undefined")
+input(type='text'   v-model='inputValue'   @input='HendleEventInput()' v-test='focusAct'  @focus="focusHandler()" @blur="blurHandler()"   :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]" v-if="Antwort !== undefined")
 </template>
 <script setup>
-import { ref, watch, defineProps, onMounted } from 'vue';
+import { ref, watch, defineProps, defineEmits, onMounted } from 'vue';
 const inputValue = ref('')
 const focused = ref(false)
+const flag = ref(false)
+
+const emit = defineEmits(['anwortPositiv'])
 
 
+const HendleEventInput = () => {
+	if (inputValue.value == props.Antwort) {
+		flag.value = !flag.value
+		emit('anwortPositiv', flag.value)
+		// flag.value = !flag.value
+		// emit('anwortPositiv', flag.value)
+	}
+}
+
+// const changeflag = () => {
+// 	if (inputValue.value == props.Antwort) {
+// 		flag.value = !flag.value
+// 		console.log(inputValue.value);
+// 		console.log(flag.value);
+// 	}
+// }
 
 const props = defineProps({
+
+	focusAct: {
+		type: Boolean,
+		required: false
+	},
 
 	reset: {
 		type: Boolean,
@@ -33,13 +57,7 @@ watch(() => props.reset, (newvalue, oldvalue) => {
 
 
 // onMounted(
-// console.log(focused.value)
-// 	() => {
-// 		// if (props.focusActiv) {
-// 		// 	console.log(props.focusActiv);
-// 		// myinput.value.focus()
-// 		// }
-// 	}
+	
 // )
 
 
@@ -68,6 +86,7 @@ input {
 	&._is-active {
 		background: $green-2 !important;
 		box-shadow: inset 0 0 5px rgba(252, 253, 253, 0.884) !important;
+		border: 1px solid transparent;
 		color: $green-8;
 	}
 

@@ -24,12 +24,36 @@ initializeApp(firebaseConfig);
 const app = createApp(App);
 
 app
-  .directive("focus", function (el, binding) {
-    // el.focus();
-    var value = binding.value;
-    if (value == "foo") {
-      el.value = "succsess";
-    }
+  // .directive("focus", function (el, binding) {
+  //   // el.focus();
+  //   if (binding.value == "foo") {
+  //     el.value = "succsess";
+  //   }
+  // })
+  // .directive(
+  //   "test",
+  //   {
+  //     mounted(el, binding) {
+  //       if (binding.value) {
+  //         el.focus();
+  //         el.classList.add("_is-light");
+  //       }
+  //     },
+  //   }
+  //   // function (el, binding) {
+  //   //   // el.focus();
+  //   //   if (binding.value == "foo") {
+  //   //     el.value = "succsess";
+  //   //   }
+  //   // }
+  // )
+  .directive("test", {
+    mounted(el, binding) {
+      if (binding.value) {
+        el.focus();
+        el.classList.add("_is-light");
+      }
+    },
   })
   .use(router)
   .use(createPinia())
