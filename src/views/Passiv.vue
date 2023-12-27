@@ -455,7 +455,7 @@ const VorgangsModalmüssen = [
   {
     title: 'Präsens',
     text1: 'ich,er,sie,es muss Pt2 werden',
-    text2: 'du mussst Pt2 werden',
+    text2: 'du musst Pt2 werden',
     text3: 'ihr müsst Pt2 werden',
     text4: 'wir,sie,Sie müssen Pt2 werden',
 
