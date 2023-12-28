@@ -474,7 +474,7 @@ const SlotDativ = [
     t0: 'melken (.../...) доить',
     t1: 'melkt',
     t2: 'melkte',
-    t3: 'hat gemolken/gemelkt	',
+    t3: 'hat gemolken/gemelkt',
   },
   {
     t0: 'messen',
