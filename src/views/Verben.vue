@@ -57,11 +57,24 @@ const SlotDativ = [
     t3: 'ist geborsten',
   },
   {
+    t0: 'betrügen',
+    t1: 'betrügt',
+    t2: 'betrog',
+    t3: 'hat betrogen',
+  },
+  {
     t0: 'biegen  гнуть',
     t1: 'biegt',
     t2: 'bog',
     t3: 'hat gebogen',
   },
+  {
+    t0: 'bewegen',
+    t1: 'bewegt',
+    t2: 'bewog',
+    t3: 'hat bewogen',
+  },
+
   {
     t0: 'bieten предлагать',
     t1: 'bietet',
@@ -153,17 +166,44 @@ const SlotDativ = [
     t3: 'hat empfohlen',
   },
   {
+    t0: 'empfinden чувствовать',
+    t1: 'empfindet',
+    t2: 'empfand',
+    t3: 'hat empfunden',
+  },
+  {
+    t0: 'erklimmen взбираться',
+    t1: 'erklimmt',
+    t2: 'erklomm',
+    t3: 'hat erklommen',
+  },
+
+  {
     t0: 'erlöschen потухать, прекращаться',
     t1: 'erlischt',
     t2: 'erlosch',
     t3: 'ist erloschen',
   },
   {
+    t0: 'erschallen звучать',
+    t1: 'erschallt',
+    t2: 'erscholl',
+    t3: 'ist erschollen',
+  },
+
+  {
     t0: 'erschrecken',
     t1: 'erschrickt',
     t2: 'erschrak',
     t3: 'ist erschrocken',
   },
+  {
+    t0: 'erwägen учитывать',
+    t1: 'erwägt',
+    t2: 'erwog',
+    t3: 'hat erwogen',
+  },
+
   {
     t0: 'essen',
     t1: 'isst',
@@ -291,6 +331,13 @@ const SlotDativ = [
     t3: 'hat genossen',
   },
   {
+    t0: 'geraten',
+    t1: 'gerät',
+    t2: 'geriet',
+    t3: 'ist geraten',
+  },
+
+  {
     t0: 'geschehen происходить',
     t1: 'geschieht',
     t2: 'geschah',
@@ -320,6 +367,13 @@ const SlotDativ = [
     t2: 'glitt',
     t3: 'ist geglitten',
   },
+  {
+    t0: 'glimmen',
+    t1: 'glimmt',
+    t2: 'glomm/glimmte',
+    t3: 'hat geglommen/geglimmt',
+  },
+
   {
     t0: 'graben копать',
     t1: 'gräbt',
@@ -428,6 +482,13 @@ const SlotDativ = [
     t2: 'lief',
     t3: 'hat gelitten',
   },
+  {
+    t0: 'leiden',
+    t1: 'leidet',
+    t2: 'litt',
+    t3: 'hat gelitten',
+  },
+
   {
     t0: 'leihen одалживать',
     t1: 'leiht',
@@ -843,6 +904,13 @@ const SlotDativ = [
     t3: 'ist gestiegen',
   },
   {
+    t0: 'steigen подниматься',
+    t1: 'steigt',
+    t2: 'stieg',
+    t3: 'ist gestiegen',
+  },
+
+  {
     t0: 'sterben',
     t1: 'stirbt',
     t2: 'starb',
@@ -962,6 +1030,13 @@ const SlotDativ = [
     t2: 'wusch',
     t3: 'hat gewaschen',
   },
+  {
+    t0: 'weben плести',
+    t1: 'webt',
+    t2: 'wob',
+    t3: 'hat gewoben',
+  },
+
   {
     t0: 'weichen уклоняться, уворачиваться',
     t1: 'weicht',
