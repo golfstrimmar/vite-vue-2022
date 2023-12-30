@@ -45,7 +45,7 @@ const SlotDativ = [
     t3: 'hat gebissen',
   },
   {
-    t0: 'bergen спасать',
+    t0: 'bergen спасать укрывать',
     t1: 'birgt',
     t2: 'barg',
     t3: 'hat geborgen',
@@ -57,7 +57,7 @@ const SlotDativ = [
     t3: 'ist geborsten',
   },
   {
-    t0: 'biegen',
+    t0: 'biegen  гнуть',
     t1: 'biegt',
     t2: 'bog',
     t3: 'hat gebogen',
@@ -99,7 +99,7 @@ const SlotDativ = [
     t3: 'hat gebraten',
   },
   {
-    t0: 'brechen (.../...)',
+    t0: 'brechen (.../...) ломать',
     t1: 'bricht',
     t2: 'brach',
     t3: 'hat/ist gebrochen',
@@ -147,7 +147,7 @@ const SlotDativ = [
     t3: 'hat empfangen',
   },
   {
-    t0: 'empfehlen',
+    t0: 'empfehlen рекомендовать',
     t1: 'empfiehlt',
     t2: 'empfahl',
     t3: 'hat empfohlen',
@@ -784,7 +784,7 @@ const SlotDativ = [
   },
   {
     t0: 'sitzen',
-    t1: 'sitzt	',
+    t1: 'sitzt',
     t2: 'saß',
     t3: 'hat gesessen',
   },
