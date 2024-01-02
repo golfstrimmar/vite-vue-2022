@@ -16,8 +16,6 @@
 <script setup>
 import Tabs from '@/components/Tabs.vue';
 import TabsTraining from '@/components/TabsTraining.vue';
-import Plaza from '@/components/Plaza.vue';
-import Slot from '@/components/Slot.vue'
 
 const SlotDativ = [
   {
@@ -670,13 +668,13 @@ const SlotDativ = [
     t3: 'hat geschaffen',
   },
   {
-    t0: 'scheiden (.../...) разделять',
+    t0: 'scheiden (.../...) разводиться',
     t1: 'scheidet',
     t2: 'schied',
     t3: 'hat/ist geschieden',
   },
   {
-    t0: 'scheinen',
+    t0: 'scheinen казаться',
     t1: 'scheint',
     t2: 'schien',
     t3: 'hat geschienen',
@@ -923,7 +921,7 @@ const SlotDativ = [
     t3: 'hat gestunken',
   },
   {
-    t0: 'stoßen (.../...) толкать',
+    t0: 'stoßen (.../...) столкнуться',
     t1: 'stößt',
     t2: 'stieß',
     t3: 'hat/ist gestoßen',
@@ -1098,7 +1096,7 @@ const SlotDativ = [
     t3: 'hat gewollt',
   },
   {
-    t0: 'ziehen тащить',
+    t0: 'ziehen (.../...) тащить',
     t1: 'zieht',
     t2: 'zog',
     t3: 'hat/ist gezogen',

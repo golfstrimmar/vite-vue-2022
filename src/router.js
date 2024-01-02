@@ -15,6 +15,7 @@ import SignIn from "@/views/SignIn.vue";
 import Tasks from "@/components/Tasks.vue";
 import Verben from "@/views/Verben.vue";
 import Rektion from "@/views/Rektion.vue";
+import Deklination from "@/views/Deklination.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -35,6 +36,7 @@ const router = createRouter({
     { path: "/tasks", name: "Tasks", component: Tasks },
     { path: "/verben", name: "Verben", component: Verben },
     { path: "/rektion", name: "Rektion", component: Rektion },
+    { path: "/deklination", name: "Deklination", component: Deklination },
   ],
 });
 

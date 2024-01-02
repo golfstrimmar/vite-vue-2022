@@ -33,8 +33,6 @@
 <script setup>
 import Tabs from '@/components/Tabs.vue';
 import TabsTraining from '@/components/TabsTraining.vue';
-import Plaza from '@/components/Plaza.vue';
-import Slot from '@/components/Slot.vue'
 
 const SlotDoppeltAA = [
 
