@@ -4,10 +4,10 @@
 	//- Button(type='text' text="focus" @click="elFocus")
 
 
-	.plaza__line(v-for="item in TempData " :key="index")
+	form.plaza__line(v-for="item in TempData " :key="index")
 		p {{ item.t0 }}
-		Input(:Antwort = 'item.t1' @anwortPositiv="anwortPositiv" :focusAct='item.t' :reset='reset' ) 
-		Input(:Antwort = 'item.t2' :reset='reset' @anwortPositiv="anwortPositiv"  ) 
+		Input(:Antwort = 'item.t1' :reset='reset' @anwortPositiv="anwortPositiv") 
+		Input(:Antwort = 'item.t2' :reset='reset' @anwortPositiv="anwortPositiv") 
 		Input(:Antwort = 'item.t3' :reset='reset' @anwortPositiv="anwortPositiv") 
 		Input(:Antwort = 'item.t4' :reset='reset' @anwortPositiv="anwortPositiv") 
 		Input(:Antwort = 'item.t5' :reset='reset' @anwortPositiv="anwortPositiv") 
@@ -31,7 +31,7 @@
 		Input(:Antwort = 'item.t23' :reset='reset' @anwortPositiv="anwortPositiv") 
 		Input(:Antwort = 'item.t24' :reset='reset' @anwortPositiv="anwortPositiv") 
 		Input(:Antwort = 'item.t25' :reset='reset' @anwortPositiv="anwortPositiv") 
-
+		
 </template>
 
 <script setup>
@@ -41,7 +41,6 @@ import Button from '@/components/Button.vue';
 
 var reset = ref(true)
 var antwort = ref(false)
-var switchFocus = ref(false)
 var TempData = ref([])
 var TempData = props.SlotData
 
@@ -55,13 +54,14 @@ const props = defineProps({
 })
 
 const anwortPositiv = (data) => {
-	antwort.value = data
+	antwort.value = 'succsess!'
+	console.log(antwort.value, 'succsess!');
 }
 
 // watch(() => antwort.value, (newvalue, oldvalue) => {
-// 	console.log(newvalue, oldvalue);
+// 	// console.log(switchFocus.value);
 // 	// if (newvalue !== oldvalue) {
-// 	switchFocus.value = true
+// 	// switchFocus.value = true
 // 	// }
 // });
 
@@ -85,7 +85,11 @@ onMounted(() => {
 .plaza__line {
 	margin: 0 0 10px 0;
 	text-align: left;
+	position: relative;
+	/* display: inline-block; */
 }
+
+
 
 .mixButton {
 	margin: 10px 0;

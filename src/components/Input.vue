@@ -1,31 +1,31 @@
 <template lang="pug">
-input(type='text'   v-model='inputValue'   @input='HendleEventInput()' v-test='focusAct'  @focus="focusHandler()" @blur="blurHandler()"   :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]" v-if="Antwort !== undefined")
+input(type='text'   v-model.trim='inputValue'  ref="some" @input='HendleEventInput()'  v-blur='flag' @focus="focusHandler()"  @blur="blurHandler()"   :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]" v-if="Antwort !== undefined")
 </template>
 <script setup>
-import { ref, watch, defineProps, defineEmits, onMounted } from 'vue';
+import { ref, watch, defineProps, defineEmits } from 'vue';
 const inputValue = ref('')
 const focused = ref(false)
 const flag = ref(false)
-
+const some = ref(null)
 const emit = defineEmits(['anwortPositiv'])
 
 
 const HendleEventInput = () => {
 	if (inputValue.value == props.Antwort) {
-		flag.value = !flag.value
-		emit('anwortPositiv', flag.value)
-		// flag.value = !flag.value
-		// emit('anwortPositiv', flag.value)
+		flag.value = true
+		if (some.value.nextElementSibling) {
+			some.value.nextElementSibling.focus()
+			some.value.nextElementSibling.classList.add("_is-light");
+		}else{
+			
+	emit('anwortPositiv', true) 
+		}
+	}else{
+		some.value.classList.add("_is-light")
 	}
 }
 
-// const changeflag = () => {
-// 	if (inputValue.value == props.Antwort) {
-// 		flag.value = !flag.value
-// 		console.log(inputValue.value);
-// 		console.log(flag.value);
-// 	}
-// }
+
 
 const props = defineProps({
 
@@ -44,6 +44,8 @@ const props = defineProps({
 	},
 
 })
+
+// 
 const focusHandler = () => {
 	focused.value = true;
 }

@@ -47,11 +47,19 @@ app
   //   //   }
   //   // }
   // )
-  .directive("test", {
-    mounted(el, binding) {
+  // .directive("focus", {
+  //   mounted(el, binding) {
+  //     if (binding.value) {
+  //       el.focus();
+  //       el.classList.add("_is-light");
+  //     }
+  //   },
+  // })
+  .directive("blur", {
+    updated(el, binding) {
       if (binding.value) {
-        el.focus();
-        el.classList.add("_is-light");
+        el.blur();
+        el.classList.remove("_is-light");
       }
     },
   })
