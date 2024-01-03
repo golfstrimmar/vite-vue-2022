@@ -384,7 +384,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Нам пришлось вернуться к чертежной доске.(zurück Reißbrett)',
+    t0: 'Нам пришлось вернуться к чертежной доске.(zurück ins Reißbrett)',
     t1: 'Wir',
     t2: 'mussten',
     t3: 'zurück',
@@ -394,7 +394,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Сотруднику банка пришлось сесть в тюрьму за мошенничество. (Bankkaufmann Betrugs ins Gefängnis)',
+    t0: 'Сотруднику банка пришлось сесть в тюрьму за мошенничество. (Bankkaufmann wegen Betrugs ins Gefängnis)',
     t1: 'Der',
     t2: 'Bankkaufmann',
     t3: 'musste',
@@ -431,7 +431,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Вам никогда не приходилось делать этого раньше. (noch nie )',
+    t0: 'Этого ты никогда раньше не приходилось делать. (noch nie )',
     t1: 'Das',
     t2: 'hast',
     t3: 'du',
@@ -442,7 +442,7 @@ const SlotDatamüssen = [
 
   },
   {
-    t0: 'Вам не обязательно было этого делать.',
+    t0: 'Этого вам не обязательно было делать. (ihr)',
     t1: 'Das',
     t2: 'hattet',
     t3: 'ihr',
@@ -451,26 +451,15 @@ const SlotDatamüssen = [
     t6: '.',
 
   },
-  {
-    t0: 'Ей бы пришлось это сделать, но... ()',
-    t1: 'Sie',
-    t2: 'wird',
-    t3: 'gemusst',
-    t4: 'haben',
-    t5: ',',
-    t6: 'aber',
-    t7: '...',
 
-  },
   {
-    t0: 'И вам придется открыть глаза.(Eure Augen öffnen)',
-    t1: 'Und',
-    t2: 'ihr',
-    t3: 'müsst',
-    t4: 'Eure',
-    t5: 'Augen',
-    t6: 'öffnen',
-    t7: '.',
+    t0: 'Вам придется открыть глаза. (Eure Augen öffnen)',
+    t1: 'Ihr',
+    t2: 'müsst',
+    t3: 'eure',
+    t4: 'Augen',
+    t5: 'öffnen',
+    t6: '.',
 
   },
   {
@@ -561,7 +550,7 @@ const SlotDatakönnen = [
 
   {
     t0: 'Мы не могли сделать больше. (nicht mehr)',
-    t1: 'Wir   ',
+    t1: 'Wir',
     t2: 'konnten',
     t3: 'nicht',
     t4: 'mehr',
@@ -613,7 +602,7 @@ const SlotDatakönnen = [
   },
 
   {
-    t0: 'Ты сделал мне величайший подарок, на который никто другой не был способен. (mir größte Geschenk sonst niemand hätte)',
+    t0: 'Ты сделал мне величайший подарок, на который никто другой не был способен. (mir größte Geschenk, was sonst niemand hätte)',
     t1: 'Du',
     t2: 'hast',
     t3: 'mir',
@@ -646,7 +635,7 @@ const SlotDatakönnen = [
   },
 
   {
-    t0: 'То, что я не мог сделать тогда, я должен сделать сейчас. (damals nicht  jetzt tun)',
+    t0: 'Что я тогда не мог сделать , я должен сделать сейчас. (damals nicht  jetzt tun)',
     t1: 'Was',
     t2: 'ich',
     t3: 'damals',
@@ -696,18 +685,7 @@ const SlotDatadürfen = [
     t7: '.',
 
   },
-  {
-    t0: 'Может ли у вашего спального мешка появиться новый владелец? (Schlafsack Besitzer)',
-    t1: 'Darf',
-    t2: 'dein',
-    t3: 'Schlafsack',
-    t4: 'einen',
-    t5: 'neuen',
-    t6: 'Besitzer',
-    t7: 'haben',
-    t8: '?',
 
-  },
   {
     t0: 'Нам обоим нельзя быть друзьями. (beide keine Freunde)',
     t1: 'Wir',
@@ -731,7 +709,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Могу я пройти? (bitte vorbei)',
+    t0: 'Могу я пожалуйста пройти? (bitte vorbei)',
     t1: 'Darf',
     t2: 'ich',
     t3: 'bitte',
@@ -750,12 +728,13 @@ const SlotDatadürfen = [
   },
   {
     t0: 'Режиссеру не разрешили это сделать. (Regisseur nicht)',
-    t1: 'Das',
-    t2: 'durfte',
-    t3: 'der',
-    t4: 'Regisseur',
+    t1: 'Der',
+    t2: 'Regisseur',
+    t3: 'durfte',
+    t4: 'das',
     t5: 'nicht',
-    t6: '.',
+    t6: 'tun',
+    t7: '.',
 
   },
   {
@@ -770,7 +749,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'Почему я тоже не могу этого сделать? (Warum nicht auch)',
+    t0: 'Почему мне тоже не позволено это ? (Warum nicht auch)',
     t1: 'Warum',
     t2: 'darf',
     t3: 'ich',
@@ -781,7 +760,7 @@ const SlotDatadürfen = [
 
   },
   {
-    t0: 'В бассейн без купальной шапочки вход запрещен. (Ohne Badehaube ins Schwimmbecken)',
+    t0: 'без купальной шапочки ты не позволено в бассейн . (Ohne Badehaube ins Schwimmbecken)',
     t1: 'Ohne',
     t2: 'Badehaube',
     t3: 'darfst',
