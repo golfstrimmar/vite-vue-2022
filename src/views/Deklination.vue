@@ -193,7 +193,7 @@ const SlotDataNominativ = [
     t9: '.',
   },
   {
-    t0: 'Ему нравится играть с милыми собачками.(Hunden)',
+    t0: 'Ему нравится играть с милыми собачками.(süßen Hunden)',
     t1: 'Er',
     t2: 'spielt',
     t3: 'gerne',
