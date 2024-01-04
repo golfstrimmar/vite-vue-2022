@@ -335,7 +335,7 @@ const SlotDataBestimmte = [
     t8: '.',
   },
   {
-    t0: 'У водителя возникли проблемы, парковочную зону заходить. (Fahrer Probleme Parkplatz betreten)',
+    t0: 'У водителя имел проблемы, парковочную зону заходить. (Fahrer Probleme Parkplatz betreten)',
     t1: 'Der',
     t2: 'Fahrer',
     t3: 'hatte',

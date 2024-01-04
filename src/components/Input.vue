@@ -1,26 +1,59 @@
 <template lang="pug">
-input(type='text'   v-model.trim='inputValue'  ref="some" @input='HendleEventInput()'  v-blur='flag' @focus="focusHandler()"  @blur="blurHandler()"   :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]" v-if="Antwort !== undefined")
+input(type='text'   v-model.trim='inputValue'  ref="some" @input='HendleEventInput()'   @focus="focusHandler()"  @blur="blurHandler()"   :class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]" v-if="Antwort !== undefined")
+
 </template>
+
+
+
+
 <script setup>
-import { ref, watch, defineProps, defineEmits } from 'vue';
+import {
+	ref, watch, defineProps
+	//  defineEmits
+} from 'vue';
+// v-blur='flag'
 const inputValue = ref('')
 const focused = ref(false)
-const flag = ref(false)
+// const flag = ref(false)
 const some = ref(null)
-const emit = defineEmits(['anwortPositiv'])
+// const emit = defineEmits(['anwortPositiv'])
+
+
+// import { useTaskSalut } from "../store/taskSalut"
+// import { storeToRefs } from 'pinia'
+// const store = useTaskSalut();
+// const { isActiveSalut } = storeToRefs(store)
+
+
 
 
 const HendleEventInput = () => {
 	if (inputValue.value == props.Antwort) {
-		flag.value = true
-		if (some.value.nextElementSibling) {
+		// flag.value = true
+
+		if (some.value.nextElementSibling && !some.value.nextElementSibling.classList.contains('_is-active')) {
 			some.value.nextElementSibling.focus()
 			some.value.nextElementSibling.classList.add("_is-light");
-		}else{
-			
-	emit('anwortPositiv', true) 
+		} else {
+			some.value.blur()
+			some.value.classList.remove("_is-light")
+			if (some.value.closest('.plaza__line').nextElementSibling) {
+
+				some.value.closest('.plaza__line').nextElementSibling.querySelector("input").focus();
+			}
+
+			// isActiveSalut.value = 'isActive'
+
+			const salut = document.createElement('img')
+			salut.setAttribute('src', '../src/assets/svg/salut.gif')
+			salut.classList.add('salut')
+			some.value.closest('.plaza__line').append(salut)
+			setTimeout(() => {
+				salut.remove()
+			}, 1200);
+			// emit('anwortPositiv', true)
 		}
-	}else{
+	} else {
 		some.value.classList.add("_is-light")
 	}
 }
@@ -57,11 +90,7 @@ watch(() => props.reset, (newvalue, oldvalue) => {
 	inputValue.value = '';
 });
 
-
-// onMounted(
-	
-// )
-
+// onMounted(() => {  })
 
 </script>
 
@@ -69,6 +98,7 @@ watch(() => props.reset, (newvalue, oldvalue) => {
 input {
 	display: inline-block;
 	max-width: 110px;
+	max-height: 22px;
 	border-radius: 5px;
 	// color: transparent;
 
