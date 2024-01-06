@@ -66,6 +66,3 @@ app
   .use(router)
   .use(createPinia())
   .mount("#app");
-// .use(Quasar, {
-//   plugins: {},
-// })

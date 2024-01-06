@@ -24,6 +24,7 @@ const some = ref(null)
 // const store = useTaskSalut();
 // const { isActiveSalut } = storeToRefs(store)
 
+import * as images from '@/assets/img/img.js'
 
 
 
@@ -45,7 +46,7 @@ const HendleEventInput = () => {
 			// isActiveSalut.value = 'isActive'
 
 			const salut = document.createElement('img')
-			salut.setAttribute('src', '../src/assets/svg/salut.gif')
+			salut.setAttribute('src', images.urlImgSalut)
 			salut.classList.add('salut')
 			some.value.closest('.plaza__line').append(salut)
 			setTimeout(() => {

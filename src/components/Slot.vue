@@ -30,6 +30,7 @@
 		Input(:Antwort = 'item.t23' :reset='reset' ) 
 		Input(:Antwort = 'item.t24' :reset='reset' ) 
 		Input(:Antwort = 'item.t25' :reset='reset' ) 
+	
 </template>
 
 <script setup>
