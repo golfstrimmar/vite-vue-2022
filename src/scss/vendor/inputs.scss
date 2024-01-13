@@ -7,9 +7,9 @@ input:not([type="range"]) {
   cursor: pointer;
 }
 
-input:not([type="range"]) {
-  margin: 0 5px;
-}
+// input:not([type="range"]) {
+// margin: 0 5px;
+// }
 input:not([type="range"]) ~ span {
   transition: all 0.2s ease-in-out;
 }

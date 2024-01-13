@@ -11,6 +11,8 @@ import {
 	ref, watch, defineProps
 	//  defineEmits
 } from 'vue';
+import * as images from '@/assets/img/img.js'
+
 // v-blur='flag'
 const inputValue = ref('')
 const focused = ref(false)
@@ -24,7 +26,6 @@ const some = ref(null)
 // const store = useTaskSalut();
 // const { isActiveSalut } = storeToRefs(store)
 
-import * as images from '@/assets/img/img.js'
 
 
 

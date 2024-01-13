@@ -30,6 +30,13 @@
 		Input(:Antwort = 'item.t23' :reset='reset' ) 
 		Input(:Antwort = 'item.t24' :reset='reset' ) 
 		Input(:Antwort = 'item.t25' :reset='reset' ) 
+		Input(:Antwort = 'item.t26' :reset='reset' ) 
+		Input(:Antwort = 'item.t27' :reset='reset' ) 
+		Input(:Antwort = 'item.t28' :reset='reset' ) 
+		Input(:Antwort = 'item.t29' :reset='reset' ) 
+		Input(:Antwort = 'item.t30' :reset='reset' ) 
+		Input(:Antwort = 'item.t31' :reset='reset' ) 
+		Input(:Antwort = 'item.t32' :reset='reset' ) 
 	
 </template>
 

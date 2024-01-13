@@ -17,19 +17,6 @@
     TabsTraining( title='FuturI' :SlotData='SlotFuturI' )
     TabsTraining( title='FuturII' :SlotData='SlotFuturII' )
 
-  .page-block
-    .page-title--small
-      h3 Bildung des Konjunktivs II Passiv.
-    Tabs(:items= 'GegenwartPassiv' title='Konjunktiv II der Gegenwart  Passiv. ' )
-    Tabs(:items= 'VergangenheitPassiv' title='Konjunktiv II der Vergangenheit  Passiv' )
-    Tabs(:items= 'FuturIPassiv' title='Konjunktiv II Futur I  Passiv' )
-    Tabs(:items= 'FuturIIPassiv' title='Konjunktiv II Futur II  Passiv' )
-    .page-title--small 
-      h2 Training
-    TabsTraining( title='Gegenwart Passiv' :SlotData='SlotGegenwartPassiv' )
-    TabsTraining( title='Vergangenheit Passiv' :SlotData='SlotVergangenheitPassiv' )
-    TabsTraining( title='FuturI Passiv' :SlotData='SlotFuturIPassiv' )
-    TabsTraining( title='FuturII Passiv' :SlotData='SlotFuturIIPassiv' )
 
 
   .page-block
@@ -52,19 +39,7 @@
       h2 Training
     TabsTraining( title='Modalverben' :SlotData='SlotModalverben' )
     TabsTraining( title='Vergangenheit Modalverben' :SlotData='SlotVergangenheitModalverben' )
-  .page-block
-    .page-title--small 
-      h3 Bildung des Konjunktivs II mit Modalverben Passiv. 
-    Tabs(:items= 'ModalverbenGegenwartPassiv' title='Konjunktivs II mit Modalverben Gegenwart Passiv' )
-    Tabs(:items= 'ModalverbenVergangenheitPassiv' title='Konjunktivs II mit Modalverben Vergangenheit Passiv' )
-    Tabs(:items= 'ModalverbenFuturIPassiv' title='Konjunktivs II mit Modalverben Futur I Passiv' )
-    Tabs(:items= 'ModalverbenFuturIIPassiv' title='Konjunktivs II mit Modalverben Futur II Passiv' )
-    .page-title--small 
-      h2 Training
-    TabsTraining( title='Modalverben Gegenwart Passiv' :SlotData='SlotModalverbenGegenwartPassiv' )
-    TabsTraining( title='Modalverben Vergangenheit Passiv' :SlotData='SlotModalverbenVergangenheitPassiv' )
-    TabsTraining( title='Modalverben FuturI Passiv' :SlotData='SlotModalverbenFuturIPassiv' )
-    TabsTraining( title='Modalverben FuturII Passiv' :SlotData='SlotModalverbenFuturIIPassiv' )
+
 
  
 </template>
@@ -616,125 +591,7 @@ const SlotFuturII = [
     t12: '.',
   },
 ]
-// =============================================================
-// =============================================================
-// =============================================================
-// =============================================================
-const GegenwartPassiv = [
-  {
-    title: 'würden + Partizip II',
-    text1: 'ich,er,sie,es würde + Partizip II',
-    text2: 'du würdest + Partizip II',
-    text3: 'ihr würdet + Partizip II',
-    text4: 'wir,sie,Sie würden + Partizip II ',
-  },
-]
-const VergangenheitPassiv = [
-  {
-    title: 'wären + Partizip II + worden',
-    text1: 'ich,er,sie,es wäre + Partizip II + worden ',
-    text2: 'du wärest + Partizip II + worden',
-    text3: 'ihr wäret + Partizip II + worden',
-    text4: 'wir,sie,Sie wären + Partizip II + worden',
-  },
-]
-const FuturIPassiv = [
-  {
-    title: 'würden + Partizip II + werden',
-    text1: 'ich,er,sie,es würde + Partizip II + werden ',
-    text2: 'du würdest + Partizip II + werden',
-    text3: 'ihr würdet + Partizip II + werden',
-    text4: 'wir,sie,Sie würden + Partizip II + werden',
-  },
-]
-const FuturIIPassiv = [
-  {
-    title: 'würden + Partizip Perfekt + worden sein',
-    text1: 'ich,er,sie,es würde + Partizip Perfekt + worden sein',
-    text2: 'du würdest + Partizip Perfekt + worden sein',
-    text3: 'ihr würdet + Partizip Perfekt + worden sein',
-    text4: 'wir,sie,Sie würden + Partizip Perfekt + worden sein',
-  },
-]
-// ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
-const SlotGegenwartPassiv = [
-  {
-    t0: 'Если бы дерево было левее, в нашем саду не было бы так много листьев. (Baum weiter so viele Blätter Garten)',
-    t1: 'Wenn',
-    t2: 'der',
-    t3: 'Baum',
-    t4: 'weiter',
-    t5: 'links',
-    t6: 'stehen',
-    t7: 'würde',
-    t8: ',',
-    t9: 'wären',
-    t10: 'nicht',
-    t11: 'so',
-    t12: 'viele',
-    t13: 'Blätter',
-    t14: 'in',
-    t15: 'unserem',
-    t16: 'Garten',
-    t17: '.',
-  }, {
-    t0: 'Учитель спрашиваем учеником. (Lehrer Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'würde',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: '.',
-  }
-]
-const SlotVergangenheitPassiv = [
-  {
-    t0: 'Учитель был бы опрошен учеником.(Lehrer Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'wäre',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: 'worden',
-    t9: '.',
 
-  },
-]
-const SlotFuturIPassiv = [
-  {
-    t0: 'Учитель будет спрошен учеником. (Lehrer Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'würde',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: 'werden',
-    t9: '.',
-
-  },
-]
-const SlotFuturIIPassiv = [
-  {
-    t0: 'Учитель будет окончательно спрошен учеником. (Lehrer Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'würde',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: 'worden',
-    t9: 'sein',
-    t10: '.',
-
-  },
-]
 
 // =============================================================
 // =============================================================
@@ -976,7 +833,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Если я могу вкратце объяснить? (erklären)',
+    t0: 'Если я позволю  вкратце объяснить? (erklären)',
     t1: 'Wenn',
     t2: 'ich',
     t3: 'kurz',
@@ -986,7 +843,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Я думаю, что это может быть так. ',
+    t0: 'Я думаю, это позволено быть так. ',
     t1: 'Ich',
     t2: 'denke',
     t3: ',',
@@ -998,7 +855,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вероятно, у вас много общего. (vieles gemeinsam)',
+    t0: 'Вы позволяете бы иметь много общего. (vieles gemeinsam)',
     t1: 'Ihr',
     t2: 'dürftet',
     t3: 'vieles',
@@ -1008,7 +865,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вы думаете, что можете обмануть. (ihr glaubt betrügen)',
+    t0: 'Вы полагаете, вы бы позволяете обмануть. (ihr glaubt betrügen)',
     t1: 'Ihr',
     t2: 'glaubt',
     t3: ',',
@@ -1019,7 +876,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Я сказал, что ты можешь прийти сюда. (sagte hier herkommen)',
+    t0: 'Я сказал, вы бы позволять прийти сюда. (sagte hier herkommen)',
     t1: 'Ich',
     t2: 'sagte',
     t3: ',',
@@ -1031,7 +888,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вы можете помочь нам. ',
+    t0: 'Вы бы можете помочь нам.',
     t1: 'Ihr',
     t2: 'könntet',
     t3: 'uns',
@@ -1050,7 +907,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Вы могли бы стать друзьями. (Ihr Freundinnen)',
+    t0: 'Вы могли бы стать подругами. (Ihr Freundinnen)',
     t1: 'Ihr',
     t2: 'könntet',
     t3: 'Freundinnen',
@@ -1072,7 +929,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Да. Но, это мог быть и кто-то ещё. (auch jemand anderes)',
+    t0: 'Но, это мог быть и кто-то ещё. (auch jemand anderes)',
     t1: 'Aber',
     t2: 'es',
     t3: 'könnte',
@@ -1085,7 +942,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Работайте над чем хотите. (auch immer ihr)',
+    t0: 'Работайте над чем бы хотите. (auch immer ihr)',
     t1: 'Arbeitet',
     t2: 'an',
     t3: 'was',
@@ -1097,7 +954,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Если хочешь, у нас есть немного сосисок. (Wir ein paar Würstchen ihr)',
+    t0: 'Мы имеем пару сосисек, если вы бы хотеть. (Wir ein paar Würstchen ihr)',
     t1: 'Wir',
     t2: 'haben',
     t3: 'ein',
@@ -1111,7 +968,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Совсем неплохо, но тебе придется заставить меня поверить тебе. (Gar übel erreichen Ihnen glaube)',
+    t0: 'Совсем неплохо, но ты бы должен достичь, что я им верить. (Gar übel, erreichen Ihnen glaube)',
     t1: 'Gar',
     t2: 'nicht',
     t3: 'übel',
@@ -1130,7 +987,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Им придется посадить тебя в тележку. (dich Karre legen)',
+    t0: 'Им бы должно тебя в тележку посадить . (dich Karre legen)',
     t1: 'Sie',
     t2: 'müssten',
     t3: 'dich',
@@ -1142,7 +999,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Им придется время от времени приезжать на Марс. (Sie gelegentlich Mars)',
+    t0: 'Они бы должны время от времени на Марс приезжать. (Sie gelegentlich Mars)',
     t1: 'Sie',
     t2: 'müssten',
     t3: 'gelegentlich',
@@ -1154,7 +1011,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Я думаю, что это должно произойти вот так. (passieren)',
+    t0: 'Я думаю,  это должно вот так произойти . (passieren)',
     t1: 'Ich',
     t2: 'denke',
     t3: ',',
@@ -1166,7 +1023,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Ничего не произошло так, как должно было. (Nichts passiert wie es)',
+    t0: 'Ничего не произошло  как должно было. (Nichts passiert wie es)',
     t1: 'Nichts',
     t2: 'ist',
     t3: 'passiert',
@@ -1177,7 +1034,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Я сделал всё, что вы хотели. (tat alles ihr)',
+    t0: 'Я делал всё, что вы бы хотели. (tat alles ihr)',
     t1: 'Ich',
     t2: 'tat',
     t3: 'alles',
@@ -1190,7 +1047,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Я думал, вы хотели настоящего ребенка. (dachte echtes Kind)',
+    t0: 'Я думал, вы бы хотели настоящего ребенка. (dachte echtes Kind)',
     t1: 'Ich',
     t2: 'dachte',
     t3: ',',
@@ -1204,7 +1061,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Они хотели посмотреть, что я буду с этим делать. (damit mache)',
+    t0: 'Они хотели бы посмотреть, что я буду с этим делать. (damit mache)',
     t1: 'Sie',
     t2: 'wollten',
     t3: 'sehen',
@@ -1219,7 +1076,7 @@ const SlotModalverben = [
 ]
 const SlotVergangenheitModalverben = [
   {
-    t0: 'Ему не следовало так врываться. (nicht so reinplatzen)',
+    t0: 'Ему бы не следовало так врываться позволять. (nicht so reinplatzen)',
     t1: 'Er',
     t2: 'hätte',
     t3: 'nicht',
@@ -1230,7 +1087,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Ему никогда не следовало идти одному. (nie alleine )',
+    t0: 'Ему бы никогда одному идти  позволять. (nie alleine )',
     t1: 'Er',
     t2: 'hätte',
     t3: 'nie',
@@ -1241,7 +1098,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Ему не следовало провоцировать ее. (nicht provozieren)',
+    t0: 'Ему бы ее не провоцировать позволять. (nicht provozieren)',
     t1: 'Er',
     t2: 'hätte',
     t3: 'sie',
@@ -1252,7 +1109,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Вам никогда не следовало выходить из дома. (Haus nie verlassen)',
+    t0: 'Вам бы из дома никогда  оставлять позволять . (Haus nie verlassen)',
     t1: 'Ihr',
     t2: 'hättet',
     t3: 'das',
@@ -1264,7 +1121,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Тебе не следовало приходить сюда. (nicht herkommen)',
+    t0: 'Вы  бы не сюда приходить позволять. (nicht herkommen)',
     t1: 'Ihr',
     t2: 'hättet',
     t3: 'nicht',
@@ -1274,7 +1131,7 @@ const SlotVergangenheitModalverben = [
   },
   {
     t0: 'Но ты мог бы уйти.(gehen)',
-    t1: 'Aber.',
+    t1: 'Aber',
     t2: 'du',
     t3: 'hättest',
     t4: 'gehen',
@@ -1283,7 +1140,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Или ты мог бы пойти с ним. (Oder ihm gehen)',
+    t0: 'Или ты с ним  бы пойти мог. (Oder ihm gehen)',
     t1: 'Oder',
     t2: 'du',
     t3: 'hättest',
@@ -1295,7 +1152,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: ' Человек, мне бы очень хотелось побывать там. (Mann,  dabei sein)',
+    t0: ' Человек, там я бы к этому побывать хотеть. (Mann,  dabei sein)',
     t1: 'Mann',
     t2: ',',
     t3: 'da',
@@ -1308,7 +1165,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Все могло пойти не так. (schief gehen)',
+    t0: 'Все бы также неправильно идти могло. (schief gehen)',
     t1: 'Es',
     t2: 'hätte',
     t3: 'auch',
@@ -1319,7 +1176,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Это должно было быть здесь давно. (längst hier sein)',
+    t0: 'Это бы давно здесь быть должно. (längst hier sein)',
     t1: 'Es',
     t2: 'hätte',
     t3: 'längst',
@@ -1330,7 +1187,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Это не должно было так закончиться. (nicht enden)',
+    t0: 'Это бы не   так закончиться должно. (nicht enden)',
     t1: 'Es',
     t2: 'hätte',
     t3: 'nicht',
@@ -1340,7 +1197,7 @@ const SlotVergangenheitModalverben = [
     t7: '.',
   },
   {
-    t0: 'Как будто ты хотел попасть в тюрьму. (Als ins Gefängnis)',
+    t0: 'Как будто ты в тюрьму хотел . (Als ins Gefängnis)',
     t1: 'Als',
     t2: 'hättest',
     t3: 'du',
@@ -1351,7 +1208,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Делай все так, как ты хотел, чтобы они делали. (Mach Dinge so machen)',
+    t0: 'Делай все так, как бы ты их делать хотел. (Mach Dinge so machen)',
     t1: 'Mach',
     t2: 'die',
     t3: 'Dinge',
@@ -1366,7 +1223,7 @@ const SlotVergangenheitModalverben = [
     t12: '.',
   },
   {
-    t0: 'Если бы мне разрешили работать в ресторане, я бы заработал денег. (Restaurant arbeiten Geld verdienen)',
+    t0: 'Если бы мне разрешили работать в ресторане, я бы заработал денег. (im Restaurant arbeiten Geld verdienen)',
     t1: 'Wenn',
     t2: 'ich',
     t3: 'im',
@@ -1379,7 +1236,7 @@ const SlotVergangenheitModalverben = [
     t10: 'ich',
     t11: 'Geld',
     t12: 'verdienen',
-    t12: '.',
+    t13: '.',
   },
   {
     t0: 'Если бы я умел плавать, я бы пошел в открытый бассейн. (schwimmen ins Freibad)',
@@ -1397,7 +1254,7 @@ const SlotVergangenheitModalverben = [
     t12: '.',
   },
   {
-    t0: 'Мы надеемся, что нам не нужно объяснять, где именно водитель мог получить травму, если бы бревно просто скользнуло немного дальше в машину. (Wir,,der Fahrer verletzen,der Baumstamm weiter in das Auto)',
+    t0: 'Мы надеемся, что мы  не должны объяснять, где именно водитель травмироваться бы мог , если бы бревно просто немного дальше в машину скользнуло бы. (Wir,,der Fahrer verletzen,der Baumstamm weiter in das Auto gerutscht)',
     t1: 'Wir',
     t2: 'hoffen',
     t3: ',',
@@ -1422,328 +1279,19 @@ const SlotVergangenheitModalverben = [
     t22: 'nur',
     t23: 'ein',
     t24: 'bisschen',
-    t24: 'weiter',
-    t24: 'in',
-    t24: 'das',
-    t24: 'Auto',
-    t24: 'gerutscht',
-    t24: 'wäre',
-    t24: '.',
+    t25: 'weiter',
+    t26: 'in',
+    t27: 'das',
+    t28: 'Auto',
+    t29: 'gerutscht',
+    t30: 'wäre',
+    t31: '.',
   },
 
 
 ]
 
-// =============================================================
-// =============================================================
-// =============================================================
-// =============================================================
-const ModalverbenGegenwartPassiv = [
-  {
-    title: 'dürfen',
-    text1: 'ich,er,sie,es dürfte + Pt2 + werden',
-    text2: 'du dürftest +  + Pt2 + werden',
-    text3: 'ihr dürftet +  + Pt2 + werden',
-    text4: 'wir,sie,Sie dürften   + Pt2 + werden',
-  },
-  {
-    title: 'können',
-    text1: 'ich,er,sie,es könnte  + Pt2 + werden',
-    text2: 'du könntest  + Pt2 + werden',
-    text3: 'ihr könntet  + Pt2 + werden',
-    text4: 'wir,sie,Sie könnten   + Pt2 + werden',
-  },
-  {
-    title: 'mögen',
-    text1: 'ich,er,sie,es möchte  + Pt2 + werden ',
-    text2: 'du möchtest  + Pt2 + werden',
-    text3: 'ihr möchtet  + Pt2 + werden',
-    text4: 'wir,sie,Sie möchten   + Pt2 + werden',
-  },
-  {
-    title: 'müssen',
-    text1: 'ich,er,sie,es müsste + Pt2 + werden',
-    text2: 'du müsstest  + Pt2 + werden',
-    text3: 'ihr müsstet  + Pt2 + werden',
-    text4: 'wir,sie,Sie müssten   + Pt2 + werden',
-  },
-  {
-    title: 'sollen',
-    text1: 'ich,er,sie,es sollte  + Pt2 + werden ',
-    text2: 'du solltest  + Pt2 + werden',
-    text3: 'ihr solltet  + Pt2 + werden',
-    text4: 'wir,sie,Sie sollten   + Pt2 + werden',
-  },
-  {
-    title: 'wollen',
-    text1: 'ich,er,sie,es wollte  + Pt2 + werden ',
-    text2: 'du wolltest  + Pt2 + werden',
-    text3: 'ihr wolltet  + Pt2 + werden',
-    text4: 'wir,sie,Sie wollten   + Pt2 + werden',
-  },
-]
-const ModalverbenVergangenheitPassiv = [
-  {
-    title: 'dürfen',
-    text1: 'ich,er,sie,es hätte + Pt2 + werden dürfen',
-    text2: 'du hättest  + Pt2 + werden dürfen',
-    text3: 'ihr hättet  + Pt2 + werden dürfen',
-    text4: 'wir,sie,Sie hätten + Pt2 + werden dürfen',
-  },
-  {
-    title: 'können',
-    text1: 'ich,er,sie,es hätte + Pt2 + werden können',
-    text2: 'du hättest  + Pt2 + werden können',
-    text3: 'ihr hättet  + Pt2 + werden können',
-    text4: 'wir,sie,Sie hätten + Pt2 + werden können',
-  },
-  {
-    title: 'mögen',
-    text1: 'ich,er,sie,es hätte + Pt2 + werden mögen',
-    text2: 'du hättest  + Pt2 + werden mögen',
-    text3: 'ihr hättet  + Pt2 + werden mögen',
-    text4: 'wir,sie,Sie hätten + Pt2 + werden mögen',
-  },
-  {
-    title: 'mögen',
-    text1: 'ich,er,sie,es hätte + Pt2 + werden mögen',
-    text2: 'du hättest  + Pt2 + werden mögen',
-    text3: 'ihr hättet  + Pt2 + werden mögen',
-    text4: 'wir,sie,Sie hätten + Pt2 + werden mögen',
-  },
-  {
-    title: 'müssen',
-    text1: 'ich,er,sie,es hätte + Pt2 + werden müssen',
-    text2: 'du hättest  + Pt2 + werden müssen',
-    text3: 'ihr hättet  + Pt2 + werden müssen',
-    text4: 'wir,sie,Sie hätten + Pt2 + werden müssen',
-  },
-  {
-    title: 'sollen',
-    text1: 'ich,er,sie,es hätte + Pt2 + werden sollen',
-    text2: 'du hättest  + Pt2 + werden sollen',
-    text3: 'ihr hättet  + Pt2 + werden sollen',
-    text4: 'wir,sie,Sie hätten + Pt2 + werden sollen',
-  },
-  {
-    title: 'wollen',
-    text1: 'ich,er,sie,es hätte + Pt2 + werden wollen',
-    text2: 'du hättest  + Pt2 + werden wollen',
-    text3: 'ihr hättet  + Pt2 + werden wollen',
-    text4: 'wir,sie,Sie hätten + Pt2 + werden wollen',
-  },
-]
-const ModalverbenFuturIPassiv = [
-  {
-    title: 'dürfen',
-    text1: 'ich,er,sie,es würde + Pt2 + werden dürfen',
-    text2: 'du würdest  + Pt2 + werden dürfen',
-    text3: 'ihr würdet  + Pt2 + werden dürfen',
-    text4: 'wir,sie,Sie würden + Pt2 + werden dürfen',
-  },
-  {
-    title: 'können',
-    text1: 'ich,er,sie,es würde + Pt2 + werden können',
-    text2: 'du würdest  + Pt2 + werden können',
-    text3: 'ihr würdet  + Pt2 + werden können',
-    text4: 'wir,sie,Sie würden + Pt2 + werden können',
-  },
-  {
-    title: 'mögen',
-    text1: 'ich,er,sie,es würde + Pt2 + werden mögen',
-    text2: 'du würdest  + Pt2 + werden mögen',
-    text3: 'ihr würdet  + Pt2 + werden mögen',
-    text4: 'wir,sie,Sie würden + Pt2 + werden mögen',
-  },
-  {
-    title: 'mögen',
-    text1: 'ich,er,sie,es würde + Pt2 + werden mögen',
-    text2: 'du würdest  + Pt2 + werden mögen',
-    text3: 'ihr würdet  + Pt2 + werden mögen',
-    text4: 'wir,sie,Sie würden + Pt2 + werden mögen',
-  },
-  {
-    title: 'müssen',
-    text1: 'ich,er,sie,es würde + Pt2 + werden müssen',
-    text2: 'du würdest  + Pt2 + werden müssen',
-    text3: 'ihr würdet  + Pt2 + werden müssen',
-    text4: 'wir,sie,Sie würden + Pt2 + werden müssen',
-  },
-  {
-    title: 'sollen',
-    text1: 'ich,er,sie,es würde + Pt2 + werden sollen',
-    text2: 'du würdest  + Pt2 + werden sollen',
-    text3: 'ihr würdet  + Pt2 + werden sollen',
-    text4: 'wir,sie,Sie würden + Pt2 + werden sollen',
-  },
-  {
-    title: 'wollen',
-    text1: 'ich,er,sie,es würde + Pt2 + werden wollen',
-    text2: 'du würdest  + Pt2 + werden wollen',
-    text3: 'ihr würdet  + Pt2 + werden wollen',
-    text4: 'wir,sie,Sie würden + Pt2 + werden wollen',
-  },
-]
-const ModalverbenFuturIIPassiv = [
-  {
-    title: 'dürfen',
-    text1: 'ich,er,sie,es würde haben + Pt2 + werden dürfen',
-    text2: 'du würdest haben + Pt2 + werden dürfen',
-    text3: 'ihr würdet haben + Pt2 + werden dürfen',
-    text4: 'wir,sie,Sie würden haben + Pt2 + werden dürfen',
-  },
-  {
-    title: 'können',
-    text1: 'ich,er,sie,es würde haben + Pt2 + werden können',
-    text2: 'du würdest haben + Pt2 + werden können',
-    text3: 'ihr würdet haben + Pt2 + werden können',
-    text4: 'wir,sie,Sie würden haben + Pt2 + werden können',
-  },
-  {
-    title: 'mögen',
-    text1: 'ich,er,sie,es würde haben + Pt2 + werden mögen',
-    text2: 'du würdest haben + Pt2 + werden mögen',
-    text3: 'ihr würdet haben + Pt2 + werden mögen',
-    text4: 'wir,sie,Sie würden haben + Pt2 + werden mögen',
-  },
-  {
-    title: 'mögen',
-    text1: 'ich,er,sie,es würde haben + Pt2 + werden mögen',
-    text2: 'du würdest haben + Pt2 + werden mögen',
-    text3: 'ihr würdet haben + Pt2 + werden mögen',
-    text4: 'wir,sie,Sie würden haben + Pt2 + werden mögen',
-  },
-  {
-    title: 'müssen',
-    text1: 'ich,er,sie,es würde haben + Pt2 + werden müssen',
-    text2: 'du würdest haben + Pt2 + werden müssen',
-    text3: 'ihr würdet haben + Pt2 + werden müssen',
-    text4: 'wir,sie,Sie würden haben + Pt2 + werden müssen',
-  },
-  {
-    title: 'sollen',
-    text1: 'ich,er,sie,es würde haben + Pt2 + werden sollen',
-    text2: 'du würdest haben + Pt2 + werden sollen',
-    text3: 'ihr würdet haben + Pt2 + werden sollen',
-    text4: 'wir,sie,Sie würden haben + Pt2 + werden sollen',
-  },
-  {
-    title: 'wollen',
-    text1: 'ich,er,sie,es würde haben + Pt2 + werden wollen',
-    text2: 'du würdest haben + Pt2 + werden wollen',
-    text3: 'ihr würdet haben + Pt2 + werden wollen',
-    text4: 'wir,sie,Sie würden haben + Pt2 + werden wollen',
-  },
-]
 
-const SlotModalverbenGegenwartPassiv = [
-  {
-    t0: 'Учитель должен быть опрошен учеником. (Lehrer von Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'müsste',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: 'werden',
-    t9: '.',
-
-  },
-  {
-    t0: 'меня следует спросить (gefragt)',
-    t1: 'ich',
-    t2: 'müsste',
-    t3: 'gefragt',
-    t4: 'werden',
-
-  },
-  {
-    t0: 'его следует спросить (gefragt)',
-    t1: 'er',
-    t2: 'müsste',
-    t3: 'gefragt',
-    t4: 'werden',
-
-  },
-  {
-    t0: 'вас следует спросить (ihr gefragt)',
-    t1: 'ihr',
-    t2: 'müsstet',
-    t3: 'gefragt',
-    t4: 'werden',
-
-  },
-
-]
-const SlotModalverbenVergangenheitPassiv = [
-  {
-    t0: 'Учитель должен был быть опрошенным учеником. (Lehrer von Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'hätte',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: 'werden',
-    t9: 'müssen',
-    t10: '.',
-
-  },
-  {
-    t0: 'мы должны были быть опрошены (gefragt)',
-    t1: 'wir',
-    t2: 'hätten',
-    t3: 'gefragt',
-    t4: 'werden',
-    t5: 'müssen',
-
-  },
-  {
-    t0: 'вы должны были быть опрошенными (gefragt)',
-    t1: 'ihr',
-    t2: 'hättet',
-    t3: 'gefragt',
-    t4: 'werden',
-    t5: 'sollen',
-
-  },
-
-]
-const SlotModalverbenFuturIPassiv = [
-  {
-    t0: 'мне позволили бы попросить (gefragt)',
-    t1: 'ich',
-    t2: 'würde',
-    t3: 'gefragt',
-    t4: 'werden',
-    t5: 'dürfen',
-
-  },
-
-  {
-    t0: 'вы бы будете опрошены (gefragt)',
-    t1: 'ihr',
-    t2: 'würdet',
-    t3: 'gefragt',
-    t4: 'werden',
-    t5: 'mögen',
-
-  },
-]
-const SlotModalverbenFuturIIPassiv = [
-  {
-    t0: 'вы бы будете окончательно опрошены (gefragt)',
-    t1: 'ihr',
-    t2: 'würdet',
-    t3: 'haben',
-    t4: 'gefragt',
-    t5: 'werden',
-    t6: 'mögen',
-
-  },
-]
 
 </script>
 

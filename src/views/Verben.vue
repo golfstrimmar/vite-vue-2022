@@ -55,7 +55,7 @@ const SlotDativ = [
     t3: 'ist geborsten',
   },
   {
-    t0: 'betrügen',
+    t0: 'betrügen обманывать',
     t1: 'betrügt',
     t2: 'betrog',
     t3: 'hat betrogen',

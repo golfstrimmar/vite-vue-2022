@@ -9,7 +9,7 @@
         .tabs__wrap
           ul
             li( v-for="item in items" :key="index" :item='item')
-              h4 {{item.title}}
+              h4(v-if="item.title") {{item.title}}
               span(v-if="item.text1")
                 SvgIcon(:name='item.svg1' v-if="item.svg1")
                 span {{item.text1}}
@@ -114,12 +114,14 @@ const props = defineProps({
 
 
     li {
-      display: grid;
-      grid-template-columns: 146px repeat(10, max-content);
+      // display: grid;
+      // grid-template-columns: repeat(11, max-content);
       padding: 5px;
-      align-items: center;
+      // align-items: center;
       column-gap: 20px;
-
+      display: flex;
+      // flex-direction: column;
+      align-items: flex-start;
 
       &:first-child {
         padding: 10px 5px 5px 5px;
@@ -130,7 +132,7 @@ const props = defineProps({
       }
 
       span {
-        white-space: nowrap;
+        // white-space: nowrap;
       }
 
       h4 {
@@ -157,9 +159,12 @@ const props = defineProps({
       padding: 8px 5px 0px 5px;
 
       li {
-        grid-template-columns: max-content;
+        // grid-template-columns: max-content;
         margin: 0 0 10px 0;
         gap: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
         h4 {
           color: $blue-6;
@@ -167,7 +172,10 @@ const props = defineProps({
           margin: 0 10px 0 0;
         }
 
-        span {}
+        span {
+          line-height: .9;
+          margin: 0 0 5px 0;
+        }
       }
     }
   }
