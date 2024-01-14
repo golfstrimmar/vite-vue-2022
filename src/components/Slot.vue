@@ -99,7 +99,6 @@ const someEvent = (data) => {
 	text-align: left;
 	position: relative;
 	display: inline-block;
-
 }
 
 .training {

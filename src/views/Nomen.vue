@@ -3,9 +3,9 @@
   .page-title 
     h2 Nomen-Verb-Verbindungen
 
-  .page-block
+  .page-block.blue-grey-4
     .page-title--small 
-      h2 Training
+      h2 Beispiele
     TabsTraining( title='' :SlotData='SlotDativ' )
 
 

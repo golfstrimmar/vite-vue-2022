@@ -12,6 +12,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
+
   background: rgb(217, 220, 248);
 }
 
@@ -69,20 +70,28 @@ a {
 }
 
 .page-title {
-  margin: 15px 0;
-  // background: linear-gradient($deep-purple-2, $deep-purple-8, $deep-purple-2);
   text-align: center;
   display: inline-block;
   text-align: left;
   h2 {
-    font-family: "HouschkaPro-Bold", sans-serif;
+    font-family: "RR", sans-serif;
     font-size: 30px;
     font-weight: 800;
-    color: $deep-orange-4;
+    color: $blue-8;
     text-transform: uppercase;
-    line-height: 1.2;
+    line-height: 1.5;
   }
 }
+h2 {
+  font-family: "RR", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: $blue-8;
+  text-transform: uppercase;
+  line-height: 1.5;
+  text-shadow: 0 0 5px white;
+}
+
 .salut {
   position: absolute;
   right: 0;
@@ -90,17 +99,29 @@ a {
   transform: translate(0%, -50%);
 }
 .page-block {
-  background: $deep-purple-1;
+  background-color: white;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14),
     0 3px 1px -2px rgba(0, 0, 0, 0.12);
   padding: 10px;
   border-radius: 5px;
   margin: 0 0 10px 0;
+  h4 {
+    font-family: "RR", sans-serif;
+    color: $blue-8;
+    font-size: 18px;
+    margin: 0 20px 10px 0;
+
+    span {
+      color: $red-4;
+      font-size: 18px;
+    }
+  }
 }
 
 .page-title--small {
   h2 {
-    color: $deep-purple-4;
+    font-family: "RR", sans-serif;
+    color: $deep-purple-6;
     font-style: 12px;
     padding: 5px 0;
   }
@@ -112,7 +133,22 @@ button.mixButton {
   border-radius: 3px;
   background-color: $blue-13;
 }
+.blue-grey-4 {
+  background-color: $indigo-3;
+}
 
+.blue-grey-1 {
+  background-color: $indigo-2;
+}
+.blue-grey-0 {
+  background-color: $indigo-1;
+}
+.amber-3 {
+  background-color: $amber-3;
+}
+.deep-orange-2 {
+  background-color: $deep-orange-2;
+}
 /* +++++++++++++++++++++++++++++++++++++ */
 
 ._hover {
@@ -147,9 +183,6 @@ button.mixButton {
 }
 
 @media (max-width: 600px) {
-  main {
-    padding: 100px 0 0 0;
-  }
   .page-title {
     h2 {
       font-size: 20px;

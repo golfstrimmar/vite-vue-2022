@@ -136,6 +136,7 @@ const props = defineProps({
       }
 
       h4 {
+        font-family: "RR", sans-serif;
         color: $blue-6;
         font-size: 18px;
         margin: 0 20px 0 0;

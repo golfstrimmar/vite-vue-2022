@@ -3,7 +3,7 @@
 	//- .plaza__title
 	//- 	h2 Plaza
 	.plaza__top 
-		p Bitte füllen Sie die leeren Felder aus 
+		p Bitte füllen Sie die leeren Felder aus. 
 		p Es sieht so aus -
 		p 
 			span die richtige Antwort 
@@ -53,12 +53,6 @@
 		}
 	}
 
-	&__line {
-		margin: 5px 0 10px 0;
 
-		span {
-			line-height: 1.3;
-		}
-	}
 }
 </style>

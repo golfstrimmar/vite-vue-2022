@@ -3,42 +3,44 @@
   .page-title 
     h2 Konjunktiv II
 
-  .page-block
+  .page-block.blue-grey-4
     .page-title--small
-      h3 Bildung des Konjunktivs II.
-    Tabs(:items= 'Gegenwart' title='Konjunktivs II der Gegenwart ' )
-    Tabs(:items= 'Vergangenheit' title='Konjunktiv II der Vergangenheit.' )
-    Tabs(:items= 'FuturI' title='Konjunktiv II Futur I.' )
-    Tabs(:items= 'FuturII' title='Konjunktiv II Futur II.' )
-    .page-title--small 
-      h2 Training
-    TabsTraining( title='Gegenwart' :SlotData='SlotGegenwart' )
-    TabsTraining( title='Vergangenheit' :SlotData='SlotVergangenheit' )
-    TabsTraining( title='FuturI' :SlotData='SlotFuturI' )
-    TabsTraining( title='FuturII' :SlotData='SlotFuturII' )
+      h2 Bildung des Konjunktivs II.
+    Tabs(:items= 'Gegenwart' title='Konjunktivs II der Gegenwart (Konjunktiv II von "werden" + Infinitiv)' )
+    Tabs(:items= 'Vergangenheit' title='Konjunktiv II der Vergangenheit.(Konjunktivform von sein/ haben + Partizip II)' )
+    Tabs(:items= 'FuturI' title='Konjunktiv II Futur I.(Konjunktiv II von "werden" + Infinitiv)' )
+    Tabs(:items= 'FuturII' title='Konjunktiv II Futur II.(Konjunktiv II von "werden" + Partizip II + sein)' )
+    .page-block.blue-grey-1
+      .page-title--small
+        h2 Beispiele
+      TabsTraining( title='Gegenwart' :SlotData='SlotGegenwart' )
+      TabsTraining( title='Vergangenheit' :SlotData='SlotVergangenheit' )
+      TabsTraining( title='FuturI' :SlotData='SlotFuturI' )
+      TabsTraining( title='FuturII' :SlotData='SlotFuturII' )
 
 
 
-  .page-block
+
+  .page-block.blue-grey-4
     .page-title--small
-      h3 Bildung des Konjunktivs II mit den Verbformen. 
-    p Zu den wenigen Verben, die <span>IMMER</span> den Konjunktiv II in der Originalform verwenden, gehören:
+      h2 Bildung des Konjunktivs II mit den Verbformen.
+      p Zu den wenigen Verben, die <span>IMMER</span> den Konjunktiv II in der Originalform verwenden, gehören:
     Tabs(:items= 'Verbformen' title='Konjunktivs II mit den Verbformen' )
+    .page-block.blue-grey-1
+      .page-title--small 
+        h2 Beispiele
+      TabsTraining( title='Verbformen' :SlotData='SlotVerbformen' )
+
+  .page-block.blue-grey-4
     .page-title--small 
-      h2 Training
-    TabsTraining( title='Verbformen' :SlotData='SlotVerbformen' )
-
-
-
-  .page-block
-    .page-title--small 
-      h3 Bildung des Konjunktivs II mit Modalverben.
+      h2 Bildung des Konjunktivs II mit Modalverben.
     Tabs(:items= 'GegenwartModalverben' title='Konjunktivs II der Gegenwart mit Modalverben ' )
     Tabs(:items= 'VergangenheitModalverben' title='Konjunktiv II der Vergangenheit mit Modalverben.' )
-    .page-title--small 
-      h2 Training
-    TabsTraining( title='Modalverben' :SlotData='SlotModalverben' )
-    TabsTraining( title='Vergangenheit Modalverben' :SlotData='SlotVergangenheitModalverben' )
+    .page-block.blue-grey-1
+      .page-title--small 
+        h2 Beispiele
+      TabsTraining( title='Modalverben' :SlotData='SlotModalverben' )
+      TabsTraining( title='Vergangenheit Modalverben' :SlotData='SlotVergangenheitModalverben' )
 
 
  
@@ -49,7 +51,6 @@ import TabsTraining from '@/components/TabsTraining.vue';
 
 const Gegenwart = [
   {
-    title: 'würden + Infinitiv',
     text1: 'ich,er,sie,es würde + Infinitiv',
     text2: 'du würdest + Infinitiv',
     text3: 'ihr würdet + Infinitiv',
@@ -59,7 +60,6 @@ const Gegenwart = [
 ]
 const Vergangenheit = [
   {
-    title: 'Konjunktivform von sein/ haben + Partizip II',
     text1: 'ich,er,sie,es wäre/hätte + Partizip II ',
     text2: 'du wärest/hättest + Partizip II',
     text3: 'ihr wäret/hättet + Partizip II',
@@ -68,7 +68,6 @@ const Vergangenheit = [
 ]
 const FuturI = [
   {
-    title: 'Konjunktiv II von "werden" + Infinitiv ',
     text1: 'ich,er,sie,es würde + Infinitiv ',
     text2: 'du würdest + Infinitiv',
     text3: 'ihr ihr würdet + Infinitiv',
@@ -77,7 +76,6 @@ const FuturI = [
 ]
 const FuturII = [
   {
-    title: 'Konjunktiv II von "werden" + Partizip II + sein ',
     text1: 'ich,er,sie,es würde + Partizip II + sein ',
     text2: 'du würdest + Partizip II + sein ',
     text3: 'ihr ihr würdet + Partizip II + sein ',

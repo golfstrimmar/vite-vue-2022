@@ -6,28 +6,11 @@
   Tabs(:items= 'Dativ' title='Dativ' )
   Tabs(:items= 'Akkusativ' title='Akkusativ' )
   Tabs(:items= 'Genitiv' title='Genitiv' )
-  .page-block
-    .page-title--small 
-      h3 Training
-    Plaza
-    Slot(:SlotData='SlotDataDemonstrativ')
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Unbestimmte Artikel
-  //-   Content(:items='Unbestimmte' :headers='Headers')
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataUnbestimmte')
-
-
-  //- .page-block
-  //-   .page-title--small 
-  //-     h3 Unbestimmte Negativ Artikel
-  //-   Content(:items='UnbestimmteNegativ' :headers='Headers')
-  //-   Plaza
-  //-   Slot(:SlotData='SlotDataNegativ')
-
-
+  .page-block.blue-grey-4
+    .page-title--small
+      h2 Beispiele
+    TabsTraining( title='' :SlotData='SlotDataDemonstrativ' )  
+ 
 
 </template>
 
@@ -37,7 +20,7 @@
 import Tabs from '@/components/Tabs.vue';
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
-
+import TabsTraining from '@/components/TabsTraining.vue';
 const Nom = [
 
   {

@@ -6,10 +6,11 @@
   Tabs(:items= 'Akkusativ' title='Akkusativ' )
   Tabs(:items= 'Dativ' title='Dativ' )
   Tabs(:items= 'Genitiv' title='Genitiv' )
-  .page-block
-    .page-title--small 
-      h2 Training 
-    TabsTraining( title='Nominativ' :SlotData='SlotDataNominativ' )
+
+  .page-block.blue-grey-4
+    .page-title--small
+      h2 Beispiele
+    TabsTraining( title='' :SlotData='SlotDataNominativ' ) 
 </template>
 
 

@@ -3,20 +3,20 @@
   .page-title 
     h2 der Artikel
 
-
-  Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
-  Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
-  Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
-
-  Tabs(:items= 'der' title='Beispiele für den männlichen Artikel „der“')
-  Tabs(:items= 'die' title='Beispiele für den feminine Article “die”')
-  Tabs(:items= 'das' title='Beispiele für den neuter Article “das”')
-
-  .page-title--small
-    h2 Training
-  TabsTraining( title='Bestimmte Artikel' :SlotData='SlotDataBestimmte' )
-  TabsTraining( title='Unbestimmte Artikel' :SlotData='SlotDataUnbestimmte' )
-  TabsTraining( title='Unbestimmte Negativ Artikel ' :SlotData='SlotDataNegativ' )
+  .page-block.blue-grey-4
+    Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
+    Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
+    Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
+  .page-block.blue-grey-4
+    Tabs(:items= 'der' title='Beispiele für den männlichen Artikel „der“')
+    Tabs(:items= 'die' title='Beispiele für den feminine Article “die”')
+    Tabs(:items= 'das' title='Beispiele für den neuter Article “das”')
+  .page-block.blue-grey-4
+    .page-title--small
+      h2 Beispiele
+    TabsTraining( title='Bestimmte Artikel' :SlotData='SlotDataBestimmte' )
+    TabsTraining( title='Unbestimmte Artikel' :SlotData='SlotDataUnbestimmte' )
+    TabsTraining( title='Unbestimmte Negativ Artikel ' :SlotData='SlotDataNegativ' )
 
 
 </template>

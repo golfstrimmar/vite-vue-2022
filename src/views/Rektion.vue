@@ -3,24 +3,24 @@
   .page-title 
     h2 Die Rektion der Verben
 
-  .page-block
+  .page-block.blue-grey-4
     .page-title--small 
       h2 Akkusativ ohne Präposition
     TabsTraining( title='' :SlotData='SlotAkkusativohnePräposition' )
-  .page-block
+  .page-block.blue-grey-4
     .page-title--small 
       h2 Akkusativ mit Präposition
     TabsTraining( title='' :SlotData='SlotAkkusativmitPräposition' )
 
-  .page-block
+  .page-block.blue-grey-4
     .page-title--small 
       h2 Dativ ohne Präposition
     TabsTraining( title='' :SlotData='SlotDativohnePräposition' )
-  .page-block
+  .page-block.blue-grey-4
     .page-title--small 
       h2 Dativ mit Präposition
     TabsTraining( title='' :SlotData='SlotDativmitPräposition' )
-  .page-block
+  .page-block.blue-grey-4
     .page-title--small 
       h2 Doppelt gesteuerte Verben
     TabsTraining( title='A + A' :SlotData='SlotDoppeltAA' )

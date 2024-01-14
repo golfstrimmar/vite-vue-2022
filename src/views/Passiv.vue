@@ -3,32 +3,33 @@
 
   .page-title 
     h2 Passiv
-  .page-block
+  .page-block.deep-orange-2
     p(style="color: red;font-weight: 800;") Многие формы пассива не преводятся дословно на русский или звучат некорректно!
     p(style="color: red;font-weight: 800;") Viele Formen des Passivs werden nicht wörtlich ins Russische übersetzt oder klingen falsch!
 
-  .page-block
-    h2 Das Vorgangspassiv 
+  .page-block.blue-grey-4
+    .page-title--small
+      h2 Das Vorgangspassiv 
     div
       p ✔️ несовершенный пассив или по-другому его называют пассив действия 
       p 👌 Это значит, что действие, которое совершается над объектом не было завершено, мы не знаем его результат.
       p ✔️ Das Vorgangspassiv stellt den Vorgang, die Handlung oder das Geschehen in den Vordergrund.
-    .page-block
+    .page-block.blue-grey-1
       Tabs(:items= 'VorgangsPräsens' title='Präsens  (werden in Präsens + Partizip II)' )
       TabsTraining( title='Beispiele Präsens' :SlotData='SlotVorgangspassivsPräsens' )
-    .page-block
+    .page-block.blue-grey-1
       Tabs(:items= 'VorgangsPräteritum' title='Präteritum  (werden in Präteritum = wurden + Partizip II)' )
       TabsTraining( title='Beispiele Präteritum' :SlotData='SlotVorgangspassivsPräteritum' )
-    .page-block
+    .page-block.blue-grey-1
       Tabs(:items= 'VorgangsPerfekt' title='Perfekt  (haben/sein + Partizip II + worden )' )
       TabsTraining( title='Beispiele Perfekt' :SlotData='SlotVorgangspassivsPerfekt' )
-    .page-block
+    .page-block.blue-grey-1
       Tabs(:items= 'VorgangsPlusquamperfekt' title='Plusquamperfekt  (sein in Präteritum + Partizip II + worden)' )
       TabsTraining( title='Beispiele Plusquamperfekt' :SlotData='SlotVorgangspassivsPlusquamperfekt' )
-    .page-block
+    .page-block.blue-grey-1
       Tabs(:items= 'VorgangsFutur1' title='Futur1  (werden in Präsens + Partizip II + werden)' )
       TabsTraining( title='Beispiele Futur1' :SlotData='SlotVorgangspassivsFuturum' )
-    .page-block
+    .page-block.blue-grey-1
       h4 Vorgangspassiv + Modalverben
       Tabs(:items= 'VorgangsPräsensModalverb' title='Präsens + Modalverb (MV in Präsens + Partizip II + werden)' )
       Tabs(:items= 'VorgangsPräteritumModalverb' title='Präteritum + Modalverb (MV in Präteritum + Partizip II + werden)' )
@@ -36,40 +37,40 @@
       Tabs(:items= 'VorgangsPlusquamperfektModalverb' title='Plusquamperfekt + Modalverb (haben/sein in Präteritum + Partizip II + werden + Inf. MV)' )
       Tabs(:items= 'VorgangsFutur1Modalverb' title='Futur1 + Modalverb (werden in Präsens + Partizip II + werden + Inf. MV)' )
       TabsTraining( title='Beispiele müssen' :SlotData='Slotmüssen' )
-
-    .page-block
+    .page-block.blue-grey-1
       h4 Vorgangspassiv + Konjunktiv II
-      .page-block
+      .page-block.blue-grey-0
         Tabs(:items= 'GegenwartPassiv' title='Präsens Passiv + Konjunktiv II (würden + Partizip II)' )
         TabsTraining( title='Beispiele Gegenwart Passiv + Konjunktiv II' :SlotData='SlotGegenwartPassiv' )
-      .page-block
+      .page-block.blue-grey-0
         Tabs(:items= 'VergangenheitPassiv' title='Vergangenheit Passiv + Konjunktiv II  (wären + Partizip II + worden)' )
         TabsTraining( title='Beispiele Vergangenheit Passiv + Konjunktiv II' :SlotData='SlotVergangenheitPassiv' )
-      .page-block
+      .page-block.blue-grey-0
         Tabs(:items= 'FuturIPassiv' title='Futur I Passiv + Konjunktiv II (würden + Partizip II + werden)' )
         TabsTraining( title='Beispiele FuturI Passiv + Konjunktiv II' :SlotData='SlotFuturIPassiv' )
-      .page-block
+      .page-block.blue-grey-0
         Tabs(:items= 'FuturIIPassiv' title='Futur II Passiv + Konjunktiv II (würden + Partizip II + worden sein)' )
         TabsTraining( title='Beispiele FuturII Passiv + Konjunktiv II' :SlotData='SlotFuturIIPassiv' )
-    .page-block
+    .page-block.blue-grey-1
       h4 Vorgangspassiv + Modalverben + Konjunktiv II
-      .page-block
+      .page-block.blue-grey-0
         Tabs(:items= 'ModalverbenGegenwartPassiv' title='Präsens Passiv + Modalverben + Konjunktiv II (Konjunktiv II MV  + Partizip II + werden )' )
         TabsTraining( title='Beispiele' :SlotData='SlotModalverbenGegenwartPassiv' )
-      .page-block
+      .page-block.blue-grey-0
         Tabs(:items= 'ModalverbenVergangenheitPassiv' title='Vergangenheit Passiv + Modalverben + Konjunktiv II (hätten/wären + Partizip II +  werden + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotModalverbenVergangenheitPassiv' )
-      .page-block
+      .page-block.blue-grey-0
         Tabs(:items= 'ModalverbenFuturIPassiv' title='FuturI Passiv + Modalverben + Konjunktiv II ( würden + Partizip II + werden + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotModalverbenFuturIPassiv' )
-      .page-block
+      .page-block.blue-grey-0
         Tabs(:items= 'ModalverbenFuturIIPassiv' title='FuturII Passiv + Modalverben + Konjunktiv II (würden + haben/sein + Partizip II + werden + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotModalverbenFuturIIPassiv' )
 
-  .page-block
-    h2 Das Zustandspassiv
+  .page-block.amber-3
+    .page-title--small
+      h2 Das Zustandspassiv
     div
-      p ✔️ совершенный пассив или по-другому пассив состояния (Zustandspassiv)
+      p ✔️ совершенный пассив или по-другому пассив состояния 
       p 👌Это значит, что у нас уже есть результат какого-либо действия. Мы просто констатируем как факт, то что произошло.
       p ✔️ Das Zustandspassiv drückt ein Ergebnis bzw. einen Zustand aus.
       p ✔️ Некоторые формы пассивного состояния очень похожи на активные формы.
@@ -79,40 +80,53 @@
       p ✔️ Manche Formen des Zustandspassivs ähneln sehr den Aktivformen.
       p Um herauszufinden, ob ein Satz im Zustandspassiv oder im Aktiv steht, setzt du ihn ins Vorgangspassiv. Ist das möglich, 
       p handelt es sich um das Zustandspassiv. Ist dies nicht möglich, steht der Satz im Aktiv.
-    .page-block
+    .page-block.blue-grey-4
       Tabs(:items= 'ZustandsPräsens' title='Präsens  (sein in Präsens + Partizip II)' )
       TabsTraining( title='Beispiele Präsens' :SlotData='SlotZustandspassivsPräsens' )
-    .page-block
+    .page-block.blue-grey-4
       Tabs(:items= 'ZustandsPräteritum' title='Präteritum  (sein in Präteritum + Partizip II)' )
       TabsTraining( title='Beispiele Präteritum' :SlotData='SlotZustandspassivsPräteritum' )
-    .page-block
+    .page-block.blue-grey-4
       Tabs(:items= 'ZustandsPerfekt' title='Perfekt  (sein in Präsens + Partizip II + gewesen )' )
       TabsTraining( title='Beispiele Perfekt' :SlotData='SlotZustandspassivsPerfekt' )
-    .page-block
+    .page-block.blue-grey-4
       Tabs(:items= 'ZustandsPlusquamperfekt' title='Plusquamperfekt  (sein in Präteritum + Partizip II + gewesen)' )
       TabsTraining( title='Beispiele Plusquamperfekt' :SlotData='SlotZustandspassivsPlusquamperfekt' )
-    .page-block
+    .page-block.blue-grey-4
       Tabs(:items= 'ZustandsFutur1' title='Futur1  (werden in Präsens + Partizip II + sein)' )
       TabsTraining( title='Beispiele Futur1' :SlotData='SlotZustandspassivsFuturum' )
 
-    .page-block
+    .page-block.blue-grey-4
       h4 Zustandspassiv + Modalverben
-      .page-block
+      .page-block.blue-grey-1
         Tabs(:items= 'ZuPräsensModalverb' title='Präsens + Modalverb (MV in Präsens + Partizip II + sein)' )
         TabsTraining( title='Beispiele' :SlotData='SlotZuPräsensModalverb' )
-      .page-block
+      .page-block.blue-grey-1
         Tabs(:items= 'ZuPräteritumModalverb' title='Präteritum + Modalverb (MV in Präteritum + Partizip II + sein)' )
         TabsTraining( title='Beispiele' :SlotData='SlotZuPräteritumModalverb' )
-      .page-block
+      .page-block.blue-grey-1
         Tabs(:items= 'ZuPerfektModalverb' title='Perfekt + Modalverb (haben/sein + Partizip II + sein + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotZuPerfektModalverb' )
-      .page-block
+      .page-block.blue-grey-1
         Tabs(:items= 'ZuPlusquamperfektModalverb' title='Plusquamperfekt + Modalverb (haben/sein in Präteritum + Partizip II + sein + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotZuPlusquamperfektModalverb' )
-      .page-block
+      .page-block.blue-grey-1
         Tabs(:items= 'ZuFutur1Modalverb' title='Futur1 + Modalverb (werden in Präsens + Partizip II + sein + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotZuFutur1Modalverb' )
-
+    .page-block.blue-grey-4
+      h4 Zustandspassiv + Konjunktiv II
+      .page-block.blue-grey-1
+        Tabs(:items= 'ZuGegenwartPassiv' title='Präsens Zustandspassiv + Konjunktiv II (würden + Partizip II)' )
+        TabsTraining( title='Beispiele Gegenwart Zustandspassiv + Konjunktiv II' :SlotData='SlotZuGegenwartPassiv' )
+      .page-block.blue-grey-1
+        Tabs(:items= 'ZuVergangenheitPassiv' title='Vergangenheit Zustandspassiv + Konjunktiv II  (wären + Partizip II + worden)' )
+        TabsTraining( title='Beispiele Vergangenheit Zustandspassiv + Konjunktiv II' :SlotData='SlotZuVergangenheitPassiv' )
+      .page-block.blue-grey-1
+        Tabs(:items= 'ZuFuturIPassiv' title='Futur I Zustandspassiv + Konjunktiv II (würden + Partizip II + werden)' )
+        TabsTraining( title='Beispiele FuturI Zustandspassiv + Konjunktiv II' :SlotData='SlotZuFuturIPassiv' )
+      .page-block.blue-grey-1
+        Tabs(:items= 'ZuFuturIIPassiv' title='Futur II Zustandspassiv + Konjunktiv II (würden + Partizip II + worden sein)' )
+        TabsTraining( title='Beispiele FuturII Zustandspassiv + Konjunktiv II' :SlotData='SlotZuFuturIIPassiv' )
 </template>
 
 
@@ -2188,7 +2202,87 @@ const SlotZuFutur1Modalverb = [
     t7: '.',
   },
 ]
+// ------------------------------------------
+// =============================================================
+// ========================Konjunktiv II=====================================
+// =============================================================
+const ZuGegenwartPassiv = [
+  {
+    text1: 'ich,er,sie,es wäre + Partizip II',
+    text2: 'du wärest + Partizip II',
+    text3: 'ihr wäret + Partizip II',
+    text4: 'wir,sie,Sie wären + Partizip II ',
+  },
+]
+const ZuVergangenheitPassiv = [
+  {
+    text1: 'ich,er,sie,es wäre + Partizip II + gewesen ',
+    text2: 'du wärest + Partizip II + gewesen',
+    text3: 'ihr wäret + Partizip II + gewesen',
+    text4: 'wir,sie,Sie wären + Partizip II + gewesen',
+  },
+]
+const ZuFuturIPassiv = [
+  {
+    text1: 'ich,er,sie,es würde + Partizip II + sein ',
+    text2: 'du würdest + Partizip II + sein',
+    text3: 'ihr würdet + Partizip II + sein',
+    text4: 'wir,sie,Sie würden + Partizip II + sein',
+  },
+]
+const ZuFuturIIPassiv = [
+  {
+    text1: 'ich,er,sie,es würde + Partizip II + gewesen sein',
+    text2: 'du würdest + Partizip II + gewesen sein',
+    text3: 'ihr würdet + Partizip II + gewesen sein',
+    text4: 'wir,sie,Sie würden + Partizip II + gewesen sein',
+  },
+]
 
+const SlotZuGegenwartPassiv = [
+  {
+    t0: 'Книга прочитана бы. (Buch gelesen)',
+    t1: 'Das   ',
+    t2: 'Buch',
+    t3: 'wäre',
+    t4: 'gelesen',
+    t5: '.',
+  },
+]
+const SlotZuVergangenheitPassiv = [
+  {
+    t0: 'Книга была бы прочитана. (Buch gelesen)',
+    t1: 'Das',
+    t2: 'Buch',
+    t3: 'wäre',
+    t4: 'gelesen',
+    t5: 'gewesen',
+    t6: '.',
+  },
+]
+const SlotZuFuturIPassiv = [
+  {
+    t0: 'Эта книга будет бы прочитана. (Buch gelesen)',
+    t1: 'Das',
+    t2: 'Buch',
+    t3: 'würde',
+    t4: 'gelesen',
+    t5: 'sein',
+    t6: '.',
+  },
+]
+const SlotZuFuturIIPassiv = [
+  {
+    t0: 'Эта книга будет бы прочитана. (Buch gelesen)',
+    t1: 'Das',
+    t2: 'Buch',
+    t3: 'würde',
+    t4: 'gelesen',
+    t5: 'gewesen',
+    t6: 'sein',
+    t7: '.',
+  },
+]
 </script>
 
 <style lang="scss">
@@ -2199,26 +2293,6 @@ p {
 .page-block div p {
   &:last-child {
     margin: 0 0 10px 0;
-  }
-}
-
-h2 {
-  font-size: 20px;
-  font-weight: 800;
-  color: $blue-6;
-  text-transform: uppercase;
-  line-height: 1.2;
-  margin: 0 0 10px 0;
-}
-
-h4 {
-  color: $blue-6;
-  font-size: 18px;
-  margin: 0 20px 10px 0;
-
-  span {
-    color: $red-4;
-    font-size: 18px;
   }
 }
 </style>

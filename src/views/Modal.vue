@@ -2,22 +2,24 @@
 .container
   .page-title 
     h2 Modalverben
-  Tabs(:items= 'müssen' title='müssen' )
-  Tabs(:items= 'können' title='können' )
-  Tabs(:items= 'dürfen' title='dürfen' )
-  Tabs(:items= 'sollen' title='sollen' )
-  Tabs(:items= 'wollen' title='wollen' )
-  Tabs(:items= 'mögen' title='mögen' )
-  Tabs(:items= 'möchten' title='möchten' )
-  .page-title--small 
-    h2 Training 
-  TabsTraining( title='müssen ' :SlotData='SlotDatamüssen' )
-  TabsTraining( title='können' :SlotData='SlotDatakönnen' )
-  TabsTraining( title='dürfen' :SlotData='SlotDatadürfen' )
-  TabsTraining( title='sollen' :SlotData='SlotDatasollen' )
-  TabsTraining( title='wollen' :SlotData='SlotDatawollen' )
-  TabsTraining( title='mögen' :SlotData='SlotDatamögen' )
-  TabsTraining( title='möchten' :SlotData='SlotDatamöchten' )
+  .page-block.blue-grey-4
+    Tabs(:items= 'müssen' title='müssen' )
+    Tabs(:items= 'können' title='können' )
+    Tabs(:items= 'dürfen' title='dürfen' )
+    Tabs(:items= 'sollen' title='sollen' )
+    Tabs(:items= 'wollen' title='wollen' )
+    Tabs(:items= 'mögen' title='mögen' )
+    Tabs(:items= 'möchten' title='möchten' )
+  .page-block.blue-grey-4
+    .page-title--small
+      h2 Beispiele
+    TabsTraining( title='müssen' :SlotData='SlotDatamüssen' )
+    TabsTraining( title='können' :SlotData='SlotDatakönnen' )
+    TabsTraining( title='dürfen' :SlotData='SlotDatadürfen' )
+    TabsTraining( title='sollen' :SlotData='SlotDatasollen' )
+    TabsTraining( title='wollen' :SlotData='SlotDatawollen' )
+    TabsTraining( title='mögen' :SlotData='SlotDatamögen' )
+    TabsTraining( title='möchten' :SlotData='SlotDatamöchten' )
 </template>
 <script setup>
 // import Content from '@/components/Content.vue';

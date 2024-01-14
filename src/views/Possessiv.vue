@@ -6,11 +6,10 @@
   Tabs(:items= 'Possessivweiblichen' title='Possessiv weiblichen' )
   Tabs(:items= 'Possessivneutrum' title='Possessiv neutrum' )
   Tabs(:items= 'Possessivplural' title='Possessiv plural' )
-  .page-block
-    .page-title--small 
-      h3 Training
-    Plaza
-    Slot(:SlotData='SlotDataPersonal')
+  .page-block.blue-grey-4
+    .page-title--small
+      h2 Beispiele
+    TabsTraining( title='' :SlotData='SlotDataPersonal' )
 </template>
 
 
@@ -18,7 +17,7 @@
 import Tabs from '@/components/Tabs.vue';
 import Plaza from '@/components/Plaza.vue';
 import Slot from '@/components/Slot.vue'
-
+import TabsTraining from '@/components/TabsTraining.vue';
 const Possessivmännlich = [
 
   {
