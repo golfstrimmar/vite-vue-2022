@@ -77,16 +77,17 @@ a {
     font-family: "RR", sans-serif;
     font-size: 30px;
     font-weight: 800;
-    color: $blue-8;
+    color: #c4e0fc;
     text-transform: uppercase;
     line-height: 1.5;
+    text-shadow: none;
   }
 }
 h2 {
   font-family: "RR", sans-serif;
   font-size: 20px;
   font-weight: 800;
-  color: $blue-8;
+  color: #c4e0fc;
   text-transform: uppercase;
   line-height: 1.5;
   text-shadow: 0 0 5px white;
@@ -180,9 +181,11 @@ button.mixButton {
   .inner {
     padding: 85px 0 0 0;
   }
-}
-
-@media (max-width: 600px) {
+  .page-title--small {
+    h2 {
+      font-size: 16px;
+    }
+  }
   .page-title {
     h2 {
       font-size: 20px;
