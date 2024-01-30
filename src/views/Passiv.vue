@@ -21,7 +21,7 @@
       Tabs(:items= 'VorgangsPräteritum' title='Präteritum  (werden in Präteritum = wurden + Partizip II)' )
       TabsTraining( title='Beispiele Präteritum' :SlotData='SlotVorgangspassivsPräteritum' )
     .page-block.blue-grey-1
-      Tabs(:items= 'VorgangsPerfekt' title='Perfekt  (haben/sein + Partizip II + worden )' )
+      Tabs(:items= 'VorgangsPerfekt' title='Perfekt  (sein in Präsens + Partizip II + worden )' )
       TabsTraining( title='Beispiele Perfekt' :SlotData='SlotVorgangspassivsPerfekt' )
     .page-block.blue-grey-1
       Tabs(:items= 'VorgangsPlusquamperfekt' title='Plusquamperfekt  (sein in Präteritum + Partizip II + worden)' )
@@ -33,8 +33,8 @@
       h4 Vorgangspassiv + Modalverben
       Tabs(:items= 'VorgangsPräsensModalverb' title='Präsens + Modalverb (MV in Präsens + Partizip II + werden)' )
       Tabs(:items= 'VorgangsPräteritumModalverb' title='Präteritum + Modalverb (MV in Präteritum + Partizip II + werden)' )
-      Tabs(:items= 'VorgangsPerfektModalverb' title='Perfekt + Modalverb (haben/sein + Partizip II + werden + Inf. MV)' )
-      Tabs(:items= 'VorgangsPlusquamperfektModalverb' title='Plusquamperfekt + Modalverb (haben/sein in Präteritum + Partizip II + werden + Inf. MV)' )
+      Tabs(:items= 'VorgangsPerfektModalverb' title='Perfekt + Modalverb (haben + Partizip II + werden + Inf. MV)' )
+      Tabs(:items= 'VorgangsPlusquamperfektModalverb' title='Plusquamperfekt + Modalverb (haben in Präteritum + Partizip II + werden + Inf. MV)' )
       Tabs(:items= 'VorgangsFutur1Modalverb' title='Futur1 + Modalverb (werden in Präsens + Partizip II + werden + Inf. MV)' )
       TabsTraining( title='Beispiele müssen' :SlotData='Slotmüssen' )
     .page-block.blue-grey-1
@@ -57,13 +57,13 @@
         Tabs(:items= 'ModalverbenGegenwartPassiv' title='Präsens Passiv + Modalverben + Konjunktiv II (Konjunktiv II MV  + Partizip II + werden )' )
         TabsTraining( title='Beispiele' :SlotData='SlotModalverbenGegenwartPassiv' )
       .page-block.blue-grey-0
-        Tabs(:items= 'ModalverbenVergangenheitPassiv' title='Vergangenheit Passiv + Modalverben + Konjunktiv II (hätten/wären + Partizip II +  werden + Inf. MV)' )
+        Tabs(:items= 'ModalverbenVergangenheitPassiv' title='Vergangenheit Passiv + Modalverben + Konjunktiv II (hätten + Partizip II +  werden + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotModalverbenVergangenheitPassiv' )
       .page-block.blue-grey-0
         Tabs(:items= 'ModalverbenFuturIPassiv' title='FuturI Passiv + Modalverben + Konjunktiv II ( würden + Partizip II + werden + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotModalverbenFuturIPassiv' )
       .page-block.blue-grey-0
-        Tabs(:items= 'ModalverbenFuturIIPassiv' title='FuturII Passiv + Modalverben + Konjunktiv II (würden + haben/sein + Partizip II + werden + Inf. MV)' )
+        Tabs(:items= 'ModalverbenFuturIIPassiv' title='FuturII Passiv + Modalverben + Konjunktiv II (würden + haben + Partizip II + werden + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotModalverbenFuturIIPassiv' )
 
   .page-block.amber-3
@@ -105,10 +105,10 @@
         Tabs(:items= 'ZuPräteritumModalverb' title='Präteritum + Modalverb (MV in Präteritum + Partizip II + sein)' )
         TabsTraining( title='Beispiele' :SlotData='SlotZuPräteritumModalverb' )
       .page-block.blue-grey-1
-        Tabs(:items= 'ZuPerfektModalverb' title='Perfekt + Modalverb (haben/sein + Partizip II + sein + Inf. MV)' )
+        Tabs(:items= 'ZuPerfektModalverb' title='Perfekt + Modalverb (haben + Partizip II + sein + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotZuPerfektModalverb' )
       .page-block.blue-grey-1
-        Tabs(:items= 'ZuPlusquamperfektModalverb' title='Plusquamperfekt + Modalverb (haben/sein in Präteritum + Partizip II + sein + Inf. MV)' )
+        Tabs(:items= 'ZuPlusquamperfektModalverb' title='Plusquamperfekt + Modalverb (haben in Präteritum + Partizip II + sein + Inf. MV)' )
         TabsTraining( title='Beispiele' :SlotData='SlotZuPlusquamperfektModalverb' )
       .page-block.blue-grey-1
         Tabs(:items= 'ZuFutur1Modalverb' title='Futur1 + Modalverb (werden in Präsens + Partizip II + sein + Inf. MV)' )
@@ -116,7 +116,7 @@
     .page-block.blue-grey-4
       h4 Zustandspassiv + Konjunktiv II
       .page-block.blue-grey-1
-        Tabs(:items= 'ZuGegenwartPassiv' title='Präsens Zustandspassiv + Konjunktiv II (würden + Partizip II)' )
+        Tabs(:items= 'ZuGegenwartPassiv' title='Präsens Zustandspassiv + Konjunktiv II (wären + Partizip II)' )
         TabsTraining( title='Beispiele Gegenwart Zustandspassiv + Konjunktiv II' :SlotData='SlotZuGegenwartPassiv' )
       .page-block.blue-grey-1
         Tabs(:items= 'ZuVergangenheitPassiv' title='Vergangenheit Zustandspassiv + Konjunktiv II  (wären + Partizip II + worden)' )
@@ -163,11 +163,11 @@ const VorgangsPräteritum = [
 ]
 const VorgangsPerfekt = [
   {
-    text1: 'ich habe/bin Pt2 worden',
-    text2: 'du hast/bist Pt2 worden',
-    text3: 'er,sie,es hat/ist Pt2 worden',
-    text4: 'ihr habt/seid Pt2 worden',
-    text5: 'wir,sie,Sie haben/sind Pt2 worden',
+    text1: 'ich bin Pt2 worden',
+    text2: 'du bist Pt2 worden',
+    text3: 'er,sie,es ist Pt2 worden',
+    text4: 'ihr seid Pt2 worden',
+    text5: 'wir,sie,Sie sind Pt2 worden',
   },
 
 ]
@@ -795,160 +795,6 @@ const Slotmüssen = [
     t7: '.',
   },
 ]
-
-
-// =============================================================
-// ========================Konjunktiv II=====================================
-// =============================================================
-const GegenwartPassiv = [
-  {
-    text1: 'ich,er,sie,es würde + Partizip II',
-    text2: 'du würdest + Partizip II',
-    text3: 'ihr würdet + Partizip II',
-    text4: 'wir,sie,Sie würden + Partizip II ',
-  },
-]
-const VergangenheitPassiv = [
-  {
-    text1: 'ich,er,sie,es wäre + Partizip II + worden ',
-    text2: 'du wärest + Partizip II + worden',
-    text3: 'ihr wäret + Partizip II + worden',
-    text4: 'wir,sie,Sie wären + Partizip II + worden',
-  },
-]
-const FuturIPassiv = [
-  {
-    text1: 'ich,er,sie,es würde + Partizip II + werden ',
-    text2: 'du würdest + Partizip II + werden',
-    text3: 'ihr würdet + Partizip II + werden',
-    text4: 'wir,sie,Sie würden + Partizip II + werden',
-  },
-]
-const FuturIIPassiv = [
-  {
-    text1: 'ich,er,sie,es würde + Partizip II + worden sein',
-    text2: 'du würdest + Partizip II + worden sein',
-    text3: 'ihr würdet + Partizip II + worden sein',
-    text4: 'wir,sie,Sie würden + Partizip II + worden sein',
-  },
-]
-// ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
-const SlotGegenwartPassiv = [
-  {
-    t0: 'Если бы дерево было левее, в нашем саду не было бы так много листьев. (Baum weiter so viele Blätter Garten)',
-    t1: 'Wenn',
-    t2: 'der',
-    t3: 'Baum',
-    t4: 'weiter',
-    t5: 'links',
-    t6: 'stehen',
-    t7: 'würde',
-    t8: ',',
-    t9: 'wären',
-    t10: 'nicht',
-    t11: 'so',
-    t12: 'viele',
-    t13: 'Blätter',
-    t14: 'in',
-    t15: 'unserem',
-    t16: 'Garten',
-    t17: '.',
-  },
-  {
-    t0: 'Учитель спрашиваем бы учеником. (Lehrer Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'würde',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: '.',
-  },
-  {
-    t0: 'План нарисовывается бы. (Plan gezeichnet)',
-    t1: 'Der',
-    t2: 'Plan',
-    t3: 'würde',
-    t4: 'gezeichnet',
-    t5: '.',
-  }
-]
-const SlotVergangenheitPassiv = [
-  {
-    t0: 'Учитель был бы опрошен учеником.(Lehrer Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'wäre',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: 'worden',
-    t9: '.',
-
-  },
-  {
-    t0: 'План нарисовывался бы.(Plan gezeichnet)',
-    t1: 'Der',
-    t2: 'Plan',
-    t3: 'wäre',
-    t4: 'gezeichnet',
-    t5: 'worden',
-    t6: '.',
-  },
-]
-const SlotFuturIPassiv = [
-  {
-    t0: 'Учитель будет бы спрошен учеником. (Lehrer Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'würde',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: 'werden',
-    t9: '.',
-
-  },
-  {
-    t0: 'План будет бы рисоваться. (Plan gezeichnet)',
-    t1: 'Der',
-    t2: 'Plan',
-    t3: 'würde',
-    t4: 'gezeichnet',
-    t5: 'werden',
-    t6: '.',
-
-  },
-]
-const SlotFuturIIPassiv = [
-  {
-    t0: 'Учитель будет окончательно спрошен учеником. (Lehrer Schüler gefragt)',
-    t1: 'Der',
-    t2: 'Lehrer',
-    t3: 'würde',
-    t4: 'von',
-    t5: 'dem',
-    t6: 'Schüler',
-    t7: 'gefragt',
-    t8: 'worden',
-    t9: 'sein',
-    t10: '.',
-  },
-  {
-    t0: 'План будет бы нарисован. (Plan gezeichnet)',
-    t1: 'Der',
-    t2: 'Plan',
-    t3: 'würde',
-    t4: 'gezeichnet',
-    t5: 'worden',
-    t6: 'sein',
-    t7: '.',
-  },
-]
-
 // =============================================================
 // ========================Modal=====================================
 // =============================================================
@@ -1246,100 +1092,98 @@ const VorgangsFutur1Modalverb = [
   },
 ]
 
-
-
 const ModalverbenGegenwartPassiv = [
   {
     title: 'dürfen',
     text1: 'ich,er,sie,es dürfte + Pt2 + werden',
-    text2: 'du dürftest +  + Pt2 + werden',
-    text3: 'ihr dürftet +  + Pt2 + werden',
-    text4: 'wir,sie,Sie dürften   + Pt2 + werden',
+    text2: 'du dürftest + Pt2 + werden',
+    text3: 'ihr dürftet + Pt2 + werden',
+    text4: 'wir,sie,Sie dürften + Pt2 + werden',
   },
   {
     title: 'können',
-    text1: 'ich,er,sie,es könnte  + Pt2 + werden',
-    text2: 'du könntest  + Pt2 + werden',
-    text3: 'ihr könntet  + Pt2 + werden',
-    text4: 'wir,sie,Sie könnten   + Pt2 + werden',
+    text1: 'ich,er,sie,es könnte + Pt2 + werden',
+    text2: 'du könntest + Pt2 + werden',
+    text3: 'ihr könntet + Pt2 + werden',
+    text4: 'wir,sie,Sie könnten + Pt2 + werden',
   },
   {
     title: 'mögen',
-    text1: 'ich,er,sie,es möchte  + Pt2 + werden ',
-    text2: 'du möchtest  + Pt2 + werden',
-    text3: 'ihr möchtet  + Pt2 + werden',
-    text4: 'wir,sie,Sie möchten   + Pt2 + werden',
+    text1: 'ich,er,sie,es möchte + Pt2 + werden ',
+    text2: 'du möchtest + Pt2 + werden',
+    text3: 'ihr möchtet + Pt2 + werden',
+    text4: 'wir,sie,Sie möchten + Pt2 + werden',
   },
   {
     title: 'müssen',
     text1: 'ich,er,sie,es müsste + Pt2 + werden',
-    text2: 'du müsstest  + Pt2 + werden',
-    text3: 'ihr müsstet  + Pt2 + werden',
-    text4: 'wir,sie,Sie müssten   + Pt2 + werden',
+    text2: 'du müsstest + Pt2 + werden',
+    text3: 'ihr müsstet + Pt2 + werden',
+    text4: 'wir,sie,Sie müssten + Pt2 + werden',
   },
   {
     title: 'sollen',
-    text1: 'ich,er,sie,es sollte  + Pt2 + werden ',
-    text2: 'du solltest  + Pt2 + werden',
-    text3: 'ihr solltet  + Pt2 + werden',
-    text4: 'wir,sie,Sie sollten   + Pt2 + werden',
+    text1: 'ich,er,sie,es sollte + Pt2 + werden ',
+    text2: 'du solltest + Pt2 + werden',
+    text3: 'ihr solltet + Pt2 + werden',
+    text4: 'wir,sie,Sie sollten + Pt2 + werden',
   },
   {
     title: 'wollen',
-    text1: 'ich,er,sie,es wollte  + Pt2 + werden ',
-    text2: 'du wolltest  + Pt2 + werden',
-    text3: 'ihr wolltet  + Pt2 + werden',
-    text4: 'wir,sie,Sie wollten   + Pt2 + werden',
+    text1: 'ich,er,sie,es wollte + Pt2 + werden ',
+    text2: 'du wolltest + Pt2 + werden',
+    text3: 'ihr wolltet + Pt2 + werden',
+    text4: 'wir,sie,Sie wollten + Pt2 + werden',
   },
 ]
 const ModalverbenVergangenheitPassiv = [
   {
     title: 'dürfen',
     text1: 'ich,er,sie,es hätte + Pt2 + werden dürfen',
-    text2: 'du hättest  + Pt2 + werden dürfen',
-    text3: 'ihr hättet  + Pt2 + werden dürfen',
+    text2: 'du hättest + Pt2 + werden dürfen',
+    text3: 'ihr hättet + Pt2 + werden dürfen',
     text4: 'wir,sie,Sie hätten + Pt2 + werden dürfen',
   },
   {
     title: 'können',
     text1: 'ich,er,sie,es hätte + Pt2 + werden können',
-    text2: 'du hättest  + Pt2 + werden können',
-    text3: 'ihr hättet  + Pt2 + werden können',
+    text2: 'du hättest + Pt2 + werden können',
+    text3: 'ihr hättet + Pt2 + werden können',
     text4: 'wir,sie,Sie hätten + Pt2 + werden können',
   },
   {
     title: 'mögen',
     text1: 'ich,er,sie,es hätte + Pt2 + werden mögen',
-    text2: 'du hättest  + Pt2 + werden mögen',
-    text3: 'ihr hättet  + Pt2 + werden mögen',
+    text2: 'du hättest + Pt2 + werden mögen',
+    text3: 'ihr hättet + Pt2 + werden mögen',
     text4: 'wir,sie,Sie hätten + Pt2 + werden mögen',
   },
   {
     title: 'mögen',
     text1: 'ich,er,sie,es hätte + Pt2 + werden mögen',
-    text2: 'du hättest  + Pt2 + werden mögen',
-    text3: 'ihr hättet  + Pt2 + werden mögen',
+    text2: 'du hättest + Pt2 + werden mögen',
+    text3: 'ihr hättet + Pt2 + werden mögen',
     text4: 'wir,sie,Sie hätten + Pt2 + werden mögen',
   },
   {
     title: 'müssen',
     text1: 'ich,er,sie,es hätte + Pt2 + werden müssen',
-    text2: 'du hättest  + Pt2 + werden müssen',
-    text3: 'ihr hättet  + Pt2 + werden müssen',
+    text2: 'du hättest + Pt2 + werden müssen',
+    text3: 'ihr hättet + Pt2 + werden müssen',
     text4: 'wir,sie,Sie hätten + Pt2 + werden müssen',
   },
   {
     title: 'sollen',
     text1: 'ich,er,sie,es hätte + Pt2 + werden sollen',
-    text2: 'du hättest  + Pt2 + werden sollen',
-    text3: 'ihr hättet  + Pt2 + werden sollen',
+    text2: 'du hättest + Pt2 + werden sollen',
+    text3: 'ihr hättet + Pt2 + werden sollen',
     text4: 'wir,sie,Sie hätten + Pt2 + werden sollen',
   },
   {
     title: 'wollen',
     text1: 'ich,er,sie,es hätte + Pt2 + werden wollen',
-    text2: 'du hättest  + Pt2 + werden wollen',
-    text3: 'ihr hättet  + Pt2 + werden wollen',
+    text2: 'du hättest + Pt2 + werden wollen',
+    text3: 'ihr hättet + Pt2 + werden wollen',
     text4: 'wir,sie,Sie hätten + Pt2 + werden wollen',
   },
 ]
@@ -1347,50 +1191,50 @@ const ModalverbenFuturIPassiv = [
   {
     title: 'dürfen',
     text1: 'ich,er,sie,es würde + Pt2 + werden dürfen',
-    text2: 'du würdest  + Pt2 + werden dürfen',
-    text3: 'ihr würdet  + Pt2 + werden dürfen',
+    text2: 'du würdest + Pt2 + werden dürfen',
+    text3: 'ihr würdet + Pt2 + werden dürfen',
     text4: 'wir,sie,Sie würden + Pt2 + werden dürfen',
   },
   {
     title: 'können',
     text1: 'ich,er,sie,es würde + Pt2 + werden können',
-    text2: 'du würdest  + Pt2 + werden können',
-    text3: 'ihr würdet  + Pt2 + werden können',
+    text2: 'du würdest + Pt2 + werden können',
+    text3: 'ihr würdet + Pt2 + werden können',
     text4: 'wir,sie,Sie würden + Pt2 + werden können',
   },
   {
     title: 'mögen',
     text1: 'ich,er,sie,es würde + Pt2 + werden mögen',
-    text2: 'du würdest  + Pt2 + werden mögen',
-    text3: 'ihr würdet  + Pt2 + werden mögen',
+    text2: 'du würdest + Pt2 + werden mögen',
+    text3: 'ihr würdet + Pt2 + werden mögen',
     text4: 'wir,sie,Sie würden + Pt2 + werden mögen',
   },
   {
     title: 'mögen',
     text1: 'ich,er,sie,es würde + Pt2 + werden mögen',
-    text2: 'du würdest  + Pt2 + werden mögen',
-    text3: 'ihr würdet  + Pt2 + werden mögen',
+    text2: 'du würdest + Pt2 + werden mögen',
+    text3: 'ihr würdet + Pt2 + werden mögen',
     text4: 'wir,sie,Sie würden + Pt2 + werden mögen',
   },
   {
     title: 'müssen',
     text1: 'ich,er,sie,es würde + Pt2 + werden müssen',
-    text2: 'du würdest  + Pt2 + werden müssen',
-    text3: 'ihr würdet  + Pt2 + werden müssen',
+    text2: 'du würdest + Pt2 + werden müssen',
+    text3: 'ihr würdet + Pt2 + werden müssen',
     text4: 'wir,sie,Sie würden + Pt2 + werden müssen',
   },
   {
     title: 'sollen',
     text1: 'ich,er,sie,es würde + Pt2 + werden sollen',
-    text2: 'du würdest  + Pt2 + werden sollen',
-    text3: 'ihr würdet  + Pt2 + werden sollen',
+    text2: 'du würdest + Pt2 + werden sollen',
+    text3: 'ihr würdet + Pt2 + werden sollen',
     text4: 'wir,sie,Sie würden + Pt2 + werden sollen',
   },
   {
     title: 'wollen',
     text1: 'ich,er,sie,es würde + Pt2 + werden wollen',
-    text2: 'du würdest  + Pt2 + werden wollen',
-    text3: 'ihr würdet  + Pt2 + werden wollen',
+    text2: 'du würdest + Pt2 + werden wollen',
+    text3: 'ihr würdet + Pt2 + werden wollen',
     text4: 'wir,sie,Sie würden + Pt2 + werden wollen',
   },
 ]
@@ -1554,6 +1398,162 @@ const SlotModalverbenFuturIIPassiv = [
 
   },
 ]
+
+
+// =============================================================
+// ========================Konjunktiv II=====================================
+// =============================================================
+const GegenwartPassiv = [
+  {
+    text1: 'ich,er,sie,es würde + Partizip II',
+    text2: 'du würdest + Partizip II',
+    text3: 'ihr würdet + Partizip II',
+    text4: 'wir,sie,Sie würden + Partizip II ',
+  },
+]
+const VergangenheitPassiv = [
+  {
+    text1: 'ich,er,sie,es wäre + Partizip II + worden ',
+    text2: 'du wärest + Partizip II + worden',
+    text3: 'ihr wäret + Partizip II + worden',
+    text4: 'wir,sie,Sie wären + Partizip II + worden',
+  },
+]
+const FuturIPassiv = [
+  {
+    text1: 'ich,er,sie,es würde + Partizip II + werden ',
+    text2: 'du würdest + Partizip II + werden',
+    text3: 'ihr würdet + Partizip II + werden',
+    text4: 'wir,sie,Sie würden + Partizip II + werden',
+  },
+]
+const FuturIIPassiv = [
+  {
+    text1: 'ich,er,sie,es würde + Partizip II + worden sein',
+    text2: 'du würdest + Partizip II + worden sein',
+    text3: 'ihr würdet + Partizip II + worden sein',
+    text4: 'wir,sie,Sie würden + Partizip II + worden sein',
+  },
+]
+// ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+const SlotGegenwartPassiv = [
+  {
+    t0: 'Если бы дерево было левее, в нашем саду не было бы так много листьев. (Baum weiter so viele Blätter Garten)',
+    t1: 'Wenn',
+    t2: 'der',
+    t3: 'Baum',
+    t4: 'weiter',
+    t5: 'links',
+    t6: 'stehen',
+    t7: 'würde',
+    t8: ',',
+    t9: 'wären',
+    t10: 'nicht',
+    t11: 'so',
+    t12: 'viele',
+    t13: 'Blätter',
+    t14: 'in',
+    t15: 'unserem',
+    t16: 'Garten',
+    t17: '.',
+  },
+  {
+    t0: 'Учитель спрашиваем бы учеником. (Lehrer Schüler gefragt)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'würde',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: '.',
+  },
+  {
+    t0: 'План нарисовывается бы. (Plan gezeichnet)',
+    t1: 'Der',
+    t2: 'Plan',
+    t3: 'würde',
+    t4: 'gezeichnet',
+    t5: '.',
+  }
+]
+const SlotVergangenheitPassiv = [
+  {
+    t0: 'Учитель был бы опрошен учеником.(Lehrer Schüler gefragt)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'wäre',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: 'worden',
+    t9: '.',
+
+  },
+  {
+    t0: 'План нарисовывался бы.(Plan gezeichnet)',
+    t1: 'Der',
+    t2: 'Plan',
+    t3: 'wäre',
+    t4: 'gezeichnet',
+    t5: 'worden',
+    t6: '.',
+  },
+]
+const SlotFuturIPassiv = [
+  {
+    t0: 'Учитель будет бы спрошен учеником. (Lehrer Schüler gefragt)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'würde',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: 'werden',
+    t9: '.',
+
+  },
+  {
+    t0: 'План будет бы рисоваться. (Plan gezeichnet)',
+    t1: 'Der',
+    t2: 'Plan',
+    t3: 'würde',
+    t4: 'gezeichnet',
+    t5: 'werden',
+    t6: '.',
+
+  },
+]
+const SlotFuturIIPassiv = [
+  {
+    t0: 'Учитель будет окончательно спрошен учеником. (Lehrer Schüler gefragt)',
+    t1: 'Der',
+    t2: 'Lehrer',
+    t3: 'würde',
+    t4: 'von',
+    t5: 'dem',
+    t6: 'Schüler',
+    t7: 'gefragt',
+    t8: 'worden',
+    t9: 'sein',
+    t10: '.',
+  },
+  {
+    t0: 'План будет бы нарисован. (Plan gezeichnet)',
+    t1: 'Der',
+    t2: 'Plan',
+    t3: 'würde',
+    t4: 'gezeichnet',
+    t5: 'worden',
+    t6: 'sein',
+    t7: '.',
+  },
+]
+
+
+
 
 // ---------------------------------
 // --------------- Zustands------------------

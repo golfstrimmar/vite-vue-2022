@@ -2,7 +2,16 @@
 .container
   .page-title 
     h2 Die Rektion der Verben
-
+  .page-block
+    .lokal-area
+      h3 Dativ 
+      p mit - nach - aus- zu - von - bei - ab - seit - außer - entgegen - gegenüber
+    .lokal-area
+      h3 Akkusativ
+      p um - durch - antlang - gegen - für - bis - ohne - wider
+    .lokal-area
+      h3 Akkusativ oder Dativ
+      p in - an - auf - neben - hinten - über - vor - unter - zwischen
   .page-block.blue-grey-4
     .page-title--small 
       h2 Akkusativ ohne Präposition
@@ -130,7 +139,7 @@ const SlotDoppeltDD = [
   },
   {
     t0: 'требовать от кого-л чего-л',
-    t1: 'verlangen    D',
+    t1: 'verlangen D',
     t2: 'von',
     t3: 'D',
     t4: 'nach',
@@ -208,7 +217,7 @@ const SlotDoppeltDA = [
   },
   {
     t0: 'беседовать, разговаривать с кем-л о ком-л, чём-л',
-    t1: 'unterhalten     ',
+    t1: 'unterhalten',
     t2: 'sich',
     t3: 'mit',
     t4: 'D',
@@ -428,7 +437,7 @@ const SlotDativmitPräposition = [
     t3: 'mit',
   },
   {
-    t0: 'ругаться, браниться с кем-л',
+    t0: 'браниться с кем-л',
     t1: 'schimpfen',
     t2: 'mit',
   },
@@ -486,7 +495,7 @@ const SlotDativmitPräposition = [
     t2: 'zu',
   },
   {
-    t0: 'превращаться в кого-л, во что-л',
+    t0: 'становиться кем-то',
     t1: 'werden',
     t2: 'zu',
   },
@@ -589,7 +598,7 @@ const SlotDativmitPräposition = [
     t2: 'von',
   },
   {
-    t0: 'мечтать о ком-л',
+    t0: 'бредить о ком-л',
     t1: 'schwärmen',
     t2: 'von',
   },
@@ -1157,12 +1166,12 @@ const SlotAkkusativmitPräposition = [
     t3: 'an',
   },
   {
-    t0: 'писать кому-л',
+    t0: 'писать к',
     t1: 'schreiben',
     t2: 'an',
   },
   {
-    t0: 'обращаться к кому-л',
+    t0: 'поворачиваться к ',
     t1: 'wenden',
     t2: 'sich',
     t3: 'an',
@@ -1244,17 +1253,17 @@ const SlotAkkusativmitPräposition = [
     t2: 'über',
   },
   {
-    t0: 'удивляться чему-л',
+    t0: 'поражаться чему-л',
     t1: 'staunen',
     t2: 'über',
   },
   {
-    t0: 'перевозить, переправлять; перешагнуть; переключать что-л',
+    t0: 'переводить, перевозить, переправлять; перешагнуть; переключать что-л',
     t1: 'übersetzen',
     t2: 'über',
   },
   {
-    t0: 'располагать, распоряжаться чем-л',
+    t0: 'распоряжаться чем-л',
     t1: 'verfügen',
     t2: 'über',
   },
@@ -1294,7 +1303,7 @@ const SlotAkkusativohnePräposition = [
 
   },
   {
-    t0: 'стянуть, вынуть (вынуть ключ зажигания Zündschlüssel)',
+    t0: 'стянуть, вынуть (вынуть ключ зажигания Zündschlüssel abziehen)',
     t1: 'den',
     t2: 'Zündschlüssel',
     t3: 'abziehen',
@@ -1313,7 +1322,7 @@ const SlotAkkusativohnePräposition = [
     t4: 'beauftragen',
   },
   {
-    t0: 'войти во что-л, куда-л (после морского путешествия наконец-то снова на твердую землю ступил      Seereise festen Boden)',
+    t0: 'войти во что-л, куда-л (после морского путешествия наконец-то снова на твердую землю ступил Seereise festen Boden)',
     t1: 'nach',
     t2: 'der',
     t3: 'Seereise',
@@ -1391,7 +1400,7 @@ const SlotAkkusativohnePräposition = [
     t5: '.',
   },
   {
-    t0: 'мешать кому-л, беспокоить кого-л (Я уверен, что нам никто не помешает. sicher nicht)',
+    t0: 'мешать кому-л, беспокоить кого-л (Я уверен, нам человек не помешает. sicher nicht)',
     t1: 'Ich',
     t2: 'bin',
     t3: 'sicher',
@@ -1423,7 +1432,7 @@ const SlotAkkusativohnePräposition = [
   },
   {
     t0: 'предупреждать, предостерегать кого-л (Я пришел, чтобы предупредить тебя. kam)',
-    t1: ' Ich',
+    t1: 'Ich',
     t2: 'kam',
     t3: ',',
     t4: 'um',
@@ -1438,4 +1447,34 @@ const SlotAkkusativohnePräposition = [
 
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss" scoped>
+.lokal-area {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  margin: 0 0 10px 0;
+
+  p {
+    margin: 0 0 0 0 !important;
+  }
+
+  &:nth-child(1) {
+    p {
+      color: $teal-7;
+    }
+
+  }
+
+  &:nth-child(2) {
+    p {
+      color: $amber-9;
+    }
+  }
+
+  &:nth-child(3) {
+    p {
+      color: $indigo-9;
+    }
+  }
+}
+</style>
