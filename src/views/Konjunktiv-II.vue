@@ -444,7 +444,7 @@ const SlotVergangenheit = [
     t12: '!',
   },
   {
-    t0: 'Если бы я только больше тренировался, экзамен прошел бы для меня легче. (doch nur mehr Prüfung einfacher verlaufen)',
+    t0: 'Если бы я только больше тренировался, экзамен прошел бы для меня легче. (doch nur mehr geübt Prüfung einfacher verlaufen)',
     t1: 'Hätte',
     t2: 'ich',
     t3: 'doch',
@@ -463,7 +463,7 @@ const SlotVergangenheit = [
     t16: '.',
   },
   {
-    t0: 'В детстве мне хотелось чаще ездить в отпуск. (Kind öfter Urlaub)',
+    t0: 'В детстве мне хотелось чаще c удовольствием ездить в отпуск. (Kind öfter Urlaub)',
     t1: 'Ich',
     t2: 'wäre',
     t3: 'als',
@@ -485,7 +485,7 @@ const SlotVergangenheit = [
     t5: ',',
     t6: 'aber',
     t7: 'sie',
-    t8: 'hatte',
+    t8: 'hätte',
     t9: 'keine',
     t10: 'Zeit',
     t11: '.',
@@ -539,7 +539,7 @@ const SlotVergangenheit = [
     t12: '.',
   },
   {
-    t0: 'Я бы прыгнул с 10-метровой вышки, если бы меньше боялся. (10-Meter-Turm gesprungen weniger Angst)',
+    t0: 'Я бы прыгнул с 10-метровой вышки, если бы меньше страха имел. (10-Meter-Turm gesprungen weniger Angst)',
     t1: 'Ich',
     t2: 'wäre',
     t3: 'vom',
@@ -699,7 +699,7 @@ const SlotVerbformen = [
 
   },
   {
-    t0: 'Если бы ты писал аккуратнее, то я бы лучше прочитал твой текст. (ordentlicher schriebest läse Text besser)',
+    t0: 'Если  ты пишешь аккуратнее, то я бы лучше прочитал твой текст. (ordentlicher schriebest läse Text besser)',
     t1: 'Wenn',
     t2: 'du',
     t3: 'ordentlicher',
