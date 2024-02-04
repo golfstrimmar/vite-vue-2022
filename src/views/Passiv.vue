@@ -119,13 +119,13 @@
         Tabs(:items= 'ZuGegenwartPassiv' title='Präsens Zustandspassiv + Konjunktiv II (wären + Partizip II)' )
         TabsTraining( title='Beispiele Gegenwart Zustandspassiv + Konjunktiv II' :SlotData='SlotZuGegenwartPassiv' )
       .page-block.blue-grey-1
-        Tabs(:items= 'ZuVergangenheitPassiv' title='Vergangenheit Zustandspassiv + Konjunktiv II  (wären + Partizip II + worden)' )
+        Tabs(:items= 'ZuVergangenheitPassiv' title='Vergangenheit Zustandspassiv + Konjunktiv II  (wären + Partizip II + gewesen)' )
         TabsTraining( title='Beispiele Vergangenheit Zustandspassiv + Konjunktiv II' :SlotData='SlotZuVergangenheitPassiv' )
       .page-block.blue-grey-1
-        Tabs(:items= 'ZuFuturIPassiv' title='Futur I Zustandspassiv + Konjunktiv II (würden + Partizip II + werden)' )
+        Tabs(:items= 'ZuFuturIPassiv' title='Futur I Zustandspassiv + Konjunktiv II (würden + Partizip II + sein)' )
         TabsTraining( title='Beispiele FuturI Zustandspassiv + Konjunktiv II' :SlotData='SlotZuFuturIPassiv' )
       .page-block.blue-grey-1
-        Tabs(:items= 'ZuFuturIIPassiv' title='Futur II Zustandspassiv + Konjunktiv II (würden + Partizip II + worden sein)' )
+        Tabs(:items= 'ZuFuturIIPassiv' title='Futur II Zustandspassiv + Konjunktiv II (würden + Partizip II + gewesen sein)' )
         TabsTraining( title='Beispiele FuturII Zustandspassiv + Konjunktiv II' :SlotData='SlotZuFuturIIPassiv' )
 </template>
 
@@ -1377,7 +1377,7 @@ const SlotModalverbenFuturIPassiv = [
   },
 
   {
-    t0: 'вы бы будете опрошены (gefragt)',
+    t0: 'вы бы будете опрошены хотеть (gefragt)',
     t1: 'ihr',
     t2: 'würdet',
     t3: 'gefragt',
@@ -1388,7 +1388,7 @@ const SlotModalverbenFuturIPassiv = [
 ]
 const SlotModalverbenFuturIIPassiv = [
   {
-    t0: 'вы бы будете окончательно опрошены (gefragt)',
+    t0: 'вы бы будете окончательно опрошены хотеть (gefragt)',
     t1: 'ihr',
     t2: 'würdet',
     t3: 'haben',
@@ -1438,7 +1438,7 @@ const FuturIIPassiv = [
 // ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 const SlotGegenwartPassiv = [
   {
-    t0: 'Если бы дерево было левее, в нашем саду не было бы так много листьев. (Baum weiter so viele Blätter Garten)',
+    t0: 'Если бы дерево дальше левее стояло, было бы не  так много листьев в нашем саду. (Baum weiter links so viele Blätter Garten)',
     t1: 'Wenn',
     t2: 'der',
     t3: 'Baum',
@@ -1662,7 +1662,7 @@ const SlotZustandspassivsPräsens = [
 
   },
   {
-    t0: 'Во многих семьях телевизор включен всю ночь.(Haushalten Fernsehgerät Nacht eingeschaltet)',
+    t0: 'Во многих семьях телевизор включен всю ночь.(Haushalten Fernsehgerät Nacht über eingeschaltet)',
     t1: 'In',
     t2: 'vielen',
     t3: 'Haushalten',
@@ -1761,7 +1761,7 @@ const SlotZustandspassivsPräteritum = [
 ]
 const SlotZustandspassivsPerfekt = [
   {
-    t0: 'Вчера магазины были закрыты уже в 8 утра. (Gestern Läden geschlossen)',
+    t0: 'Вчера магазины были закрыты уже в 8 утра. (Gestern Geschäfte bereits geschlossen)',
     t1: 'Gestern',
     t2: 'sind',
     t3: 'die',
@@ -1800,9 +1800,10 @@ const SlotZustandspassivsPlusquamperfekt = [
     t2: 'waren',
     t3: 'die',
     t4: 'Läden',
-    t5: 'geschlossen',
-    t6: 'gewesen',
-    t7: '.',
+    t5: 'bereits',
+    t6: 'geschlossen',
+    t7: 'gewesen',
+    t8: '.',
 
   },
 ]
@@ -1818,7 +1819,7 @@ const SlotZustandspassivsFuturum = [
 
   },
   {
-    t0: 'Кровати завтра тоже будут заправлены . (Betten gemacht morgen )',
+    t0: 'Кровати завтра тоже будут заправлены . (Betten morgen  gemacht )',
     t1: 'Die',
     t2: 'Betten',
     t3: 'werden',
@@ -2242,7 +2243,7 @@ const ZuFuturIIPassiv = [
 const SlotZuGegenwartPassiv = [
   {
     t0: 'Книга прочитана бы. (Buch gelesen)',
-    t1: 'Das   ',
+    t1: 'Das',
     t2: 'Buch',
     t3: 'wäre',
     t4: 'gelesen',

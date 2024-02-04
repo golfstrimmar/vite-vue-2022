@@ -1185,7 +1185,7 @@ const SlotVergangenheitModalverben = [
 
   },
   {
-    t0: 'Это бы не   так закончиться должно. (nicht enden)',
+    t0: 'Это бы не так закончиться должно. (nicht enden)',
     t1: 'Es',
     t2: 'hätte',
     t3: 'nicht',
@@ -1195,7 +1195,7 @@ const SlotVergangenheitModalverben = [
     t7: '.',
   },
   {
-    t0: 'Как будто ты в тюрьму хотел . (Als ins Gefängnis)',
+    t0: 'Как будто ты в тюрьму хотел. (Als ins Gefängnis)',
     t1: 'Als',
     t2: 'hättest',
     t3: 'du',
