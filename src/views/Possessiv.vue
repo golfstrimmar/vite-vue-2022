@@ -426,7 +426,7 @@ const SlotDataPersonal = [
 
 
   {
-    t0: 'Ты тоже даришь своей девушке кусочек торта ? (Freundin Gibst Stück Kuchen)',
+    t0: 'даришь Ты своей девушке тоже   кусочек торта ? (Freundin Gibst Stück Kuchen)',
     t1: 'Gibst',
     t2: 'du',
     t3: 'deiner',
