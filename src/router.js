@@ -16,6 +16,7 @@ import Tasks from "@/components/Tasks.vue";
 import Verben from "@/views/Verben.vue";
 import Rektion from "@/views/Rektion.vue";
 import Deklination from "@/views/Deklination.vue";
+import PronominaleAdverbien from "@/views/PronominaleAdverbien.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -37,6 +38,11 @@ const router = createRouter({
     { path: "/verben", name: "Verben", component: Verben },
     { path: "/rektion", name: "Rektion", component: Rektion },
     { path: "/deklination", name: "Deklination", component: Deklination },
+    {
+      path: "/pronominaleAdverbien",
+      name: "PronominaleAdverbien",
+      component: PronominaleAdverbien,
+    },
   ],
 });
 

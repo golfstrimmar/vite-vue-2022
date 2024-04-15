@@ -52,12 +52,14 @@ const links = ref([
   { name: "Possessiv", href: "/possessiv" },
   { name: "Demonstrativ", href: "/demonstrativ" },
   { name: "Deklination", href: "/deklination" },
+  { name: "Pronominale Adverbien", href: "/pronominaleAdverbien" },
   { name: "Modal", href: "/modal" },
   { name: "Passiv", href: "/passiv" },
   { name: "Konjunktiv-II", href: "/konjunktiv" },
   { name: "Verben", href: "/verben" },
   { name: "Rektion", href: "/rektion" },
   { name: "Nomen", href: "/nomen" },
+
 
   // { name: "Tasks", href: "/tasks" },
   // { name: "SignIn", href: "/signin" },
