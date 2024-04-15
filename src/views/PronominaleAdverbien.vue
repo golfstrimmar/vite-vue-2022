@@ -60,7 +60,7 @@ const SlotDataPersonal = [
     t4: 'dem',
     t5: 'neuen',
     t6: 'Auto',
-    t7: 'zufreden',
+    t7: 'zufrieden',
     t8: '.',
 
   },
@@ -75,7 +75,7 @@ const SlotDataPersonal = [
 
   },
   {
-    t0: 'О ком вы говорите?',
+    t0: 'О ком вы говорите? (redet)',
     t1: 'Über',
     t2: 'wen',
     t3: 'redet',
@@ -101,7 +101,7 @@ const SlotDataPersonal = [
 
   },
   {
-    t0: 'Я жду автобус, который едет на вокзал.',
+    t0: 'Я жду автобус, который едет на вокзал. (fährt)',
     t1: 'Ich',
     t2: 'warte',
     t3: 'auf',
@@ -153,7 +153,7 @@ const SlotDataPersonal = [
 
   },
   {
-    t0: 'Наконец начитается чемпионат мира по футболу. Я его так долго ждал. (Fußball-Weltmeisterschaft)',
+    t0: 'Наконец начитается чемпионат мира по футболу. Я его так долго ждал. (beginnt Fußball-Weltmeisterschaft)',
     t1: 'Endlich',
     t2: 'beginnt',
     t3: 'die',
@@ -345,7 +345,7 @@ const SlotDataPersonal = [
     t4: 'sie',
     t5: 'sich',
     t6: 'derzeit',
-    t7: '.',
+    t7: '?',
 
   },
   {
