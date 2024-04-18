@@ -955,7 +955,7 @@ const SlotDatawollen = [
 
   },
   {
-    t0: 'Хочешь знать, чего люди хотят больше обычного? (Leute mehr als sonst)',
+    t0: 'Хотите знать, чего люди хотят больше обычного? (Leute mehr als sonst)',
     t1: 'Wollen',
     t2: 'Sie',
     t3: 'wissen',
@@ -1011,7 +1011,7 @@ const SlotDatawollen = [
   },
   {
     t0: 'Вы оба хотели, чтобы я оставался в стороне - и я остался. (beide mich raushalte)',
-    t1: 'Ihr ',
+    t1: 'Ihr',
     t2: 'beide',
     t3: 'habt',
     t4: 'gewollt',
@@ -1211,7 +1211,7 @@ const SlotDatamögen = [
 const SlotDatamöchten = [
   {
     t0: 'Она спрашивает, не хотите ли вы пойти со мной. (fragt mitkommen)',
-    t1: 'Sie     ',
+    t1: 'Sie',
     t2: 'fragt',
     t3: ',',
     t4: 'ob',
@@ -1341,4 +1341,4 @@ const SlotDatamöchten = [
 
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss"></style>
