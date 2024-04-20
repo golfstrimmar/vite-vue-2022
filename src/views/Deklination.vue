@@ -246,7 +246,7 @@ const SlotDataNominativ = [
     t11: '.',
   },
   {
-    t0: 'Сабрина скоро выходит замуж и хочет отпраздновать в этом неизвестном месте.(Sabrina Lokal feiern)',
+    t0: 'Сабрина скоро выходит замуж и хочет отпраздновать в этом неизвестном месте.(Sabrina heiratet unbekannten Lokal feiern)',
     t1: 'Sabrina',
     t2: 'heiratet',
     t3: 'bald',
@@ -260,7 +260,7 @@ const SlotDataNominativ = [
     t11: '.',
   },
   {
-    t0: 'Это место гордится своим великим прошлым.(Platz stolz Vergangenheit)',
+    t0: 'Это место гордится своим великим прошлым.(Platz stolz große Vergangenheit)',
     t1: 'Dieser',
     t2: 'Platz',
     t3: 'ist',
@@ -272,7 +272,7 @@ const SlotDataNominativ = [
     t9: '.',
   },
   {
-    t0: 'Ребекка полностью забыла всю итальянскую лексику.(Rebekka Vokabeln total vergessen)',
+    t0: 'Ребекка полностью забыла всю итальянскую лексику.(Rebekka italienischen Vokabeln total vergessen)',
     t1: 'Rebekka',
     t2: 'hat',
     t3: 'alle',
@@ -352,7 +352,7 @@ const SlotDataNominativ = [
 
   },
   {
-    t0: 'Он дарит красивую игрушку.(Spielzeug)',
+    t0: 'Он дарит красивую игрушку.(schenkt Spielzeug)',
     t1: 'Er',
     t2: 'schenkt',
     t3: 'ein',
@@ -443,7 +443,7 @@ const SlotDataNominativ = [
 
   },
   {
-    t0: 'Он рекомендует знакомой покупательнице.(empfiehlt Käuferin)',
+    t0: 'Он рекомендует знакомой покупательнице.(empfiehlt bekannten Käuferin)',
     t1: 'Er',
     t2: 'empfiehlt',
     t3: 'einer',

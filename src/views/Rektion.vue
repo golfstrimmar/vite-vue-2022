@@ -1342,7 +1342,7 @@ const SlotAkkusativohnePräposition = [
     t6: '.',
   },
   {
-    t0: 'достигать чего-л (Вы не смогли связаться с ним? konntest erreichen)',
+    t0: 'достигать чего-л (Ты не смог связаться с ним? konntest erreichen)',
     t1: 'Du',
     t2: 'konntest',
     t3: 'ihn',

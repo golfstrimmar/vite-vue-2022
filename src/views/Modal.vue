@@ -1090,7 +1090,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Можешь забрать их все, если хочешь. (Wenn du alle)',
+    t0: 'Можешь иметь их все, если хочешь. (Wenn du alle)',
     t1: 'Wenn',
     t2: 'du',
     t3: 'magst',
@@ -1104,7 +1104,7 @@ const SlotDatamögen = [
 
   },
   {
-    t0: 'Вы можете считать, что я слишком зол. (Ihr denken sei zu wütend)',
+    t0: 'Вы нравится считать, что я слишком зол. (Ihr denken sei zu wütend)',
     t1: 'Ihr',
     t2: 'mögt',
     t3: 'denken',
