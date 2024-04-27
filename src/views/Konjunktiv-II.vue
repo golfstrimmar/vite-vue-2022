@@ -940,7 +940,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Работайте над чем бы хотите. (auch immer ihr)',
+    t0: 'Работайте над чем бы хотите. (an auch immer ihr)',
     t1: 'Arbeitet',
     t2: 'an',
     t3: 'was',
@@ -952,7 +952,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Мы имеем пару сосисек, если вы бы хотеть. (Wir ein paar Würstchen ihr)',
+    t0: 'Мы имеем пару сосисек, если вы бы хотеть. (Wir ein Paar Würstchen ihr)',
     t1: 'Wir',
     t2: 'haben',
     t3: 'ein',
@@ -985,7 +985,7 @@ const SlotModalverben = [
   },
 
   {
-    t0: 'Им бы должно тебя в тележку посадить . (dich Karre legen)',
+    t0: 'Им бы должно тебя в тележку посадить. (dich Karre legen)',
     t1: 'Sie',
     t2: 'müssten',
     t3: 'dich',
@@ -997,7 +997,7 @@ const SlotModalverben = [
 
   },
   {
-    t0: 'Они бы должны время от времени на Марс приезжать. (Sie gelegentlich Mars)',
+    t0: 'Они бы должны время от времени на Марс приезжать. (Sie gelegentlich auf Mars)',
     t1: 'Sie',
     t2: 'müssten',
     t3: 'gelegentlich',
@@ -1293,4 +1293,4 @@ const SlotVergangenheitModalverben = [
 
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss"></style>
