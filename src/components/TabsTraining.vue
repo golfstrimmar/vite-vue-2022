@@ -5,11 +5,11 @@
       h3 {{title}}
       SvgIcon(name='click' )
     transition(mode='easy-in-out' name='o'  )
-      .tabs__hidden(v-if="tabopen") 
-        .tabs__wrap
-          .page-block
-            Plaza
-            Slot(:SlotData='props.SlotData')
+    .tabs__hidden(v-if="tabopen") 
+      .tabs__wrap
+        .page-block
+          Plaza
+          Slot(:SlotData='props.SlotData')
 
 
 

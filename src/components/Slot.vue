@@ -1,7 +1,7 @@
 <template lang="pug">
 .training
 	Button(type='text' text="beispiele mischen" @someEvent="someEvent" )
-	//- Button(type='text' text="focus" @click="elFocus")
+	Button(type='text' text="focus" @click="elFocus")
 
 	form.plaza__line(v-for="item in TempData " :key="index" ref='line')
 		p {{ item.t0 }}
@@ -44,23 +44,18 @@
 import { ref, watch, onMounted } from 'vue';
 import Input from '@/components/Input.vue';
 import Button from '@/components/Button.vue';
-
-
-
-
-var reset = ref(true)
-var antwort = ref(false)
-var TempData = ref([])
-var TempData = props.SlotData
-const line = ref(null)
 const props = defineProps({
-
 	SlotData: {
 		type: Object,
 		required: false
 	}
-
 })
+var reset = ref(true)
+var antwort = ref(false)
+var TempData = ref([])
+TempData = props.SlotData
+const line = ref(null)
+
 
 // const anwortPositiv = (data) => {
 // 	antwort.value = data

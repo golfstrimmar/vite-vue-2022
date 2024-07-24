@@ -1,13 +1,12 @@
 import "./style.css";
 import "virtual:svg-icons-register";
-import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { createPinia } from "pinia";
-// import { Quasar } from "quasar";
-// import "@quasar/extras/material-icons/material-icons.css";
-// import "./../node_modules/quasar/dist/quasar.css";
+import { createApp } from "vue";
 import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue } from "firebase/database";
+
 const firebaseConfig = {
   apiKey: "AIzaSyCTr_tR1MbYjHurQgAfdgEntqZQ150rZyA",
   authDomain: "deutsch-d26e4.firebaseapp.com",
@@ -20,41 +19,48 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
-
 const app = createApp(App);
 
+const db = getDatabase();
+const ArikelRef = ref(db, "Arikel");
+onValue(ArikelRef, (snapshot) => {
+  const data = snapshot.val();
+  alert(data);
+
+  // updateStarCount(postElement, data);
+});
+// .directive("focus", function (el, binding) {
+//   // el.focus();
+//   if (binding.value == "foo") {
+//     el.value = "succsess";
+//   }
+// })
+// .directive(
+//   "test",
+//   {
+//     mounted(el, binding) {
+//       if (binding.value) {
+//         el.focus();
+//         el.classList.add("_is-light");
+//       }
+//     },
+//   }
+//   // function (el, binding) {
+//   //   // el.focus();
+//   //   if (binding.value == "foo") {
+//   //     el.value = "succsess";
+//   //   }
+//   // }
+// )
+// .directive("focus", {
+//   mounted(el, binding) {
+//     if (binding.value) {
+//       el.focus();
+//       el.classList.add("_is-light");
+//     }
+//   },
+// })
 app
-  // .directive("focus", function (el, binding) {
-  //   // el.focus();
-  //   if (binding.value == "foo") {
-  //     el.value = "succsess";
-  //   }
-  // })
-  // .directive(
-  //   "test",
-  //   {
-  //     mounted(el, binding) {
-  //       if (binding.value) {
-  //         el.focus();
-  //         el.classList.add("_is-light");
-  //       }
-  //     },
-  //   }
-  //   // function (el, binding) {
-  //   //   // el.focus();
-  //   //   if (binding.value == "foo") {
-  //   //     el.value = "succsess";
-  //   //   }
-  //   // }
-  // )
-  // .directive("focus", {
-  //   mounted(el, binding) {
-  //     if (binding.value) {
-  //       el.focus();
-  //       el.classList.add("_is-light");
-  //     }
-  //   },
-  // })
   .directive("blur", {
     updated(el, binding) {
       if (binding.value) {
