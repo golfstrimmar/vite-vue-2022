@@ -1,13 +1,10 @@
 <template lang='pug'>
-.item
-	.copy(@click='handlerCopy()' ref = 'copy' :class="[(activeItem == true) ? '_is-active' : '']"
-) {{props.text}}
-
+.tags__item.item
+	.copy(@click='handlerCopy()' ref = 'copy' :class="[(activeItem == true) ? '_is-active' : '']") {{text}}
 </template>
 <script setup>
-import { ref } from 'vue'
-// В потомке
-// button(type = "button" @click = "$emit('someEvent',text) , Button($event)").btn.but - wave { { text } }
+import { ref, defineEmits } from 'vue';
+
 const props = defineProps({
 	text: {
 		type: String,
@@ -15,29 +12,37 @@ const props = defineProps({
 	}
 })
 
-let singles = ref([])
-const copy = ref(null)
-const activeItem = ref(false)
 
+let singles = ref([]);
+const copy = ref(null);
+const activeItem = ref(false);
+const emit = defineEmits(['someEvent'])
+const handlerOffset1 = () => {
+	offset.value = 1;
+}
 const handlerCopy = () => {
 	activeItem.value = !activeItem.value;
 	let add = document.createElement('textarea')
+	add.style.cssText = "position: absolute;z-index: -2;max-height: 0; border: none;"
 	document.querySelector('body').appendChild(add)
+
 	add.innerHTML = copy.value.innerHTML
 	add.select();
 	document.execCommand('copy');
-
-	setTimeout(function () { add.remove(); activeItem.value = !activeItem.value; }, 2000)
+	emit('someEvent', add.innerHTML)
+	setTimeout(function () { add.remove(); activeItem.value = !activeItem.value; }, 300)
 }
-
 
 </script>
 <style lang='scss' scoped>
 .copy {
 	cursor: pointer;
+	background-color: $lime-1;
+	padding: 2px;
 
 	&:hover {
-		color: $red-5;
+		color: $lime-2;
+		background-color: $deep-purple-3;
 		@include transition;
 	}
 
