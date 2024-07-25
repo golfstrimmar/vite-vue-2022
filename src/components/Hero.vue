@@ -46,7 +46,7 @@ copyDataCommon = [
   { i: 6, dataText: 'nav' },
   { i: 7, dataText: 'ul' },
   { i: 8, dataText: 'li' },
-  { i: 9, dataText: 'svg use(xlink:href="#!" rel=" ") ' },
+  { i: 9, dataText: 'svg use(xlink:href="#flag") ' },
   {
     i: 9, dataText: '.imgs img(src="./img/bg.webp" alt = "img")'
   },
