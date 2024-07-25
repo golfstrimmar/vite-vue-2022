@@ -46,13 +46,16 @@ copyDataCommon = [
   { i: 6, dataText: 'nav' },
   { i: 7, dataText: 'ul' },
   { i: 8, dataText: 'li' },
+
   { i: 9, dataText: 'svg use(xlink:href="#flag") ' },
   {
     i: 9, dataText: '.imgs img(src="./img/bg.webp" alt = "img")'
   },
   {
     i: 9, dataText: 'picture source(srcset = "" alt = "img" type = "image/webp" media = "(min-width: 768px)") source(srcset = "" alt = "img" type = "image/webp" media = "(min-width: 1000px) and (max-width: 1199px)") source(srcset = "" alt = "img" type = "image/webp" media = "(max-width: 767px)") img(: src = "./img/bg.webp" alt = "img") '
-  }
+  },
+  { i: 8, dataText: '&__' },
+  { i: 8, dataText: '{}' }
 
 ]
 
