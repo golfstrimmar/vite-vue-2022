@@ -31,6 +31,7 @@ const handlerCopy = () => {
 	document.execCommand('copy');
 	emit('someEvent', add.innerHTML)
 	setTimeout(function () { add.remove(); activeItem.value = !activeItem.value; }, 300)
+
 }
 
 </script>
@@ -39,6 +40,7 @@ const handlerCopy = () => {
 	cursor: pointer;
 	background-color: $lime-1;
 	padding: 2px;
+	outline: 1px solid $lime-3;
 
 	&:hover {
 		color: $lime-2;
