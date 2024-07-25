@@ -26,10 +26,10 @@ const handlerCopy = () => {
 	add.style.cssText = "position: absolute;z-index: -2;max-height: 0; border: none;"
 	document.querySelector('body').appendChild(add)
 
-	add.innerHTML = copy.value.innerHTML
+	add.textContent = copy.value.textContent
 	add.select();
 	document.execCommand('copy');
-	emit('someEvent', add.innerHTML)
+	emit('someEvent', add.textContent)
 	setTimeout(function () { add.remove(); activeItem.value = !activeItem.value; }, 300)
 
 }
