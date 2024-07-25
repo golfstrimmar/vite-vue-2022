@@ -58,23 +58,22 @@ copyDataCommon = [
 
 copyDataName = [
   { i: 15, dataText: 'body' },
-  { i: 16, dataText: 'title' },
-  { i: 17, dataText: 'text' },
-  { i: 17, dataText: 'content' },
-  { i: 17, dataText: 'button' },
-  { i: 17, dataText: 'plaza' },
-  { i: 17, dataText: 'line' },
-  { i: 19, dataText: 'items' },
-  { i: 20, dataText: 'item' },
-  { i: 20, dataText: 'logo' },
   { i: 18, dataText: 'blocks' },
   { i: 18, dataText: 'block' },
-  { i: 17, dataText: 'info' },
-  { i: 17, dataText: 'logo' },
-  { i: 17, dataText: 'phone' },
+  { i: 17, dataText: 'button' },
+  { i: 17, dataText: 'content' },
   { i: 17, dataText: 'email' },
-  { i: 17, dataText: 'hidden' }
-
+  { i: 17, dataText: 'img' },
+  { i: 17, dataText: 'info' },
+  { i: 17, dataText: 'hidden' },
+  { i: 19, dataText: 'items' },
+  { i: 20, dataText: 'item' },
+  { i: 17, dataText: 'line' },
+  { i: 20, dataText: 'logo' },
+  { i: 17, dataText: 'plaza' },
+  { i: 17, dataText: 'phone' },
+  { i: 16, dataText: 'title' },
+  { i: 17, dataText: 'text' },
 ]
 
 copyDataLinks = [
