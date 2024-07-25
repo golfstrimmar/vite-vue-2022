@@ -1,7 +1,7 @@
 <template lang="pug">
 header 
-  SvgIcon(name='vite' )
-  h2 component Header hier
+  //- SvgIcon(name='vite' )
+  //- h2 component Header hier
 
 </template>
 
@@ -12,6 +12,7 @@ import SvgIcon from '@/components/SvgIcon.vue'
 
 <style lang="scss" scoped>
 header {
+  min-height: 30px;
   @include flex-aligne-center;
   background: rgb(143, 189, 250);
 }
