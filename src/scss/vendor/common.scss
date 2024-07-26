@@ -65,33 +65,24 @@ a {
   position: relative;
 }
 
-.hidden {
-  display: none;
-}
+// .hidden {
+//   display: none;
+// }
 
-.page-title {
-  text-align: center;
-  display: inline-block;
-  text-align: left;
-  h2 {
-    font-family: "RR", sans-serif;
-    font-size: 30px;
-    font-weight: 800;
-    color: #c4e0fc;
-    text-transform: uppercase;
-    line-height: 1.5;
-    text-shadow: none;
-  }
-}
-h2 {
-  font-family: "RR", sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: #c4e0fc;
-  text-transform: uppercase;
-  line-height: 1.5;
-  text-shadow: 0 0 5px white;
-}
+// .page-title {
+//   text-align: center;
+//   display: inline-block;
+//   text-align: left;
+//   h2 {
+//     font-family: "RR", sans-serif;
+//     font-size: 30px;
+//     font-weight: 800;
+//     color: #c4e0fc;
+//     text-transform: uppercase;
+//     line-height: 1.5;
+//     text-shadow: none;
+//   }
+// }
 
 .salut {
   position: absolute;
@@ -119,14 +110,14 @@ h2 {
   }
 }
 
-.page-title--small {
-  h2 {
-    font-family: "RR", sans-serif;
-    color: $deep-purple-6;
-    font-style: 12px;
-    padding: 5px 0;
-  }
-}
+// .page-title--small {
+//   h2 {
+//     font-family: "RR", sans-serif;
+//     color: $deep-purple-6;
+//     font-style: 12px;
+//     padding: 5px 0;
+//   }
+// }
 button.mixButton {
   padding: 5px 10px 4px;
   text-transform: uppercase;
@@ -164,6 +155,21 @@ button.mixButton {
 }
 .ttu {
   text-transform: uppercase;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #c4e0fc;
+  text-transform: uppercase;
+  line-height: 1.5;
+  text-shadow: 0 0 5px white;
+}
+h4 {
+  font-family: "RR", sans-serif;
+  color: $blue-6;
+  font-size: 18px;
+  margin: 0 20px 0 0;
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {

@@ -1,8 +1,7 @@
 <template lang="pug">
 .container
-  .page-title 
-    h2 der Artikel
-  Tab 
+  h2 der Artikel
+  Tabs 
 
   //- .page-block.blue-grey-4
   //-   Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
@@ -25,10 +24,8 @@
 
 
 <script setup>
-import Tab from '@/components/Tab.vue';
-// import Content from '@/components/Content.vue';
-// import Tabs from '@/components/Tabs.vue';
-// import TabsTraining from '@/components/TabsTraining.vue';
+import Tabs from '@/components/Tabs.vue';
+
 
 // ====================================
 
@@ -39,10 +36,7 @@ import { ref, onMounted, reactive } from 'vue'
 
 
 
-onMounted(() => {
-});
 
-var derData = reactive([])
 // onMounted(async () => {
 //   const der = query(collection(db, "deutsch", 'Artikel', 'der'));
 //   const die = query(collection(db, "deutsch", 'Artikel', 'die'));
@@ -971,4 +965,14 @@ const SlotDataNegativ = [
 
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+h2 {
+  font-family: "RR", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: $blue-10;
+  text-transform: uppercase;
+  line-height: 1.5;
+  text-shadow: 0 0 5px white;
+}
+</style>

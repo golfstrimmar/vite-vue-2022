@@ -1,4 +1,3 @@
-import "./style.css";
 import "virtual:svg-icons-register";
 import App from "./App.vue";
 import router from "./router";
