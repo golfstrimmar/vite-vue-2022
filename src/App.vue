@@ -9,7 +9,7 @@ import Toolbar from './components/Toolbar.vue'
 <template>
   <q-layout view="hHh lpR fFf">
 
-<Toolbar/>
+    <Toolbar />
 
 
     <q-page-container>
@@ -26,7 +26,5 @@ import Toolbar from './components/Toolbar.vue'
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
-
   </q-layout>
 </template>
-
