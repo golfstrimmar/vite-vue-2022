@@ -13,3 +13,4 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 // Rubriks = stateArtikle.Artikle
 
 // --------------------------
+(v-for="el in item.content" :key="index")

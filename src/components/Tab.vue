@@ -1,21 +1,25 @@
 <template lang='pug'>
 .tab
-  h3.tab__title(@click="tabopen=!tabopen")  {{item.title}}
+  h3.tab__title(@click="tabopen=!tabopen")  {{id}}
   transition(mode='easy-in-out' name='opentab'  )
     .tab__hidden(v-if="tabopen")
       .tab__wrap
-        .tab__line(v-for="el in item.content" :key="index")
-          h3 {{ el.title }}
-          p {{ el.text1 }}
-          p {{ el.text2 }}
+        .tab__line(v-for="content in item")
+          h3 {{ content.title }}
+          p {{ content.text1 }}
+          p {{ content.text2 }}
 
 </template>
 
 <script setup>
-import { reactive, ref, } from 'vue';
+import { reactive, ref } from 'vue';
 const props = defineProps({
   item: {
-    type: Object,
+    type: Array,
+    required: false
+  },
+  id: {
+    type: String,
     required: false
   }
 })
@@ -35,7 +39,8 @@ const tabopen = ref(false);
 
 .tab__title {
   padding: 5px;
-  background: $blue-6;
+  color: $blue-1;
+  background: $blue-8;
   z-index: 4;
   cursor: pointer;
   position: relative;

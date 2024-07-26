@@ -1,17 +1,48 @@
 <template lang='pug'>
-.tabs(v-for="item in Rubriks" :key="index")
-  Tab(:item='item' )
+.tabs
+  Tab(:item= "der" id='der')
+  Tab(:item= "die" id='die')
+  Tab(:item= "das" id='das')
+//- .tabs(v-for="item in die" :key="index")
+//-   Tab(:item='item' )
+//- .tabs(v-for="item in das" :key="index")
+//-   Tab(:item='item' )
 
 </template>
 <script setup>
-import { reactive, ref } from 'vue';
+import { reactive, ref, onMounted } from 'vue';
 import Tab from '@/components/Tab.vue';
 
-import { useTaskArtikle } from "@/store/taskStore"
-const stateArtikle = useTaskArtikle();
-var Rubriks = reactive([])
-Rubriks = stateArtikle.Artikle
 
 
+// --------------------------
+import { db } from "@/firebase/config.ts";
+import { collection, query, onSnapshot } from "firebase/firestore";
+var der = reactive([])
+var die = reactive([])
+var das = reactive([])
+
+const derArtikel = query(collection(db, "der"));
+const dieArtikel = query(collection(db, "die"));
+const dasArtikel = query(collection(db, "das"));
+
+
+onMounted(async () => {
+  onSnapshot(derArtikel, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      der.push(doc.data());
+    });
+  });
+  onSnapshot(dieArtikel, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      die.push(doc.data());
+    });
+  });
+  onSnapshot(dasArtikel, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      das.push(doc.data());
+    });
+  });
+});
 
 </script>

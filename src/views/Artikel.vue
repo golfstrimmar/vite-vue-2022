@@ -87,87 +87,87 @@ import { ref, onMounted, reactive } from 'vue'
 
 const der = []
 const die = [
-  {
-    title: '-ung',
-    text1: 'die Abdeckung',
-    text2: 'die Bildung',
-  },
-  {
-    title: '-keit',
-    text1: 'die Möglichkeit',
-    text2: 'die Tätigkeit',
-  },
-  {
-    title: '-heit',
-    text1: 'die Einheit',
-    text2: 'die Gewohnheit',
-  },
-  {
-    title: '-ion',
-    text1: 'die Kommission ',
-    text2: 'die Position'
-  },
-  {
-    title: '-in',
-    text1: 'die Bäckerin',
-    text2: 'die Dichterin'
-  },
+  // {
+  //   title: '-ung',
+  //   text1: 'die Abdeckung',
+  //   text2: 'die Bildung',
+  // },
+  // {
+  //   title: '-keit',
+  //   text1: 'die Möglichkeit',
+  //   text2: 'die Tätigkeit',
+  // },
+  // {
+  //   title: '-heit',
+  //   text1: 'die Einheit',
+  //   text2: 'die Gewohnheit',
+  // },
+  // {
+  //   title: '-ion',
+  //   text1: 'die Kommission ',
+  //   text2: 'die Position'
+  // },
+  // {
+  //   title: '-in',
+  //   text1: 'die Bäckerin',
+  //   text2: 'die Dichterin'
+  // },
 
-  {
-    title: '-tät',
-    text1: 'die Identität ',
-    text2: 'die Qualität'
-  },
+  // {
+  //   title: '-tät',
+  //   text1: 'die Identität ',
+  //   text2: 'die Qualität'
+  // },
 
-  {
-    title: '-schaft',
-    text1: 'die Mannschaft ',
-    text2: 'die Landschaft'
-  },
+  // {
+  //   title: '-schaft',
+  //   text1: 'die Mannschaft ',
+  //   text2: 'die Landschaft'
+  // },
 
-  {
-    title: '-enz',
-    text1: 'die Effizienz',
-    text2: 'die Konferenz'
-  },
+  // {
+  //   title: '-enz',
+  //   text1: 'die Effizienz',
+  //   text2: 'die Konferenz'
+  // },
 
-  {
-    title: '-ie',
-    text1: 'die Anatomie ',
-    text2: 'die Biologie'
-  },
+  // {
+  //   title: '-ie',
+  //   text1: 'die Anatomie ',
+  //   text2: 'die Biologie'
+  // },
 
 ]
 const das = [
-  {
-    title: '-chen',
-    text1: 'das Hähnchen',
-    text2: 'das Bäumchen'
-  },
+  // {
+  //   title: '-chen',
+  //   text1: 'das Hähnchen',
+  //   text2: 'das Bäumchen'
+  // },
 
-  {
-    title: '- lein',
-    text1: 'das Fräulein',
-    text2: 'das Büchlein'
-  },
+  // {
+  //   title: '- lein',
+  //   text1: 'das Fräulein',
+  //   text2: 'das Büchlein'
+  // },
 
-  {
-    title: '- ment',
-    text1: 'das Apartment',
-    text2: 'das Parlament'
-  },
+  // {
+  //   title: '- ment',
+  //   text1: 'das Apartment',
+  //   text2: 'das Parlament'
+  // },
 
-  {
-    title: '- um',
-    text1: 'das Studium ',
-    text2: 'das Datum'
-  },
+  // {
+  //   title: '- um',
+  //   text1: 'das Studium ',
+  //   text2: 'das Datum'
+  // },
 
-  {
-    title: '- nis',
-    text1: 'das Ergebnis',
-    text2: 'das Zeugnis'
-  },
+  // {
+  //   title: '- nis',
+  //   text1: 'das Ergebnis',
+  //   text2: 'das Zeugnis'
+  // },
 
 ]
 const Bestimmte = [
