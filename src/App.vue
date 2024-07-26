@@ -1,10 +1,10 @@
 <template lang="pug">
 .wrapper.rel
-  .imgs
-    picture
-      source(:srcset='images.urlFon' alt='img' type='image/webp' media='(min-width: 768px)')
-      source(:srcset='images.urlFonSm' alt='img' type='image/webp' media='(max-width: 767px)')
-      img(:src='images.urlFonSm' alt='img')
+  //- .imgs
+  //-   picture
+  //-     source(:srcset='images.urlFon' alt='img' type='image/webp' media='(min-width: 768px)')
+  //-     source(:srcset='images.urlFonSm' alt='img' type='image/webp' media='(max-width: 767px)')
+  //-     img(:src='images.urlFonSm' alt='img')
   Header
   main
     router-view

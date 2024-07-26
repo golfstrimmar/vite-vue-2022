@@ -11,19 +11,19 @@ header.header
           //- //- SvgIcon(name='quasar-logo' )
           //- SvgIcon(name='pug' )
           //- SvgIcon(name='sass' )
-      transition(mode='easy-in-out' name='f'  )
-        .header__links(v-if=" burgerActive" )
-          router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
-            |{{ link.name }}
-      .auth-items
-        //- router-link(to="/signup"  v-if="!isLoggedIn" ) SignUp
-        //- router-link(to="/signin"  v-if="!isLoggedIn" ) SignIn
-        Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" ) 
-        ._user(v-if="isLoggedIn" )
-          span User info
-          p {{ taskStore.name }}
-      ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
-        span
+          transition(mode='easy-in-out' name='f'  )
+            .header__links(v-if=" burgerActive" )
+              router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
+                |{{ link.name }}
+          //- .auth-items
+          //-   //- router-link(to="/signup"  v-if="!isLoggedIn" ) SignUp
+          //-   //- router-link(to="/signin"  v-if="!isLoggedIn" ) SignIn
+          //-   Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" ) 
+          //-   ._user(v-if="isLoggedIn" )
+          //-     span User info
+          //-     p {{ taskStore.name }}
+          ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
+            span
         
 
 </template>
@@ -31,14 +31,14 @@ header.header
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import SvgIcon from '@/components/SvgIcon.vue'
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-import Button from '@/components/Button.vue';
+// import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+// import Button from '@/components/Button.vue';
 import { useRouter } from 'vue-router'
 const router = useRouter();
 
 
-import { useTaskStore } from "@/store/taskStore.js"
-const taskStore = useTaskStore();
+// import { useTaskStore } from "@/store/taskStore.js"
+// const taskStore = useTaskStore();
 
 
 
@@ -88,16 +88,16 @@ onMounted(() => {
   // } else {
   // }
   // window.addEventListener("resize", handleWindowSizeChange);
-  window.addEventListener("scroll", handleWindowScroll);
-  auth = getAuth()
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      isLoggedIn.value = true
-    } else {
-      isLoggedIn.value = false
-    }
+  // window.addEventListener("scroll", handleWindowScroll);
+  // auth = getAuth()
+  // onAuthStateChanged(auth, (user) => {
+  //   if (user) {
+  //     isLoggedIn.value = true
+  //   } else {
+  //     isLoggedIn.value = false
+  //   }
 
-  })
+  // })
 });
 
 // const handleWindowSizeChange = () => {

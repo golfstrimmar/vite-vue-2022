@@ -2,21 +2,22 @@
 .container
   .page-title 
     h2 der Artikel
+  Tab 
 
-  .page-block.blue-grey-4
-    Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
-    Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
-    Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
-  .page-block.blue-grey-4
-    Tabs(:items= 'der' title='Beispiele für den männlichen Artikel „der“')
-    Tabs(:items= 'die' title='Beispiele für den feminine Article “die”')
-    Tabs(:items= 'das' title='Beispiele für den neuter Article “das”')
-  .page-block.blue-grey-4
-    .page-title--small
-      h2(v-for="item in derData" :key="index") {{item.text2}},  {{ item.title }} , {{item.text1}}
-    TabsTraining( title='Bestimmte Artikel' :SlotData='SlotDataBestimmte' )
-    TabsTraining( title='Unbestimmte Artikel' :SlotData='SlotDataUnbestimmte' )
-    TabsTraining( title='Unbestimmte Negativ Artikel ' :SlotData='SlotDataNegativ' )
+  //- .page-block.blue-grey-4
+  //-   Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
+  //-   Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
+  //-   Tabs(:items= 'UnbestimmteNegativ' title='Unbestimmte negativ Artikel' icons='icons')
+  //- .page-block.blue-grey-4
+  //-   Tabs(:items= 'der' title='Beispiele für den männlichen Artikel „der“')
+  //-   Tabs(:items= 'die' title='Beispiele für den feminine Article “die”')
+  //-   Tabs(:items= 'das' title='Beispiele für den neuter Article “das”')
+  //- .page-block.blue-grey-4
+  //-   .page-title--small
+  //-     h2(v-for="item in derData" :key="index") {{item.text2}},  {{ item.title }} , {{item.text1}}
+  //-   TabsTraining( title='Bestimmte Artikel' :SlotData='SlotDataBestimmte' )
+  //-   TabsTraining( title='Unbestimmte Artikel' :SlotData='SlotDataUnbestimmte' )
+  //-   TabsTraining( title='Unbestimmte Negativ Artikel ' :SlotData='SlotDataNegativ' )
 
 
 </template>
@@ -24,27 +25,36 @@
 
 
 <script setup>
+import Tab from '@/components/Tab.vue';
 // import Content from '@/components/Content.vue';
-import Tabs from '@/components/Tabs.vue';
-import TabsTraining from '@/components/TabsTraining.vue';
+// import Tabs from '@/components/Tabs.vue';
+// import TabsTraining from '@/components/TabsTraining.vue';
+
+// ====================================
+
+
 import { ref, onMounted, reactive } from 'vue'
-import { collection, query, orderBy, startAfter, limit, getDocs, where } from "firebase/firestore";
-import { db } from "@/firebase/config.ts";
+// import { collection, query, orderBy, startAfter, limit, getDocs, where } from "firebase/firestore";
+// import { db } from "@/firebase/config.ts";
 
-const derData = reactive([])
 
-onMounted(async () => {
-  const der = query(collection(db, "deutsch", 'Artikel', 'der'));
-  const die = query(collection(db, "deutsch", 'Artikel', 'die'));
-  const das = query(collection(db, "deutsch", 'Artikel', 'das'));
 
-  const derSnapshot = await getDocs(der);
-  derSnapshot.forEach((doc) => {
-    derData.push({ ...doc.data() })
-  });
-  console.log(derData);
-
+onMounted(() => {
 });
+
+var derData = reactive([])
+// onMounted(async () => {
+//   const der = query(collection(db, "deutsch", 'Artikel', 'der'));
+//   const die = query(collection(db, "deutsch", 'Artikel', 'die'));
+//   const das = query(collection(db, "deutsch", 'Artikel', 'das'));
+
+//   const derSnapshot = await getDocs(der);
+//   derSnapshot.forEach((doc) => {
+//     derData.push({ ...doc.data() })
+//   });
+//   console.log(derData);
+
+// });
 
 
 
