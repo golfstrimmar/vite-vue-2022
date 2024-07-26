@@ -29,8 +29,6 @@ import Tabs from '@/components/Tabs.vue';
 import TabsTraining from '@/components/TabsTraining.vue';
 
 
-
-
 // onMounted(() => {
 //   // if (focusActiv) {
 //   //   myInputs[0].value.focus();
@@ -46,40 +44,7 @@ import TabsTraining from '@/components/TabsTraining.vue';
 //   }
 // }
 
-const der = [
-
-  {
-    title: '-ling',
-    text1: 'der Frühling',
-    text2: 'der Neuling'
-  },
-  {
-    title: '-ismus',
-    text1: 'der Tourismus',
-    text2: 'der Optimismus'
-  },
-  {
-    title: '-er',
-    text1: 'der Fahrer',
-    text2: 'der Körper'
-  },
-  {
-    title: '-ist',
-    text1: 'der Journalist ',
-    text2: 'der Polizist'
-  },
-  {
-    title: '-ich',
-    text1: 'der Bereich',
-    text2: 'der Teppich'
-  },
-  {
-    title: '-ant',
-    text1: 'der Laborant',
-    text2: 'der Diamant'
-  },
-
-]
+const der = []
 const die = [
   {
     title: '-ung',
@@ -959,4 +924,4 @@ const SlotDataNegativ = [
 
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss"></style>

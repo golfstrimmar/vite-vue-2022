@@ -5,7 +5,7 @@ import router from "./router";
 import { createPinia } from "pinia";
 import { createApp } from "vue";
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCTr_tR1MbYjHurQgAfdgEntqZQ150rZyA",
@@ -21,14 +21,6 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const app = createApp(App);
 
-const db = getDatabase();
-const ArikelRef = ref(db, "Arikel");
-onValue(ArikelRef, (snapshot) => {
-  const data = snapshot.val();
-  alert(data);
-
-  // updateStarCount(postElement, data);
-});
 // .directive("focus", function (el, binding) {
 //   // el.focus();
 //   if (binding.value == "foo") {
@@ -72,3 +64,4 @@ app
   .use(router)
   .use(createPinia())
   .mount("#app");
+const db = getFirestore(app);
