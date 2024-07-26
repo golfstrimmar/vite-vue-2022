@@ -13,7 +13,7 @@
     Tabs(:items= 'das' title='Beispiele für den neuter Article “das”')
   .page-block.blue-grey-4
     .page-title--small
-      h2 Beispiele
+      h2(v-for="item in derData" :key="index") {{item.text2}},  {{ item.title }} , {{item.text1}}
     TabsTraining( title='Bestimmte Artikel' :SlotData='SlotDataBestimmte' )
     TabsTraining( title='Unbestimmte Artikel' :SlotData='SlotDataUnbestimmte' )
     TabsTraining( title='Unbestimmte Negativ Artikel ' :SlotData='SlotDataNegativ' )
@@ -27,6 +27,43 @@
 // import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
 import TabsTraining from '@/components/TabsTraining.vue';
+import { ref, onMounted, reactive } from 'vue'
+import { collection, query, orderBy, startAfter, limit, getDocs, where } from "firebase/firestore";
+import { db } from "@/firebase/config.ts";
+
+const derData = reactive([])
+
+onMounted(async () => {
+  const der = query(collection(db, "deutsch", 'Artikel', 'der'));
+  const die = query(collection(db, "deutsch", 'Artikel', 'die'));
+  const das = query(collection(db, "deutsch", 'Artikel', 'das'));
+
+  const derSnapshot = await getDocs(der);
+  derSnapshot.forEach((doc) => {
+    derData.push({ ...doc.data() })
+  });
+  console.log(derData);
+
+});
+
+
+
+
+
+
+
+//   querySnapshot.forEach((doc) => {
+//     console.log(doc.data());
+//     DataText.push({ id: doc.id, ...doc.data() })
+
+//   });
+// });
+
+
+
+
+
+
 
 
 // onMounted(() => {

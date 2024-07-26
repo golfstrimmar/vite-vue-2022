@@ -37,7 +37,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter();
 
 
-import { useTaskStore } from "../store/taskStore"
+import { useTaskStore } from "@/store/taskStore.js"
 const taskStore = useTaskStore();
 
 
