@@ -2,7 +2,7 @@
 header 
   SvgIcon(name='vite' )
   h2 component Header hier
-
+  
 </template>
 
 <script setup>

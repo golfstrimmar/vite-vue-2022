@@ -2,15 +2,17 @@
 .hero 
   .container
     p container
-    h2 h2 component hero
+    //- h2(v-for="item in Data" :key="index") {{ item.text}}
+    
 </template>
 
 <script setup>
-import { ref } from 'vue'
+
+
 </script>
 
 <style lang="scss">
-.hero{
+.hero {
   color: chartreuse;
 }
 </style>
