@@ -13,7 +13,7 @@ body {
   font-weight: 400;
   line-height: 1;
 
-  background: rgb(217, 220, 248);
+  background: $brown-2;
 }
 
 .container {
@@ -99,7 +99,7 @@ a {
   margin: 0 0 10px 0;
   h4 {
     font-family: "RR", sans-serif;
-    color: $blue-8;
+    color: $brown-8;
     font-size: 18px;
     margin: 0 20px 10px 0;
 
@@ -160,7 +160,7 @@ button.mixButton {
 h3 {
   font-size: 14px;
   font-weight: 800;
-  color: #c4e0fc;
+  color: $brown-8;
   text-transform: uppercase;
   line-height: 1.5;
   text-shadow: 0 0 5px white;

@@ -14,3 +14,11 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 // --------------------------
 (v-for="el in item.content" :key="index")
+
+@input='HendleEventInput()'  
+@focus="focusHandler()"  
+@blur="blurHandler()"  
+:class="[(inputValue == Antwort) ? '_is-active' : '_is-falsch',(focused == true) ? '_is-light' : '' ]"
+v-if="Antwort !== undefined"
+
+input(type='text' v-model.trim='inputValue' ref="some" :class="[(focused == true) ? '_is-light' : '']" @focus="focusHandler" @input="$emit('update:inputValue', $event.target.value)" @Vertig="$emit('Vertig', inputValue)" )

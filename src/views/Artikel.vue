@@ -2,7 +2,9 @@
 .container
   h2 der Artikel
   Tabs 
-
+  .plaza__line(v-for="line in SlotDataBestimmte" :key="index" )
+    p() {{ line.text }}
+    Input(:Antwort='el' @anwortPositiv="anwortPositiv" v-for="el in line.content" :key="index")
   //- .page-block.blue-grey-4
   //-   Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
   //-   Tabs(:items= 'Unbestimmte' title='Unbestimmte Artikel' icons='icons')
@@ -22,33 +24,89 @@
 </template>
 
 
-
 <script setup>
 import Tabs from '@/components/Tabs.vue';
-
-
+import Input from '@/components/Input.vue';
+import { ref, onMounted, reactive } from 'vue'
+const count = ref(0)
+const currentLine = ref(null)
 // ====================================
 
+const anwortPositiv = (data) => {
+  count.value++
+  let lineCurrent = [...data.closest('.plaza__line').querySelectorAll("input")];
+  console.log(count.value, lineCurrent.length);
+  if (count.value == lineCurrent.length) {
+    var inputCurrent = data.closest('.plaza__line').nextElementSibling.querySelector("input")
+    inputCurrent.focus();
+    inputCurrent.classList.add("_is-light");
+    count.value = 0;
+  }
 
-import { ref, onMounted, reactive } from 'vue'
+
+
+  // if (count.value == content.length) {
+  //   console.log(content);
+  // }
+}
+// ====================================
+
+const SlotDataBestimmte = [
+  {
+    text: 'Я живу в маленькой деревне. (lebe kleinen Dorf)',
+    content: [
+      'Ich',
+      'lebe',
+      'in',
+      'einem',
+      'kleinen',
+      'Dorf',
+      '.',
+    ]
+  },
+  {
+    text: 'У тебя есть брат? (Bruder)',
+    content: [
+      'Hast',
+      'du',
+      'einen',
+      'Bruder',
+      '?',
+    ]
+  }
+]
+// ====================================
+// var arrErste = reactive([]);
+
+// const handlerClick = () => {
+//   arr.value = SlotDataBestimmte.map((cell) => {
+//     return cell.splice(1)
+//   })
+//   arrErste.value = SlotDataBestimmte.map((cell) => {
+//     return cell.splice(0, 1)
+//   })
+// }
 // import { collection, query, orderBy, startAfter, limit, getDocs, where } from "firebase/firestore";
 // import { db } from "@/firebase/config.ts";
 
 
 
+onMounted(() => {
 
-// onMounted(async () => {
-//   const der = query(collection(db, "deutsch", 'Artikel', 'der'));
-//   const die = query(collection(db, "deutsch", 'Artikel', 'die'));
-//   const das = query(collection(db, "deutsch", 'Artikel', 'das'));
+  // async () => {
+  // const der = query(collection(db, "deutsch", 'Artikel', 'der'));
+  // const die = query(collection(db, "deutsch", 'Artikel', 'die'));
+  // const das = query(collection(db, "deutsch", 'Artikel', 'das'));
 
-//   const derSnapshot = await getDocs(der);
-//   derSnapshot.forEach((doc) => {
-//     derData.push({ ...doc.data() })
-//   });
-//   console.log(derData);
+  // const derSnapshot = await getDocs(der);
+  // derSnapshot.forEach((doc) => {
+  //   derData.push({ ...doc.data() })
+  // });
+  // console.log(derData);
+  // }
 
-// });
+
+});
 
 
 
@@ -295,280 +353,280 @@ const UnbestimmteNegativ = [
     svg4: 'group',
   },
 ]
-const SlotDataBestimmte = [
-  {
-    t: 'true',
-    t0: 'Балкон у гостинной большой. (Balkon Wohnzimmer groß)',
-    t1: 'Der',
-    t2: 'Balkon',
-    t3: 'des',
-    t4: 'Wohnzimmers',
-    t5: 'ist',
-    t6: 'groß',
-    t7: '.',
-  },
+// const SlotDataBestimmte = [
+//   {
+//     t: 'true',
+//     t0: 'Балкон у гостинной большой. (Balkon Wohnzimmer groß)',
+//     t1: 'Der',
+//     t2: 'Balkon',
+//     t3: 'des',
+//     t4: 'Wohnzimmers',
+//     t5: 'ist',
+//     t6: 'groß',
+//     t7: '.',
+//   },
 
-  {
-    t0: 'Мы расказываем детям историю. (erzählen Kinder Geschichte)',
-    t1: 'Wir',
-    t2: 'erzählen',
-    t3: 'den',
-    t4: 'Kindern',
-    t5: 'die',
-    t6: 'Geschichte',
-    t7: '.',
-  },
-  {
-    t0: 'Но весна лучше всего. (Frühling am allerbesten)',
-    t1: 'Aber',
-    t2: 'der',
-    t3: 'Frühling',
-    t4: 'ist',
-    t5: 'am',
-    t6: 'allerbesten',
-    t7: '.',
-  },
+//   {
+//     t0: 'Мы расказываем детям историю. (erzählen Kinder Geschichte)',
+//     t1: 'Wir',
+//     t2: 'erzählen',
+//     t3: 'den',
+//     t4: 'Kindern',
+//     t5: 'die',
+//     t6: 'Geschichte',
+//     t7: '.',
+//   },
+//   {
+//     t0: 'Но весна лучше всего. (Frühling am allerbesten)',
+//     t1: 'Aber',
+//     t2: 'der',
+//     t3: 'Frühling',
+//     t4: 'ist',
+//     t5: 'am',
+//     t6: 'allerbesten',
+//     t7: '.',
+//   },
 
-  {
-    t0: 'Туризм приносит в город деньги. (Tourismus Geld Stadt)',
-    t1: 'Der',
-    t2: 'Tourismus',
-    t3: 'bringt',
-    t4: 'Geld',
-    t5: 'in',
-    t6: 'die',
-    t7: 'Stadt',
-    t8: '.',
-  },
-  {
-    t0: 'У водителя имел проблемы, парковочную зону заходить. (Fahrer Probleme Parkplatz betreten)',
-    t1: 'Der',
-    t2: 'Fahrer',
-    t3: 'hatte',
-    t4: 'Probleme',
-    t5: ',',
-    t6: 'den',
-    t7: 'Parkplatz',
-    t8: 'zu',
-    t9: 'betreten',
-    t10: '.',
-  },
+//   {
+//     t0: 'Туризм приносит в город деньги. (Tourismus Geld Stadt)',
+//     t1: 'Der',
+//     t2: 'Tourismus',
+//     t3: 'bringt',
+//     t4: 'Geld',
+//     t5: 'in',
+//     t6: 'die',
+//     t7: 'Stadt',
+//     t8: '.',
+//   },
+//   {
+//     t0: 'У водителя имел проблемы, парковочную зону заходить. (Fahrer Probleme Parkplatz betreten)',
+//     t1: 'Der',
+//     t2: 'Fahrer',
+//     t3: 'hatte',
+//     t4: 'Probleme',
+//     t5: ',',
+//     t6: 'den',
+//     t7: 'Parkplatz',
+//     t8: 'zu',
+//     t9: 'betreten',
+//     t10: '.',
+//   },
 
-  {
-    t0: 'Бен был лучшим журналистом из всех. (Journalist allen)',
-    t1: 'Ben',
-    t2: 'war',
-    t3: 'der',
-    t4: 'beste',
-    t5: 'Journalist',
-    t6: 'von',
-    t7: 'allen',
-    t8: '.',
+//   {
+//     t0: 'Бен был лучшим журналистом из всех. (Journalist allen)',
+//     t1: 'Ben',
+//     t2: 'war',
+//     t3: 'der',
+//     t4: 'beste',
+//     t5: 'Journalist',
+//     t6: 'von',
+//     t7: 'allen',
+//     t8: '.',
 
-  },
-
-
-
-  {
-    t0: 'Это полицейский, которого мы ищем. (Polizist suchen)',
-    t1: 'Das',
-    t2: 'ist',
-    t3: 'der',
-    t4: 'Polizist',
-    t5: ',',
-    t6: 'nach',
-    t7: 'dem',
-    t8: 'wir',
-    t9: 'suchen',
-    t10: '.',
-  },
+//   },
 
 
 
-  {
-    t0: 'Техник, который делал анализ, был найден мертвым.(Techniker Analyse tot aufgefunden)',
-    t1: 'Der',
-    t2: 'Techniker',
-    t3: ',',
-    t4: 'der',
-    t5: 'die',
-    t6: 'Analyse',
-    t7: 'machte',
-    t8: ',',
-    t9: 'wurde',
-    t10: 'tot',
-    t11: 'aufgefunden',
-    t12: '.',
-
-  },
+//   {
+//     t0: 'Это полицейский, которого мы ищем. (Polizist suchen)',
+//     t1: 'Das',
+//     t2: 'ist',
+//     t3: 'der',
+//     t4: 'Polizist',
+//     t5: ',',
+//     t6: 'nach',
+//     t7: 'dem',
+//     t8: 'wir',
+//     t9: 'suchen',
+//     t10: '.',
+//   },
 
 
-  {
-    t0: 'Что была бы за жизнь без возможности принимать глупые решения? (wäre Leben Möglichkeit dumme Entscheidung treffen)',
-    t1: 'Was',
-    t2: 'wäre',
-    t3: 'das',
-    t4: 'Leben',
-    t5: 'ohne',
-    t6: 'die',
-    t7: 'Möglichkeit',
-    t8: 'dumme',
-    t9: 'Entscheidungen',
-    t10: 'zu',
-    t11: 'treffen',
-    t12: '?',
-  },
+
+//   {
+//     t0: 'Техник, который делал анализ, был найден мертвым.(Techniker Analyse tot aufgefunden)',
+//     t1: 'Der',
+//     t2: 'Techniker',
+//     t3: ',',
+//     t4: 'der',
+//     t5: 'die',
+//     t6: 'Analyse',
+//     t7: 'machte',
+//     t8: ',',
+//     t9: 'wurde',
+//     t10: 'tot',
+//     t11: 'aufgefunden',
+//     t12: '.',
+
+//   },
 
 
-  {
-    t0: 'О качестве мы подумаем позже.(Über Qualität später nachdenken)',
-    t1: 'Über',
-    t2: 'die',
-    t3: 'Qualität',
-    t4: 'werden',
-    t5: 'wir',
-    t6: 'später',
-    t7: 'nachdenken',
-    t8: '.',
-
-  },
-
-  {
-    t0: 'Я не играю в команде вашего сына.(spiele Mannschaft ihres Sohnes)',
-    t1: 'Ich',
-    t2: 'spiele',
-    t3: 'nicht',
-    t4: 'in',
-    t5: 'der',
-    t6: 'Mannschaft',
-    t7: 'ihres',
-    t8: 'Sohnes',
-    t9: '.',
-  },
-  {
-    t0: 'Есть ли на курице лимон?(Zitrone Hähnchen)',
-    t1: 'Ist',
-    t2: 'da',
-    t3: 'Zitrone',
-    t4: 'auf',
-    t5: 'dem',
-    t6: 'Hähnchen',
-    t7: '?',
-  },
-  {
-    t0: 'Мне нужно попасть в квартиру(Apartment)',
-    t1: 'Ich',
-    t2: 'muss',
-    t3: 'in',
-    t4: 'das',
-    t5: 'Apartment',
-    t6: '.',
-
-  },
+//   {
+//     t0: 'Что была бы за жизнь без возможности принимать глупые решения? (wäre Leben Möglichkeit dumme Entscheidung treffen)',
+//     t1: 'Was',
+//     t2: 'wäre',
+//     t3: 'das',
+//     t4: 'Leben',
+//     t5: 'ohne',
+//     t6: 'die',
+//     t7: 'Möglichkeit',
+//     t8: 'dumme',
+//     t9: 'Entscheidungen',
+//     t10: 'zu',
+//     t11: 'treffen',
+//     t12: '?',
+//   },
 
 
-  {
-    t0: 'Каков был результат?(Ergebnis)',
-    t1: 'Wie',
-    t2: 'war',
-    t3: 'das',
-    t4: 'Ergebnis',
-    t5: '?',
+//   {
+//     t0: 'О качестве мы подумаем позже.(Über Qualität später nachdenken)',
+//     t1: 'Über',
+//     t2: 'die',
+//     t3: 'Qualität',
+//     t4: 'werden',
+//     t5: 'wir',
+//     t6: 'später',
+//     t7: 'nachdenken',
+//     t8: '.',
 
-  },
+//   },
 
-  {
-    t0: 'лежа на спине(Rücken)',
-    t1: 'auf',
-    t2: 'dem',
-    t3: 'Rücken',
-    t4: 'liegen',
+//   {
+//     t0: 'Я не играю в команде вашего сына.(spiele Mannschaft ihres Sohnes)',
+//     t1: 'Ich',
+//     t2: 'spiele',
+//     t3: 'nicht',
+//     t4: 'in',
+//     t5: 'der',
+//     t6: 'Mannschaft',
+//     t7: 'ihres',
+//     t8: 'Sohnes',
+//     t9: '.',
+//   },
+//   {
+//     t0: 'Есть ли на курице лимон?(Zitrone Hähnchen)',
+//     t1: 'Ist',
+//     t2: 'da',
+//     t3: 'Zitrone',
+//     t4: 'auf',
+//     t5: 'dem',
+//     t6: 'Hähnchen',
+//     t7: '?',
+//   },
+//   {
+//     t0: 'Мне нужно попасть в квартиру(Apartment)',
+//     t1: 'Ich',
+//     t2: 'muss',
+//     t3: 'in',
+//     t4: 'das',
+//     t5: 'Apartment',
+//     t6: '.',
 
-  },
-
-  {
-    t0: 'выходить из дома(Haus)',
-    t1: 'aus',
-    t2: 'dem',
-    t3: 'Haus',
-    t4: 'gehen',
-
-  },
-
-  {
-    t0: 'спрятать голову в песок(Kopf Sand stecken)',
-    t1: 'den',
-    t2: 'Kopf',
-    t3: 'in',
-    t4: 'den',
-    t5: 'Sand',
-    t6: 'stecken',
-
-  },
-
-  {
-    t0: 'топать ногами по земле(Füßen Boden stampfen)',
-    t1: 'mit',
-    t2: 'den',
-    t3: 'Füßen',
-    t4: 'auf',
-    t5: 'den',
-    t6: 'Boden',
-    t7: 'stampfen',
-
-  },
-
-  {
-    t0: 'хозяин дома(Herr Hauses)',
-    t1: 'der',
-    t2: 'Herr',
-    t3: 'des',
-    t4: 'Hauses',
-
-  },
+//   },
 
 
-  {
-    t0: 'из-за плохой погоды(schlechten Wetters)',
-    t1: 'wegen',
-    t2: 'des',
-    t3: 'schlechten',
-    t4: 'Wetters',
+//   {
+//     t0: 'Каков был результат?(Ergebnis)',
+//     t1: 'Wie',
+//     t2: 'war',
+//     t3: 'das',
+//     t4: 'Ergebnis',
+//     t5: '?',
 
-  },
+//   },
+
+//   {
+//     t0: 'лежа на спине(Rücken)',
+//     t1: 'auf',
+//     t2: 'dem',
+//     t3: 'Rücken',
+//     t4: 'liegen',
+
+//   },
+
+//   {
+//     t0: 'выходить из дома(Haus)',
+//     t1: 'aus',
+//     t2: 'dem',
+//     t3: 'Haus',
+//     t4: 'gehen',
+
+//   },
+
+//   {
+//     t0: 'спрятать голову в песок(Kopf Sand stecken)',
+//     t1: 'den',
+//     t2: 'Kopf',
+//     t3: 'in',
+//     t4: 'den',
+//     t5: 'Sand',
+//     t6: 'stecken',
+
+//   },
+
+//   {
+//     t0: 'топать ногами по земле(Füßen Boden stampfen)',
+//     t1: 'mit',
+//     t2: 'den',
+//     t3: 'Füßen',
+//     t4: 'auf',
+//     t5: 'den',
+//     t6: 'Boden',
+//     t7: 'stampfen',
+
+//   },
+
+//   {
+//     t0: 'хозяин дома(Herr Hauses)',
+//     t1: 'der',
+//     t2: 'Herr',
+//     t3: 'des',
+//     t4: 'Hauses',
+
+//   },
 
 
-  {
-    t0: 'перенасыщение рынка(Übersättigung Marktes)',
-    t1: 'die',
-    t2: 'Übersättigung',
-    t3: 'des',
-    t4: 'Marktes',
+//   {
+//     t0: 'из-за плохой погоды(schlechten Wetters)',
+//     t1: 'wegen',
+//     t2: 'des',
+//     t3: 'schlechten',
+//     t4: 'Wetters',
 
-  },
+//   },
 
-  // {
-  //   t0: '',
-  //   t1: '',
-  //   t2: '',
-  //   t3: '',
-  //   t4: '',
-  //   t5: '',
-  //   t6: '',
-  //   t7: '',
-  //   t8: '',
-  //   t9: '',
-  //   t10: '',
-  //   t11: '',
-  //   t12: '',
-  //   t13: '',
-  //   t14: '',
-  //   t15: '',
-  //   t16: '',
-  //   t17: '',
-  //   t18: '',
-  // },
-]
+
+//   {
+//     t0: 'перенасыщение рынка(Übersättigung Marktes)',
+//     t1: 'die',
+//     t2: 'Übersättigung',
+//     t3: 'des',
+//     t4: 'Marktes',
+
+//   },
+
+//   // {
+//   //   t0: '',
+//   //   t1: '',
+//   //   t2: '',
+//   //   t3: '',
+//   //   t4: '',
+//   //   t5: '',
+//   //   t6: '',
+//   //   t7: '',
+//   //   t8: '',
+//   //   t9: '',
+//   //   t10: '',
+//   //   t11: '',
+//   //   t12: '',
+//   //   t13: '',
+//   //   t14: '',
+//   //   t15: '',
+//   //   t16: '',
+//   //   t17: '',
+//   //   t18: '',
+//   // },
+// ]
 
 const SlotDataUnbestimmte = [
   {
@@ -970,9 +1028,15 @@ h2 {
   font-family: "RR", sans-serif;
   font-size: 20px;
   font-weight: 800;
-  color: $blue-10;
+  color: $brown-8;
   text-transform: uppercase;
   line-height: 1.5;
   text-shadow: 0 0 5px white;
+}
+
+.plaza__line {
+  padding: 5px 0 0 0;
+
+  p {}
 }
 </style>

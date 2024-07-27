@@ -40,7 +40,7 @@ const tabopen = ref(false);
 .tab__title {
   padding: 5px;
   color: $blue-1;
-  background: $blue-8;
+  background: $brown-4;
   z-index: 4;
   cursor: pointer;
   position: relative;
@@ -57,7 +57,7 @@ const tabopen = ref(false);
 
 .tab__line {
   h3 {
-    color: $blue;
+    color: $red-10;
     display: inline-block;
     text-shadow: 0 0 5px white;
   }
