@@ -1,6 +1,6 @@
 <template lang='pug'>
-.tab
-  h3.tab__title(@click="tabopen=!tabopen")  {{id}}
+.tab()
+  h3.tab__title( ref='some') {{id}}
   transition(mode='easy-in-out' name='opentab'  )
     .tab__hidden(v-if="tabopen")
       .tab__wrap
@@ -23,8 +23,20 @@ const props = defineProps({
     required: false
   }
 })
+const some = ref(null)
+var tabopen = ref(false);
+let head = document.querySelector("body").addEventListener('click', (e) => {
+  if ((e.target == some.value) && tabopen.value == false) {
+    tabopen.value = true;
+  }
+  else if (e.target.closest('.tab__hidden') && tabopen.value == true) {
+    tabopen.value = true;
+  }
+  else {
+    tabopen.value = false
+  }
+});
 
-const tabopen = ref(false);
 
 </script>
 

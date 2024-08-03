@@ -3,7 +3,7 @@
   h2 der Artikel
   Tabs 
   .plaza__line(v-for="line in SlotDataBestimmte" :key="index" )
-    p() {{ line.text }}
+    p {{ line.text }}
     Input(:Antwort='el' @anwortPositiv="anwortPositiv" v-for="el in line.content" :key="index")
   //- .page-block.blue-grey-4
   //-   Tabs(:items= 'Bestimmte' title='Bestimmte Artikel' icons='icons')
@@ -30,8 +30,8 @@ import Input from '@/components/Input.vue';
 import { ref, onMounted, reactive } from 'vue'
 const count = ref(0)
 const currentLine = ref(null)
-// ====================================
 
+// ==============anwortPositiv======================
 const anwortPositiv = (data) => {
   count.value++
   let lineCurrent = [...data.closest('.plaza__line').querySelectorAll("input")];
@@ -42,192 +42,25 @@ const anwortPositiv = (data) => {
     inputCurrent.classList.add("_is-light");
     count.value = 0;
   }
-
-
-
-  // if (count.value == content.length) {
-  //   console.log(content);
-  // }
 }
-// ====================================
 
-const SlotDataBestimmte = [
-  {
-    text: 'Я живу в маленькой деревне. (lebe kleinen Dorf)',
-    content: [
-      'Ich',
-      'lebe',
-      'in',
-      'einem',
-      'kleinen',
-      'Dorf',
-      '.',
-    ]
-  },
-  {
-    text: 'У тебя есть брат? (Bruder)',
-    content: [
-      'Hast',
-      'du',
-      'einen',
-      'Bruder',
-      '?',
-    ]
-  }
-]
-// ====================================
-// var arrErste = reactive([]);
-
-// const handlerClick = () => {
-//   arr.value = SlotDataBestimmte.map((cell) => {
-//     return cell.splice(1)
-//   })
-//   arrErste.value = SlotDataBestimmte.map((cell) => {
-//     return cell.splice(0, 1)
-//   })
-// }
-// import { collection, query, orderBy, startAfter, limit, getDocs, where } from "firebase/firestore";
-// import { db } from "@/firebase/config.ts";
+// ---------db-----------------
+import { db } from "@/firebase/config.ts";
+import { collection, query, onSnapshot } from "firebase/firestore";
+var SlotDataBestimmte = reactive([])
+const DataBestimmte = query(collection(db, "bestimmte"));
 
 
-
-onMounted(() => {
-
-  // async () => {
-  // const der = query(collection(db, "deutsch", 'Artikel', 'der'));
-  // const die = query(collection(db, "deutsch", 'Artikel', 'die'));
-  // const das = query(collection(db, "deutsch", 'Artikel', 'das'));
-
-  // const derSnapshot = await getDocs(der);
-  // derSnapshot.forEach((doc) => {
-  //   derData.push({ ...doc.data() })
-  // });
-  // console.log(derData);
-  // }
-
-
+onMounted(async () => {
+  onSnapshot(DataBestimmte, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      SlotDataBestimmte.push(doc.data());
+    });
+  });
 });
+// ====================================
 
 
-
-
-
-
-
-//   querySnapshot.forEach((doc) => {
-//     console.log(doc.data());
-//     DataText.push({ id: doc.id, ...doc.data() })
-
-//   });
-// });
-
-
-
-
-
-
-
-
-// onMounted(() => {
-//   // if (focusActiv) {
-//   //   myInputs[0].value.focus();
-//   // }
-
-// });
-
-// const handlerInput = () => {
-//   if (inputValue.value == 'wir') {
-//     for (let i = 0; i < myInputs.length; ++i) {
-//       myInputs[i + 1].value.focus()
-//     }
-//   }
-// }
-
-const der = []
-const die = [
-  // {
-  //   title: '-ung',
-  //   text1: 'die Abdeckung',
-  //   text2: 'die Bildung',
-  // },
-  // {
-  //   title: '-keit',
-  //   text1: 'die Möglichkeit',
-  //   text2: 'die Tätigkeit',
-  // },
-  // {
-  //   title: '-heit',
-  //   text1: 'die Einheit',
-  //   text2: 'die Gewohnheit',
-  // },
-  // {
-  //   title: '-ion',
-  //   text1: 'die Kommission ',
-  //   text2: 'die Position'
-  // },
-  // {
-  //   title: '-in',
-  //   text1: 'die Bäckerin',
-  //   text2: 'die Dichterin'
-  // },
-
-  // {
-  //   title: '-tät',
-  //   text1: 'die Identität ',
-  //   text2: 'die Qualität'
-  // },
-
-  // {
-  //   title: '-schaft',
-  //   text1: 'die Mannschaft ',
-  //   text2: 'die Landschaft'
-  // },
-
-  // {
-  //   title: '-enz',
-  //   text1: 'die Effizienz',
-  //   text2: 'die Konferenz'
-  // },
-
-  // {
-  //   title: '-ie',
-  //   text1: 'die Anatomie ',
-  //   text2: 'die Biologie'
-  // },
-
-]
-const das = [
-  // {
-  //   title: '-chen',
-  //   text1: 'das Hähnchen',
-  //   text2: 'das Bäumchen'
-  // },
-
-  // {
-  //   title: '- lein',
-  //   text1: 'das Fräulein',
-  //   text2: 'das Büchlein'
-  // },
-
-  // {
-  //   title: '- ment',
-  //   text1: 'das Apartment',
-  //   text2: 'das Parlament'
-  // },
-
-  // {
-  //   title: '- um',
-  //   text1: 'das Studium ',
-  //   text2: 'das Datum'
-  // },
-
-  // {
-  //   title: '- nis',
-  //   text1: 'das Ergebnis',
-  //   text2: 'das Zeugnis'
-  // },
-
-]
 const Bestimmte = [
 
   {
