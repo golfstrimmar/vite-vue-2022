@@ -61,6 +61,7 @@ let head = document.querySelector("body").addEventListener('click', (e) => {
 
 .tab__hidden {
   position: relative;
+  transition: .2s all;
   z-index: 2;
   background: $grey-3;
   padding: 5px;
@@ -73,33 +74,32 @@ let head = document.querySelector("body").addEventListener('click', (e) => {
     display: inline-block;
     text-shadow: 0 0 5px white;
   }
-
-  p {}
 }
 
 .tab__wrap {
   min-height: 0px;
-  row-gap: 5px;
   @include flex-column;
 }
 
 .opentab-enter-from {
   grid-template-rows: 0fr;
+  padding: 5px;
 }
 
 // .v-enter-active,
 .opentab-enter-to {
-  transition: .2s all;
   grid-template-rows: 1fr;
+  padding: 5px;
 }
 
 .opentab-leave-from {
-  transition: .2s all;
   grid-template-rows: 1fr;
+  padding: 5px;
 }
 
 .opentab-leave-to {
-  transition: .2s all;
   grid-template-rows: 0fr;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 </style>
