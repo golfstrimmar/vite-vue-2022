@@ -1,8 +1,9 @@
 <template lang="pug">
 .wrapper
-  Header
-  router-view
-  //- Footer
+  .main
+    Header
+    router-view
+    //- Footer
 </template>
 
 <script setup>

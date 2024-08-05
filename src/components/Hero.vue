@@ -110,12 +110,9 @@ const startHandler = (e) => {
     margin: 20px 0;
   }
 
-
-
-
   &__body {
     display: grid;
-    grid-template-columns: repeat(2, 322px) 1fr;
+    grid-template-columns: repeat(2, 187px) 1fr;
     grid-template-rows: 45px repeat(20, 30px);
     column-gap: 5px;
   }
