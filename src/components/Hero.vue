@@ -1,6 +1,5 @@
 <template lang="pug">
 .container
-
   .hero 
     DragDrop
     .hero__head
@@ -22,20 +21,16 @@
 import { ref, reactive, computed } from 'vue'
 import DragDrop from './DragDrop.vue';
 import Button from './Button.vue';
-const newItem = ref("");
 import Copy from './Copy.vue';
 var Result = ref('');
 var copyDataCommon = reactive([{ i: 0, dataText: '' }]);
 var copyDataName = reactive([{ i: 0, dataText: '' }]);
 var copyDataLinks = reactive([{ i: 0, dataText: '' }]);
-var activePlaza = ref('');
-const Plaza = ref(null);
-const temp = ref(null)
 
 copyDataCommon = [
   { i: 1, dataText: 'section(id="best").best.rel' },
-  { i: 2, dataText: '.best__' },
-  { i: 12, dataText: '.container' },
+  { i: 2, dataText: '.container' },
+  { i: 12, dataText: '.best__' },
   { i: 17, dataText: '.rel' },
   { i: 17, dataText: '.center' },
   { i: 2, dataText: 'h2' },
@@ -120,8 +115,8 @@ const startHandler = (e) => {
 
   &__body {
     display: grid;
-    grid-template-columns: repeat(4, 322px);
-    grid-template-rows: 45px repeat(9, 30px);
+    grid-template-columns: repeat(2, 322px) 1fr;
+    grid-template-rows: 45px repeat(20, 30px);
     column-gap: 5px;
   }
 
