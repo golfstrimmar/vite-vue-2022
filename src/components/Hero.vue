@@ -5,7 +5,7 @@
     DragDrop
     .hero__head
       .hero__temp
-        .tempContent(draggable="true" @dragstart='startHandler') {{ Result }}
+        .tempContent(draggable="true" @dragstart='startHandler' :class="[(Result !== '') ? '_is-active' : '' ]") {{ Result }}
         img(src='/src/assets/ex.png'  alt='img')
         Button.hero__reset( @click='handelClean')
       input.hero__line(type = 'text'  v-model='Result' )
@@ -137,8 +137,8 @@ const startHandler = (e) => {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       @include transition;
     }
 
@@ -150,22 +150,23 @@ const startHandler = (e) => {
     padding: 0 0 0 2px;
     min-height: 30px;
     color: transparent;
-    box-shadow: 0 -0.25em 0.5em $blue-grey-7 inset;
+    box-shadow: 0 -0.25em 0.25em $blue-grey-7 inset;
     border-radius: 0.5em;
     display: block;
     perspective: 20em;
     inset: 0.25em;
 
+    &._is-active {
+      box-shadow: 0 -0.25em 0.5em $blue-grey-7 inset;
+
+      &~img {
+        width: 22px;
+        height: 22px;
+      }
+    }
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0 -0.125em 0.25em $blue-grey-7 inset;
-
-    }
-
-    &:hover~img {
-      width: 18px;
-      height: 18px;
     }
   }
 }
@@ -180,14 +181,11 @@ const startHandler = (e) => {
 input.hero__line {
   height: 30px;
   border-radius: 0.75em;
-  background-color: $orange-1;
-  box-shadow: 0 0.0625em 0.0625em #f6ad70 inset, 0 -0.0625em 0.0625em #f6ddbe inset, 0 0.25em 0.25em #fbdaaa inset;
+  background-color: $blue-grey-1;
+  box-shadow: 0 0.0625em 0.0625em $blue-grey-7 inset, 0 -0.0625em 0.0625em $blue-grey-5 inset, 0 0.25em 0.25em $blue-grey-3 inset;
   padding: 0 0 0 10px;
-  color: $orange-10;
 
   &:focus {
-
-
     background-color: $orange-3;
   }
 }
