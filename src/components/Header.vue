@@ -17,8 +17,9 @@ import { useRouter } from 'vue-router'
 const router = useRouter();
 // =======================
 const links = ref([
-  { name: "Index", href: "/" },
+  { name: "Pug+Scss", href: "/" },
   { name: "Scss", href: "/scss" },
+  { name: "JS", href: "/js" },
 ]);
 </script>
 
@@ -46,8 +47,9 @@ header {
 
 .header__links {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 60px);
+  grid-template-columns: repeat(auto-fill, 100px);
   column-gap: 10px;
+  justify-items: center;
 
   a {
     text-transform: uppercase;

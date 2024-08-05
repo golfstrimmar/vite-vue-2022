@@ -4,4 +4,24 @@ import App from "./App.vue";
 import router from "./router";
 import "virtual:svg-icons-register";
 
-createApp(App).use(router).mount("#app");
+createApp(App)
+  .use(router)
+  .directive("copy", {
+    mounted(el) {
+      el.addEventListener("click", (e) => {
+        let add = document.createElement("textarea");
+        add.style.cssText =
+          "position: absolute;z-index: -2;max-height: 0; border: none;";
+        document.querySelector("body").appendChild(add);
+        add.textContent = el.value;
+        add.select();
+        document.execCommand("copy");
+        el.classList.add("_is-active");
+        setTimeout(function () {
+          add.remove();
+          el.classList.remove("_is-active");
+        }, 300);
+      });
+    },
+  })
+  .mount("#app");

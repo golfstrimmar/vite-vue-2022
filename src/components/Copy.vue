@@ -34,7 +34,7 @@ const handlerCopy = () => {
 }
 
 </script>
-<style lang='scss' scoped>
+<style lang='scss'>
 .copy {
 	cursor: pointer;
 	background-color: $lime-1;

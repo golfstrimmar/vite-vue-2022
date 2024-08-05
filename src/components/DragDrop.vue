@@ -1,8 +1,8 @@
 <template lang='pug'>
 .canvas 
 	.canvas__result
-		textarea.result( :v-model="somethingPug" :value='somethingPug' ref = 'copyPug' @click='handlerCopy( somethingPug, copyPug)')
-		textarea.result( :v-model="somethingScss" :value='somethingScss' ref = 'copyScss' @click='handlerCopy(somethingScss,copyScss)')
+		textarea.result.copy(v-copy :v-model="somethingPug" :value='somethingPug' )
+		textarea.result.copy(v-copy :v-model="somethingScss" :value='somethingScss' )
 	.canvas__body
 		.canvas__line(v-for="item in canvasLinien" :key="index")
 			CanvasItem(v-for="item in canvas" :key="item.id"  :item='item' @EventDrop='EventDrop' @EventClear='EventClear')
@@ -45,23 +45,22 @@ const EventClear = (item) => {
 		if (item.id == cell.id && item.text == cell.text) {
 			var rExp = new RegExp(cell.text, "g");
 			somethingPug.value = somethingPug.value.replace(rExp, '')
+			somethingScss.value = somethingScss.value.replace(rExp, '')
 			cell.text = ''
 		}
 	});
 }
 // --------------------------------
-const copyPug = ref(null);
-const copyScss = ref(null);
-const handlerCopy = (something, copy) => {
-	let add = document.createElement('textarea')
-	add.style.cssText = "position: absolute;z-index: -2;max-height: 0; border: none;"
-	document.querySelector('body').appendChild(add)
-	add.textContent = something
-	add.select();
-	document.execCommand('copy');
-	copy.classList.add('_is-copied')
-	setTimeout(function () { add.remove(); copy.classList.remove('_is-copied') }, 300)
-}
+// const handlerCopy = (something, copy) => {
+// 	let add = document.createElement('textarea')
+// 	add.style.cssText = "position: absolute;z-index: -2;max-height: 0; border: none;"
+// 	document.querySelector('body').appendChild(add)
+// 	add.textContent = something
+// 	add.select();
+// 	document.execCommand('copy');
+// 	copy.classList.add('_is-copied')
+// 	setTimeout(function () { add.remove(); copy.classList.remove('_is-copied') }, 300)
+// }
 
 // --------------------------------
 // --------------------------------
