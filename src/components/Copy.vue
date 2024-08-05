@@ -17,9 +17,8 @@ let singles = ref([]);
 const copy = ref(null);
 const activeItem = ref(false);
 const emit = defineEmits(['someEvent'])
-const handlerOffset1 = () => {
-	offset.value = 1;
-}
+
+
 const handlerCopy = () => {
 	activeItem.value = !activeItem.value;
 	let add = document.createElement('textarea')
@@ -43,8 +42,8 @@ const handlerCopy = () => {
 	outline: 1px solid $lime-3;
 
 	&:hover {
-		color: $lime-2;
-		background-color: $deep-purple-3;
+		color: $orange-10;
+		background-color: $orange-3;
 		@include transition;
 	}
 

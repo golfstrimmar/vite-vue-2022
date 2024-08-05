@@ -12,18 +12,44 @@ const props = defineProps({
 </script>
 <style lang='scss' scoped>
 .hero__button {
-	padding: 5px 0;
-	border-radius: 5px;
-	@include transition;
-	background-color: $lime-9;
-	color: white;
-	box-shadow: inset 0 0 5px rgba(252, 253, 253, 0.884);
-	text-transform: uppercase;
-	max-height: 30px;
+	position: relative;
+	position: absolute;
+	top: 50%;
+	right: -37px;
+	transform: translate(0px, -50%);
+	width: 30px;
+	height: 30px;
+	background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+	background-image: linear-gradient(top, #f4f1ee, #fff);
+	border-radius: 100%;
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+	transition: all .2s linear;
+
+	&:after {
+		content: "✖";
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: #e9e6e4;
+		display: block;
+		font-size: 15px;
+		height: 20px;
+		width: 20px;
+		text-decoration: none;
+		text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+		position: absolute;
+		transition: all .2s linear;
+	}
 
 	&:hover {
-		background-color: $pink-6;
-		color: white;
+		background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
+		background-image: linear-gradient(top, #fff, #f4f1ee);
+		color: #0088cc;
+	}
+
+	&:hover:after {
+		color: #eb2f2f;
+		text-shadow: 0px 0px 6px #eb2f2f;
 	}
 }
 </style>

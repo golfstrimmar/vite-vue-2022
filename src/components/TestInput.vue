@@ -1,9 +1,10 @@
 <template lang='pug'>
-input(type = 'text' @input="$emit('update:modelValue', $event.target.value)" :value='modelValue')
+input(type = 'text'  :v-model='inputValue')
 </template>
 <script setup>
-import { ref } from 'vue'; const props = defineProps({
-  modelValue: {
+import { ref } from 'vue';
+const props = defineProps({
+  inputValue: {
     type: String,
     required: false
   }

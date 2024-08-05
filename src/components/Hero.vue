@@ -2,15 +2,16 @@
 .container
 
   .hero 
-    Button(buttonValue='Rücksetzen' @click='handelClean').hero__reset
-    .hero__plaza
-      .tempContent(v-for="item in Result" :key="item.id" @click = "delitTempItem(item.id)"  ref='some') {{ item.data }}
+    DragDrop
+    .hero__head
+      .hero__temp
+        .tempContent(draggable="true" @dragstart='startHandler') {{ Result }}
+        img(src='/src/assets/ex.png'  alt='img')
+        Button.hero__reset( @click='handelClean')
+      input.hero__line(type = 'text'  v-model='Result' )
     .hero__body
-      .hero__line
-        TestInput( v-model="newItem" )
-        Button(buttonValue='hinzufügen eines input value' @click='handelInput(newItem)')
       .hero__column
-        Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataCommon" :key="item.i").hero__column
+        Copy(:text="item.dataText"  @someEvent = "someEvent(item.dataText)" v-for="item in copyDataCommon" :key="item.i").hero__column
       .hero__column
         Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataName" :key="item.i").hero__column
       .hero__column
@@ -19,11 +20,11 @@
 
 <script setup>
 import { ref, reactive, computed } from 'vue'
-import TestInput from './TestInput.vue';
+import DragDrop from './DragDrop.vue';
 import Button from './Button.vue';
-const newItem = ref(".");
+const newItem = ref("");
 import Copy from './Copy.vue';
-var Result = reactive([{ id: 0, data: '' }]);
+var Result = ref('');
 var copyDataCommon = reactive([{ i: 0, dataText: '' }]);
 var copyDataName = reactive([{ i: 0, dataText: '' }]);
 var copyDataLinks = reactive([{ i: 0, dataText: '' }]);
@@ -46,16 +47,11 @@ copyDataCommon = [
   { i: 6, dataText: 'nav' },
   { i: 7, dataText: 'ul' },
   { i: 8, dataText: 'li' },
-
-  { i: 9, dataText: 'svg use(xlink:href="#flag") ' },
-  {
-    i: 9, dataText: '.imgs img(src="./img/bg.webp" alt = "img")'
-  },
-  {
-    i: 9, dataText: 'picture source(srcset = "" alt = "img" type = "image/webp" media = "(min-width: 768px)") source(srcset = "" alt = "img" type = "image/webp" media = "(min-width: 1000px) and (max-width: 1199px)") source(srcset = "" alt = "img" type = "image/webp" media = "(max-width: 767px)") img(: src = "./img/bg.webp" alt = "img") '
-  },
-  { i: 8, dataText: '&__' },
-  { i: 8, dataText: '{}' }
+  { i: 8, dataText: 'img' },
+  { i: 9, dataText: 'svg' },
+  { i: 9, dataText: 'use(xlink:href="#flag")' },
+  { i: 9, dataText: '.imgs' },
+  { i: 9, dataText: 'img(src="./img/bg.webp" alt = "img")' },
 
 ]
 
@@ -89,37 +85,21 @@ copyDataLinks = [
   { i: 10, dataText: 'button.btn.btn-empty(type="button" name = "empty") empty' },
   { i: 10, dataText: 'button.btn.btn-blue(type = "button") blue' }
 ]
+// ----------------------------------------
 
-const someEvent = (data) => {
-  Result.push({ id: Result.length, data: data });
-
-}
-const delitTempItem = (id) => {
-  Result.forEach((cell) => {
-    if (cell.id == id) {
-      var indexCell = Result.indexOf(cell);
-      Result.splice(indexCell, 1);
-
-    }
-  });
-
-  Result.map(function (el) {
-    return el.id = Result.indexOf(el)
-  });
-
-}
-
+// ----------------------------------------
 const handelClean = () => {
-  Result.splice(0, Result.length);
-};
-
-const handelInput = (newData) => {
-  if (newItem.value !== '') {
-    Result.push({ id: Result.length, data: newData });
-    copyDataCommon.unshift({ i: copyDataCommon.length, dataText: newData });
-    newItem.value = ''
-  }
-
+  Result.value = '';
+}
+// ----------------------------------------
+const someEvent = (data) => {
+  Result.value = Result.value + data;
+}
+// ----------------------------------------
+const startHandler = (e) => {
+  e.dataTransfer.effectAllowed = "move";
+  e.dataTransfer.setData("item", e.target.innerText);
+  Result.value = '';
 }
 
 </script>
@@ -127,50 +107,88 @@ const handelInput = (newData) => {
 
 <style lang="scss">
 .hero {
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  column-gap: 5px;
-  row-gap: 50px;
-
-
-
-  &__reset {
-    position: absolute;
-    transform: translate(0px, -32px);
-    width: 400px;
-  }
 
   &__plaza {
+    width: 100%;
+    min-height: 200px;
     outline: 2px solid $lime-8;
-    padding: 2px;
+    margin: 20px 0;
   }
+
+
+
 
   &__body {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    grid-template-rows: repeat(10, 30px);
+    grid-template-columns: repeat(4, 322px);
+    grid-template-rows: 45px repeat(9, 30px);
     column-gap: 5px;
   }
 
-  &__line {
-    max-height: 30px;
-    grid-column: 1/4;
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    column-gap: 5px;
+
+
+  &__temp {
+    width: 160px;
+    min-height: 30px;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      @include transition;
+    }
+
   }
 
   .tempContent {
-    outline: 1px solid $lime-3;
+    overflow: hidden;
     @include transition;
-    background-color: $lime-1;
     padding: 0 0 0 2px;
+    min-height: 30px;
+    color: transparent;
+    box-shadow: 0 -0.25em 0.5em $blue-grey-7 inset;
+    border-radius: 0.5em;
+    display: block;
+    perspective: 20em;
+    inset: 0.25em;
+
 
     &:hover {
       cursor: pointer;
-      background-color: $pink-6;
-      color: white;
+      box-shadow: 0 -0.125em 0.25em $blue-grey-7 inset;
+
     }
+
+    &:hover~img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.hero__head {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  margin: 10px 0;
+  column-gap: 43px;
+}
+
+input.hero__line {
+  height: 30px;
+  border-radius: 0.75em;
+  background-color: $orange-1;
+  box-shadow: 0 0.0625em 0.0625em #f6ad70 inset, 0 -0.0625em 0.0625em #f6ddbe inset, 0 0.25em 0.25em #fbdaaa inset;
+  padding: 0 0 0 10px;
+  color: $orange-10;
+
+  &:focus {
+
+
+    background-color: $orange-3;
   }
 }
 </style>
