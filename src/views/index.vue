@@ -1,6 +1,8 @@
 <template lang="pug">
 div.main
-  Hero
+  .container
+    h2 Index
+    Hero
 </template>
 
 
@@ -8,4 +10,4 @@ div.main
 import Hero from '@/components/Hero.vue'
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss"></style>

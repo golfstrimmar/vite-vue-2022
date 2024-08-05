@@ -1,5 +1,6 @@
 <template lang="pug">
-h2 Something
+.container
+  h2 Something
 </template>
 
 
