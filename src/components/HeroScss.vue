@@ -127,4 +127,20 @@ const someEvent = (data) => {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.hero {
+	margin: 10px 0 0 0;
+
+	&__body {
+		grid-template-columns: repeat(auto-fill, 400px);
+	}
+}
+
+.hero__button {
+	right: auto;
+}
+
+.hero__head {
+	grid-template-columns: 20px 1fr;
+}
+</style>

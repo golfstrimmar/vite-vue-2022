@@ -49,113 +49,83 @@ img {
 
 // ==========================================
 
-// .hero {
-//   margin: 10px 0 0 0;
+.hero {
+  &__plaza {
+    width: 100%;
+    min-height: 200px;
+    outline: 2px solid $lime-8;
+    margin: 20px 0;
+  }
 
-//   &__plaza {
-//     width: 100%;
-//     min-height: 200px;
-//     outline: 2px solid $lime-8;
-//     margin: 20px 0;
-//   }
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 187px) 1fr;
+    grid-template-rows: 45px repeat(20, 30px);
+    column-gap: 5px;
+  }
 
-//   &__body {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fill, 400px);
-//     grid-template-rows: 45px repeat(20, 30px);
-//     column-gap: 5px;
-//   }
-// }
+  &__temp {
+    width: 160px;
+    min-height: 30px;
+    position: relative;
 
-// .hero__button {
-//   top: 50%;
-//   right: auto;
-//   left: 0;
-// }
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
+      @include transition;
+    }
+  }
 
-// .hero__head {
-//   display: grid;
-//   grid-template-columns: 20px 1fr;
-//   padding: 5px 0;
-// }
-// ==============================================
-// .hero {
-//   &__plaza {
-//     width: 100%;
-//     min-height: 200px;
-//     outline: 2px solid $lime-8;
-//     margin: 20px 0;
-//   }
+  .tempContent {
+    overflow: hidden;
+    @include transition;
+    padding: 0 0 0 2px;
+    min-height: 30px;
+    color: transparent;
+    box-shadow: 0 -0.25em 0.25em $blue-grey-7 inset;
+    border-radius: 0.5em;
+    display: block;
+    perspective: 20em;
+    inset: 0.25em;
 
-//   &__body {
-//     display: grid;
-//     grid-template-columns: repeat(2, 187px) 1fr;
-//     grid-template-rows: 45px repeat(20, 30px);
-//     column-gap: 5px;
-//   }
+    &._is-active {
+      box-shadow: 0 -0.25em 0.5em $blue-grey-7 inset;
 
-//   &__temp {
-//     width: 160px;
-//     min-height: 30px;
-//     position: relative;
+      & ~ img {
+        width: 22px;
+        height: 22px;
+      }
+    }
 
-//     img {
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//       transform: translate(-50%, -50%);
-//       width: 18px;
-//       height: 18px;
-//       @include transition;
-//     }
-//   }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
 
-//   .tempContent {
-//     overflow: hidden;
-//     @include transition;
-//     padding: 0 0 0 2px;
-//     min-height: 30px;
-//     color: transparent;
-//     box-shadow: 0 -0.25em 0.25em $blue-grey-7 inset;
-//     border-radius: 0.5em;
-//     display: block;
-//     perspective: 20em;
-//     inset: 0.25em;
+.hero__head {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  margin: 10px 0;
+  column-gap: 43px;
+}
 
-//     &._is-active {
-//       box-shadow: 0 -0.25em 0.5em $blue-grey-7 inset;
+input.hero__line {
+  height: 30px;
+  border-radius: 0.75em;
+  background-color: $blue-grey-1;
+  box-shadow: 0 0.0625em 0.0625em $blue-grey-7 inset,
+    0 -0.0625em 0.0625em $blue-grey-5 inset, 0 0.25em 0.25em $blue-grey-3 inset;
+  padding: 0 0 0 10px;
 
-//       & ~ img {
-//         width: 22px;
-//         height: 22px;
-//       }
-//     }
-
-//     &:hover {
-//       cursor: pointer;
-//     }
-//   }
-// }
-
-// .hero__head {
-//   display: grid;
-//   grid-template-columns: 160px 1fr;
-//   margin: 10px 0;
-//   column-gap: 43px;
-// }
-
-// input.hero__line {
-//   height: 30px;
-//   border-radius: 0.75em;
-//   background-color: $blue-grey-1;
-//   box-shadow: 0 0.0625em 0.0625em $blue-grey-7 inset,
-//     0 -0.0625em 0.0625em $blue-grey-5 inset, 0 0.25em 0.25em $blue-grey-3 inset;
-//   padding: 0 0 0 10px;
-
-//   &:focus {
-//     background-color: $orange-3;
-//   }
-// }
+  &:focus {
+    background-color: $orange-3;
+  }
+}
 // ==============================================
 // ==============================================
 // ==============================================
