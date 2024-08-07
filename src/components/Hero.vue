@@ -1,89 +1,104 @@
 <template lang="pug">
 .hero
 
-  .result-area
-    textarea.result(v-copy :v-model="somethingPug" :value='somethingPug' )
-    textarea.result(v-copy :v-model="somethingScss" :value='somethingScss' )
-  .hero__canvas
-    span
-    span
-    span
-    span
-    span
-    span
-    span
-    span
-    span
-    textarea.canvas( @dragover='dragoverHandler' @drop='dropHandler' )
-    textarea.canvas( @dragover='dragoverHandler' @drop='dropHandler')
-    textarea.canvas( @dragover='dragoverHandler' @drop='dropHandler')
-    textarea.canvas( @dragover='dragoverHandler' @drop='dropHandler')
-    textarea.canvas( @dragover='dragoverHandler' @drop='dropHandler')
-    textarea.canvas( @dragover='dragoverHandler' @drop='dropHandler')
-    textarea.canvas( @dragover='dragoverHandler' @drop='dropHandler')
-    textarea.canvas( @dragover='dragoverHandler' @drop='dropHandler')
+  //- .result-area
+  //-   textarea.result(v-copy :v-model="somethingPug" :value='somethingPug' )
+  //-   textarea.result(v-copy :v-model="somethingScss" :value='somethingScss' )
+  //- .hero__canvas
+  //-   span
+  //-   span
+  //-   span
+  //-   span
+  //-   span
+  //-   span
+  //-   span
+  //-   span
+  //-   span
+
+    //- 
+  textarea.canvas(draggable="true" v-for="item in canvasItems" :key="index" :value = 'item.id ' :style= "{ marginLeft: item.Offset*30 + 'px' }" @dragstart='canvasStart' @drop='canvasDrop')
+
+  //- .lager
+  //-   textarea.line(draggable="true" @dragstart='startHandler' value='Lirem1' )
+</template>
 
 
-
-
-
-
-  .lager
-    textarea.line(draggable="true" @dragstart='startHandler' value='Lirem1' @mousedown='Handlerdown'  @mousemove='Handlermousemove')
-    textarea.line(draggable="true" @dragstart='startHandler' value='Lirem2' @mousedown='Handlerdown' @mousemove='Handlermousemove')
-    textarea.line(draggable="true" @dragstart='startHandler' value='Lirem3' @mousedown='Handlerdown' @mousemove='Handlermousemove')
-    textarea.line(draggable="true" @dragstart='startHandler' value='Lirem4' @mousedown='Handlerdown' @mousemove='Handlermousemove')
-
-//-     DragDrop
-//-     .hero__head
-//-       .hero__temp
-//-         .tempContent(draggable="true" @dragstart='startHandler' :class="[(Result !== '') ? '_is-active' : '' ]") {{ Result }}
-//-         img(src='/src/assets/ex.png'  alt='img')
-//-         Button.hero__reset( @click='handelClean')
-//-       input.hero__line(type = 'text'  v-model='Result' )
-//-     .hero__body
-//-       .hero__column
-//-         Copy(:text="item.dataText"  @someEvent = "someEvent(item.dataText)" v-for="item in copyDataCommon" :key="item.i").hero__column
-//-       .hero__column
-//-         Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataName" :key="item.i").hero__column
-//-       .hero__column
-//-         Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataLinks" :key="item.i").hero__column
-//- </template>
-
-//-
 <script setup>
 import { ref, reactive, computed } from 'vue'
+import draggable from 'vuedraggable';
 // =============================
 const canvas = ref(null)
 const Text = ref('')
+var spase = 30;
 var ball = ref({})
 var canvasOffset = 0;
 let newX = ref(0);
 let newY = ref(0);
 let startX = ref(0);
 let startY = ref(0);
+const CanvasOffset = 30
+
+var Index = 0;
+var Offset = 0;
+var spase = 30;
 
 
+var canvasItems = ref([
+  { id: '0', Offset: '0', value: 'value' },
+  { id: '1', Offset: '1', value: 'value1' },
+  { id: '2', Offset: '2', value: 'value2' },
+  { id: '3', Offset: '2', value: 'value3' },
+  { id: '4', Offset: '2', value: 'value4' },
+]);
 
+
+const canvasStart = (e) => {
+  e.dataTransfer.effectAllowed = "move";
+  e.dataTransfer.setData("item", e.target.value);
+  return false;
+
+}
+
+const canvasDrop = (e) => {
+
+
+  console.log(canvasItems.value);
+
+  // var Index = 0;
+  // var Offset = 0;
+  // var spase = 30;
+
+  // if (e.stopPropagation)
+  //   e.stopPropagation();
+  // Offset = e.dataTransfer.getData("item")
+  // if (e.clientX < CanvasOffset + 30) {
+  //   Offset = 0;
+  //   canvasItems.
+  // }
+
+  // for (var i = 30; i <= 300; i = i + 30) {
+  //   if (CanvasOffset + i < e.clientX && e.clientX < CanvasOffset + i + 30) {
+  //     Offset = i / 30
+  //     canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
+  //   }
+  // }
+
+  // console.log(canvasItems);
+
+  // e.target.style.marginLeft = `${spase * Offset}` + 'px';
+  // e.target.value = Text.value;
+
+  // Index++
+  // canvasItems.push({ id: '', Offset: '', value: '' })
+}
 // =============================
 
-
-
-
-// function mouseUp(e) {
-//   document.removeEventListener('mousemove', mouseMove)
-// }
-
 const Handlerdown = (e) => {
+
   startX.value = e.clientX
   startY.value = e.clientY
   console.log(startX.value, startY.value);
 }
-
-const Handlermousemove = (e) => {
-
-}
-
 // =================================
 
 const startHandler = (e) => {
@@ -103,66 +118,37 @@ const dragoverHandler = (e) => {
 }
 
 // =============================
-var canvasItems = reactive([])
+
 const dropHandler = (e) => {
-  var Index = 0;
-  var Offset = 0;
-  var spase = 30;
+
 
   if (e.stopPropagation)
     e.stopPropagation();
   Text.value = e.dataTransfer.getData("item")
 
   // const CanvasOffset = Math.round(canvas.value.getBoundingClientRect().left)
-  const CanvasOffset = 30
 
+  var i;
 
   if (e.clientX < CanvasOffset + 30) {
     Offset = 0;
     canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-  } else if (CanvasOffset + 30 < e.clientX && e.clientX < CanvasOffset + 60) {
-    Offset = 1
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
-  } else if (CanvasOffset + 60 < e.clientX && e.clientX < CanvasOffset + 90) {
-    Offset = 2
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
-  } else if (CanvasOffset + 90 < e.clientX && e.clientX < CanvasOffset + 120) {
-    Offset = 3
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
-  } else if (CanvasOffset + 120 < e.clientX && e.clientX < CanvasOffset + 150) {
-    Offset = 4
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
-  } else if (CanvasOffset + 150 < e.clientX && e.clientX < CanvasOffset + 180) {
-    Offset = 5
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
-  } else if (CanvasOffset + 180 < e.clientX && e.clientX < CanvasOffset + 210) {
-    Offset = 6
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
-  } else if (CanvasOffset + 210 < e.clientX && e.clientX < CanvasOffset + 240) {
-    Offset = 7
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
-  } else if (CanvasOffset + 240 < e.clientX && e.clientX < CanvasOffset + 270) {
-    Offset = 8
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
-  } else if (CanvasOffset + 270 < e.clientX && e.clientX < CanvasOffset + 300) {
-    Offset = 9
-    canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
-
   }
+
+  for (i = 30; i <= 300; i = i + 30) {
+    if (CanvasOffset + i < e.clientX && e.clientX < CanvasOffset + i + 30) {
+      Offset = i / 30
+      canvasItems.push({ id: Index, Offset: Offset, value: Text.value })
+    }
+  }
+
+  console.log(canvasItems);
+
   e.target.style.marginLeft = `${spase * Offset}` + 'px';
-  // e.target.style.paddingLeft = `${spase * Offset}` + 'px';
   e.target.value = Text.value;
 
   Index++
-
+  canvasItems.push({ id: '', Offset: '', value: '' })
 }
 
 
