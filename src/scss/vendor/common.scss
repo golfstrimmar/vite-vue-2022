@@ -1,9 +1,9 @@
 body {
   font-family: "Satoshi", sans-serif;
   font-size: 16px;
+  overflow: hidden;
 }
 .wrapper {
-  overflow: hidden;
   min-height: 100vh;
   position: relative;
   display: flex;
