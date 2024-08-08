@@ -112,8 +112,8 @@ copyDataPosition = [
 
 // ----------------------------------------
 const handelClean = () => {
-	var rExp = new RegExp(Result.value, "g");
-	Something.value = Something.value.replace(rExp, '')
+	let schneidenIndex = Something.value.indexOf(Result.value, 0)
+	Something.value = Something.value.substring(0, schneidenIndex);
 	Result.value = '';
 }
 // ----------------------------------------

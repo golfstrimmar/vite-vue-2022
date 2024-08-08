@@ -17,6 +17,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter();
 // =======================
 const links = ref([
+  { name: "VUE", href: "/pvue" },
   { name: "JS", href: "/js" },
   { name: "Scss", href: "/scss" },
   { name: "Pug+Scss", href: "/" },
@@ -25,16 +26,25 @@ const links = ref([
 
 <style lang="scss" scoped>
 header {
-  height: 33px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   background: #04286f;
-  position: fixed;
-  transform: rotate(-90deg);
-  top: 434px;
-  left: -437px;
+  // transform: rotate(-90deg);
   z-index: 5;
-  width: 101vh;
+  width: 30px;
+  height: 101vh;
+  position: relative;
+  position: absolute;
+
+  .container {
+    display: flex;
+    transform: rotate(-90deg);
+    width: 100vh;
+    margin: 0 auto;
+    position: relative;
+    left: -94px;
+    top: 80px;
+  }
 }
 
 .header__body {

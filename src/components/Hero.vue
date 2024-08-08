@@ -86,9 +86,9 @@ const handelResult = (e) => {
   somethingPug.value = ''
   somethingScss.value = ''
   dropLineas.value.forEach((cell) => {
-    lastElPug.value = "\n" + spase.repeat(cell.Offset) + cell.value;
+    lastElPug.value = spase.repeat(cell.Offset) + cell.value + "\n";
     somethingPug.value = somethingPug.value + lastElPug.value;
-    lastElScss.value = "\n" + cell.value + '{  }';
+    lastElScss.value = cell.value + '{  }' + "\n";
     somethingScss.value = somethingScss.value + lastElScss.value;
   });
 }

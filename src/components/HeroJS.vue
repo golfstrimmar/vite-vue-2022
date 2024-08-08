@@ -8,36 +8,27 @@
 				Button.hero__reset( @click='handelClean')
 			input.hero__line(type = 'text'  v-model='Result' )
 		.hero__body
-			.hero__column
-				Copy(:text="item.dataText" :discription="item.discription"  @someEvent = "someEvent(item.dataText)" v-for="item in copyDataCommon" :key="item.i")
-			.hero__column
-				Copy(:text="item.dataText" :discription="item.discription" @someEvent = "someEvent" v-for="item in copyDataCycl" :key="item.i")
-			.hero__column
-				Copy(:text="item.dataText" :discription="item.discription" @someEvent = "someEvent" v-for="item in copyDataString" :key="item.i")
-			.hero__column
-				Copy(:text="item.dataText" :discription="item.discription" @someEvent = "someEvent" v-for="item in copyDataObject" :key="item.i")
-			.hero__column
-				Copy(:text="item.dataText" :discription="item.discription" @someEvent = "someEvent" v-for="item in copyDataArray" :key="item.i")
+			Tab(title='Common' :copyData='copyDataCommon' @someEvent = "someEvent")
+			Tab(title='Array' :copyData='copyDataArray' @someEvent = "someEvent")
+			Tab(title='Cycle' :copyData='copyDataCycl' @someEvent = "someEvent")
+			Tab(title='String' :copyData='copyDataString' @someEvent = "someEvent")
+			Tab(title='Object' :copyData='copyDataObject' @someEvent = "someEvent")
+			Tab(title='Class' :copyData='copyDataClass' @someEvent = "someEvent")
+			Tab(title='Promise/Async/Await' :copyData='copyDataAsyncAwait' @someEvent = "someEvent")
 
 
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
-import DragDrop from './DragDrop.vue';
+import { ref } from 'vue'
 import Button from './Button.vue';
-import Copy from './Copy.vue';
+import Tab from '@/components/Tab.vue';
 var Result = ref('');
 var Something = ref('');
 var lastResult = ref('');
-var copyDataCommon = reactive([{ i: 0, dataText: '' }]);
-var copyDataCycl = reactive([{ i: 0, dataText: '' }]);
-var copyDataPosition = reactive([{ i: 0, dataText: '' }]);
-var copyDataString = reactive([{ i: 0, dataText: '' }]);
-var copyDataObject = reactive([{ i: 0, dataText: '' }]);
-var copyDataArray = reactive([{ i: 0, dataText: '' }]);
 
-copyDataCommon = [
+
+const copyDataCommon = [
 	{ i: 1, dataText: 'console.log( );' },
 	{ i: 1, dataText: 'const = () => {};' },
 	{ i: 1, dataText: 'e.target' },
@@ -81,7 +72,7 @@ copyDataCommon = [
 
 ]
 
-copyDataCycl = [
+const copyDataCycl = [
 	{ i: 15, dataText: '.forEach(car => {  })' },
 	{ i: 15, dataText: 'for (i = 0; i < 3; i++) { alert( i ); }' },
 	{ i: 15, dataText: 'for(const index in cars){ console.log(cars[index]); if (index == 3) { break } }' },
@@ -97,7 +88,7 @@ copyDataCycl = [
 
 ]
 
-copyDataPosition = [
+const copyDataPosition = [
 	{ i: 11, dataText: 'access = age > 14 ? true : false;' },
 	{ i: 11, dataText: "var age = prompt('возраст?', 18); var message = (age < 3) ? 'Здравствуй, малыш!' : (age < 18) ? 'Привет!' : (age < 100) ? 'Здравствуйте!' : 'Какой необычный возраст!' ; alert( message );" },
 	{ i: 11, discription: 'рекурсия', dataText: 'function sumTo(n) { if (n == 1) return 1; return n + sumTo(n ‐ 1); } alert( sumTo(100) );' },
@@ -116,7 +107,7 @@ copyDataPosition = [
 	{ i: 11, discription: '', dataText: '' },
 
 ]
-copyDataString = [
+const copyDataString = [
 	{ i: 11, discription: 'Длина', dataText: 'length;' },
 	{ i: 11, discription: 'Доступ к символам', dataText: 'charAt(позиция)' },
 	{ i: 11, discription: 'Доступ к символам', dataText: 'str[0]' },
@@ -133,13 +124,13 @@ copyDataString = [
 	{ i: 11, discription: 'substring(start, end) работают с отрицательными и выходящими за границу строки аргументами', dataText: '.substring(‐2); ' },
 	{ i: 11, discription: 'str1.localeCompare(str2) возвращает ‐1 , если str1 < str2 , 1 , если str1> str2 и 0 , если они равны.', dataText: '.localeCompare("Яблони"); ' }
 ]
-copyDataObject = [
+const copyDataObject = [
 	{
 		i: 11, discription: '', dataText: 'var person = {}; person.name = "Вася"; person.age = 25;'
 	},
 	{ i: 11, discription: 'удаление', dataText: 'delete person.age;' },
 	{
-		i: 11, discription: '', dataText: '	var menuSetup = {width: 300,height: 200,title: "Menu"}; '
+		i: 11, discription: ' ', dataText: 'var menuSetup = {width: 300,height: 200,title: "Menu"}; '
 	},
 	{ i: 11, discription: 'in проверка наличия', dataText: '"test" in obj ; ' },
 	{
@@ -149,7 +140,7 @@ copyDataObject = [
 		i: 11, discription: 'цикл по ключам', dataText: 'var user = {name: "Вася",surname: "Петров",user.age = 25;}for (var prop in user) {alert(prop); // name, surname, age}'
 	},
 	{
-		i: 11, discription: 'Клонирование объектов', dataText: ' var user = {name: "Вася",age: 30};var clone = {}; // новый пустой объект// скопируем в него все свойства user for (var key in user) {clone[key] = user[key];}// теперь clone ‐ полностью независимая копия clone.name = "Петя"; // поменяли данные в clone alert(user.name); // по‐прежнему "Вася"'
+		i: 11, discription: 'Клонирование объектов', dataText: 'var user = {name: "Вася",age: 30};var clone = {}; // новый пустой объект// скопируем в него все свойства user for (var key in user) {clone[key] = user[key];}// теперь clone ‐ полностью независимая копия clone.name = "Петя"; // поменяли данные в clone alert(user.name); // по‐прежнему "Вася"'
 	},
 	{
 		i: 11, discription: 'метод копирует все перечислимые собственные свойства из одного или нескольких исходных объектов в целевой объект . Он возвращает измененный целевой объект.', dataText: 'const target = { a: 1, b: 2 };const source = { b: 4, c: 5 };const returnedTarget = Object.assign(target, source); '
@@ -167,29 +158,70 @@ copyDataObject = [
 	},
 
 ]
-copyDataArray = [
+const copyDataArray = [
+	{ i: 11, discription: '', dataText: '.forEach((cell) => { }); ' },
+	{ i: 11, discription: '', dataText: '.indexOf(0)' },
+	{ i: 11, discription: '', dataText: '.find((item) => item.id == id)' },
+	{ i: 11, discription: 'повторит значение переменной spase столько раз, какое чмсло в переменной Offset ', dataText: 'spase.repeat(Offset)' },
+	{ i: 11, discription: 'создаёт новый массив, который будет состоять из результатов вызова callback(item, i, arr) для каждого элемента arr', dataText: '.map(function (name) {return name.length;}); ' },
+	{ i: 11, discription: ' создаёт новый массив, в который войдут только те элементы arr , для которых вызов callback(item, i, arr) возвратит true .', dataText: '.filter(function (number) {return number > 0;}); ' },
+	{ i: 11, discription: 'Удаляет последний элемент из массива и возвращает его', dataText: '.pop()' },
+	{ i: 11, discription: 'Добавляет элемент в конец массива', dataText: '.push({ id: Index, Offset: 0, value: canvasItem.value });' },
+	{ i: 11, discription: 'Удаляет из массива первый элемент и возвращает его', dataText: '.shift();' },
+	{ i: 11, discription: 'Добавляет элемент в начало массива:', dataText: '.unshift("Яблоко");' },
+	{ i: 11, discription: 'позволяет превратить строку в массив, разбив ее по разделителю s', dataText: '.split(", ", 2);' },
+	{ i: 11, discription: 'берет массив и склеивает его в строку, используя str как разделитель', dataText: '.join(";");' },
+	{ i: 11, discription: 'значение с индексом 1 удалено', dataText: 'delete arr[1];' },
+	{ i: 11, discription: ' начиная с позиции 1, удалить 1 элемент', dataText: '.splice(1, 1);' },
+	{ i: 11, discription: 'удалить 3 первых элемента и добавить другие вместо них', dataText: '.splice(0, 3, "Мы", "изучаем")' },
+	{ i: 11, discription: 'удалить 2 первых элемента', dataText: '.splice(0, 2);' },
+	{ i: 11, discription: 'с позиции 2 // удалить 0 // вставить "сложный", "язык"', dataText: '.splice(2, 0, "сложный", "язык");' },
+	{ i: 11, discription: 'начиная с позиции индексом ‐1 (перед последним элементом) // удалить 0 элементов, // затем вставить числа 3 и 4', dataText: '.splice(‐1, 0, 3, 4);' },
+	{ i: 11, discription: 'копирует участок массива от begin до end, не включая end.Исходный массив при этом не меняется.', dataText: '.slice(begin, end)' },
+	{ i: 11, discription: 'элементы 1, 2 (не включая 3)', dataText: '.slice(1, 3);' },
+	{ i: 11, discription: 'копировать от 2‐го элемента с конца и дальше', dataText: '.slice(‐2); ' },
+	{ i: 11, discription: 'скопируется весь массив', dataText: '.slice();' },
+	{ i: 11, discription: '', dataText: 'function compareNumeric(a, b) {if (a > b) return 1;if (a < b) return ‐1;} .sort(compareNumeric); ' },
+	{ i: 11, discription: '', dataText: '.reverse();' },
+	{ i: 11, discription: 'соединяет массивы', dataText: '.concat(3, 4);' },
 
-	{ i: 11, discription: '', dataText: '' },
-	{ i: 11, discription: '', dataText: '' },
-	{ i: 11, discription: '', dataText: '' },
-	{ i: 11, discription: '', dataText: '' },
 
+
+	{ i: 11, discription: 'вернет false, не все положительные', dataText: 'function isPositive(number) {return number > 0;} .every(isPositive)' },
+	{ i: 11, discription: 'вернет true, есть хоть одно положительное', dataText: 'function isPositive(number) {return number > 0;} .some(isPositive)' },
+	{ i: 11, discription: 'copy – это объект, в который нужно копировать, он назван dst . Для упрощения доступа к нему можно указать его прямо в объявлении функции:', dataText: 'function copy(dst) {for (var i = 1; i <arguments.length; i++) { var arg = arguments[i]; for (var key in arg) { dst[key] = arg[key]; } } return dst;}' },
+	{
+		i: 11, discription: 'Метод reduce используется для вычисления на основе массива какого‑либо единого значения,иначе говорят «для свёртки массива».Он применяет функцию callback по очереди к каждому элементу массива слева направо, сохраняя при этом промежуточный результат.Аргументы функции callback(previousValue,currentItem, index, arr) :previousValue – последний результат вызова функции, он же «промежуточный результат».currentItem – текущий элемент массива, элементы перебираются по очереди слева‑направо.index – номер текущего элемента.arr – обрабатываемый массив.Например, в качестве «свёртки» мы хотим получить сумму всех элементов массива.', dataText: 'var arr = [1, 2, 3, 4, 5]// для каждого элемента массива запустить функцию,// промежуточный результат передавать первым аргументом далее var result =arr.reduce(function (sum, current) {return sum + current;}, 0);alert(result); // 15'
+	},
+	{ i: 11, discription: 'если не указана width, то width = 200', dataText: 'function showWarning(width, height, title, contents){width = width || 200; title = title || "Предупреждение"; } ' },
+
+]
+
+const copyDataClass = [
+	{ i: 11, discription: '', dataText: 'class Car {constructor(brand, color) {this.brand = brand;this.color = color;}start() {}stop() {}static discount() {}}' },
+
+	{ i: 11, discription: 'cetter позволяет добавить свойство, которого изначально нет в классе.', dataText: 'set rating(value){this.score = value.toUpperCase();}' },
+	{ i: 11, discription: 'getter позволяет взять значение этого свойства', dataText: 'get rating(){return this.score}' },
+	{ i: 11, discription: 'дочерние классы полностью наследуют методы родителя и еще ожно добавить свои методы', dataText: 'class HibridCar extends Car {' },
 
 ]
 
 
-// ----------------------------------------
-
+const copyDataAsyncAwait = [
+	{ i: 11, discription: 'Promise', dataText: 'function sleep(time) {return new Promise((resolve, reject) => {	if (time < 1000) { reject("слишком мало поспал") } setTimeout(() => resolve(`поспал ${time}`), time)})}   sleep(1500).then(res => {console.log(res);	return sleep(1000)}).then(res => {console.log(res);return sleep(500)}).then(res => {console.log(res);}).catch(err => {console.log("ошибка", err);})' },
+	{ i: 11, discription: 'async/await', dataText: 'const getGitData = async () => {try {	const responce = await fetch("https://api.github.com/users/vasilymur");	const data = await responce.json();console.log(data);} catch (err) {console.log("err", err);}} getGitData()' },
+	{ i: 11, discription: 'async/await', dataText: 'const getUserVideo = async () => {try {const response = await navigator.mediaDevices.getUserMedia({ video: true });video.srcObject = response;} catch (err) {console.log("err", err);}}getUserVideo();' },
+]
 // ----------------------------------------
 const handelClean = () => {
-	var rExp = new RegExp(Result.value, "g");
-	Something.value = Something.value.replace(rExp, '')
+	let schneidenIndex = Something.value.indexOf(Result.value, 0)
+	Something.value = Something.value.substring(0, schneidenIndex);
 	Result.value = '';
 }
 // ----------------------------------------
 const someEvent = (data) => {
 	Result.value = data;
-	lastResult.value = "\n" + data;
+	lastResult.value = data + "\n";
 	Something.value = Something.value + lastResult.value;
 }
 // ----------------------------------------
@@ -201,7 +233,8 @@ const someEvent = (data) => {
 	margin: 10px 0 0 0;
 
 	&__body {
-		grid-template-columns: repeat(auto-fill, 400px);
+		// grid-template-columns: repeat(auto-fill, 400px);
+		display: block;
 	}
 }
 
