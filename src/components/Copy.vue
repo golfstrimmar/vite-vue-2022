@@ -1,12 +1,19 @@
 <template lang='pug'>
 .tags__item.item
-	.copy(@click='handlerCopy()' ref = 'copy' :class="[(activeItem == true) ? '_is-active' : '']") {{text}}
+	.copy(@click='handlerCopy()' ref = 'copy' :class="[(activeItem == true) ? '_is-active' : '']")
+		strong {{text}}
+		p {{discription}} 
+		
 </template>
 <script setup>
 import { ref, defineEmits } from 'vue';
 
 const props = defineProps({
 	text: {
+		type: String,
+		required: false
+	},
+	discription: {
 		type: String,
 		required: false
 	}
@@ -43,7 +50,6 @@ const handlerCopy = () => {
 
 	&:hover {
 		color: $orange-10;
-		background-color: $orange-3;
 		@include transition;
 	}
 

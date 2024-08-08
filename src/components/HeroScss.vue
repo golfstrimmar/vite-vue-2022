@@ -1,19 +1,18 @@
 <template lang="pug">
-.container
-	.hero 
-		.canvas 
-			textarea.result.copy(type='textarea'  v-copy :v-model="Something" :value='Something' )
-		.hero__head
-			.hero__temp
-				Button.hero__reset( @click='handelClean')
-			input.hero__line(type = 'text'  v-model='Result' )
-		.hero__body
-			.hero__column
-				Copy(:text="item.dataText"  @someEvent = "someEvent(item.dataText)" v-for="item in copyDataGrid" :key="item.i")
-			.hero__column
-				Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataFlex" :key="item.i")
-			.hero__column
-				Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataPosition" :key="item.i")
+.hero 
+	.canvas 
+		textarea.result(type='textarea'  v-copy :v-model="Something" :value='Something' )
+	.hero__head
+		.hero__temp
+			Button.hero__reset( @click='handelClean')
+		input.hero__line(type = 'text'  v-model='Result' )
+	.hero__body
+		.hero__column
+			Copy(:text="item.dataText"  @someEvent = "someEvent(item.dataText)" v-for="item in copyDataGrid" :key="item.i")
+		.hero__column
+			Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataFlex" :key="item.i")
+		.hero__column
+			Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataPosition" :key="item.i")
 
 
 </template>
@@ -136,11 +135,17 @@ const someEvent = (data) => {
 	}
 }
 
+input.hero__line {
+	padding: 0 0 0 5px;
+}
+
 .hero__button {
 	right: auto;
+	left: 0;
 }
 
 .hero__head {
 	grid-template-columns: 20px 1fr;
+	column-gap: 20px;
 }
 </style>

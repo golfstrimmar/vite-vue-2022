@@ -2,6 +2,7 @@ body {
   font-family: "Satoshi", sans-serif;
   font-size: 16px;
   overflow: hidden;
+  background: $blue-grey-12;
 }
 .wrapper {
   min-height: 100vh;
@@ -41,12 +42,21 @@ img {
   margin: 0 auto;
   position: relative;
 }
-
 .result {
-  border: 1px solid darkblue;
+  outline: 1px solid $blue-grey-7;
   min-height: 45px;
+  white-space: pre-wrap;
+  cursor: pointer;
+  background-color: #eceff1;
+  &:hover {
+    color: $deep-orange-4;
+  }
+  &._is-active {
+    border: 1px solid $deep-orange-8;
+    background-color: $deep-orange-4;
+    color: #fff;
+  }
 }
-
 // ==========================================
 
 .hero {

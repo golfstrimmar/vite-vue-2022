@@ -2,12 +2,12 @@
 header 
   .container
     .header__body
-      router-link(to="/").rel
-        .imgs
-          img(src='/src/assets/logo.png'  alt='img')
       .header__links
         router-link(v-for="link in links" :key="link.name" :to="link.href" )
           |{{ link.name }}
+      //- router-link(to="/").rel
+      //-   .imgs
+      //-     img(src='/src/assets/logo.png'  alt='img')
 </template>
 
 <script setup>
@@ -17,18 +17,24 @@ import { useRouter } from 'vue-router'
 const router = useRouter();
 // =======================
 const links = ref([
-  { name: "Pug+Scss", href: "/" },
-  { name: "Scss", href: "/scss" },
   { name: "JS", href: "/js" },
+  { name: "Scss", href: "/scss" },
+  { name: "Pug+Scss", href: "/" },
 ]);
 </script>
 
 <style lang="scss" scoped>
 header {
-  min-height: 30px;
-  @include flex-aligne-center;
-  background: $brown-4;
-
+  height: 33px;
+  display: flex;
+  align-items: center;
+  background: #04286f;
+  position: fixed;
+  transform: rotate(-90deg);
+  top: 434px;
+  left: -437px;
+  z-index: 5;
+  width: 101vh;
 }
 
 .header__body {
@@ -39,17 +45,16 @@ header {
 
   padding: 10px 0;
   display: grid;
-  grid-template-columns: 100px 1fr;
   column-gap: 10px;
   align-items: center;
   width: 100%;
 }
 
 .header__links {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
+  display: flex;
   column-gap: 10px;
-  justify-items: center;
+  justify-content: flex-end;
+  padding: 0 16px 0 0;
 
   a {
     text-transform: uppercase;
