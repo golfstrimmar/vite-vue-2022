@@ -91,6 +91,7 @@ const handelResult = (e) => {
     lastElScss.value = cell.value + '{  }' + "\n";
     somethingScss.value = somethingScss.value + lastElScss.value;
   });
+
 }
 // const startDrag = (e, id) => {
 //   e.dataTransfer.dropEffect = 'move'

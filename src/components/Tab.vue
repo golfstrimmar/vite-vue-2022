@@ -38,9 +38,7 @@ let head = document.querySelector("body").addEventListener('click', (e) => {
 
 
 const emit = defineEmits(['someEvent'])
-const HendlerClick = (dataText) => {
-  emit('someEvent', dataText)
-}
+const HendlerClick = (dataText) => { emit('someEvent', dataText) }
 
 </script>
 
