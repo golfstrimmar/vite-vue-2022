@@ -28,6 +28,14 @@ var lastResult = ref('');
 
 const copyDataCommon = [
 	{ title: 'Common' },
+	{ dataText: 'import Tab from "@/components/Tab.vue";', discription: '', },
+	{ dataText: "var  = ref('');", discription: "", },
+	{ dataText: "import { ref, onMounted } from 'vue'", discription: "", },
+	{ dataText: "onMounted(() => {})", discription: "", },
+
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "", },
 	{ dataText: 'v-html= " "', discription: 'содержимое будет вставляться как обычный HTML и не будет компилироваться или обрабатываться как шаблоны Vue.', },
 	{
 		dataText: 'v-show = " "', discription: 'Отображает элемент по условию, выполняя переключение у элемента CSS-свойства display в зависимости от истинности указанного выражения.Директива запускает анимации перехода при изменении состояния.',
@@ -92,18 +100,23 @@ const copyData = [
 ]
 const copyDataProps = [
 	{ title: 'Props' },
+	{ dataText: "", discription: "В родителе", },
+
 	{
-		dataText: "Button(text = 'beispiele mischen' @someEvent = 'someEvent') ", discription: "В родителе",
+		dataText: "Button(text = 'beispiele mischen' @someEvent = 'someEvent') ", discription: "",
 	},
-	{ dataText: "const someEvent = (data) => {console.log(data);}", discription: "В родителе", },
-	{ dataText: "const props = defineProps({ ", discription: "В потомке", },
-	{ dataText: "title: { ", discription: "В потомке", },
-	{ dataText: "type: String, ", discription: "В потомке", },
-	{ dataText: "required: false ", discription: "В потомке", },
-	{ dataText: "}, ", discription: "В потомке", },
-	{ dataText: "}) ", discription: "В потомке", },
-	{ dataText: "const emit = defineEmits(['someEvent']) ", discription: "В потомке", },
-	{ dataText: "const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } }", discription: "В потомке", },
+	{ dataText: "const someEvent = (data) => {console.log(data);}", discription: "", },
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "В потомке", },
+	{ dataText: "const props = defineProps({ ", discription: "", },
+	{ dataText: "text: { ", discription: "", },
+	{ dataText: "type: String, ", discription: "", },
+	{ dataText: "required: false ", discription: "", },
+	{ dataText: "}, ", discription: "", },
+	{ dataText: "}) ", discription: "", },
+	{ dataText: "const emit = defineEmits(['someEvent']) ", discription: "", },
+	{ dataText: "const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } }", discription: "", },
 ]
 
 

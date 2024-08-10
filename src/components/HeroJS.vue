@@ -30,10 +30,10 @@ const copyDataCommon = [
 	{ dataText: "let = document.querySelector('');" },
 	{ dataText: 'let head = .querySelectorAll(" ");' },
 	{ dataText: 'let headItems =[...head.children]; ' },
-	{ dataText: '.classList.add("_is- active");' },
-	{ dataText: '.classList.remove("_is- active");' },
-	{ dataText: '.classList.toggle("_is- active");' },
-	{ dataText: '.classList.contains("_is- active");' },
+	{ dataText: '.classList.add("_is-active");' },
+	{ dataText: '.classList.remove("_is-active");' },
+	{ dataText: '.classList.toggle("_is-active");' },
+	{ dataText: '.classList.contains("_is-active");' },
 	{ dataText: '.addEventListener("click",(e) => {});' },
 	{ dataText: '.addEventListener("input",(e) =>{ });' },
 	{ dataText: '.innerHTML =' },
@@ -96,18 +96,23 @@ const copyDataPosition = [
 ]
 const copyDataString = [
 	{ title: 'String' },
+	{
+		discription: '', dataText: '"https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String"'
+	},
+	{ discription: 'Оператор typeof возвращает строку, указывающую тип значения операнда.', dataText: 'typeof "blubber"' },
 	{ discription: 'Длина', dataText: 'length;' },
-	{ discription: 'Доступ к символам', dataText: 'charAt(позиция)' },
-	{ discription: 'Доступ к символам', dataText: 'str[0]' },
-	{ discription: 'Смена регистра', dataText: 'toLowerCase()' },
-	{ discription: 'Смена регистра', dataText: 'toUpperCase()' },
+	{ discription: 'Доступ к символам', dataText: 'charAt(позиция);' },
+	{ discription: 'Доступ к символам', dataText: 'str[0];' },
+	{ discription: 'Смена регистра', dataText: 'toLowerCase();' },
+	{ discription: 'Смена регистра', dataText: 'toUpperCase();' },
+	{ discription: 'проверяет с учётом регистра, содержит ли строка заданную подстроку, и возвращает, соответственно true или false.', dataText: '.includes(word);' },
 	{
 		discription: 'Индекс первого вхождения «й» с начала строки ', dataText: ".indexOf('й')"
 	},
 	{ discription: 'возвращает позицию, на которой находится подстрока или ‐1 , если ничего не найдено', dataText: 'str.indexOf("id", начальная_позиция))' },
-	{ discription: 'substring(start, end) возвращает подстроку с позиции start до, но не включая end', dataText: 'substring(0,1);' },
-	{ discription: 'substr(start [, length]) Первый аргумент имеет такой же смысл, как и в substring , а второй содержит не конечную позицию, а количество символов.', dataText: '.substr(2,4);' },
-	{ discription: 'slice(start [, end]) Возвращает часть строки от позиции start до, но не включая, позиции end .Смысл параметров – такой же как в substring', dataText: 'slice(start [, end])' },
+	{ discription: '.substring(start, end) возвращает подстроку с позиции start до, но не включая end', dataText: '.substring(0,1);' },
+	{ discription: '.substr(start [, length]) Первый аргумент имеет такой же смысл, как и в substring , а второй содержит не конечную позицию, а количество символов.', dataText: '.substr(2,4);' },
+	{ discription: '.slice(start [, end]) Возвращает часть строки от позиции start до, но не включая, позиции end .Смысл параметров – такой же как в substring', dataText: '.slice(start [, end])' },
 	{ discription: 'slice Отрицательные значения отсчитываются от конца строки', dataText: '.slice(‐2); ' },
 	{ discription: 'substring(start, end) работают с отрицательными и выходящими за границу строки аргументами', dataText: '.substring(‐2); ' },
 	{ discription: 'str1.localeCompare(str2) возвращает ‐1 , если str1 < str2 , 1 , если str1> str2 и 0 , если они равны.', dataText: '.localeCompare("Яблони"); ' }

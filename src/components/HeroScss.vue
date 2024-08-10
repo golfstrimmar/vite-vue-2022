@@ -8,11 +8,15 @@
 		input.hero__line(type = 'text'  v-model='Result' )
 	.hero__body
 		.hero__column
+			Copy(:text="item.dataText"  @someEvent = "someEvent(item.dataText)" v-for="item in copyDataGridCommon" :key="item.i")
+		.hero__column
 			Copy(:text="item.dataText"  @someEvent = "someEvent(item.dataText)" v-for="item in copyDataGrid" :key="item.i")
 		.hero__column
 			Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataFlex" :key="item.i")
 		.hero__column
 			Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataPosition" :key="item.i")
+		.hero__column
+			Copy(:text="item.dataText"  @someEvent = "someEvent" v-for="item in copyDataPsevdo" :key="item.i")
 
 
 </template>
@@ -28,7 +32,40 @@ var lastResult = ref(''); const copy = ref(null);
 var copyDataGrid = reactive([{ i: 0, dataText: '' }]);
 var copyDataFlex = reactive([{ i: 0, dataText: '' }]);
 var copyDataPosition = reactive([{ i: 0, dataText: '' }]);
+var copyDataGridCommon = reactive([{ i: 0, dataText: '' }]);
+var copyDataPsevdo = reactive([{ i: 0, dataText: '' }]);
 
+copyDataGridCommon = [
+	{ i: 1, dataText: 'text-align: center;' },
+
+	{ i: 1, dataText: 'margin: 0 0 0 0;' },
+	{ i: 1, dataText: 'margin: 0 auto;' },
+	{ i: 1, dataText: 'padding: 0 0 0 0;' },
+
+	{ i: 1, dataText: 'display: block;' },
+	{ i: 1, dataText: 'display: inline-block;' },
+	{ i: 1, dataText: 'display: none;' },
+
+	{ i: 1, dataText: 'width:  ;' },
+	{ i: 1, dataText: 'max-width:  ;' },
+	{ i: 1, dataText: 'height:  ;' },
+	{ i: 1, dataText: 'min-height: ;' },
+
+	{ i: 1, dataText: 'cursor: pointer;' },
+	{ i: 1, dataText: 'color:  ;' },
+	{ i: 1, dataText: 'opacity:  ;' },
+	{ i: 10, dataText: 'border: 3px solid ;' },
+	{ i: 10, dataText: 'outline: 1px solid ;' },
+	{ i: 10, dataText: 'border-radius: 10px;' },
+	{ i: 10, dataText: 'border-top-left-radius: 10px;' },
+	{ i: 10, dataText: 'box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);' },
+	{ i: 10, dataText: 'background: rgba(0,0,0,.75);' },
+	{ i: 1, dataText: 'overflow: hidden;' },
+	{ i: 1, dataText: 'overflow: scroll;' },
+	{ i: 10, dataText: '&._is-active{}' },
+
+
+]
 copyDataGrid = [
 	{ i: 1, dataText: 'display: grid;' },
 	{ i: 2, dataText: 'grid-template-columns: 100px 1fr;' },
@@ -47,6 +84,39 @@ copyDataGrid = [
 	{ i: 9, dataText: '._c{ grid- area: c;}' },
 
 ]
+copyDataPsevdo = [
+	{ i: 1, dataText: '', description: 'https://developer.mozilla.org/ru/docs/Web/CSS/:hover' },
+	{ i: 1, dataText: '&::after{\n  content: "";\n  position: absolute;\n  background- color: ;\n  width: ;\n  height: ;\n  top: 0;\n  left: 0;\n  }', description: '' },
+	{ i: 1, dataText: '&::before{\n  content: "";\n  position: absolute;\n  background- color: ;\n  width: ;\n  height: ;\n  top: 0;\n  left: 0;\n  }', description: '' },
+
+
+	{ i: 1, dataText: '&:first-child{ }; ', description: '' },
+	{ i: 1, dataText: '&:first-of-type{ }; ', description: '' },
+	{ i: 1, dataText: '&:focus{ }; ', description: '' },
+	{ i: 1, dataText: '&:hover{ };', description: '' },
+	{ i: 1, dataText: '&:last-child{ };', description: '' },
+	{
+		i: 1, dataText: '&:last-of-type{ };', description: 'Выбирает , являющийся последним элементом среди элементов своего типа среди своих соседей'
+	},
+	{ i: 1, dataText: '&:not(p){ };', description: 'Он находит элементы, не соответствующие селектору. ' },
+	{ i: 1, dataText: ':root { --main - color: hotpink;	--pane - padding: 5px 42px;};', description: 'полезно для объявления CSS Переменных:' },
+	{
+		i: 1, dataText: '&:nth-last-of-type(4n){ };', description: 'Выбирает каждый четвёртый элемент <p> среди любой группы соседних элементов,	отсчёт начинается с последнего элемента'
+	},
+
+	{
+		i: 1, dataText: '&:has(+ p){}; ', description: 'только для тегов < h1 >, следом за которыми идёт тег < p > '
+	},
+	{ i: 1, dataText: '&:nth-child(2n){ }; ', description: 'Описывает чётные строки HTML таблицы: 2, 4, 6, и т. д.' },
+	{ i: 1, dataText: '&:nth-child(2n+1){ }; ', description: 'Описывает нечётные строки : 1, 3, 5, и т. д.' },
+	{ i: 1, dataText: '&:nth-child( ){ };', description: '' },
+	{ i: 1, dataText: '&:nth-child(5n){ };', description: 'Описывает элементы с номерами 5, 10, 15, и т. д.' },
+	{ i: 1, dataText: '&:nth-child(3n+4){ };', description: 'Описывает элементы с номерами 4, 7, 10, 13, и т. д.' },
+	{ i: 1, dataText: '&:nth-child(-n+3){ };', description: 'Описывает первые три элемента среди группы соседних элементов.' },
+	{ i: 1, dataText: 'p:nth-child(0n+1){ };', description: 'Описывает каждый элемент <p>, являющийся первым среди группы соседних элементов.' },
+	{ i: 1, dataText: '&:nth-last-child(-n + 3){ };', description: 'последние 3 потомка' },
+
+]
 
 copyDataFlex = [
 	{ i: 15, dataText: 'display: flex;' },
@@ -63,6 +133,8 @@ copyDataFlex = [
 	{ i: 17, dataText: 'justify-content: first baseline;' },
 	{ i: 20, dataText: 'justify-content: last baseline;' },
 	{ i: 17, dataText: 'justify-content: inherit;' },
+	{ i: 17, dataText: 'justify-items: center;' },
+	{ i: 17, dataText: 'justify-items: right;' },
 	{ i: 17, dataText: 'align-items: flex-start;' },
 	{ i: 16, dataText: 'align-items: flex-end;' },
 	{ i: 17, dataText: 'align-items: self-start;' },
@@ -85,25 +157,16 @@ copyDataPosition = [
 	{ i: 10, dataText: 'right: auto;' },
 	{ i: 10, dataText: 'bottom: 0;' },
 	{ i: 10, dataText: 'transform: translate(-50%, -50%);' },
-	{ i: 10, dataText: 'transform: rotate(180deg) translateY(50%)' },
+	{ i: 10, dataText: 'transform: rotate(180deg) translateY(50%);' },
 	{ i: 10, dataText: 'transform: scale(1.1);' },
 	{ i: 10, dataText: 'transform: scaleX(1);' },
 	{ i: 10, dataText: 'transform-origin: top;' },
-	{ i: 10, dataText: 'border: 3px solid #7AB764 ;' },
-	{ i: 10, dataText: 'outline: 1px solid #4164ff;' },
-	{ i: 10, dataText: 'border-radius: 10px;' },
-	{ i: 10, dataText: 'border-top-left-radius: 10px;' },
-	{ i: 10, dataText: 'box-shadow: inset 0 50px 100px 0 rgba(40, 40, 40, 0.15);' },
 	{ i: 10, dataText: 'filter: blur(6px);' },
-	{ i: 10, dataText: 'overflow: hidden;' },
-	{ i: 10, dataText: 'opacity: 1;' },
 	{ i: 10, dataText: 'background-image: url(../img/png/i-2.png);' },
 	{ i: 10, dataText: 'background-repeat: no-repeat;' },
 	{ i: 10, dataText: 'background-size: cover;' },
 	{ i: 10, dataText: 'background-position: 50%;' },
-	{ i: 10, dataText: 'cursor: pointer;' },
 	{ i: 10, dataText: 'backdrop-filter: blur(15px);' },
-	{ i: 10, dataText: 'background: rgba(0,0,0,.75);' },
 
 ]
 
@@ -119,7 +182,7 @@ const handelClean = () => {
 // ----------------------------------------
 const someEvent = (data) => {
 	Result.value = data;
-	lastResult.value = "\n" + data;
+	lastResult.value = data + "\n";
 	Something.value = Something.value + lastResult.value;
 }
 // ----------------------------------------
@@ -131,8 +194,14 @@ const someEvent = (data) => {
 	margin: 10px 0 0 0;
 
 	&__body {
-		grid-template-columns: repeat(auto-fill, 400px);
+		grid-template-columns: repeat(auto-fill, 300px);
+		grid-template-rows: 1fr;
 	}
+}
+
+.hero__column {
+	max-height: 80vh;
+	overflow: scroll;
 }
 
 input.hero__line {

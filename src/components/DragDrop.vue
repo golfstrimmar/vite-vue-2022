@@ -13,7 +13,8 @@
 <script setup>
 import CanvasItem from './CanvasItem.vue';
 import { ref, reactive } from 'vue';
-
+// @drop="onDrop" @dragover='dragoverHandler' @dragleave='leaveHandler'
+// draggable = "true" @dragstart="startDrag($event, canvasItem.id)"
 // --------------------------------
 let canvas = reactive([]);
 for (let index = 0; index < 10; index++) {

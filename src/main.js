@@ -15,7 +15,7 @@ createApp(App)
         document.querySelector("body").appendChild(add);
         add.textContent = el.value;
         add.select();
-        document.execCommand("copy");
+        navigator.clipboard.writeText(add.textContent);
         el.classList.add("_is-active");
         setTimeout(function () {
           add.remove();

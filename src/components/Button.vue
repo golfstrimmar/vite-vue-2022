@@ -1,5 +1,6 @@
 <template lang='pug'>
-button(type="button" ).hero__button {{buttonValue}}
+button(type="button" ).hero__button 
+	p {{buttonValue}}
 </template>
 <script setup>
 import { ref } from 'vue';
@@ -15,7 +16,7 @@ const props = defineProps({
 	position: relative;
 	position: absolute;
 	top: 50%;
-	right: -37px;
+
 	transform: translate(0px, -50%);
 	width: 30px;
 	height: 30px;
@@ -24,6 +25,12 @@ const props = defineProps({
 	border-radius: 100%;
 	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
 	transition: all .2s linear;
+
+	p {
+		font-size: 15px;
+		text-transform: uppercase;
+		transform: rotate(-90deg);
+	}
 
 	&:after {
 		content: "✖";
@@ -44,12 +51,20 @@ const props = defineProps({
 	&:hover {
 		background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
 		background-image: linear-gradient(top, #fff, #f4f1ee);
-		color: #0088cc;
+		color: #eb2f2f;
+		text-shadow: 0px 0px 6px #eb2f2f;
 	}
 
 	&:hover:after {
 		color: #eb2f2f;
 		text-shadow: 0px 0px 6px #eb2f2f;
+	}
+
+	&._is-active {
+		box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px #ef9a9a, inset 0px -3px 1px 1px #f89177;
+		background-image: linear-gradient(top, #ef9a9a, #fff);
+		background-image: -webkit-linear-gradient(top, #eb2f2f, #ef9a9a);
+
 	}
 }
 </style>
