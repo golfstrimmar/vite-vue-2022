@@ -38,6 +38,7 @@
 
 
 
+
 </template>
 
 
@@ -73,7 +74,7 @@ const mousewheel = (e, id) => {
     }
   }
 }
-
+// =============================
 
 
 document.addEventListener('keydown', (event) => {
@@ -85,42 +86,130 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-
+// =============================
 
 
 
 const handelResult = (e) => {
   somethingPug.value = ''
   somethingScss.value = ''
-
+  // ==================
   const cleanPug = (cell) => {
     lastElPug.value = spase.repeat(cell.Offset) + cell.value + "\n";
     somethingPug.value = somethingPug.value + lastElPug.value;
   };
+  dropLineas.value.forEach((cell) => { cleanPug(cell) });
 
-  const cleanScss = (cell) => {
-    let chars = cell.value.split("\n");
-    let temp
-    chars = chars.map((car) => {
-      temp = car.substring(car.indexOf('('), car.indexOf(')') + 1);
-      car = car.replace(temp, '');
-      return car = car + '{  }';
-    });
+  // ==================
 
-    lastElScss.value = chars.join("\n") + "\n";
-    somethingScss.value = somethingScss.value + lastElScss.value;
+  // var erst = newLineas.splice(0, 1)
+  // var newLineas = newLineas.splice(1, dropLineas.value.length)
+
+
+
+
+  var newLineas = dropLineas.value.map((car) => { return { 'id': car.id, 'Offset': car.Offset, 'value': car.value } }).reverse();
+  // ==================
+  // ==================
+  // ==================
+  // ==================
+  // ==================
+  const sortnewLineas = () => {
+    var count = 0
+    var marker = '}'
+
+    const ordnung = () => {
+      for (let i = 0; i < newLineas.length; ++i) {
+        newLineas[i].id = i
+      }
+    }
+    ordnung();
+
+    // const Container = () => {
+    //   newLineas.forEach((cell) => {
+    //     if (cell.value === '.container') {
+    //       newLineas = newLineas.filter(function (number) { return number.id !== cell.id; });
+    //     }
+    //   });
+    //   ordnung();
+    //   return newLineas
+    // };
+    // Container();
+
+
+    // ==================добавляем кавычку в начало
+    const sortArr = () => {
+      for (let i = 0; i < newLineas.length; ++i) {
+        newLineas[i].value = newLineas[i].value + "{"
+      }
+    }
+    sortArr()
+    // ==================
+
+    // ================== максимальный сдвиг
+    for (let i = 0; i < newLineas.length; ++i) { count = Math.max.apply(null, newLineas.map((car) => { return car.Offset })) }
+    // ================== 
+
+    var temp = {}
+
+    // const cleanScss = (cell) => {
+    //   console.log(cell);
+    //   if (cell.value == '.container{' || cell.value == '.imgs{' || cell.value == 'use(xlink:href="#flag"){') {
+    //     newLineas = newLineas.filter((foo) => { return foo.id !== cell.id });
+    //   }
+    //   return newLineas
+    // };
+    // newLineas.forEach(car => {
+    //   cleanScss(car);
+    // })
+    // ordnung();
+
+    const findReplace = () => {
+
+      for (let i = 0; i < newLineas.length; ++i) {
+        if (newLineas[i].Offset == count) {
+          var temp = newLineas.find((item) => item.id > newLineas[i].id && item.Offset === (count - 1));
+
+
+          if (newLineas[i].value == '.container' ||
+            newLineas[i].value == '.imgs' || newLineas[i].value == 'use(xlink:href="#flag")') {
+            temp.value = temp.value
+          } else {
+            temp.value = temp.value + newLineas[i].value + '}';
+          }
+
+          newLineas = newLineas.filter((foo) => { return foo.id !== newLineas[i].id });
+          ordnung();
+        }
+      }
+      for (let i = 0; i < newLineas.length; ++i) {
+        if (newLineas.find((item) => item.Offset === count)) {
+          return findReplace()
+        } else {
+          count = count - 1
+          if (count == 0) {
+            return newLineas
+          }
+          return findReplace()
+        }
+      }
+    }
+    findReplace()
+
   };
+  // ==================
+  // ==================
+  // ==================
+  // ==================
+  // ==================
+  sortnewLineas();
 
-  dropLineas.value.forEach((cell) => {
-    cleanPug(cell)
-    cleanScss(cell)
-    e.target.classList.add("_is-active");
-    setTimeout(() => {
-      e.target.classList.remove("_is-active");
-    }, 100);
-  });
+  var res = newLineas[0].value + '}';
+  somethingScss.value = somethingScss.value + res
+};
 
-}
+// =============================
+
 
 const clickLine = (e, Text) => {
   canvasItem.value.value = canvasItem.value.value + Text
@@ -152,7 +241,7 @@ const clickHandler = (e, id) => {
 }
 
 
-
+// ===================================
 
 
 const copyDataCommon = [
@@ -173,10 +262,8 @@ const copyDataCommon = [
   { i: 14, dataText: 'li' },
   { i: 14, dataText: 'form' },
   { i: 15, dataText: 'img' },
-  { i: 16, dataText: 'svg' },
-  { i: 17, dataText: 'use(xlink:href="#flag")' },
-  { i: 18, dataText: '.imgs' },
-  { i: 19, dataText: 'img(src="./img/bg.webp" alt = "img")' },
+  { i: 16, dataText: 'svg\n  use(xlink:href="#flag")' },
+  { i: 18, dataText: '.imgs\n  img(src="./img/bg.webp" alt = "img")' },
 
 ]
 
@@ -245,16 +332,7 @@ const copyDataLinks = [
 
 
 
-
 <style lang="scss" scoped>
-.hero {
-  margin: 0 0 20px 0;
-}
-
-
-
-
-
 .drop-zone {
   min-height: 300px;
   border: 3px solid $orange-10;
@@ -272,6 +350,7 @@ const copyDataLinks = [
   border: 1px solid $grey-8;
   padding: 0 0 0 5px;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .result-area {
@@ -312,10 +391,7 @@ const copyDataLinks = [
   }
 }
 
-
-
-/* ================================== */
-
+// ================================ */
 
 .hero__canvas {
   position: relative;
@@ -391,6 +467,7 @@ const copyDataLinks = [
 
 }
 
+
 .stock {
   min-height: 26px;
   width: 80%;
@@ -427,6 +504,8 @@ const copyDataLinks = [
     color: $red-1;
   }
 }
+
+
 
 .lager {
   position: fixed;

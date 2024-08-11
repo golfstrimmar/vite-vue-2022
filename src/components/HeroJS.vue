@@ -24,7 +24,6 @@ var lastResult = ref('');
 
 const copyDataCommon = [
 	{ title: 'Common' },
-	{ dataText: 'console.log( );' },
 	{ dataText: 'const = () => {};' },
 	{ dataText: 'e.target' },
 	{ dataText: "let = document.querySelector('');" },
@@ -83,6 +82,7 @@ const copyDataCycl = [
 ]
 const copyDataPosition = [
 	{ title: '1,2,3 ...' },
+	{ dataText: 'Math.max.apply(null, Array);', discription: 'максимального элемента в числовом массиве' },
 	{ dataText: 'access = age > 14 ? true : false;' },
 	{ dataText: "var age = prompt('возраст?', 18); var message = (age < 3) ? 'Здравствуй, малыш!' : (age < 18) ? 'Привет!' : (age < 100) ? 'Здравствуйте!' : 'Какой необычный возраст!' ; alert( message );" },
 	{ discription: 'рекурсия', dataText: 'function sumTo(n) { if (n == 1) return 1; return n + sumTo(n ‐ 1); } alert( sumTo(100) );' },
@@ -159,7 +159,7 @@ const copyDataArray = [
 	{ discription: '', dataText: '.find((item) => item.id == id)' },
 	{ discription: 'повторит значение переменной spase столько раз, какое чмсло в переменной Offset ', dataText: 'spase.repeat(Offset)' },
 	{ discription: 'создаёт новый массив, который будет состоять из результатов вызова callback(item, i, arr) для каждого элемента arr', dataText: '.map((car) => {  });' },
-	{ discription: ' создаёт новый массив, в который войдут только те элементы arr , для которых вызов callback(item, i, arr) возвратит true .', dataText: '.filter(function (number) {return number > 0;}); ' },
+	{ discription: ' создаёт новый массив, в который войдут только те элементы arr , для которых вызов callback(item, i, arr) возвратит true .', dataText: '.filter((foo) => { return foo.value !== newLineas[i].value }); ' },
 	{ discription: 'Удаляет последний элемент из массива и возвращает его', dataText: '.pop()' },
 	{ discription: 'Добавляет элемент в конец массива', dataText: '.push({ id: Index, Offset: 0, value: canvasItem.value });' },
 	{ discription: 'Удаляет из массива первый элемент и возвращает его', dataText: '.shift();' },

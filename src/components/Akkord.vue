@@ -5,11 +5,10 @@
   .akkord__items
     .block(v-for="item in contextLineas" :key="index" :class="[(item.isOpen == true) ? '_is-active' : '' ]")  
       .el(v-for="el in item" :key="index"  :discription="el.discription"  :text="el.dataText"  @click = 'HendlerClick(el.dataText)')
-        strong {{el.dataText }}
+        strong(v-copy) {{el.dataText }}
         p {{el.discription}}
 
 </template>
-
 
 <script setup>
 import { ref, onMounted } from 'vue';

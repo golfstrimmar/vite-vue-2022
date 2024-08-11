@@ -41,3 +41,22 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 //- transition-group
 //- textarea.canvas( v-for="element in canvasItems.value" :key="element.id" @dragover='dragoverHandler' @drop='dropHandler')
+
+const cleanScss = (cell) => {
+if (cell.value == '.container') {
+lastElScss.value = ''
+} else if (cell.value == '.imgs') {
+lastElScss.value = ''
+} else if (cell.value == '.imgs') {
+lastElScss.value = ''
+} else if (cell.value == 'use(xlink:href="#flag")') {
+lastElScss.value = ''
+} else {
+lastElScss.value = cell.value + "{" + "}" + "\n";
+}
+
+    somethingScss.value = somethingScss.value + lastElScss.value;
+
+};
+
+dropLineas.value.forEach((cell) => { cleanScss(cell) });
