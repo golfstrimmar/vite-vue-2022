@@ -1,29 +1,22 @@
 <template lang='pug'>
 .akkord
   .akkord__nav 
-    a.btn.nav-title( href="#!" v-for="item in props.titles" :key="index"  )  {{item.title}}
-    //- a.btn.nav-title( href="#!" v-for="item in titles " :key="index" @click="clickHandler(item.id)" :class="[(item.isOpen == true) ? '_is-active' : '' ]")  {{props.title}}
 
-
+    Button(v-for="item in props.titles" :key="index" :item='item' @click='ButtonHandler(item.id) ')
   .akkord__items
-    .block(v-for="Data in props.Data" :key="index" )
-      .block__line(v-for="el in Data" :key="index" ) {{el.text}} 
-        .el(v-for="content in el.content" :key="index")
-          Input(:Antwort='el' @anwortPositiv="anwortPositiv" v-for="elInput in el" :key="index")
-    //- .akkord__items
-    //-   .block(v-for="item in props.Data" :key="index" )
-    //-     p {{item.text}}
-    //-     Input(:Antwort='el' @anwortPositiv="anwortPositiv" v-for="el in item.content" :key="index")
-    //-   .block(v-for="item in contextLineas" :key="index" :class="[(item.isOpen == true) ? '_is-active' : '' ]")  
-    //-     .el(v-for="el in item" :key="index"  :discription="el.discription"  :text="el.dataText"  @click = 'HendlerClick(el.dataText)')
-    //-     textarea(v-copy) {{el.dataText }}
-    //-     p {{el.discription}}
+    .block(v-for="Data in props.Data" :key="index" :class="(Data.isOpen == true) ? '_is-active' : '' "  )
+      .block__line(v-for="el in Data" :key="index" ) 
+        h4 {{el.text}}
+
+        Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @anwortPositiv="anwortPositiv" @lineFertig="lineFertig")
+
 
 </template>
 
 <script setup>
-import { ref, onMounted, reactive } from 'vue';
+import { ref, onMounted, computed, reactive } from 'vue';
 import Input from '@/components/Input.vue';
+import Button from '@/components/Button.vue';
 const props = defineProps({
   titles: {
     type: Array,
@@ -34,113 +27,67 @@ const props = defineProps({
     required: false
   }
 })
-const emit = defineEmits(['someEvent'])
-
 
 // --------------------------
-var contextLineas = reactive([]);
-var titles = [];
+const ButtonHandler = (id) => {
+  props.titles.forEach(car => {
+    car.id == id ? car.isOpen = true :
+      car.isOpen = false
+  })
+  props.Data.forEach(car => {
+    car.id == id ? car.isOpen = true :
+      car.isOpen = false
+  })
+};
 
-// const clickHandler = (id) => {
-//   var Ar = contextLineas.value
-//   Ar.forEach(car => { car.isOpen = false; })
-//   Ar[id].isOpen = true;
-//   titles.value.forEach(car => { car.isOpen = false; })
-//   titles.value[id].isOpen = true;
+// const anwortPositiv = (data) => {
+//   foc.value = data
 // };
+const lineFertig = (some) => {
+  var x
+  do {
+    x = some.parentElement.nextElementSibling.querySelector('input');
+  }
+  while (x && !(/text/.test(x.type)));
+  x.focus();
+}
 
 
-// const HendlerClick = (dataText) => {
-//   emit('someEvent', dataText)
-// };
-
-// props.Data = props.Data.map((car) => { return car.splice(1, car.length) });
-// console.log(contextLineas);
-
-
-onMounted(() => {
-
-
-  // props.Data.forEach((cell) => { titles.value.push({ id: props.Data.indexOf(cell), title: cell.splice(0, 1).text }) });
-  // for (let i = 0; i < props.Data.length; i++) {
-  // props.Data[i].forEach(car => { console.log(car) })
-  // contextLineas.push({ id: i, title: props.Data[i] })
-  // }
-
-  // contextLineas.forEach(car => { console.log(car.title[0]) })
-  // contextLineas = contextLineas.map((car) => { return car = car.title });
-  // contextLineas.forEach(car => { console.log(car) })
-  // console.log(contextLineas);
-})
-
-
-
-
-// contextLineas = contextLineas.map((car) => { return car = car.splice(0, 1) });
-// props.Data = props.Data.forEach(car => { return car.splice(0, 1) })
-// console.log(props.Data)
-
-// contextLineas = contextLineas.map((car) => { return car = car.content.splice(0, 1) });
-
-
-// contextLineas.value = props.Data
-// console.log(contextLineas.value);
-// contextLineas.value.forEach(car => { titles.value.push({ id: contextLineas.value.indexOf(car), title: car.splice(0, 1).text }) })
-// contextLineas.value.forEach(car => { car.splice(0, 1) })
-// titles.value[0].isOpen = true;
-// contextLineas.value[0].isOpen = true;
 
 </script>
 <style lang='scss' scoped>
 .akkord {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 150px 1fr;
   column-gap: 5px;
+  margin: 20px 0 0 0;
 }
 
 .akkord__nav {
   display: flex;
   flex-direction: column;
+  gap: 5px 0;
 }
 
-.nav-title {
-  font-size: 15px;
-  color: #666565;
-  text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
-  cursor: pointer;
-  border: 1px solid #7AB764;
-  border-radius: 5px;
-  margin: 0 0 5px 0;
-  padding: 3px;
-  @include flex-center;
-  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
-  background-image: linear-gradient(top, #f4f1ee, #fff);
-  border-radius: 5px;
-  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
-
-  &._is-active {
-    color: #eb2f2f;
-    text-shadow: 0px 0px 6px #eb2f2f;
-  }
-}
+.nav-title {}
 
 .akkord__items {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 
+
   .block {
     position: relative;
-    // z-index: -1;
-    // opacity: 0;
-    // transform: translate(-100%, 0);
-    // border: 1px solid #7AB764;
-    border-radius: 5px;
-    @include transition;
+    z-index: -1;
+    opacity: 0;
+    transform: translate(-100%, 0);
+    transition: all .3s;
     // overflow: scroll;
     // max-height: 80vh;
 
     &._is-active {
+      transition: all .3s;
       z-index: 1;
       opacity: 1;
       order: -1;
@@ -149,34 +96,22 @@ onMounted(() => {
   }
 }
 
-.block__line {}
+.block__line {
+  margin: 0 0 6px 0;
 
-.el {
-
-  background-color: $lime-1;
-  padding: 2px;
-  outline: 1px solid $lime-3;
-
-  textarea {
-
-    height: 26px;
+  h4 {
+    margin: 0 0 3px 0;
   }
 
-  &:hover {
+  input:not([type="range"]) {
+    height: 22px;
+    border-radius: 3px;
 
-    color: $blue-grey-10;
-    @include transition;
+    margin: 0 3px 0 0;
 
-    textarea {
-      cursor: pointer;
-      height: 26px;
-      font-size: 18px;
+    &:last-of-type {
+      margin: 0 0 0 0;
     }
-  }
-
-  &._is-active {
-    background-color: $red-4;
-    color: $red-1;
   }
 }
 </style>

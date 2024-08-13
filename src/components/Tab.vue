@@ -4,10 +4,9 @@
   transition(mode='easy-in-out' name='opentab'  )
     .tab__hidden(v-if="tabopen")
       .tab__wrap
-        .tab__line(v-for="content in item")
-          h3 {{ content.title }}
-          p {{ content.text1 }}
-          p {{ content.text2 }}
+        .tab__line(v-for="el in item" :key="index" )
+          h3 {{el.title }}
+          p(v-for="el in el.content" :key="index" ) {{ el }}
 
 </template>
 
@@ -56,6 +55,7 @@ let head = document.querySelector("body").addEventListener('click', (e) => {
   z-index: 4;
   cursor: pointer;
   position: relative;
+  transition: all 0.2s;
   @include flex-aligne-center;
 }
 

@@ -156,7 +156,15 @@ button.mixButton {
 .ttu {
   text-transform: uppercase;
 }
-
+h2 {
+  font-family: "RR", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: $brown-8;
+  text-transform: uppercase;
+  line-height: 1.5;
+  text-shadow: 0 0 5px white;
+}
 h3 {
   font-size: 14px;
   font-weight: 800;
@@ -167,9 +175,9 @@ h3 {
 }
 h4 {
   font-family: "RR", sans-serif;
-  color: $blue-6;
-  font-size: 18px;
-  margin: 0 20px 0 0;
+  color: $brown-8;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {
