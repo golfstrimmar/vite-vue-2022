@@ -180,41 +180,69 @@ h4 {
   font-weight: 500;
 }
 .add {
-  position: absolute;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   outline: 1px solid rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.75);
+  background: $blue-grey-10;
   border-radius: 3px;
   padding: 5px;
   color: #fafafa;
   text-shadow: none;
   white-space: nowrap;
+  display: inline-block;
+  transform: translate(24px, -8px);
+  max-width: 90vw;
 }
 .tooltip {
   position: relative;
   position: absolute;
   top: 50%;
-  right: 0;
-  transform: translate(122%, -50%);
-  font-size: 15px;
-  color: #666565;
-  text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
-  cursor: pointer;
+  left: 0%;
+  right: auto;
+  transform: translate(0, -50%);
   border-radius: 100%;
   padding: 3px;
-  @include flex-center;
   background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
   background-image: linear-gradient(top, #f4f1ee, #fff);
   box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white,
     inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
   width: 20px;
   height: 20px;
-  &:hover {
+  span {
+    text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #666565;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover span {
     color: #eb2f2f;
     text-shadow: 0px 0px 6px #eb2f2f;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1049px) {
+  .add {
+    text-align: left;
+    white-space: nowrap;
+  }
+  .tooltip {
+    left: 0%;
+    right: auto;
+  }
+}
+@media (max-width: 600px) {
+  .add {
+    min-width: 80vw;
+    text-align: left;
+    white-space: wrap;
+  }
+  .tooltip {
+    left: 0%;
+    right: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 1439px) {

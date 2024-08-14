@@ -7,8 +7,10 @@
   .akkord__items
     .block(v-for="Data in props.Data" :key="index" :class="(Data.isOpen == true) ? '_is-active' : '' "  )
       .block__line(v-for="el in Data" :key="index" ) 
-        h4 {{el.text}}
-          button.tooltip(v-tool  :data = "el.content") i
+        .block__info 
+          h4 {{el.text}}
+          button.tooltip(v-tool  :data = "el.content")
+            span i
         div
           Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @anwortPositiv="anwortPositiv" @lineFertig="lineFertig")
 
@@ -42,13 +44,11 @@ const ButtonHandler = (id) => {
   })
 };
 
-// const anwortPositiv = (data) => {
-//   foc.value = data
-// };
+
 const lineFertig = (some) => {
   var x
   do {
-    x = some.parentElement.nextElementSibling.querySelector('input');
+    x = some.closest(".block__line").nextElementSibling.querySelector('input');
   }
   while (x && !(/text/.test(x.type)));
   x.focus();
@@ -77,45 +77,78 @@ const lineFertig = (some) => {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
+  padding: 10px 0 0 0;
 
   .block {
-    position: relative;
+    position: fixed;
     z-index: -1;
     opacity: 0;
-    transform: translate(-100%, 0);
     transition: all .3s;
-    // overflow: scroll;
-    // max-height: 80vh;
 
     &._is-active {
-      transition: all .3s;
+      position: relative;
       z-index: 1;
-      opacity: 1;
-      order: -1;
       transform: translate(0, 0);
+      order: -1;
+      animation: pulse .3s ease-in-out;
+      opacity: 1;
+
+      @keyframes pulse {
+        0% {
+          transform: translate(-100%, 0);
+          opacity: 0;
+        }
+
+        70% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+      }
     }
   }
+}
+
+.block__info {
+  position: relative;
+  display: inline-block;
 }
 
 .block__line {
   margin: 0 0 6px 0;
 
+
   h4 {
     display: inline-block;
     margin: 0 0 3px 0;
     position: relative;
+    padding: 0 0 0 25px;
   }
 
   input:not([type="range"]) {
     height: 22px;
     border-radius: 3px;
-
     margin: 0 3px 0 0;
 
     &:last-of-type {
       margin: 0 0 0 0;
     }
   }
+}
+
+
+
+@media (max-width: 600px) {
+  .akkord {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    margin: 20px 0 0 0;
+  }
+
+
 }
 </style>

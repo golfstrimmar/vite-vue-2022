@@ -187,11 +187,17 @@ const handleSignOut = () => {
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(15px);
     z-index: 1000;
+    align-items: flex-end;
 
     a {
       white-space: nowrap;
       line-height: 1.8;
       padding: 5px;
+      color: $blue-grey-4;
+
+      &:hover {
+        color: $blue-grey-2;
+      }
     }
 
   }
@@ -210,7 +216,7 @@ const handleSignOut = () => {
   a.router-link-active {
     color: $deep-orange-4;
 
-    &:hover {}
+
   }
 
   ._burger {

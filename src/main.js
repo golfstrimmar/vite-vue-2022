@@ -48,18 +48,21 @@ app
   })
   .directive("tool", {
     mounted(el) {
+      let add = document.createElement("div");
+
       el.addEventListener("mouseover", (e) => {
-        let add = document.createElement("div");
         add.innerText = el.getAttribute("data").split(",").join(" ");
         add.classList.add("add");
-        document.querySelector("body").appendChild(add);
-        let X = e.pageX;
-        let Y = e.pageY;
-        add.style.left = X + 20 + "px";
-        add.style.top = Y - 20 + "px";
+        el.appendChild(add);
+        var xPosition = el.offsetLeft;
+        var yPosition = el.offsetTop;
+        console.log(xPosition, yPosition);
+        add.style.left = 0 + "px";
+        add.style.top = 0 + "px";
       });
+
       el.addEventListener("mouseleave", (e) => {
-        document.querySelector(".add").remove();
+        add.remove();
       });
     },
   })
