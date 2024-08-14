@@ -32,10 +32,11 @@ const copyDataCommon = [
 	{ dataText: "var  = ref('');", discription: "", },
 	{ dataText: "import { ref, onMounted } from 'vue'", discription: "", },
 	{ dataText: "onMounted(() => {})", discription: "", },
+	{ dataText: "transition(mode='easy-in-out' name='opentab')", discription: "transition", },
+	{ dataText: ".opentab-enter-from {}.opentab-enter-to {}.opentab-leave-from {}.opentab-leave-to {}", discription: "transition классы", },
 
-	{ dataText: "", discription: "", },
-	{ dataText: "", discription: "", },
-	{ dataText: "", discription: "", },
+
+
 	{ dataText: 'v-html= " "', discription: 'содержимое будет вставляться как обычный HTML и не будет компилироваться или обрабатываться как шаблоны Vue.', },
 	{
 		dataText: 'v-show = " "', discription: 'Отображает элемент по условию, выполняя переключение у элемента CSS-свойства display в зависимости от истинности указанного выражения.Директива запускает анимации перехода при изменении состояния.',
@@ -68,11 +69,12 @@ const copyDataClass = [
 		dataText: 'computed: {classObject() {return { active: this.isActive && !this.error,"text-danger": this.error && this.error.type === "fatal"}}} ', discription: ' ',
 	},
 	{ dataText: ':class="[activeClass, errorClass]', discription: ' ', },
-	{ dataText: "", discription: "", },
-	{ dataText: "", discription: "", },
-	{ dataText: "", discription: "", },
+
 	{ dataText: ':style="{ color: activeColor, fontSize: fontSize + "px" }"', discription: ' ', },
 	{ dataText: ':style="{backgroundColor: backGround}"', discription: ' ', },
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "", },
 ]
 
 const copyData = [
@@ -117,6 +119,20 @@ const copyDataProps = [
 	{ dataText: "}) ", discription: "", },
 	{ dataText: "const emit = defineEmits(['someEvent']) ", discription: "", },
 	{ dataText: "const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } }", discription: "", },
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "работа с props", },
+	{
+		dataText: "const props = defineProps({item: {type: Array,required: false},}) ", discription: "заходит на компонент",
+	},
+	{
+		dataText: "import {  ref, onMounted, toRaw } from 'vue';var content = ref([]); onMounted(() => {content.value = toRaw(props.item)}) ", discription: "на входе превращаем его в массив, с которым можно работать",
+	},
+	{
+		dataText: ".tab__line(v-for='el in content' :key='index' ) p(v-for= 'foo in el' : key='index' ) {{ foo }}", discription: "теперь можно выводить данные",
+	},
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "", },
+	{ dataText: "", discription: "", },
 ]
 
 

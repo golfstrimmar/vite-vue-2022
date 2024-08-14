@@ -29,11 +29,12 @@
   Button.hero__reset( @click='handelClean')
   .lager
     .lager__block
-      .line(v-for="item in copyDataCommon" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
+      textarea.line(v-copy v-for="item in copyDataCommon" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
     .lager__block
-      .line(v-for="item in copyDataName" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
+      textarea.line(v-copy v-for="item in copyDataName" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
     .lager__block
-      textarea.line(v-for="item in copyDataLinks" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
+      textarea.line(v-copy v-for="item in copyDataLinks" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
+
 
 
 
@@ -334,6 +335,7 @@ const copyDataLinks = [
 ]
 
 </script>
+
 
 
 

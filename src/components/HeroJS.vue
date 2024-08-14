@@ -1,14 +1,13 @@
 <template lang="pug">
-.container
-	.hero 
-		.canvas 
-			textarea.result(type='textarea'  v-copy :v-model="Something" :value='Something' )
-		.hero__head
-			.hero__temp
-				Button.hero__reset( @click='handelClean')
-			input.hero__line(type = 'text'  v-model='Result' )
-		.hero__body
-			Akkord( :Data='[copyDataCommon,copyDataCycl,copyDataArray,copyDataObject,copyDataPosition,copyDataString,copyDataClass,copyDataAsyncAwait,copyDatadragDrop]' @someEvent = "someEvent")
+.hero 
+	.canvas 
+		textarea.result(type='textarea'  v-copy :v-model="Something" :value='Something' )
+	.hero__head
+		.hero__temp
+			Button.hero__reset( @click='handelClean')
+		input.hero__line(type = 'text'  v-model='Result' )
+	.hero__body
+		Akkord( :Data='[copyDataCommon,copyDataFind,copyDataCycl,copyDataArray,copyDataObject,copyDataNummber,copyDataPosition,copyDataString,copyDataClass,copyDataAsyncAwait,copyDatadragDrop]' @someEvent = "someEvent")
 
 </template>
 
@@ -22,8 +21,20 @@ var Something = ref('');
 var lastResult = ref('');
 
 
+
+const copyDataFind = [
+	{ title: 'Suchen' },
+	{ dataText: "let = document.querySelector('');" },
+	{ dataText: 'let head = .querySelectorAll(" ");' },
+	{ discription: '', dataText: '.closest("")' },
+	{ dataText: '.nextElementSibling', discription: 'только для чтения возвращает элемент, следующий непосредственно за указанным в списке дочерних элементов его родителя, или nullесли указанный элемент является последним в списке.' },
+	{ dataText: '.parentElement', discription: 'только для чтения, Nodeвозвращает родителя узла DOM Elementили, nullесли у узла нет родителя или его родитель не является DOM' },
+]
+
+
+
 const copyDataCommon = [
-	{ title: 'Common' },
+	{ title: 'Allgemein' },
 	{ dataText: 'const = () => {};' },
 	{ dataText: 'e.target' },
 	{ dataText: "let = document.querySelector('');" },
@@ -81,6 +92,31 @@ const copyDataCycl = [
 
 ]
 const copyDataPosition = [
+	{ title: 'Koordinate' },
+	{ dataText: '', discription: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect' },
+	{ dataText: 'clientX  clientY', discription: 'координаты курсора мыши oтносительно окна браузера' },
+	{ dataText: 'pageX pageY', discription: 'координаты курсора мыши oтносительно документа' },
+	{ dataText: '.getBoundingClientRect()', discription: 'возвращает размер элемента и его позицию относительно viewport (часть страницы, показанная на экране, и которую мы видим).' },
+	{ dataText: 'top/bottom ', discription: '– Y-координата верхней/нижней границы прямоугольника,' },
+	{ dataText: 'left/right ', discription: '– X-координата левой/правой границы прямоугольника.' },
+	{ dataText: 'left top', discription: 'координаты верхнего левого угла' },
+	{ dataText: 'right = x + width  bottom = y + height', discription: 'координаты правого нижнего' },
+	{
+		dataText: 'let message = document.createElement("div"); let coords = elem.getBoundingClientRect();  message.style.left = coords.left + "px";	message.style.top = coords.bottom + "px";', discription: ''
+	},
+	{ dataText: '', discription: 'Координаты события' },
+	{
+		dataText: 'let elem = document.querySelector("#elem");window.addEventListener("mousemove", function (event) {	elem.innerHTML = event.pageX + ":" + event.pageY;	}); ', discription: ''
+	},
+
+
+	{
+		dataText: '.offsetLeft; .offsetTop; ', discription: 'расстояние от верхнего края (offsetTop) или левого края (offsetLeft) текущего элемента до ближайшего родительского элемента (или до самого body, если родительских элементов нет).'
+	},
+	{ dataText: '', discription: '' },
+
+]
+const copyDataNummber = [
 	{ title: '1,2,3 ...' },
 	{ dataText: 'Math.max.apply(null, Array);', discription: 'максимального элемента в числовом массиве' },
 	{ dataText: 'access = age > 14 ? true : false;' },
@@ -95,7 +131,7 @@ const copyDataPosition = [
 
 ]
 const copyDataString = [
-	{ title: 'String' },
+	{ title: 'Zeile' },
 	{
 		discription: '', dataText: '"https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String"'
 	},
@@ -118,7 +154,7 @@ const copyDataString = [
 	{ discription: 'str1.localeCompare(str2) возвращает ‐1 , если str1 < str2 , 1 , если str1> str2 и 0 , если они равны.', dataText: '.localeCompare("Яблони"); ' }
 ]
 const copyDataObject = [
-	{ title: 'Object' },
+	{ title: 'Objekt' },
 	{
 		discription: '', dataText: 'var person = {}; person.name = "Вася"; person.age = 25;'
 	},
@@ -158,7 +194,7 @@ const copyDataArray = [
 	{ discription: '', dataText: '.indexOf(0)' },
 	{ discription: '', dataText: '.find((item) => item.id == id)' },
 	{ discription: 'повторит значение переменной spase столько раз, какое чмсло в переменной Offset ', dataText: 'spase.repeat(Offset)' },
-	{ discription: 'создаёт новый массив, который будет состоять из результатов вызова callback(item, i, arr) для каждого элемента arr', dataText: '.map((car) => {  });' },
+	{ discription: 'создаёт новый массив, который будет состоять из результатов вызова callback(item, i, arr) для каждого элемента arr', dataText: '.map((car) => { return car });' },
 	{ discription: ' создаёт новый массив, в который войдут только те элементы arr , для которых вызов callback(item, i, arr) возвратит true .', dataText: '.filter((foo) => { return foo.value !== newLineas[i].value }); ' },
 	{ discription: 'Удаляет последний элемент из массива и возвращает его', dataText: '.pop()' },
 	{ discription: 'Добавляет элемент в конец массива', dataText: '.push({ id: Index, Offset: 0, value: canvasItem.value });' },

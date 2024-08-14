@@ -1,13 +1,13 @@
 <template lang="pug">
 header 
-  .container
-    .header__body
-      .header__links
-        router-link(v-for="link in links" :key="link.name" :to="link.href" )
-          |{{ link.name }}
-      //- router-link(to="/").rel
-      //-   .imgs
-      //-     img(src='/src/assets/logo.png'  alt='img')
+
+  .header__body
+    .header__links
+      router-link(v-for="link in links" :key="link.name" :to="link.href" )
+        |{{ link.name }}
+    //- router-link(to="/").rel
+    //-   .imgs
+    //-     img(src='/src/assets/logo.png'  alt='img')
 </template>
 
 <script setup>
@@ -36,15 +36,7 @@ header {
   position: relative;
   position: absolute;
 
-  .container {
-    display: flex;
-    transform: rotate(-90deg);
-    width: 100vh;
-    margin: 0 auto;
-    position: relative;
-    left: -94px;
-    top: 80px;
-  }
+
 }
 
 .header__body {
@@ -58,6 +50,12 @@ header {
   column-gap: 10px;
   align-items: center;
   width: 100%;
+  transform: rotate(-90deg);
+  width: 100vh;
+  margin: 0 auto;
+  position: relative;
+  left: -94px;
+  top: 80px;
 }
 
 .header__links {
