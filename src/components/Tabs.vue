@@ -1,6 +1,12 @@
 <template lang='pug'>
 .tabs
-  Tab( :id='item.title' v-for="item in titles" :key="item.id")
+  p {{ hero }}
+  Tab(id='der' :item='der' )
+  Tab(id='die' :item='die' )
+  Tab(id='das' :item='das' )
+  Tab(id='Bestimmte Kasus' :item='SlotDataBestimmteKasus' )
+  Tab(id='Unbestimmte Kasus' :item='SlotDataUnbestimmteKasus' )
+  Tab(id='Unbestimmte negativ Kasus' :item='SlotDataUnbestimmteNegativKasus' )
   
 
 
@@ -8,7 +14,8 @@
 <script setup>
 import { reactive, ref, onMounted } from 'vue';
 import Tab from '@/components/Tab.vue';
-var titles = reactive([]);
+var some = ref('');
+var foo = reactive([]);
 
 
 // --------------------------
@@ -30,47 +37,64 @@ const UnbestimmteNegativKasus = query(collection(db, "UnbestimmteNegativKasus"))
 onMounted(async () => {
   onSnapshot(derArtikel, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      der.push(doc.data());
+      if (doc.data().deutsch) {
+        der.push(doc.data().deutsch.split("/"));
+      }
     });
-    titles.push({ id: 0, title: 'der', isOpen: false });
   });
   onSnapshot(dieArtikel, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      die.push(doc.data());
+      if (doc.data().deutsch) {
+        die.push(doc.data().deutsch.split("/"));
+      }
     });
-    titles.push({ id: 1, title: 'die', isOpen: false });
   });
   onSnapshot(dasArtikel, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      das.push(doc.data());
+      if (doc.data().deutsch) {
+        das.push(doc.data().deutsch.split("/"));
+      }
     });
-    titles.push({ id: 2, title: 'das', isOpen: false });
-  });
-  onSnapshot(DataBestimmteKasus, (querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      SlotDataBestimmteKasus.push({ text: doc.data().text, content: doc.data().content });
-    });
-    titles.push({ id: 3, title: 'Bestimmte Kasus', isOpen: false });
-    SlotDataBestimmteKasus.id = 2;
-    SlotDataBestimmteKasus.isOpen = false;
   });
 
+  onSnapshot(DataBestimmteKasus, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.data().deutsch) {
+        SlotDataBestimmteKasus.push(doc.data().deutsch.split("/"));
+      }
+    });
+  });
   onSnapshot(UnbestimmteKasus, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      SlotDataUnbestimmteKasus.push({ text: doc.data().text, content: doc.data().content });
+      if (doc.data().deutsch) {
+        SlotDataUnbestimmteKasus.push(doc.data().deutsch.split("/"));
+      }
     });
-    titles.push({ id: 4, title: 'Unbestimmte Kasus', isOpen: false });
-    SlotDataUnbestimmteKasus.id = 3;
-    SlotDataUnbestimmteKasus.isOpen = false;
   });
   onSnapshot(UnbestimmteNegativKasus, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      SlotDataUnbestimmteNegativKasus.push({ text: doc.data().text, content: doc.data().content });
+      if (doc.data().deutsch) {
+        SlotDataUnbestimmteNegativKasus.push(doc.data().deutsch.split("/"));
+      }
     });
-    titles.push({ id: 5, title: 'Unbestimmte Kasus', isOpen: false });
-    SlotDataUnbestimmteNegativKasus.id = 4;
-    SlotDataUnbestimmteNegativKasus.isOpen = false;
   });
+
+  // onSnapshot(UnbestimmteKasus, (querySnapshot) => {
+  //   querySnapshot.forEach((doc) => {
+  //     SlotDataUnbestimmteKasus.push({ text: doc.data().text, content: doc.data().content });
+  //   });
+  //   titles.push({ id: 4, title: 'Unbestimmte Kasus', isOpen: false });
+  //   SlotDataUnbestimmteKasus.id = 3;
+  //   SlotDataUnbestimmteKasus.isOpen = false;
+  // });
+  // onSnapshot(UnbestimmteNegativKasus, (querySnapshot) => {
+  //   querySnapshot.forEach((doc) => {
+  //     SlotDataUnbestimmteNegativKasus.push({ text: doc.data().text, content: doc.data().content });
+  //   });
+  //   titles.push({ id: 5, title: 'Unbestimmte Kasus', isOpen: false });
+  //   SlotDataUnbestimmteNegativKasus.id = 4;
+  //   SlotDataUnbestimmteNegativKasus.isOpen = false;
+  // });
 });
 
 </script>

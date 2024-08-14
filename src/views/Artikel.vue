@@ -41,6 +41,7 @@ const DataBestimmte = query(collection(db, "DataBestimmte"));
 
 
 
+
 onMounted(async () => {
   onSnapshot(Bestimmte, (querySnapshot) => {
     querySnapshot.forEach((doc) => {

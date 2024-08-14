@@ -1,17 +1,16 @@
 <template lang='pug'>
-.tab()
+.tab
   h3.tab__title( ref='some') {{id}}
   transition(mode='easy-in-out' name='opentab'  )
     .tab__hidden(v-if="tabopen")
       .tab__wrap
-        .tab__line(v-for="el in item" :key="index" )
-          h3 {{el.title }}
-          p(v-for="el in el.content" :key="index" ) {{ el }}
+        .tab__line(v-for="el in content" :key="index" )
+          p(v-for="foo in el" :key="index" ) {{ foo }}
 
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue';
+import { reactive, ref, onMounted, toRaw } from 'vue';
 const props = defineProps({
   item: {
     type: Array,
@@ -24,6 +23,13 @@ const props = defineProps({
 })
 const some = ref(null)
 var tabopen = ref(false);
+var content = ref([]);
+var title = ref('')
+var inn = ref('')
+onMounted(() => {
+  content.value = toRaw(props.item)
+
+})
 let head = document.querySelector("body").addEventListener('click', (e) => {
   if ((e.target == some.value) && tabopen.value == false) {
     tabopen.value = true;
@@ -69,11 +75,17 @@ let head = document.querySelector("body").addEventListener('click', (e) => {
 }
 
 .tab__line {
-  h3 {
-    color: $red-10;
-    display: inline-block;
-    text-shadow: 0 0 5px white;
+  margin: 0 0 10px 0;
+
+  p {
+    &:first-child {
+      color: $red-10;
+      font-weight: 700;
+      text-shadow: 0 0 5px white;
+
+    }
   }
+
 }
 
 .tab__wrap {

@@ -19,7 +19,6 @@ button {
 	text-shadow: 0px -1px 1px #bdb5b4,
 		1px 1px 1px white;
 	cursor: pointer;
-	border: 1px solid #7AB764;
 	border-radius: 5px;
 	margin: 0 0 5px 0;
 	padding: 3px;

@@ -3,12 +3,14 @@
   .akkord__nav 
 
     Button(v-for="item in props.titles" :key="index" :item='item' @click='ButtonHandler(item.id) ')
+
   .akkord__items
     .block(v-for="Data in props.Data" :key="index" :class="(Data.isOpen == true) ? '_is-active' : '' "  )
       .block__line(v-for="el in Data" :key="index" ) 
         h4 {{el.text}}
-
-        Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @anwortPositiv="anwortPositiv" @lineFertig="lineFertig")
+          button.tooltip(v-tool  :data = "el.content") i
+        div
+          Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @anwortPositiv="anwortPositiv" @lineFertig="lineFertig")
 
 
 </template>
@@ -69,7 +71,7 @@ const lineFertig = (some) => {
   gap: 5px 0;
 }
 
-.nav-title {}
+
 
 .akkord__items {
   display: flex;
@@ -100,7 +102,9 @@ const lineFertig = (some) => {
   margin: 0 0 6px 0;
 
   h4 {
+    display: inline-block;
     margin: 0 0 3px 0;
+    position: relative;
   }
 
   input:not([type="range"]) {

@@ -46,6 +46,23 @@ app
       }
     },
   })
+  .directive("tool", {
+    mounted(el) {
+      el.addEventListener("mouseover", (e) => {
+        let add = document.createElement("div");
+        add.innerText = el.getAttribute("data").split(",").join(" ");
+        add.classList.add("add");
+        document.querySelector("body").appendChild(add);
+        let X = e.pageX;
+        let Y = e.pageY;
+        add.style.left = X + 20 + "px";
+        add.style.top = Y - 20 + "px";
+      });
+      el.addEventListener("mouseleave", (e) => {
+        document.querySelector(".add").remove();
+      });
+    },
+  })
   .use(router)
   .use(createPinia())
   .mount("#app");

@@ -179,7 +179,44 @@ h4 {
   font-size: 17px;
   font-weight: 500;
 }
-
+.add {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 3px;
+  padding: 5px;
+  color: #fafafa;
+  text-shadow: none;
+  white-space: nowrap;
+}
+.tooltip {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(122%, -50%);
+  font-size: 15px;
+  color: #666565;
+  text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 3px;
+  @include flex-center;
+  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+  background-image: linear-gradient(top, #f4f1ee, #fff);
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white,
+    inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  width: 20px;
+  height: 20px;
+  &:hover {
+    color: #eb2f2f;
+    text-shadow: 0px 0px 6px #eb2f2f;
+  }
+}
 @media (min-width: 768px) and (max-width: 1439px) {
   .container {
     margin: 0 20px;
