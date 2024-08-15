@@ -137,7 +137,6 @@ const handleSignOut = () => {
   width: 100%;
   top: 0;
   background: $brown-4;
-  padding: 10px 0;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.3)) !important;
   z-index: 20000;

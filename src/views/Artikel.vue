@@ -3,31 +3,16 @@
   h2 der Artikel
   Tabs 
   Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte]")
-
 </template>
-
 
 <script setup>
 import Tabs from '@/components/Tabs.vue';
-
 import Akkord from "@/components/Akkord.vue";
 
 import { ref, onMounted, reactive } from 'vue'
 const count = ref(0)
 const currentLine = ref(null)
 
-// ==============anwortPositiv======================
-const anwortPositiv = (data) => {
-  count.value++
-  let lineCurrent = [...data.closest('.plaza__line').querySelectorAll("input")];
-
-  if (count.value == lineCurrent.length) {
-    var inputCurrent = data.closest('.plaza__line').nextElementSibling.querySelector("input")
-    inputCurrent.focus();
-    inputCurrent.classList.add("_is-light");
-    count.value = 0;
-  }
-}
 
 // ---------db-----------------
 import { db } from "@/firebase/config.ts";
@@ -38,9 +23,6 @@ var SlotDataBestimmte = reactive([]);
 var titles = reactive([]);
 const Bestimmte = query(collection(db, "bestimmte"));
 const DataBestimmte = query(collection(db, "DataBestimmte"));
-
-
-
 
 onMounted(async () => {
   onSnapshot(Bestimmte, (querySnapshot) => {
@@ -60,8 +42,6 @@ onMounted(async () => {
     SlotDataBestimmte.id = 1;
     SlotDataBestimmte.isOpen = false;
   });
-
-
 });
 
 
@@ -70,7 +50,9 @@ onMounted(async () => {
 <style lang="scss">
 .plaza__line {
   padding: 5px 0 0 0;
+}
 
-  p {}
+.tabs {
+  max-width: 300px;
 }
 </style>

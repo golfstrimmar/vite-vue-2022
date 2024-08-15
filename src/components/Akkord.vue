@@ -54,6 +54,18 @@ const lineFertig = (some) => {
   x.focus();
 }
 
+// ==============anwortPositiv======================
+const anwortPositiv = (data) => {
+  count.value++
+  let lineCurrent = [...data.closest('.plaza__line').querySelectorAll("input")];
+
+  if (count.value == lineCurrent.length) {
+    var inputCurrent = data.closest('.plaza__line').nextElementSibling.querySelector("input")
+    inputCurrent.focus();
+    inputCurrent.classList.add("_is-light");
+    count.value = 0;
+  }
+}
 
 
 </script>

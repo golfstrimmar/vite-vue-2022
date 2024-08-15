@@ -1,21 +1,109 @@
 <template lang="pug">
 .container
-  .page-title 
-    h2 Personalpronomen
-  Tabs(:items= 'Personal' title='Personal' )
-  .page-block.blue-grey-4
-    .page-title--small
-      h2 Beispiele
-    TabsTraining( title='' :SlotData='SlotDataPersonal' )
+  h2 Personalpronomen
+    table
+      thead
+        tr
+          th(colspan='6') Singular
+        tr
+          th(colspan='1')
+          th.num2 
+            p 1. 
+            p Pers.
+          th.num2
+            p 2. 
+            p Pers.
+          th(colspan='3')
+            span.num2 3.
+            |  Person
+
+      tbody
+        tr
+          td
+            b Nom
+          td ich
+          td du
+          td er
+          td sie
+          td es
+        tr
+          td
+            b Dat
+          td mir
+          td dir
+          td ihm
+          td ihr
+          td ihm
+        tr
+          td
+            b Akk
+          td mich
+          td dich
+          td ihn
+          td sie
+          td es
+        tr
+          td
+            b Gen
+          td meiner
+          td deiner
+          td seiner
+          td ihrer
+          td seiner
+
+    table
+      thead
+        tr
+          th(colspan='6') Plural
+        tr
+          th(colspan='1') 
+          th.num2 1. Pers.
+          th.num2 2. Pers.
+          th.num2 3. Pers.
+      tbody
+        tr
+          td
+            b Nom
+
+          td wir
+          td ihr
+          td sie
+        tr
+          td
+            b Dat
+
+          td uns
+          td euch
+          td ihnen
+
+
+        tr
+          td
+            b Akk
+
+          td uns
+          td euch
+          td sie
+        tr
+          td
+            b Gen
+
+          td unser
+          td euer
+          td ihrer
+  //- Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte]")
 </template>
 
-
 <script setup>
-// import Content from '@/components/Content.vue';
 import Tabs from '@/components/Tabs.vue';
-import Plaza from '@/components/Plaza.vue';
-import Slot from '@/components/Slot.vue'
-import TabsTraining from '@/components/TabsTraining.vue';
+import Akkord from "@/components/Akkord.vue";
+
+import { ref, onMounted, reactive } from 'vue'
+const count = ref(0)
+const currentLine = ref(null)
+
+
+
 const Personal = [
 
   {

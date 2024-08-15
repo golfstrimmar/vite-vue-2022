@@ -1,6 +1,6 @@
 <template lang='pug'>
 .tabs
-  p {{ hero }}
+
   Tab(id='der' :item='der' )
   Tab(id='die' :item='die' )
   Tab(id='das' :item='das' )
