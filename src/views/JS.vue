@@ -1,11 +1,12 @@
 <template lang="pug">
 .container 
-  HeroJS
+  HeroSome(:content='store.dataJs')
 </template>
 
 
 <script setup>
-import HeroJS from "@/components/HeroJS.vue";
-</script>
+import HeroSome from "@/components/HeroSome.vue";
+import { useTask } from "@/store/taskLager"
+const store = useTask();
 
-<style lang="scss"></style>
+</script>

@@ -4,10 +4,8 @@
     a.btn.nav-title( href="#!" v-for="item in titles " :key="index" @click="clickHandler(item.id)" :class="[(item.isOpen == true) ? '_is-active' : '' ]")  {{item.title}}
   .akkord__items
     .block(v-for="item in contextLineas" :key="index" :class="[(item.isOpen == true) ? '_is-active' : '' ]")  
-      .el(v-for="el in item" :key="index"  :discription="el.discription"  :text="el.dataText"  @click = 'HendlerClick(el.dataText)')
-        textarea(v-copy) {{el.dataText }}
-        p {{el.discription}}
 
+      Copy(:item="item"  @clickcopy='clickcopy' v-for="el in item"  :key="index" )
 </template>
 
 <script setup>
@@ -105,35 +103,6 @@ onMounted(() => {
       order: -1;
       transform: translate(0, 0);
     }
-  }
-}
-
-.el {
-
-  background-color: $lime-1;
-  padding: 2px;
-  outline: 1px solid $lime-3;
-
-  textarea {
-
-    height: 26px;
-  }
-
-  &:hover {
-
-    color: $blue-grey-10;
-    @include transition;
-
-    textarea {
-      cursor: pointer;
-      height: 26px;
-      font-size: 18px;
-    }
-  }
-
-  &._is-active {
-    background-color: $red-4;
-    color: $red-1;
   }
 }
 </style>

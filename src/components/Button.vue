@@ -1,5 +1,5 @@
 <template lang='pug'>
-button(type="button" ).hero__button 
+button(type="button" ).button
 	p {{buttonValue}}
 </template>
 <script setup>
@@ -12,7 +12,7 @@ const props = defineProps({
 })
 </script>
 <style lang='scss' scoped>
-.hero__button {
+.button {
 	position: relative;
 	position: absolute;
 	top: 50%;

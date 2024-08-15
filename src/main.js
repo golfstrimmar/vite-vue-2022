@@ -3,6 +3,9 @@ import "./style.css";
 import App from "./App.vue";
 import router from "./router";
 import "virtual:svg-icons-register";
+import { createPinia } from "pinia";
+
+const pinia = createPinia();
 
 createApp(App)
   .use(router)
@@ -20,8 +23,9 @@ createApp(App)
         setTimeout(function () {
           add.remove();
           el.classList.remove("_is-active");
-        }, 300);
+        }, 200);
       });
     },
   })
+  .use(pinia)
   .mount("#app");

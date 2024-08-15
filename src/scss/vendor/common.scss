@@ -1,7 +1,6 @@
 body {
   font-family: "Satoshi", sans-serif;
   font-size: 16px;
-  overflow: hidden;
   background: $blue-grey-12;
 }
 .wrapper {
@@ -37,7 +36,7 @@ img {
 }
 
 .container {
-  max-width: 1602px;
+  max-width: 1518px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -45,22 +44,10 @@ img {
 header ~ .container {
   padding: 0 0 0 36px;
 }
+// ==============================================
+// ==============================================
+// ==============================================
 
-.result {
-  outline: 1px solid $blue-grey-7;
-  min-height: 45px;
-  white-space: pre-wrap;
-  cursor: pointer;
-  background-color: #eceff1;
-  &:hover {
-    color: $deep-orange-4;
-  }
-  &._is-active {
-    border: 1px solid $deep-orange-8;
-    background-color: $deep-orange-4;
-    color: #fff;
-  }
-}
 // ==========================================
 
 .hero {
@@ -128,18 +115,6 @@ header ~ .container {
   column-gap: 43px;
 }
 
-input.hero__line {
-  height: 30px;
-  border-radius: 0.75em;
-  background-color: $blue-grey-1;
-  box-shadow: 0 0.0625em 0.0625em $blue-grey-7 inset,
-    0 -0.0625em 0.0625em $blue-grey-5 inset, 0 0.25em 0.25em $blue-grey-3 inset;
-  padding: 0 0 0 10px;
-
-  &:focus {
-    background-color: $orange-3;
-  }
-}
 // ==============================================
 // ==============================================
 // ==============================================
@@ -197,6 +172,24 @@ a {
     color: white;
     text-shadow: 0 0 14px lighten($indigo-5, 25%);
   }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #04286f transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #04286f transparent;
 }
 
 /* +++++++++++++++++++++++++++++++++++++ */

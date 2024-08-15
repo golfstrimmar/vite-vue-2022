@@ -8,6 +8,7 @@ input:not([type="range"]) {
 }
 
 textarea {
+  cursor: pointer;
   width: 100%;
   outline: none;
   border: 1px solid transparent;

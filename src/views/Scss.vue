@@ -1,11 +1,12 @@
 <template lang="pug">
 .container 
-  HeroScss
+  HeroSome(:content='store.dataScss')
 </template>
 
 
 <script setup>
-import HeroScss from "@/components/HeroScss.vue";
-</script>
+import HeroSome from "@/components/HeroSome.vue";
+import { useTask } from "@/store/taskLager"
+const store = useTask();
 
-<style lang="scss"></style>
+</script>

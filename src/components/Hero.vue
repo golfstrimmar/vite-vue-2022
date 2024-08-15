@@ -1,8 +1,8 @@
 <template lang="pug">
 .hero
   .result-area
-    textarea.result(v-copy :v-model="somethingPug" :value='somethingPug' )
-    textarea.result(v-copy :v-model="somethingScss" :value='somethingScss' )
+    Result(:v-model="somethingPug" :value='somethingPug')
+    Result(:v-model="somethingScss" :value='somethingScss')
   .hero__canvas
     span
     span
@@ -21,20 +21,18 @@
     span
 
     Button(buttonValue='Result'  @click='handelResult')
-    .drop-zone(  )
+    .drop-zone( @mouseenter='handelmouseenter($event)'  @mouseleave='handelmouseleave($event)' )
       textarea.drop-linea(  v-for="item in dropLineas" :key="index" :style= "{ marginLeft: item.Offset*30 + 'px' }"  @click='clickHandler($event,item.id)' @wheel='mousewheel($event,item.id)') {{ item.value }}
 
 
-  textarea.stock( ) {{ canvasItem.value }}
-  Button.hero__reset( @click='handelClean')
+  Stok(v-model="canvasItem.value"   @click='handelClean' )
   .lager
     .lager__block
-      textarea.line(v-copy v-for="item in copyDataCommon" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
+      Copy(@click='clickLine($event,item.dataText)'  v-for="item in copyDataCommon" :key="index" :item='item')
     .lager__block
-      textarea.line(v-copy v-for="item in copyDataName" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
+      Copy(@click='clickLine($event,item.dataText)'  v-for="item in copyDataName" :key="index" :item='item')
     .lager__block
-      textarea.line(v-copy v-for="item in copyDataLinks" :key="index"  @click='clickLine($event,item.dataText)') {{ item.dataText }}
-
+      Copy(@click='clickLine($event,item.dataText)'  v-for="item in copyDataLinks" :key="index" :item='item')
 
 
 
@@ -46,6 +44,9 @@
 <script setup>
 import { ref } from 'vue'
 import Button from './Button.vue';
+import Result from './Result.vue';
+import Copy from './Copy.vue';
+import Stok from "@/components/Stok.vue";
 // =============================
 var Index = 0;
 var dropLineas = ref([]);
@@ -59,7 +60,24 @@ const spase = '  ';
 let lastElPug = ref('');
 let lastElScss = ref('');
 // =============================
+const handelClean = (e) => {
+  canvasItem.value.value = ''
+}
+
+
+const handelmouseenter = (e) => {
+  let bodyquery = document.querySelector('body')
+  bodyquery.style = "overflow: hidden;";
+};
+const handelmouseleave = (e) => {
+  let bodyquery = document.querySelector('body')
+  bodyquery.style = "overflow: visible;";
+};
+
+
+
 const mousewheel = (e, id) => {
+
   var delta = e.deltaY || e.detail || e.wheelDelta;
   var el = dropLineas.value.find((item) => item.id == id)
   var re = /\n/g;
@@ -89,8 +107,6 @@ document.addEventListener('keydown', (event) => {
 
 // =============================
 
-
-
 const handelResult = (e) => {
   somethingPug.value = ''
   somethingScss.value = ''
@@ -101,20 +117,9 @@ const handelResult = (e) => {
   };
   dropLineas.value.forEach((cell) => { cleanPug(cell) });
 
-  // ==================
-
-  // var erst = newLineas.splice(0, 1)
-  // var newLineas = newLineas.splice(1, dropLineas.value.length)
-
-
-
 
   var newLineas = dropLineas.value.map((car) => { return { 'id': car.id, 'Offset': car.Offset, 'value': car.value } }).reverse();
-  // ==================
-  // ==================
-  // ==================
-  // ==================
-  // ==================
+
   const sortnewLineas = () => {
     var count = 0
     var marker = '}'
@@ -126,18 +131,6 @@ const handelResult = (e) => {
     }
     ordnung();
 
-    // const Container = () => {
-    //   newLineas.forEach((cell) => {
-    //     if (cell.value === '.container') {
-    //       newLineas = newLineas.filter(function (number) { return number.id !== cell.id; });
-    //     }
-    //   });
-    //   ordnung();
-    //   return newLineas
-    // };
-    // Container();
-
-
     // ==================добавляем кавычку в начало
     const sortArr = () => {
       for (let i = 0; i < newLineas.length; ++i) {
@@ -145,7 +138,6 @@ const handelResult = (e) => {
       }
     }
     sortArr()
-    // ==================
 
     // ================== максимальный сдвиг
     for (let i = 0; i < newLineas.length; ++i) { count = Math.max.apply(null, newLineas.map((car) => { return car.Offset })) }
@@ -153,17 +145,7 @@ const handelResult = (e) => {
 
     var temp = {}
 
-    // const cleanScss = (cell) => {
-    //   console.log(cell);
-    //   if (cell.value == '.container{' || cell.value == '.imgs{' || cell.value == 'use(xlink:href="#flag"){') {
-    //     newLineas = newLineas.filter((foo) => { return foo.id !== cell.id });
-    //   }
-    //   return newLineas
-    // };
-    // newLineas.forEach(car => {
-    //   cleanScss(car);
-    // })
-    // ordnung();
+
 
     const findReplace = () => {
 
@@ -198,11 +180,6 @@ const handelResult = (e) => {
     findReplace()
 
   };
-  // ==================
-  // ==================
-  // ==================
-  // ==================
-  // ==================
   sortnewLineas();
 
   var res = newLineas[0].value + '}';
@@ -214,16 +191,9 @@ const handelResult = (e) => {
 
 const clickLine = (e, Text) => {
   canvasItem.value.value = canvasItem.value.value + Text
-  e.target.style.background = "#e57373"
-  setTimeout(() => {
-    e.target.style.background = '#f9fbe7';
-  }, 200);
 }
 
 
-const handelClean = (e) => {
-  canvasItem.value.value = ''
-}
 
 const clickHandler = (e, id) => {
 
@@ -246,7 +216,7 @@ const clickHandler = (e, id) => {
 
 
 const copyDataCommon = [
-  { i: 1, dataText: 'section(id="best").best.rel' },
+  { i: 1, dataText: 'section(id="best").best.rel', },
   { i: 2, dataText: '.container' },
   { i: 3, dataText: '.best__' },
   { i: 15, dataText: 'img' },
@@ -349,55 +319,21 @@ const copyDataLinks = [
   position: relative;
   z-index: 4;
   border-radius: 5px;
-  background-color: #eceff121;
+  background-color: #8fc5e15c;
 }
 
 .drop-linea {
-  height: 23px;
+  height: 20px;
   background-color: $grey-4;
   border: 1px solid $grey-8;
   padding: 0 0 0 5px;
   cursor: pointer;
   overflow: hidden;
+  font-weight: 400;
+  font-size: 14px;
 }
 
-.result-area {
-  display: grid;
-  column-gap: 35px;
-  grid-template-columns: repeat(2, 200px);
-  margin: 10px 0 10px 30px;
-  position: relative;
 
-  &::after {
-    content: "pug";
-    position: absolute;
-    background-color: $brown-3;
-    display: flex;
-    justify-content: center;
-    width: 47px;
-    height: 26px;
-    top: 10px;
-    left: -36px;
-    z-index: 4;
-    opacity: 0.5;
-    transform: rotate(-90deg);
-  }
-
-  &::before {
-    content: 'scss';
-    position: absolute;
-    background-color: $brown-3;
-    display: flex;
-    justify-content: center;
-    width: 47px;
-    height: 26px;
-    top: 10px;
-    left: 200px;
-    z-index: 4;
-    opacity: 0.5;
-    transform: rotate(-90deg);
-  }
-}
 
 // ================================ */
 
@@ -408,7 +344,7 @@ const copyDataLinks = [
   span {
     width: 1px;
     height: 100%;
-    background: $blue-grey-2;
+    background: $blue-grey-5;
     position: absolute;
     top: 0;
 
@@ -476,43 +412,47 @@ const copyDataLinks = [
 }
 
 
-.stock {
-  min-height: 26px;
-  width: 80%;
-  background-color: $blue-grey-1;
-  height: 30px;
-  position: relative;
-  opacity: .9;
-  border: 1px solid $blue-grey-7;
-  margin: 10px 0 0 40px;
-  border-radius: 5px;
-  padding: 0 0 0 5px;
-}
 
-.line {
-  height: 26px;
-  background-color: $blue-grey-2;
-  border: 1px solid $grey-6;
-  position: relative;
-  cursor: pointer;
-  padding: 0 0 0 5px;
-  overflow: hidden;
-  white-space: wrap;
-  background-color: #f9fbe7;
-  padding: 2px;
-  outline: 1px solid #e6ee9c;
 
-  &:hover {
-    color: $orange-10;
-    @include transition;
+
+
+.result-area {
+  display: grid;
+  column-gap: 35px;
+  grid-template-columns: repeat(2, 200px);
+  margin: 10px 0 10px 30px;
+  position: relative;
+
+  &::after {
+    content: "pug";
+    position: absolute;
+    background-color: $brown-3;
+    display: flex;
+    justify-content: center;
+    width: 47px;
+    height: 26px;
+    top: 10px;
+    left: -36px;
+    z-index: 4;
+    opacity: 0.5;
+    transform: rotate(-90deg);
   }
 
-  &._is-active {
-    background-color: $red-4;
-    color: $red-1;
+  &::before {
+    content: 'scss';
+    position: absolute;
+    background-color: $brown-3;
+    display: flex;
+    justify-content: center;
+    width: 47px;
+    height: 26px;
+    top: 10px;
+    left: 200px;
+    z-index: 4;
+    opacity: 0.5;
+    transform: rotate(-90deg);
   }
 }
-
 
 
 .lager {
@@ -522,9 +462,10 @@ const copyDataLinks = [
   z-index: 10;
   display: grid;
   grid-template-columns: repeat(2, 150px) 500px;
+  font-size: 14px;
 }
 
-.hero__button {
+.button {
   height: 100%;
   border-radius: 5px;
   left: -39px;
@@ -536,17 +477,7 @@ const copyDataLinks = [
   }
 }
 
-.hero__reset {
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  left: 3px;
-  top: 96%;
-
-  &::after {
-    font-size: 15px;
-    height: 20px;
-    width: 20px;
-  }
+.stock {
+  margin: 10px 0 0 40px;
 }
 </style>

@@ -1,13 +1,34 @@
 <template lang="pug">
 .hero 
 	.canvas 
-		textarea.result(type='textarea'  v-copy :v-model="Something" :value='Something' )
-	.hero__head
-		.hero__temp
-			Button.hero__reset( @click='handelClean')
-		input.hero__line(type = 'text'  v-model='Result' )
+		Result(:v-model="Something" :value='Something')
+	Stok(v-model="result"   @click='handelClean' )
+
 	.hero__body
-		Akkord( :Data='[copyDataCommon,copyDataFind,copyDataCycl,copyDataArray,copyDataObject,copyDataNummber,copyDataPosition,copyDataString,copyDataClass,copyDataAsyncAwait,copyDatadragDrop]' @someEvent = "someEvent")
+		.hero__column
+			Copy(:item="item"  @clickcopy='clickcopy' v-for="item in copyDataCommon" :key="index" )
+		.hero__column
+			Copy(:item="item"   @clickcopy='clickcopy'  v-for="item in copyDataFind" :key="index" )
+		.hero__column
+			Copy(:item="item"   @clickcopy='clickcopy'  v-for="item in copyDataCycl" :key="index" )
+		.hero__column
+			Copy(:item="item"   @clickcopy='clickcopy' v-for="item in copyDataArray" :key="index" )
+		.hero__column
+			Copy(:item="item"  @clickcopy='clickcopy'  v-for="item in copyDataObject" :key="index" )
+		.hero__column
+			Copy(:item="item"  @clickcopy='clickcopy'  v-for="item in copyDataNummber" :key="index" )
+		.hero__column
+			Copy(:item="item"  @clickcopy='clickcopy'  v-for="item in copyDataPosition" :key="index" )
+		.hero__column
+			Copy(:item="item"  @clickcopy='clickcopy'  v-for="item in copyDataString" :key="index" )
+		.hero__column
+			Copy(:item="item"  @clickcopy='clickcopy'  v-for="item in copyDataClass" :key="index" )
+		.hero__column
+			Copy(:item="item"  @clickcopy='clickcopy'  v-for="item in copyDataAsyncAwait" :key="index" )
+
+		.hero__column
+			Copy(:item="item"  @clickcopy='clickcopy'  v-for="item in copyDatadragDrop" :key="index" )
+
 
 </template>
 
@@ -15,8 +36,10 @@
 import { ref } from 'vue'
 import Button from './Button.vue';
 import Tab from '@/components/Tab.vue';
-import Akkord from '@/components/Akkord.vue';
-var Result = ref('');
+import Result from './Result.vue';
+import Stok from "@/components/Stok.vue";
+import Copy from './Copy.vue';
+var result = ref('');
 var Something = ref('');
 var lastResult = ref('');
 
@@ -256,16 +279,19 @@ const copyDatadragDrop = [
 ]
 // ----------------------------------------
 const handelClean = () => {
-	let schneidenIndex = Something.value.indexOf(Result.value, 0)
+	let schneidenIndex = Something.value.indexOf(result.value, 0)
 	Something.value = Something.value.substring(0, schneidenIndex);
-	Result.value = '';
+	result.value = '';
 }
 // ----------------------------------------
-const someEvent = (data) => {
-	Result.value = data;
+const clickcopy = (data) => {
+	result.value = data;
 	lastResult.value = data + "\n";
 	Something.value = Something.value + lastResult.value;
 }
+
+
+
 // ----------------------------------------
 
 </script>
