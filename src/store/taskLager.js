@@ -1013,7 +1013,7 @@ export const useTask = defineStore("taskLager", {
           },
         ],
         [
-          { title: "ссылка на tag/custom directive/emit/slot" },
+          { title: "ссылка на tag/custom directive/slot" },
 
           {
             dataText: " ",
@@ -1033,19 +1033,8 @@ export const useTask = defineStore("taskLager", {
           },
           {
             dataText:
-              "app.directive('blur', { updated(el, binding) { if (binding.value) { el.blur(); el.classList.add('_is - light'); } }, })",
+              "app.directive('blur', { updated(el, binding) { if (binding.value) { el.blur(); el.classList.add('_is-light'); } }, })",
             description: " ",
-          },
-
-          { dataText: " ", description: "emit" },
-          {
-            dataText: "const emit = defineEmits(['someEvent'])",
-            description: "",
-          },
-          {
-            dataText:
-              "const HendlerClick = (dataText) => { emit('someEvent', dataText)}",
-            description: "",
           },
         ],
         [
@@ -1063,10 +1052,11 @@ export const useTask = defineStore("taskLager", {
           },
 
           { dataText: "", description: "В потомке" },
-          { dataText: "const props = defineProps({ ", description: "" },
-          { dataText: "text: { ", description: "" },
-          { dataText: "type: String, ", description: "" },
-          { dataText: "required: false ", description: "" },
+          {
+            dataText:
+              "const props = defineProps({text: {type: String , required: false }}) ",
+            description: "",
+          },
 
           {
             dataText: "const emit = defineEmits(['someEvent']) ",
@@ -1077,11 +1067,11 @@ export const useTask = defineStore("taskLager", {
               "const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } }",
             description: "",
           },
-
+          { dataText: "", description: "" },
           { dataText: "", description: "работа с props" },
           {
             dataText:
-              "const props = defineProps({item: {type: Array,required: false},}) ",
+              "const props = defineProps({item: {type: Array , required: false},}) ",
             description: "заходит на компонент",
           },
           {
@@ -1094,6 +1084,123 @@ export const useTask = defineStore("taskLager", {
             dataText:
               ".tab__line(v-for='el in content' :key='index' ) p(v-for= 'foo in el' : key='index' ) {{ foo }}",
             description: "теперь можно выводить данные",
+          },
+        ],
+        [
+          { title: "Input" },
+          {
+            dataText:
+              "TestInput(v-model='age') import TestInput from '@/components/TestInput.vue'; const age = ref('fff')",
+            description: "В родителе",
+          },
+          {
+            dataText:
+              "input(type = 'text' @input = '$emit('update:modelValue', $event.target.value)' :value = 'modelValue') const props = defineProps({modelValue: {type: String,required: false}})",
+            description: "В потомке",
+          },
+        ],
+        [
+          { title: "PINIA" },
+          {
+            dataText:
+              "import { createPinia } from 'pinia'; const pinia = createPinia(); .use(pinia)",
+            description: "инициализация в index.js",
+          },
+          {
+            dataText: "import Stell from './../modules/stellen-vue/Stell.vue';",
+            description: "",
+          },
+          {
+            dataText:
+              "[...document.querySelectorAll('.stell')].forEach((cell) => { createApp(Stell).use(createPinia()).mount(cell);",
+            description:
+              "здесь на каждый тег.stell накидывается экземпляр vue в котором уже есть доступ к PINIA",
+          },
+
+          {
+            dataText: "",
+            description:
+              "делаем папку store отдельный файл в папке store, например taskStell.js",
+          },
+          {
+            dataText:
+              "import { defineStore } from 'pinia';export const useTask = defineStore('taskLager', {state: () => {return {', ",
+          },
+
+          {
+            dataText:
+              "export const useTaskSalut = defineStore('taskSalut', { state: () => ({ isActiveSalut: 'notActive', staat: [{ titleItem: 'Токарь', gehaltItem: '80', }, { titleItem: 'Токарь', gehaltItem: '80', },], isVisible: true, }, }), }); ]",
+            description: "",
+          },
+          {
+            dataText: "",
+            description:
+              "здесь isActiveSalut прописана как реактивная. можно менять ее значение в компонентах и она будет реакивно обновляться в хранилище. по новому значению можно что-то делать в других компонентах.",
+          },
+
+          {
+            dataText: "import { useTaskSalut } from '../store/taskSalut'",
+            description: "",
+          },
+          { dataText: "import { storeToRefs } from 'pinia'", description: "" },
+          { dataText: "const store = useTaskSalut();", description: "" },
+          {
+            dataText: "const { isActiveSalut } = storeToRefs(store)",
+            description: "",
+          },
+          {
+            dataText:
+              "import { useTask } from '@/store/taskLager' const store = useTask();",
+          },
+        ],
+        [
+          { title: "изображение" },
+          {
+            dataText: "",
+            description:
+              "делаем в assets папку img. в ней создаем файл img.js.туда же забрасываем картинки.",
+          },
+          {
+            dataText: "import urlImgSalut from './salut.gif';",
+            description: "",
+          },
+          {
+            dataText: "import urlImgSalut1 from './salut1.gif';",
+            description: "",
+          },
+          {
+            dataText: "export { urlImgSalut, urlImgSalut1 };",
+            description: "",
+          },
+
+          { dataText: "", description: "потом используем в компонентах." },
+          {
+            dataText: "import * as images from '@/assets/img/img.js'",
+            description: "",
+          },
+          { dataText: "img(: src = 'images.urlImgSalut')", description: "" },
+
+          {
+            dataText: "import * as images from '@/assets/img/img.js'",
+            description:
+              "если нужно создать изображение и добавить его на страницу например к какому то тэгу some.value,который создан через ссылку input(type='text' ref='some')const some = ref(null).а потом например удалить через время",
+          },
+          {
+            dataText: "const salut = document.createElement('img')",
+            description: "",
+          },
+          {
+            dataText: "salut.setAttribute('src', images.urlImgSalut)",
+            description: "",
+          },
+          { dataText: "salut.classList.add('salut')", description: "" },
+          {
+            dataText: "some.value.closest('.plaza__line').append(salut)",
+            description: "",
+          },
+          {
+            dataText: "setTimeout(() => { salut.remove() }, 1000);",
+            description: "",
           },
         ],
       ],
