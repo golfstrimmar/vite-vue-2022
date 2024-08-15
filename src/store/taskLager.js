@@ -1124,13 +1124,17 @@ export const useTask = defineStore("taskLager", {
           },
           {
             dataText:
-              "import { defineStore } from 'pinia';export const useTask = defineStore('taskLager', {state: () => {return {', ",
+              "import { defineStore } from 'pinia';export const useTask = defineStore('taskLager', {state: () => {return {dataScss: [],}; },});', ",
           },
 
           {
             dataText:
               "export const useTaskSalut = defineStore('taskSalut', { state: () => ({ isActiveSalut: 'notActive', staat: [{ titleItem: 'Токарь', gehaltItem: '80', }, { titleItem: 'Токарь', gehaltItem: '80', },], isVisible: true, }, }), }); ]",
-            description: "",
+          },
+          {
+            description: "простое использование store",
+            dataText:
+              "import { useTask } from '@/store/taskLager' const store = useTask();",
           },
           {
             dataText: "",
@@ -1147,10 +1151,6 @@ export const useTask = defineStore("taskLager", {
           {
             dataText: "const { isActiveSalut } = storeToRefs(store)",
             description: "",
-          },
-          {
-            dataText:
-              "import { useTask } from '@/store/taskLager' const store = useTask();",
           },
         ],
         [
