@@ -53,7 +53,7 @@ const handelClean = () => {
 		grid-template-columns: repeat(auto-fill, 366px);
 		grid-template-rows: 1fr;
 		column-gap: 5px;
-		row-gap: 15px;
+
 	}
 }
 
@@ -64,11 +64,10 @@ const handelClean = () => {
 .hero__column {
 	display: flex;
 	flex-direction: column;
-	row-gap: 5px;
 }
 
 .stock {
-	margin: 10px 0;
+	margin: 5px 0;
 	width: 100%;
 }
 </style>

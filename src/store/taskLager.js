@@ -37,6 +37,7 @@ export const useTask = defineStore("taskLager", {
 
           { i: 1, dataText: "cursor: pointer;" },
 
+          { i: 10, dataText: "transition: all 0.2s;" },
           { i: 10, dataText: "&._is-active{}" },
           {
             i: 10,
@@ -236,6 +237,8 @@ export const useTask = defineStore("taskLager", {
           { title: "Position" },
           { i: 11, dataText: "position: relative; " },
           { i: 11, dataText: "position: absolute;" },
+          { i: 11, dataText: "position: fixed;" },
+          { i: 11, dataText: "z-index: ;" },
           { i: 10, dataText: "top: 50%;" },
           { i: 10, dataText: "left: 50%;" },
           { i: 10, dataText: "right: auto;" },
@@ -562,8 +565,7 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "Koordinate" },
           {
-            dataText: "",
-            description:
+            dataText:
               "https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect",
           },
           {
@@ -601,7 +603,7 @@ export const useTask = defineStore("taskLager", {
               'let message = document.createElement("div"); let coords = elem.getBoundingClientRect();  message.style.left = coords.left + "px";	message.style.top = coords.bottom + "px";',
             description: "",
           },
-          { dataText: "", description: "Координаты события" },
+          { title: "Координаты события" },
           {
             dataText:
               'let elem = document.querySelector("#elem");window.addEventListener("mousemove", function (event) {	elem.innerHTML = event.pageX + ":" + event.pageY;	}); ',
@@ -997,7 +999,8 @@ export const useTask = defineStore("taskLager", {
           { dataText: ':class="classObject"', description: " " },
           {
             dataText:
-              'computed: {classObject() {return { active: this.isActive && !this.error,"text-danger": this.error && this.error.type === "fatal"}}} ',
+              'const classObject = computed(() => {	return {active: this.isActive && !this.error,"text-danger": this.error && this.error.type === "fatal"}})',
+
             description: " ",
           },
           { dataText: ':class="[activeClass, errorClass]', description: " " },
@@ -1016,15 +1019,13 @@ export const useTask = defineStore("taskLager", {
           { title: "ссылка на tag/custom directive/slot" },
 
           {
-            dataText: " ",
-            description: "ссылка на конкретный tag. аналог this",
+            title: "ссылка на конкретный tag. аналог this",
           },
           { dataText: "input(type='text' ref='some')", description: "" },
           { dataText: "const some = ref(null)", description: "" },
 
           {
-            dataText: " ",
-            description: "custom directive прописывается в main.js",
+            title: "custom directive прописывается в main.js",
           },
           {
             dataText:
@@ -1039,7 +1040,7 @@ export const useTask = defineStore("taskLager", {
         ],
         [
           { title: "Props" },
-          { dataText: "", description: "В родителе" },
+          { title: "В родителе" },
 
           {
             dataText:
@@ -1051,7 +1052,7 @@ export const useTask = defineStore("taskLager", {
             description: "",
           },
 
-          { dataText: "", description: "В потомке" },
+          { title: "В потомке" },
           {
             dataText:
               "const props = defineProps({text: {type: String , required: false }}) ",
@@ -1067,8 +1068,8 @@ export const useTask = defineStore("taskLager", {
               "const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } }",
             description: "",
           },
-          { dataText: "", description: "" },
-          { dataText: "", description: "работа с props" },
+
+          { title: "работа с props" },
           {
             dataText:
               "const props = defineProps({item: {type: Array , required: false},}) ",
@@ -1118,8 +1119,7 @@ export const useTask = defineStore("taskLager", {
           },
 
           {
-            dataText: "",
-            description:
+            title:
               "делаем папку store отдельный файл в папке store, например taskStell.js",
           },
           {
@@ -1137,8 +1137,7 @@ export const useTask = defineStore("taskLager", {
               "import { useTask } from '@/store/taskLager' const store = useTask();",
           },
           {
-            dataText: "",
-            description:
+            title:
               "здесь isActiveSalut прописана как реактивная. можно менять ее значение в компонентах и она будет реакивно обновляться в хранилище. по новому значению можно что-то делать в других компонентах.",
           },
 
@@ -1156,8 +1155,7 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "изображение" },
           {
-            dataText: "",
-            description:
+            title:
               "делаем в assets папку img. в ней создаем файл img.js.туда же забрасываем картинки.",
           },
           {
@@ -1173,7 +1171,7 @@ export const useTask = defineStore("taskLager", {
             description: "",
           },
 
-          { dataText: "", description: "потом используем в компонентах." },
+          { title: "потом используем в компонентах." },
           {
             dataText: "import * as images from '@/assets/img/img.js'",
             description: "",
