@@ -33,7 +33,8 @@
       Copy(@click='clickLine($event,item.dataText)'  v-for="item in copyDataName" :key="index" :item='item')
     .lager__block
       Copy(@click='clickLine($event,item.dataText)'  v-for="item in copyDataLinks" :key="index" :item='item')
-
+    .lager__block
+      Copy(@click='clickLine($event,item.dataText)'  v-for="item in copyDataTable" :key="index" :item='item')
 
 
 
@@ -240,6 +241,8 @@ const copyDataCommon = [
 
 const copyDataName = [
   { i: 15, dataText: 'body' },
+  { i: 16, dataText: 'title' },
+  { i: 17, dataText: 'text' },
   { i: 18, dataText: 'blocks' },
   { i: 18, dataText: 'block' },
   { i: 17, dataText: 'button' },
@@ -250,17 +253,18 @@ const copyDataName = [
   { i: 17, dataText: 'email' },
   { i: 17, dataText: 'img' },
   { i: 17, dataText: 'info' },
-
+  { i: 17, dataText: 'unit' },
+  { i: 17, dataText: 'plaza' },
+  { i: 17, dataText: 'line' },
   { i: 19, dataText: 'items' },
   { i: 20, dataText: 'item' },
   { i: 17, dataText: 'hidden' },
   { i: 17, dataText: 'low' },
-  { i: 17, dataText: 'line' },
+
   { i: 20, dataText: 'logo' },
-  { i: 17, dataText: 'plaza' },
+
   { i: 17, dataText: 'phone' },
-  { i: 16, dataText: 'title' },
-  { i: 17, dataText: 'text' },
+
   { i: 17, dataText: 'soc' },
 ]
 
@@ -302,8 +306,73 @@ const copyDataLinks = [
   { i: 10, dataText: "-\n  var blocks = [\n    {\n      src: './img/sprite.svg#ban-1',\n      title: 'Title slide 1 ',\n      text: 'text	text	text'\n    },\n  ];\neach block in blocks\n  .bunner__block.bunner-block\n    .bunner-block__icon\n      svg\n        use(xlink:href=block.src)\n    .bunner-block__title.Text-Style-10=block.title\n    .bunner-block__text.Text-Style-11=block.text" },
   { i: 10, dataText: " " },
 
-]
 
+  {
+    title: "table",
+  },
+  {
+    dataText: "table",
+    description: "",
+  },
+  {
+    dataText: "thead",
+    description:
+      " инкапсулирует набор строк таблицы ( элементов), указывая, что они составляют заголовок таблицы с информацией о столбцах таблицы.",
+  },
+  {
+    dataText: "tr",
+    description:
+      "Table Row  определяет строку ячеек в таблице. Ячейки строки затем могут быть установлены с помощью сочетания элементов (ячейка данных) и (ячейка заголовка).<tr> <td><th>",
+  },
+  {
+    dataText: "th",
+    description:
+      "The Table Header определяет ячейку как заголовок группы ячеек таблицы и может использоваться как дочерний элемент элемента . Точная природа этой группы определяется атрибутами и .<th> <tr>scopeheaders",
+  },
+  {
+    dataText: "td",
+    description:
+      "Наименьший контейнер   определяет ячейку таблицы, содержащую данные, и может использоваться как дочерний элемент элемента .<td> <tr>",
+  },
+  {
+    dataText: "tfoot",
+    description:
+      "The Table Foot  инкапсулирует набор строк таблицы ( элементов), указывая, что они составляют основание таблицы с информацией о столбцах таблицы.",
+  },
+  {
+    dataText: "colgroup",
+    description:
+      "определяет группу столбцов в таблице.",
+  },
+  {
+    dataText: "colspan=''",
+  },
+  {
+    dataText: "rowspan=''",
+  },
+  {
+    dataText: "span=''",
+  },
+  {
+    dataText: "scope='col'",
+  },
+  {
+    dataText: "scope='row'",
+  },
+  {
+    dataText: "caption",
+    description:
+      "определяет заголовок (или название) таблицы, предоставляя таблице доступное описание .",
+  },
+  {
+    title: " Пример таблицы",
+
+  },
+  {
+    dataText: "table\n  thead\n    tr\n      th\n    tr\n      th\n  thtbody\n    tr\n      td",
+
+  },
+]
 </script>
 
 

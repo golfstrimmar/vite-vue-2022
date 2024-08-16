@@ -7,17 +7,17 @@ export const useTask = defineStore("taskLager", {
       dataScss: [
         [
           { title: "Allgemein" },
-          { i: 1, dataText: "text-align: center;" },
+          { dataText: "text-align: center;" },
 
-          { i: 1, dataText: "margin: 0 0 0 0;" },
-          { i: 1, dataText: "margin: 0 auto;" },
-          { i: 1, dataText: "padding: 0 0 0 0;" },
-          { i: 1, dataText: "width:  ;" },
-          { i: 1, dataText: "max-width:  ;" },
-          { i: 1, dataText: "height:  ;" },
-          { i: 1, dataText: "min-height: ;" },
-          { i: 1, dataText: "color:  ;" },
-          { i: 1, dataText: "opacity:  ;" },
+          { dataText: "margin: 0 0 0 0;" },
+          { dataText: "margin: 0 auto;" },
+          { dataText: "padding: 0 0 0 0;" },
+          { dataText: "width:  ;" },
+          { dataText: "max-width:  ;" },
+          { dataText: "height:  ;" },
+          { dataText: "min-height: ;" },
+          { dataText: "color:  ;" },
+          { dataText: "opacity:  ;" },
           { i: 10, dataText: "border: 3px solid ;" },
           { i: 10, dataText: "outline: 1px solid ;" },
           { i: 10, dataText: "border-radius: 10px;" },
@@ -28,14 +28,14 @@ export const useTask = defineStore("taskLager", {
               "box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);",
           },
           { i: 10, dataText: "background: rgba(0,0,0,.75);" },
-          { i: 1, dataText: "overflow: hidden;" },
-          { i: 1, dataText: "overflow: scroll;" },
+          { dataText: "overflow: hidden;" },
+          { dataText: "overflow: scroll;" },
 
-          { i: 1, dataText: "display: block;" },
-          { i: 1, dataText: "display: inline-block;" },
-          { i: 1, dataText: "display: none;" },
+          { dataText: "display: block;" },
+          { dataText: "display: inline-block;" },
+          { dataText: "display: none;" },
 
-          { i: 1, dataText: "cursor: pointer;" },
+          { dataText: "cursor: pointer;" },
 
           { i: 10, dataText: "transition: all 0.2s;" },
           { i: 10, dataText: "&._is-active{}" },
@@ -60,7 +60,7 @@ export const useTask = defineStore("taskLager", {
         ],
         [
           { title: "Grid" },
-          { i: 1, dataText: "display: grid;" },
+          { dataText: "display: grid;" },
           { i: 2, dataText: "grid-template-columns: 100px 1fr;" },
           { i: 12, dataText: "grid-template-columns: repeat(3, 200px);" },
           {
@@ -92,148 +92,6 @@ export const useTask = defineStore("taskLager", {
           { i: 8, dataText: "._a{grid-area: a;}" },
           { i: 8, dataText: "._b{ grid- area: b;}" },
           { i: 9, dataText: "._c{ grid- area: c;}" },
-        ],
-
-        [
-          { title: "Flex" },
-          { i: 15, dataText: "display: flex;" },
-          { i: 18, dataText: "justify-content: center;" },
-          { i: 18, dataText: "align-items: center;" },
-          { i: 17, dataText: "flex-direction: column;" },
-          { i: 17, dataText: "justify-content: flex-start;" },
-          { i: 17, dataText: "justify-content: flex-end;" },
-          { i: 17, dataText: "justify-content:space-between;" },
-          { i: 17, dataText: "justify-content:space-around;" },
-          { i: 17, dataText: "justify-content: left;" },
-          { i: 19, dataText: "justify-content: right;" },
-          { i: 20, dataText: "justify-content: baseline;" },
-          { i: 17, dataText: "justify-content: first baseline;" },
-          { i: 20, dataText: "justify-content: last baseline;" },
-          { i: 17, dataText: "justify-content: inherit;" },
-          { i: 17, dataText: "justify-items: center;" },
-          { i: 17, dataText: "justify-items: right;" },
-          { i: 17, dataText: "align-items: flex-start;" },
-          { i: 16, dataText: "align-items: flex-end;" },
-          { i: 17, dataText: "align-items: self-start;" },
-          { i: 17, dataText: "align-items: self-start;" },
-          { i: 17, dataText: "flex-wrap: nowrap;" },
-          { i: 17, dataText: "align-items: self-start;" },
-          { i: 17, dataText: "flex: 0 1 100%;" },
-          {
-            i: 17,
-            dataText: "flex-grow: 0; ",
-            description:
-              " элемент не может расти/растягиваться больше, чем исходный размер ",
-          },
-          {
-            i: 17,
-            dataText: "flex- shrink: 1; ",
-            description:
-              " элемент может сжиматься меньше, чем исходный размер ",
-          },
-          {
-            i: 17,
-            dataText: "flex - basis: auto; ",
-            description:
-              " исходный размер равен auto, то есть равен просто ширине элемента, но ширина элемента не задана, поэтому по содержимому ",
-          },
-        ],
-        [
-          { title: "Pseudo" },
-          {
-            i: 1,
-            dataText: "",
-            description: "https://developer.mozilla.org/ru/docs/Web/CSS/:hover",
-          },
-          {
-            i: 1,
-            dataText:
-              '&::after{\n  content: "";\n  position: absolute;\n  background- color: ;\n  width: ;\n  height: ;\n  top: 0;\n  left: 0;\n  }',
-            description: "",
-          },
-          {
-            i: 1,
-            dataText:
-              '&::before{\n  content: "";\n  position: absolute;\n  background- color: ;\n  width: ;\n  height: ;\n  top: 0;\n  left: 0;\n  }',
-            description: "",
-          },
-
-          { i: 1, dataText: "&:first-child{ }; ", description: "" },
-          { i: 1, dataText: "&:first-of-type{ }; ", description: "" },
-          { i: 1, dataText: "&:focus{ }; ", description: "" },
-          { i: 1, dataText: "&:hover{ };", description: "" },
-          { i: 1, dataText: "&:last-child{ };", description: "" },
-          {
-            i: 1,
-            dataText: "&:last-of-type{ };",
-            description:
-              "Выбирает , являющийся последним элементом среди элементов своего типа среди своих соседей",
-          },
-          {
-            i: 1,
-            dataText: "&:not(p){ };",
-            description: "Он находит элементы, не соответствующие селектору. ",
-          },
-          {
-            i: 1,
-            dataText:
-              ":root { --main - color: hotpink;	--pane - padding: 5px 42px;};",
-            description: "полезно для объявления CSS Переменных:",
-          },
-          {
-            i: 1,
-            dataText: "&:nth-last-of-type(4n){ };",
-            description:
-              "Выбирает каждый четвёртый элемент <p> среди любой группы соседних элементов,	отсчёт начинается с последнего элемента",
-          },
-
-          {
-            i: 1,
-            dataText: "&:has(+ p){}; ",
-            description:
-              "только для тегов < h1 >, следом за которыми идёт тег < p > ",
-          },
-          {
-            i: 1,
-            dataText: "&:nth-child(2n){ }; ",
-            description:
-              "Описывает чётные строки HTML таблицы: 2, 4, 6, и т. д.",
-          },
-          {
-            i: 1,
-            dataText: "&:nth-child(2n+1){ }; ",
-            description: "Описывает нечётные строки : 1, 3, 5, и т. д.",
-          },
-          { i: 1, dataText: "&:nth-child( ){ };", description: "" },
-          {
-            i: 1,
-            dataText: "&:nth-child(5n){ };",
-            description: "Описывает элементы с номерами 5, 10, 15, и т. д.",
-          },
-          {
-            i: 1,
-            dataText: "&:nth-child(3n+4){ };",
-            description: "Описывает элементы с номерами 4, 7, 10, 13, и т. д.",
-          },
-          {
-            i: 1,
-            dataText: "&:nth-child(-n+3){ };",
-            description:
-              "Описывает первые три элемента среди группы соседних элементов.",
-          },
-          {
-            i: 1,
-            dataText: "p:nth-child(0n+1){ };",
-            description:
-              "Описывает каждый элемент <p>, являющийся первым среди группы соседних элементов.",
-          },
-          {
-            i: 1,
-            dataText: "&:nth-last-child(-n + 3){ };",
-            description: "последние 3 потомка",
-          },
-        ],
-        [
           { title: "Position" },
           { i: 11, dataText: "position: relative; " },
           { i: 11, dataText: "position: absolute;" },
@@ -249,76 +107,135 @@ export const useTask = defineStore("taskLager", {
           { i: 10, dataText: "transform: scaleX(1);" },
           { i: 10, dataText: "transform-origin: top;" },
         ],
+
+        [
+          { title: "Flex" },
+          { i: 15, dataText: "display: flex;" },
+
+          { i: 17, dataText: "flex-direction: column;" },
+          { i: 17, dataText: "flex: 0 1 100%;" },
+          {
+            i: 17,
+            dataText: "flex-grow: 0; ",
+            description:
+              " элемент не может расти/растягиваться больше, чем исходный размер ",
+          },
+          {
+            i: 17,
+            dataText: "flex-shrink: 1; ",
+            description:
+              " элемент может сжиматься меньше, чем исходный размер ",
+          },
+          {
+            i: 17,
+            dataText: "flex-basis: auto; ",
+            description:
+              " исходный размер равен auto, то есть равен просто ширине элемента, но ширина элемента не задана, поэтому по содержимому ",
+          },
+          { i: 17, dataText: "flex-wrap: nowrap;" },
+          { title: "justify" },
+          { i: 18, dataText: "justify-content: center;" },
+          { i: 17, dataText: "justify-content: flex-start;" },
+          { i: 17, dataText: "justify-content: flex-end;" },
+          { i: 17, dataText: "justify-content:space-between;" },
+          { i: 17, dataText: "justify-content:space-around;" },
+          { i: 17, dataText: "justify-content: left;" },
+          { i: 19, dataText: "justify-content: right;" },
+          { i: 20, dataText: "justify-content: baseline;" },
+          { i: 17, dataText: "justify-content: first baseline;" },
+          { i: 20, dataText: "justify-content: last baseline;" },
+          { i: 17, dataText: "justify-content: inherit;" },
+          { i: 17, dataText: "justify-items: center;" },
+          { i: 17, dataText: "justify-items: right;" },
+          { title: "align" },
+          { i: 18, dataText: "align-items: center;" },
+          { i: 17, dataText: "align-items: flex-start;" },
+          { i: 16, dataText: "align-items: flex-end;" },
+          { i: 17, dataText: "align-items: self-start;" },
+          { i: 17, dataText: "align-items: self-start;" },
+
+          { i: 17, dataText: "align-items: self-start;" },
+        ],
+        [
+          { title: "Pseudo" },
+          {
+            dataText: "https://developer.mozilla.org/ru/docs/Web/CSS/:hover",
+          },
+          {
+            dataText:
+              '&::after{\n  content: "";\n  position: absolute;\n  background- color: ;\n  width: ;\n  height: ;\n  top: 0;\n  left: 0;\n  }',
+          },
+          {
+            dataText:
+              '&::before{\n  content: "";\n  position: absolute;\n  background- color: ;\n  width: ;\n  height: ;\n  top: 0;\n  left: 0;\n  }',
+          },
+
+          { dataText: "&:first-child{ }; ", description: "" },
+          { dataText: "&:first-of-type{ }; ", description: "" },
+          { dataText: "&:focus{ }; ", description: "" },
+          { dataText: "&:hover{ };", description: "" },
+          { dataText: "&:last-child{ };", description: "" },
+          {
+            dataText: "&:last-of-type{ };",
+            description:
+              "Выбирает , являющийся последним элементом среди элементов своего типа среди своих соседей",
+          },
+          {
+            dataText: "&:not(p){ };",
+            description: "Он находит элементы, не соответствующие селектору. ",
+          },
+          {
+            dataText:
+              ":root { --main - color: hotpink;	--pane - padding: 5px 42px;};",
+            description: "полезно для объявления CSS Переменных:",
+          },
+          {
+            dataText: "&:nth-last-of-type(4n){ };",
+            description:
+              "Выбирает каждый четвёртый элемент <p> среди любой группы соседних элементов,	отсчёт начинается с последнего элемента",
+          },
+
+          {
+            dataText: "&:has(+ p){}; ",
+            description:
+              "только для тегов < h1 >, следом за которыми идёт тег < p > ",
+          },
+          {
+            dataText: "&:nth-child(2n){ }; ",
+            description:
+              "Описывает чётные строки HTML таблицы: 2, 4, 6, и т. д.",
+          },
+          {
+            dataText: "&:nth-child(2n+1){ }; ",
+            description: "Описывает нечётные строки : 1, 3, 5, и т. д.",
+          },
+          { dataText: "&:nth-child( ){ };", description: "" },
+          {
+            dataText: "&:nth-child(5n){ };",
+            description: "Описывает элементы с номерами 5, 10, 15, и т. д.",
+          },
+          {
+            dataText: "&:nth-child(3n+4){ };",
+            description: "Описывает элементы с номерами 4, 7, 10, 13, и т. д.",
+          },
+          {
+            dataText: "&:nth-child(-n+3){ };",
+            description:
+              "Описывает первые три элемента среди группы соседних элементов.",
+          },
+          {
+            dataText: "p:nth-child(0n+1){ };",
+            description:
+              "Описывает каждый элемент <p>, являющийся первым среди группы соседних элементов.",
+          },
+          {
+            dataText: "&:nth-last-child(-n + 3){ };",
+            description: "последние 3 потомка",
+          },
+          { title: "Table" },
+        ],
       ],
       dataJs: [
-        [
-          { title: "Suchen" },
-          { dataText: "let = document.querySelector('');" },
-          { dataText: 'let head = .querySelectorAll(" ");' },
-          { description: "", dataText: '.closest("")' },
-          {
-            dataText: ".nextElementSibling",
-            description:
-              "только для чтения возвращает элемент, следующий непосредственно за указанным в списке дочерних элементов его родителя, или nullесли указанный элемент является последним в списке.",
-          },
-          {
-            dataText: ".parentElement",
-            description:
-              "только для чтения, Nodeвозвращает родителя узла DOM Elementили, nullесли у узла нет родителя или его родитель не является DOM",
-          },
-          {
-            dataText: "Node.baseURI",
-            description:
-              "Возвращает строку, представляющую базовый URL-адрес документа, содержащего Node.",
-          },
-          {
-            dataText: "Node.childNodes",
-            description:
-              "Возвращает живой объект NodeList, содержащий все дочерние элементы данного узла (включая элементы, текст и комментарии). NodeListЕсли дочерние элементы Nodeизменяются, NodeListобъект автоматически обновляется.",
-          },
-          {
-            dataText: "Node.firstChild",
-            description:
-              "Возвращает , Nodeпредставляющий первый прямой дочерний узел узла, или nullесли у узла нет дочернего узла.",
-          },
-          {
-            dataText: "Node.lastChild",
-            description:
-              "Возвращает , Nodeпредставляющий последний прямой дочерний узел узла, или nullесли у узла нет дочернего узла.",
-          },
-          {
-            dataText: "Node.nextSibling",
-            description:
-              "Возвращает , Nodeпредставляющий следующий узел в дереве, или , nullесли такого узла нет.",
-          },
-          {
-            dataText: "Node.nodeValue",
-            description: "Возвращает/устанавливает значение текущего узла.",
-          },
-          {
-            dataText: "Node.parentNode",
-            description:
-              "Возвращает , Nodeкоторый является родителем этого узла. Если такого узла нет, например, если этот узел является вершиной дерева или не участвует в дереве, это свойство возвращает null.",
-          },
-          {
-            dataText: "Node.parentElement",
-            description:
-              "Возвращает , Elementкоторый является родителем этого узла. Если у узла нет родителя или если этот родитель не является Element, это свойство возвращает null.",
-          },
-          {
-            dataText: "Node.previousSibling",
-            description:
-              "Возвращает , Nodeпредставляющий предыдущий узел в дереве, или , nullесли такого узла нет.",
-          },
-          {
-            dataText: "",
-            description: "",
-          },
-          {
-            dataText: "",
-            description: "",
-          },
-        ],
         [
           { title: "Allgemein" },
           { dataText: "const = () => {};" },
@@ -435,12 +352,105 @@ export const useTask = defineStore("taskLager", {
             dataText:
               'var a = 2 + 2; switch (a) { case 3: alert( "Маловато" ); break; case 4: alert( "В точку!" ); break; case 5: alert( "Перебор" ); break; default: alert( "Я таких значений не знаю" ); }',
           },
+          { title: "Suchen" },
+          { dataText: "let = document.querySelector('');" },
+          { dataText: 'let head = .querySelectorAll(" ");' },
+          { dataText: '.closest("")' },
+          {
+            dataText: ".nextElementSibling",
+            description:
+              "только для чтения возвращает элемент, следующий непосредственно за указанным в списке дочерних элементов его родителя, или nullесли указанный элемент является последним в списке.",
+          },
+          {
+            dataText: ".parentElement",
+            description:
+              "только для чтения, Nodeвозвращает родителя узла DOM Elementили, nullесли у узла нет родителя или его родитель не является DOM",
+          },
+          {
+            dataText: "Node.baseURI",
+            description:
+              "Возвращает строку, представляющую базовый URL-адрес документа, содержащего Node.",
+          },
+          {
+            dataText: "Node.childNodes",
+            description:
+              "Возвращает живой объект NodeList, содержащий все дочерние элементы данного узла (включая элементы, текст и комментарии). NodeListЕсли дочерние элементы Nodeизменяются, NodeListобъект автоматически обновляется.",
+          },
+          {
+            dataText: "Node.firstChild",
+            description:
+              "Возвращает , Nodeпредставляющий первый прямой дочерний узел узла, или nullесли у узла нет дочернего узла.",
+          },
+          {
+            dataText: "Node.lastChild",
+            description:
+              "Возвращает , Nodeпредставляющий последний прямой дочерний узел узла, или nullесли у узла нет дочернего узла.",
+          },
+          {
+            dataText: "Node.nextSibling",
+            description:
+              "Возвращает , Nodeпредставляющий следующий узел в дереве, или , nullесли такого узла нет.",
+          },
+          {
+            dataText: "Node.nodeValue",
+            description: "Возвращает/устанавливает значение текущего узла.",
+          },
+          {
+            dataText: "Node.parentNode",
+            description:
+              "Возвращает , Nodeкоторый является родителем этого узла. Если такого узла нет, например, если этот узел является вершиной дерева или не участвует в дереве, это свойство возвращает null.",
+          },
+          {
+            dataText: "Node.parentElement",
+            description:
+              "Возвращает , Elementкоторый является родителем этого узла. Если у узла нет родителя или если этот родитель не является Element, это свойство возвращает null.",
+          },
+          {
+            dataText: "Node.previousSibling",
+            description:
+              "Возвращает , Nodeпредставляющий предыдущий узел в дереве, или , nullесли такого узла нет.",
+          },
+          { title: "1,2,3 ..." },
+          {
+            dataText: "Math.max.apply(null, Array);",
+            description: "максимального элемента в числовом массиве",
+          },
+          { dataText: "access = age > 14 ? true : false;" },
+          {
+            dataText:
+              "var age = prompt('возраст?', 18); var message = (age < 3) ? 'Здравствуй, малыш!' : (age < 18) ? 'Привет!' : (age < 100) ? 'Здравствуйте!' : 'Какой необычный возраст!' ; alert( message );",
+          },
+
+          {
+            description: "рекурсия",
+            dataText:
+              "function sumTo(n) { if (n == 1) return 1; return n + sumTo(n ‐ 1); } alert( sumTo(100) );",
+          },
+
+          {
+            description: "Преобразование к числу",
+            dataText: 'var s = "12.34"; alert( +s ); ',
+          },
+          { description: "Округляет вниз", dataText: "Math.floor(3.1)" },
+          {
+            description: "Округляет вверхalert( Math.round(3.1) ); // 3",
+            dataText: " Math.ceil(3.1) ",
+          },
+          {
+            description: "Округляет до ближайшего целого",
+            dataText: "Math.round(3.1)",
+          },
+          {
+            description: "математические методы",
+            dataText:
+              "page 110 Math.max(a, b, c...) Math.min(a, b, c...) Math.random() toLocaleString()",
+          },
         ],
         [
           { title: "Array" },
-          { description: "", dataText: ".forEach((cell) => { }); " },
-          { description: "", dataText: ".indexOf(0)" },
-          { description: "", dataText: ".find((item) => item.id == id)" },
+          { dataText: ".forEach((cell) => { }); " },
+          { dataText: ".indexOf(0)" },
+          { dataText: ".find((item) => item.id == id)" },
           {
             description:
               "повторит значение переменной spase столько раз, какое чмсло в переменной Offset ",
@@ -527,11 +537,10 @@ export const useTask = defineStore("taskLager", {
           },
           { description: "скопируется весь массив", dataText: ".slice();" },
           {
-            description: "",
             dataText:
               "function compareNumeric(a, b) {if (a > b) return 1;if (a < b) return ‐1;} .sort(compareNumeric); ",
           },
-          { description: "", dataText: ".reverse();" },
+          { dataText: ".reverse();" },
           { description: "соединяет массивы", dataText: ".concat(3, 4);" },
 
           {
@@ -601,13 +610,11 @@ export const useTask = defineStore("taskLager", {
           {
             dataText:
               'let message = document.createElement("div"); let coords = elem.getBoundingClientRect();  message.style.left = coords.left + "px";	message.style.top = coords.bottom + "px";',
-            description: "",
           },
           { title: "Координаты события" },
           {
             dataText:
               'let elem = document.querySelector("#elem");window.addEventListener("mousemove", function (event) {	elem.innerHTML = event.pageX + ":" + event.pageY;	}); ',
-            description: "",
           },
 
           {
@@ -615,47 +622,8 @@ export const useTask = defineStore("taskLager", {
             description:
               "расстояние от верхнего края (offsetTop) или левого края (offsetLeft) текущего элемента до ближайшего родительского элемента (или до самого body, если родительских элементов нет).",
           },
-        ],
-        [
-          { title: "1,2,3 ..." },
-          {
-            dataText: "Math.max.apply(null, Array);",
-            description: "максимального элемента в числовом массиве",
-          },
-          { dataText: "access = age > 14 ? true : false;" },
-          {
-            dataText:
-              "var age = prompt('возраст?', 18); var message = (age < 3) ? 'Здравствуй, малыш!' : (age < 18) ? 'Привет!' : (age < 100) ? 'Здравствуйте!' : 'Какой необычный возраст!' ; alert( message );",
-          },
-          {
-            description: "рекурсия",
-            dataText:
-              "function sumTo(n) { if (n == 1) return 1; return n + sumTo(n ‐ 1); } alert( sumTo(100) );",
-          },
-
-          {
-            description: "Преобразование к числу",
-            dataText: 'var s = "12.34"; alert( +s ); ',
-          },
-          { description: "Округляет вниз", dataText: "Math.floor(3.1)" },
-          {
-            description: "Округляет вверхalert( Math.round(3.1) ); // 3",
-            dataText: " Math.ceil(3.1) ",
-          },
-          {
-            description: "Округляет до ближайшего целого",
-            dataText: "Math.round(3.1)",
-          },
-          {
-            description: "математические методы",
-            dataText:
-              "page 110 Math.max(a, b, c...) Math.min(a, b, c...) Math.random() toLocaleString()",
-          },
-        ],
-        [
           { title: "Zeile" },
           {
-            description: "",
             dataText:
               '"https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String"',
           },
@@ -718,7 +686,6 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "Objekt" },
           {
-            description: "",
             dataText: 'var person = {}; person.name = "Вася"; person.age = 25;',
           },
           { description: "удаление", dataText: "delete person.age;" },
@@ -775,31 +742,24 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "Ereignisse" },
           {
-            description: "",
             dataText: ".mousedown = (event) => {};",
           },
           {
-            description: "",
             dataText: ".onblur = (event) => {}; ",
           },
           {
-            description: "",
             dataText: ".onclick = (event) => {}; ",
           },
           {
-            description: "",
             dataText: ".onfocus = (event) => {};",
           },
           {
-            description: "",
             dataText: ".oninput = (event) => {};",
           },
           {
-            description: "",
             dataText: ".onmouseenter = (event) => {};",
           },
           {
-            description: "",
             dataText: ".onmouseleave = (event) => {};",
           },
           {
@@ -813,7 +773,6 @@ export const useTask = defineStore("taskLager", {
             dataText: ".onmouseout = (event) => {};",
           },
           {
-            description: "",
             dataText: ".onmouseover = (event) => {};",
           },
           {
@@ -827,50 +786,7 @@ export const useTask = defineStore("taskLager", {
             dataText: ".onwheel = (event) => {};",
           },
           {
-            description: "",
             dataText: ".onscroll = (event) => {};",
-          },
-        ],
-
-        [
-          { title: "Class" },
-          {
-            description: "",
-            dataText:
-              "class Car {constructor(brand, color) {this.brand = brand;this.color = color;}start() {}stop() {}static discount() {}}",
-          },
-
-          {
-            description:
-              "cetter позволяет добавить свойство, которого изначально нет в классе.",
-            dataText: "set rating(value){this.score = value.toUpperCase();}",
-          },
-          {
-            description: "getter позволяет взять значение этого свойства",
-            dataText: "get rating(){return this.score}",
-          },
-          {
-            description:
-              "дочерние классы полностью наследуют методы родителя и еще ожно добавить свои методы",
-            dataText: "class HibridCar extends Car {",
-          },
-        ],
-        [
-          { title: "AsyncAwait" },
-          {
-            description: "Promise",
-            dataText:
-              'function sleep(time) {return new Promise((resolve, reject) => {	if (time < 1000) { reject("слишком мало поспал") } setTimeout(() => resolve(`поспал ${time}`), time)})}   sleep(1500).then(res => {console.log(res);	return sleep(1000)}).then(res => {console.log(res);return sleep(500)}).then(res => {console.log(res);}).catch(err => {console.log("ошибка", err);})',
-          },
-          {
-            description: "async/await",
-            dataText:
-              'const getGitData = async () => {try {	const responce = await fetch("https://api.github.com/users/vasilymur");	const data = await responce.json();console.log(data);} catch (err) {console.log("err", err);}} getGitData()',
-          },
-          {
-            description: "async/await",
-            dataText:
-              'const getUserVideo = async () => {try {const response = await navigator.mediaDevices.getUserMedia({ video: true });video.srcObject = response;} catch (err) {console.log("err", err);}}getUserVideo();',
           },
         ],
         [
@@ -900,6 +816,43 @@ export const useTask = defineStore("taskLager", {
             description:
               "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event",
           },
+          { title: "Class" },
+          {
+            dataText:
+              "class Car {constructor(brand, color) {this.brand = brand;this.color = color;}start() {}stop() {}static discount() {}}",
+          },
+
+          {
+            description:
+              "cetter позволяет добавить свойство, которого изначально нет в классе.",
+            dataText: "set rating(value){this.score = value.toUpperCase();}",
+          },
+          {
+            description: "getter позволяет взять значение этого свойства",
+            dataText: "get rating(){return this.score}",
+          },
+          {
+            description:
+              "дочерние классы полностью наследуют методы родителя и еще ожно добавить свои методы",
+            dataText: "class HibridCar extends Car {",
+          },
+
+          { title: "AsyncAwait" },
+          {
+            description: "Promise",
+            dataText:
+              'function sleep(time) {return new Promise((resolve, reject) => {	if (time < 1000) { reject("слишком мало поспал") } setTimeout(() => resolve(`поспал ${time}`), time)})}   sleep(1500).then(res => {console.log(res);	return sleep(1000)}).then(res => {console.log(res);return sleep(500)}).then(res => {console.log(res);}).catch(err => {console.log("ошибка", err);})',
+          },
+          {
+            description: "async/await",
+            dataText:
+              'const getGitData = async () => {try {	const responce = await fetch("https://api.github.com/users/vasilymur");	const data = await responce.json();console.log(data);} catch (err) {console.log("err", err);}} getGitData()',
+          },
+          {
+            description: "async/await",
+            dataText:
+              'const getUserVideo = async () => {try {const response = await navigator.mediaDevices.getUserMedia({ video: true });video.srcObject = response;} catch (err) {console.log("err", err);}}getUserVideo();',
+          },
         ],
       ],
       dataVue: [
@@ -907,11 +860,17 @@ export const useTask = defineStore("taskLager", {
           { title: "Common" },
           {
             dataText: 'import Tab from "@/components/Tab.vue";',
-            description: "",
           },
           { dataText: "var  = ref('');", description: "" },
           { dataText: "import { ref, onMounted } from 'vue'", description: "" },
           { dataText: "onMounted(() => {})", description: "" },
+          { dataText: "@  =' ' ", description: "" },
+          { dataText: 'v-for="item in items" :key="item.id"', description: "" },
+          {
+            dataText: '@click="" ',
+            description:
+              "Прикрепляет обработчик события к элементу. Тип события определяется аргументом. .stop — вызывает event.stopPropagation()..prevent — вызывает event.preventDefault()..capture — отслеживает событие в режиме capture..self — вызывает обработчик только если событие произошло именно на этом элементе..{ keyAlias } — вызывает обработчик только при нажатии определённой клавиши..once — вызывает обработчик события только один раз..left — вызывает обработчик только по нажатию левой кнопки мыши..right — вызывает обработчик только по нажатию правой кнопки мыши..middle — вызывает обработчик только по нажатию средней кнопки мыши..passive — добавляет обработчик события DOM с опцией { passive: true }.",
+          },
           {
             dataText: "transition(mode='easy-in-out' name='opentab')",
             description: "transition",
@@ -921,7 +880,7 @@ export const useTask = defineStore("taskLager", {
               ".opentab-enter-from {}.opentab-enter-to {}.opentab-leave-from {}.opentab-leave-to {}",
             description: "transition классы",
           },
-
+          { title: "Directiven" },
           {
             dataText: 'v-html= " "',
             description:
@@ -947,17 +906,7 @@ export const useTask = defineStore("taskLager", {
             description:
               "Обозначает «блок else if» для v-if. Можно использовать для создания цепочек условий.",
           },
-          { dataText: 'v-for="item in items" :key="item.id"', description: "" },
-          {
-            dataText: '@click="" ',
-            description:
-              "Прикрепляет обработчик события к элементу. Тип события определяется аргументом. .stop — вызывает event.stopPropagation()..prevent — вызывает event.preventDefault()..capture — отслеживает событие в режиме capture..self — вызывает обработчик только если событие произошло именно на этом элементе..{ keyAlias } — вызывает обработчик только при нажатии определённой клавиши..once — вызывает обработчик события только один раз..left — вызывает обработчик только по нажатию левой кнопки мыши..right — вызывает обработчик только по нажатию правой кнопки мыши..middle — вызывает обработчик только по нажатию средней кнопки мыши..passive — добавляет обработчик события DOM с опцией { passive: true }.",
-          },
-          {
-            description:
-              "Динамически привязывает один или несколько атрибутов или входных параметров компонента к выражению. .camel — преобразование имён атрибутов из kebab-case в camelCase..prop — форсирует установку привязки как свойством DOM. 3.2+.attr — форсирует установку привязки атрибутом DOM.",
-            dataText: ':class="{ red: isRed }"',
-          },
+
           { dataText: 'v-model=" "', description: "" },
           {
             dataText: "v-slot",
@@ -986,25 +935,28 @@ export const useTask = defineStore("taskLager", {
           },
         ],
         [
-          { title: ":class,:style" },
+          { title: ":class" },
           {
-            dataText: ':class="{(focused == true) ? "_is-light" : "" }" ',
-            description: "",
+            dataText:
+              ":class=\"{:class=\"(item.isOpen == true) ? '_is-active' : '' }\" ",
           },
+          { dataText: ':class="[activeClass, errorClass]', description: " " },
           {
             dataText: ':class="{ active: isActive }" ',
             description:
               "наличие класса active на элементе будет определяться истинностью значения свойства isActive.",
           },
           { dataText: ':class="classObject"', description: " " },
+          { title: "computed" },
+
           {
             dataText:
               'const classObject = computed(() => {	return {active: this.isActive && !this.error,"text-danger": this.error && this.error.type === "fatal"}})',
 
             description: " ",
           },
-          { dataText: ':class="[activeClass, errorClass]', description: " " },
 
+          { title: ":style" },
           {
             dataText:
               ':style="{ color: activeColor, fontSize: fontSize + "px" }"',
@@ -1014,14 +966,10 @@ export const useTask = defineStore("taskLager", {
             dataText: ':style="{backgroundColor: backGround}"',
             description: " ",
           },
-        ],
-        [
-          { title: "ссылка на tag/custom directive/slot" },
-
           {
             title: "ссылка на конкретный tag. аналог this",
           },
-          { dataText: "input(type='text' ref='some')", description: "" },
+          { dataText: "ref='some'", description: "" },
           { dataText: "const some = ref(null)", description: "" },
 
           {
@@ -1030,14 +978,25 @@ export const useTask = defineStore("taskLager", {
           {
             dataText:
               "app.directive('copy', {mounted(el) {el.addEventListener('click', (e) => {    });},}) ",
-            description: "",
           },
           {
             dataText:
               "app.directive('blur', { updated(el, binding) { if (binding.value) { el.blur(); el.classList.add('_is-light'); } }, })",
             description: " ",
           },
+          { title: "Input" },
+          {
+            dataText:
+              "TestInput(v-model='age') import TestInput from '@/components/TestInput.vue'; const age = ref('fff')",
+            description: "В родителе",
+          },
+          {
+            dataText:
+              "input(type = 'text' @input = '$emit('update:modelValue', $event.target.value)' :value = 'modelValue') const props = defineProps({modelValue: {type: String,required: false}})",
+            description: "В потомке",
+          },
         ],
+
         [
           { title: "Props" },
           { title: "В родителе" },
@@ -1045,31 +1004,26 @@ export const useTask = defineStore("taskLager", {
           {
             dataText:
               "Button(text = 'beispiele mischen' @someEvent = 'someEvent') ",
-            description: "",
           },
           {
             dataText: "const someEvent = (data) => {console.log(data);}",
-            description: "",
           },
 
           { title: "В потомке" },
           {
             dataText:
               "const props = defineProps({text: {type: String , required: false }}) ",
-            description: "",
           },
 
           {
             dataText: "const emit = defineEmits(['someEvent']) ",
-            description: "",
           },
           {
             dataText:
               "const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } }",
-            description: "",
           },
 
-          { title: "работа с props" },
+          { title: "работа с props, toRaw " },
           {
             dataText:
               "const props = defineProps({item: {type: Array , required: false},}) ",
@@ -1087,19 +1041,7 @@ export const useTask = defineStore("taskLager", {
             description: "теперь можно выводить данные",
           },
         ],
-        [
-          { title: "Input" },
-          {
-            dataText:
-              "TestInput(v-model='age') import TestInput from '@/components/TestInput.vue'; const age = ref('fff')",
-            description: "В родителе",
-          },
-          {
-            dataText:
-              "input(type = 'text' @input = '$emit('update:modelValue', $event.target.value)' :value = 'modelValue') const props = defineProps({modelValue: {type: String,required: false}})",
-            description: "В потомке",
-          },
-        ],
+
         [
           { title: "PINIA" },
           {
@@ -1109,7 +1051,6 @@ export const useTask = defineStore("taskLager", {
           },
           {
             dataText: "import Stell from './../modules/stellen-vue/Stell.vue';",
-            description: "",
           },
           {
             dataText:
@@ -1143,13 +1084,11 @@ export const useTask = defineStore("taskLager", {
 
           {
             dataText: "import { useTaskSalut } from '../store/taskSalut'",
-            description: "",
           },
           { dataText: "import { storeToRefs } from 'pinia'", description: "" },
           { dataText: "const store = useTaskSalut();", description: "" },
           {
             dataText: "const { isActiveSalut } = storeToRefs(store)",
-            description: "",
           },
         ],
         [
@@ -1160,21 +1099,17 @@ export const useTask = defineStore("taskLager", {
           },
           {
             dataText: "import urlImgSalut from './salut.gif';",
-            description: "",
           },
           {
             dataText: "import urlImgSalut1 from './salut1.gif';",
-            description: "",
           },
           {
             dataText: "export { urlImgSalut, urlImgSalut1 };",
-            description: "",
           },
 
           { title: "потом используем в компонентах." },
           {
             dataText: "import * as images from '@/assets/img/img.js'",
-            description: "",
           },
           { dataText: "img(: src = 'images.urlImgSalut')", description: "" },
 
@@ -1185,20 +1120,16 @@ export const useTask = defineStore("taskLager", {
           },
           {
             dataText: "const salut = document.createElement('img')",
-            description: "",
           },
           {
             dataText: "salut.setAttribute('src', images.urlImgSalut)",
-            description: "",
           },
           { dataText: "salut.classList.add('salut')", description: "" },
           {
             dataText: "some.value.closest('.plaza__line').append(salut)",
-            description: "",
           },
           {
             dataText: "setTimeout(() => { salut.remove() }, 1000);",
-            description: "",
           },
         ],
       ],
