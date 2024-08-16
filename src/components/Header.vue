@@ -34,7 +34,7 @@ header {
   width: 30px;
   height: 101vh;
   position: relative;
-  position: absolute;
+  position: fixed;
 
 
 }

@@ -53,7 +53,7 @@ const handelClean = () => {
 		grid-template-columns: repeat(auto-fill, 366px);
 		grid-template-rows: 1fr;
 		column-gap: 5px;
-		row-gap: 80px;
+		row-gap: 15px;
 	}
 }
 
@@ -62,20 +62,9 @@ const handelClean = () => {
 }
 
 .hero__column {
-	// max-height: 80vh;
-	// overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
 	row-gap: 5px;
-
-
-	// .copy {
-	// 	&:first-child {
-	// 		height: 26px;
-	// 	}
-
-
-	// }
 }
 
 .stock {
