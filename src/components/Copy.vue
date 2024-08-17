@@ -4,7 +4,8 @@
 	textarea(v-copy :value='item.dataText' @click='clickcopy' v-if='item.dataText&& item.dataText !== " "  ' )  
 	button.tool(v-tool  :data='item.description' v-if='item.description && item.description !== " " ') 
 		span i 
-	a( :href="item.link" v-if='item.link && item.link !== " " ' target="_blank"  @mouseover = "handelMO(item.img)" @mouseleave= "handelML") codepen
+	a( :href="item.link" v-if='item.link && item.link !== " " ' target="_blank"   @mouseover = "handelMO(item.img)" @mouseleave= "handelML"  :class="[( item.img ) ? '_is-active' : '']") codepen
+
 
 
 </template>
@@ -21,7 +22,7 @@ const props = defineProps({
 
 import * as Imgs from '../assets/img';
 var salut, imgSalut;
-var tempAttr = ref('');
+
 const handelMO = (img) => {
 	Imgs.listImg.forEach(car => {
 		if (car.id == img) {
@@ -135,10 +136,14 @@ const clickcopy = () => {
 		font-weight: 400;
 		font-size: 14px;
 		scrollbar-width: none;
-		background-color: #e0fb4e;
-
+		background-color: $yellow-3;
+		border-radius: 3px;
 		color: #37474f;
 		flex-shrink: 1;
+
+		&._is-active {
+			background-color: $yellow-8;
+		}
 
 		&:hover {
 			color: $orange-10;

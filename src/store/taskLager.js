@@ -574,8 +574,7 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "Koordinate" },
           {
-            dataText:
-              "https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect",
+            link: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect",
           },
           {
             dataText: "clientX  clientY",
@@ -624,8 +623,7 @@ export const useTask = defineStore("taskLager", {
           },
           { title: "Zeile" },
           {
-            dataText:
-              '"https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String"',
+            link: "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String",
           },
           {
             description:
@@ -794,27 +792,24 @@ export const useTask = defineStore("taskLager", {
           {
             dataText:
               'let dragged = null; const source = document.getElementById("draggable"); source.ondragstart = (event) => {dragged = event.target; e.dataTransfer.dropEffect = "move" e.dataTransfer.effectAllowed = "move" e.dataTransfer.setData("item", id)};',
-            description:
-              '<p id="source" draggable="true"></p> https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event',
+            description: '<p id="source" draggable="true"></p> ',
+            link: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event",
           },
 
           {
             dataText:
               'const dragoverHandler = (e) => {if (e.preventDefault) e.preventDefault();e.dataTransfer.dropEffect = "move";return false;}',
-            description:
-              "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event",
+            link: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event",
           },
           {
             dataText:
               "const leaveHandler = (e) => {if (e.preventDefault) e.preventDefault();}",
-            description:
-              "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event",
+            link: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event",
           },
           {
             dataText:
               'const onDrop = (e) => {if (e.stopPropagation)e.stopPropagation(); dragged.parentNode.removeChild(dragged);e.target.appendChild(dragged);   var Data = e.dataTransfer.getData("item");}',
-            description:
-              "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event",
+            link: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event",
           },
           { title: "Class" },
           {
@@ -852,6 +847,91 @@ export const useTask = defineStore("taskLager", {
             description: "async/await",
             dataText:
               'const getUserVideo = async () => {try {const response = await navigator.mediaDevices.getUserMedia({ video: true });video.srcObject = response;} catch (err) {console.log("err", err);}}getUserVideo();',
+          },
+        ],
+        [
+          { title: "FORM js" },
+          {
+            dataText: `form(action="#" name="send-form").send#send-form
+      .send__linia.input-field
+            input#firstname(type='text' name='text1' value='' placeholder=' Denzel Washington')
+            label.text-field__label(for='text1') *обычный инпут text
+            span *поле обязательное для заполнения
+      .send__linia.input-field
+            input#email(type='email' name='text1' value='' placeholder=' Denzel Washington')
+            label.text-field__label(for='text1') *обычный инпут email
+            span *поле обязательное для заполнения
+      .send__linia.input-field
+            input#tel(type='tel' name='text1' value='' placeholder=' Denzel Washington')
+            label.text-field__label(for='text1') *обычный инпут tel
+            span *поле обязательное для заполнения
+      .send__linia
+            p Оценка:
+            fildset.fildset-rating
+                  .fildset-rating__items
+                        input(type="radio" id="rating5" name='rating' value='5' )
+                        label(for="rating5")
+                              svg
+                                    use(xlink:href='#star-empty')  
+                        input(type="radio" id="rating4" name='rating' value='4' )
+                        label(for="rating4")
+                              svg
+                                    use(xlink:href='#star-empty') 
+                        input(type="radio" id="rating3" name='rating' value='3' )
+                        label(for="rating3") 
+                              svg
+                                    use(xlink:href='#star-empty') 
+                        input(type="radio" id="rating2" name='rating' value='2' )
+                        label(for="rating2") 
+                              svg
+                                    use(xlink:href='#star-empty') 
+                        input(type="radio" id="rating1" name='rating' value='1' )
+                        label(for="rating1") 
+                              svg
+                                    use(xlink:href='#star-empty')
+      .send__linia.textarea-field
+            textarea#textarea4(name="textarea4" row='20' placeholder="Введите текст" )
+            label(for='textarea4') textarea
+
+      .send__linia.select
+            input(type="hidden" name="formtown")
+            button(type="button").dropdown-button
+                  span Москва
+                  svg.icon
+                        use(xlink:href='#arrow-down')
+            ul.dropdown-list
+                  .dropdown-list-wrap
+                        li.dropdown-list__item(data-value='Notes') Ростов-на-Дону
+                        li.dropdown-list__item(data-value='Notes') Mосква
+                        li.dropdown-list__item(data-value='Photo') Санкт Петербург
+                        li.dropdown-list__item(data-value='Dictionary') Сан Франциско
+
+      .send__linia.send__linia--check
+            .fildset-checkbox
+                  .form-check
+                        input#55(type='checkbox' name="agry")
+                        label(for='55') Согласен с  правилами публикации отзывов
+      button.btn.btn-success.but-wave(type='submit') submit
+//- form.form
+//-       input(name='example_button' type='button' value='Лайкнуть статью')
+//-       input(name='example_color' type='color' value='#55cc77')
+//-       input(name='example_date' type='date')
+//-       input(name='example_datetime-local' type='datetime-local')
+//-       input(name='example_email' type='email')
+//-       input(name='example_file' type='file')
+//-       input(name='example_hidden' type='hidden' value='48784')
+//-       input(name='example_image' type='image' src='/images/button_image.png' width='130' height='42')
+//-       input(name='example_month' type='month')
+//-       input(name='example_number' type='number')
+//-       input(name='example_password' type='password')
+//-       input(name='example_reset' type='reset' value='Очистить поля')
+//-       input(name='example_tel' type='tel')
+//-       input(name='example_time' type='time')
+//-       input(name='example_url' type='url')
+//-       input(name='example_week' type='week')`,
+            description: "",
+
+            link: "https://codepen.io/viktor-yushin/pen/KKjQwNW",
           },
         ],
       ],
@@ -938,8 +1018,7 @@ export const useTask = defineStore("taskLager", {
         [
           { title: ":class" },
           {
-            dataText:
-              ":class=\"{:class=\"(item.isOpen == true) ? '_is-active' : '' }\" ",
+            dataText: `:class="[(modelValue !== '') ? '_is-light' : '']"`,
           },
           { dataText: ':class="[activeClass, errorClass]', description: " " },
           {
@@ -948,13 +1027,68 @@ export const useTask = defineStore("taskLager", {
               "наличие класса active на элементе будет определяться истинностью значения свойства isActive.",
           },
           { dataText: ':class="classObject"', description: " " },
+
           { title: "computed" },
 
           {
-            dataText:
-              'const classObject = computed(() => {	return {active: this.isActive && !this.error,"text-danger": this.error && this.error.type === "fatal"}})',
+            dataText: `const count = ref(1)
+const plusOne = computed(() => count.value + 1)
+console.log(plusOne.value)// 2`,
 
             description: " ",
+          },
+          {
+            dataText: `const count = ref(1)
+const plusOne = computed({
+  get: () => count.value + 1,
+  set: val => {
+    count.value = val - 1
+  }
+})
+plusOne.value = 1
+console.log(count.value) // 0`,
+
+            description: "computed",
+          },
+          { title: "watch" },
+          {
+            dataText: `const count = ref(0)
+watchEffect(() => console.log(count.value))
+// -> выведет 0
+setTimeout(() => {
+  count.value++
+  // -> выведет 1
+}, 100)`,
+
+            description: "watchEffect",
+          },
+          {
+            dataText: `const count = ref(0)
+watchEffect(() => console.log(count.value))
+// -> выведет 0
+setTimeout(() => {
+  count.value++
+  // -> выведет 1
+}, 100)`,
+
+            description: "watchEffect",
+          },
+          {
+            dataText: `// наблюдение за геттер-функцией
+const state = reactive({ count: 0 })
+watch(
+  () => state.count,
+  (count, prevCount) => {
+    /* ... */
+  }
+)
+// наблюдение за ref-ссылкой
+const count = ref(0)
+watch(count, (count, prevCount) => {
+  /* ... */
+})`,
+
+            description: "watch",
           },
 
           { title: ":style" },
@@ -977,13 +1111,50 @@ export const useTask = defineStore("taskLager", {
             title: "custom directive прописывается в main.js",
           },
           {
-            dataText:
-              "app.directive('copy', {mounted(el) {el.addEventListener('click', (e) => {    });},}) ",
+            description: "copy",
+            dataText: `.directive("copy", {
+    mounted(el) {
+      el.addEventListener("click", (e) => {
+        let add = document.createElement("textarea");
+        document.querySelector("body").appendChild(add);
+        add.textContent = el.value;
+        add.select();
+        navigator.clipboard.writeText(add.textContent);
+        el.classList.add("_is-active");
+        setTimeout(function () {
+          add.remove();
+          el.classList.remove("_is-active");
+        }, 200);
+      });
+    },
+  })`,
+          },
+          {
+            description: "tool",
+            dataText: `.directive("tool", {
+    mounted(el) {
+      let add = document.createElement("div");
+
+      el.addEventListener("mouseover", (e) => {
+        add.innerText = el.getAttribute("data");
+        add.classList.add("add");
+        document.querySelector("body").appendChild(add);
+        // var xPosition = el.offsetLeft;
+        // var yPosition = el.offsetTop;
+        // console.log(xPosition, yPosition);
+        // add.style.left = 0 + "px";
+        // add.style.top = 0 + "px";
+      });
+
+      el.addEventListener("mouseleave", (e) => {
+        add.remove();
+      });
+    },
+  })`,
           },
           {
             dataText:
               "app.directive('blur', { updated(el, binding) { if (binding.value) { el.blur(); el.classList.add('_is-light'); } }, })",
-            description: " ",
           },
           { title: "Input" },
           {
@@ -1093,44 +1264,126 @@ export const useTask = defineStore("taskLager", {
           },
         ],
         [
-          { title: "изображение" },
+          { title: "изображения" },
           {
             title: "делаем в assets/img/img.js",
           },
           {
-            dataText: "import urlImgSalut from './salut.gif';",
+            dataText: `import tabel1 from "./penImgs/tabel1.png";
+import tabel2 from "./penImgs/tabel2.png";
+const listImg = [
+  { id: 0, img: tabel1 },
+  { id: 1, img: tabel2 },
+];
+export { listImg };`,
           },
-          {
-            dataText: "import urlImgSalut1 from './salut1.gif';",
-          },
-          {
-            dataText: "export { urlImgSalut, urlImgSalut1 };",
-          },
-
-          { title: "потом используем в компонентах." },
-          {
-            dataText: "import * as images from '@/assets/img/img.js'",
-          },
-          { dataText: "img(: src = 'images.urlImgSalut')", description: "" },
+          { title: "используем в компонентах" },
 
           {
-            dataText: "import * as images from '@/assets/img/img.js'",
             description:
-              "если нужно создать изображение и добавить его на страницу например к какому то тэгу some.value,который создан через ссылку input(type='text' ref='some')const some = ref(null).а потом например удалить через время",
+              "потом используем в компонентах. если нужно создать изображение и добавить его на страницу например к какому то тэгу some.value,который создан через ссылку input(type='text' ref='some')const some = ref(null).а потом например удалить через время",
+            dataText: `import * as Imgs from '../assets/img';
+var salut, imgSalut;
+const handelMO = (img) => {
+	Imgs.listImg.forEach(car => {
+		if (car.id == img) {
+			salut = document.createElement('div')
+			salut.classList.add('salut')
+			imgSalut = document.createElement('img')
+			imgSalut.setAttribute('src', car.img)
+			salut.append(imgSalut);
+			document.querySelector('body').append(salut);
+		}
+	})
+};
+const handelML = () => {
+	salut.remove();
+};`,
+          },
+        ],
+        [
+          {
+            title: "firebase database",
           },
           {
-            dataText: "const salut = document.createElement('img')",
+            description: "делаем в корне файл firebase.js ",
+            dataText: `import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCTr_tR1MbYjHurQgAfdgEntqZQ150rZyA",
+  authDomain: "deutsch-d26e4.firebaseapp.com",
+  databaseURL:
+    "https://deutsch-d26e4-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "deutsch-d26e4",
+  storageBucket: "deutsch-d26e4.appspot.com",
+  messagingSenderId: "1002823720200",
+  appId: "1:1002823720200:web:c70fc15791d9ed502520bd",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+export { db, auth };
+            
+            `,
           },
           {
-            dataText: "salut.setAttribute('src', images.urlImgSalut)",
+            description:
+              "импортируем его в компоненты и забираем данные из базы ",
+            dataText: `import { db } from "@/firebase/config.ts";
+import { collection, query, onSnapshot } from "firebase/firestore";
+var SlotPersonal = reactive([]);
+var SlotDataPersonal = reactive([]);
+
+var titles = reactive([]);
+const Personal = query(collection(db, "Personal-table"));
+const PersonalSlot = query(collection(db, "PersonalSlot"));
+
+
+onMounted(async () => {
+  onSnapshot(Personal, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      SlotPersonal.push(doc.data());
+    });
+
+  });
+  onSnapshot(PersonalSlot, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      SlotDataPersonal.push(doc.data());
+    });
+    titles.push({ id: 0, title: 'Personal', isOpen: true });
+    SlotDataPersonal.id = 0;
+    SlotDataPersonal.isOpen = true;
+  });
+});`,
           },
-          { dataText: "salut.classList.add('salut')", description: "" },
-          {
-            dataText: "some.value.closest('.plaza__line').append(salut)",
-          },
-          {
-            dataText: "setTimeout(() => { salut.remove() }, 1000);",
-          },
+          // {
+          //   dataText: `
+
+          //   `,
+          // },
+          // {
+          //   dataText: `
+
+          //   `,
+          // },
+          // {
+          //   dataText: `
+
+          //   `,
+          // },
+          // {
+          //   dataText: `
+
+          //   `,
+          // },
+          // {
+          //   dataText: `
+
+          //   `,
+          // },
         ],
       ],
     };

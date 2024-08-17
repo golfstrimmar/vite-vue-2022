@@ -23,7 +23,7 @@ const Change = () => {
 .stock {
 	min-height: 26px;
 	width: 80%;
-	height: 30px;
+	height: 145px;
 	position: relative;
 	border-radius: 5px;
 	padding: 5px;

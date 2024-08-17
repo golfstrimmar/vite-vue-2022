@@ -231,29 +231,26 @@ const clickHandler = (e, id) => {
 //     img: ''
 // },
 
+
 const copyDataCommon = [
   { i: 1, dataText: 'section(id="best").best.rel', },
   { i: 2, dataText: '.container' },
   { i: 3, dataText: '.best__' },
   { i: 15, dataText: 'img' },
 
-  { i: 18, dataText: '.imgs\n  img(src="./img/bg.webp" alt = "img")' },
+  {
+    i: 18, dataText:
+      `.imgs
+  img(src = "./img/bg.webp" alt = "img")` },
   {
     description: '',
     dataText:
       `svg
-  use(xlink:href="#flag")`
+  use(xlink: href = "#flag")`
     ,
 
   },
-  {
-    description: '',
-    dataText:
-      `.imgs
-  img(src="./img/bg.webp" alt = "img")`
-    ,
 
-  },
   { i: 5, dataText: '.' },
   { i: 6, dataText: 'h2' },
   { i: 7, dataText: 'h3' },
@@ -352,52 +349,139 @@ const copyDataLinks = [
   { i: 10, dataText: 'button.btn-empty.btn(type="button" name = "empty")' },
   { i: 10, dataText: 'button.btn-blue.btn(type = "button")' },
   { i: 10, dataText: 'form(action="#" name="send-form").send#send-form' },
-  { i: 10, dataText: '.input-field\n  input#text1(type = "text" name = "text1" value = "" placeholder = "Denzel Washington")\n  label.text-field__label(for= "text1")' },
   {
-    i: 10, dataText: 'form.search-field\n  input#search1(type = "text" placeholder = "search" name = "")\n  label(for= "search1")\n  .search-field__submit\n    input(type = "submit")\n    svg\n      use(xlink: href = "#search") '
+    link: "https://codepen.io/viktor-yushin/pen/abgqbGy",
+    dataText: `.input-field
+  input#text1(type='text' name='text1' value='' placeholder=' Denzel Washington')
+  label.text-field__label(for='text1') обычный инпут text`
   },
   {
-    i: 10, dataText: ".textarea-field\n  textarea#textarea4(name='textarea4' row='20' placeholder='Введите текст' )\n  label(for='textarea4')"
+    dataText: `form.search-field
+  input#search1(type='text' placeholder='search' name='' )
+  label(for='search1') search
+  .search-field__submit
+    input(type='submit')
+    svg
+      use(xlink:href='#search')`
   },
   {
-    i: 10, dataText: ".fildset-checkbox\n  .form-check\n    input#5(type='checkbox' name='')\n    label(for='5')\n  .form-check\n    input#6(type='checkbox' name='')\n    label(for='6') "
+    link: "https://codepen.io/viktor-yushin/pen/BagYaqX",
+
+    dataText: `.textarea-field
+  textarea#textarea4(name="textarea4" row='20' placeholder="Введите текст" )
+  label(for='textarea4') textarea`
   },
   {
-    i: 10, dataText: "fildset.fildset-radio\n  .form-check\n    input(type='radio' id='10' name='a' value='16-25' checked)\n    label(for='10')"
+    link: "https://codepen.io/viktor-yushin/pen/JjQpjaM",
+
+    dataText: `.fildset-checkbox
+  .form-check
+    input#5(type='checkbox' name="")
+    label(for='5') Любимое место
+  .form-check
+    input#6(type='checkbox' name="")
+    label(for='6') Месторасположение
+  .form-check
+    input#7(type='checkbox' name="")
+    label(for='7') Гость торжественного события
+  .form-check
+    input#8(type='checkbox' name="")
+    label(for='8') Корпоративные мероприятия
+  .form-check
+    input#9(type='checkbox' name="")
+    label(for='9') СПА комплекс`
   },
   {
-    i: 10, dataText: "fildset.fildset-radio.fildset-radio--sex\n  .form-check\n    input(type='radio' id='14' name='s' value='man' checked)\n    label(for='14')\n      svg\n        use(xlink:href='#Union')"
+    link: "https://codepen.io/viktor-yushin/pen/JjQpjxL",
+    dataText: `fildset.fildset-radio
+  .form-check
+    input(type="radio" id="10" name='a' value='16-25' checked)
+    label(for="10")  от 16-25
+  .form-check
+    input(type="radio" id="11" name='a' value='26-35')
+    label(for="11")  от 26-35
+  .form-check
+    input(type="radio" id="12" name='a' value='36-45')
+    label(for="12")  36-45
+  .form-check
+    input(type="radio" id="13" name='a' value='55')
+    label(for="13")  от 45 и старше`
+
   },
   {
-    i: 10, dataText: '.fildset-radio.fildset-radio--tiers\n  input(type="radio" id="tieresyes" name="tieres" value="yes" checked)\n    label(for="tieresyes")\n    span /\n    input(type="radio" id="tieresnot" name="tieres" value="not")\n    label(for="tieresnot")'
+    link: "https://codepen.io/viktor-yushin/pen/JjQpjxL",
+    dataText: `fildset.fildset-radio.fildset-radio--sex
+  .form-check
+    input(type="radio" id="14" name='s' value='man' checked)
+    label(for="14")  Мужчина
+      svg
+        use(xlink:href='#Union')
+  .form-check
+    input(type="radio" id="15" name='s' value='frau')
+    label(for="15")  Женщина
+      svg
+        use(xlink:href='#Union')`
   },
-  { i: 10, dataText: "fildset.fildset-rating\n  .fildset-rating__items\n    input(type='radio' id='rating5' name='rating' value='5' )\n    label(for='rating5')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating4' name='rating' value='4' )\n    label(for='rating4')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating3' name='rating' value='3' )\n    label(for='rating3')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating2' name='rating' value='2' )\n    label(for='rating2')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating1' name='rating' value='1' )\n    label(for='rating1')\n      svg\n        use(xlink:href='#Star-1')" },
-  { i: 10, dataText: "._range-wrap-js\n  .rangeValue\n  input.myRange(type='range' name='myRange' min='0' max='100' value='0' step='1') " },
   {
-    description: '',
-    dataText: `
-    
-    ` },
+    link: "https://codepen.io/viktor-yushin/pen/JjQpjxL",
+    dataText: `.fildset-radio.fildset-radio--tiers
+  input(type="radio" id="tieresyes" name='tieres' value='yes' checked)
+  label(for="tieresyes")  Да
+  span /
+  input(type="radio" id="tieresnot" name='tieres' value='not')
+  label(for="tieresnot")  Нет`
+  },
   {
-    description: '',
-    dataText: `
-    
-    ` },
+    link: "",
+    dataText: `fildset.fildset-rating
+  .fildset-rating__items
+    input(type="radio" id="rating5" name='rating' value='5' )
+    label(for="rating5")
+      svg
+        use(xlink:href='#Star-1')  
+    input(type="radio" id="rating4" name='rating' value='4' )
+    label(for="rating4")
+      svg
+        use(xlink:href='#Star-1') 
+    input(type="radio" id="rating3" name='rating' value='3' )
+    label(for="rating3") 
+      svg
+        use(xlink:href='#Star-1') 
+    input(type="radio" id="rating2" name='rating' value='2' )
+    label(for="rating2") 
+      svg
+        use(xlink:href='#Star-1') 
+    input(type="radio" id="rating1" name='rating' value='1' )
+    label(for="rating1") 
+      svg
+        use(xlink:href='#Star-1')`
+  },
+  {
+    link: "https://codepen.io/viktor-yushin/pen/abgqbME",
+    dataText: `._range-wrap-js
+  .rangeValue 0
+  input.myRange(type='range' name='myRange' min='0' max='100' value='0' step='1')`
+  },
+  // {
+  //   description: '',
+  //   dataText: `
+
+  //   ` },
 
   {
     description: 'select js',
     dataText:
       `.select
-  input(type="hidden")
-  button.dropdown-button
+  input(type = "hidden")
+  button.dropdown - button
     span custom select
     svg.icon
-      use(xlink:href='#down')
-  ul.dropdown-list
-    .dropdown-list-wrap
-      li.dropdown-list__item(data-value='Notes') Notes
-      li.dropdown-list__item(data-value='Photo') Photo
-      li.dropdown-list__item(data-value='Dictionary') Dictionary`,
+      use(xlink: href = '#down')
+  ul.dropdown - list
+    .dropdown - list - wrap
+      li.dropdown - list__item(data - value='Notes') Notes
+      li.dropdown - list__item(data - value='Photo') Photo
+      li.dropdown - list__item(data - value='Dictionary') Dictionary`,
     link: "https://codepen.io/viktor-yushin/pen/VwJyJoq",
   },
   {
@@ -405,19 +489,19 @@ const copyDataLinks = [
     dataText:
       `-
   var blocks = [
-          {
-            src: './img/sprite.svg#ban-1',
-            title: 'Title slide 1 ',
-            text: 'text	text	text'
-          },
-        ];
+  {
+    src: './img/sprite.svg#ban-1',
+    title: 'Title slide 1 ',
+    text: 'text	text	text'
+  },
+];
 each block in blocks
-  .bunner__block.bunner-block
-    .bunner-block__icon
-      svg
-        use(xlink:href=block.src)
-    .bunner-block__title.Text-Style-10=block.title
-    .bunner-block__text.Text-Style-11=block.text`
+  .bunner__block.bunner - block
+    .bunner - block__icon
+svg
+use(xlink: href = block.src)
+  .bunner - block__title.Text - Style - 10=block.title
+    .bunner - block__text.Text - Style - 11=block.text`
 
   },
 
@@ -431,20 +515,20 @@ each block in blocks
   {
     dataText:
       `table
-        caption
-          | Superheros and sidekicks
-        colgroup
-          col
-          col.batman(span = "2")
-          col.flash(span = "2")
-        tr
-          td
-          th(scope = "col") Batman
-          th(scope = "col") Robin
-          th(scope = "col") The Flash
-          th(scope = "col") Kid Flash
-        tr
-          th(scope = "row") Skill
+caption
+  | Superheros and sidekicks
+colgroup
+col
+col.batman(span = "2")
+col.flash(span = "2")
+tr
+td
+th(scope = "col") Batman
+th(scope = "col") Robin
+th(scope = "col") The Flash
+th(scope = "col") Kid Flash
+tr
+th(scope = "row") Skill
           td Smarts, strong
           td Dex, acrobat
           td Super speed
@@ -457,11 +541,11 @@ each block in blocks
   {
     dataText:
       `table
-  caption
-    | Personal weekly activities
-  colgroup.weekdays(span = "5")
-  colgroup.weekend(span = "2")
-  tr
+caption
+  | Personal weekly activities
+colgroup.weekdays(span = "5")
+colgroup.weekend(span = "2")
+tr
     th Mon
     th Tue
     th Wed
@@ -469,7 +553,7 @@ each block in blocks
     th Fri
     th Sat
     th Sun
-  tr
+tr
     td Clean room
     td Football training
     td Dance Course
@@ -477,7 +561,7 @@ each block in blocks
     td Buy drinks
     td Study hour
     td Free time
-  tr
+tr
     td Yoga
     td Chess Club
     td Meet friends
