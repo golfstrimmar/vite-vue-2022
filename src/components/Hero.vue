@@ -39,6 +39,11 @@
 
 
 
+
+
+
+
+
 </template>
 
 
@@ -191,7 +196,10 @@ const handelResult = (e) => {
 
 
 const clickLine = (e, Text) => {
-  canvasItem.value.value = canvasItem.value.value + Text
+  if (Text) {
+    canvasItem.value.value = canvasItem.value.value + Text
+  }
+
 }
 
 
@@ -214,15 +222,38 @@ const clickHandler = (e, id) => {
 
 
 // ===================================
-
+// {
+//   description:'',
+//   dataText:
+//   `
+//     `,
+//     link: "",
+//     img: ''
+// },
 
 const copyDataCommon = [
   { i: 1, dataText: 'section(id="best").best.rel', },
   { i: 2, dataText: '.container' },
   { i: 3, dataText: '.best__' },
   { i: 15, dataText: 'img' },
-  { i: 16, dataText: 'svg\n  use(xlink:href="#flag")' },
+
   { i: 18, dataText: '.imgs\n  img(src="./img/bg.webp" alt = "img")' },
+  {
+    description: '',
+    dataText:
+      `svg
+  use(xlink:href="#flag")`
+    ,
+
+  },
+  {
+    description: '',
+    dataText:
+      `.imgs
+  img(src="./img/bg.webp" alt = "img")`
+    ,
+
+  },
   { i: 5, dataText: '.' },
   { i: 6, dataText: 'h2' },
   { i: 7, dataText: 'h3' },
@@ -236,77 +267,6 @@ const copyDataCommon = [
   { i: 14, dataText: 'form' },
   { i: 4, dataText: '.rel' },
   { i: 5, dataText: '.center' },
-
-]
-
-const copyDataName = [
-  { i: 15, dataText: 'body' },
-  { i: 16, dataText: 'title' },
-  { i: 17, dataText: 'text' },
-  { i: 18, dataText: 'blocks' },
-  { i: 18, dataText: 'block' },
-  { i: 17, dataText: 'button' },
-  { i: 17, dataText: 'bage' },
-  { i: 17, dataText: 'content' },
-  { i: 17, dataText: 'column' },
-  { i: 17, dataText: 'decor' },
-  { i: 17, dataText: 'email' },
-  { i: 17, dataText: 'img' },
-  { i: 17, dataText: 'info' },
-  { i: 17, dataText: 'unit' },
-  { i: 17, dataText: 'plaza' },
-  { i: 17, dataText: 'line' },
-  { i: 19, dataText: 'items' },
-  { i: 20, dataText: 'item' },
-  { i: 17, dataText: 'hidden' },
-  { i: 17, dataText: 'low' },
-
-  { i: 20, dataText: 'logo' },
-
-  { i: 17, dataText: 'phone' },
-
-  { i: 17, dataText: 'soc' },
-]
-
-const copyDataLinks = [
-  { i: 11, dataText: 'a( href="#!")' },
-  { i: 11, dataText: 'a.btn-success.btn.but-wave( href="#!")' },
-  { i: 11, dataText: 'a.popups-init-js.btn.btn-success.but-wave(rel="#popup1" href="#!")' },
-  { i: 10, dataText: 'a.btn-empty.btn(href="#!")' },
-  { i: 10, dataText: 'a.btn-blue.btn(href="#!")' },
-  { i: 10, dataText: 'button.btn-success.but-wave.btn(type="text" name = "text")' },
-  { i: 10, dataText: 'button.btn-success.but-wave.btn(type="submit" name = "submit")' },
-  { i: 10, dataText: 'button.btn-empty.btn(type="button" name = "empty")' },
-  { i: 10, dataText: 'button.btn-blue.btn(type = "button")' },
-  { i: 10, dataText: 'form(action="#" name="send-form").send#send-form' },
-  { i: 10, dataText: '.input-field\n  input#text1(type = "text" name = "text1" value = "" placeholder = "Denzel Washington")\n  label.text-field__label(for= "text1")' },
-  {
-    i: 10, dataText: 'form.search-field\n  input#search1(type = "text" placeholder = "search" name = "")\n  label(for= "search1")\n  .search-field__submit\n    input(type = "submit")\n    svg\n      use(xlink: href = "#search") '
-  },
-  {
-    i: 10, dataText: ".textarea-field\n  textarea#textarea4(name='textarea4' row='20' placeholder='Введите текст' )\n  label(for='textarea4')"
-  },
-  {
-    i: 10, dataText: ".fildset-checkbox\n  .form-check\n    input#5(type='checkbox' name='')\n    label(for='5')\n  .form-check\n    input#6(type='checkbox' name='')\n    label(for='6') "
-  },
-  {
-    i: 10, dataText: "fildset.fildset-radio\n  .form-check\n    input(type='radio' id='10' name='a' value='16-25' checked)\n    label(for='10')"
-  },
-  {
-    i: 10, dataText: "fildset.fildset-radio.fildset-radio--sex\n  .form-check\n    input(type='radio' id='14' name='s' value='man' checked)\n    label(for='14')\n      svg\n        use(xlink:href='#Union')"
-  },
-  {
-    i: 10, dataText: '.fildset-radio.fildset-radio--tiers\n  input(type="radio" id="tieresyes" name="tieres" value="yes" checked)\n    label(for="tieresyes")\n    span /\n    input(type="radio" id="tieresnot" name="tieres" value="not")\n    label(for="tieresnot")'
-  },
-  { i: 10, dataText: "fildset.fildset-rating\n  .fildset-rating__items\n    input(type='radio' id='rating5' name='rating' value='5' )\n    label(for='rating5')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating4' name='rating' value='4' )\n    label(for='rating4')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating3' name='rating' value='3' )\n    label(for='rating3')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating2' name='rating' value='2' )\n    label(for='rating2')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating1' name='rating' value='1' )\n    label(for='rating1')\n      svg\n        use(xlink:href='#Star-1')" },
-  { i: 10, dataText: "._range-wrap-js\n  .rangeValue\n  input.myRange(type='range' name='myRange' min='0' max='100' value='0' step='1') " },
-  {
-    i: 10, dataText: ".select\n  input(type='hidden')\n  button.dropdown-button\n    span custom select\n    svg.icon\n      use(xlink:href='#down')\n  ul.dropdown-list\n    .dropdown-list-wrap\n      li.dropdown-list__item(data-value='Notes') Notes\n      li.dropdown-list__item(data-value='Photo') Photo\n      li.dropdown-list__item(data-value='Dictionary') Dictionary"
-  },
-  { i: 10, dataText: "-\n  var blocks = [\n    {\n      src: './img/sprite.svg#ban-1',\n      title: 'Title slide 1 ',\n      text: 'text	text	text'\n    },\n  ];\neach block in blocks\n  .bunner__block.bunner-block\n    .bunner-block__icon\n      svg\n        use(xlink:href=block.src)\n    .bunner-block__title.Text-Style-10=block.title\n    .bunner-block__text.Text-Style-11=block.text" },
-  { i: 10, dataText: " " },
-
-
   {
     title: "table",
   },
@@ -339,39 +299,198 @@ const copyDataLinks = [
     description:
       "The Table Foot  инкапсулирует набор строк таблицы ( элементов), указывая, что они составляют основание таблицы с информацией о столбцах таблицы.",
   },
+]
+
+const copyDataName = [
+  { i: 15, dataText: 'body' },
+  { i: 16, dataText: 'title' },
+  { i: 17, dataText: 'text' },
+  { i: 18, dataText: 'blocks' },
+  { i: 18, dataText: 'block' },
+  { i: 17, dataText: 'button' },
+  { i: 17, dataText: 'bage' },
+  { i: 17, dataText: 'content' },
+  { i: 17, dataText: 'column' },
+  { i: 17, dataText: 'decor' },
+  { i: 17, dataText: 'email' },
+  { i: 17, dataText: 'img' },
+  { i: 17, dataText: 'info' },
+  { i: 17, dataText: 'unit' },
+  { i: 17, dataText: 'plaza' },
+  { i: 17, dataText: 'line' },
+  { i: 19, dataText: 'items' },
+  { i: 20, dataText: 'item' },
+  { i: 17, dataText: 'hidden' },
+  { i: 17, dataText: 'low' },
+  { i: 20, dataText: 'logo' },
+  { i: 17, dataText: 'phone' },
+  { i: 17, dataText: 'soc' },
+  { title: "colgroup", },
   {
     dataText: "colgroup",
     description:
-      "определяет группу столбцов в таблице.",
-  },
-  {
-    dataText: "colspan=''",
-  },
-  {
-    dataText: "rowspan=''",
+      "определяет группу столбцов в таблице. должен располагаться внутри тега <table>, после любого <caption>элемента (если он используется), но перед любыми элементами <thead>, <tbody>, <tfoot>, и <tr>."
   },
   {
     dataText: "span=''",
+    description: 'Указывает количество последовательных столбцов, < colgroup > которые охватывает элемент.Значение должно быть положительным целым числом больше нуля.Если отсутствует, его значение по умолчанию — 1.'
   },
   {
-    dataText: "scope='col'",
+    dataText: "rowspan='' colspan='' colspan='' scope='row' caption",
+  },
+]
+
+const copyDataLinks = [
+  { i: 11, dataText: 'a( href="#!")' },
+  { i: 11, dataText: 'a.btn-success.btn.but-wave( href="#!")' },
+  { i: 11, dataText: 'a.popups-init-js.btn.btn-success.but-wave(rel="#popup1" href="#!")' },
+  { i: 10, dataText: 'a.btn-empty.btn(href="#!")' },
+  { i: 10, dataText: 'a.btn-blue.btn(href="#!")' },
+  { i: 10, dataText: 'button(type = "button")' },
+  { i: 10, dataText: 'button.btn-success.but-wave.btn(type="text" name = "text")' },
+  { i: 10, dataText: 'button.btn-success.but-wave.btn(type="submit" name = "submit")' },
+  { i: 10, dataText: 'button.btn-empty.btn(type="button" name = "empty")' },
+  { i: 10, dataText: 'button.btn-blue.btn(type = "button")' },
+  { i: 10, dataText: 'form(action="#" name="send-form").send#send-form' },
+  { i: 10, dataText: '.input-field\n  input#text1(type = "text" name = "text1" value = "" placeholder = "Denzel Washington")\n  label.text-field__label(for= "text1")' },
+  {
+    i: 10, dataText: 'form.search-field\n  input#search1(type = "text" placeholder = "search" name = "")\n  label(for= "search1")\n  .search-field__submit\n    input(type = "submit")\n    svg\n      use(xlink: href = "#search") '
   },
   {
-    dataText: "scope='row'",
+    i: 10, dataText: ".textarea-field\n  textarea#textarea4(name='textarea4' row='20' placeholder='Введите текст' )\n  label(for='textarea4')"
   },
   {
-    dataText: "caption",
-    description:
-      "определяет заголовок (или название) таблицы, предоставляя таблице доступное описание .",
+    i: 10, dataText: ".fildset-checkbox\n  .form-check\n    input#5(type='checkbox' name='')\n    label(for='5')\n  .form-check\n    input#6(type='checkbox' name='')\n    label(for='6') "
   },
   {
-    title: " Пример таблицы",
+    i: 10, dataText: "fildset.fildset-radio\n  .form-check\n    input(type='radio' id='10' name='a' value='16-25' checked)\n    label(for='10')"
+  },
+  {
+    i: 10, dataText: "fildset.fildset-radio.fildset-radio--sex\n  .form-check\n    input(type='radio' id='14' name='s' value='man' checked)\n    label(for='14')\n      svg\n        use(xlink:href='#Union')"
+  },
+  {
+    i: 10, dataText: '.fildset-radio.fildset-radio--tiers\n  input(type="radio" id="tieresyes" name="tieres" value="yes" checked)\n    label(for="tieresyes")\n    span /\n    input(type="radio" id="tieresnot" name="tieres" value="not")\n    label(for="tieresnot")'
+  },
+  { i: 10, dataText: "fildset.fildset-rating\n  .fildset-rating__items\n    input(type='radio' id='rating5' name='rating' value='5' )\n    label(for='rating5')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating4' name='rating' value='4' )\n    label(for='rating4')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating3' name='rating' value='3' )\n    label(for='rating3')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating2' name='rating' value='2' )\n    label(for='rating2')\n      svg\n        use(xlink:href='#Star-1')\n    input(type='radio' id='rating1' name='rating' value='1' )\n    label(for='rating1')\n      svg\n        use(xlink:href='#Star-1')" },
+  { i: 10, dataText: "._range-wrap-js\n  .rangeValue\n  input.myRange(type='range' name='myRange' min='0' max='100' value='0' step='1') " },
+  {
+    description: '',
+    dataText: `
+    
+    ` },
+  {
+    description: '',
+    dataText: `
+    
+    ` },
+
+  {
+    description: 'select js',
+    dataText:
+      `.select
+  input(type="hidden")
+  button.dropdown-button
+    span custom select
+    svg.icon
+      use(xlink:href='#down')
+  ul.dropdown-list
+    .dropdown-list-wrap
+      li.dropdown-list__item(data-value='Notes') Notes
+      li.dropdown-list__item(data-value='Photo') Photo
+      li.dropdown-list__item(data-value='Dictionary') Dictionary`,
+    link: "https://codepen.io/viktor-yushin/pen/VwJyJoq",
+  },
+  {
+    description: 'forEach pug',
+    dataText:
+      `-
+  var blocks = [
+          {
+            src: './img/sprite.svg#ban-1',
+            title: 'Title slide 1 ',
+            text: 'text	text	text'
+          },
+        ];
+each block in blocks
+  .bunner__block.bunner-block
+    .bunner-block__icon
+      svg
+        use(xlink:href=block.src)
+    .bunner-block__title.Text-Style-10=block.title
+    .bunner-block__text.Text-Style-11=block.text`
 
   },
-  {
-    dataText: "table\n  thead\n    tr\n      th\n    tr\n      th\n  thtbody\n    tr\n      td",
 
+
+
+
+  {
+    title: "example",
   },
+
+  {
+    dataText:
+      `table
+        caption
+          | Superheros and sidekicks
+        colgroup
+          col
+          col.batman(span = "2")
+          col.flash(span = "2")
+        tr
+          td
+          th(scope = "col") Batman
+          th(scope = "col") Robin
+          th(scope = "col") The Flash
+          th(scope = "col") Kid Flash
+        tr
+          th(scope = "row") Skill
+          td Smarts, strong
+          td Dex, acrobat
+          td Super speed
+          td Super speed
+    `,
+
+    link: "https://codepen.io/viktor-yushin/pen/ZEdvZwj",
+    img: '0'
+  },
+  {
+    dataText:
+      `table
+  caption
+    | Personal weekly activities
+  colgroup.weekdays(span = "5")
+  colgroup.weekend(span = "2")
+  tr
+    th Mon
+    th Tue
+    th Wed
+    th Thu
+    th Fri
+    th Sat
+    th Sun
+  tr
+    td Clean room
+    td Football training
+    td Dance Course
+    td History Class
+    td Buy drinks
+    td Study hour
+    td Free time
+  tr
+    td Yoga
+    td Chess Club
+    td Meet friends
+    td Gymnastics
+    td Birthday party
+    td Fishing trip
+    td Free time`,
+
+
+    link: "https://codepen.io/viktor-yushin/pen/wvLpZoG",
+    img: '1'
+  },
+
 ]
 </script>
 

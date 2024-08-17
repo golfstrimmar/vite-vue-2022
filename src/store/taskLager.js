@@ -866,6 +866,7 @@ export const useTask = defineStore("taskLager", {
           { dataText: "onMounted(() => {})", description: "" },
           { dataText: "@  =' ' ", description: "" },
           { dataText: 'v-for="item in items" :key="item.id"', description: "" },
+          { dataText: ".value", description: "" },
           {
             dataText: '@click="" ',
             description:
@@ -1094,8 +1095,7 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "изображение" },
           {
-            title:
-              "делаем в assets папку img. в ней создаем файл img.js.туда же забрасываем картинки.",
+            title: "делаем в assets/img/img.js",
           },
           {
             dataText: "import urlImgSalut from './salut.gif';",
