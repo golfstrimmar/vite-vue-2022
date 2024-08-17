@@ -2,16 +2,19 @@
 .container
   h2 der Artikel
   Tabs 
-  Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte]")
+  Plaza(:Slot='SlotArtikle')
+
+  Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte,Slotnegativ]")
 </template>
 
 <script setup>
 import Tabs from '@/components/Tabs.vue';
 import Akkord from "@/components/Akkord.vue";
-
+import Personal from "@/views/Personal.vue";
 import { ref, onMounted, reactive } from 'vue'
 const count = ref(0)
 const currentLine = ref(null)
+
 
 
 // ---------db-----------------
@@ -19,10 +22,12 @@ import { db } from "@/firebase/config.ts";
 import { collection, query, onSnapshot } from "firebase/firestore";
 var SlotBestimmte = reactive([]);
 var SlotDataBestimmte = reactive([]);
+var Slotnegativ = reactive([]);
 
 var titles = reactive([]);
 const Bestimmte = query(collection(db, "bestimmte"));
 const DataBestimmte = query(collection(db, "DataBestimmte"));
+const negativ = query(collection(db, "negativ"));
 
 onMounted(async () => {
   onSnapshot(Bestimmte, (querySnapshot) => {
@@ -42,17 +47,38 @@ onMounted(async () => {
     SlotDataBestimmte.id = 1;
     SlotDataBestimmte.isOpen = false;
   });
+  onSnapshot(negativ, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      Slotnegativ.push({ text: doc.data().text, content: doc.data().content });
+    });
+    titles.push({ id: 2, title: 'Negativ Artikel', isOpen: false });
+    Slotnegativ.id = 2;
+    Slotnegativ.isOpen = false;
+  });
 });
 
+import Plaza from "@/components/Plaza.vue";
+// ---------db-----------------
+
+var SlotArtikle = reactive([]);
+
+var titles = reactive([]);
+const Artikle = query(collection(db, "Artikle-table"));
+
+
+onMounted(async () => {
+  onSnapshot(Artikle, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      SlotArtikle.push(doc.data());
+    });
+
+  });
+});
 
 </script>
 
 <style lang="scss">
 .plaza__line {
   padding: 5px 0 0 0;
-}
-
-.tabs {
-  max-width: 300px;
 }
 </style>

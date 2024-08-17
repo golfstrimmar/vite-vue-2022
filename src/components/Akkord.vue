@@ -1,7 +1,6 @@
 <template lang='pug'>
-.akkord
-  .akkord__nav 
-
+.akkord(:class="(titlesObject == false) ? 'kurz' : ''" )
+  .akkord__nav(v-if= "titlesObject") 
     Button(v-for="item in props.titles" :key="index" :item='item' @click='ButtonHandler(item.id) ')
 
   .akkord__items
@@ -66,7 +65,16 @@ const anwortPositiv = (data) => {
     count.value = 0;
   }
 }
+onMounted(() => {
+  if (props.titles.length == 1) {
+    props.titles = ''
+  }
+})
 
+const titlesObject = computed(() => {
+  return props.titles.length > 1
+}
+)
 
 </script>
 <style lang='scss' scoped>
@@ -75,6 +83,10 @@ const anwortPositiv = (data) => {
   grid-template-columns: 150px 1fr;
   column-gap: 5px;
   margin: 20px 0 0 0;
+
+  &.kurz {
+    grid-template-columns: 1fr;
+  }
 }
 
 .akkord__nav {
