@@ -1,7 +1,7 @@
 <template lang="pug">
 .container
   h2 Personalpronomen
-    Plaza(:Slot='SlotPersonal')
+  Plaza(:Slot='SlotPersonal')
   Akkord(:titles="titles" :Data="[SlotDataPersonal]")
 </template>
 
