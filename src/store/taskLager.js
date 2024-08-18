@@ -463,6 +463,25 @@ export const useTask = defineStore("taskLager", {
           },
           {
             description:
+              "Таким образом, весь код:означает, что для каждого элемента массива item создается новый объект, который копирует все свойства исходного элемента и добавляет или заменяет свойство sortOrder, значение которого определяется как позиция item.title в массиве orderArray. Новый массив, созданный с помощью map, будет содержать такие обновленные объекты.Array.map(item => {...}):map — это метод массива, который принимает функцию обратного вызова и вызывает эту функцию для каждого элемента массива. В результате работы map создается новый массив, в котором каждый элемент — это результат выполнения переданной функции.item => {...} — это стрелочная функция, которая принимаем элемент массива как аргумент item и возвращает новый объект.({ ...item, sortOrder: orderArray.indexOf(item.title) }):{ ...item, sortOrder: ... } — это создание нового объекта с использованием оператора распространения (...). Он копирует все свойства объекта item в новый объект.sortOrder: orderArray.indexOf(item.title) — добавляет новое свойство sortOrder в этот объект. Значением этого свойства является индекс (indexOf) элемента item.title в массиве orderArray.Весь этот код заключен в круглые скобки (...) для того, чтобы JavaScript воспринимал его как выражение, возвращающее объект. Без скобок, фигурные скобки {} будут интерпретироваться как блок кода, а не как объект.",
+            dataText: `пример map
+              .map(item => ({ ...item, sortOrder: orderArray.indexOf(item.title) }));`,
+          },
+          {
+            description:
+              "Этот код на JavaScript сортирует массив объектов content в соответствии с порядком элементов в массиве orderArray. Изначальный массив content:Этот массив содержит объекты, каждый из которых имеет свойство title.Массив orderArray:Это массив строк, определяющий желаемый порядок сортировки для объектов из массива content.Использование map:Код проходит по каждому объекту в массиве content с помощью map и создает новый массив объектов. В каждый объект добавляется новое свойство sortOrder, которое содержит индекс (indexOf) элемента title из orderArray.Например, для объекта { title: 'Dativ' } sortOrder будет равно 1, потому что 'Dativ' находится на втором месте в orderArray.Сортировка (sort):Новый массив, возвращаемый map, сортируется с помощью функции sort.Функция sort сравнивает значения sortOrder у двух объектов a и b и сортирует их в порядке возрастания.Результат:После сортировки массив sortSlot будет содержать объекты из content в порядке, соответствующем порядку строк в orderArra ",
+            dataText: `пример sort();  
+            const content = [{ title: 'Dativ' }, { title: 'Nominativ Ersatz' }, { title: 'Dativ Ersatz' }, { title: 'Akkusativ Ersatz' }, { title: 'Nominativ' }, { title: 'Genitiv Ersatz' }, { title: 'Genitiv' }, { title: 'Plural' }, { title: 'Singular' }, { title: 'Akkusativ' }];
+
+const orderArray = ['Nominativ', 'Dativ', 'Akkusativ', 'Genitiv', 'Nominativ Ersatz', 'Dativ Ersatz', 'Akkusativ Ersatz', 'Genitiv Ersatz', 'Singular', 'Plural'];
+
+var sortSlot = content
+	.map(item => ({ ...item, sortOrder: orderArray.indexOf(item.title) }))
+	.sort((a, b) => a.sortOrder - b.sortOrder)
+console.log(sortSlot);`,
+          },
+          {
+            description:
               " создаёт новый массив, в который войдут только те элементы arr , для которых вызов callback(item, i, arr) возвратит true .",
             dataText:
               ".filter((foo) => { return foo.value !== newLineas[i].value }); ",
@@ -1031,14 +1050,17 @@ export const useTask = defineStore("taskLager", {
           { title: "computed" },
 
           {
-            dataText: `const count = ref(1)
+            dataText: `--//computed//--
+            const count = ref(1)
 const plusOne = computed(() => count.value + 1)
 console.log(plusOne.value)// 2`,
 
             description: " ",
           },
           {
-            dataText: `const count = ref(1)
+            dataText: `--//computed//--
+            
+            const count = ref(1)
 const plusOne = computed({
   get: () => count.value + 1,
   set: val => {
@@ -1048,11 +1070,14 @@ const plusOne = computed({
 plusOne.value = 1
 console.log(count.value) // 0`,
 
-            description: "computed",
+            description:
+              "const count = ref(1):Создается реактивная переменная count, значение которой изначально равно 1.const plusOne = computed({ get: () => count.value + 1, set: val => { count.value = val - 1 } }):Создается вычисляемое свойство plusOne с использованием computed, которое имеет два свойства: get и set .get: Это функция, которая определяет, что возвращает вычисляемое свойство. В данном случае она возвращает count.value + 1 .set: Это функция, которая вызывается при изменении значения plusOne. В данном случае она устанавливает значение count.value, равное переданному значению минус 1 (val - 1). plusOne.value = 1:Это устанавливает значение plusOne в 1, что приводит к вызову set-метода.В set-методе val равно 1, поэтому значение count.value устанавливается в 1 - 1, то есть в 0.console.log(count.value):Выводит текущее значение count.value, которое на этот момент равно 0.",
           },
-          { title: "watch" },
+          { title: "watch,watchEffect" },
           {
-            dataText: `const count = ref(0)
+            dataText: `--//watchEffect//--
+            
+            const count = ref(0)
 watchEffect(() => console.log(count.value))
 // -> выведет 0
 setTimeout(() => {
@@ -1060,21 +1085,12 @@ setTimeout(() => {
   // -> выведет 1
 }, 100)`,
 
-            description: "watchEffect",
+            description:
+              "watchEffect — это функция Vue, которая автоматически отслеживает все реактивные зависимости внутри переданной функции и повторно выполняет её при изменении этих зависимостей.В данном случае watchEffect будет отслеживать изменения count.value и выводить его значение в консоль при каждом изменении.",
           },
-          {
-            dataText: `const count = ref(0)
-watchEffect(() => console.log(count.value))
-// -> выведет 0
-setTimeout(() => {
-  count.value++
-  // -> выведет 1
-}, 100)`,
 
-            description: "watchEffect",
-          },
           {
-            dataText: `// наблюдение за геттер-функцией
+            dataText: `--//наблюдение за геттер-функцией//-- 
 const state = reactive({ count: 0 })
 watch(
   () => state.count,
@@ -1174,43 +1190,68 @@ watch(count, (count, prevCount) => {
           { title: "В родителе" },
 
           {
-            dataText:
-              "Button(text = 'beispiele mischen' @someEvent = 'someEvent') ",
-          },
-          {
-            dataText: "const someEvent = (data) => {console.log(data);}",
+            dataText: `Button(text = 'beispiele mischen' @someEvent = 'someEvent')
+            const someEvent = (data) => {console.log(data);}`,
           },
 
           { title: "В потомке" },
           {
-            dataText:
-              "const props = defineProps({text: {type: String , required: false }}) ",
-          },
-
-          {
-            dataText: "const emit = defineEmits(['someEvent']) ",
-          },
-          {
-            dataText:
-              "const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } }",
+            dataText: `const props = defineProps({text: {type: String , required: false }})
+            const emit = defineEmits(['someEvent'])
+            const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } } `,
           },
 
           { title: "работа с props, toRaw " },
           {
-            dataText:
-              "const props = defineProps({item: {type: Array , required: false},}) ",
-            description: "заходит на компонент",
-          },
-          {
-            dataText:
-              "import {  ref, onMounted, toRaw } from 'vue';var content = ref([]); onMounted(() => {content.value = toRaw(props.item)}) ",
+            dataText: `const props = defineProps({item: {type: Array , required: false},})
+            import {  ref, onMounted, toRaw } from 'vue';var content = ref([]); 
+            onMounted(() => {content.value = toRaw(props.item)})
+            `,
             description:
-              "на входе превращаем его в массив, с которым можно работать",
+              "на входе превращаем его в массив, который можно только рендерить. при перезагрузке страницы весь код слетает. ",
           },
           {
-            dataText:
-              ".tab__line(v-for='el in content' :key='index' ) p(v-for= 'foo in el' : key='index' ) {{ foo }}",
-            description: "теперь можно выводить данные",
+            title:
+              "чтобы не слетал код при перезагрзке страницы при рендеринге props, нужно использовать watchEffect",
+          },
+          {
+            title:
+              "этот компонент автоматически отсортирует элементы по указанному порядку.",
+          },
+          {
+            dataText: `watchEffect(() => {
+	content.value = props.Slot
+	const orderArray = ['Nominativ', 'Dativ', 'Akkusativ', 'Genitiv', 'Nominativ Ersatz', 'Dativ Ersatz', 'Akkusativ Ersatz', 'Genitiv Ersatz', 'Singular', 'Plural'];
+
+	sortSlot.value = content.value
+		.map(item => ({ ...item, sortOrder: orderArray.indexOf(item.title) }))
+		.sort((a, b) => a.sortOrder - b.sortOrder)
+
+}) `,
+
+            description: `Этот код полезен в ситуациях, когда нужно динамически сортировать данные на основе какого-то заранее установленного порядка. С помощью watchEffect Vue автоматически отслеживает изменения пропса и обновляет сортированный список sortSlot, обеспечивая правильное отображение данных в компоненте.
+            watchEffect(() => { ... }):
+
+watchEffect — это реактивный эффект в Vue, который автоматически отслеживает все зависимости внутри переданной функции и выполняет её заново при изменении этих зависимостей.
+content.value = props.Slot:
+
+Этот код обновляет реактивную переменную content, присваивая ей значение пропса Slot. Это действие происходит каждый раз, когда props.Slot изменяется.
+Определение orderArray:
+
+orderArray — это массив строк, определяющий порядок, в котором элементы должны быть отсортированы. Этот порядок будет использоваться для сортировки объектов в content.value.
+Сортировка массива:
+
+sortSlot.value = content.value.map(...).sort(...) — здесь происходит два этапа:
+map: Каждый объект из content.value копируется в новый объект, в который добавляется новое свойство sortOrder, основанное на позиции item.title в orderArray.
+sort: Затем этот массив сортируется по значению sortOrder, что обеспечивает правильный порядок элементов.
+Как это работает:
+При каждом изменении props.Slot срабатывает watchEffect, и:
+content.value обновляется, получая новое значение props.Slot.
+Затем создается массив, в котором каждому элементу добавляется поле sortOrder, указывающее позицию его title в orderArray.
+Массив сортируется по значению sortOrder.
+Наконец, sortSlot.value обновляется отсортированным массивом.
+
+            `,
           },
         ],
 

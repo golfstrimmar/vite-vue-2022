@@ -514,6 +514,73 @@ use(xlink: href = block.src)
 
   {
     dataText:
+      `.plaza
+  table
+    thead
+      tr
+        th(rowspan='2')
+        th.no-border(colspan='5') Singular
+        th.no-border(colspan='3') Plural
+      tr
+        th 1. Pers.
+        th 2. Pers.
+        th(colspan='3')
+          span.num2 3.
+          |  Person
+        th 1. Pers.
+        th 2. Pers.
+        th 3. Pers.
+    tbody
+      tr
+        td(valign='top')
+          b Nominativ
+        td(valign='top') ich
+        td(valign='top') du
+        td(valign='top') er
+        td(valign='top') sie
+        td(valign='top') es
+        td(valign='top') wir
+        td(valign='top') ihr
+        td(valign='top') sie
+      tr
+        td(valign='top')
+          b Genitiv
+        td(valign='top') meiner
+        td(valign='top') deiner
+        td(valign='top') seiner
+        td(valign='top') ihrer
+        td(valign='top') seiner
+        td(valign='top') unser
+        td(valign='top') euer
+        td(valign='top') ihrer
+      tr
+        td(valign='top')
+          b Dativ
+        td(valign='top') mir
+        td(valign='top') dir
+        td(valign='top') ihm
+        td(valign='top') ihr
+        td(valign='top') ihm
+        td(valign='top') uns
+        td(valign='top') euch
+        td(valign='top') ihnen
+      tr
+        td(valign='top')
+          b Akkusativ
+        td(valign='top') mich
+        td(valign='top') dich
+        td(valign='top') ihn
+        td(valign='top') sie
+        td(valign='top') es
+        td(valign='top') uns
+        td(valign='top') euch
+        td(valign='top') sie`,
+
+    link: "https://codepen.io/viktor-yushin/pen/gONvmPV",
+    img: '2'
+  },
+  {
+    dataText:
       `table
 caption
   | Superheros and sidekicks

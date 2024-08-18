@@ -1,6 +1,6 @@
 <template lang='pug'>
 .copy 
-	h2(v-if='item.title&& item.title !== " " ') {{item.title}}
+	textarea.textareaTitel(v-if='item.title&& item.title !== " " ') {{item.title}}
 	textarea(v-copy :value='item.dataText' @click='clickcopy' v-if='item.dataText&& item.dataText !== " "  ' )  
 	button.tool(v-tool  :data='item.description' v-if='item.description && item.description !== " " ') 
 		span i 
@@ -73,24 +73,7 @@ const clickcopy = () => {
 	outline: 1px solid #bdb5b4;
 	display: flex;
 
-	h2 {
-		font-weight: 700;
-		font-size: 14px;
-		color: #f8f6eb;
-		text-align: center;
 
-		background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
-		background-image: linear-gradient(top, #f4f1ee, #fff);
-		border-radius: 4px;
-		background: rgb(107, 95, 0);
-		position: absolute;
-		top: 0%;
-		left: 0%;
-		// transform: translate(-50%, -50%);
-		display: inline-block;
-		width: 100%;
-		height: 100%;
-	}
 
 	// p {
 	// 	background-color: #fdfded;
@@ -121,6 +104,25 @@ const clickcopy = () => {
 			border: 1px solid $deep-orange-8;
 			background-color: $deep-orange-4;
 			color: #fff;
+		}
+
+		&.textareaTitel {
+			font-weight: 700;
+			font-size: 14px;
+			color: #f8f6eb;
+			text-align: center;
+
+			background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+			background-image: linear-gradient(top, #f4f1ee, #fff);
+			border-radius: 4px;
+			background: rgb(107, 95, 0);
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			// transform: translate(-50%, -50%);
+			display: inline-block;
+			width: 100%;
+			height: 100%;
 		}
 	}
 
