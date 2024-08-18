@@ -1,6 +1,6 @@
 <template lang='pug'>
 .plaza
-	table(v-for="item in Slot.reverse()" :key="item.id")
+	table(v-for="item in sortSlot.value " :key="index")
 		thead
 			tr
 				th(colspan='7') {{item.title}}
@@ -8,41 +8,70 @@
 				th(colspan='1')
 				th(v-if= "item.erste")
 					.big 
-						p(v-for="i in item.erste" :key="item.id") {{i}}
+						p(v-for="i in item.erste" :key="index") {{i}}
 				th(v-if= "item.zweite")
 					.big 
-						p(v-for="i in item.zweite" :key="item.id") {{i}}
+						p(v-for="i in item.zweite" :key="index") {{i}}
 				th(v-if= "item.drite" :colspan='item.driteLength') 
 					.big
-						p(v-for="i in item.drite" :key="item.id") {{i}}
+						p(v-for="i in item.drite" :key="index") {{i}}
 				th(v-if= "item.vierte")
 					.big 
-						p(v-for="i in item.vierte" :key="item.id") {{i}}
+						p(v-for="i in item.vierte" :key="index") {{i}}
+				th(v-if= "item.fünfte")
+					.big 
+						p(v-for="i in item.fünfte" :key="index") {{i}}
+				th(v-if= "item.sechste")
+					.big 
+						p(v-for="i in item.sechste" :key="index") {{i}}
+
 		tbody
 			tr
-				td(v-for="i in item.bodyNom" :key="item.id") {{i}}
+				td(v-for="i in item.bodyNom" :key="index") {{i}}
+			tr
+				td(v-for="i in item.bodyDat" :key="index") {{i}}
+			tr
+				td(v-for="i in item.bodyAkk" :key="index") {{i}}
+			tr
+				td(v-for="i in item.bodyGen" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row1" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row2" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row3" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row4" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row5" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row6" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row7" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row8" :key="index") {{i}}
+			tr
+				td(v-for="i in item.row9" :key="index") {{i}}
 
-			tr
-				td(v-for="i in item.bodyDat" :key="item.id") {{i}}
-			tr
-				td(v-for="i in item.bodyAkk" :key="item.id") {{i}}
-			tr
-				td(v-for="i in item.bodyGen" :key="item.id") {{i}}
 </template>
 <script setup>
-import { ref, computed, onMounted, toRaw } from 'vue';
-var drite = ref(0); var content = ref([]);
+import { ref, computed, onMounted, watchEffect, toRaw, reactive } from 'vue';
+var sortSlot = reactive([]);
+var content = reactive([]);
 const props = defineProps({ Slot: { type: Array, required: false } })
 
-onMounted(() => {
-	content.value = toRaw(props.Slot.reverse())
-	content.value.forEach(car => {
-		if (car.driteLength) {
-			drite.value = car.driteLength
-			console.log(drite.value);
-		}
-	})
+
+watchEffect(() => {
+	content.value = props.Slot
+	const orderArray = ['Nominativ', 'Dativ', 'Akkusativ', 'Genitiv', 'Nominativ Ersatz', 'Dativ Ersatz', 'Akkusativ Ersatz', 'Genitiv Ersatz', 'Singular', 'Plural'];
+
+	sortSlot.value = content.value
+		.map(item => ({ ...item, sortOrder: orderArray.indexOf(item.title) }))
+		.sort((a, b) => a.sortOrder - b.sortOrder)
+
 })
+
+
 
 
 </script>
@@ -50,7 +79,7 @@ onMounted(() => {
 <style lang='scss' scoped>
 .plaza {
 	display: grid;
-	grid-auto-flow: column;
+	// grid-auto-flow: column;
 	column-gap: 20px;
 	row-gap: 15px;
 	grid-template-columns: repeat(auto-fill, 400px);

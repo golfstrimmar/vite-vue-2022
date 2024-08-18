@@ -33,7 +33,7 @@ onMounted(async () => {
     querySnapshot.forEach((doc) => {
       InterSlot.push(doc.data());
     });
-    titles.push({ id: 0, title: 'Personal', isOpen: true });
+    titles.push({ id: 0, title: 'Interrogativ', isOpen: true });
     InterSlot.id = 0;
     InterSlot.isOpen = true;
   });
