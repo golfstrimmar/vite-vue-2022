@@ -4,23 +4,25 @@
     Button(v-for="item in props.titles" :key="index" :item='item' @click='ButtonHandler(item.id) ' )
 
   .akkord__items
-    button.but-wave.mischen(type = "button" v-button @click = "handlerClick(props.Data)" ) Zeilen mischen
-    .block(v-for="Data in props.Data" :key="index" :class="(Data.isOpen == true) ? '_is-active' : '' "  )
-      .block__line(v-for="el in Data" :key="index" ) 
-        .block__info 
-          h4 {{el.text}}
-          button.tooltip(v-tool  :data = "el.content")
-            span i
-        div
-          Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @anwortPositiv="anwortPositiv" @lineFertig="lineFertig")
+    div(v-for="Data in contentData.value" :key="index")
+      .block( :class="(Data.isOpen == true) ? '_is-active' : '' "  )
+        button.but-wave.mischen(type = "button" v-button @click = "handlerClick(Data)" ) Zeilen mischen
+        .block__line(v-for="el in Data" :key="index" ) 
+          .block__info 
+            h4 {{el.text}}
+            button.tooltip(v-tool  :data = "el.content")
+              span i
+          div
+            Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @anwortPositiv="anwortPositiv" @lineFertig="lineFertig")
 
 
 </template>
 
 <script setup>
-import { ref, onMounted, computed, reactive } from 'vue';
+import { ref, onMounted, computed, reactive, watchEffect } from 'vue';
 import Input from '@/components/Input.vue';
 import Button from '@/components/Button.vue';
+var contentData = reactive([]);
 const props = defineProps({
   titles: {
     type: Array,
@@ -32,9 +34,11 @@ const props = defineProps({
   }
 })
 
+
+
 // --------------------------
 const handlerClick = (Data) => {
-  props.Data.sort(() => Math.random() - 0.5);
+  Data.sort(() => Math.random() - 0.5);
 }
 
 
@@ -83,7 +87,9 @@ const titlesObject = computed(() => {
   return props.titles.length > 1
 }
 )
-
+watchEffect(() => {
+  contentData.value = props.Data
+})
 </script>
 <style lang='scss' scoped>
 .akkord {
@@ -105,8 +111,8 @@ const titlesObject = computed(() => {
 
 .mischen {
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: -50px;
+  left: 0px;
   width: auto;
   height: auto;
   padding: 10px 20px;

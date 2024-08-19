@@ -48,7 +48,7 @@ onMounted(async () => {
     });
     titles.push({ id: 1, title: 'Possessiv Ersatz', });
     SlotDataPossessivErsatz.id = 1;
-    SlotDataPossessivErsatz.isOpen = true;
+    SlotDataPossessivErsatz.isOpen = false;
 
   });
 });
