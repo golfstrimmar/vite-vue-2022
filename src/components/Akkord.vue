@@ -1,9 +1,10 @@
 <template lang='pug'>
 .akkord(:class="(titlesObject == false) ? 'kurz' : ''" )
   .akkord__nav(v-if= "titlesObject") 
-    Button(v-for="item in props.titles" :key="index" :item='item' @click='ButtonHandler(item.id) ')
+    Button(v-for="item in props.titles" :key="index" :item='item' @click='ButtonHandler(item.id) ' )
 
   .akkord__items
+    button.but-wave.mischen(type = "button" v-button @click = "handlerClick(props.Data)" ) Zeilen mischen
     .block(v-for="Data in props.Data" :key="index" :class="(Data.isOpen == true) ? '_is-active' : '' "  )
       .block__line(v-for="el in Data" :key="index" ) 
         .block__info 
@@ -30,6 +31,13 @@ const props = defineProps({
     required: false
   }
 })
+
+// --------------------------
+const handlerClick = (Data) => {
+  props.Data.sort(() => Math.random() - 0.5);
+}
+
+
 
 // --------------------------
 const ButtonHandler = (id) => {
@@ -95,13 +103,32 @@ const titlesObject = computed(() => {
   gap: 5px 0;
 }
 
+.mischen {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  outline: 1px solid;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  transition: all 0.2s linear;
+  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+  border: none;
+  outline: none;
+  border-radius: 10px;
 
+  &:hover {
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.5), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.8);
+  }
+}
 
 .akkord__items {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 10px 0 0 0;
+  padding: 50px 0 0 0;
+  position: relative;
 
   .block {
     position: fixed;

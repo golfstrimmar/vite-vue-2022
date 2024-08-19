@@ -46,6 +46,29 @@ app
       }
     },
   })
+  .directive("button", {
+    mounted(el) {
+      let target = el;
+
+      const Button = (e) => {
+        let mValue = Math.max(target.clientWidth, target.clientHeight),
+          addDiv = document.createElement("div"),
+          rect = target.getBoundingClientRect();
+        addDiv.classList.add("addDiv");
+        addDiv.style.width = addDiv.style.height = mValue + "px";
+        addDiv.style.left = e.clientX - rect.left - mValue / 2 + "px";
+        addDiv.style.top = e.clientY - rect.top - mValue / 2 + "px";
+
+        target.append(addDiv);
+        setTimeout(() => {
+          addDiv.remove();
+        }, 3000);
+      };
+      el.onclick = (e) => {
+        Button(e);
+      };
+    },
+  })
   .directive("tool", {
     mounted(el) {
       let add = document.createElement("div");
