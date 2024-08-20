@@ -59,6 +59,7 @@ const links = ref([
   { name: "Verben", href: "/verben" },
   { name: "Rektion", href: "/rektion" },
   { name: "Nomen", href: "/nomen" },
+  { name: "Form", href: "/form" },
 
 
   // { name: "Tasks", href: "/tasks" },

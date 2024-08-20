@@ -5,6 +5,7 @@ import Personal from "@/views/Personal.vue";
 import Interrogativ from "@/views/Interrogativ.vue";
 import Reflexiv from "@/views/Reflexiv.vue";
 import Possessiv from "@/views/Possessiv.vue";
+import Form from "@/views/Form.vue";
 // import Demonstrativ from "@/views/Demonstrativ.vue";
 // import Modal from "@/views/Modal.vue";
 // import Passiv from "@/views/Passiv.vue";
@@ -27,6 +28,7 @@ const router = createRouter({
     { path: "/interrogativ", name: "Interrogativ", component: Interrogativ },
     { path: "/reflexiv", name: "Reflexiv", component: Reflexiv },
     { path: "/possessiv", name: "Possessiv", component: Possessiv },
+    { path: "/form", name: "Form", component: Form },
     // { path: "/demonstrativ", name: "Demonstrativ", component: Demonstrativ },
     // { path: "/modal", name: "Modal", component: Modal },
     // { path: "/passiv", name: "Passiv", component: Passiv },
