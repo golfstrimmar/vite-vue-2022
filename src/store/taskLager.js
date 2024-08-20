@@ -1007,6 +1007,390 @@ doSomethingPromise("некоторые данные")
             description: `Node.js предоставляет встроенный модуль util, который позволяет легко преобразовывать функции, использующие колбэки, в функции, использующие промисы.`,
           },
         ],
+        [
+          {
+            title: "REGULAR EXPRESSION",
+            description: `Регулярные выражения (RegExp) в JavaScript используются для поиска и работы с текстовыми строками на основе определенных шаблонов. Вот основные моменты, которые нужно знать о регулярных выражениях в JavaScript:
+Основные синтаксисы:
+/pattern/flags — базовый синтаксис регулярного выражения.
+pattern — шаблон для поиска.
+flags — флаги, которые изменяют поведение поиска.
+`,
+          },
+          {
+            title: "Примеры:",
+          },
+          {
+            dataText: `const regex = /cat/g;
+const str = "cat, caterpillar, concat";
+console.log(str.match(regex)); // ["cat", "cat"]
+`,
+            description:
+              "глобальный поиск, т.е. ищет все совпадения, а не только первое.",
+          },
+          {
+            dataText: `const regex = /cat/i;
+const str = "Cat, caterpillar, Concat";
+console.log(str.match(regex)); // ["Cat"]
+`,
+            description:
+              "Выполняет поиск без учета регистра, то есть a и A будут считаться равными.",
+          },
+          {
+            dataText: `const regex = /^cat/m;
+const str = "dog\ncat\nbird";
+console.log(str.match(regex)); // ["cat"]
+
+`,
+            description:
+              "Многострочный режим. В этом режиме символы ^ и $ соответствуют началу и концу каждой строки (между символами новой строки \n), а не только начала и конца всей строки.",
+          },
+          {
+            dataText: `const regex = /cat.*dog/s;
+const str = "cat\nis a dog";
+console.log(str.match(regex)); // ["cat\nis a dog"]
+
+`,
+            description:
+              "Включает режим dotAll, в котором символ . будет соответствовать любому символу, включая символы новой строки (\n). Без этого флага . не будет захватывать символ новой строки.",
+          },
+          {
+            dataText:
+              "const regex = /\u{1F60D}/u; const str = 'I love JavaScript Unicode'; console.log(str.match(regex)); // ['Unicode']",
+            description:
+              "Включает поддержку Unicode, позволяя использовать Unicode-коды символов  и корректно обрабатывать кодовые точки, которые занимают более одного 16-битного значения (суррогатные пары).",
+          },
+          {
+            dataText: `const regex = /cat/y;
+regex.lastIndex = 4;
+const str = "dog cat catdog";
+console.log(regex.exec(str)); // ["cat"]
+
+`,
+            description:
+              "Включает режим 'привязки' (sticky). В этом режиме поиск будет выполняться только в текущей позиции строки, на которую указывает свойство lastIndex регулярного выражения. Если на этой позиции совпадение не найдено, дальнейший поиск не выполняется.",
+          },
+          {
+            dataText: `const text = "This is a test (with some content inside).";
+const regex = /\(([^)]+)\)/;
+const match = text.match(regex);
+if (match) {
+  console.log(match[1]); // "with some content inside"
+}
+
+`,
+            description: "Извлечение содержимого скобок",
+          },
+          {
+            dataText: `const text = "Hello, World! 123";
+const cleanedText = text.replace(/[^a-zA-Z]/g, '');
+console.log(cleanedText); // "HelloWorld"
+
+`,
+            description: "Удаление всех неалфавитных символов из строки",
+          },
+          {
+            dataText: `const str = "apple, banana   orange,grape";
+const regex = /[\s,]+/;
+const fruits = str.split(regex);
+console.log(fruits); // ["apple", "banana", "orange", "grape"]
+
+`,
+            description:
+              "Разбиение строки по любому числу пробелов или запятых",
+          },
+          {
+            dataText: `const text = "Счет: 100$, скидка: 20%, итог: 80$.";
+const regex = /\d+/g;
+const numbers = text.match(regex);
+console.log(numbers); // ["100", "20", "80"]
+
+`,
+            description: "Извлечение чисел из строки",
+          },
+          {
+            dataText: `const html = "<div><p>This is a paragraph.</p></div>";
+const regex = /<p>(.*?)<\/p>/;
+const match = html.match(regex);
+if (match) {
+  console.log(match[1]); // "This is a paragraph."
+}
+
+`,
+            description: "Извлечение текста между HTML-тегами",
+          },
+          {
+            dataText: `const regex = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+console.log(regex.test("+7(999)123-45-67")); // true
+console.log(regex.test("79991234567")); // false
+
+`,
+            description:
+              "Проверка, является ли строка номером телефона в формате +7(999)123-45-67",
+          },
+          {
+            dataText: `const date = "2024-08-20";
+const regex = /(\d{4})-(\d{2})-(\d{2})/;
+const formattedDate = date.replace(regex, '$3/$2/$1');
+console.log(formattedDate); // "20/08/2024"
+
+
+`,
+            description: ". Замена формата даты с YYYY-MM-DD на DD/MM/YYYY",
+          },
+          {
+            dataText: `const text = "Hello world, This is a Test.";
+const regex = /\b[A-Z][a-z]*\b/g;
+const capitalWords = text.match(regex);
+console.log(capitalWords); // ["Hello", "This", "Test"]
+`,
+            description: "Поиск слов, начинающихся с заглавной буквы",
+          },
+          {
+            dataText: `const url = "https://www.example.com/path?query=123";
+const regex = /^https?:\/\/(www\.)?([a-zA-Z0-9.-]+)\//;
+const match = url.match(regex);
+if (match) {
+  console.log(match[2]); // "example.com"
+}
+
+`,
+            description: "Извлечение доменного имени из URL",
+          },
+          {
+            dataText: `const regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+console.log(regex.test("192.168.0.1")); // true
+console.log(regex.test("999.999.999.999")); // false
+`,
+            description: "Проверка, является ли строка валидным IP-адресом",
+          },
+          {
+            dataText: `const text = "Контакты: john.doe@example.com, jane_doe123@domain.co.uk";
+const regex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+const emails = text.match(regex);
+console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
+
+`,
+            description: "Поиск и замена всех email-адресов в тексте",
+          },
+          {
+            title: "Флаги:",
+          },
+          {
+            dataText: `g`,
+            description:
+              "глобальный поиск, т.е. ищет все совпадения, а не только первое.",
+          },
+          {
+            dataText: `i`,
+            description: "(ignore case) — регистронезависимый поиск.",
+          },
+          {
+            dataText: `m`,
+            description: `(multiline) — многострочный режим, ^ и $ соответствуют началу и концу строки соответственно.`,
+          },
+          {
+            dataText: `s`,
+            description: `(dotAll) — позволяет символу . соответствовать любому символу, включая символы новой строки.`,
+          },
+          {
+            dataText: `u`,
+            description: `(unicode) — включает поддержку символов Unicode.`,
+          },
+          {
+            dataText: `y`,
+            description: `(sticky) — поиск с учётом текущей позиции в строке (привязка).`,
+          },
+          {
+            title: `конструкции: `,
+          },
+          {
+            title: `1. Мета-символы`,
+          },
+          {
+            dataText: `/c.t/`,
+            description: `соответствует "cat", "cot", "cut". 
+            . — Любой одиночный символ, кроме символа новой строки \n.`,
+          },
+          {
+            dataText: `/\d/`,
+            description: `соответствует "1", "2", "9". 
+            \d — Любая цифра, эквивалентно [0-9].`,
+          },
+          {
+            dataText: `/\D/`,
+            description: `/\D/ соответствует "a", "b", "!". 
+            \D — Любой символ, который не является цифрой, эквивалентно [^0-9].`,
+          },
+          {
+            dataText: `/\w/`,
+            description: `соответствует "a", "9", "_". 
+            \w — Любая цифра, буква или подчеркивание, эквивалентно [a-zA-Z0-9_].`,
+          },
+          {
+            dataText: `/\W/`,
+            description: `соответствует "!", "#", " ".
+            \W — Любой символ, который не является буквой, цифрой или подчеркиванием, эквивалентно [^a-zA-Z0-9_].`,
+          },
+          {
+            dataText: `/\s/`,
+            description: `соответствует пробелу, табуляции, новой строке. 
+            \s — Любой пробельный символ (пробел, табуляция, новая строка и т.д.).`,
+          },
+          {
+            dataText: `/\S/`,
+            description: `соответствует "a", "9", "!". 
+            \S — Любой символ, кроме пробельного.`,
+          },
+          {
+            dataText: "/\bcat\b/",
+            description: `соответствует "cat" в "cat dog", но не в "caterpillar". 
+            \b — Граница слова (между словом и пробелом или началом/концом строки).`,
+          },
+          {
+            dataText: `/\Bcat\B/`,
+            description: `соответствует "caterpillar", но не "cat" в "cat dog". 
+            \B — Не граница слова.`,
+          },
+          {
+            title: `2. Якоря`,
+          },
+          {
+            dataText: `/^cat/`,
+            description: `соответствует "cat" в "cat dog", но не в "dog cat".
+            ^ — Начало строки.
+            `,
+          },
+          {
+            dataText: `/cat$/`,
+            description: `соответствует "cat" в "dog cat", но не в "cat dog". 
+            $ — Конец строки.`,
+          },
+          {
+            title: `3. Квантификаторы`,
+          },
+
+          {
+            dataText: `/ca*t/`,
+            description: `соответствует "ct", "cat", "caat".
+            * — 0 или более раз
+            `,
+          },
+          {
+            dataText: `/ca+t/`,
+            description: `соответствует "cat", "caat", но не "ct".
+            + — 1 или более раз
+            `,
+          },
+          {
+            dataText: `/ca?t/`,
+            description: `соответствует "ct" и "cat", но не "caat".
+            ? — 0 или 1 раз.
+            `,
+          },
+          {
+            dataText: `/a{3}/`,
+            description: ` соответствует "aaa".
+            {n} — Ровно n раз.
+            `,
+          },
+          {
+            dataText: `/a{2,}/`,
+            description: `соответствует "aa", "aaa", "aaaa".
+            {n,} — n или более раз.
+            `,
+          },
+          {
+            dataText: `/a{2,4}/`,
+            description: `соответствует "aa", "aaa", "aaaa", но не "a" или "aaaaa".
+            {n,m} — От n до m раз.
+            `,
+          },
+          {
+            title: `4. Группировка и альтернативы`,
+          },
+          {
+            dataText: `/(abc)/`,
+            description: `соответствует "abc".
+            ( ... ) — Группировка символов.
+            `,
+          },
+          {
+            dataText: `/a|b/`,
+            description: `соответствует "a" или "b".
+            | — Логическое "или"
+            `,
+          },
+          {
+            title: `5. Наборы и диапазоны`,
+          },
+          {
+            dataText: `/[abc]/`,
+            description: `соответствует "a", "b", "c".
+            [abc] — Любой из указанных символов.
+            `,
+          },
+          {
+            dataText: `/[^abc]/`,
+            description: `соответствует "d", "e", "1".
+            [^abc] — Любой символ, кроме указанных.
+            `,
+          },
+          {
+            dataText: `/[a-z]/`,
+            description: `соответствует любой строчной букве.
+            [a-z] — Диапазон символов.
+            `,
+          },
+          {
+            dataText: `/[0-9]/`,
+            description: `соответствует любой цифре.
+            [0-9] — Диапазон цифр.
+            `,
+          },
+          {
+            title: `6. Специальные последовательности`,
+          },
+          {
+            dataText: `/(?:abc)/`,
+            description: `соответствует "abc", но не создает захватывающую группу.
+            (?: ... ) — Группировка без захвата (non-capturing group).
+            `,
+          },
+          {
+            dataText: `/\d(?=px)/`,
+            description: `соответствует "2" в "2px", но не "2" в "2em".
+            (?= ... ) — Позитивная проверка вперед (positive lookahead)
+            `,
+          },
+          {
+            dataText: `/\d(?!px)/`,
+            description: `соответствует "2" в "2em", но не "2" в "2px".
+            (?! ... ) — Негативная проверка вперед (negative lookahead)
+            `,
+          },
+          {
+            dataText: `/(?<=\$)\d+/`,
+            description: `соответствует "100" в "$100", но не "100" в "100$".
+            (?<= ... ) — Позитивная проверка назад (positive lookbehind).
+            `,
+          },
+          {
+            dataText: `/(?<!\$)\d+/`,
+            description: `соответствует "100" в "100$", но не "100" в "$100".
+            (?<! ... ) — Негативная проверка назад (negative lookbehind)
+            `,
+          },
+          {
+            title: `7. Экранирование`,
+          },
+          {
+            dataText: `/\./`,
+            description: `соответствует символу точки ".".
+            \ — Экранирование специальных символов
+            `,
+          },
+        ],
       ],
       dataVue: [
         [
@@ -1479,6 +1863,30 @@ onMounted(async () => {
           //   dataText: `
 
           //   `,
+          // },
+        ],
+        [
+          {
+            title: "vue validate",
+          },
+          {
+            title: "Form",
+            link: "https://stackblitz.com/edit/vitejs-vite-hyhfuw?file=src%2FApp.vue",
+          },
+          {
+            title: "DynamicForm",
+            link: "https://stackblitz.com/edit/vee-validate-v4-form-generator-5pek5r?file=src%2FApp.vue",
+          },
+          {
+            title: "custom checkboxes",
+            link: "https://stackblitz.com/edit/vee-validate-v4-custom-checkboxes-nsgpvf?file=src%2FApp.vue",
+          },
+
+          // {
+          //   dataText: `
+
+          //   `,
+          //   description: " ",
           // },
         ],
       ],
