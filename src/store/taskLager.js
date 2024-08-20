@@ -470,7 +470,7 @@ export const useTask = defineStore("taskLager", {
           {
             description:
               "Этот код на JavaScript сортирует массив объектов content в соответствии с порядком элементов в массиве orderArray. Изначальный массив content:Этот массив содержит объекты, каждый из которых имеет свойство title.Массив orderArray:Это массив строк, определяющий желаемый порядок сортировки для объектов из массива content.Использование map:Код проходит по каждому объекту в массиве content с помощью map и создает новый массив объектов. В каждый объект добавляется новое свойство sortOrder, которое содержит индекс (indexOf) элемента title из orderArray.Например, для объекта { title: 'Dativ' } sortOrder будет равно 1, потому что 'Dativ' находится на втором месте в orderArray.Сортировка (sort):Новый массив, возвращаемый map, сортируется с помощью функции sort.Функция sort сравнивает значения sortOrder у двух объектов a и b и сортирует их в порядке возрастания.Результат:После сортировки массив sortSlot будет содержать объекты из content в порядке, соответствующем порядку строк в orderArra ",
-            dataText: `пример sort();  
+            dataText: `sort();  в соответствии с порядком элементов в массиве orderArray
             const content = [{ title: 'Dativ' }, { title: 'Nominativ Ersatz' }, { title: 'Dativ Ersatz' }, { title: 'Akkusativ Ersatz' }, { title: 'Nominativ' }, { title: 'Genitiv Ersatz' }, { title: 'Genitiv' }, { title: 'Plural' }, { title: 'Singular' }, { title: 'Akkusativ' }];
 
 const orderArray = ['Nominativ', 'Dativ', 'Akkusativ', 'Genitiv', 'Nominativ Ersatz', 'Dativ Ersatz', 'Akkusativ Ersatz', 'Genitiv Ersatz', 'Singular', 'Plural'];
@@ -479,6 +479,15 @@ var sortSlot = content
 	.map(item => ({ ...item, sortOrder: orderArray.indexOf(item.title) }))
 	.sort((a, b) => a.sortOrder - b.sortOrder)
 console.log(sortSlot);`,
+          },
+          {
+            description:
+              "функция сравнения — это () => Math.random() - 0.5. Она генерирует случайное число в диапазоне от -0.5 до 0.5, случайным образом меняя порядок элементов в массиве. ",
+            dataText: `случайный sort();
+const handlerClick = (Data) => {
+  Data.sort(() => Math.random() - 0.5);
+}
+            ;`,
           },
           {
             description:
@@ -952,6 +961,51 @@ console.log(sortSlot);`,
 
             link: "https://codepen.io/viktor-yushin/pen/KKjQwNW",
           },
+          { title: "Promise js" },
+          {
+            dataText: `function doSomethingPromise(data) {
+    return new Promise((resolve, reject) => {
+        doSomething(data, (error, result) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+}
+
+// Использование
+doSomethingPromise("некоторые данные")
+    .then(result => console.log(result))
+    .catch(error => console.error(error));`,
+
+            description: `Промисификация в JavaScript — это процесс преобразования функций, использующих колбэки (т.е. функций, которые принимают колбэк в качестве аргумента), в функции, возвращающие промисы. Это делает код более читаемым и управляемым, особенно при работе с асинхронными операциями.
+            Типичная функция, использующая колбэк, может выглядеть так:
+            function doSomething(data, callback) {
+    // Имитация асинхронной операции
+    setTimeout(() => {
+        if (data) {
+            callback(null, "Успех!");
+        } else {
+            callback("Ошибка: данные не предоставлены", null);
+        }
+    }, 1000);
+}
+Вы можете преобразовать приведённую выше функцию в основанную на промисах двумя способами: вручную или с помощью util.promisify (в Node.js).
+            `,
+          },
+          {
+            dataText: `const util = require('util');
+const doSomethingPromise = util.promisify(doSomething);
+
+// Использование
+doSomethingPromise("некоторые данные")
+    .then(result => console.log(result))
+    .catch(error => console.error(error));`,
+
+            description: `Node.js предоставляет встроенный модуль util, который позволяет легко преобразовывать функции, использующие колбэки, в функции, использующие промисы.`,
+          },
         ],
       ],
       dataVue: [
@@ -1219,7 +1273,8 @@ watch(count, (count, prevCount) => {
               "этот компонент автоматически отсортирует элементы по указанному порядку.",
           },
           {
-            dataText: `watchEffect(() => {
+            dataText: `var content = reactive([]);
+            watchEffect(() => {
 	content.value = props.Slot
 	const orderArray = ['Nominativ', 'Dativ', 'Akkusativ', 'Genitiv', 'Nominativ Ersatz', 'Dativ Ersatz', 'Akkusativ Ersatz', 'Genitiv Ersatz', 'Singular', 'Plural'];
 
