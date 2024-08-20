@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+
 import Home from "@/views/Home.vue";
 import Artikel from "@/views/Artikel.vue";
 import Personal from "@/views/Personal.vue";
@@ -6,6 +7,7 @@ import Interrogativ from "@/views/Interrogativ.vue";
 import Reflexiv from "@/views/Reflexiv.vue";
 import Possessiv from "@/views/Possessiv.vue";
 import Form from "@/views/Form.vue";
+import Register from "@/views/Register.vue";
 // import Demonstrativ from "@/views/Demonstrativ.vue";
 // import Modal from "@/views/Modal.vue";
 // import Passiv from "@/views/Passiv.vue";
@@ -29,6 +31,7 @@ const router = createRouter({
     { path: "/reflexiv", name: "Reflexiv", component: Reflexiv },
     { path: "/possessiv", name: "Possessiv", component: Possessiv },
     { path: "/form", name: "Form", component: Form },
+    { path: "/register", name: "Form", component: Register },
     // { path: "/demonstrativ", name: "Demonstrativ", component: Demonstrativ },
     // { path: "/modal", name: "Modal", component: Modal },
     // { path: "/passiv", name: "Passiv", component: Passiv },

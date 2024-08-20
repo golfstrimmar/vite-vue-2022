@@ -60,6 +60,7 @@ const links = ref([
   { name: "Rektion", href: "/rektion" },
   { name: "Nomen", href: "/nomen" },
   { name: "Form", href: "/form" },
+  { name: "Register", href: "/register" },
 
 
   // { name: "Tasks", href: "/tasks" },
