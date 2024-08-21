@@ -1,11 +1,15 @@
 <template lang='pug'>
-button(type = "button" :class="(item.isOpen == true) ? '_is-active' : '' "  )  {{ props.item.title }}
+button(type = "button" :class="(props.item && props.item.isOpen == true  ) ? '_is-active' : '' "  )  {{ props.text }}
 </template>
 <script setup>
 import { ref } from 'vue';
 const props = defineProps({
 	item: {
 		type: Object,
+		required: false
+	},
+	text: {
+		type: String,
 		required: false
 	},
 })

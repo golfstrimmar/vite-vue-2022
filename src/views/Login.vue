@@ -1,18 +1,13 @@
 <template lang="pug">
 form(action="#" name="send-form").send#send-form
-	h1 Register
+	h1 Login
 	.input-field
 		input#email(type='email' name='email'  placeholder=' Denzel Washington' v-model="email")
 		label.text-field__label(for='email') *Bitte geben Sie Ihre E-Mail ein
 	.input-field
-		input#password(type='password' name='password'  placeholder=' Denzel Washington' v-model="password")
+		input#email(type='password' name='password'  placeholder=' Denzel Washington' v-model="password")
 		label.text-field__label(for='password') *Bitte geben Sie Ihre Password ein
-		.fildset-checkbox
-			.form-check
-				input#showPassword(type='checkbox' name="showPassword" @click="togglePassword()")
-				label(for='showPassword')
-					SvgIcon(name='eye' )
-	Button(@click="register" text='Register')
+	Button(@click="Login" text='Login')
 	
 
 </template>
@@ -24,12 +19,12 @@ const router = useRouter();
 import Button from '@/components/Button.vue';
 const email = ref('')
 const password = ref('')
-import SvgIcon from '@/components/SvgIcon.vue'
+
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth();
 
-const register = async () => {
+const Login = async () => {
 	try {
 		await createUserWithEmailAndPassword(auth, email.value, password.value);
 		alert("Sucsess");
@@ -59,15 +54,6 @@ const register = async () => {
 	router.push("/");
 }
 
-const togglePassword = () => {
-	const passwordField = document.getElementById("password");
-	const showPassword = document.getElementById("showPassword");
-	if (showPassword.checked) {
-		passwordField.type = "text";
-	} else {
-		passwordField.type = "password";
-	}
-}
 
 </script>
 <style lang='scss' scoped>
@@ -81,7 +67,6 @@ h1 {
 
 .send {
 	padding: 20px 30px;
-
 }
 
 .input-field {
@@ -134,46 +119,6 @@ h1 {
 			color: $blue-grey-4;
 		}
 	}
-
-}
-
-.fildset-checkbox {
-	position: absolute;
-	left: auto;
-	top: 50%;
-	right: 0px;
-	transform: translate(0%, -50%);
-	z-index: 4;
-
-	.form-check {
-		position: relative;
-	}
-
-	input[type="checkbox"]:checked,
-	input[type="checkbox"]:not(:checked) {
-		position: fixed !important;
-		left: -9999px !important;
-		height: 0px;
-		width: 0px;
-	}
-
-	input[type="checkbox"]:checked+label,
-	input[type="checkbox"]:not(:checked)+label {
-		display: inline-block;
-		cursor: pointer;
-		transition: all 0.2s;
-
-
-		svg {
-			width: 30px;
-			height: 20px;
-		}
-
-		&:hover {
-			color: $deep-purple-8;
-		}
-	}
-
 
 }
 

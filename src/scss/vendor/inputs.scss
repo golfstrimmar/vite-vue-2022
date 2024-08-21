@@ -31,13 +31,3 @@ input:not([type="range"]):focus::placeholder {
   opacity: 0;
   z-index: -1;
 }
-
-// input:not([type="range"]):focus + i {
-//   opacity: 0;
-//   z-index: -1;
-// }
-
-// input:not([type="range"]):focus ~ span {
-//   opacity: 0;
-//   z-index: -1;
-// }

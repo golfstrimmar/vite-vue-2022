@@ -1,7 +1,7 @@
 <template lang='pug'>
 .akkord(:class="(titlesObject == false) ? 'kurz' : ''" )
   .akkord__nav(v-if= "titlesObject") 
-    Button(v-for="item in props.titles" :key="index" :item='item' @click='ButtonHandler(item.id) ' )
+    Button(v-for="item in props.titles" :key="index" :item='item' :text='item.title' @click='ButtonHandler(item.id) ' )
 
   .akkord__items
     div(v-for="Data in contentData.value" :key="index")
