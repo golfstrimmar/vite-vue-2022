@@ -22,3 +22,12 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 v-if="Antwort !== undefined"
 
 input(type='text' v-model.trim='inputValue' ref="some" :class="[(focused == true) ? '_is-light' : '']" @focus="focusHandler" @input="$emit('update:inputValue', $event.target.value)" @Vertig="$emit('Vertig', inputValue)" )
+
+          //- .auth-items
+
+//- //- router-link(to="/signup" v-if="!isLoggedIn" ) SignUp
+//- //- router-link(to="/signin" v-if="!isLoggedIn" ) SignIn
+//- Button(type='text' text='Sign out' @someEvent="handleSignOut" v-if="isLoggedIn" )
+//- .\_user(v-if="isLoggedIn" )
+//- span User info
+//- p {{ taskStore.name }}

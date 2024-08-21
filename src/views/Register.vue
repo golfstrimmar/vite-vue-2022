@@ -1,6 +1,6 @@
 <template lang="pug">
-form(action="#" name="send-form").send#send-form
-	h1 Register
+form(action="#" name="send-form" ).send#send-formRegister
+	h2 Register
 	.input-field
 		input#email(type='email' name='email'  placeholder=' Denzel Washington' v-model="email")
 		label.text-field__label(for='email') *Bitte geben Sie Ihre E-Mail ein
@@ -12,9 +12,11 @@ form(action="#" name="send-form").send#send-form
 				input#showPassword(type='checkbox' name="showPassword" @click="togglePassword()")
 				label(for='showPassword')
 					SvgIcon(name='eye' )
-	Button(@click="register" text='Register')
-	
 
+
+	Button(@click.prevent="register" type='submit' text='Register')
+	transition(mode='easy-in-out' name='opentab')
+		#message(  v-if="mess ==  true " ) {{ mes }}
 </template>
 
 <script setup>
@@ -24,39 +26,66 @@ const router = useRouter();
 import Button from '@/components/Button.vue';
 const email = ref('')
 const password = ref('')
+const mess = ref(false)
+const mes = ref('')
 import SvgIcon from '@/components/SvgIcon.vue'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth();
 
-const register = async () => {
-	try {
-		await createUserWithEmailAndPassword(auth, email.value, password.value);
-		alert("Sucsess");
-	} catch (error) {
-		switch (error.code) {
-			case "auth/email-allready-in-use":
-				alert("E-Mail bereits verwendet");
-				break;
+// ==========================================
+const messageShow = (data) => {
+	mes.value = data;
+	mess.value = true
+	setTimeout(() => {
+		mes.value = '';
+		mess.value = false
+	}, 3000);
+};
 
-			case "auth/invalid-email":
-				alert("Das Format der E-Mail-Adresse ist ungültig.");
-				break;
 
-			case "auth/operation-not-allowed":
-				alert("Operation ist verboten");
-				break;
+const register = () => {
+	createUserWithEmailAndPassword(auth, email.value, password.value)
+		.then((UserCredential) => {
+			// Успешный вход
+			const user = UserCredential.user;
+			messageShow(user.email);
+			setTimeout(() => {
+				router.push("/artikel");
+			}, 3000);
+		})
 
-			case "auth/weak-password":
-				alert("Das Passwort muss mindestens 6 Zeichen lang sein");
-				break;
+		.catch(
+			(error) => {
+				switch (error.code) {
+					case "auth/email-already-in-use":
+						messageShow("E-Mail bereits verwendet");
+						setTimeout(() => {
+							router.push("/login");
+						}, 3000);
+						break;
 
-			default:
-				alert(error.code);
-		}
-		return;
-	}
-	router.push("/");
+					case "auth/invalid-email":
+						messageShow("Das Format der E-Mail-Adresse ist ungültig.");
+						break;
+
+					case "auth/operation-not-allowed":
+						messageShow("Operation ist verboten");
+						break;
+
+					case "auth/weak-password":
+						messageShow("Das Passwort muss mindestens 6 Zeichen lang sein");
+						break;
+					case "auth/missing-password":
+						messageShow("Fehlendes Passwort");
+						break;
+					default:
+						messageShow(error.code);
+				}
+				// 
+				return;
+			}
+		);
 }
 
 const togglePassword = () => {
@@ -70,8 +99,9 @@ const togglePassword = () => {
 }
 
 </script>
+
 <style lang='scss' scoped>
-h1 {
+h2 {
 	margin: 0 0 30px 0;
 }
 
@@ -81,100 +111,46 @@ h1 {
 
 .send {
 	padding: 20px 30px;
-
+	max-width: 700px;
 }
 
-.input-field {
-	background: $deep-purple-1;
-	position: relative;
-	@include transition;
-	width: 100%;
-
-	input[type="text"],
-	input[type="email"],
-	input[type="password"] {
-		width: 100%;
-		height: 100%;
-		padding: 5px 0 5px 10px;
-		cursor: pointer;
-		position: relative;
-		background: transparent;
-		@include transition;
-		z-index: 5;
-		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14),
-			0 3px 1px -2px rgba(0, 0, 0, 0.12);
-
-		&::placeholder {
-			opacity: 0;
-		}
-
-		&:not(:placeholder-shown)+label,
-		&:focus+label {
-			transform: translateY(-150%);
-		}
-
-		&+label {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			font-size: 14px;
-			left: 10px;
-			cursor: pointer;
-			z-index: 2;
-			@include transition;
-
-			&:hover {
-				color: $blue-grey-4;
-			}
-		}
-
-		&:focus+label,
-		&:not(:placeholder-shown)+label {
-			transform: translateY(-220%);
-			color: $blue-grey-4;
-		}
-	}
-
+#message {
+	position: fixed;
+	display: flex;
+	width: 100vw;
+	top: 0%;
+	left: 0%;
+	height: 100vh;
+	color: $blue-grey-1;
+	background: rgba(7, 31, 43, 0.85);
+	outline: 1px solid;
+	padding: 0 0 0 0;
+	transition: all 0.2s;
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+	justify-content: center;
+	align-items: center;
+	z-index: 20000;
+	backdrop-filter: blur(5px);
 }
 
-.fildset-checkbox {
-	position: absolute;
-	left: auto;
-	top: 50%;
-	right: 0px;
-	transform: translate(0%, -50%);
-	z-index: 4;
+.opentab-enter-from {
+	opacity: 0;
+	transform: scale(0);
+}
 
-	.form-check {
-		position: relative;
-	}
+.opentab-enter-to {
+	opacity: 1;
+	transform: scale(1);
+}
 
-	input[type="checkbox"]:checked,
-	input[type="checkbox"]:not(:checked) {
-		position: fixed !important;
-		left: -9999px !important;
-		height: 0px;
-		width: 0px;
-	}
+.opentab-leave-from {
+	opacity: 1;
+	transform: scale(1);
+}
 
-	input[type="checkbox"]:checked+label,
-	input[type="checkbox"]:not(:checked)+label {
-		display: inline-block;
-		cursor: pointer;
-		transition: all 0.2s;
-
-
-		svg {
-			width: 30px;
-			height: 20px;
-		}
-
-		&:hover {
-			color: $deep-purple-8;
-		}
-	}
-
-
+.opentab-leave-to {
+	opacity: 0;
+	transform: scale(0);
 }
 
 button {

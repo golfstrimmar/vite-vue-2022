@@ -8,6 +8,7 @@ import Reflexiv from "@/views/Reflexiv.vue";
 import Possessiv from "@/views/Possessiv.vue";
 import Form from "@/views/Form.vue";
 import Register from "@/views/Register.vue";
+import Login from "@/views/Login.vue";
 // import Demonstrativ from "@/views/Demonstrativ.vue";
 // import Modal from "@/views/Modal.vue";
 // import Passiv from "@/views/Passiv.vue";
@@ -31,7 +32,8 @@ const router = createRouter({
     { path: "/reflexiv", name: "Reflexiv", component: Reflexiv },
     { path: "/possessiv", name: "Possessiv", component: Possessiv },
     { path: "/form", name: "Form", component: Form },
-    { path: "/register", name: "Form", component: Register },
+    { path: "/register", name: "Register", component: Register },
+    { path: "/login", name: "Login", component: Login },
     // { path: "/demonstrativ", name: "Demonstrativ", component: Demonstrativ },
     // { path: "/modal", name: "Modal", component: Modal },
     // { path: "/passiv", name: "Passiv", component: Passiv },
@@ -50,5 +52,18 @@ const router = createRouter({
     // },
   ],
 });
+
+// router.beforeEach((to, from, next) => {
+//   const isAuthenticated = false; // Здесь вы проверяете, авторизован ли пользователь (например, через Vuex или другой способ)
+
+//   if (
+//     to.matched.some((record) => record.meta.requiresAuth) &&
+//     !isAuthenticated
+//   ) {
+//     next("/login");
+//   } else {
+//     next("/");
+//   }
+// });
 
 export default router;

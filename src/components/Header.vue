@@ -5,25 +5,22 @@ header.header
       .logo 
         router-link(to="/")
           SvgIcon(name='flag' )
-          //- SvgIcon(name='vite' )
-          //- SvgIcon(name='vue' )
-          //- SvgIcon(name='pinia' )
-          //- //- SvgIcon(name='quasar-logo' )
-          //- SvgIcon(name='pug' )
-          //- SvgIcon(name='sass' )
-          transition(mode='easy-in-out' name='f'  )
-            .header__links(v-if=" burgerActive" )
-              router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
-                |{{ link.name }}
-          //- .auth-items
-          //-   //- router-link(to="/signup"  v-if="!isLoggedIn" ) SignUp
-          //-   //- router-link(to="/signin"  v-if="!isLoggedIn" ) SignIn
-          //-   Button(type='text' text='Sign out' @someEvent="handleSignOut"  v-if="isLoggedIn" ) 
-          //-   ._user(v-if="isLoggedIn" )
-          //-     span User info
-          //-     p {{ taskStore.name }}
-          ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
-            span
+        //- SvgIcon(name='vite' )
+        //- SvgIcon(name='vue' )
+        //- SvgIcon(name='pinia' )
+        //- //- SvgIcon(name='quasar-logo' )
+        //- SvgIcon(name='pug' )
+        //- SvgIcon(name='sass' )
+      router-link.innerLink(to="/register") Register
+      router-link.innerLink(to="/login") Login
+      p Welcome, {{ authStore.user}}
+      transition(mode='easy-in-out' name='f'  )
+        .header__links(v-if=" burgerActive" )
+          router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
+            |{{ link.name }}
+
+      ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
+        span
         
 
 </template>
@@ -36,11 +33,8 @@ import SvgIcon from '@/components/SvgIcon.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter();
 
-
-// import { useTaskStore } from "@/store/taskStore.js"
-// const taskStore = useTaskStore();
-
-
+import { useAuthStore } from '../store/authent';
+const authStore = useAuthStore();
 
 
 const links = ref([
@@ -60,7 +54,7 @@ const links = ref([
   { name: "Rektion", href: "/rektion" },
   { name: "Nomen", href: "/nomen" },
   { name: "Form", href: "/form" },
-  { name: "Register", href: "/register" },
+
 
 
   // { name: "Tasks", href: "/tasks" },
@@ -169,7 +163,7 @@ const handleSignOut = () => {
 
   &__body {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: max-content max-content max-content 1fr;
     column-gap: 20px;
     align-items: center;
   }
