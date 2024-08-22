@@ -1,12 +1,21 @@
 <template lang='pug'>
 .akkord(:class="(titlesObject == false) ? 'kurz' : ''" )
   .akkord__nav(v-if= "titlesObject") 
-    Button(v-for="item in props.titles" :key="index" :item='item' :text='item.title' @click='ButtonHandler(item.id) ' )
+    Button(  v-for="item in props.titles" :key="index" :item='item' :text='item.title' @click='ButtonHandler(item.id) ' )
 
   .akkord__items
     div(v-for="Data in contentData.value" :key="index")
       .block( :class="(Data.isOpen == true) ? '_is-active' : '' "  )
-        button.but-wave.mischen(type = "button" v-button @click = "handlerClick(Data)" ) Zeilen mischen
+        Button( text='Beispiele mischen'   @click = "handlerClick(Data)"  svg='arrow-repeat')
+
+
+        Button( text='Start'  @click='start'    svg='sport')
+        Button( text='Stop'   @click='stop'    svg='stopwatch')
+        Button( text='Reset'   @click='reset'    )
+        span.zeit Sie haben für das Training ausgegeben: {{ formattedTime }}
+
+
+
         .block__line(v-for="el in Data" :key="index" ) 
           .block__info 
             h4 {{el.text}}
@@ -33,6 +42,82 @@ const props = defineProps({
     required: false
   }
 })
+
+// --------------------------
+import { useAuthStore } from '@/store/authent';
+const authStore = useAuthStore();
+import { getAuth } from "firebase/auth";
+const auth = getAuth();
+// --------------------------
+var time = ref(0);        // Количество секунд
+var interval = ref(null);   // Интервал для обновления времени
+
+const formattedTime = computed(() => {
+  const hours = Math.floor(time.value / 3600).toString().padStart(2, '0');
+  const minutes = Math.floor((time.value % 3600) / 60).toString().padStart(2, '0');
+  const seconds = (time.value % 60).toString().padStart(2, '0');
+  return `${hours}h ${minutes}m ${seconds}s`;
+})
+
+
+const start = () => {
+  if (!interval.value) {
+    interval.value = setInterval(() => {
+      time.value++;
+    }, 1000);
+  }
+};
+
+const stop = () => {
+  clearInterval(interval.value);
+  interval.value = null;
+  const Data = {
+    time: formattedTime
+  };
+  authStore.refresh(Data);
+};
+
+const reset = () => {
+  stop();
+  time.value = 0;
+};
+
+// beforeDestroy(){
+//   stop();
+// }
+
+// var startTime = ref(0);
+// var endTime = ref(0);
+// var timeTaken = ref('0ч 0м 0с');
+
+// const startAction = () => {
+//   setTimeout(() => {
+//     startTime.value = Date.now();
+//   }, 200);
+// };
+
+// const formatTime = (seconds) => {
+//   const hours = Math.floor(seconds / 3600); // 1 час = 3600 секунд
+//   const minutes = Math.floor((seconds % 3600) / 60); // 1 минута = 60 секунд
+//   const remainingSeconds = seconds % 60;
+//   return `${hours}ч ${minutes}м ${remainingSeconds}с`;
+// }
+
+// const calculateTimeTaken = () => {
+//   timeTaken.value = endTime.value - startTime.value
+//   timeTaken.value = timeTaken.value.toLocaleString().slice(0, -3)
+//   timeTaken.value = formatTime(timeTaken.value);
+// };
+
+
+
+// const endAction = () => {
+//   setTimeout(() => {
+//     endTime.value = Date.now();
+//     calculateTimeTaken();
+//     startTime.value = 0;
+//   }, 200);
+// };
 
 
 
@@ -107,22 +192,18 @@ watchEffect(() => {
   display: flex;
   flex-direction: column;
   gap: 5px 0;
+
+  button {
+    padding: 3px 5px;
+  }
 }
 
 .mischen {
   position: absolute;
   top: -50px;
   left: 0px;
-  width: auto;
-  height: auto;
   padding: 10px 20px;
-  outline: 1px solid;
-  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
-  transition: all 0.2s linear;
-  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
-  border: none;
-  outline: none;
-  border-radius: 10px;
+
 
   &:hover {
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.5), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.8);
@@ -133,7 +214,6 @@ watchEffect(() => {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 50px 0 0 0;
   position: relative;
 
   .block {
@@ -141,6 +221,20 @@ watchEffect(() => {
     z-index: -1;
     opacity: 0;
     transition: all .3s;
+
+    button {
+      margin: 0 10px 20px 0;
+      padding: 3px 5px;
+
+      &:last-of-type {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    span.zeit {
+      font-family: 'HouschkaPro-DemiBold', sans-serif;
+      margin: 0 0 0 20px;
+    }
 
     &._is-active {
       position: relative;

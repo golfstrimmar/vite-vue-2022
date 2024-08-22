@@ -1,6 +1,9 @@
 <template lang="pug">
 form(action="#" name="send-form" ).send#send-form
 	h2 Login
+	.vergessen noch nicht registriert?
+		#reg
+			Button( type='buton' @click.prevent='Register' text='Register')
 	.input-field
 		input#email(type='email' name='email'  placeholder=' Denzel Washington' v-model.prevent="email" )
 		label.text-field__label(for='email') *Bitte geben Sie Ihre E-Mail ein
@@ -13,7 +16,7 @@ form(action="#" name="send-form" ).send#send-form
 			label(for='showPassword')
 				SvgIcon(name='eye' )
 	.vergessen password vergessen?
-		#resetForm()
+		#resetForm
 			Button( type='buton' @click.prevent='resetForm' text='E-Mail zum Zurücksetzen senden')
 	Button( type='submit'  @click.prevent="Login" text='Login')
 	transition(mode='easy-in-out' name='opentab')
@@ -30,15 +33,10 @@ const mess = ref(false)
 const mes = ref('')
 const password = ref('')
 import SvgIcon from '@/components/SvgIcon.vue'
-import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
-import { useAuthStore } from '@/store/authent';
-
-const auth = getAuth();
-
 
 // ==========================================
-const loginUser = () => {
-
+const Register = () => {
+	router.push("/register");
 }
 
 // ==========================================
@@ -48,7 +46,7 @@ const messageShow = (data) => {
 	setTimeout(() => {
 		mes.value = '';
 		mess.value = false
-	}, 3000);
+	}, 2000);
 };
 // ==========================================
 const resetForm = () => {
@@ -73,30 +71,60 @@ const resetForm = () => {
 			});
 }
 
+
+
+
+
 // ==========================================
+import { useAuthStore } from '@/store/authent';
+const authStore = useAuthStore();
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+// ---------db-----------------
+import { db } from "@/firebase/config.ts";
+
+
+
+import {
+	getFirestore,
+	doc,
+	setDoc,
+	getDoc,
+	onSnapshot,
+} from "firebase/firestore";
+
+
+const auth = getAuth();
+
 const Login = () => {
-	const authStore = useAuthStore();
-
-	// Пример: простая имитация входа
-	const userData = {
-		email: this.email,
-		name: 'User Name'
-	};
-
-	authStore.login(userData);
-
-	// Перенаправление на защищенную страницу после входа
-	this.$router.push('/dashboard');
-
-
 	signInWithEmailAndPassword(auth, email.value, password.value)
 		.then((userCredential) => {
 			// Успешный вход
 			const user = userCredential.user;
 			messageShow(user.email);
+			const username = user.email.substring(0, user.email.indexOf('@'));
 			setTimeout(() => {
+				const userData = {
+					email: user.email,
+					name: username,
+					password: password.value
+				};
+
+
+				async function saveUserData(uid, userData) {
+					try {
+						await setDoc(doc(db, "users", uid), userData, { merge: true });
+						console.log("Данные успешно сохранены");
+					} catch (error) {
+						console.error("Ошибка при сохранении данных:", error);
+					}
+				}
+				saveUserData()
+				authStore.login(userData);
+
+
+
 				router.push("/artikel");
-			}, 3000);
+			}, 2000);
 		})
 		.catch(
 			(error) => {
@@ -124,8 +152,17 @@ const Login = () => {
 			}
 		);
 
-	// 
 
+	// const userData = {
+	// 	name: "John Doe",
+	// 	age: 30,
+	// 	email: "johndoe@example.com",
+	// };
+	// onAuthStateChanged(auth, (user) => {
+	// 	if (user) {
+	// 		saveUserData(user.uid, userData);
+	// 	}
+	// });
 }
 // ==========================================
 
@@ -181,6 +218,7 @@ h2 {
 	align-items: center;
 	column-gap: 9px;
 	row-gap: 15px;
+	margin: 0 0 20px 0;
 
 	button {
 		margin: 0 0 0 0;

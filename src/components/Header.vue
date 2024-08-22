@@ -5,15 +5,12 @@ header.header
       .logo 
         router-link(to="/")
           SvgIcon(name='flag' )
-        //- SvgIcon(name='vite' )
-        //- SvgIcon(name='vue' )
-        //- SvgIcon(name='pinia' )
-        //- //- SvgIcon(name='quasar-logo' )
-        //- SvgIcon(name='pug' )
-        //- SvgIcon(name='sass' )
-      router-link.innerLink(to="/register") Register
-      router-link.innerLink(to="/login") Login
-      p Welcome, {{ authStore.user}}
+
+      .header__auth
+        p.willkommen(v-if="AuthStore.user !== null ") Willkommen, {{ AuthStore.user.name}}
+        p.willkommen(v-if="AuthStore.user !== null ") time: {{ AuthStore.user.time}}
+        router-link.innerLink(to="/login" v-if="!AuthStore.isAuthenticated") Login
+        a( href="#!" @click='handleLogout' v-if="AuthStore.isAuthenticated") Logout
       transition(mode='easy-in-out' name='f'  )
         .header__links(v-if=" burgerActive" )
           router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
@@ -32,11 +29,13 @@ import SvgIcon from '@/components/SvgIcon.vue'
 // import Button from '@/components/Button.vue';
 import { useRouter } from 'vue-router'
 const router = useRouter();
-
+// ==========================
 import { useAuthStore } from '../store/authent';
-const authStore = useAuthStore();
-
-
+const AuthStore = useAuthStore();
+const handleLogout = () => {
+  AuthStore.logout();
+};
+// ==========================
 const links = ref([
   { name: "Home", href: "/" },
   { name: "Artikel", href: "/artikel" },
@@ -78,30 +77,7 @@ const clickBurger = () => {
 
 }
 
-onMounted(() => {
-  // if (window.innerWidth >= 1200) {
-  //   burgerActive.value = false
-  // } else {
-  // }
-  // window.addEventListener("resize", handleWindowSizeChange);
-  // window.addEventListener("scroll", handleWindowScroll);
-  // auth = getAuth()
-  // onAuthStateChanged(auth, (user) => {
-  //   if (user) {
-  //     isLoggedIn.value = true
-  //   } else {
-  //     isLoggedIn.value = false
-  //   }
 
-  // })
-});
-
-// const handleWindowSizeChange = () => {
-//   if (window.innerWidth >= 1200) {
-//     burgerActive.value = false
-//   } else {
-//   }
-// };
 
 const handleWindowScroll = () => {
   const header = document.querySelector('.header')
@@ -163,9 +139,20 @@ const handleSignOut = () => {
 
   &__body {
     display: grid;
-    grid-template-columns: max-content max-content max-content 1fr;
+    grid-template-columns: 43px max-content;
+    justify-content: space-between;
     column-gap: 20px;
     align-items: center;
+    padding: 0 43px 0 0;
+
+    a {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__auth {
+    display: flex;
+    column-gap: 20px;
   }
 
   &__links {
@@ -185,34 +172,19 @@ const handleSignOut = () => {
     align-items: flex-end;
 
     a {
+
       white-space: nowrap;
       line-height: 1.8;
       padding: 5px;
-      color: $blue-grey-4;
-
-      &:hover {
-        color: $blue-grey-2;
-      }
     }
 
   }
 
-  .auth-items {
-    justify-self: end;
-    display: flex;
-    // flex-direction: column;
-    align-items: end;
-    column-gap: 10px;
-    // row-gap: 10px;
-    @include transition;
-    margin: 0 40px 0 0;
+  .router-link-active {
+    color: $amber-9;
   }
 
-  a.router-link-active {
-    color: $deep-orange-4;
 
-
-  }
 
   ._burger {
     z-index: 20000;
@@ -285,16 +257,12 @@ const handleSignOut = () => {
     }
   }
 
-  ._user {
-    span {
-      font-size: 14px;
-      color: $indigo-1;
-    }
-
-    p {
-      color: $indigo-1;
-      text-shadow: 0 0 5px $light-blue-1;
-    }
+  .willkommen {
+    color: #90caf9;
+    display: inline-block;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin: 0 0 0 auto;
   }
 
   .responciveHeader {

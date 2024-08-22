@@ -32,12 +32,12 @@ main {
   position: absolute;
 }
 a {
-  color: $blue-3;
+  color: $brown-1;
   display: inline-block;
   @include transition;
   cursor: pointer;
   &:hover {
-    color: $blue-1;
+    color: $grey-1;
   }
 }
 
@@ -64,25 +64,6 @@ a {
 .rel {
   position: relative;
 }
-
-// .hidden {
-//   display: none;
-// }
-
-// .page-title {
-//   text-align: center;
-//   display: inline-block;
-//   text-align: left;
-//   h2 {
-//     font-family: "RR", sans-serif;
-//     font-size: 30px;
-//     font-weight: 800;
-//     color: #c4e0fc;
-//     text-transform: uppercase;
-//     line-height: 1.5;
-//     text-shadow: none;
-//   }
-// }
 
 .salut {
   position: absolute;
@@ -118,29 +99,7 @@ a {
 //     padding: 5px 0;
 //   }
 // }
-button.mixButton {
-  padding: 5px 10px 4px;
-  text-transform: uppercase;
-  color: $grey-11;
-  border-radius: 3px;
-  background-color: $blue-13;
-}
-.blue-grey-4 {
-  background-color: $indigo-3;
-}
 
-.blue-grey-1 {
-  background-color: $indigo-2;
-}
-.blue-grey-0 {
-  background-color: $indigo-1;
-}
-.amber-3 {
-  background-color: $amber-3;
-}
-.deep-orange-2 {
-  background-color: $deep-orange-2;
-}
 /* +++++++++++++++++++++++++++++++++++++ */
 
 ._hover {

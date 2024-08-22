@@ -40,7 +40,7 @@ const messageShow = (data) => {
 	setTimeout(() => {
 		mes.value = '';
 		mess.value = false
-	}, 3000);
+	}, 2000);
 };
 
 
@@ -51,8 +51,8 @@ const register = () => {
 			const user = UserCredential.user;
 			messageShow(user.email);
 			setTimeout(() => {
-				router.push("/artikel");
-			}, 3000);
+				router.push("/login");
+			}, 2000);
 		})
 
 		.catch(
@@ -62,7 +62,7 @@ const register = () => {
 						messageShow("E-Mail bereits verwendet");
 						setTimeout(() => {
 							router.push("/login");
-						}, 3000);
+						}, 2000);
 						break;
 
 					case "auth/invalid-email":

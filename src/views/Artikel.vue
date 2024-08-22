@@ -1,7 +1,7 @@
 <template lang="pug">
 .container
   h2 der Artikel
-  Tabs 
+  //- Tabs 
   Plaza(:Slot='SlotArtikle')
 
   Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte,Slotnegativ]")

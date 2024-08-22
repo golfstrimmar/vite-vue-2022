@@ -1,15 +1,29 @@
 import { defineStore } from "pinia";
-
+import { getAuth, signOut } from "firebase/auth";
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    user: null, // Здесь будет храниться информация о пользователе
+    user: {
+      email: "",
+      name: "",
+      password: "",
+    },
   }),
   actions: {
     login(userData) {
       this.user = userData;
     },
     logout() {
-      this.user = null;
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          this.user = null;
+        })
+        .catch((error) => {
+          console.error("Ошибка при выходе:", error);
+        });
+    },
+    refresh(Data) {
+      this.user.time = Data;
     },
   },
   getters: {
