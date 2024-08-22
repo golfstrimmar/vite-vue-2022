@@ -9,6 +9,7 @@ import Possessiv from "@/views/Possessiv.vue";
 import Form from "@/views/Form.vue";
 import Register from "@/views/Register.vue";
 import Login from "@/views/Login.vue";
+import Privat from "@/views/Privat.vue";
 // import Demonstrativ from "@/views/Demonstrativ.vue";
 // import Modal from "@/views/Modal.vue";
 // import Passiv from "@/views/Passiv.vue";
@@ -34,6 +35,7 @@ const router = createRouter({
     { path: "/form", name: "Form", component: Form },
     { path: "/register", name: "Register", component: Register },
     { path: "/login", name: "Login", component: Login },
+    { path: "/privat", name: "Privat", component: Privat },
     // { path: "/demonstrativ", name: "Demonstrativ", component: Demonstrativ },
     // { path: "/modal", name: "Modal", component: Modal },
     // { path: "/passiv", name: "Passiv", component: Passiv },

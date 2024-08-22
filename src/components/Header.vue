@@ -8,7 +8,7 @@ header.header
 
       .header__auth
         p.willkommen(v-if="AuthStore.user !== null ") Willkommen, {{ AuthStore.user.name}}
-        p.willkommen(v-if="AuthStore.user !== null ") time: {{ AuthStore.user.time}}
+        p.willkommen(v-if="AuthStore.user !== null ") time {{ AuthStore.user.time}}
         router-link.innerLink(to="/login" v-if="!AuthStore.isAuthenticated") Login
         a( href="#!" @click='handleLogout' v-if="AuthStore.isAuthenticated") Logout
       transition(mode='easy-in-out' name='f'  )
@@ -90,9 +90,9 @@ const handleWindowScroll = () => {
 
 
 
-onUnmounted(() => {
-  window.removeEventListener("resize", handleWindowSizeChange);
-});
+// onUnmounted(() => {
+//   window.removeEventListener("resize", handleWindowSizeChange);
+// });
 
 const handleSignOut = () => {
   signOut(auth).then(() => {

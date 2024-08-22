@@ -32,8 +32,14 @@ const email = ref('')
 const mess = ref(false)
 const mes = ref('')
 const password = ref('')
+const uid = ref('')
+const name = ref('')
 import SvgIcon from '@/components/SvgIcon.vue'
-
+import { useAuthStore } from '@/store/authent';
+const authStore = useAuthStore();
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { db } from "@/firebase/config.ts";
+const auth = getAuth();
 // ==========================================
 const Register = () => {
 	router.push("/register");
@@ -71,19 +77,9 @@ const resetForm = () => {
 			});
 }
 
-
-
-
-
 // ==========================================
-import { useAuthStore } from '@/store/authent';
-const authStore = useAuthStore();
-import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+
 // ---------db-----------------
-import { db } from "@/firebase/config.ts";
-
-
-
 import {
 	getFirestore,
 	doc,
@@ -93,37 +89,35 @@ import {
 } from "firebase/firestore";
 
 
-const auth = getAuth();
+
 
 const Login = () => {
+
 	signInWithEmailAndPassword(auth, email.value, password.value)
 		.then((userCredential) => {
 			// Успешный вход
 			const user = userCredential.user;
+			uid.value = user.uid
+			name.value = user.email.substring(0, user.email.indexOf('@'));
 			messageShow(user.email);
-			const username = user.email.substring(0, user.email.indexOf('@'));
 			setTimeout(() => {
 				const userData = {
-					email: user.email,
-					name: username,
-					password: password.value
+					email: email.value,
+					password: password.value,
+					name: name.value,
+					uid: uid.value
 				};
-
-
-				async function saveUserData(uid, userData) {
+				const saveUserData = async (uid, data) => {
 					try {
-						await setDoc(doc(db, "users", uid), userData, { merge: true });
-						console.log("Данные успешно сохранены");
+						await setDoc(doc(db, "users", uid), data, { merge: true });
+						console.log("User data saved!");
 					} catch (error) {
-						console.error("Ошибка при сохранении данных:", error);
+						console.error("Error saving user data:", error);
 					}
-				}
-				saveUserData()
+				};
+				saveUserData(uid.value, userData);
 				authStore.login(userData);
-
-
-
-				router.push("/artikel");
+				router.push("/privat");
 			}, 2000);
 		})
 		.catch(
@@ -153,16 +147,6 @@ const Login = () => {
 		);
 
 
-	// const userData = {
-	// 	name: "John Doe",
-	// 	age: 30,
-	// 	email: "johndoe@example.com",
-	// };
-	// onAuthStateChanged(auth, (user) => {
-	// 	if (user) {
-	// 		saveUserData(user.uid, userData);
-	// 	}
-	// });
 }
 // ==========================================
 

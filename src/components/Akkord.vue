@@ -43,12 +43,7 @@ const props = defineProps({
   }
 })
 
-// --------------------------
-import { useAuthStore } from '@/store/authent';
-const authStore = useAuthStore();
-import { getAuth } from "firebase/auth";
-const auth = getAuth();
-// --------------------------
+
 var time = ref(0);        // Количество секунд
 var interval = ref(null);   // Интервал для обновления времени
 
@@ -68,13 +63,13 @@ const start = () => {
   }
 };
 
+const emit = defineEmits(['addTime'])
+
 const stop = () => {
+  emit('addTime', formattedTime)
+  console.log('formattedTime Akkord =', formattedTime.value);
   clearInterval(interval.value);
   interval.value = null;
-  const Data = {
-    time: formattedTime
-  };
-  authStore.refresh(Data);
 };
 
 const reset = () => {

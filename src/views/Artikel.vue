@@ -4,7 +4,7 @@
   //- Tabs 
   Plaza(:Slot='SlotArtikle')
 
-  Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte,Slotnegativ]")
+  Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte,Slotnegativ]"  @addTime ='addTime' )
 </template>
 
 <script setup>
@@ -64,7 +64,18 @@ var SlotArtikle = reactive([]);
 
 var titles = reactive([]);
 const Artikle = query(collection(db, "Artikle-table"));
+// -----------------------------------
+// ------------firebase-------------
+import { useAuthStore } from '@/store/authent';
+const authStore = useAuthStore();
+import { getAuth } from "firebase/auth";
+const auth = getAuth();
 
+const addTime = (formattedTime) => { authStore.refresh('Artikle Zeit', formattedTime) };
+
+
+
+// --------------------------
 
 onMounted(async () => {
   onSnapshot(Artikle, (querySnapshot) => {
