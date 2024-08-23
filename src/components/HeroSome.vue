@@ -50,7 +50,7 @@ const handelClean = () => {
 	margin: 10px 0 30px 0;
 
 	&__body {
-		grid-template-columns: repeat(auto-fill, 366px);
+		grid-template-columns: repeat(auto-fill, 430px);
 		grid-template-rows: 1fr;
 		column-gap: 5px;
 

@@ -17,6 +17,7 @@ export const useTask = defineStore("taskLager", {
           { dataText: "height:  ;" },
           { dataText: "min-height: ;" },
           { dataText: "color:  ;" },
+          { dataText: "font-size:  px;" },
           { dataText: "opacity:  ;" },
           { i: 10, dataText: "border: 3px solid ;" },
           { i: 10, dataText: "outline: 1px solid ;" },
@@ -251,6 +252,11 @@ export const useTask = defineStore("taskLager", {
           { dataText: '.addEventListener("input",(e) =>{ });' },
           { dataText: ".innerHTML =" },
           {
+            dataText: "typeof timeTaken",
+            description:
+              "используется для определения типа значения или переменной. Он возвращает строку, описывающую тип переданного ему операнда.",
+          },
+          {
             description:
               "Node.innerText - это свойство, позволяющее задавать или получать текстовое содержимое элемента и его потомков. В качестве геттера, свойство приближается к тексту, который пользователь получит, если он выделит содержимое элемента курсором, затем копирует его в буфер обмена.",
             dataText: ".innerText = ",
@@ -314,7 +320,7 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "Zyklus" },
           { dataText: ".forEach(car => {  })" },
-          { dataText: "for (i = 0; i < 3; i++) { alert( i ); }" },
+          { dataText: "for (let i = 0; i < .length; i++) {    }" },
           {
             dataText:
               "for(const index in cars){ console.log(cars[index]); if (index == 3) { break } }",
@@ -410,7 +416,7 @@ export const useTask = defineStore("taskLager", {
             description:
               "Возвращает , Nodeпредставляющий предыдущий узел в дереве, или , nullесли такого узла нет.",
           },
-          { title: "1,2,3 ..." },
+          { title: "Числа" },
           {
             dataText: "Math.max.apply(null, Array);",
             description: "максимального элемента в числовом массиве",
@@ -513,11 +519,7 @@ const handlerClick = (Data) => {
             description: "Добавляет элемент в начало массива:",
             dataText: '.unshift("Яблоко");',
           },
-          {
-            description:
-              "позволяет превратить строку в массив, разбив ее по разделителю s",
-            dataText: '.split(", ", 2);',
-          },
+
           {
             description:
               "берет массив и склеивает его в строку, используя str как разделитель",
@@ -649,7 +651,7 @@ const handlerClick = (Data) => {
             description:
               "расстояние от верхнего края (offsetTop) или левого края (offsetLeft) текущего элемента до ближайшего родительского элемента (или до самого body, если родительских элементов нет).",
           },
-          { title: "Zeile" },
+          { title: "Строки" },
           {
             link: "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String",
           },
@@ -663,6 +665,11 @@ const handlerClick = (Data) => {
           { description: "Доступ к символам", dataText: "str[0];" },
           { description: "Смена регистра", dataText: "toLowerCase();" },
           { description: "Смена регистра", dataText: "toUpperCase();" },
+          {
+            description:
+              "позволяет превратить строку в массив, разбив ее по разделителю s",
+            dataText: '.split(", ", 2);',
+          },
           {
             description:
               "проверяет с учётом регистра, содержит ли строка заданную подстроку, и возвращает, соответственно true или false.",
@@ -706,6 +713,51 @@ const handlerClick = (Data) => {
             description:
               "str1.localeCompare(str2) возвращает ‐1 , если str1 < str2 , 1 , если str1> str2 и 0 , если они равны.",
             dataText: '.localeCompare("Яблони"); ',
+          },
+          { title: "Примеры работы со строками" },
+          {
+            description: "извлекает часть строки до символа @",
+            dataText: `const email = "example@domain.com";
+const index = email.indexOf('@');
+const username = email.substring(0, index);
+console.log(username); // "example" `,
+          },
+          {
+            description:
+              " Форматирование даты и времени по умолчанию для текущей локали",
+            dataText: `const date = new Date();
+const formattedDate = date.toLocaleString();
+console.log(formattedDate); // Например: "22.08.2024, 15:45:30" (для русской локали)
+`,
+          },
+          {
+            description:
+              " Форматирование даты и времени с указанием конкретной локали и параметров:",
+            dataText: `const date = new Date();
+// Форматирование с указанием локали и опций
+const formattedDate = date.toLocaleString('en-US', {
+  weekday: 'long', // Полное название дня недели
+  year: 'numeric', // Полное отображение года
+  month: 'long', // Полное название месяца
+  day: 'numeric', // Число месяца
+  hour: '2-digit', // Часы в 2-значном формате
+  minute: '2-digit', // Минуты в 2-значном формате
+  second: '2-digit' // Секунды в 2-значном формате
+});
+console.log(formattedDate); // Например: "Thursday, August 22, 2024, 03:45:30 PM"
+`,
+          },
+          {
+            description:
+              " количество секунд в удобочитаемый формат часов, минут и секунд, ",
+            dataText:
+              "function formatTime(seconds) {const hours = Math.floor(seconds / 3600); // 1 час = 3600 секундconst minutes = Math.floor((seconds % 3600) / 60); // 1 минута = 60 секундconst remainingSeconds = seconds % 60;return `${hours}ч ${minutes}м ${remainingSeconds}с`;}// Пример использованиconst totalSeconds = 7265; // Пример: 7265 секундconst formattedTime = formatTime(totalSeconds);console.log(formattedTime); // '2ч 1м 5с'",
+          },
+          {
+            description:
+              " количество секунд в удобочитаемый формат часов, минут и секунд,всегда отображались как двухзначные числа ",
+            dataText:
+              "const hours = String(Math.floor(seconds / 3600)).padStart(2, '0');const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');const remainingSeconds = String(seconds % 60).padStart(2, '0');return `${hours}ч ${minutes}м ${remainingSeconds}с`;",
           },
         ],
 
@@ -1398,12 +1450,16 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
           {
             dataText: 'import Tab from "@/components/Tab.vue";',
           },
-          { dataText: "var  = ref('');", description: "" },
-          { dataText: "import { ref, onMounted } from 'vue'", description: "" },
-          { dataText: "onMounted(() => {})", description: "" },
-          { dataText: "@  =' ' ", description: "" },
-          { dataText: 'v-for="item in items" :key="item.id"', description: "" },
-          { dataText: ".value", description: "" },
+          { dataText: "import { ref, onMounted } from 'vue'" },
+          { dataText: "var  = ref('');" },
+          { dataText: "const  =   ;" },
+          { dataText: "var  =   ;" },
+          { dataText: "const = () => {};" },
+          { dataText: "@  =' ' " },
+          { dataText: "onMounted(() => {})" },
+
+          { dataText: 'v-for="item in items" :key="index"' },
+          { dataText: ".value" },
           {
             dataText: '@click="" ',
             description:
@@ -1420,17 +1476,17 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
           },
           { title: "Directiven" },
           {
-            dataText: 'v-html= " "',
+            dataText: 'v-html=" "',
             description:
               "содержимое будет вставляться как обычный HTML и не будет компилироваться или обрабатываться как шаблоны Vue.",
           },
           {
-            dataText: 'v-show = " "',
+            dataText: 'v-show=" "',
             description:
               "Отображает элемент по условию, выполняя переключение у элемента CSS-свойства display в зависимости от истинности указанного выражения.Директива запускает анимации перехода при изменении состояния.",
           },
           {
-            dataText: 'v-if= " "',
+            dataText: 'v-if=" "',
             description:
               "При переключении элемент и все содержащиеся в нём директивы / компоненты будут уничтожены и созданы заново.",
           },
@@ -1888,6 +1944,15 @@ onMounted(async () => {
           //   `,
           //   description: " ",
           // },
+        ],
+        [
+          {
+            title: "примеры",
+          },
+          {
+            title: "секундомер",
+            link: "https://codepen.io/viktor-yushin/pen/bGPMbbe",
+          },
         ],
       ],
     };
