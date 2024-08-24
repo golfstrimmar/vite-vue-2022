@@ -1,14 +1,19 @@
 <template lang="pug">
-input(type='text' v-model.trim='inputValue'  :class="[(focused == true) ? '_is-light' : '',(success == true) ? '_is-success' : '' ]" @focus="focusHandler" @input='HendleEventInput' @blur="blurHandler" ref = 'some'  )
+input(type='text' v-model.trim='inputValue'  :class="[(focused  == true) ? '_is-light' : '',(success == true) ? '_is-success' :  '' ]" @focus="focusHandler" @input='HendleEventInput'    @blur="blurHandler" ref = 'some'  )
+
 </template>
 <script setup>
-import { ref, onMounted, computed, defineEmits, defineProps } from 'vue';
+import { ref, onMounted, watch, defineEmits, defineProps } from 'vue';
 import * as images from '@/assets/img/img.js'
 const inputValue = ref('')
 const focused = ref(false)
 const success = ref(false)
 const some = ref(null)
 const props = defineProps({
+  resetInputs: {
+    type: Boolean,
+    required: false
+  },
   Antwort: {
     type: String,
     required: false
@@ -21,6 +26,9 @@ const props = defineProps({
 
 
 })
+
+
+
 
 const blurHandler = () => {
   focused.value = false
@@ -52,6 +60,13 @@ const HendleEventInput = () => {
     })
   }
 }
+watch(() => props.resetInputs, (newVal) => {
+  inputValue.value = '';
+  focused.value = false;
+  success.value = false;
+  some.value.removeAttribute("disabled");
+  // Обнуляем значение input
+});
 
 // -----------------------------------
 </script>

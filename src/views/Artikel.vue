@@ -67,7 +67,7 @@ const Artikle = query(collection(db, "Artikle-table"));
 // ------------pinia-------------
 import { useAuthStore } from '@/store/authent';
 const authStore = useAuthStore();
-const addTime = (formattedTime, count, countAll) => { authStore.refresh('Artikel', formattedTime, count, countAll) };
+const addTime = (formattedTime, prozent) => { authStore.refresh('Artikel', formattedTime, prozent) };
 // --------------------------
 
 onMounted(async () => {

@@ -74,15 +74,17 @@ export const useAuthStore = defineStore("auth", {
       saveUserData(this.user);
       // ===================
     },
-    refresh(Name, Data, count, countAll) {
+    refresh(Name, Data, prozent) {
       const date = new Date();
       const formattedDate = date.toLocaleString();
       this.user[Name].push({
         zeit: formattedDate,
         stoppuhr: Data,
-        count: count,
-        countAll: countAll,
+        prozent: prozent,
       });
+    },
+    delititem(data, item) {
+      this.user[data] = this.user[data].filter((i) => i !== item);
     },
   },
 

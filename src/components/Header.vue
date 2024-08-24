@@ -268,7 +268,7 @@ const handleSignOut = () => {
   .willkommen {
     font-family: 'MuseoSansCyrl-300', sans-serif;
     color: #efebe9;
-    box-shadow: 0px 0px 4px 0px rgb(187 186 184 / 63%);
+    box-shadow: 0px 0px 4px 0px rgba(187, 186, 184, 0.4), inset 0px 0px 8px 0px rgb(254 237 203 / 36%);
     border-radius: 50%;
     padding: 3px 8px;
     font-weight: 300;
@@ -276,6 +276,10 @@ const handleSignOut = () => {
     transition: all 0.3s;
     cursor: pointer;
     margin: 0 0 0 auto;
+
+    &:hover {
+      color: #fafafa;
+    }
   }
 
   .responciveHeader {

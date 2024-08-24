@@ -19,7 +19,7 @@
             button.tooltip(v-tool  :data = "el.content")
               span i
           div
-            Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
+            Input(:Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
 
 
 </template>
@@ -69,13 +69,19 @@ const stop = () => {
 };
 
 
+var prozent = ref(0);
+var resetInputs = ref(false);
+
 const reset = () => {
   stop();
   capturedValue.value = formattedTime.value;
-  emit('addTime', capturedValue.value, count.value, countAll.value)
+  prozent.value = Math.round(count.value * 100 / countAll.value);
+  emit('addTime', capturedValue.value, prozent.value)
+  resetInputs.value = !resetInputs.value;
   count.value = 0;
   formattedTime.value = 0;
   time.value = 0;
+  prozent.value = 0;
 };
 
 

@@ -48,7 +48,7 @@ const Register = () => {
 
 // ==========================================
 const messageShow = (data) => {
-	mes.value = data;
+	mes.value = 'Hallo,' + data + '. Sie sind im System!';
 	mess.value = true
 	setTimeout(() => {
 		mes.value = '';

@@ -67,8 +67,8 @@ p.willkommen(v-if="AuthStore.user !== null ") Willkommen, {{ AuthStore.user.name
 или добавить какое-то поле юзеру через одну из actions
 --на компоненте
 import { useAuthStore } from '@/store/authent';
-const authStore = useAuthStore();
-authStore.refresh('Artikle', formattedTime)
+const AuthStore = useAuthStore();
+AuthStore.refresh('Artikle', formattedTime)
 --pinia
 refresh(Name, Data) {
 const date = new Date();
