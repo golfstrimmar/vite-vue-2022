@@ -18,6 +18,7 @@ export const useTask = defineStore("taskLager", {
           { dataText: "min-height: ;" },
           { dataText: "color:  ;" },
           { dataText: "font-size:  px;" },
+          { dataText: "font-weight: 600;" },
           { dataText: "opacity:  ;" },
           { i: 10, dataText: "border: 3px solid ;" },
           { i: 10, dataText: "outline: 1px solid ;" },
@@ -1473,6 +1474,11 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
             dataText:
               ".opentab-enter-from {}.opentab-enter-to {}.opentab-leave-from {}.opentab-leave-to {}",
             description: "transition классы",
+          },
+          {
+            dataText: "isAuthenticated: (state) => !!state.user",
+            description:
+              "это способ проверить, определено ли свойство user в объекте state и не является ли оно ложным значением (таким как null, undefined, 0, '' и т.д.   дает true или false.  Первое !:Преобразует значение к логическому типу и инвертирует его. Второе !:Снова инвертирует значение, возвращая его в исходный логический тип. ).",
           },
           { title: "Directiven" },
           {
