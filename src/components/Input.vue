@@ -31,7 +31,7 @@ const focusHandler = () => {
 }
 
 // -----------------------------------
-const emit = defineEmits(['anwortPositiv', 'lineFertig'])
+const emit = defineEmits(['lineFertig'])
 
 const HendleEventInput = () => {
   if (inputValue.value == props.Antwort) {
@@ -40,17 +40,13 @@ const HendleEventInput = () => {
     some.value.setAttribute('disabled', true)
     props.content.forEach(car => {
       if (car == props.Antwort) {
+
         if (props.content.length - 1 == props.content.indexOf(car)) {
           emit('lineFertig', some.value)
         } else {
           if (some.value.nextElementSibling) {
             some.value.nextElementSibling.focus();
           }
-
-          // emit('anwortPositiv', props.content.indexOf(car) + 1)
-          // if (props.foc == props.content.indexOf(car)) {
-          //   some.value.nextElementSibling.focus()
-          // }
         }
       }
     })

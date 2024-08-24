@@ -2,7 +2,7 @@
 .container
   h2 Reflexivpronomen
   Plaza(:Slot='SlotReflexiv')
-  Akkord(:titles="titles" :Data="[SlotDataReflexiv]")
+  Akkord(:titles="titles" :Data="[SlotDataReflexiv]" @addTime ='addTime')
 </template>
 
 
@@ -38,6 +38,11 @@ onMounted(async () => {
     SlotDataReflexiv.isOpen = true;
   });
 });
-// ---------
-
+// ------------pinia-------------
+import { useAuthStore } from '@/store/authent';
+const authStore = useAuthStore();
+const addTime = (formattedTime, count, countAll) => {
+  authStore.refresh('Reflexiv', formattedTime, count, countAll)
+};
+// --------------------------
 </script>

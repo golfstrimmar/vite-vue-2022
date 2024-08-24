@@ -139,6 +139,8 @@ watchEffect(() => {
 		border-color: inherit;
 	}
 
+
+
 	table td {
 		display: table-cell;
 		vertical-align: inherit;
@@ -147,8 +149,6 @@ watchEffect(() => {
 
 	table td {
 		border-top: 1px solid #ededed;
-		border-right: 0 solid #ededed;
-		border-bottom: 0 solid #ededed;
 		border-left: 1px solid #ededed;
 		color: #202020;
 		padding: 1px 3px;

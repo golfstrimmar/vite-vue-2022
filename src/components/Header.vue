@@ -7,10 +7,9 @@ header.header
           SvgIcon(name='flag' )
 
       .header__auth
-        p.willkommen(v-if="AuthStore.user !== null ") Willkommen, {{ AuthStore.user.name}}
-        p.willkommen(v-if="AuthStore.user !== null ") time {{ AuthStore.user.time}}
-        router-link.innerLink(to="/login" v-if="!AuthStore.isAuthenticated") Login
-        a( href="#!" @click='handleLogout' v-if="AuthStore.isAuthenticated") Logout
+        router-link.willkommen(to="/privat" v-if="AuthStore.user !== null ")  {{ AuthStore.user.name}}
+        router-link(to="/login" v-if="!AuthStore.isAuthenticated") Login
+        a( href="#!" @click='LogoutHandler' v-if="AuthStore.isAuthenticated") Logout
       transition(mode='easy-in-out' name='f'  )
         .header__links(v-if=" burgerActive" )
           router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
@@ -23,17 +22,18 @@ header.header
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref } from 'vue';
 import SvgIcon from '@/components/SvgIcon.vue'
-// import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-// import Button from '@/components/Button.vue';
 import { useRouter } from 'vue-router'
 const router = useRouter();
-// ==========================
 import { useAuthStore } from '../store/authent';
 const AuthStore = useAuthStore();
-const handleLogout = () => {
+
+// ==========================
+
+const LogoutHandler = () => {
   AuthStore.logout();
+  router.push("/");
 };
 // ==========================
 const links = ref([
@@ -153,6 +153,14 @@ const handleSignOut = () => {
   &__auth {
     display: flex;
     column-gap: 20px;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      line-height: 1;
+    }
   }
 
   &__links {
@@ -174,7 +182,7 @@ const handleSignOut = () => {
     a {
 
       white-space: nowrap;
-      line-height: 1.8;
+      line-height: 1;
       padding: 5px;
     }
 
@@ -258,7 +266,12 @@ const handleSignOut = () => {
   }
 
   .willkommen {
-    color: #90caf9;
+    font-family: 'MuseoSansCyrl-300', sans-serif;
+    color: #efebe9;
+    box-shadow: 0px 0px 4px 0px rgb(187 186 184 / 63%);
+    border-radius: 50%;
+    padding: 3px 8px;
+    font-weight: 300;
     display: inline-block;
     transition: all 0.3s;
     cursor: pointer;

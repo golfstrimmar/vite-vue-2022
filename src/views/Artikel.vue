@@ -59,22 +59,15 @@ onMounted(async () => {
 
 import Plaza from "@/components/Plaza.vue";
 // ---------db-----------------
-
 var SlotArtikle = reactive([]);
-
 var titles = reactive([]);
 const Artikle = query(collection(db, "Artikle-table"));
 // -----------------------------------
-// ------------firebase-------------
+
+// ------------pinia-------------
 import { useAuthStore } from '@/store/authent';
 const authStore = useAuthStore();
-import { getAuth } from "firebase/auth";
-const auth = getAuth();
-
-const addTime = (formattedTime) => { authStore.refresh('Artikle Zeit', formattedTime) };
-
-
-
+const addTime = (formattedTime, count, countAll) => { authStore.refresh('Artikel', formattedTime, count, countAll) };
 // --------------------------
 
 onMounted(async () => {

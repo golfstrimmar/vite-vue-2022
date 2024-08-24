@@ -2,7 +2,7 @@
 .container
   h2 Interrogativpronomen
   Plaza(:Slot='Inter')
-  Akkord(:titles="titles" :Data="[InterSlot]")
+  Akkord(:titles="titles" :Data="[InterSlot]" @addTime ='addTime')
 </template>
 
 
@@ -39,12 +39,17 @@ onMounted(async () => {
   });
 });
 // ---------
-
+// ------------pinia-------------
+import { useAuthStore } from '@/store/authent';
+const authStore = useAuthStore();
+const addTime = (formattedTime, count, countAll) => {
+  authStore.refresh('Interrogativ', formattedTime, count, countAll)
+};
+// --------------------------
 </script>
 
 <style lang="scss" scoped>
 .plaza {
-
   grid-template-columns: minmax(100px, max-content);
 }
 </style>

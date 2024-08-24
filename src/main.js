@@ -78,7 +78,11 @@ app
       let add = document.createElement("div");
 
       el.addEventListener("mouseover", (e) => {
-        add.innerText = el.getAttribute("data").split(",").join(" ");
+        add.innerText = el
+          .getAttribute("data")
+          .replace(/,{3,}/g, ":")
+          .replace(/,{1}/g, " ")
+          .replace(/:{1}/g, " , ");
         add.classList.add("add");
         el.appendChild(add);
         var xPosition = el.offsetLeft;

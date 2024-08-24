@@ -7,14 +7,11 @@
     div(v-for="Data in contentData.value" :key="index")
       .block( :class="(Data.isOpen == true) ? '_is-active' : '' "  )
         Button( text='Beispiele mischen'   @click = "handlerClick(Data)"  svg='arrow-repeat')
-
-
         Button( text='Start'  @click='start'    svg='sport')
         Button( text='Stop'   @click='stop'    svg='stopwatch')
         Button( text='Reset'   @click='reset'    )
+        span.zeit anzahl der richtigen Antworten: {{ count }}
         span.zeit Sie haben für das Training ausgegeben: {{ formattedTime }}
-
-
 
         .block__line(v-for="el in Data" :key="index" ) 
           .block__info 
@@ -22,7 +19,7 @@
             button.tooltip(v-tool  :data = "el.content")
               span i
           div
-            Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @anwortPositiv="anwortPositiv" @lineFertig="lineFertig")
+            Input(:Antwort='content'  :content='el.content' v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
 
 
 </template>
@@ -64,64 +61,28 @@ const start = () => {
 };
 
 const emit = defineEmits(['addTime'])
+const capturedValue = ref(null);
 
 const stop = () => {
-  emit('addTime', formattedTime)
-  console.log('formattedTime Akkord =', formattedTime.value);
   clearInterval(interval.value);
   interval.value = null;
 };
 
+
 const reset = () => {
   stop();
+  capturedValue.value = formattedTime.value;
+  emit('addTime', capturedValue.value, count.value, countAll.value)
+  count.value = 0;
+  formattedTime.value = 0;
   time.value = 0;
 };
-
-// beforeDestroy(){
-//   stop();
-// }
-
-// var startTime = ref(0);
-// var endTime = ref(0);
-// var timeTaken = ref('0ч 0м 0с');
-
-// const startAction = () => {
-//   setTimeout(() => {
-//     startTime.value = Date.now();
-//   }, 200);
-// };
-
-// const formatTime = (seconds) => {
-//   const hours = Math.floor(seconds / 3600); // 1 час = 3600 секунд
-//   const minutes = Math.floor((seconds % 3600) / 60); // 1 минута = 60 секунд
-//   const remainingSeconds = seconds % 60;
-//   return `${hours}ч ${minutes}м ${remainingSeconds}с`;
-// }
-
-// const calculateTimeTaken = () => {
-//   timeTaken.value = endTime.value - startTime.value
-//   timeTaken.value = timeTaken.value.toLocaleString().slice(0, -3)
-//   timeTaken.value = formatTime(timeTaken.value);
-// };
-
-
-
-// const endAction = () => {
-//   setTimeout(() => {
-//     endTime.value = Date.now();
-//     calculateTimeTaken();
-//     startTime.value = 0;
-//   }, 200);
-// };
-
 
 
 // --------------------------
 const handlerClick = (Data) => {
   Data.sort(() => Math.random() - 0.5);
 }
-
-
 
 // --------------------------
 const ButtonHandler = (id) => {
@@ -135,28 +96,20 @@ const ButtonHandler = (id) => {
   })
 };
 
+// --------------------------
+
+var count = ref(0);
+var countAll = ref(0);
 
 const lineFertig = (some) => {
-  var x
-  do {
-    x = some.closest(".block__line").nextElementSibling.querySelector('input');
+  if (some.closest(".block__line").nextElementSibling) {
+    some.closest(".block__line").nextElementSibling.querySelector('input').focus();
+    count.value++
   }
-  while (x && !(/text/.test(x.type)));
-  x.focus();
+  let lineItems = [...some.closest(".block").querySelectorAll(".block__line")];
+  countAll.value = lineItems.length
 }
-
-// ==============anwortPositiv======================
-const anwortPositiv = (data) => {
-  count.value++
-  let lineCurrent = [...data.closest('.plaza__line').querySelectorAll("input")];
-
-  if (count.value == lineCurrent.length) {
-    var inputCurrent = data.closest('.plaza__line').nextElementSibling.querySelector("input")
-    inputCurrent.focus();
-    inputCurrent.classList.add("_is-light");
-    count.value = 0;
-  }
-}
+// --------------------------
 onMounted(() => {
   if (props.titles.length == 1) {
     props.titles = ''

@@ -7,6 +7,7 @@ form(action="#" name="send-form" ).send#send-form
 	.input-field
 		input#email(type='email' name='email'  placeholder=' Denzel Washington' v-model.prevent="email" )
 		label.text-field__label(for='email') *Bitte geben Sie Ihre E-Mail ein
+	p qqqqqq
 	.input-field
 		input#password(type='password' name='password'  placeholder=' Denzel Washington' v-model.prevent="password")
 		label.text-field__label(for='password') *Bitte geben Sie Ihre Password ein
@@ -79,18 +80,6 @@ const resetForm = () => {
 
 // ==========================================
 
-// ---------db-----------------
-import {
-	getFirestore,
-	doc,
-	setDoc,
-	getDoc,
-	onSnapshot,
-} from "firebase/firestore";
-
-
-
-
 const Login = () => {
 
 	signInWithEmailAndPassword(auth, email.value, password.value)
@@ -107,15 +96,6 @@ const Login = () => {
 					name: name.value,
 					uid: uid.value
 				};
-				const saveUserData = async (uid, data) => {
-					try {
-						await setDoc(doc(db, "users", uid), data, { merge: true });
-						console.log("User data saved!");
-					} catch (error) {
-						console.error("Error saving user data:", error);
-					}
-				};
-				saveUserData(uid.value, userData);
 				authStore.login(userData);
 				router.push("/privat");
 			}, 2000);

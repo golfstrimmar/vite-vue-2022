@@ -2,7 +2,7 @@
 .container
   h2 Personalpronomen
   Plaza(:Slot='SlotPersonal')
-  Akkord(:titles="titles" :Data="[SlotDataPersonal]")
+  Akkord(:titles="titles" :Data="[SlotDataPersonal]" @addTime ='addTime')
 </template>
 
 <script setup>
@@ -38,5 +38,9 @@ onMounted(async () => {
   });
 });
 // ---------
-
+// ------------pinia-------------
+import { useAuthStore } from '@/store/authent';
+const authStore = useAuthStore();
+const addTime = (formattedTime, count, countAll) => { authStore.refresh('Personal', formattedTime, count, countAll) };
+// --------------------------
 </script>

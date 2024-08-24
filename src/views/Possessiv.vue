@@ -2,7 +2,7 @@
 .container
   h2 Possessivpronomen
   Plaza(:Slot='SlotPossessiv')
-  Akkord(:titles="titles" :Data="[SlotDataPossessiv,SlotDataPossessivErsatz]")
+  Akkord(:titles="titles" :Data="[SlotDataPossessiv,SlotDataPossessivErsatz]" @addTime ='addTime')
 </template>
 
 
@@ -53,5 +53,9 @@ onMounted(async () => {
   });
 });
 // ---------
-
+// ------------pinia-------------
+import { useAuthStore } from '@/store/authent';
+const authStore = useAuthStore();
+const addTime = (formattedTime, count, countAll) => { authStore.refresh('Possessiv', formattedTime, count, countAll) };
+// --------------------------
 </script>
