@@ -1,0 +1,19 @@
+<template lang='pug'>
+h1.loading-container Loading...
+</template>
+<script setup>
+</script>
+<style lang='scss' scoped>
+.loading-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+</style>

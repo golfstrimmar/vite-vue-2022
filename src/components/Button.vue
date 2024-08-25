@@ -1,8 +1,9 @@
 <template lang='pug'>
 button.but-wave(type = "button" v-button :class="(props.item && props.item.isOpen == true  ) ? '_is-active' : '' "  )  {{ props.text }}
-	SvgIcon(:name='props.svg' v-if="props.svg ")
+	SvgIcon(:name='props.svg' v-if="props.svg " :style="{ margin: props.margin }")
 </template>
 <script setup>
+
 import SvgIcon from '@/components/SvgIcon.vue'
 const props = defineProps({
 	item: {
@@ -16,12 +17,16 @@ const props = defineProps({
 	svg: {
 		type: String,
 		required: false
+	},
+	margin: {
+		type: Number,
+		required: false
 	}
 })
 
 </script>
 <style lang='scss' scoped>
-button {
+.but-wave {
 	font-size: 13px;
 	color: #666565;
 	text-shadow: 0px -1px 1px #bdb5b4,

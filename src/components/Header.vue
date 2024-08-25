@@ -6,10 +6,9 @@ header.header
         router-link(to="/")
           SvgIcon(name='flag' )
 
-      .header__auth
-        router-link.willkommen(to="/privat" v-if="AuthStore.user !== null ")  {{ AuthStore.user.name}}
-        router-link(to="/login" v-if="!AuthStore.isAuthenticated") Login
-        a( href="#!" @click='LogoutHandler' v-if="AuthStore.isAuthenticated") Logout
+      router-link.willkommen(to="/privat" v-if="AuthStore.user !== null ")  {{ AuthStore.user.name}}
+      router-link(to="/login" v-if="!AuthStore.isAuthenticated") Login
+      a( href="#!" @click='LogoutHandler' v-if="AuthStore.isAuthenticated") Logout
       transition(mode='easy-in-out' name='f'  )
         .header__links(v-if=" burgerActive" )
           router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
@@ -120,6 +119,7 @@ const handleSignOut = () => {
     @include transition;
     border-radius: 5px;
     cursor: pointer;
+    margin: 0 auto 0 0;
 
     &:hover {
       background-color: #e0e0e06e;
@@ -138,73 +138,58 @@ const handleSignOut = () => {
   }
 
   &__body {
-    display: grid;
-    grid-template-columns: 43px max-content;
-    justify-content: space-between;
-    column-gap: 20px;
-    align-items: center;
-    padding: 0 43px 0 0;
-
-    a {
-      margin: 0 0 0 auto;
-    }
-  }
-
-  &__auth {
     display: flex;
     column-gap: 20px;
+    align-items: center;
+    padding: 5px 0;
 
     a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      white-space: nowrap;
-      line-height: 1;
+      color: $brown-2;
+
+      &:hover {
+        color: $grey-1;
+      }
     }
   }
 
+
+
   &__links {
-    @include flex-column;
-    text-align: right;
-    width: 100vw;
-    max-height: 100vh;
-    min-height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    padding: 100px 40px 40px 40px;
+    width: 100vw;
+    max-height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 80px 20px 40px;
     overflow: auto;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(15px);
     z-index: 1000;
     align-items: flex-end;
+    row-gap: 15px;
 
     a {
-
       white-space: nowrap;
       line-height: 1;
-      padding: 5px;
     }
-
   }
 
-  .router-link-active {
+  a.router-link-active {
     color: $amber-9;
   }
-
-
 
   ._burger {
     z-index: 20000;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0px;
+    position: relative;
     display: block;
-    @include transition;
+    transition: all 0.3s;
 
     &:hover {
       background-color: #e0e0e06e;
@@ -275,7 +260,7 @@ const handleSignOut = () => {
     display: inline-block;
     transition: all 0.3s;
     cursor: pointer;
-    margin: 0 0 0 auto;
+
 
     &:hover {
       color: #fafafa;
@@ -292,30 +277,30 @@ const handleSignOut = () => {
 }
 
 @media (max-width: 600px) {
-  .header__body {
-    display: block;
-    gap: 0px 0px;
-  }
+  // .header__body {
+  //   display: block;
+  //   gap: 0px 0px;
+  // }
 
-  .header .auth-items {
-    justify-self: start;
-    margin: 0;
-  }
+  // .header .auth-items {
+  //   justify-self: start;
+  //   margin: 0;
+  // }
 
-  .header .logo {
-    display: inline-block;
-    margin: 0 0 5px 0;
+  // .header .logo {
+  //   display: inline-block;
+  //   margin: 0 0 5px 0;
 
-    a {
-      column-gap: 5px;
+  //   a {
+  //     column-gap: 5px;
 
 
-      svg {
-        width: 25px;
-        height: 25px;
-      }
-    }
-  }
+  //     svg {
+  //       width: 25px;
+  //       height: 25px;
+  //     }
+  //   }
+  // }
 
 
 }

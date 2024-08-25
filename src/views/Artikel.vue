@@ -3,12 +3,11 @@
   h2 der Artikel
   //- Tabs 
   Plaza(:Slot='SlotArtikle')
-
   Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte,Slotnegativ]"  @addTime ='addTime' )
+
 </template>
 
 <script setup>
-import Tabs from '@/components/Tabs.vue';
 import Akkord from "@/components/Akkord.vue";
 import Personal from "@/views/Personal.vue";
 import { ref, onMounted, reactive } from 'vue'

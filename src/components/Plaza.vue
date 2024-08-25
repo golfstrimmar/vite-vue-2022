@@ -172,6 +172,8 @@ watchEffect(() => {
 	}
 }
 
+
+
 @media (min-width: 768px) and (max-width: 1199px) {}
 
 @media (max-width: 767px) {

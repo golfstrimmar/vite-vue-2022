@@ -6,20 +6,25 @@
   .akkord__items
     div(v-for="Data in contentData.value" :key="index")
       .block( :class="(Data.isOpen == true) ? '_is-active' : '' "  )
-        Button( text='Beispiele mischen'   @click = "handlerClick(Data)"  svg='arrow-repeat')
-        Button( text='Start'  @click='start'    svg='sport')
-        Button( text='Stop'   @click='stop'    svg='stopwatch')
-        Button( text='Reset'   @click='reset'    )
-        span.zeit anzahl der richtigen Antworten: {{ count }}
-        span.zeit Sie haben für das Training ausgegeben: {{ formattedTime }}
+        .block__buttons
+          Button( text='Mischen'   @click = "handlerClick(Data)"  svg='arrow-repeat')
+          Button( text='Start'  @click='start'    svg='sport')
+          Button( text='Stop'   @click='stop'    svg='stopwatch')
+          Button( text='Reset'   @click='reset'    )
+        .tablo
+          span.zeit Anzahl der richtigen Antworten:  
+            span {{ count }}
+          span.zeit Sie haben für das Training ausgegeben:   
+            span {{ formattedTime }}
 
-        .block__line(v-for="el in Data" :key="index" ) 
-          .block__info 
-            h4 {{el.text}}
-            button.tooltip(v-tool  :data = "el.content")
-              span i
-          div
-            Input(:Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
+        .spielPlatz
+          .block__line(v-for="el in Data" :key="index" ) 
+            .block__info 
+              h4 {{el.text}}
+              button.tooltip(v-tool  :data = "el.content")
+                span i
+            div
+              Input(:Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
 
 
 </template>
@@ -176,20 +181,6 @@ watchEffect(() => {
     opacity: 0;
     transition: all .3s;
 
-    button {
-      margin: 0 10px 20px 0;
-      padding: 3px 5px;
-
-      &:last-of-type {
-        margin: 0 0 20px 0;
-      }
-    }
-
-    span.zeit {
-      font-family: 'HouschkaPro-DemiBold', sans-serif;
-      margin: 0 0 0 20px;
-    }
-
     &._is-active {
       position: relative;
       z-index: 1;
@@ -197,6 +188,36 @@ watchEffect(() => {
       order: -1;
       animation: pulse .3s ease-in-out;
       opacity: 1;
+      padding: 0 0 0 10px;
+
+      .block__buttons {
+        display: flex;
+        column-gap: 5px;
+
+        button {
+          padding: 3px 5px;
+
+        }
+      }
+
+      .tablo {
+        margin: 10px 0;
+
+        span.zeit {
+          font-family: 'HouschkaPro-DemiBold', sans-serif;
+
+          span {
+            font-size: larger;
+            color: #eb2f2f;
+            white-space: nowrap;
+          }
+        }
+
+        display: flex;
+        flex-direction: column;
+
+
+      }
 
       @keyframes pulse {
         0% {
@@ -216,6 +237,8 @@ watchEffect(() => {
     }
   }
 }
+
+
 
 .block__info {
   position: relative;
@@ -244,6 +267,12 @@ watchEffect(() => {
   }
 }
 
+.spielPlatz {
+  padding: 5px;
+  border: 3px solid white;
+  border-radius: 10px;
+  background: #d6d2d0a8;
+}
 
 
 @media (max-width: 600px) {
@@ -255,5 +284,51 @@ watchEffect(() => {
   }
 
 
+  .akkord__items {
+    .block {
+      margin: 10px 0 0 0;
+
+      &._is-active {
+        padding: 0 0 0 0;
+
+        .block__buttons {
+          display: flex;
+          column-gap: 5px;
+
+          button {
+            padding: 3px 5px;
+
+          }
+        }
+
+        .tablo {
+          margin: 10px 0;
+
+          span.zeit {
+            font-family: 'HouschkaPro-DemiBold', sans-serif;
+          }
+
+          display: flex;
+          flex-direction: column;
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: translate(-100%, 0);
+            opacity: 0;
+          }
+
+          70% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+            transform: translate(0, 0);
+          }
+        }
+      }
+    }
+  }
 }
 </style>

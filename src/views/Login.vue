@@ -1,13 +1,11 @@
 <template lang="pug">
-form(action="#" name="send-form" ).send#send-form
+form(action="#" name="send-form" @submit.prevent="Login").send#send-form
 	h2 Login
-	.vergessen noch nicht registriert?
-		#reg
-			Button( type='buton' @click.prevent='Register' text='Register')
+	.vergessen Noch nicht registriert?
+		a( href="#!" @click.prevent='Register' ) Register
 	.input-field
 		input#email(type='email' name='email'  placeholder=' Denzel Washington' v-model.prevent="email" )
 		label.text-field__label(for='email') *Bitte geben Sie Ihre E-Mail ein
-	p qqqqqq
 	.input-field
 		input#password(type='password' name='password'  placeholder=' Denzel Washington' v-model.prevent="password")
 		label.text-field__label(for='password') *Bitte geben Sie Ihre Password ein
@@ -16,10 +14,9 @@ form(action="#" name="send-form" ).send#send-form
 			input#showPassword(type='checkbox' name="showPassword" @click="togglePassword()")
 			label(for='showPassword')
 				SvgIcon(name='eye' )
-	.vergessen password vergessen?
-		#resetForm
-			Button( type='buton' @click.prevent='resetForm' text='E-Mail zum Zurücksetzen senden')
-	Button( type='submit'  @click.prevent="Login" text='Login')
+	.vergessen Password vergessen?
+		a( href="#!" @click.prevent='resetForm' ) E-Mail zum Zurücksetzen senden
+	Button( type='submit'   text='Login')
 	transition(mode='easy-in-out' name='opentab')
 		#message(  v-if="mess ==  true " ) {{ mes }}
 </template>
@@ -48,7 +45,13 @@ const Register = () => {
 
 // ==========================================
 const messageShow = (data) => {
-	mes.value = 'Hallo,' + data + '. Sie sind im System!';
+	if (data.includes('@')) {
+		data = data.substring(0, data.indexOf('@'));
+		mes.value = `Hallo, ${data}. \nSie sind im System!`;
+	} else {
+		mes.value = data;
+	}
+
 	mess.value = true
 	setTimeout(() => {
 		mes.value = '';
@@ -60,7 +63,6 @@ const resetForm = () => {
 	sendPasswordResetEmail(auth, email.value)
 		.then(() => {
 			messageShow('E-Mail zum Zurücksetzen des Passworts gesendet!');
-
 		})
 		.catch(
 			(error) => {
@@ -158,35 +160,35 @@ h2 {
 
 #message {
 	position: fixed;
-	display: flex;
+	display: grid;
+	place-items: center;
 	width: 100vw;
 	top: 0%;
 	left: 0%;
 	height: 100vh;
 	color: $blue-grey-1;
 	background: rgba(7, 31, 43, 0.85);
-	outline: 1px solid;
-	padding: 0 0 0 0;
+	padding: 0 30px;
+	text-align: center;
 	transition: all 0.2s;
 	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
-	justify-content: center;
-	align-items: center;
+	white-space: pre-line;
+	line-height: 1.5;
 	z-index: 20000;
 	backdrop-filter: blur(5px);
 }
 
 .vergessen {
 	position: relative;
-	display: grid;
-	grid-template-columns: max-content 1fr;
+	display: flex;
 	align-items: center;
 	column-gap: 9px;
 	row-gap: 15px;
 	margin: 0 0 20px 0;
 
-	button {
+	a {
+		text-decoration: underline !important;
 		margin: 0 0 0 0;
-		padding: 0 10px;
 		font-size: 14px;
 	}
 }

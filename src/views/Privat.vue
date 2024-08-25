@@ -1,57 +1,59 @@
 <template lang='pug'>
-section(v-if= "AuthStore.user !== null ")
+section.privat(v-if= "AuthStore.user !== null ")
 	.container
-		p Willkommen, 
-			h2 {{ AuthStore.user.name }}
-		p Ihre E-mail: 
-			span {{ AuthStore.user.email }}
-		h3 Ihre Leistungen:
-		.tabel
-			.tabel__head
-				span Teil
-				span Data , Zeit
-				span Stoppuhr
-				span Richtigen Antworten
-			.result(v-if="!!AuthStore.user.Artikel")
-				h3 Artikel 
-				.result__content
-					.result__unit(v-for="item in AuthStore.user.Artikel " :key="index") 
-						span {{item.zeit}}
-						span {{item.stoppuhr}}
-						ProgressCircle(:percent='item.prozent')
-						SvgIcon(name='x-circle' @click="clickHandler('Artikel',item)" )
-			.result(v-if="!!AuthStore.user.Personal")
-				h3 Personal 
-				.result__content
-					.result__unit(v-for="item in AuthStore.user.Personal " :key="index") 
-						span {{item.zeit}}
-						span {{item.stoppuhr}}
-						ProgressCircle(:percent='item.prozent')
-						SvgIcon(name='x-circle' @click="clickHandler('Personal',item)" )
-			.result(v-if="!!AuthStore.user.Interrogativ")
-				h3 Interrogativ
-				.result__content
-					.result__unit(v-for="item in AuthStore.user.Interrogativ " :key="index") 
-						span {{item.zeit}}
-						span {{item.stoppuhr}}
-						ProgressCircle(:percent='item.prozent')
-						SvgIcon(name='x-circle' @click="clickHandler('Interrogativ',item)" )
-			.result(v-if="!!AuthStore.user.Reflexiv ")
-				h3 Reflexiv 
-				.result__content
-					.result__unit(v-for="item in AuthStore.user.Reflexiv " :key="index") 
-						span {{item.zeit}}
-						span {{item.stoppuhr}}
-						ProgressCircle(:percent='item.prozent')
-						SvgIcon(name='x-circle' @click="clickHandler('Reflexiv',item)" )
-			.result(v-if="!!AuthStore.user.Possessiv")
-				h3 Possessiv 
-				.result__content
-					.result__unit(v-for="item in AuthStore.user.Possessiv" :key="index") 
-						span {{item.zeit}}
-						span {{item.stoppuhr}}
-						ProgressCircle(:percent='item.prozent')
-						SvgIcon(name='x-circle' @click="clickHandler('Possessiv',item)" )
+		.privat__body
+			p Willkommen, 
+				h2 {{ AuthStore.user.name }}
+			p Ihre E-mail: 
+				span {{ AuthStore.user.email }}
+			h3 Ihre Leistungen:
+			.tabel
+				.tabel__head
+					span._a Teil
+					span._b Data , Zeit
+					span._c  Stoppuhr
+					span._d Richtigen Antworten
+				.result(v-if="!!AuthStore.user.Artikel")
+					h3 Artikel 
+					.result__content
+						.result__unit(v-for="item in AuthStore.user.Artikel " :key="index") 
+							span {{item.zeit}}
+							span {{item.stoppuhr}}
+							ProgressCircle(:percent='item.prozent')
+							Button(  @click="clickHandler('Artikel',item)" svg='x-circle'  margin='0')
+
+				.result(v-if="!!AuthStore.user.Personal")
+					h3 Personal 
+					.result__content
+						.result__unit(v-for="item in AuthStore.user.Personal " :key="index") 
+							span {{item.zeit}}
+							span {{item.stoppuhr}}
+							ProgressCircle(:percent='item.prozent')
+							Button(  @click="clickHandler('Personal',item)" svg='x-circle' margin='0')
+				.result(v-if="!!AuthStore.user.Interrogativ")
+					h3 Interrogativ
+					.result__content
+						.result__unit(v-for="item in AuthStore.user.Interrogativ " :key="index") 
+							span {{item.zeit}}
+							span {{item.stoppuhr}}
+							ProgressCircle(:percent='item.prozent')
+							Button(  @click="clickHandler('Interrogativ',item)" svg='x-circle' margin='0')
+				.result(v-if="!!AuthStore.user.Reflexiv ")
+					h3 Reflexiv 
+					.result__content
+						.result__unit(v-for="item in AuthStore.user.Reflexiv " :key="index" margin='0') 
+							span {{item.zeit}}
+							span {{item.stoppuhr}}
+							ProgressCircle(:percent='item.prozent')
+							Button(  @click="clickHandler('Reflexiv',item)" svg='x-circle' margin='0')
+				.result(v-if="!!AuthStore.user.Possessiv")
+					h3 Possessiv 
+					.result__content
+						.result__unit(v-for="item in AuthStore.user.Possessiv" :key="index") 
+							span {{item.zeit}}
+							span {{item.stoppuhr}}
+							ProgressCircle(:percent='item.prozent')
+							Button(  @click="clickHandler('Possessiv',item)" svg='x-circle' margin='0')
 	
 
 
@@ -62,8 +64,7 @@ import ProgressCircle from "@/components/ProgressCircle.vue";
 import { useAuthStore } from '../store/authent';
 const AuthStore = useAuthStore();
 import SvgIcon from "@/components/SvgIcon.vue";
-
-
+import Button from "@/components/Button.vue";
 const clickHandler = (data, item) => {
 	AuthStore.delititem(data, item)
 };
@@ -157,34 +158,41 @@ p {
 	}
 
 	&__unit {
-
 		font-weight: 400;
 		font-size: 18px;
 		text-transform: none;
 		align-items: center;
 		align-content: center;
 		display: grid;
-		grid-template-columns: repeat(5, max-content);
+		grid-template-columns: repeat(4, max-content);
 		background-color: #fff;
 		height: 100%;
 		border-bottom: 1px solid #ededed;
+		position: relative;
 
 		&:last-child span {
 			border-bottom: none;
 		}
 
-		svg {
-			width: 20px;
-			height: 20px;
+		button {
+			position: absolute;
+			top: 50%;
+			right: -9px;
+			transform: translate(-50%, -56%);
+			width: 30px;
+			height: 30px;
 			color: #5d4037;
 			padding: 0 0 0 0;
-			margin: 0 5px 0 0;
+			margin: 0;
 			transition: all 0.2s;
 			cursor: pointer;
+			border-radius: 100%;
 
-			&:hover {
-				color: #f44336;
+			svg {
+				margin: 0;
 			}
+
+
 		}
 
 		span {
@@ -196,10 +204,58 @@ p {
 			padding: 3px;
 
 		}
+
+		.progress-circle {
+			width: 77px;
+		}
+
+
 	}
 
-	.progress-circle {
-		width: 77px;
+
+}
+
+
+
+@media (max-width: 600px) {
+	.privat__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
+
+	.tabel {
+
+		&__head {
+			grid-template-columns: 128px 138px;
+			grid-template-areas: "a b" "a c" "a d";
+
+			._a {
+				grid-area: a;
+			}
+
+			._b {
+				grid-area: b;
+			}
+
+			._c {
+				grid-area: c;
+			}
+
+			._d {
+				grid-area: d;
+			}
+
+		}
+	}
+
+	.result__unit {
+		grid-template-columns: 1fr;
+
+		button {
+			top: 73%;
+		}
+	}
+
 }
 </style>
