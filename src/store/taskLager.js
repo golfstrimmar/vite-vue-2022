@@ -8,6 +8,12 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "Allgemein" },
           { dataText: "text-align: center;" },
+          {
+            dataText: `display: grid;
+place-items: center;`,
+            description:
+              "выровнять текст по центру блока со всех сторон (и горизонтально, и вертикально)",
+          },
 
           { dataText: "margin: 0 0 0 0;" },
           { dataText: "margin: 0 auto;" },
@@ -25,9 +31,14 @@ export const useTask = defineStore("taskLager", {
           { i: 10, dataText: "border-radius: 10px;" },
           { i: 10, dataText: "border-top-left-radius: 10px;" },
           {
-            i: 10,
             dataText:
               "box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);",
+          },
+          {
+            dataText: "text-shadow: 0px 8px 10px rgba(0, 0, 0, .3);",
+          },
+          {
+            dataText: "white-spase: nowrap;",
           },
           { i: 10, dataText: "background: rgba(0,0,0,.75);" },
           { dataText: "overflow: hidden;" },
@@ -60,6 +71,7 @@ export const useTask = defineStore("taskLager", {
           { i: 10, dataText: "background-position: 50%;" },
           { i: 10, dataText: "backdrop-filter: blur(15px);" },
         ],
+
         [
           { title: "Grid" },
           { dataText: "display: grid;" },
@@ -92,22 +104,7 @@ export const useTask = defineStore("taskLager", {
           },
           { i: 7, dataText: 'grid-template-areas: "a b c e" "a d c e";' },
           { i: 8, dataText: "._a{grid-area: a;}" },
-          { i: 8, dataText: "._b{ grid- area: b;}" },
-          { i: 9, dataText: "._c{ grid- area: c;}" },
-          { title: "Position" },
-          { i: 11, dataText: "position: relative; " },
-          { i: 11, dataText: "position: absolute;" },
-          { i: 11, dataText: "position: fixed;" },
-          { i: 11, dataText: "z-index: ;" },
-          { i: 10, dataText: "top: 50%;" },
-          { i: 10, dataText: "left: 50%;" },
-          { i: 10, dataText: "right: auto;" },
-          { i: 10, dataText: "bottom: 0;" },
-          { i: 10, dataText: "transform: translate(-50%, -50%);" },
-          { i: 10, dataText: "transform: rotate(180deg) translateY(50%);" },
-          { i: 10, dataText: "transform: scale(1.1);" },
-          { i: 10, dataText: "transform: scaleX(1);" },
-          { i: 10, dataText: "transform-origin: top;" },
+          { i: 8, dataText: "._b{ grid-area: b;}" },
         ],
 
         [
@@ -157,6 +154,20 @@ export const useTask = defineStore("taskLager", {
           { i: 17, dataText: "align-items: self-start;" },
 
           { i: 17, dataText: "align-items: self-start;" },
+          { title: "Position" },
+          { i: 11, dataText: "position: relative; " },
+          { i: 11, dataText: "position: absolute;" },
+          { i: 11, dataText: "position: fixed;" },
+          { i: 11, dataText: "z-index: ;" },
+          { i: 10, dataText: "top: 50%;" },
+          { i: 10, dataText: "left: 50%;" },
+          { i: 10, dataText: "right: auto;" },
+          { i: 10, dataText: "bottom: 0;" },
+          { i: 10, dataText: "transform: translate(-50%, -50%);" },
+          { i: 10, dataText: "transform: rotate(180deg) translateY(50%);" },
+          { i: 10, dataText: "transform: scale(1.1);" },
+          { i: 10, dataText: "transform: scaleX(1);" },
+          { i: 10, dataText: "transform-origin: top;" },
         ],
         [
           { title: "Pseudo" },
@@ -1449,7 +1460,9 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
         [
           { title: "Common" },
           {
-            dataText: 'import Tab from "@/components/Tab.vue";',
+            dataText: `import Button from "@/components/Button.vue";
+            Button(  @click="clickHandler('Artikel',item)" svg='x-circle'  margin='0')
+            `,
           },
           { dataText: "import { ref, onMounted } from 'vue'" },
           { dataText: "var  = ref('');" },
@@ -1479,6 +1492,16 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
             dataText: "isAuthenticated: (state) => !!state.user",
             description:
               "это способ проверить, определено ли свойство user в объекте state и не является ли оно ложным значением (таким как null, undefined, 0, '' и т.д.   дает true или false.  Первое !:Преобразует значение к логическому типу и инвертирует его. Второе !:Снова инвертирует значение, возвращая его в исходный логический тип. ).",
+          },
+          {
+            dataText: `SvgIcon(name='flag')
+    import SvgIcon from '@/components/SvgIcon.vue'`,
+            description: "SvgIcon",
+          },
+          {
+            dataText: "mes.value = `Hallo, ${data}.\\nSie sind im System!` ;",
+            description:
+              "Использование \n и CSS: white-space: pre-line;  заставляет браузер отображать переносы строк, заданные с помощью \n, как новые строки.",
           },
           { title: "Directiven" },
           {
@@ -1687,18 +1710,22 @@ watch(count, (count, prevCount) => {
 
         [
           { title: "Props" },
-          { title: "В родителе" },
-
           {
-            dataText: `Button(text = 'beispiele mischen' @someEvent = 'someEvent')
-            const someEvent = (data) => {console.log(data);}`,
+            dataText: `Button(text="beispiele mischen" @someEvent="someEvent")
+const someEvent = (data) => {
+console.log(data);
+}`,
+            description: "В родителе",
           },
-
-          { title: "В потомке" },
           {
-            dataText: `const props = defineProps({text: {type: String , required: false }})
-            const emit = defineEmits(['someEvent'])
-            const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } } `,
+            dataText: `button(type="button" @click="$emit('someEvent',text) , Button($event)").btn.but-wave {{ text }}
+const props = defineProps({
+text: {
+type: String,
+required: false
+}
+})`,
+            description: "В потомке",
           },
 
           { title: "работа с props, toRaw " },
@@ -1807,10 +1834,23 @@ content.value обновляется, получая новое значение
         ],
         [
           { title: "изображения" },
+
           {
-            title: "делаем в assets/img/img.js",
+            description: "делаем в assets/img/img.js",
+            dataText: `import urlImgSalut from "./salut.gif";
+import urlFon from "./fon1.jpg";
+import urlFonSm from "./fon-sm.jpg";
+import spin from "./spin.gif";
+export { urlImgSalut, urlFon, urlFonSm, spin };`,
           },
           {
+            description: "используем в компонентах",
+            dataText: `	img(:src='Imgs.spin' alt='img')
+
+import * as Imgs from '../assets/img/img';`,
+          },
+          {
+            description: "один из вариантов",
             dataText: `import tabel1 from "./penImgs/tabel1.png";
 import tabel2 from "./penImgs/tabel2.png";
 const listImg = [
@@ -1819,7 +1859,6 @@ const listImg = [
 ];
 export { listImg };`,
           },
-          { title: "используем в компонентах" },
 
           {
             description:

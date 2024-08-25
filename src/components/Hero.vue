@@ -296,6 +296,7 @@ const copyDataCommon = [
     description:
       "The Table Foot  инкапсулирует набор строк таблицы ( элементов), указывая, что они составляют основание таблицы с информацией о столбцах таблицы.",
   },
+
 ]
 
 const copyDataName = [
@@ -604,6 +605,11 @@ th(scope = "row") Skill
 
     link: "https://codepen.io/viktor-yushin/pen/ZEdvZwj",
     img: '0'
+  },
+  {
+    description: 'tabel greed',
+    link: "https://codepen.io/viktor-yushin/pen/zYVjJbP",
+    img: '3'
   },
   {
     dataText:
