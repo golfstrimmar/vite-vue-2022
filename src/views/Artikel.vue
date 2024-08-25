@@ -1,10 +1,10 @@
-<template lang="pug">
+﻿<template lang="pug">
 .container
   h2 der Artikel
   //- Tabs 
   Plaza(:Slot='SlotArtikle')
   Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte,Slotnegativ]"  @addTime ='addTime' )
-
+  Loader(v-if="isLoading")
 </template>
 
 <script setup>
@@ -13,6 +13,7 @@ import Personal from "@/views/Personal.vue";
 import { ref, onMounted, reactive } from 'vue'
 const count = ref(0)
 const currentLine = ref(null)
+import Loader from "@/components/Loader.vue";
 
 
 
@@ -68,14 +69,16 @@ import { useAuthStore } from '@/store/authent';
 const authStore = useAuthStore();
 const addTime = (formattedTime, prozent) => { authStore.refresh('Artikel', formattedTime, prozent) };
 // --------------------------
-
+var  isLoading= ref(true);
 onMounted(async () => {
   onSnapshot(Artikle, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
       SlotArtikle.push(doc.data());
     });
-
   });
+   setTimeout(() => {
+      this.isLoading = false; 
+    }, 3000); 
 });
 
 </script>
