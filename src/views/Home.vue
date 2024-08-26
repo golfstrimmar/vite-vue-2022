@@ -1,5 +1,4 @@
 <template lang="pug">
-
 .container
   .inhaltText
     p Hallo zusammen! 
@@ -12,15 +11,10 @@
       span._innerspan yushinbox@gmail.com.
     p Viel Spass beim ausprobieren!
 </template>
-
-
 <script setup>
-
 </script>
-
-<style  lang="scss" scoped>
+<style lang="scss" scoped>
 p {
-
   font-family: "RR", sans-serif;
   font-size: 20px;
   font-weight: 800;
@@ -40,7 +34,6 @@ p {
   width: 60%;
   border-radius: 50px;
   padding: 20px;
-
 }
 
 @media (max-width: 767px) {

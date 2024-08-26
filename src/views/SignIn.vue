@@ -14,16 +14,11 @@
 		ErrMes( :errMsg= 'errMsg' :success='successLogin')
 		//- InputField(id="inputpasswordUp"  type='password' name='passwordUp'   :model='inputpasswordUp' text='geben Sie Ihr Passwort ein'  )
 		//- button(type='submit' text='sign up with Google' @click.prevent='registerGoogle' ).mixButton  sign up with Google
-
 		Button(type='submit' text='sign in' @someEvent="register"  ) 
 		Button(type='submit' text='sign in with Google' @someEvent="registerGoogle"  ) 
-
-
 	p Sind Sie bereits angemeldet? 
 		router-link(to="/signup" ) sign up
 </template>
-
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import Button from '@/components/Button.vue';
@@ -38,24 +33,19 @@ var errMsg = ref('')
 const router = useRouter()
 var userEmail = ref('')
 var successLogin = ref(false)
-
-
 const register = () => {
 	const auth = getAuth();
 	signInWithEmailAndPassword(getAuth(), email.value, password.value)
 		.then((data) => {
 			errMsg.value = 'Erfolgreich eingeloggt!';
-
 			userEmail.value = data.user.email
 			taskStore.newUser(userEmail.value)
 			successLogin.value = true
-
 			setTimeout(() => {
 				router.push('/')
 			}, 800);
 		})
 		.catch((error) => {
-
 			switch (error.code) {
 				case 'auth/invalid-email':
 					errMsg.value = 'Ungültige E-Mail-Adresse';
@@ -66,44 +56,32 @@ const register = () => {
 				case 'auth/wrong-password':
 					errMsg.value = 'Falsches Passwort';
 					break;
-
 				default:
 					errMsg.value = 'E-Mail oder Passwort war nicht korrekt';
 					break;
 			}
-
 		});
 }
-
-
 const registerGoogle = (e) => {
 	const provider = new GoogleAuthProvider();
 	const auth = getAuth();
-
 	signInWithPopup(auth, provider)
 		.then((result) => {
 			// const credential = GoogleAuthProvider.credentialFromResult(result);
 			// const token = credential.accessToken;
 			// const user = result.user;
-
-
 			errMsg.value = 'Erfolgreich eingeloggt!';
 			successLogin.value = true
 			userEmail.value = result.user.displayName
 			taskStore.newUser(userEmail.value)
-
-
 			setTimeout(() => {
 				router.push('/')
 			}, 800);
-
-
 		}).catch((error) => {
 			// const errorCode = error.code;
 			// const errorMessage = error.message;
 			// const email = error.customData.email;
 			// const credential = GoogleAuthProvider.credentialFromError(error);
-
 			console.log(error);
 			// switch (error.code) {
 			// 	// case 'auth/invalid-email':
@@ -115,27 +93,19 @@ const registerGoogle = (e) => {
 			// 	// case 'auth/wrong-password':
 			// 	// 	errMsg.value = 'Falsches Passwort';
 			// 	// 	break;
-
 			// 	default:
 			// 		errMsg.value = errorMessage;
 			// 		break;
 			// }
 		});
-
-
-
 }
 onMounted(() => {
 })
-
 </script>
-
 <style lang="scss" scoped>
 form {
 	margin: 0 0 30px 0;
 }
-
-
 
 p {
 	color: $blue-4;

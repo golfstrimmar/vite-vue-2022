@@ -5,7 +5,6 @@ header.header
       .logo 
         router-link(to="/")
           SvgIcon(name='flag' )
-
       router-link.willkommen(to="/privat" v-if="AuthStore.user !== null ")  {{ AuthStore.user.name}}
       router-link(to="/login" v-if="!AuthStore.isAuthenticated") Login
       a( href="#!" @click='LogoutHandler' v-if="AuthStore.isAuthenticated") Logout
@@ -13,13 +12,9 @@ header.header
         .header__links(v-if=" burgerActive" )
           router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
             |{{ link.name }}
-
       ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
         span
-        
-
 </template>
-
 <script setup>
 import { ref } from 'vue';
 import SvgIcon from '@/components/SvgIcon.vue'
@@ -27,9 +22,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter();
 import { useAuthStore } from '../store/authent';
 const AuthStore = useAuthStore();
-
 // ==========================
-
 const LogoutHandler = () => {
   AuthStore.logout();
   router.push("/");
@@ -52,18 +45,13 @@ const links = ref([
   { name: "Rektion", href: "/rektion" },
   { name: "Nomen", href: "/nomen" },
   { name: "Form", href: "/form" },
-
-
-
   // { name: "Tasks", href: "/tasks" },
   // { name: "SignIn", href: "/signin" },
 ]);
-
 var burgerActive = ref(false);
 let auth;
 var userEmail = ref('');
 const isLoggedIn = ref(false)
-
 const clickBurger = () => {
   // if (window.innerWidth <= 1200) {
   burgerActive.value = !burgerActive.value;
@@ -73,11 +61,7 @@ const clickBurger = () => {
     document.querySelector('body').classList.remove("lock")
   }
   // }
-
 }
-
-
-
 const handleWindowScroll = () => {
   const header = document.querySelector('.header')
   if (window.pageYOffset > 60) {
@@ -86,21 +70,15 @@ const handleWindowScroll = () => {
     header.classList.remove("responciveHeader");
   }
 };
-
-
-
 // onUnmounted(() => {
 //   window.removeEventListener("resize", handleWindowSizeChange);
 // });
-
 const handleSignOut = () => {
   signOut(auth).then(() => {
     router.push('/')
   })
 }
-
 </script>
-
 <style lang="scss" scoped>
 .header {
   @include transition;
@@ -111,8 +89,6 @@ const handleSignOut = () => {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.3)) !important;
   z-index: 20000;
-
-
 
   .logo {
     padding: 5px;
@@ -151,8 +127,6 @@ const handleSignOut = () => {
       }
     }
   }
-
-
 
   &__links {
     position: fixed;
@@ -219,7 +193,6 @@ const handleSignOut = () => {
       background: $grey-3;
       width: 18px;
       height: 2px;
-
     }
 
     &._is-active {
@@ -235,7 +208,6 @@ const handleSignOut = () => {
       // &:hover::before {
       //   background-color: rgb(138, 138, 138);
       // }
-
       &::after {
         top: 46%;
         left: 21.5%;
@@ -261,7 +233,6 @@ const handleSignOut = () => {
     transition: all 0.3s;
     cursor: pointer;
 
-
     &:hover {
       color: #fafafa;
     }
@@ -271,38 +242,8 @@ const handleSignOut = () => {
     // height: 50px;
     padding: 3px 0;
     backdrop-filter: blur(15px);
-
     @include transition;
   }
-}
-
-@media (max-width: 600px) {
-  // .header__body {
-  //   display: block;
-  //   gap: 0px 0px;
-  // }
-
-  // .header .auth-items {
-  //   justify-self: start;
-  //   margin: 0;
-  // }
-
-  // .header .logo {
-  //   display: inline-block;
-  //   margin: 0 0 5px 0;
-
-  //   a {
-  //     column-gap: 5px;
-
-
-  //     svg {
-  //       width: 25px;
-  //       height: 25px;
-  //     }
-  //   }
-  // }
-
-
 }
 
 .f-enter-from {

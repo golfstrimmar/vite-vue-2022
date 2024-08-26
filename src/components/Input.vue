@@ -1,6 +1,5 @@
 <template lang="pug">
 input(type='text' v-model.trim='inputValue'  :class="[(focused  == true) ? '_is-light' : '',(success == true) ? '_is-success' :  '' ]" @focus="focusHandler" @input='HendleEventInput'    @blur="blurHandler" ref = 'some'  )
-
 </template>
 <script setup>
 import { ref, onMounted, watch, defineEmits, defineProps } from 'vue';
@@ -23,12 +22,7 @@ const props = defineProps({
     required: false
   },
 
-
-
 })
-
-
-
 
 const blurHandler = () => {
   focused.value = false

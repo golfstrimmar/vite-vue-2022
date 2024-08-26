@@ -2,21 +2,19 @@
 .akkord(:class="(titlesObject == false) ? 'kurz' : ''" )
   .akkord__nav(v-if= "titlesObject") 
     Button(  v-for="item in props.titles" :key="index" :item='item' :text='item.title' @click='ButtonHandler(item.id) ' )
-
   .akkord__items
     div(v-for="Data in contentData.value" :key="index")
       .block( :class="(Data.isOpen == true) ? '_is-active' : '' "  )
-        .block__buttons
+        .block__buttons(v-if="AuthStore.isAuthenticated")
           Button( text='Mischen'   @click = "handlerClick(Data)"  svg='arrow-repeat')
           Button( text='Start'  @click='start'    svg='sport')
           Button( text='Stop'   @click='stop'    svg='stopwatch')
           Button( text='Reset'   @click='reset'    )
-        .tablo
+        .tablo(v-if="AuthStore.isAuthenticated")
           span.zeit Anzahl der richtigen Antworten:  
             span {{ count }}
           span.zeit Sie haben für das Training ausgegeben:   
             span {{ formattedTime }}
-
         .spielPlatz
           .block__line(v-for="el in Data" :key="index" ) 
             .block__info 
@@ -25,8 +23,6 @@
                 span i
             div
               Input(:Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
-
-
 </template>
 
 <script setup>
@@ -44,19 +40,14 @@ const props = defineProps({
     required: false
   }
 })
-
-
 var time = ref(0);        // Количество секунд
 var interval = ref(null);   // Интервал для обновления времени
-
 const formattedTime = computed(() => {
   const hours = Math.floor(time.value / 3600).toString().padStart(2, '0');
   const minutes = Math.floor((time.value % 3600) / 60).toString().padStart(2, '0');
   const seconds = (time.value % 60).toString().padStart(2, '0');
   return `${hours}h ${minutes}m ${seconds}s`;
 })
-
-
 const start = () => {
   if (!interval.value) {
     interval.value = setInterval(() => {
@@ -64,19 +55,14 @@ const start = () => {
     }, 1000);
   }
 };
-
 const emit = defineEmits(['addTime'])
 const capturedValue = ref(null);
-
 const stop = () => {
   clearInterval(interval.value);
   interval.value = null;
 };
-
-
 var prozent = ref(0);
 var resetInputs = ref(false);
-
 const reset = () => {
   stop();
   capturedValue.value = formattedTime.value;
@@ -88,13 +74,10 @@ const reset = () => {
   time.value = 0;
   prozent.value = 0;
 };
-
-
 // --------------------------
 const handlerClick = (Data) => {
   Data.sort(() => Math.random() - 0.5);
 }
-
 // --------------------------
 const ButtonHandler = (id) => {
   props.titles.forEach(car => {
@@ -106,12 +89,9 @@ const ButtonHandler = (id) => {
       car.isOpen = false
   })
 };
-
 // --------------------------
-
 var count = ref(0);
 var countAll = ref(0);
-
 const lineFertig = (some) => {
   if (some.closest(".block__line").nextElementSibling) {
     some.closest(".block__line").nextElementSibling.querySelector('input').focus();
@@ -120,13 +100,14 @@ const lineFertig = (some) => {
   let lineItems = [...some.closest(".block").querySelectorAll(".block__line")];
   countAll.value = lineItems.length
 }
+import { useAuthStore } from '../store/authent';
+const AuthStore = useAuthStore();
 // --------------------------
 onMounted(() => {
   if (props.titles.length == 1) {
     props.titles = ''
   }
 })
-
 const titlesObject = computed(() => {
   return props.titles.length > 1
 }
@@ -163,7 +144,6 @@ watchEffect(() => {
   left: 0px;
   padding: 10px 20px;
 
-
   &:hover {
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.5), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.8);
   }
@@ -196,7 +176,6 @@ watchEffect(() => {
 
         button {
           padding: 3px 5px;
-
         }
       }
 
@@ -215,8 +194,6 @@ watchEffect(() => {
 
         display: flex;
         flex-direction: column;
-
-
       }
 
       @keyframes pulse {
@@ -238,8 +215,6 @@ watchEffect(() => {
   }
 }
 
-
-
 .block__info {
   position: relative;
   display: inline-block;
@@ -247,7 +222,6 @@ watchEffect(() => {
 
 .block__line {
   margin: 0 0 6px 0;
-
 
   h4 {
     display: inline-block;
@@ -274,7 +248,6 @@ watchEffect(() => {
   background: #d6d2d0a8;
 }
 
-
 @media (max-width: 600px) {
   .akkord {
     display: grid;
@@ -282,7 +255,6 @@ watchEffect(() => {
     column-gap: 0;
     margin: 20px 0 0 0;
   }
-
 
   .akkord__items {
     .block {
@@ -297,7 +269,6 @@ watchEffect(() => {
 
           button {
             padding: 3px 5px;
-
           }
         }
 

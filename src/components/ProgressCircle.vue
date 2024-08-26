@@ -1,16 +1,3 @@
-<script setup>
-const props = defineProps({
-  percent: {
-    type: Number,
-    required: true
-  },
-
-})
-const color1 = '#689f38';
-// const color2 = '#689f38';
-const color2 = '#f44336';
-</script>
-
 <template>
   <div class="progress-circle">
     <span class="progress-circle-percent" :style="[{ 'color': `${color1}` }]">{{ percent }}%</span>
@@ -20,13 +7,20 @@ const color2 = '#f44336';
         r="54" fill="none" :stroke="`${color1}`" stroke-width="12" pathLength="100" />
     </svg>
   </div>
-
 </template>
-
+<script setup>
+const props = defineProps({
+  percent: {
+    type: Number,
+    required: true
+  },
+})
+const color1 = '#689f38';
+// const color2 = '#689f38';
+const color2 = '#f44336';
+</script>
 <style lang="scss" scoped>
 .progress {
-
-
   &-circle {
     position: relative;
     width: 30px;

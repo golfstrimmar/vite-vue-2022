@@ -4,14 +4,10 @@
   Plaza(:Slot='Inter')
   Akkord(:titles="titles" :Data="[InterSlot]" @addTime ='addTime')
 </template>
-
-
 <script setup>
 import Akkord from "@/components/Akkord.vue";
 import { ref, onMounted, reactive } from 'vue'
-
 import Plaza from "@/components/Plaza.vue";
-
 import { db } from "@/firebase/config.ts";
 import { collection, query, onSnapshot } from "firebase/firestore";
 var Inter = reactive([]);
@@ -19,15 +15,12 @@ var InterSlot = reactive([]);
 var titles = reactive([]);
 const Interrogativ = query(collection(db, "Interrogativ-table"));
 const InterrogativSlot = query(collection(db, "InterrogativSlot"));
-
-
 onMounted(async () => {
   onSnapshot(Interrogativ, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
       Inter.push(doc.data());
       console.log(doc.data());
     });
-
   });
   onSnapshot(InterrogativSlot, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -47,7 +40,6 @@ const addTime = (formattedTime, count, countAll) => {
 };
 // --------------------------
 </script>
-
 <style lang="scss" scoped>
 .plaza {
   grid-template-columns: minmax(100px, max-content);

@@ -1,6 +1,6 @@
 // plugins/piniaPersist.js
 export function piniaPersistPlugin({ store }) {
-  // Попробовать восстановить состояние из Local Storage
+  //  восстановить состояние из Local Storage
   const storedState = localStorage.getItem(store.$id);
 
   if (storedState) {
