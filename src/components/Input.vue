@@ -26,12 +26,10 @@ const props = defineProps({
 
 const blurHandler = () => {
   focused.value = false
-
 }
 const focusHandler = () => {
   focused.value = true
 }
-
 // -----------------------------------
 const emit = defineEmits(['lineFertig'])
 

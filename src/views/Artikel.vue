@@ -1,4 +1,4 @@
-<template lang="pug">
+﻿<template lang="pug">
 .container
   h2 der Artikel
   //- Tabs 
@@ -67,6 +67,7 @@ onMounted(async () => {
       SlotArtikle.push(doc.data());
     });
   });
+
 });
 var isLoading = ref(true);
 onMounted(() => {
