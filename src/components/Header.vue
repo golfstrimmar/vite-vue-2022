@@ -10,10 +10,11 @@ header.header
       a( href="#!" @click='LogoutHandler' v-if="AuthStore.isAuthenticated") Logout
       transition(mode='easy-in-out' name='f'  )
         .header__links(v-if=" burgerActive" )
-          router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger')
-            |{{ link.name }}
+          .container.container-links
+            router-link(v-for="link in links" :key="link.name" :to="link.href" @click='clickBurger') {{ link.name }}
       ._burger( @click='clickBurger' :class="[burgerActive ? ' _is-active' : '']") 
         span
+
 </template>
 <script setup>
 import { ref } from 'vue';
@@ -128,23 +129,28 @@ const handleSignOut = () => {
     }
   }
 
+
+
   &__links {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    max-height: 100vh;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    padding: 80px 20px 40px;
+    min-width: 100vw;
+    // padding: 80px 20px 40px;
     overflow: auto;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(15px);
     z-index: 1000;
-    align-items: flex-end;
-    row-gap: 15px;
+
+    .container-links {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      min-height: 100vh;
+      padding: 80px 0px 40px;
+      row-gap: 15px;
+      align-items: flex-end;
+    }
 
     a {
       white-space: nowrap;
@@ -163,7 +169,7 @@ const handleSignOut = () => {
     border-radius: 50%;
     position: relative;
     display: block;
-    transition: all 0.3s;
+    transition: all 0.2s;
 
     &:hover {
       background-color: #e0e0e06e;
@@ -197,17 +203,13 @@ const handleSignOut = () => {
 
     &._is-active {
 
+
       span,
       &::after,
       &::before {
         background: $grey-3;
       }
 
-      // &:hover span,
-      // &:hover::after,
-      // &:hover::before {
-      //   background-color: rgb(138, 138, 138);
-      // }
       &::after {
         top: 46%;
         left: 21.5%;
@@ -265,5 +267,16 @@ const handleSignOut = () => {
 .f-leave-to {
   transition: .2s all;
   transform: translateX(-100vw);
+}
+
+
+@media (max-width: 600px) {
+  .header__links {
+    padding: 40px 10px 40px;
+  }
+
+  .header__links .container-links {
+    padding: 40px 0px 40px;
+  }
 }
 </style>
