@@ -1,8 +1,9 @@
 <template lang="pug">
 .hero 
-	.canvas 
-		Result(:v-model="Something" :value='Something')
-	Stok(v-model="result"   @click='handelClean' )
+	.hero__head
+		.canvas 
+			Result(:v-model="Something" :value='Something')
+		Stok(v-model="result"   @click='handelClean' )
 	.hero__body
 		.hero__column(v-for="item in content" :key="index")
 			Copy(:item="i"  @clickcopy='clickcopy' v-for="i in item" :key="index" )
@@ -47,10 +48,21 @@ const handelClean = () => {
 
 <style lang="scss" scoped>
 .hero {
-	margin: 10px 0 30px 0;
+	margin: 201px 0 30px 0;
+
+	&__head {
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		z-index: 1000;
+		top: 0%;
+		left: 36px;
+		width: 96vw;
+
+	}
 
 	&__body {
-		grid-template-columns: repeat(auto-fill, 366px);
+		grid-template-columns: repeat(auto-fill, 430px);
 		grid-template-rows: 1fr;
 		column-gap: 5px;
 

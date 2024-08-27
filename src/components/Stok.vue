@@ -30,7 +30,7 @@ const Change = () => {
 	font-weight: 400;
 	font-size: 14px;
 	border: 1px solid $blue-grey-7;
-	background-color: rgba(143, 197, 225, 0.4);
+	background-color: rgb(168 214 249 / 70%);
 
 	&._is-light {
 		background-color: #e0e0e0;

@@ -8,6 +8,12 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "Allgemein" },
           { dataText: "text-align: center;" },
+          {
+            dataText: `display: grid;
+place-items: center;`,
+            description:
+              "выровнять текст по центру блока со всех сторон (и горизонтально, и вертикально)",
+          },
 
           { dataText: "margin: 0 0 0 0;" },
           { dataText: "margin: 0 auto;" },
@@ -17,15 +23,22 @@ export const useTask = defineStore("taskLager", {
           { dataText: "height:  ;" },
           { dataText: "min-height: ;" },
           { dataText: "color:  ;" },
+          { dataText: "font-size:  px;" },
+          { dataText: "font-weight: 600;" },
           { dataText: "opacity:  ;" },
           { i: 10, dataText: "border: 3px solid ;" },
           { i: 10, dataText: "outline: 1px solid ;" },
           { i: 10, dataText: "border-radius: 10px;" },
           { i: 10, dataText: "border-top-left-radius: 10px;" },
           {
-            i: 10,
             dataText:
               "box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);",
+          },
+          {
+            dataText: "text-shadow: 0px 8px 10px rgba(0, 0, 0, .3);",
+          },
+          {
+            dataText: "white-spase: nowrap;",
           },
           { i: 10, dataText: "background: rgba(0,0,0,.75);" },
           { dataText: "overflow: hidden;" },
@@ -58,6 +71,7 @@ export const useTask = defineStore("taskLager", {
           { i: 10, dataText: "background-position: 50%;" },
           { i: 10, dataText: "backdrop-filter: blur(15px);" },
         ],
+
         [
           { title: "Grid" },
           { dataText: "display: grid;" },
@@ -90,22 +104,7 @@ export const useTask = defineStore("taskLager", {
           },
           { i: 7, dataText: 'grid-template-areas: "a b c e" "a d c e";' },
           { i: 8, dataText: "._a{grid-area: a;}" },
-          { i: 8, dataText: "._b{ grid- area: b;}" },
-          { i: 9, dataText: "._c{ grid- area: c;}" },
-          { title: "Position" },
-          { i: 11, dataText: "position: relative; " },
-          { i: 11, dataText: "position: absolute;" },
-          { i: 11, dataText: "position: fixed;" },
-          { i: 11, dataText: "z-index: ;" },
-          { i: 10, dataText: "top: 50%;" },
-          { i: 10, dataText: "left: 50%;" },
-          { i: 10, dataText: "right: auto;" },
-          { i: 10, dataText: "bottom: 0;" },
-          { i: 10, dataText: "transform: translate(-50%, -50%);" },
-          { i: 10, dataText: "transform: rotate(180deg) translateY(50%);" },
-          { i: 10, dataText: "transform: scale(1.1);" },
-          { i: 10, dataText: "transform: scaleX(1);" },
-          { i: 10, dataText: "transform-origin: top;" },
+          { i: 8, dataText: "._b{ grid-area: b;}" },
         ],
 
         [
@@ -155,6 +154,20 @@ export const useTask = defineStore("taskLager", {
           { i: 17, dataText: "align-items: self-start;" },
 
           { i: 17, dataText: "align-items: self-start;" },
+          { title: "Position" },
+          { i: 11, dataText: "position: relative; " },
+          { i: 11, dataText: "position: absolute;" },
+          { i: 11, dataText: "position: fixed;" },
+          { i: 11, dataText: "z-index: ;" },
+          { i: 10, dataText: "top: 50%;" },
+          { i: 10, dataText: "left: 50%;" },
+          { i: 10, dataText: "right: auto;" },
+          { i: 10, dataText: "bottom: 0;" },
+          { i: 10, dataText: "transform: translate(-50%, -50%);" },
+          { i: 10, dataText: "transform: rotate(180deg) translateY(50%);" },
+          { i: 10, dataText: "transform: scale(1.1);" },
+          { i: 10, dataText: "transform: scaleX(1);" },
+          { i: 10, dataText: "transform-origin: top;" },
         ],
         [
           { title: "Pseudo" },
@@ -251,6 +264,11 @@ export const useTask = defineStore("taskLager", {
           { dataText: '.addEventListener("input",(e) =>{ });' },
           { dataText: ".innerHTML =" },
           {
+            dataText: "typeof timeTaken",
+            description:
+              "используется для определения типа значения или переменной. Он возвращает строку, описывающую тип переданного ему операнда.",
+          },
+          {
             description:
               "Node.innerText - это свойство, позволяющее задавать или получать текстовое содержимое элемента и его потомков. В качестве геттера, свойство приближается к тексту, который пользователь получит, если он выделит содержимое элемента курсором, затем копирует его в буфер обмена.",
             dataText: ".innerText = ",
@@ -314,7 +332,7 @@ export const useTask = defineStore("taskLager", {
         [
           { title: "Zyklus" },
           { dataText: ".forEach(car => {  })" },
-          { dataText: "for (i = 0; i < 3; i++) { alert( i ); }" },
+          { dataText: "for (let i = 0; i < .length; i++) {    }" },
           {
             dataText:
               "for(const index in cars){ console.log(cars[index]); if (index == 3) { break } }",
@@ -410,7 +428,7 @@ export const useTask = defineStore("taskLager", {
             description:
               "Возвращает , Nodeпредставляющий предыдущий узел в дереве, или , nullесли такого узла нет.",
           },
-          { title: "1,2,3 ..." },
+          { title: "Числа" },
           {
             dataText: "Math.max.apply(null, Array);",
             description: "максимального элемента в числовом массиве",
@@ -513,11 +531,7 @@ const handlerClick = (Data) => {
             description: "Добавляет элемент в начало массива:",
             dataText: '.unshift("Яблоко");',
           },
-          {
-            description:
-              "позволяет превратить строку в массив, разбив ее по разделителю s",
-            dataText: '.split(", ", 2);',
-          },
+
           {
             description:
               "берет массив и склеивает его в строку, используя str как разделитель",
@@ -649,7 +663,7 @@ const handlerClick = (Data) => {
             description:
               "расстояние от верхнего края (offsetTop) или левого края (offsetLeft) текущего элемента до ближайшего родительского элемента (или до самого body, если родительских элементов нет).",
           },
-          { title: "Zeile" },
+          { title: "Строки" },
           {
             link: "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String",
           },
@@ -663,6 +677,11 @@ const handlerClick = (Data) => {
           { description: "Доступ к символам", dataText: "str[0];" },
           { description: "Смена регистра", dataText: "toLowerCase();" },
           { description: "Смена регистра", dataText: "toUpperCase();" },
+          {
+            description:
+              "позволяет превратить строку в массив, разбив ее по разделителю s",
+            dataText: '.split(", ", 2);',
+          },
           {
             description:
               "проверяет с учётом регистра, содержит ли строка заданную подстроку, и возвращает, соответственно true или false.",
@@ -706,6 +725,51 @@ const handlerClick = (Data) => {
             description:
               "str1.localeCompare(str2) возвращает ‐1 , если str1 < str2 , 1 , если str1> str2 и 0 , если они равны.",
             dataText: '.localeCompare("Яблони"); ',
+          },
+          { title: "Примеры работы со строками" },
+          {
+            description: "извлекает часть строки до символа @",
+            dataText: `const email = "example@domain.com";
+const index = email.indexOf('@');
+const username = email.substring(0, index);
+console.log(username); // "example" `,
+          },
+          {
+            description:
+              " Форматирование даты и времени по умолчанию для текущей локали",
+            dataText: `const date = new Date();
+const formattedDate = date.toLocaleString();
+console.log(formattedDate); // Например: "22.08.2024, 15:45:30" (для русской локали)
+`,
+          },
+          {
+            description:
+              " Форматирование даты и времени с указанием конкретной локали и параметров:",
+            dataText: `const date = new Date();
+// Форматирование с указанием локали и опций
+const formattedDate = date.toLocaleString('en-US', {
+  weekday: 'long', // Полное название дня недели
+  year: 'numeric', // Полное отображение года
+  month: 'long', // Полное название месяца
+  day: 'numeric', // Число месяца
+  hour: '2-digit', // Часы в 2-значном формате
+  minute: '2-digit', // Минуты в 2-значном формате
+  second: '2-digit' // Секунды в 2-значном формате
+});
+console.log(formattedDate); // Например: "Thursday, August 22, 2024, 03:45:30 PM"
+`,
+          },
+          {
+            description:
+              " количество секунд в удобочитаемый формат часов, минут и секунд, ",
+            dataText:
+              "function formatTime(seconds) {const hours = Math.floor(seconds / 3600); // 1 час = 3600 секундconst minutes = Math.floor((seconds % 3600) / 60); // 1 минута = 60 секундconst remainingSeconds = seconds % 60;return `${hours}ч ${minutes}м ${remainingSeconds}с`;}// Пример использованиconst totalSeconds = 7265; // Пример: 7265 секундconst formattedTime = formatTime(totalSeconds);console.log(formattedTime); // '2ч 1м 5с'",
+          },
+          {
+            description:
+              " количество секунд в удобочитаемый формат часов, минут и секунд,всегда отображались как двухзначные числа ",
+            dataText:
+              "const hours = String(Math.floor(seconds / 3600)).padStart(2, '0');const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');const remainingSeconds = String(seconds % 60).padStart(2, '0');return `${hours}ч ${minutes}м ${remainingSeconds}с`;",
           },
         ],
 
@@ -1396,14 +1460,20 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
         [
           { title: "Common" },
           {
-            dataText: 'import Tab from "@/components/Tab.vue";',
+            dataText: `import Button from "@/components/Button.vue";
+            Button(  @click="clickHandler('Artikel',item)" svg='x-circle'  margin='0')
+            `,
           },
-          { dataText: "var  = ref('');", description: "" },
-          { dataText: "import { ref, onMounted } from 'vue'", description: "" },
-          { dataText: "onMounted(() => {})", description: "" },
-          { dataText: "@  =' ' ", description: "" },
-          { dataText: 'v-for="item in items" :key="item.id"', description: "" },
-          { dataText: ".value", description: "" },
+          { dataText: "import { ref, onMounted } from 'vue'" },
+          { dataText: "var  = ref('');" },
+          { dataText: "const  =   ;" },
+          { dataText: "var  =   ;" },
+          { dataText: "const = () => {};" },
+          { dataText: "@  =' ' " },
+          { dataText: "onMounted(() => {})" },
+
+          { dataText: 'v-for="item in items" :key="index"' },
+          { dataText: ".value" },
           {
             dataText: '@click="" ',
             description:
@@ -1418,19 +1488,34 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
               ".opentab-enter-from {}.opentab-enter-to {}.opentab-leave-from {}.opentab-leave-to {}",
             description: "transition классы",
           },
+          {
+            dataText: "isAuthenticated: (state) => !!state.user",
+            description:
+              "это способ проверить, определено ли свойство user в объекте state и не является ли оно ложным значением (таким как null, undefined, 0, '' и т.д.   дает true или false.  Первое !:Преобразует значение к логическому типу и инвертирует его. Второе !:Снова инвертирует значение, возвращая его в исходный логический тип. ).",
+          },
+          {
+            dataText: `SvgIcon(name='flag')
+    import SvgIcon from '@/components/SvgIcon.vue'`,
+            description: "SvgIcon",
+          },
+          {
+            dataText: "mes.value = `Hallo, ${data}.\\nSie sind im System!` ;",
+            description:
+              "Использование \n и CSS: white-space: pre-line;  заставляет браузер отображать переносы строк, заданные с помощью \n, как новые строки.",
+          },
           { title: "Directiven" },
           {
-            dataText: 'v-html= " "',
+            dataText: 'v-html=" "',
             description:
               "содержимое будет вставляться как обычный HTML и не будет компилироваться или обрабатываться как шаблоны Vue.",
           },
           {
-            dataText: 'v-show = " "',
+            dataText: 'v-show=" "',
             description:
               "Отображает элемент по условию, выполняя переключение у элемента CSS-свойства display в зависимости от истинности указанного выражения.Директива запускает анимации перехода при изменении состояния.",
           },
           {
-            dataText: 'v-if= " "',
+            dataText: 'v-if=" "',
             description:
               "При переключении элемент и все содержащиеся в нём директивы / компоненты будут уничтожены и созданы заново.",
           },
@@ -1625,18 +1710,22 @@ watch(count, (count, prevCount) => {
 
         [
           { title: "Props" },
-          { title: "В родителе" },
-
           {
-            dataText: `Button(text = 'beispiele mischen' @someEvent = 'someEvent')
-            const someEvent = (data) => {console.log(data);}`,
+            dataText: `Button(text="beispiele mischen" @someEvent="someEvent")
+const someEvent = (data) => {
+console.log(data);
+}`,
+            description: "В родителе",
           },
-
-          { title: "В потомке" },
           {
-            dataText: `const props = defineProps({text: {type: String , required: false }})
-            const emit = defineEmits(['someEvent'])
-            const HendleEventInput = () => { if (inputValue.value == 'test') { emit('anwortPositiv', data) } } `,
+            dataText: `button(type="button" @click="$emit('someEvent',text) , Button($event)").btn.but-wave {{ text }}
+const props = defineProps({
+text: {
+type: String,
+required: false
+}
+})`,
+            description: "В потомке",
           },
 
           { title: "работа с props, toRaw " },
@@ -1745,10 +1834,23 @@ content.value обновляется, получая новое значение
         ],
         [
           { title: "изображения" },
+
           {
-            title: "делаем в assets/img/img.js",
+            description: "делаем в assets/img/img.js",
+            dataText: `import urlImgSalut from "./salut.gif";
+import urlFon from "./fon1.jpg";
+import urlFonSm from "./fon-sm.jpg";
+import spin from "./spin.gif";
+export { urlImgSalut, urlFon, urlFonSm, spin };`,
           },
           {
+            description: "используем в компонентах",
+            dataText: `	img(:src='Imgs.spin' alt='img')
+
+import * as Imgs from '../assets/img/img';`,
+          },
+          {
+            description: "один из вариантов",
             dataText: `import tabel1 from "./penImgs/tabel1.png";
 import tabel2 from "./penImgs/tabel2.png";
 const listImg = [
@@ -1757,7 +1859,6 @@ const listImg = [
 ];
 export { listImg };`,
           },
-          { title: "используем в компонентах" },
 
           {
             description:
@@ -1888,6 +1989,15 @@ onMounted(async () => {
           //   `,
           //   description: " ",
           // },
+        ],
+        [
+          {
+            title: "примеры",
+          },
+          {
+            title: "секундомер",
+            link: "https://codepen.io/viktor-yushin/pen/bGPMbbe",
+          },
         ],
       ],
     };
