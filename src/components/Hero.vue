@@ -19,11 +19,9 @@
     span
     span
     span
-
     Button(buttonValue='Result'  @click='handelResult')
     .drop-zone( @mouseenter='handelmouseenter($event)'  @mouseleave='handelmouseleave($event)' )
       textarea.drop-linea(  v-for="item in dropLineas" :key="index" :style= "{ marginLeft: item.Offset*30 + 'px' }"  @click='clickHandler($event,item.id)' @wheel='mousewheel($event,item.id)') {{ item.value }}
-
 
   Stok(v-model="canvasItem.value"   @click='handelClean' )
   .lager
@@ -35,14 +33,6 @@
       Copy(@click='clickLine($event,item.dataText)'  v-for="item in copyDataLinks" :key="index" :item='item')
     .lager__block
       Copy(@click='clickLine($event,item.dataText)'  v-for="item in copyDataTable" :key="index" :item='item')
-
-
-
-
-
-
-
-
 
 </template>
 
@@ -506,8 +496,6 @@ use(xlink: href = block.src)
   },
 
 
-
-
   {
     title: "example",
   },
@@ -640,6 +628,13 @@ tr
 
     link: "https://codepen.io/viktor-yushin/pen/wvLpZoG",
     img: '1'
+  },
+
+  {
+    title: "VS Code", dataText: 'C:/users/victor/AppData/Roaming/Code/User/ ', description: ' здесь вся инфа от user'
+  },
+  {
+    title: "VS Code", dataText: 'C:/Users/YourUsername/.vscode/extensions/theme-tomorrow-night-blue-0.0.1/themes/Tomorrow Night Blue-color-theme.json', description: 'color-theme'
   },
 
 ]
