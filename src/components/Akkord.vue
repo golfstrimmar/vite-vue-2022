@@ -66,7 +66,7 @@ var resetInputs = ref(false);
 const reset = () => {
   stop();
   capturedValue.value = formattedTime.value;
-  prozent.value = Math.round(count.value * 100 / countAll.value);
+  count.value > 0 ? prozent.value = Math.round(count.value * 100 / countAll.value) : prozent.value = 0;
   emit('addTime', capturedValue.value, prozent.value)
   resetInputs.value = !resetInputs.value;
   count.value = 0;
@@ -116,6 +116,7 @@ watchEffect(() => {
   contentData.value = props.Data
 })
 </script>
+
 <style lang='scss' scoped>
 .akkord {
   display: grid;

@@ -21,7 +21,6 @@ section.privat(v-if= "AuthStore.user !== null ")
 							span {{item.stoppuhr}}
 							ProgressCircle(:percent='item.prozent')
 							Button(  @click="clickHandler('Artikel',item)" svg='x-circle'  margin='0')
-
 				.result(v-if="!!AuthStore.user.Personal")
 					h3 Personal 
 					.result__content
@@ -50,6 +49,14 @@ section.privat(v-if= "AuthStore.user !== null ")
 					h3 Possessiv 
 					.result__content
 						.result__unit(v-for="item in AuthStore.user.Possessiv" :key="index") 
+							span {{item.zeit}}
+							span {{item.stoppuhr}}
+							ProgressCircle(:percent='item.prozent')
+							Button(  @click="clickHandler('Possessiv',item)" svg='x-circle' margin='0')
+				.result(v-if="!!AuthStore.user.Possessiv")
+					h3 Demonstrativ 
+					.result__content
+						.result__unit(v-for="item in AuthStore.user.Demonstrativ" :key="index") 
 							span {{item.zeit}}
 							span {{item.stoppuhr}}
 							ProgressCircle(:percent='item.prozent')

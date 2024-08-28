@@ -3,7 +3,7 @@
 	table(v-for="item in sortSlot.value " :key="index")
 		thead
 			tr
-				th(colspan='7') {{item.title}}
+				th(colspan='7' v-if="item.title" ) {{item.title}}
 			tr
 				th(colspan='1')
 				th(v-if= "item.erste")

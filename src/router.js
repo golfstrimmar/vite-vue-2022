@@ -10,7 +10,7 @@ import Form from "@/views/Form.vue";
 import Register from "@/views/Register.vue";
 import Login from "@/views/Login.vue";
 import Privat from "@/views/Privat.vue";
-    // import Demonstrativ from "@/views/Demonstrativ.vue";
+import Demonstrativ from "@/views/Demonstrativ.vue";
 // import Modal from "@/views/Modal.vue";
 // import Passiv from "@/views/Passiv.vue";
 // import Konjunktiv from "@/views/Konjunktiv-II.vue";
@@ -36,7 +36,7 @@ const router = createRouter({
     { path: "/register", name: "Register", component: Register },
     { path: "/login", name: "Login", component: Login },
     { path: "/privat", name: "Privat", component: Privat },
-    // { path: "/demonstrativ", name: "Demonstrativ", component: Demonstrativ },
+    { path: "/demonstrativ", name: "Demonstrativ", component: Demonstrativ },
     // { path: "/modal", name: "Modal", component: Modal },
     // { path: "/passiv", name: "Passiv", component: Passiv },
     // { path: "/konjunktiv", name: "Konjunktiv", component: Konjunktiv },

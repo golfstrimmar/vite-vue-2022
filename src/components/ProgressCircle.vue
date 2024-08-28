@@ -1,6 +1,6 @@
 <template>
   <div class="progress-circle">
-    <span class="progress-circle-percent" :style="[{ 'color': `${color1}` }]">{{ percent }}%</span>
+    <span class="progress-circle-percent" :style="[{ 'color': `${color1}` }]"> {{ plusOne }}</span>
     <svg width="120" height="120" viewBox="0 0 120 120" class="progress-circle-svg">
       <circle cx="60" cy="60" r="54" fill="none" :stroke="`${color2}`" stroke-width="14" />
       <circle class="progress-circle-line" :style="[{ 'stroke-dashoffset': `calc(100 - ${percent})` }]" cx="60" cy="60"
@@ -9,12 +9,30 @@
   </div>
 </template>
 <script setup>
+import { ref, watchEffect, computed } from 'vue'
+
 const props = defineProps({
   percent: {
     type: Number,
     required: true
   },
 })
+var content = ref(0);
+
+const plusOne = computed({
+  get: () =>
+    (content.value >= 9) ? content.value + '%' : '0' + content.value + '%'
+})
+
+
+watchEffect(() => {
+  content.value = props.percent
+})
+
+
+
+
+
 const color1 = '#689f38';
 // const color2 = '#689f38';
 const color2 = '#f44336';
