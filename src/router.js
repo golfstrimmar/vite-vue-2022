@@ -11,8 +11,8 @@ import Register from "@/views/Register.vue";
 import Login from "@/views/Login.vue";
 import Privat from "@/views/Privat.vue";
 import Demonstrativ from "@/views/Demonstrativ.vue";
-// import Modal from "@/views/Modal.vue";
-// import Passiv from "@/views/Passiv.vue";
+import Modal from "@/views/Modal.vue";
+import Passiv from "@/views/Passiv.vue";
 // import Konjunktiv from "@/views/Konjunktiv-II.vue";
 // import Nomen from "@/views/Nomen.vue";
 // import SignUp from "@/views/SignUp.vue";
@@ -20,8 +20,8 @@ import Demonstrativ from "@/views/Demonstrativ.vue";
 // import Tasks from "@/components/Tasks.vue";
 // import Verben from "@/views/Verben.vue";
 // import Rektion from "@/views/Rektion.vue";
-// import Deklination from "@/views/Deklination.vue";
-// import PronominaleAdverbien from "@/views/PronominaleAdverbien.vue";
+import Deklination from "@/views/Deklination.vue";
+import PronominaleAdverbien from "@/views/PronominaleAdverbien.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -37,8 +37,8 @@ const router = createRouter({
     { path: "/login", name: "Login", component: Login },
     { path: "/privat", name: "Privat", component: Privat },
     { path: "/demonstrativ", name: "Demonstrativ", component: Demonstrativ },
-    // { path: "/modal", name: "Modal", component: Modal },
-    // { path: "/passiv", name: "Passiv", component: Passiv },
+    { path: "/modal", name: "Modal", component: Modal },
+    { path: "/passiv", name: "Passiv", component: Passiv },
     // { path: "/konjunktiv", name: "Konjunktiv", component: Konjunktiv },
     // { path: "/nomen", name: "Nomen", component: Nomen },
     // { path: "/signup", name: "SignUp", component: SignUp },
@@ -46,12 +46,12 @@ const router = createRouter({
     // { path: "/tasks", name: "Tasks", component: Tasks },
     // { path: "/verben", name: "Verben", component: Verben },
     // { path: "/rektion", name: "Rektion", component: Rektion },
-    // { path: "/deklination", name: "Deklination", component: Deklination },
-    // {
-    //   path: "/pronominaleAdverbien",
-    //   name: "PronominaleAdverbien",
-    //   component: PronominaleAdverbien,
-    // },
+    { path: "/deklination", name: "Deklination", component: Deklination },
+    {
+      path: "/pronominaleAdverbien",
+      name: "PronominaleAdverbien",
+      component: PronominaleAdverbien,
+    },
   ],
 });
 

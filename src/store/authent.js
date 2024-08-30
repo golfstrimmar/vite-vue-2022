@@ -25,6 +25,10 @@ export const useAuthStore = defineStore("auth", {
       Reflexiv: [],
       Possessiv: [],
       Demonstrativ: [],
+      Deklination: [],
+      PronominaleAdverbien: [],
+      Modalverben: [],
+      Passiv: [],
     },
   }),
   actions: {

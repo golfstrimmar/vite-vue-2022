@@ -58,7 +58,14 @@
 import { ref, computed, onMounted, watchEffect, toRaw, reactive } from 'vue';
 var sortSlot = reactive([]);
 var content = reactive([]);
-const props = defineProps({ Slot: { type: Array, required: false } })
+const props = defineProps({
+	Slot: {
+		type: Array,
+		required: false
+	},
+
+})
+
 watchEffect(() => {
 	content.value = props.Slot
 	const orderArray = ['Nominativ', 'Dativ', 'Akkusativ', 'Genitiv', 'Nominativ Ersatz', 'Dativ Ersatz', 'Akkusativ Ersatz', 'Genitiv Ersatz', 'Singular', 'Plural'];

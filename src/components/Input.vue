@@ -38,18 +38,11 @@ const HendleEventInput = () => {
     focused.value = false
     success.value = true
     some.value.setAttribute('disabled', true)
-    props.content.forEach(car => {
-      if (car == props.Antwort) {
-
-        if (props.content.length - 1 == props.content.indexOf(car)) {
-          emit('lineFertig', some.value)
-        } else {
-          if (some.value.nextElementSibling) {
-            some.value.nextElementSibling.focus();
-          }
-        }
-      }
-    })
+    if (some.value.nextElementSibling) {
+      some.value.nextElementSibling.focus();
+    } else {
+      emit('lineFertig', some.value)
+    }
   }
 }
 watch(() => props.resetInputs, (newVal) => {

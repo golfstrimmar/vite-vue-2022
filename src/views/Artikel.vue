@@ -76,8 +76,12 @@ onMounted(() => {
   }, 1000);
 });
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .plaza__line {
   padding: 5px 0 0 0;
+}
+
+.akkord__body {
+  grid-template-columns: 150px 1fr;
 }
 </style>

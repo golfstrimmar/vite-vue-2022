@@ -1,35 +1,63 @@
 <template lang='pug'>
+
+//- div(v-for="el in topTable" :key="index"  )
+//-   div(v-if="el.isOpen")
+//-   .plaza(v-for="i in topTable.row1" :key="index") {{i}}
 .akkord(:class="(titlesObject == false) ? 'kurz' : ''" )
-  .akkord__nav(v-if= "titlesObject") 
-    Button(  v-for="item in props.titles" :key="index" :item='item' :text='item.title' @click='ButtonHandler(item.id) ' )
-  .akkord__items
-    div(v-for="Data in contentData.value" :key="index")
-      .block( :class="(Data.isOpen == true) ? '_is-active' : '' "  )
-        .block__buttons(v-if="AuthStore.isAuthenticated")
-          Button( text='Mischen'   @click = "handlerClick(Data)"  svg='arrow-repeat')
-          Button( text='Start'  @click='start'    svg='sport')
-          Button( text='Stop'   @click='stop'    svg='stopwatch')
-          Button( text='Reset'   @click='reset'    )
-        .tablo(v-if="AuthStore.isAuthenticated")
-          span.zeit Anzahl der richtigen Antworten:  
-            span {{ count }}
-          span.zeit Sie haben für das Training ausgegeben:   
-            span {{ formattedTime }}
-        .spielPlatz
-          .block__line(v-for="el in Data" :key="index" ) 
-            .block__info 
-              h4 {{el.text}}
-              button.tooltip(v-tool  :data = "el.content")
-                span i
-            div
-              Input(:Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
+
+
+  .akkord__body
+    .akkord__nav(v-if= "titlesObject") 
+      Button(  v-for="item in props.titles" :key="index" :item='item' :text='item.title' @click='ButtonHandler(item.id) ' )
+    .akkord__items
+      div(v-for="Data in contentData.value" :key="index")
+        .block( :class="(Data.isOpen == true) ? '_is-active' : '' "  )
+          div(v-for="item in props.table" :key="index")
+            .tabel(v-if=" item.isOpen==true" )
+              ul
+                li ich
+                li du
+                li er,sie,es
+                li ihr
+                li wir,sie,Sie 
+                li
+                  ul
+                    li(v-for="i in item.row1" :key="index" ) {{ i }} 
+
+          .block__buttons(v-if="AuthStore.isAuthenticated")
+            Button( text='Mischen'   @click = "handlerClick(Data)"  svg='arrow-repeat')
+            Button( text='Start'  @click='start'    svg='sport')
+            Button( text='Stop'   @click='stop'    svg='stopwatch')
+            Button( text='Reset'   @click='reset'    )
+          .tablo(v-if="AuthStore.isAuthenticated")
+            span.zeit Anzahl der richtigen Antworten:  
+              span {{ count }}
+            span.zeit Sie haben für das Training ausgegeben:   
+              span {{ formattedTime }}
+          .spielPlatz
+
+            .block__line(v-for="el in Data" :key="index" ) 
+              .block__info 
+                h4 {{el.text}}
+                button.tooltip(v-if="el.x" v-tool  :data = "el.x")
+                  span i
+                button.tooltip(v-if="el.content"  v-tool  :data = "el.content")
+                  span i
+              div
+              Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
+              Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
 </template>
 
 <script setup>
 import { ref, onMounted, computed, reactive, watchEffect } from 'vue';
 import Input from '@/components/Input.vue';
 import Button from '@/components/Button.vue';
-var contentData = reactive([]);
+import Plaza from "@/components/Plaza.vue";
+
+// ============================
+
+
+// ============================
 const props = defineProps({
   titles: {
     type: Array,
@@ -38,7 +66,12 @@ const props = defineProps({
   Data: {
     type: Array,
     required: false
-  }
+  },
+  table: {
+    type: Object,
+    required: false
+  },
+
 })
 var time = ref(0);        // Количество секунд
 var interval = ref(null);   // Интервал для обновления времени
@@ -81,12 +114,13 @@ const handlerClick = (Data) => {
 // --------------------------
 const ButtonHandler = (id) => {
   props.titles.forEach(car => {
-    car.id == id ? car.isOpen = true :
-      car.isOpen = false
+    car.id == id ? car.isOpen = true : car.isOpen = false
   })
   props.Data.forEach(car => {
-    car.id == id ? car.isOpen = true :
-      car.isOpen = false
+    car.id == id ? car.isOpen = true : car.isOpen = false
+  })
+  topTable.value.forEach(car => {
+    car.id == id ? car.isOpen = true : car.isOpen = false
   })
 };
 // --------------------------
@@ -112,13 +146,21 @@ const titlesObject = computed(() => {
   return props.titles.length > 1
 }
 )
+
+
+var contentData = reactive([]);
+var topTable = reactive([]);
+
 watchEffect(() => {
-  contentData.value = props.Data
+  contentData.value = props.Data;
+  topTable.value = props.table;
+
 })
+
 </script>
 
 <style lang='scss' scoped>
-.akkord {
+.akkord__body {
   display: grid;
   grid-template-columns: 150px 1fr;
   column-gap: 5px;
@@ -128,6 +170,55 @@ watchEffect(() => {
     grid-template-columns: 1fr;
   }
 }
+
+.tabel {
+  background-color: #fff;
+  border: 2px solid $brown-7;
+  box-shadow: 1px 1px 4px #666;
+  border-radius: 3px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: "Roboto-Regular", sans-serif;
+  margin: 0 0 10px 0;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+
+    li {
+
+      line-height: 1;
+      outline: 1px solid #ededed;
+      text-shadow: none;
+      text-align: center;
+      padding: 3px;
+
+      &:last-of-type {
+        border-right: none;
+      }
+
+      &:not(:has(ul)) {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      &:has(ul) {
+
+        padding: 0 0 0 0;
+        grid-row: 2/3;
+        grid-column: 1 / -1;
+
+        & ul li {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+
 
 .akkord__nav {
   display: flex;
@@ -250,7 +341,7 @@ watchEffect(() => {
 }
 
 @media (max-width: 600px) {
-  .akkord {
+  .akkord__body {
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 0;
@@ -301,6 +392,101 @@ watchEffect(() => {
         }
       }
     }
+  }
+}
+
+.plaza {
+  display: grid;
+  // grid-auto-flow: column;
+  column-gap: 20px;
+  row-gap: 15px;
+  grid-template-columns: repeat(auto-fill, 400px);
+
+  table {
+    margin: 5px 0;
+    background-color: #fff;
+    border: 2px solid $brown-7;
+    box-shadow: 1px 1px 4px #666;
+    border-radius: 3px;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    text-align: center;
+    font-family: "Roboto-Regular", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: none;
+    min-width: 256px;
+  }
+
+  thead {
+    display: table-header-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+  }
+
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+  }
+
+  table th:first-child {
+    border-left: none;
+  }
+
+  table th {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
+    vertical-align: middle;
+    background-color: $brown-5;
+    color: #fff;
+    padding: 1px 3px;
+
+    & p {
+      font-size: 16px;
+    }
+  }
+
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+  }
+
+
+
+  table td {
+    display: table-cell;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+  }
+
+  table td {
+    border-top: 1px solid #ededed;
+    border-left: 1px solid #ededed;
+    color: #202020;
+    padding: 1px 3px;
+    line-height: 1.5rem;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  tbody tr td:first-child {
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .big {
+    display: flex;
+    column-gap: 4px;
+    justify-content: center;
+    border: none;
+    padding: 3px 0;
   }
 }
 </style>

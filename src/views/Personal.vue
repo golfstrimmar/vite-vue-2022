@@ -44,3 +44,9 @@ const authStore = useAuthStore();
 const addTime = (formattedTime, count, countAll) => { authStore.refresh('Personal', formattedTime, count, countAll) };
 // --------------------------
 </script>
+<style lang="scss" scoped>
+.akkord__body {
+  grid-template-columns: 1fr;
+  // grid-template-columns: 150px 1fr;
+}
+</style>
