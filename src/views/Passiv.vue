@@ -14,8 +14,17 @@
       p ✔️ несовершенный пассив или по-другому его называют пассив действия 
       p 👌 Это значит, что действие, которое совершается над объектом не было завершено, мы не знаем его результат.
       p ✔️ Das Vorgangspassiv stellt den Vorgang, die Handlung oder das Geschehen in den Vordergrund.Button( :text='item.title' @click='HandlerClick(item.id)' :disabled="isButtonDisabled" :class="(isButtonDisabled == true  ) ? '_is-active' : '' " )
-  .base-area
-    Base( v-for="item in titles" :key="index"  :item='item'   )
+    .base-area
+      .base-area__unit
+        h3 Verben
+        Base( v-for="item in titlesVorgangspas" :key="index"  :item='item'   )
+      .base-area__unit
+        h3 Modalverben
+        Base( v-for="item in titlesModal" :key="index"  :item='item'   )
+      .base-area__unit
+        h3 Konjunktiv II
+        Base( v-for="item in titlesKonjunktiv" :key="index"  :item='item'   )
+
   .page-block.amber-3
     .page-title--small
       h2 Das Zustandspassiv
@@ -30,6 +39,16 @@
       p ✔️ Manche Formen des Zustandspassivs ähneln sehr den Aktivformen.
       p Um herauszufinden, ob ein Satz im Zustandspassiv oder im Aktiv steht, setzt du ihn ins Vorgangspassiv. Ist das möglich, 
       p handelt es sich um das Zustandspassiv. Ist dies nicht möglich, steht der Satz im Aktiv.
+    .base-area
+      .base-area__unit
+        h3 Verben
+        Base( v-for="item in titlesZustandspassiv" :key="index"  :item='item'   )
+      .base-area__unit
+        h3 Modalverben
+        Base( v-for="item in titlesZustandspassivModalverben" :key="index"  :item='item'   )
+      .base-area__unit
+        h3 Konjunktiv II
+        Base( v-for="item in titlesZustandsKonjunktiv" :key="index"  :item='item'   )
 
   Loader(v-if="isLoading")
 </template>
@@ -43,30 +62,61 @@ import { db } from "@/firebase/config.ts";
 import { collection, query, onSnapshot, getDoc, doc, setDoc, } from "firebase/firestore";
 import { useRouter } from 'vue-router' // import router
 const router = useRouter();
-// -------
-var titles = ref([
-  { id: 0, title: 'Vorgangspassivs Präsens', dbTopE: "Vorgangspassivs", dbTopZ: "Präsens", dbItems: "SlotVorgangspassivsPräsens", isOpen: false },
-  { id: 1, title: 'Vorgangspassivs Präteritum', dbTopE: "Vorgangspassivs", dbTopZ: "Präteritum", dbItems: "SlotVorgangspassivsPräteritum", isOpen: false },
-  { id: 3, title: 'Vorgangspassivs Perfekt', dbTopE: "Vorgangspassivs", dbTopZ: "Perfekt", dbItems: "SlotVorgangspassivsPerfekt", isOpen: false },
-  { id: 4, title: 'Vorgangspassivs Plusquamperfekt', dbTopE: "Vorgangspassivs", dbTopZ: "Plusquamperfekt", dbItems: "SlotVorgangspassivsPlusquamperfekt", isOpen: false },
-  { id: 5, title: 'Vorgangspassivs Futur1', dbTopE: "Vorgangspassivs", dbTopZ: "VorgangsFutur1", dbItems: "SlotZustandspassivsFuturum", isOpen: false },
 
-  { id: 6, title: 'Müssen', dbTopE: "", dbTopZ: "", dbItems: "Slotmüssen", isOpen: false },
 
-  { id: 7, title: 'Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotGegenwartPassiv", isOpen: false },
-  { id: 8, title: 'Vergangenheit Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotVergangenheitPassiv", isOpen: false },
-  { id: 9, title: 'FuturI Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotFuturIPassiv", isOpen: false },
-  { id: 10, title: 'FuturII Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotFuturIIPassiv", isOpen: false },
-  { id: 11, title: 'Modalverben Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenGegenwartPassiv", isOpen: false },
-  { id: 12, title: 'Modalverben Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenGegenwartPassiv", isOpen: false },
-  { id: 13, title: 'Modalverben Vergangenheit Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenVergangenheitPassiv", isOpen: false },
-  { id: 14, title: 'Modalverben FuturII Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenFuturIIPassiv", isOpen: false },
+// --------------Vorgangspas-----
 
-]);
+var titlesVorgangspas = ref([
+  { id: 0, title: 'Werben', dbTopE: "Vorgangspassivs", dbTopZ: "Werben", isOpen: false },
+
+])
+// , dbItems: "SlotVorgangspassivsPräsens"
+
+var titlesModal = ref([
+  { id: 1, title: 'Modalverben  Präsens', dbTopE: "Vorgangspassivs", dbTopZ: "PräsensModalverb", isOpen: false },
+  { id: 2, title: 'Modalverben  Präteritum', dbTopE: "Vorgangspassivs", dbTopZ: "PräteritumModalverb", isOpen: false },
+  { id: 3, title: 'Modalverben  Perfekt', dbTopE: "Vorgangspassivs", dbTopZ: "PerfektModalverb", isOpen: false },
+  { id: 3, title: 'Modalverben  Plusquamperfekt', dbTopE: "Vorgangspassivs", dbTopZ: "PlusquamperfektModalverb", isOpen: false },
+  { id: 3, title: 'Modalverben  Futur1', dbTopE: "Vorgangspassivs", dbTopZ: "Futur1Modalverb", isOpen: false },
+])
+
+var titlesKonjunktiv = ref([
+  { id: 1, title: 'KonjunktivII', dbTopE: "Vorgangspassivs", dbTopZ: "KonjunktivII", isOpen: false },
+])
+
+// --------------Zustands-----
+var titlesZustandspassiv = ref([
+  { id: 1, title: 'Werben', dbTopE: "Zustandspassiv", dbTopZ: "Werben", isOpen: false },
+])
+
+var titlesZustandspassivModalverben = ref([
+  { id: 1, title: 'Modalverben Präsens', dbTopE: "Zustandspassiv", dbTopZ: "PräsensModalverb", isOpen: false },
+  { id: 1, title: 'Modalverben Präteritum', dbTopE: "Zustandspassiv", dbTopZ: "PräteritumModalverb", isOpen: false },
+  { id: 1, title: 'Modalverben Perfekt', dbTopE: "Zustandspassiv", dbTopZ: "PerfektModalverb", isOpen: false },
+  { id: 1, title: 'Modalverben Plusquamperfekt', dbTopE: "Zustandspassiv", dbTopZ: "PlusquamperfektModalverb", isOpen: false },
+  { id: 1, title: 'Modalverben Futur1', dbTopE: "Zustandspassiv", dbTopZ: "Futur1Modalverb", isOpen: false },
+])
+
+var titlesZustandsKonjunktiv = ref([
+  { id: 1, title: 'KonjunktivII', dbTopE: "Zustandspassiv", dbTopZ: "KonjunktivII", isOpen: false },
+])
+
+// ---------------------
+
+// { id: 7, title: 'Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotGegenwartPassiv", isOpen: false },
+// { id: 8, title: 'Vergangenheit Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotVergangenheitPassiv", isOpen: false },
+// { id: 9, title: 'FuturI Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotFuturIPassiv", isOpen: false },
+// { id: 10, title: 'FuturII Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotFuturIIPassiv", isOpen: false },
+
+
+
+// { id: 11, title: 'Modalverben Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenGegenwartPassiv", isOpen: false },
+// { id: 12, title: 'Modalverben Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenGegenwartPassiv", isOpen: false },
+// { id: 13, title: 'Modalverben Vergangenheit Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenVergangenheitPassiv", isOpen: false },
+// { id: 14, title: 'Modalverben FuturII Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenFuturIIPassiv", isOpen: false },
 
 
 const CloseAndere = (id) => {
-  console.log(id);
   titles.value.forEach(car => {
     car.id == id ? car.isOpen = true : car.isOpen = false;
 
@@ -487,6 +537,52 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
+.base-area {
+  margin: 5px 0 10px;
+
+
+  &__unit {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+
+    @media (max-width: 600px) {}
+
+    h3 {
+      grid-column: 1/-1;
+      font-family: "RR", sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: #5d4037;
+      text-transform: uppercase;
+      line-height: 1.5;
+      text-shadow: 0 0 5px white;
+      margin: 0 50px 0 0;
+    }
+
+    &:nth-child(1) {
+      background: lighten($purple-3, 20%);
+      border: 3px solid lighten($purple-3, 10%);
+    }
+
+    &:nth-child(2) {
+      background: lighten($light-blue-7, 20%);
+      border: 3px solid lighten($light-blue-7, 10%);
+    }
+
+    &:nth-child(3) {
+      background: lighten($cyan-6, 20%);
+      border: 3px solid lighten($cyan-6, 10%);
+    }
+  }
+}
+
+
+
+
 p {
   padding: 3px 0;
 }
@@ -495,13 +591,5 @@ p {
   &:last-child {
     margin: 0 0 10px 0;
   }
-}
-
-.base-area {
-  display: flex;
-  gap: 5px 5px;
-  margin: 5px 0 10px;
-  flex-wrap: wrap;
-
 }
 </style>

@@ -41,9 +41,6 @@ const props = defineProps({
 	line-height: 1;
 	position: relative;
 
-
-
-
 	svg {
 		color: #666565;
 		width: 15px;
@@ -70,9 +67,5 @@ const props = defineProps({
 			color: #f1bbbb;
 		}
 	}
-}
-
-:where(.but-wave svg) {
-	position: relative;
 }
 </style>

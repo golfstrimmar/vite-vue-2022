@@ -3,37 +3,69 @@
 	Button( :text='item.title' @click='HandlerClick(item.id)' :disabled="isButtonDisabled" :class="[(isButtonDisabled == true  ) ? '_is-active' : '', 'activButton' ]"   svg='click'   )
 	.base__hidden(:class="(isButtonDisabled == true) ? '_is-active' : '' ")
 		Button(@click='HandlerClose' svg='x-circle' margin='0' class='ButtonClose')
-		.tabel(v-if="TopVorPräsens.row1 && isButtonDisabled==true")
-			ul
-				li ich
-				li du
-				li er,sie,es
-				li ihr
-				li wir,sie,Sie 
-				li
-					ul
-						li(v-for="i in TopVorPräsens.row1" :key="index" ) {{ i }} 
-		.block__buttons(v-if="TopVorPräsens.row1 && AuthStore.isAuthenticated && isButtonDisabled==true")
-			Button( text='Mischen'   @click = "handlerClick(Data)"  svg='arrow-repeat')
-			Button( text='Start'  @click='start'    svg='sport')
-			Button( text='Stop'   @click='stop'    svg='stopwatch')
-			Button( text='Reset'   @click='reset'    )
-		.tablo(v-if="TopVorPräsens.row1 && AuthStore.isAuthenticated && isButtonDisabled==true")
-			span.zeit Anzahl der richtigen Antworten:  
-				span {{ count }}
-			span.zeit Sie haben für das Training ausgegeben:   
-				span {{ formattedTime }}
-		.spielPlatz(v-if="TopVorPräsens.row1 && isButtonDisabled==true")
-			.block__line(v-for="el in ContVorPräsens" :key="index" v-if="ContVorPräsens") 
-				.block__info 
-					h4 {{el.text}}
-					button.tooltip(v-if="el.x" v-tool  :data = "el.x")
-						span i
-					button.tooltip(v-if="el.content"  v-tool  :data = "el.content")
-						span i
-				div
-					Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
-					Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
+		.tabel(v-if=" isButtonDisabled==true")
+			ul(v-if="TopTemp.row1")
+				li(v-for="i in TopTemp.row1" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Dürfen")
+				li(v-for="i in TopTemp.Dürfen" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Dürfen")
+				li(v-for="i in TopTemp.Können" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Möchten")
+				li(v-for="i in TopTemp.Möchten" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Mögen")
+				li(v-for="i in TopTemp.Mögen" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Müssen")
+				li(v-for="i in TopTemp.Müssen" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Sollen")
+				li(v-for="i in TopTemp.Sollen" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Wollen")
+				li(v-for="i in TopTemp.Wollen" :key="index" ) {{ i }} 
+
+			ul(v-if="TopTemp.Gegenwart")
+				li(v-for="i in TopTemp.Gegenwart" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Vergangenheit")
+				li(v-for="i in TopTemp.Vergangenheit" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.FuturI")
+				li(v-for="i in TopTemp.FuturI" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.FuturII")
+				li(v-for="i in TopTemp.FuturII" :key="index" ) {{ i }} 
+
+			ul(v-if="TopTemp.Präsens")
+				li(v-for="i in TopTemp.Präsens" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Präteritum")
+				li(v-for="i in TopTemp.Präteritum" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Perfekt")
+				li(v-for="i in TopTemp.Perfekt" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Plusquamperfekt")
+				li(v-for="i in TopTemp.Plusquamperfekt" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Futur1")
+				li(v-for="i in TopTemp.Futur1" :key="index" ) {{ i }} 
+
+
+
+
+		//- .block__buttons(v-if="TopVorPräsens.row1 && AuthStore.isAuthenticated && isButtonDisabled==true")
+		//- 	Button( text='Mischen'   @click = "Mischen(Temp)"  svg='arrow-repeat')
+		//- 	Button( text='Start'  @click='start'    svg='sport')
+		//- 	Button( text='Stop'   @click='stop'    svg='stopwatch')
+		//- 	Button( text='Reset'   @click='reset'    )
+		//- .tablo(v-if="TopVorPräsens.row1 && AuthStore.isAuthenticated && isButtonDisabled==true")
+		//- 	span.zeit Anzahl der richtigen Antworten:  
+		//- 		span {{ count }}
+		//- 	span.zeit Sie haben für das Training ausgegeben:   
+		//- 		span {{ formattedTime }}
+		//- .spielPlatz(v-if="TempLow && isButtonDisabled==true")
+		//- 	.block__line(v-for="el in TempLow" :key="index" v-if="Temp") 
+		//- 		.block__info 
+		//- 			h4 {{el.text}}
+		//- 			button.tooltip(v-if="el.x" v-tool  :data = "el.x")
+		//- 				span i
+		//- 			button.tooltip(v-if="el.content"  v-tool  :data = "el.content")
+		//- 				span i
+		//- 		div
+		//- 			Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
+		//- 			Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
+
 </template>
 <script setup>
 import { ref, computed, onMounted, watchEffect, nextTick } from 'vue';
@@ -58,8 +90,8 @@ import { db } from "@/firebase/config.ts";
 import { collection, query, onSnapshot, getDoc, doc, setDoc, } from "firebase/firestore";
 // -----
 
-var TopVorPräsens = ref([]);
-var ContVorPräsens = ref([]);
+var TopTemp = ref([]);
+var LowTemp = ref([]);
 const emit = defineEmits(['CloseAndere'])
 const HandlerClick = async () => {
 
@@ -73,7 +105,7 @@ const HandlerClick = async () => {
 					behavior: 'smooth', // 'smooth' для плавного возврата
 				});
 			});
-			TopVorPräsens.value = docSnap.data();
+			TopTemp.value = docSnap.data();
 			emit('CloseAndere', props.item.id)
 			document.querySelector('body').classList.add("_lock");
 			isButtonDisabled.value = true;
@@ -81,12 +113,15 @@ const HandlerClick = async () => {
 	} catch (e) {
 		console.error("Error getting document: ", e);
 	}
-	onSnapshot(query(collection(db, props.item.dbItems)), (querySnapshot) => {
-		querySnapshot.forEach((doc) => {
-			ContVorPräsens.value.push(doc.data());
-		});
-	})
 
+
+	if (props.item.dbItems) {
+		onSnapshot(query(collection(db, props.item.dbItems)), (querySnapshot) => {
+			querySnapshot.forEach((doc) => {
+				LowTemp.value.push(doc.data());
+			});
+		})
+	}
 };
 
 
@@ -99,6 +134,10 @@ const formattedTime = computed(() => {
 	const seconds = (time.value % 60).toString().padStart(2, '0');
 	return `${hours}h ${minutes}m ${seconds}s`;
 })
+
+const Mischen = (Data) => {
+	Data.sort(() => Math.random() - 0.5);
+}
 const start = () => {
 	if (!interval.value) {
 		interval.value = setInterval(() => {
@@ -149,16 +188,38 @@ const HandlerClose = () => {
 };
 </script>
 <style lang='scss' scoped>
-button {
-	padding: 5px;
-	margin: 10px 0;
+.but-wave {
+	padding: 5px 8px;
 
 	&.activButton {
 		min-height: 50px;
-		padding: 5px 27px 5px 5px;
 	}
+
+	&:has(svg) {
+		padding: 8px 30px 8px 5px;
+	}
+
+
 }
 
+.but-wave.ButtonClose {
+	padding: 3px;
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+	display: grid;
+	place-items: center;
+
+	svg {
+		width: 17px;
+		height: 17px;
+		position: relative;
+	}
+}
 
 .tablo {
 	margin: 0 0 10px 0;
@@ -188,37 +249,35 @@ button {
 
 
 	ul {
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		align-items: center;
+		// display: grid;
+		// grid-template-columns: repeat(auto-fill, max-content);
+		// grid-auto-flow: column;
+		// align-items: center;
+		outline: 1px solid #ededed;
+		padding: 5px 0;
+
+		@media (max-width: 600px) {
+			grid-auto-flow: row;
+		}
 
 		li {
 
-			line-height: 1;
-			outline: 1px solid #ededed;
+			line-height: .8;
 			text-shadow: none;
-			text-align: center;
 			padding: 3px;
+			white-space: nowrap;
 
-			&:last-of-type {
-				border-right: none;
+			@media (max-width: 600px) {
+				white-space: wrap;
 			}
 
-			&:not(:has(ul)) {
-				font-size: 16px;
+			&:first-of-type {
 				font-weight: 600;
 			}
 
-			&:has(ul) {
 
-				padding: 0 0 0 0;
-				grid-row: 2/3;
-				grid-column: 1 / -1;
-
-				& ul li {
-					font-size: 14px;
-					font-weight: 400;
-				}
+			&:last-of-type {
+				border-right: none;
 			}
 		}
 	}
@@ -283,13 +342,5 @@ button {
 	&._is-active {
 		transform: scale(1);
 	}
-}
-
-.ButtonClose {
-	position: fixed;
-	top: 10px;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 100%;
 }
 </style>
