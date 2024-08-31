@@ -44,8 +44,8 @@
                 button.tooltip(v-if="el.content"  v-tool  :data = "el.content")
                   span i
               div
-              Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
-              Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
+                Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
+                Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
 </template>
 
 <script setup>
@@ -119,7 +119,7 @@ const ButtonHandler = (id) => {
   props.Data.forEach(car => {
     car.id == id ? car.isOpen = true : car.isOpen = false
   })
-  topTable.value.forEach(car => {
+  props.table.forEach(car => {
     car.id == id ? car.isOpen = true : car.isOpen = false
   })
 };
@@ -129,10 +129,11 @@ var countAll = ref(0);
 const lineFertig = (some) => {
   if (some.closest(".block__line").nextElementSibling) {
     some.closest(".block__line").nextElementSibling.querySelector('input').focus();
-    count.value++
+
   }
   let lineItems = [...some.closest(".block").querySelectorAll(".block__line")];
   countAll.value = lineItems.length
+  count.value++
 }
 import { useAuthStore } from '../store/authent';
 const AuthStore = useAuthStore();

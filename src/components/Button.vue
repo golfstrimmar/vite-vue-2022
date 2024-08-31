@@ -1,5 +1,5 @@
 <template lang='pug'>
-button.but-wave(type = "button" v-button :class="(props.item && props.item.isOpen == true  ) ? '_is-active' : '' "  )  {{ props.text }}
+button.but-wave(type = "button" v-button :class="(props.item && props.item.isOpen == true  ) ? '_is-active' : '' "  :disabled="props.item && props.item.isOpen == true")  {{ props.text }}
 	SvgIcon(:name='props.svg' v-if="props.svg " :style="{ margin: props.margin }")
 </template>
 <script setup>
@@ -38,8 +38,10 @@ const props = defineProps({
 	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
 	transition: all 0.2s linear;
 	background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
-	position: relative;
 	line-height: 1;
+	position: relative;
+
+
 
 
 	svg {
@@ -47,10 +49,15 @@ const props = defineProps({
 		width: 15px;
 		height: 15px;
 		transition: all 0.2s linear;
-		margin: -3px 0 0px 7px;
+		position: absolute;
+		top: 50%;
+		right: 0%;
+		transform: translate(-50%, -50%);
 	}
 
-	&._is-active {
+	&._is-active,
+	&:disabled,
+	&:disabled:hover {
 		color: #eb2f2f;
 		text-shadow: 0px 0px 6px #eb2f2f;
 	}
@@ -63,5 +70,9 @@ const props = defineProps({
 			color: #f1bbbb;
 		}
 	}
+}
+
+:where(.but-wave svg) {
+	position: relative;
 }
 </style>
