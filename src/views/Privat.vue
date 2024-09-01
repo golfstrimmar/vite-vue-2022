@@ -85,7 +85,6 @@ section.privat(v-if= "AuthStore.user !== null ")
 							span {{item.stoppuhr}}
 							ProgressCircle(:percent='item.prozent')
 							Button(  @click="clickHandler('Modalverben',item)" svg='x-circle' margin='0')
-
 				.result(v-if="!!AuthStore.user.Passiv")
 					h3 Passiv
 					.result__content
@@ -94,11 +93,7 @@ section.privat(v-if= "AuthStore.user !== null ")
 							span {{item.stoppuhr}}
 							ProgressCircle(:percent='item.prozent')
 							Button(  @click="clickHandler('Passiv',item)" svg='x-circle' margin='0')
-	
-
-
 </template>
-
 <script setup>
 import ProgressCircle from "@/components/ProgressCircle.vue";
 import { useAuthStore } from '../store/authent';
@@ -108,8 +103,6 @@ import Button from "@/components/Button.vue";
 const clickHandler = (data, item) => {
 	AuthStore.delititem(data, item)
 };
-
-
 </script>
 <style lang='scss' scoped>
 h2 {
@@ -122,7 +115,6 @@ h3 {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1;
-
 }
 
 p {
@@ -173,7 +165,6 @@ p {
 			&:last-of-type {
 				border-right: none;
 			}
-
 		}
 	}
 }
@@ -195,7 +186,6 @@ p {
 	&__content {
 		display: flex;
 		flex-direction: column;
-
 	}
 
 	&__unit {
@@ -229,12 +219,9 @@ p {
 			cursor: pointer;
 			border-radius: 100%;
 
-
 			svg {
 				margin: 0;
 			}
-
-
 		}
 
 		span {
@@ -244,20 +231,13 @@ p {
 			min-width: 100px;
 			text-align: center;
 			padding: 3px;
-
 		}
 
 		.progress-circle {
 			width: 77px;
 		}
-
-
 	}
-
-
 }
-
-
 
 @media (max-width: 600px) {
 	.privat__body {
@@ -267,7 +247,6 @@ p {
 	}
 
 	.tabel {
-
 		&__head {
 			grid-template-columns: 128px 138px;
 			grid-template-areas: "a b" "a c" "a d";
@@ -287,7 +266,6 @@ p {
 			._d {
 				grid-area: d;
 			}
-
 		}
 	}
 
@@ -298,6 +276,5 @@ p {
 			top: 73%;
 		}
 	}
-
 }
 </style>

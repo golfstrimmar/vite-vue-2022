@@ -6,7 +6,6 @@
   .page-block.deep-orange-2
     p(style="color: red;font-weight: 800;") Многие формы пассива не преводятся дословно на русский или звучат некорректно!
     p(style="color: red;font-weight: 800;") Viele Formen des Passivs werden nicht wörtlich ins Russische übersetzt oder klingen falsch!
-
   .page-block.blue-grey-4
     .page-title--small
       h2 Das Vorgangspassiv 
@@ -24,7 +23,6 @@
       .base-area__unit
         h3 Konjunktiv II
         Base( v-for="item in titlesKonjunktiv" :key="index"  :item='item'   )
-
   .page-block.amber-3
     .page-title--small
       h2 Das Zustandspassiv
@@ -35,7 +33,6 @@
       p ✔️ Некоторые формы пассивного состояния очень похожи на активные формы.
       p Чтобы узнать, находится ли предложение в пассивном состоянии или в активном состоянии, установите его в пассивное   состояние. 
       p Если это возможно, то речь идет о пассиве состояния. Если это невозможно, предложение остается в активе.
-
       p ✔️ Manche Formen des Zustandspassivs ähneln sehr den Aktivformen.
       p Um herauszufinden, ob ein Satz im Zustandspassiv oder im Aktiv steht, setzt du ihn ins Vorgangspassiv. Ist das möglich, 
       p handelt es sich um das Zustandspassiv. Ist dies nicht möglich, steht der Satz im Aktiv.
@@ -49,10 +46,8 @@
       .base-area__unit
         h3 Konjunktiv II
         Base( v-for="item in titlesZustandsKonjunktiv" :key="index"  :item='item'   )
-
   Loader(v-if="isLoading")
 </template>
-
 <script setup>
 import Loader from "@/components/Loader.vue";
 import Base from "@/components/Base.vue";
@@ -62,70 +57,50 @@ import { db } from "@/firebase/config.ts";
 import { collection, query, onSnapshot, getDoc, doc, setDoc, } from "firebase/firestore";
 import { useRouter } from 'vue-router' // import router
 const router = useRouter();
-
-
 // --------------Vorgangspas-----
-
 var titlesVorgangspas = ref([
   { id: 0, title: 'Werben', dbTopE: "Vorgangspassivs", dbTopZ: "Werben", isOpen: false },
-
 ])
 // , dbItems: "SlotVorgangspassivsPräsens"
-
 var titlesModal = ref([
   { id: 1, title: 'Modalverben  Präsens', dbTopE: "Vorgangspassivs", dbTopZ: "PräsensModalverb", isOpen: false },
   { id: 2, title: 'Modalverben  Präteritum', dbTopE: "Vorgangspassivs", dbTopZ: "PräteritumModalverb", isOpen: false },
   { id: 3, title: 'Modalverben  Perfekt', dbTopE: "Vorgangspassivs", dbTopZ: "PerfektModalverb", isOpen: false },
-  { id: 3, title: 'Modalverben  Plusquamperfekt', dbTopE: "Vorgangspassivs", dbTopZ: "PlusquamperfektModalverb", isOpen: false },
-  { id: 3, title: 'Modalverben  Futur1', dbTopE: "Vorgangspassivs", dbTopZ: "Futur1Modalverb", isOpen: false },
+  { id: 4, title: 'Modalverben  Plusquamperfekt', dbTopE: "Vorgangspassivs", dbTopZ: "PlusquamperfektModalverb", isOpen: false },
+  { id: 5, title: 'Modalverben  Futur1', dbTopE: "Vorgangspassivs", dbTopZ: "Futur1Modalverb", isOpen: false },
 ])
-
 var titlesKonjunktiv = ref([
   { id: 1, title: 'KonjunktivII', dbTopE: "Vorgangspassivs", dbTopZ: "KonjunktivII", isOpen: false },
 ])
-
 // --------------Zustands-----
 var titlesZustandspassiv = ref([
   { id: 1, title: 'Werben', dbTopE: "Zustandspassiv", dbTopZ: "Werben", isOpen: false },
 ])
-
 var titlesZustandspassivModalverben = ref([
   { id: 1, title: 'Modalverben Präsens', dbTopE: "Zustandspassiv", dbTopZ: "PräsensModalverb", isOpen: false },
-  { id: 1, title: 'Modalverben Präteritum', dbTopE: "Zustandspassiv", dbTopZ: "PräteritumModalverb", isOpen: false },
-  { id: 1, title: 'Modalverben Perfekt', dbTopE: "Zustandspassiv", dbTopZ: "PerfektModalverb", isOpen: false },
-  { id: 1, title: 'Modalverben Plusquamperfekt', dbTopE: "Zustandspassiv", dbTopZ: "PlusquamperfektModalverb", isOpen: false },
-  { id: 1, title: 'Modalverben Futur1', dbTopE: "Zustandspassiv", dbTopZ: "Futur1Modalverb", isOpen: false },
+  { id: 2, title: 'Modalverben Präteritum', dbTopE: "Zustandspassiv", dbTopZ: "PräteritumModalverb", isOpen: false },
+  { id: 3, title: 'Modalverben Perfekt', dbTopE: "Zustandspassiv", dbTopZ: "PerfektModalverb", isOpen: false },
+  { id: 4, title: 'Modalverben Plusquamperfekt', dbTopE: "Zustandspassiv", dbTopZ: "PlusquamperfektModalverb", isOpen: false },
+  { id: 5, title: 'Modalverben Futur1', dbTopE: "Zustandspassiv", dbTopZ: "Futur1Modalverb", isOpen: false },
 ])
-
 var titlesZustandsKonjunktiv = ref([
   { id: 1, title: 'KonjunktivII', dbTopE: "Zustandspassiv", dbTopZ: "KonjunktivII", isOpen: false },
 ])
-
 // ---------------------
-
 // { id: 7, title: 'Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotGegenwartPassiv", isOpen: false },
 // { id: 8, title: 'Vergangenheit Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotVergangenheitPassiv", isOpen: false },
 // { id: 9, title: 'FuturI Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotFuturIPassiv", isOpen: false },
 // { id: 10, title: 'FuturII Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotFuturIIPassiv", isOpen: false },
-
-
-
 // { id: 11, title: 'Modalverben Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenGegenwartPassiv", isOpen: false },
 // { id: 12, title: 'Modalverben Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenGegenwartPassiv", isOpen: false },
 // { id: 13, title: 'Modalverben Vergangenheit Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenVergangenheitPassiv", isOpen: false },
 // { id: 14, title: 'Modalverben FuturII Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenFuturIIPassiv", isOpen: false },
-
-
 const CloseAndere = (id) => {
   titles.value.forEach(car => {
     car.id == id ? car.isOpen = true : car.isOpen = false;
-
   })
 };
-
 // ---------верхняя таблица-------------
-
-
 // ================================================
 // const addItem = async (text, res) => {
 //   try {
@@ -145,24 +120,14 @@ const CloseAndere = (id) => {
 //     addItem(text, res)
 //   });
 // };
-
 // ------------
 // var titles = reactive([]);
-
-
-
 // var DVP = reactive([]);
 // var SVPräteritum = reactive([]);
 // var SVPerfekt = reactive([]);
 // var SVPlusquamperfekt = reactive([]);
 // var SVFuturum = reactive([]);
-
 // var SVergangs = reactive([]);
-
-
-
-
-
 // var Smüssen = reactive([]);
 // var SGegenwartPassiv = reactive([]);
 // var SVergangenheitPassiv = reactive([]);
@@ -172,7 +137,6 @@ const CloseAndere = (id) => {
 // var SModalverbenVergangenheitPassiv = reactive([]);
 // var SModalverbenFuturIPassiv = reactive([]);
 // var SModalverbenFuturIIPassiv = reactive([]);
-
 // var titlesZu = reactive([]);
 // var SZustandspassivsPräsens = reactive([]);
 // var SZustandspassivsPräteritum = reactive([]);
@@ -188,9 +152,6 @@ const CloseAndere = (id) => {
 // var SZuVergangenheitPassiv = reactive([]);
 // var SZuFuturIPassiv = reactive([]);
 // var SZuFuturIIPassiv = reactive([]);
-
-
-
 // const SlotVorgangspassivsPräsens = query(collection(db, "SlotVorgangspassivsPräsens"));
 // const SlotVorgangspassivsPräteritum = query(collection(db, "SlotVorgangspassivsPräteritum"));
 // const SlotVorgangspassivsPerfekt = query(collection(db, "SlotVorgangspassivsPerfekt"));
@@ -205,10 +166,6 @@ const CloseAndere = (id) => {
 // const SlotModalverbenVergangenheitPassiv = query(collection(db, "SlotModalverbenVergangenheitPassiv"));
 // const SlotModalverbenFuturIPassiv = query(collection(db, "SlotModalverbenFuturIPassiv"));
 // const SlotModalverbenFuturIIPassiv = query(collection(db, "SlotModalverbenFuturIIPassiv"));
-
-
-
-
 // const SlotZustandspassivsPräsens = query(collection(db, "SlotZustandspassivsPräsens"));
 // const SlotZustandspassivsPräteritum = query(collection(db, "SlotZustandspassivsPräteritum"));
 // const SlotZustandspassivsPerfekt = query(collection(db, "SlotZustandspassivsPerfekt"));
@@ -223,13 +180,11 @@ const CloseAndere = (id) => {
 // const SlotZuVergangenheitPassiv = query(collection(db, "SlotZuVergangenheitPassiv"));
 // const SlotZuFuturIPassiv = query(collection(db, "SlotZuFuturIPassiv"));
 // const SlotZuFuturIIPassiv = query(collection(db, "SlotZuFuturIIPassiv"));
-
 // var TopVorPräsens = ref([]);
 // var TopVorPräteritum = ref([]);
 // var TopVorPerfekt = ref([]);
 // var TopVorPlusquamperfekt = ref([]);
 // var TopVorVorgangsFutur = ref([]);
-
 // onMounted(async () => {
 //   try {
 //     const docSnap = await getDoc(doc(db, "Vorgangspassivs", "Präsens"));
@@ -282,7 +237,6 @@ const CloseAndere = (id) => {
 //     console.error("Error getting document: ", e);
 //   }
 //   // ------------------------------------
-
 //   onSnapshot(SlotVorgangspassivsPräsens, (querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       DVP.push(doc.data());
@@ -323,10 +277,6 @@ const CloseAndere = (id) => {
 //     SVFuturum.id = 4;
 //     SVFuturum.isOpen = false;
 //   })
-
-
-
-
 //   onSnapshot(Slotmüssen, (querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       Smüssen.push(doc.data());
@@ -399,10 +349,6 @@ const CloseAndere = (id) => {
 //     SModalverbenFuturIIPassiv.id = 13;
 //     SModalverbenFuturIIPassiv.isOpen = false;
 //   })
-
-
-
-
 //   onSnapshot(SlotZustandspassivsPräsens, (querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       SZustandspassivsPräsens.push(doc.data());
@@ -519,27 +465,20 @@ const CloseAndere = (id) => {
 //     isLoading.value = false;
 //   }, 100);
 // })
-
 // // ------------pinia-------------
 // import { useAuthStore } from '@/store/authent';
 // const authStore = useAuthStore();
-
 // const addTime = (formattedTime, prozent) => { authStore.refresh('Passiv', formattedTime, prozent) };
-
 var isLoading = ref(true);
 onMounted(() => {
   setTimeout(() => {
     isLoading.value = false;
   }, 100);
 })
-
-
 </script>
-
 <style lang="scss">
 .base-area {
   margin: 5px 0 10px;
-
 
   &__unit {
     padding: 5px;
@@ -579,9 +518,6 @@ onMounted(() => {
     }
   }
 }
-
-
-
 
 p {
   padding: 3px 0;
