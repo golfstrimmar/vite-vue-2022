@@ -109,24 +109,24 @@ const CloseAndere = (id) => {
 // ---------верхняя таблица-------------
 
 // ================================================
-const addItem = async (text, res) => {
-  try {
-    await setDoc(doc(db, "SlotZuFuturIIPassiv", text), res);
-  } catch (error) {
-    console.error("Error saving user ", error);
-  }
-};
-const addUser = () => {
-  SlotZuFuturIIPassiv.forEach((cell) => {
-    var text = Object.values(cell)[0];
-    var x = Object.values(cell).slice(1, cell.length).join(' ');
-    var res = {
-      text: text,
-      x: x
-    };
-    addItem(text, res)
-  });
-};
+// const addItem = async (text, res) => {
+//   try {
+//     await setDoc(doc(db, "SlotZuFuturIIPassiv", text), res);
+//   } catch (error) {
+//     console.error("Error saving user ", error);
+//   }
+// };
+// const addUser = () => {
+//   SlotZuFuturIIPassiv.forEach((cell) => {
+//     var text = Object.values(cell)[0];
+//     var x = Object.values(cell).slice(1, cell.length).join(' ');
+//     var res = {
+//       text: text,
+//       x: x
+//     };
+//     addItem(text, res)
+//   });
+// };
 // ------------
 // var titles = reactive([]);
 // var DVP = reactive([]);
