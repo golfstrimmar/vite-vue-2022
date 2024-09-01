@@ -3,6 +3,12 @@
   .page-title 
     h2 Passiv
   button(@click="addUser()" ) addUser
+
+  //- div( v-for="item in VorWerben" :key="index"  )
+  //-   h3 {{ Object.values(item)[0] }}
+  //-   p( ) {{ Object.values(item).slice(1,item.length).join(' ') }}
+
+
   .page-block.deep-orange-2
     p(style="color: red;font-weight: 800;") Многие формы пассива не преводятся дословно на русский или звучат некорректно!
     p(style="color: red;font-weight: 800;") Viele Formen des Passivs werden nicht wörtlich ins Russische übersetzt oder klingen falsch!
@@ -101,25 +107,26 @@ const CloseAndere = (id) => {
   })
 };
 // ---------верхняя таблица-------------
+
 // ================================================
-// const addItem = async (text, res) => {
-//   try {
-//     await setDoc(doc(db, "SlotZuFuturIIPassiv", text), res);
-//   } catch (error) {
-//     console.error("Error saving user ", error);
-//   }
-// };
-// const addUser = () => {
-//   SlotZuFuturIIPassiv.forEach((cell) => {
-//     var text = Object.values(cell)[0];
-//     var x = Object.values(cell).slice(1, cell.length).join(' ');
-//     var res = {
-//       text: text,
-//       x: x
-//     };
-//     addItem(text, res)
-//   });
-// };
+const addItem = async (text, res) => {
+  try {
+    await setDoc(doc(db, "SlotZuFuturIIPassiv", text), res);
+  } catch (error) {
+    console.error("Error saving user ", error);
+  }
+};
+const addUser = () => {
+  SlotZuFuturIIPassiv.forEach((cell) => {
+    var text = Object.values(cell)[0];
+    var x = Object.values(cell).slice(1, cell.length).join(' ');
+    var res = {
+      text: text,
+      x: x
+    };
+    addItem(text, res)
+  });
+};
 // ------------
 // var titles = reactive([]);
 // var DVP = reactive([]);

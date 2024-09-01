@@ -100,3 +100,29 @@ app
   .use(router)
   .use(pinia)
   .mount("#app");
+
+const admin = require("firebase-admin");
+
+// admin.initializeApp({
+//   credential: admin.credential.applicationDefault(),
+//   databaseURL: "https://<your-project-id>.firebaseio.com",
+// });
+
+// const dbA = admin.firestore();
+// async function mergeCollections(collectionNames, newCollectionName) {
+//   const newCollectionRef = dbA.collection(newCollectionName);
+
+//   for (let collectionName of collectionNames) {
+//     const snapshot = await dbA.collection(collectionName).get();
+//     snapshot.forEach((doc) => {
+//       newCollectionRef.doc(doc.id).set(doc.data());
+//     });
+//   }
+
+//   console.log(`Collections merged into ${newCollectionName}`);
+// }
+
+// const collectionsToMerge = ["collection1", "collection2", "collection3"];
+// const newCollectionName = "mergedCollection";
+
+// mergeCollections(collectionsToMerge, newCollectionName);
