@@ -44,27 +44,28 @@
 
 
 
-		//- .block__buttons(v-if="TopVorPräsens.row1 && AuthStore.isAuthenticated && isButtonDisabled==true")
-		//- 	Button( text='Mischen'   @click = "Mischen(Temp)"  svg='arrow-repeat')
-		//- 	Button( text='Start'  @click='start'    svg='sport')
-		//- 	Button( text='Stop'   @click='stop'    svg='stopwatch')
-		//- 	Button( text='Reset'   @click='reset'    )
-		//- .tablo(v-if="TopVorPräsens.row1 && AuthStore.isAuthenticated && isButtonDisabled==true")
-		//- 	span.zeit Anzahl der richtigen Antworten:  
-		//- 		span {{ count }}
-		//- 	span.zeit Sie haben für das Training ausgegeben:   
-		//- 		span {{ formattedTime }}
-		//- .spielPlatz(v-if="TempLow && isButtonDisabled==true")
-		//- 	.block__line(v-for="el in TempLow" :key="index" v-if="Temp") 
-		//- 		.block__info 
-		//- 			h4 {{el.text}}
-		//- 			button.tooltip(v-if="el.x" v-tool  :data = "el.x")
-		//- 				span i
-		//- 			button.tooltip(v-if="el.content"  v-tool  :data = "el.content")
-		//- 				span i
-		//- 		div
-		//- 			Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
-		//- 			Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
+
+		.block__buttons(v-if="LowTemp && AuthStore.isAuthenticated && isButtonDisabled==true")
+			Button( text='Mischen'   @click = "Mischen(Temp)"  svg='arrow-repeat')
+			Button( text='Start'  @click='start'    svg='sport')
+			Button( text='Stop'   @click='stop'    svg='stopwatch')
+			Button( text='Reset'   @click='reset'    )
+		.tablo(v-if="LowTemp && AuthStore.isAuthenticated && isButtonDisabled==true")
+			span.zeit Anzahl der richtigen Antworten:  
+				span {{ count }}
+			span.zeit Sie haben für das Training ausgegeben:   
+				span {{ formattedTime }}
+		.spielPlatz(v-if="LowTemp && isButtonDisabled==true")
+			.block__line(v-for="el in LowTemp" :key="index" v-if="LowTemp") 
+				.block__info 
+					h4 {{el.text}}
+					button.tooltip(v-if="el.x" v-tool  :data = "el.x")
+						span i
+					button.tooltip(v-if="el.content"  v-tool  :data = "el.content")
+						span i
+				div
+					Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
+					Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
 
 </template>
 <script setup>

@@ -4,9 +4,9 @@
     h2 Passiv
   button(@click="addUser()" ) addUser
 
-  //- div( v-for="item in VorWerben" :key="index"  )
-  //-   h3 {{ Object.values(item)[0] }}
-  //-   p( ) {{ Object.values(item).slice(1,item.length).join(' ') }}
+  div( v-for="item in XY" :key="index"  )
+    h3 {{ Object.values(item)[0] }}
+    p( ) {{ Object.values(item).slice(1,item.length).join(' ') }}
 
 
   .page-block.deep-orange-2
@@ -57,15 +57,16 @@
 <script setup>
 import Loader from "@/components/Loader.vue";
 import Base from "@/components/Base.vue";
-import { ref, onMounted, reactive } from 'vue'
+import { ref, onMounted, reactive, toRaw } from 'vue'
 import Plaza from "@/components/Plaza.vue";
 import { db } from "@/firebase/config.ts";
-import { collection, query, onSnapshot, getDoc, doc, setDoc, } from "firebase/firestore";
+import { collection, query, onSnapshot, getDoc, doc, setDoc, getDocs } from "firebase/firestore";
 import { useRouter } from 'vue-router' // import router
 const router = useRouter();
+
 // --------------Vorgangspas-----
 var titlesVorgangspas = ref([
-  { id: 0, title: 'Werben', dbTopE: "Vorgangspassivs", dbTopZ: "Werben", isOpen: false },
+  { id: 0, title: 'Werben', dbTopE: "Vorgangspassivs", dbTopZ: "Werben", dbItems: "VorWerben", isOpen: false },
 ])
 // , dbItems: "SlotVorgangspassivsPräsens"
 var titlesModal = ref([
@@ -93,40 +94,41 @@ var titlesZustandsKonjunktiv = ref([
   { id: 1, title: 'KonjunktivII', dbTopE: "Zustandspassiv", dbTopZ: "KonjunktivII", isOpen: false },
 ])
 // ---------------------
-// { id: 7, title: 'Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotGegenwartPassiv", isOpen: false },
-// { id: 8, title: 'Vergangenheit Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotVergangenheitPassiv", isOpen: false },
-// { id: 9, title: 'FuturI Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotFuturIPassiv", isOpen: false },
-// { id: 10, title: 'FuturII Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotFuturIIPassiv", isOpen: false },
-// { id: 11, title: 'Modalverben Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenGegenwartPassiv", isOpen: false },
-// { id: 12, title: 'Modalverben Gegenwart Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenGegenwartPassiv", isOpen: false },
-// { id: 13, title: 'Modalverben Vergangenheit Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenVergangenheitPassiv", isOpen: false },
-// { id: 14, title: 'Modalverben FuturII Passiv', dbTopE: "", dbTopZ: "", dbItems: "SlotModalverbenFuturIIPassiv", isOpen: false },
-const CloseAndere = (id) => {
-  titles.value.forEach(car => {
-    car.id == id ? car.isOpen = true : car.isOpen = false;
-  })
-};
-// ---------верхняя таблица-------------
 
-// ================================================
-// const addItem = async (text, res) => {
-//   try {
-//     await setDoc(doc(db, "SlotZuFuturIIPassiv", text), res);
-//   } catch (error) {
-//     console.error("Error saving user ", error);
-//   }
-// };
-// const addUser = () => {
-//   SlotZuFuturIIPassiv.forEach((cell) => {
-//     var text = Object.values(cell)[0];
-//     var x = Object.values(cell).slice(1, cell.length).join(' ');
-//     var res = {
-//       text: text,
-//       x: x
-//     };
-//     addItem(text, res)
+
+
+
+
+// onMounted(async () => {
+//   const querySnapshot1 = await getDocs(collection(db, "SlotVorgangspassivsPräsens"));
+//   const querySnapshot2 = await getDocs(collection(db, "SlotVorgangspassivsPräteritum"));
+//   const querySnapshot3 = await getDocs(collection(db, "SlotVorgangspassivsPerfekt"));
+//   const querySnapshot4 = await getDocs(collection(db, "SlotVorgangspassivsPlusquamperfekt"));
+//   const querySnapshot5 = await getDocs(collection(db, "SlotVorgangspassivsFuturum"));
+//   const documents = [];
+//   querySnapshot1.forEach((doc) => {
+//     documents.push({ id: doc.data().text, ...doc.data() });
 //   });
-// };
+//   querySnapshot2.forEach((doc) => {
+//     documents.push({ id: doc.data().text, ...doc.data() });
+//   });
+//   querySnapshot3.forEach((doc) => {
+//     documents.push({ id: doc.data().text, ...doc.data() });
+//   });
+//   querySnapshot4.forEach((doc) => {
+//     documents.push({ id: doc.data().text, ...doc.data() });
+//   });
+//   querySnapshot5.forEach((doc) => {
+//     documents.push({ id: doc.data().text, ...doc.data() });
+//   });
+//   const WerbenRef = collection(db, "VorWerben");
+//   for (const item of documents) {
+//     const newDocRef = doc(WerbenRef, item.id);
+//     await setDoc(newDocRef, item);
+//   }
+// })
+
+
 // ------------
 // var titles = reactive([]);
 // var DVP = reactive([]);
@@ -173,6 +175,9 @@ const CloseAndere = (id) => {
 // const SlotModalverbenVergangenheitPassiv = query(collection(db, "SlotModalverbenVergangenheitPassiv"));
 // const SlotModalverbenFuturIPassiv = query(collection(db, "SlotModalverbenFuturIPassiv"));
 // const SlotModalverbenFuturIIPassiv = query(collection(db, "SlotModalverbenFuturIIPassiv"));
+
+
+
 // const SlotZustandspassivsPräsens = query(collection(db, "SlotZustandspassivsPräsens"));
 // const SlotZustandspassivsPräteritum = query(collection(db, "SlotZustandspassivsPräteritum"));
 // const SlotZustandspassivsPerfekt = query(collection(db, "SlotZustandspassivsPerfekt"));
@@ -187,6 +192,10 @@ const CloseAndere = (id) => {
 // const SlotZuVergangenheitPassiv = query(collection(db, "SlotZuVergangenheitPassiv"));
 // const SlotZuFuturIPassiv = query(collection(db, "SlotZuFuturIPassiv"));
 // const SlotZuFuturIIPassiv = query(collection(db, "SlotZuFuturIIPassiv"));
+
+
+
+
 // var TopVorPräsens = ref([]);
 // var TopVorPräteritum = ref([]);
 // var TopVorPerfekt = ref([]);
@@ -324,6 +333,11 @@ const CloseAndere = (id) => {
 //     SFuturIIPassiv.id = 9;
 //     SFuturIIPassiv.isOpen = false;
 //   })
+
+
+
+
+
 //   onSnapshot(SlotModalverbenGegenwartPassiv, (querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       SModalverbenGegenwartPassiv.push(doc.data());
@@ -356,6 +370,13 @@ const CloseAndere = (id) => {
 //     SModalverbenFuturIIPassiv.id = 13;
 //     SModalverbenFuturIIPassiv.isOpen = false;
 //   })
+
+
+
+
+
+
+
 //   onSnapshot(SlotZustandspassivsPräsens, (querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       SZustandspassivsPräsens.push(doc.data());
@@ -396,6 +417,11 @@ const CloseAndere = (id) => {
 //     SZustandspassivsFuturum.id = 4;
 //     SZustandspassivsFuturum.isOpen = false;
 //   })
+
+
+
+
+
 //   onSnapshot(SlotZuPräsensModalverb, (querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       SZuPräsensModalverb.push(doc.data());
@@ -436,6 +462,11 @@ const CloseAndere = (id) => {
 //     SZuFutur1Modalverb.id = 9;
 //     SZuFutur1Modalverb.isOpen = false;
 //   })
+
+
+
+
+
 //   onSnapshot(SlotZuGegenwartPassiv, (querySnapshot) => {
 //     querySnapshot.forEach((doc) => {
 //       SZuGegenwartPassiv.push(doc.data());
@@ -468,10 +499,13 @@ const CloseAndere = (id) => {
 //     SZuFuturIIPassiv.id = 13;
 //     SZuFuturIIPassiv.isOpen = false;
 //   })
-//   setTimeout(() => {
-//     isLoading.value = false;
-//   }, 100);
-// })
+
+
+
+
+setTimeout(() => {
+  isLoading.value = false;
+}, 100);
 // // ------------pinia-------------
 // import { useAuthStore } from '@/store/authent';
 // const authStore = useAuthStore();
