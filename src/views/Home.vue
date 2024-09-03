@@ -1,5 +1,7 @@
 <template lang="pug">
 .container
+  Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i10')
   .inhaltText
     p Hallo zusammen! 
     p Mein Name ist Victor. Meine Muttersprache ist Russisch. Ich lebe seit etwas mehr als einem Jahr in Deutschland und lerne parallel Deutsch.
@@ -10,15 +12,28 @@
     p Feedback 
       span._innerspan yushinbox@gmail.com.
     p Viel Spass beim ausprobieren!
+  
 </template>
 <script setup>
+import { ref } from 'vue';
+
+
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
+var isLoading = ref(true);
+const imgFertig = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+};
+
 </script>
 <style lang="scss" scoped>
 p {
   font-family: "RR", sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: $blue-8;
+  font-size: 18px;
+  font-weight: 600;
+  color: $brown-8;
   line-height: 1.2;
 
   ._innerspan {
@@ -30,10 +45,12 @@ p {
   margin: 40px auto 0;
   text-align: center;
   box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0.2);
-  background: rgba(255, 255, 255, 0.699);
+  background: rgba(255, 255, 255, .65);
   width: 60%;
   border-radius: 50px;
   padding: 20px;
+  position: relative;
+  z-index: 20;
 }
 
 @media (max-width: 767px) {

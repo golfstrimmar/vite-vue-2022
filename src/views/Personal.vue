@@ -1,8 +1,11 @@
 <template lang="pug">
 .container
-  h2 Personalpronomen
-  Plaza(:Slot='SlotPersonal')
-  Akkord(:titles="titles" :Data="[SlotDataPersonal]" @addTime ='addTime')
+  Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i2')
+  .page
+    h2 Personalpronomen
+    Plaza(:Slot='SlotPersonal')
+    Akkord(:titles="titles" :Data="[SlotDataPersonal]" @addTime ='addTime')
 </template>
 
 <script setup>
@@ -43,10 +46,13 @@ import { useAuthStore } from '@/store/authent';
 const authStore = useAuthStore();
 const addTime = (formattedTime, count, countAll) => { authStore.refresh('Personal', formattedTime, count, countAll) };
 // --------------------------
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
+var isLoading = ref(true);
+const imgFertig = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+};
 </script>
-<style lang="scss" scoped>
-.akkord__body {
-  grid-template-columns: 1fr;
-  // grid-template-columns: 150px 1fr;
-}
-</style>
+<style lang="scss" scoped></style>

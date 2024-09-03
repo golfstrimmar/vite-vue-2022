@@ -1,8 +1,11 @@
 <template lang="pug">
 .container
-  h2 Reflexivpronomen
-  Plaza(:Slot='SlotReflexiv')
-  Akkord(:titles="titles" :Data="[SlotDataReflexiv]" @addTime ='addTime')
+  Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i4')
+  .page
+    h2 Reflexivpronomen
+    Plaza(:Slot='SlotReflexiv')
+    Akkord(:titles="titles" :Data="[SlotDataReflexiv]" @addTime ='addTime')
 </template>
 
 
@@ -45,4 +48,14 @@ const addTime = (formattedTime, count, countAll) => {
   authStore.refresh('Reflexiv', formattedTime, count, countAll)
 };
 // --------------------------
+// --------------------------
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
+var isLoading = ref(true);
+const imgFertig = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+};
 </script>
+<style lang="scss" scoped></style>

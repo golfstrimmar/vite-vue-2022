@@ -43,9 +43,9 @@ const links = ref([
   { name: "Passiv", href: "/passiv" },
   { name: "Konjunktiv-II", href: "/konjunktiv" },
   { name: "Verben", href: "/verben" },
-  { name: "Rektion", href: "/rektion" },
-  { name: "Nomen", href: "/nomen" },
-  { name: "Form", href: "/form" },
+  // { name: "Rektion", href: "/rektion" },
+  { name: "Nomen-Verb-Verbindungen", href: "/nomen" },
+  // { name: "Form", href: "/form" },
   // { name: "Tasks", href: "/tasks" },
   // { name: "SignIn", href: "/signin" },
 ]);
@@ -56,10 +56,10 @@ const isLoggedIn = ref(false)
 const clickBurger = () => {
   // if (window.innerWidth <= 1200) {
   burgerActive.value = !burgerActive.value;
-  if (burgerActive.value) {
-    document.querySelector('body').classList.add("lock")
+  if (burgerActive.value == true) {
+    document.querySelector('body').classList.add("_lock")
   } else {
-    document.querySelector('body').classList.remove("lock")
+    document.querySelector('body').classList.remove("_lock")
   }
   // }
 }
@@ -89,7 +89,7 @@ const handleSignOut = () => {
   background: $brown-4;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0) 51%, rgba(0, 0, 0, 0.3)) !important;
-  z-index: 20000;
+  z-index: 100;
 
   .logo {
     padding: 5px;

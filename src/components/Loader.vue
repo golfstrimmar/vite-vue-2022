@@ -10,16 +10,17 @@ import * as Imgs from '../assets/img/img';
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	background: radial-gradient(ellipse, white, $brown-6);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 119999;
+	z-index: 10000000;
 }
 
 .loader {
+
 	width: 48px;
 	height: 48px;
 	border: 4px solid;

@@ -1,13 +1,14 @@
 ﻿<template lang="pug">
 .container
-  h2 der Artikel
-  //- Tabs 
-  Plaza(:Slot='SlotArtikle')
-  Akkord(:titles="titles" :Data="[SlotBestimmte,SlotDataBestimmte,Slotnegativ]"  @addTime ='addTime' )
   Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i1')
+  .page
+    h2 der Artikel
+    //- Tabs 
+    Plaza(:Slot='SlotArtikle')
+    Akkord(:titles="titles" :Data="[SlotBestimmte,  SlotDataBestimmte,Slotnegativ]"  @addTime ='addTime' )
 </template>
 <script setup>
-import Loader from "@/components/Loader.vue";
 import Akkord from "@/components/Akkord.vue";
 import Personal from "@/views/Personal.vue";
 import { ref, onMounted, reactive } from 'vue'
@@ -69,19 +70,17 @@ onMounted(async () => {
   });
 
 });
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
 var isLoading = ref(true);
-onMounted(() => {
+const imgFertig = () => {
   setTimeout(() => {
     isLoading.value = false;
-  }, 1000);
-});
+  }, 300);
+};
 </script>
 <style lang="scss" scoped>
 .plaza__line {
   padding: 5px 0 0 0;
-}
-
-.akkord__body {
-  grid-template-columns: 150px 1fr;
 }
 </style>

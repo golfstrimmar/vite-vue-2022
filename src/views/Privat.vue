@@ -93,6 +93,22 @@ section.privat(v-if= "AuthStore.user !== null ")
 							span {{item.stoppuhr}}
 							ProgressCircle(:percent='item.prozent')
 							Button(  @click="clickHandler('Passiv',item)" svg='x-circle' margin='0')
+				.result(v-if="!!AuthStore.user.Kojunktiv2")
+					h3 Kojunktiv2
+					.result__content
+						.result__unit(v-for="item in AuthStore.user.Kojunktiv2" :key="index") 
+							span {{item.zeit}}
+							span {{item.stoppuhr}}
+							ProgressCircle(:percent='item.prozent')
+							Button(  @click="clickHandler('Kojunktiv2',item)" svg='x-circle' margin='0')
+				.result(v-if="!!AuthStore.user.Verbindungen")
+					h3 Verbindungen
+					.result__content
+						.result__unit(v-for="item in AuthStore.user.Verbindungen" :key="index") 
+							span {{item.zeit}}
+							span {{item.stoppuhr}}
+							ProgressCircle(:percent='item.prozent')
+							Button(  @click="clickHandler('Verbindungen',item)" svg='x-circle' margin='0')
 </template>
 <script setup>
 import ProgressCircle from "@/components/ProgressCircle.vue";

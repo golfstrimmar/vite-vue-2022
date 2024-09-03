@@ -1,23 +1,27 @@
 <template lang="pug">
 .container
-  .page-title 
+  Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i4')
+  .page
     h2 Verben
-
-  .page-block.blue-grey-4
-    .page-title--small 
-      h2 Beispiele
-    TabsTraining( title='' :SlotData='SlotDativ' )
-
-
- 
-    
+    .page-block.blue-grey-4
+      .block__top
+        span
+        span Präsens
+        span Präteritum
+        span Pat. 2
+      .block(v-for="item in Slot" :key="index")
+        .block__content
+          h3 {{item.t0}}
+          p {{item.t1}}
+          p {{item.t2}}
+          p {{item.t3}}
  
 </template>
 <script setup>
-import Tabs from '@/components/Tabs.vue';
-import TabsTraining from '@/components/TabsTraining.vue';
 
-const SlotDativ = [
+
+const Slot = [
   {
     t0: 'backen (./.,../..)',
     t1: 'bäckt/backt',
@@ -1109,8 +1113,59 @@ const SlotDativ = [
   },
 
 ]
-
+// --------------------------
+import { ref } from 'vue'
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
+var isLoading = ref(true);
+const imgFertig = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+};
 
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss" scoped>
+.block {
+  outline: 3px solid white;
+  border-radius: 4px;
+  background: rgba(214, 210, 208, 0.6588235294);
+
+
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+    column-gap: 5px;
+    row-gap: 15px;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+
+    span {
+      padding: 3px;
+      font-family: 'HouschkaPro-DemiBold', sans-serif;
+      font-size: 18px;
+      color: #eb2f2f;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+    column-gap: 5px;
+    align-items: center;
+    padding: 3px 0;
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+
+    p,
+    h3 {
+      padding: 3px;
+    }
+  }
+}
+</style>

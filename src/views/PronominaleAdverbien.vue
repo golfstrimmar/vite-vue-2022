@@ -1,8 +1,10 @@
 <template lang="pug">
 .container
-  h2 Deklination der Adjektive
-
-  Akkord(:titles="titles" :Data="[SlotDataDeklination]" @addTime ='addTime')
+  Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i8')
+  .page
+    h2 Pronominale Adverbien
+    Akkord(:titles="titles" :Data="[SlotDataDeklination]" @addTime ='addTime')
 </template>
 
 
@@ -36,29 +38,14 @@ import { useAuthStore } from '@/store/authent';
 const authStore = useAuthStore();
 const addTime = (formattedTime, count, countAll) => { authStore.refresh('PronominaleAdverbien', formattedTime, count, countAll) };
 // --------------------------
-
-const Pronominale = [
-
-  {
-    text1: 'sich interessieren für',
-  },
-  {
-    text2: 'warten auf',
-  },
-  {
-    text3: 'denken an',
-  },
-  {
-    text4: 'sich kümmern um',
-  },
-  {
-    text5: 'zufrieden sein mit',
-  },
-  {
-    text7: 'reden über',
-  },
-
-]
-
-
+// --------------------------
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
+var isLoading = ref(true);
+const imgFertig = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+};
 </script>
+<style lang="scss" scoped></style>

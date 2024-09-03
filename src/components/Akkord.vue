@@ -41,13 +41,13 @@
                 h4 {{el.text}}
                 button.tooltip(v-if="el.x" v-tool  :data = "el.x")
                   span i
-                button.tooltip(v-if="el.content"  v-tool  :data = "el.content")
+                button.tooltip(v-if="el.content"  v-tool  :data = "el.content.join(' ')")
                   span i
               div
                 Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
                 Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
 </template>
-
+// Object.values(el.content).split(',').join(' ')
 <script setup>
 import { ref, onMounted, computed, reactive, watchEffect } from 'vue';
 import Input from '@/components/Input.vue';
@@ -113,15 +113,21 @@ const handlerClick = (Data) => {
 }
 // --------------------------
 const ButtonHandler = (id) => {
-  props.titles.forEach(car => {
-    car.id == id ? car.isOpen = true : car.isOpen = false
-  })
-  props.Data.forEach(car => {
-    car.id == id ? car.isOpen = true : car.isOpen = false
-  })
-  props.table.forEach(car => {
-    car.id == id ? car.isOpen = true : car.isOpen = false
-  })
+  if (props.titles) {
+    props.titles.forEach(car => {
+      car.id == id ? car.isOpen = true : car.isOpen = false
+    })
+  }
+  if (props.Data) {
+    props.Data.forEach(car => {
+      car.id == id ? car.isOpen = true : car.isOpen = false
+    })
+  }
+  if (props.table) {
+    props.table.forEach(car => {
+      car.id == id ? car.isOpen = true : car.isOpen = false
+    })
+  }
 };
 // --------------------------
 var count = ref(0);
@@ -163,13 +169,18 @@ watchEffect(() => {
 <style lang='scss' scoped>
 .akkord__body {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 1fr;
   column-gap: 5px;
   margin: 20px 0 0 0;
 
-  &.kurz {
-    grid-template-columns: 1fr;
+  &:has(.akkord__nav) {
+    grid-template-columns: 150px 1fr;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
   }
+
 }
 
 .tabel {
@@ -269,11 +280,19 @@ watchEffect(() => {
 
         button {
           padding: 3px 5px;
+
+          &:has(svg) {
+            padding: 8px 30px 8px 5px;
+          }
         }
       }
 
       .tablo {
         margin: 10px 0;
+        border: 3px solid white;
+        border-radius: 10px;
+        background: rgba(214, 210, 208, 0.9);
+        padding: 5px;
 
         span.zeit {
           font-family: 'HouschkaPro-DemiBold', sans-serif;
@@ -338,7 +357,7 @@ watchEffect(() => {
   padding: 5px;
   border: 3px solid white;
   border-radius: 10px;
-  background: #d6d2d0a8;
+  background: rgba(214, 210, 208, 0.9);
 }
 
 @media (max-width: 600px) {

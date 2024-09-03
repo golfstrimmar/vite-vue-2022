@@ -41,9 +41,12 @@
 			ul(v-if="TopTemp.Futur1")
 				li(v-for="i in TopTemp.Futur1" :key="index" ) {{ i }} 
 
-
-
-
+			ul(v-if="TopTemp.würde")
+				li(v-for="i in TopTemp.würde" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Unregelmäßige")
+				li(v-for="i in TopTemp.Unregelmäßige" :key="index" ) {{ i }} 
+			ul(v-if="TopTemp.Regelmäßige")
+				li(v-for="i in TopTemp.Regelmäßige" :key="index" ) {{ i }} 
 
 		.block__buttons(v-if="LowTemp && AuthStore.isAuthenticated && isButtonDisabled==true")
 			Button( text='Mischen'   @click = "Mischen(Temp)"  svg='arrow-repeat')
@@ -61,8 +64,7 @@
 					h4 {{el.text}}
 					button.tooltip(v-if="el.x" v-tool  :data = "el.x")
 						span i
-					button.tooltip(v-if="el.content"  v-tool  :data = "el.content")
-						span i
+
 				div
 					Input(v-if="el.x"   :Antwort='content'  :content='content' :resetInputs='resetInputs'  v-for="content in el.x.split(' ')" :key="index" @lineFertig="lineFertig" )
 					Input(v-if="!el.x"   :Antwort='content'  :content='el.content' :resetInputs='resetInputs'  v-for="content in el.content" :key="index" @lineFertig="lineFertig" )
@@ -77,8 +79,13 @@ const props = defineProps({
 	item: {
 		type: Object,
 		required: false
+	},
+	page: {
+		type: String,
+		required: false
 	}
 })
+
 
 var isButtonDisabled = ref(false);
 const base = ref(null)
@@ -91,6 +98,7 @@ import { db } from "@/firebase/config.ts";
 import { collection, query, onSnapshot, getDoc, doc, setDoc, } from "firebase/firestore";
 // -----
 
+// -----
 var TopTemp = ref([]);
 var LowTemp = ref([]);
 const emit = defineEmits(['CloseAndere'])
@@ -175,7 +183,7 @@ const reset = () => {
 	stop();
 	capturedValue.value = formattedTime.value;
 	count.value > 0 ? prozent.value = Math.round(count.value * 100 / countAll.value) : prozent.value = 0;
-	AuthStore.refresh('Passiv', capturedValue.value, prozent.value)
+	AuthStore.refresh(props.page, capturedValue.value, prozent.value)
 	resetInputs.value = !resetInputs.value;
 	count.value = 0;
 	formattedTime.value = 0;
@@ -194,6 +202,7 @@ const HandlerClose = () => {
 
 	&.activButton {
 		min-height: 50px;
+		min-width: 150px;
 	}
 
 	&:has(svg) {
@@ -206,7 +215,7 @@ const HandlerClose = () => {
 .but-wave.ButtonClose {
 	padding: 3px;
 	position: fixed;
-	top: 20px;
+	top: 22px;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border-radius: 100%;
@@ -222,22 +231,7 @@ const HandlerClose = () => {
 	}
 }
 
-.tablo {
-	margin: 0 0 10px 0;
-	display: flex;
-	flex-direction: column;
 
-	span.zeit {
-		font-family: 'HouschkaPro-DemiBold', sans-serif;
-		color: #fff;
-
-		span {
-			font-size: larger;
-			color: #eb2f2f;
-			white-space: nowrap;
-		}
-	}
-}
 
 .tabel {
 	background-color: #fff;
@@ -267,6 +261,7 @@ const HandlerClose = () => {
 			text-shadow: none;
 			padding: 3px;
 			white-space: nowrap;
+			font-weight: 400;
 
 			@media (max-width: 600px) {
 				white-space: wrap;
@@ -294,8 +289,26 @@ const HandlerClose = () => {
 }
 
 .block__buttons {
+	margin: 10px 0 0 0;
 	display: flex;
 	column-gap: 5px;
+}
+
+.tablo {
+	margin: 10px 0 10px 0;
+	display: flex;
+	flex-direction: column;
+
+	span.zeit {
+		font-family: 'HouschkaPro-DemiBold', sans-serif;
+		color: #fff;
+
+		span {
+			font-size: larger;
+			color: #eb2f2f;
+			white-space: nowrap;
+		}
+	}
 }
 
 .block__info {
@@ -328,7 +341,7 @@ const HandlerClose = () => {
 
 .base__hidden {
 	left: 0%;
-	top: 0%;
+	top: 0px;
 	z-index: 20000;
 	position: fixed;
 	width: 100vw;

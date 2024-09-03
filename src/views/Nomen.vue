@@ -1,20 +1,20 @@
 <template lang="pug">
 .container
-  .page-title 
+  Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i5')
+  .page
     h2 Nomen-Verb-Verbindungen
 
-  .page-block.blue-grey-4
-    .page-title--small 
-      h2 Beispiele
-    TabsTraining( title='' :SlotData='SlotDativ' )
-
-
- 
-    
+    .page-block.blue-grey-4
+      .page-title--small 
+        h2 Beispiele
+        div(v-for="item in SlotDativ" :key="index")
+          h3 {{ item.t0 }} 
+          p {{Object.values(item).slice(1,item.length).join(" ") }}
  
 </template>
 <script setup>
-import TabsTraining from '@/components/TabsTraining.vue';
+
 
 const SlotDativ = [
   {
@@ -1351,7 +1351,16 @@ const SlotDativ = [
   },
 ]
 
-
+// --------------------------
+import { ref } from 'vue'
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
+var isLoading = ref(true);
+const imgFertig = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+};
 </script>
 
-<style lang="scss" ></style>
+<style lang="scss"></style>

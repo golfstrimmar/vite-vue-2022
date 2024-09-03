@@ -78,16 +78,16 @@ app
       let add = document.createElement("div");
 
       el.addEventListener("mouseover", (e) => {
-        add.innerText = el
-          .getAttribute("data")
-          .replace(/,{3,}/g, ":")
-          .replace(/,{1}/g, " ")
-          .replace(/:{1}/g, " , ");
+        // add.innerText = el.getAttribute("data");
+        // add.innerText = el.getAttribute("data").split(",").join(" ");
+        add.innerText = el.getAttribute("data");
+        // .replace(/,{3,}/g, ":")
+        // .replace(/,{1}/g, " ")
+        // .replace(/:{1}/g, " , ");
         add.classList.add("add");
         el.appendChild(add);
         var xPosition = el.offsetLeft;
         var yPosition = el.offsetTop;
-        console.log(xPosition, yPosition);
         add.style.left = 0 + "px";
         add.style.top = 0 + "px";
       });
@@ -100,29 +100,3 @@ app
   .use(router)
   .use(pinia)
   .mount("#app");
-
-// const admin = require("firebase-admin");
-
-// admin.initializeApp({
-//   credential: admin.credential.applicationDefault(),
-//   databaseURL: "https://<your-project-id>.firebaseio.com",
-// });
-
-// const dbA = admin.firestore();
-// async function mergeCollections(collectionNames, newCollectionName) {
-//   const newCollectionRef = dbA.collection(newCollectionName);
-
-//   for (let collectionName of collectionNames) {
-//     const snapshot = await dbA.collection(collectionName).get();
-//     snapshot.forEach((doc) => {
-//       newCollectionRef.doc(doc.id).set(doc.data());
-//     });
-//   }
-
-//   console.log(`Collections merged into ${newCollectionName}`);
-// }
-
-// const collectionsToMerge = ["collection1", "collection2", "collection3"];
-// const newCollectionName = "mergedCollection";
-
-// mergeCollections(collectionsToMerge, newCollectionName);

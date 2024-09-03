@@ -1,8 +1,11 @@
 <template lang="pug">
 .container
-  h2 Possessivpronomen
-  Plaza(:Slot='SlotPossessiv')
-  Akkord(:titles="titles" :Data="[SlotDataPossessiv,SlotDataPossessivErsatz]" @addTime ='addTime')
+  Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i5')
+  .page
+    h2 Possessivpronomen
+    Plaza(:Slot='SlotPossessiv')
+    Akkord(:titles="titles" :Data="[SlotDataPossessiv,SlotDataPossessivErsatz]" @addTime ='addTime')
 </template>
 
 
@@ -58,4 +61,14 @@ import { useAuthStore } from '@/store/authent';
 const authStore = useAuthStore();
 const addTime = (formattedTime, count, countAll) => { authStore.refresh('Possessiv', formattedTime, count, countAll) };
 // --------------------------
+// --------------------------
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
+var isLoading = ref(true);
+const imgFertig = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+};
 </script>
+<style lang="scss" scoped></style>

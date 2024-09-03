@@ -29,6 +29,8 @@ export const useAuthStore = defineStore("auth", {
       PronominaleAdverbien: [],
       Modalverben: [],
       Passiv: [],
+      Kojunktiv2: [],
+      Verbindungen: [],
     },
   }),
   actions: {

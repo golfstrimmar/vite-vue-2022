@@ -1,8 +1,11 @@
 <template lang="pug">
 .container
-  h2 Interrogativpronomen
-  Plaza(:Slot='Inter')
-  Akkord(:titles="titles" :Data="[InterSlot]" @addTime ='addTime')
+  Loader(v-if="isLoading")
+  ImgLoader(@imgFertig='imgFertig()' url='i3')
+  .page
+    h2 Interrogativpronomen
+    Plaza(:Slot='Inter')
+    Akkord(:titles="titles" :Data="[InterSlot]" @addTime ='addTime')
 </template>
 <script setup>
 import Akkord from "@/components/Akkord.vue";
@@ -19,7 +22,6 @@ onMounted(async () => {
   onSnapshot(Interrogativ, (querySnapshot) => {
     querySnapshot.forEach((doc) => {
       Inter.push(doc.data());
-      console.log(doc.data());
     });
   });
   onSnapshot(InterrogativSlot, (querySnapshot) => {
@@ -39,6 +41,15 @@ const addTime = (formattedTime, count, countAll) => {
   authStore.refresh('Interrogativ', formattedTime, count, countAll)
 };
 // --------------------------
+// --------------------------
+import Loader from "@/components/Loader.vue";
+import ImgLoader from "@/components/ImgLoader.vue";
+var isLoading = ref(true);
+const imgFertig = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+};
 </script>
 <style lang="scss" scoped>
 .plaza {
