@@ -76,6 +76,12 @@ place-items: center;`,
           { title: "Grid" },
           { dataText: "display: grid;" },
           { i: 2, dataText: "grid-template-columns: 100px 1fr;" },
+          {
+            i: 2,
+            dataText:
+              "grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));",
+          },
+          { i: 12, dataText: " minmax(150px, 1fr)" },
           { i: 12, dataText: "grid-template-columns: repeat(3, 200px);" },
           {
             i: 2,
@@ -85,7 +91,21 @@ place-items: center;`,
             i: 2,
             dataText: "grid-template-columns: minmax(100px, max-content);",
           },
-          { i: 2, dataText: "column-gap: 34px;" },
+          {
+            i: 2,
+            dataText: "grid-column: 1/-1;",
+          },
+          {
+            i: 2,
+            dataText:
+              "grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));",
+          },
+          {
+            dataText: "grid-column: 1/-1;",
+            description:
+              "переводит блок на первую позицию и блок занимает всю ширину",
+          },
+          { i: 2, dataText: "column-gap: 5px;" },
           { i: 2, dataText: "row-gap: 15px;" },
           { i: 2, dataText: "gap: 37px 36px;" },
           { i: 3, dataText: "grid-auto-flow: row;" },
@@ -188,6 +208,17 @@ place-items: center;`,
           { dataText: "&:focus{ }; ", description: "" },
           { dataText: "&:hover{ };", description: "" },
           { dataText: "&:last-child{ };", description: "" },
+          {
+            dataText: "li:not(:has(svg)) {}",
+            description: "стили для <li>, которые НЕ содержат <svg>",
+          },
+          { dataText: "input:not([type='range'])", description: "" },
+          { dataText: "&:has(svg) {};", description: "" },
+          {
+            dataText: ":where(span svg) {};",
+            description:
+              "выбирает все элементы <svg>, находящиеся внутри <span>.пишется отдельно. не относится к какому-то селектору.",
+          },
           {
             dataText: "&:last-of-type{ };",
             description:
@@ -469,6 +500,21 @@ place-items: center;`,
           { dataText: ".forEach((cell) => { }); " },
           { dataText: ".indexOf(0)" },
           { dataText: ".find((item) => item.id == id)" },
+          {
+            dataText: "Object.values(obj)",
+            description:
+              "делает из объекта массивб содержащий значение каждого элемента",
+          },
+          {
+            dataText: "Object.keys(obj)",
+            description:
+              "делает из объекта массивб содержащий ключ каждого элемента",
+          },
+          {
+            dataText: "Object.entries(obj)",
+            description:
+              "Преобразование объекта в массив пар [ключ, значение]: [['a', 1], ['b', 2], ['c', 3]]",
+          },
           {
             description:
               "повторит значение переменной spase столько раз, какое чмсло в переменной Offset ",
@@ -1503,6 +1549,17 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
             description:
               "Использование \n и CSS: white-space: pre-line;  заставляет браузер отображать переносы строк, заданные с помощью \n, как новые строки.",
           },
+          {
+            description:
+              "гарантирует, что прокрутка произойдет после того, как Vue обновит DOM, что важно, если вы работаете с данными, которые могут изменять элементы на странице и таким образом влиять на прокрутку.",
+            dataText: `scrollPosition.value = base.value.getBoundingClientRect().top;
+            nextTick(() => {
+            window.scrollTo({
+            top: scrollPosition.value - 200,
+            behavior: 'smooth', // Плавная прокрутка
+            });
+            });`,
+          },
           { title: "Directiven" },
           {
             dataText: 'v-html=" "',
@@ -1709,7 +1766,19 @@ watch(count, (count, prevCount) => {
         ],
 
         [
+          { title: "emit" },
+          {
+            dataText: `const emit = defineEmits(['lineFertig'])`,
+            description: "",
+          },
+          {
+            dataText: `const HendlerClick = () => {
+ emit('lineFertig', some.value)
+}`,
+            description: "",
+          },
           { title: "Props" },
+
           {
             dataText: `Button(text="beispiele mischen" @someEvent="someEvent")
 const someEvent = (data) => {
@@ -1887,10 +1956,12 @@ const handelML = () => {
             title: "firebase database",
           },
           {
-            description: "делаем в корне файл firebase.js ",
+            description:
+              "делаем в корне файл firebase.js/здесь сразу инициируется storage для храниения изображений",
             dataText: `import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCTr_tR1MbYjHurQgAfdgEntqZQ150rZyA",
@@ -1906,9 +1977,28 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
-export { db, auth };
-            
+const storage = getStorage(app);
+export { storage, db, auth };
             `,
+          },
+          {
+            description:
+              "если нужно достать один из массивов в коллекци Vorgangspassivs",
+            dataText: `import { db } from "@/firebase/config.ts";
+import { collection, query, doc,getDoc } from "firebase/firestore";
+var TopVorPräsens = reactive([]);
+onMounted(async () => {
+  try {
+    const docSnap = await getDoc(doc(db, "Vorgangspassivs", "Präsens"));
+    if (docSnap.exists()) {
+      TopVorPräsens.value = docSnap.data()
+      TopVorPräsens.value.id = 0;
+      TopVorPräsens.value.isOpen = true;
+    }
+  } catch (e) {
+    console.error("Error getting document: ", e);
+  }
+});`,
           },
           {
             description:
@@ -1940,31 +2030,90 @@ onMounted(async () => {
   });
 });`,
           },
-          // {
-          //   dataText: `
+          {
+            description:
+              "ИЗ какого-то массива 'Gegenwart' переправит данные в коллекцию 'KONJUNKTVS2' ",
+            dataText: `onMounted(async () => {
+  const WerbenRef = collection(db, "KONJUNKTVS2");
+  for (const item of Gegenwart) {
+    const newDocRef = doc(WerbenRef, 'Gegenwart');
+    await setDoc(newDocRef, item);
+  }
+})
+ `,
+          },
+          {
+            description:
+              "вызывает коллекции, собирает их в одну и отправляет новую колекцию 'VorWerben' на firebase",
 
-          //   `,
-          // },
-          // {
-          //   dataText: `
+            dataText: `onMounted(async () => {
+  const querySnapshot1 = await getDocs(collection(db, "SlotVorgangspassivsPräsens"));
+  const querySnapshot2 = await getDocs(collection(db, "SlotVorgangspassivsPräteritum"));
+  const querySnapshot3 = await getDocs(collection(db, "SlotVorgangspassivsPerfekt"));
+  const querySnapshot4 = await getDocs(collection(db, "SlotVorgangspassivsPlusquamperfekt"));
+  const querySnapshot5 = await getDocs(collection(db, "SlotVorgangspassivsFuturum"));
+  const documents = [];
+  querySnapshot1.forEach((doc) => {
+    documents.push({ id: doc.data().text, ...doc.data() });
+  });
+  querySnapshot2.forEach((doc) => {
+    documents.push({ id: doc.data().text, ...doc.data() });
+  });
+  querySnapshot3.forEach((doc) => {
+    documents.push({ id: doc.data().text, ...doc.data() });
+  });
+  querySnapshot4.forEach((doc) => {
+    documents.push({ id: doc.data().text, ...doc.data() });
+  });
+  querySnapshot5.forEach((doc) => {
+    documents.push({ id: doc.data().text, ...doc.data() });
+  });
+  const WerbenRef = collection(db, "VorWerben");
+  for (const item of documents) {
+    const newDocRef = doc(WerbenRef, item.id);
+    await setDoc(newDocRef, item);
+  }
+}) `,
+          },
+          {
+            description:
+              "вызывает несколько колекций и собирает в один масив XY. потом его можно рендерить",
+            dataText: `var XY = ref([]);
+          onMounted(async () => {
+            const qSq = await getDocs(collection(db, "SlotDataDürfen"));
+            const qSw = await getDocs(collection(db, "SlotDataMöchten"));
+            const qSe = await getDocs(collection(db, "SlotDataSollen"));
+            const qSr = await getDocs(collection(db, "SlotDataWollen"));
+            const qSt = await getDocs(collection(db, "SlotDataMögen"));
 
-          //   `,
-          // },
-          // {
-          //   dataText: `
+            qSq.forEach((doc) => {
+              XY.value.push(doc.data());
+            });
+            qSw.forEach((doc) => {
+              XY.value.push(doc.data());
+            });
+            qSe.forEach((doc) => {
+              XY.value.push(doc.data());
+            });
+            qSr.forEach((doc) => {
+              XY.value.push(doc.data());
+            });
+            qSt.forEach((doc) => {
+              XY.value.push(doc.data());
+            });
+          }),
 
-          //   `,
-          // },
-          // {
-          //   dataText: `
-
-          //   `,
-          // },
-          // {
-          //   dataText: `
-
-          //   `,
-          // },
+            `,
+          },
+          {
+            title: "компонент достает изображения из storage",
+            link: "https://codepen.io/viktor-yushin/pen/WNqYRwv",
+          },
+          {
+            description:
+              "использование предыдущего примера для вывода изображений в компоненты",
+            link: "https://codepen.io/viktor-yushin/pen/KKjragM",
+          },
         ],
         [
           {

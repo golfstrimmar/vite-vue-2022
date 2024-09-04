@@ -635,6 +635,11 @@ tr
     link: "https://codepen.io/viktor-yushin/pen/wvLpZoG",
     img: '1'
   },
+  {
+
+    title: 'таблица на greed/ 2 ряда. перенос на новую строку',
+    link: "https://codepen.io/viktor-yushin/pen/GRbXKKY",
+  },
 
   {
     title: "VS Code", dataText: 'C:/users/victor/AppData/Roaming/Code/User/ ', description: ' здесь вся инфа от user'
