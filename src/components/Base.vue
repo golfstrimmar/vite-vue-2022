@@ -113,11 +113,12 @@ const HandlerClick = async () => {
 					top: scrollPosition.value - 200,
 					behavior: 'smooth', // 'smooth' для плавного возврата
 				});
+
 			});
 			TopTemp.value = docSnap.data();
-			emit('CloseAndere', props.item.id)
-			document.querySelector('body').classList.add("_lock");
 			isButtonDisabled.value = true;
+			document.querySelector('header').style.zIndex = "-1";
+			document.querySelector('body').classList.add("_lock");
 		}
 	} catch (e) {
 		console.error("Error getting document: ", e);
@@ -194,6 +195,7 @@ const reset = () => {
 const HandlerClose = () => {
 	document.querySelector('body').classList.remove("_lock");
 	isButtonDisabled.value = false;
+	document.querySelector('header').style.zIndex = "100";
 };
 </script>
 <style lang='scss' scoped>
@@ -349,12 +351,14 @@ const HandlerClose = () => {
 	height: 100vh;
 	background: rgba(0, 0, 0, .85);
 	overflow: scroll;
-	transition: all 0.2s;
+	transition: opacity 0.3s;
 	transform: scale(0);
 	padding: 44px 20px 20px 20px;
+	opacity: 0;
 
 	&._is-active {
 		transform: scale(1);
+		opacity: 1;
 	}
 }
 </style>

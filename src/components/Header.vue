@@ -82,7 +82,6 @@ const handleSignOut = () => {
 </script>
 <style lang="scss" scoped>
 .header {
-  @include transition;
   position: fixed;
   width: 100%;
   top: 0;
