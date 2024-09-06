@@ -1982,6 +1982,21 @@ export { storage, db, auth };
             `,
           },
           {
+            description: "забираем коллекцию целиком",
+            dataText: `import { db } from "@/composables/firebase.ts";
+import { collection, query, onSnapshot, doc, getDoc } from "firebase/firestore";
+var Hero = reactive([]);
+const SomeColl = query(collection(db, "my-collection"));
+onMounted(async () => {
+  onSnapshot(SomeColl, (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      Hero.push(doc.data());
+    });
+  });
+});
+  `,
+          },
+          {
             description:
               "если нужно достать один из массивов в коллекци Vorgangspassivs",
             dataText: `import { db } from "@/firebase/config.ts";
@@ -2000,36 +2015,7 @@ onMounted(async () => {
   }
 });`,
           },
-          {
-            description:
-              "импортируем его в компоненты и забираем данные из базы ",
-            dataText: `import { db } from "@/firebase/config.ts";
-import { collection, query, onSnapshot } from "firebase/firestore";
-var SlotPersonal = reactive([]);
-var SlotDataPersonal = reactive([]);
 
-var titles = reactive([]);
-const Personal = query(collection(db, "Personal-table"));
-const PersonalSlot = query(collection(db, "PersonalSlot"));
-
-
-onMounted(async () => {
-  onSnapshot(Personal, (querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      SlotPersonal.push(doc.data());
-    });
-
-  });
-  onSnapshot(PersonalSlot, (querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      SlotDataPersonal.push(doc.data());
-    });
-    titles.push({ id: 0, title: 'Personal', isOpen: true });
-    SlotDataPersonal.id = 0;
-    SlotDataPersonal.isOpen = true;
-  });
-});`,
-          },
           {
             description:
               "ИЗ какого-то массива 'Gegenwart' переправит данные в коллекцию 'KONJUNKTVS2' ",
