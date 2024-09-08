@@ -91,15 +91,14 @@ place-items: center;`,
             i: 2,
             dataText: "grid-template-columns: minmax(100px, max-content);",
           },
-          {
-            i: 2,
-            dataText: "grid-column: 1/-1;",
-          },
+
           {
             i: 2,
             dataText:
               "grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));",
           },
+          { i: 4, dataText: "grid-column: 1/3;" },
+          { i: 4, dataText: "grid-row: 1/3;" },
           {
             dataText: "grid-column: 1/-1;",
             description:
@@ -115,7 +114,6 @@ place-items: center;`,
             description:
               "автоматически создает равные колонки по размеру контента",
           },
-          { i: 4, dataText: "grid-column: 1/3;" },
 
           {
             i: 6,
