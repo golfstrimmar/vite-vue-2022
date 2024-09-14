@@ -1519,10 +1519,11 @@ console.log(emails); // ["john.doe@example.com", "jane_doe123@domain.co.uk"]
           { dataText: 'v-for="item in items" :key="index"' },
           { dataText: ".value" },
           {
-            dataText: '@click="" ',
+            dataText: '@click="handlerClick" ',
             description:
               "Прикрепляет обработчик события к элементу. Тип события определяется аргументом. .stop — вызывает event.stopPropagation()..prevent — вызывает event.preventDefault()..capture — отслеживает событие в режиме capture..self — вызывает обработчик только если событие произошло именно на этом элементе..{ keyAlias } — вызывает обработчик только при нажатии определённой клавиши..once — вызывает обработчик события только один раз..left — вызывает обработчик только по нажатию левой кнопки мыши..right — вызывает обработчик только по нажатию правой кнопки мыши..middle — вызывает обработчик только по нажатию средней кнопки мыши..passive — добавляет обработчик события DOM с опцией { passive: true }.",
           },
+          { dataText: "const handlerClick = () => {};" },
           {
             dataText: "transition(mode='easy-in-out' name='opentab')",
             description: "transition",
