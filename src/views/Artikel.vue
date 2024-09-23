@@ -54,7 +54,6 @@ onMounted(async () => {
 
 // ---------db-----------------
 var SlotArtikle = reactive([]);
-var titles = reactive([]);
 const Artikle = query(collection(db, "Artikle-table"));
 // -----------------------------------
 // ------------pinia-------------

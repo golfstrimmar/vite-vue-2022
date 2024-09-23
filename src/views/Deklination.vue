@@ -4,7 +4,7 @@
   ImgLoader(@imgFertig='imgFertig()' url='i7')
   .page
     h2 Deklination der Adjektive
-    div( v-for="item in SlotDataNominativ" :key="index"  )
+    div(v-for="(item, index) in SlotDataNominativ" :key="index")
       h3 {{ Object.values(item)[0] }}
       p( ) {{ Object.values(item).slice(1,item.length).join(' ') }}
     Plaza(:Slot='SlotDeklination')
@@ -30,12 +30,14 @@ const DeklinationSlot = query(collection(db, "DeklinationSlot"));
 
 onMounted(async () => {
   onSnapshot(Deklination, (querySnapshot) => {
+    SlotDeklination.length = 0;
     querySnapshot.forEach((doc) => {
       SlotDeklination.push(doc.data());
     });
 
   });
   onSnapshot(DeklinationSlot, (querySnapshot) => {
+    SlotDataDeklination.length = 0;
     querySnapshot.forEach((doc) => {
       SlotDataDeklination.push(doc.data());
     });
@@ -167,7 +169,7 @@ const Genitiv = [
 // --------------------------
 import Loader from "@/components/Loader.vue";
 import ImgLoader from "@/components/ImgLoader.vue";
-var isLoading = ref(true);
+
 const imgFertig = () => {
   setTimeout(() => {
     isLoading.value = false;

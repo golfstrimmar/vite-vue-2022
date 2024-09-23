@@ -57,4 +57,3 @@ const imgFertig = () => {
 };
 </script>
 
-<style lang="scss" scoped></style>
