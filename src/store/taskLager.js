@@ -357,6 +357,10 @@ place-items: center;`,
             dataText:
               'document.addEventListener("DOMContentLoaded", function(){ });',
           },
+	{
+            dataText:
+              'document.addEventListener("DOMContentLoaded", function(){ });',
+          }
         ],
         [
           { title: "Zyklus" },
