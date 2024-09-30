@@ -359,7 +359,7 @@ place-items: center;`,
           },
 	{
             dataText:
-              'document.addEventListener("DOMContentLoaded", function(){ });',
+              'e.preventDefault();',
           }
         ],
         [
