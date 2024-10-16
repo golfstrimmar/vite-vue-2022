@@ -651,7 +651,11 @@ tr
 ]
 </script>
 
-<<<<<<< HEAD <style lang="scss" scoped>
+
+
+
+
+<style lang="scss" scoped>
 .drop-zone {
   min-height: 300px;
   border: 3px solid $orange-10;
@@ -820,8 +824,5 @@ tr
 
 .stock {
   margin: 10px 0 0 40px;
-
-  =======<style lang="scss">.hero {
-    color: chartreuse;
-    >>>>>>>upstream/master
-  }</style>
+}
+</style>
