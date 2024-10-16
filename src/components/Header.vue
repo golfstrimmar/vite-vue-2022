@@ -11,7 +11,7 @@ header
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import SvgIcon from '@/components/SvgIcon.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter();
@@ -76,5 +76,25 @@ header {
       color: $deep-orange-6;
     }
   }
+}
+
+.header__body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  column-gap: 20px;
+  align-items: center;
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.header__links {
+  background-color: rgb(250, 224, 82);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  column-gap: 20px;
+  align-items: center;
 }
 </style>
