@@ -282,6 +282,15 @@ place-items: center;`,
           { title: "Allgemein" },
           { dataText: "const = () => {};" },
           { dataText: "e.target" },
+          {
+            dataText: ".querySelector('')",
+          },
+          {
+            dataText: "let  =",
+          },
+          {
+            dataText: "[....querySelectorAll(' ')]",
+          },
           { dataText: "let = document.querySelector('');" },
           { dataText: 'let head = .querySelectorAll(" ");' },
           { dataText: "let headItems =[...head.children]; " },
@@ -332,7 +341,11 @@ place-items: center;`,
               "удаляет дочерний узел из DOM и возвращает удаленный узел.",
             dataText: ".removeChild(add);",
           },
-          { description: "удаляет элемент из DOM", dataText: ".remove();" },
+          {
+            description:
+              "удаляет элемент из DOM,но не разрушает его.его можно вернуть",
+            dataText: ".remove();",
+          },
 
           { dataText: '.getAttribute("name");' },
           { dataText: '.setAttribute("name", "helloButton");' },
@@ -357,10 +370,6 @@ place-items: center;`,
             dataText:
               'document.addEventListener("DOMContentLoaded", function(){ });',
           },
-	{
-            dataText:
-              'e.preventDefault();',
-          }
         ],
         [
           { title: "Zyklus" },
@@ -661,6 +670,81 @@ const handlerClick = (Data) => {
               'function showWarning(width, height, title, contents){width = width || 200; title = title || "Предупреждение"; } ',
           },
         ],
+
+        [
+          { title: "Objekt" },
+          {
+            dataText: 'var person = {}; person.name = "Вася"; person.age = 25;',
+          },
+          { description: "удаление", dataText: "delete person.age;" },
+          {
+            description: " ",
+            dataText:
+              'var menuSetup = {width: 300,height: 200,title: "Menu"}; ',
+          },
+          { description: "in проверка наличия", dataText: '"test" in obj ; ' },
+          {
+            description: "Доступ к свойству через переменную",
+            dataText:
+              'var person = {}; person.age = 25; var key = "age"; person[key]; person["age"]',
+          },
+          {
+            description: "цикл по ключам",
+            dataText:
+              'var user = {name: "Вася",surname: "Петров",user.age = 25;}for (var prop in user) {alert(prop); // name, surname, age}',
+          },
+          {
+            description: "Клонирование объектов",
+            dataText:
+              'var user = {name: "Вася",age: 30};var clone = {}; // новый пустой объект// скопируем в него все свойства user for (var key in user) {clone[key] = user[key];}// теперь clone ‐ полностью независимая копия clone.name = "Петя"; // поменяли данные в clone alert(user.name); // по‐прежнему "Вася"',
+          },
+          {
+            description:
+              "метод копирует все перечислимые собственные свойства из одного или нескольких исходных объектов в целевой объект . Он возвращает измененный целевой объект.",
+            dataText:
+              "const target = { a: 1, b: 2 };const source = { b: 4, c: 5 };const returnedTarget = Object.assign(target, source); ",
+          },
+          {
+            description: "delete удаляет свойство из объекта",
+            dataText: "delete user.name;",
+          },
+          {
+            description:
+              "Опциональная цепочка ?. останавливает вычисление и возвращает undefined, если значение перед ?. равно undefined или null.",
+            dataText: "user?.address?.street",
+          },
+          {
+            description: "проверка наличия свойства",
+            dataText: 'if("address" in User ){console.log(User.address);}; ',
+          },
+          {
+            description: "перебор всех свойств объеков",
+            dataText: "for (var key in User) {console.log(prop);}",
+          },
+          {
+            description: "функция конструктор",
+            dataText:
+              'function UserInfo(name, age) {// неявно создается новый объект this{}//this.name = name;this.age = age// return this; неявно} console.log(new UserInfo("bill", 20)); ',
+          },
+        ],
+        [
+          { title: "anim" },
+          {
+            dataText: ` const height = hidden.offsetHeight;
+          const anim = hidden.animate(
+            [
+              { gridTemplateRows: "1fr", minHeight: $height} + "px" },
+              { gridTemplateRows: "0fr", minHeight: "0px" },
+            ],
+            {
+              duration: 200,
+              easing: "ease-in-out",
+            }
+          );
+          anim.finished.then(() => {});
+                  `,
+          },
+        ],
         [
           { title: "Koordinate" },
           {
@@ -818,63 +902,6 @@ console.log(formattedDate); // Например: "Thursday, August 22, 2024, 03:
               " количество секунд в удобочитаемый формат часов, минут и секунд,всегда отображались как двухзначные числа ",
             dataText:
               "const hours = String(Math.floor(seconds / 3600)).padStart(2, '0');const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');const remainingSeconds = String(seconds % 60).padStart(2, '0');return `${hours}ч ${minutes}м ${remainingSeconds}с`;",
-          },
-        ],
-
-        [
-          { title: "Objekt" },
-          {
-            dataText: 'var person = {}; person.name = "Вася"; person.age = 25;',
-          },
-          { description: "удаление", dataText: "delete person.age;" },
-          {
-            description: " ",
-            dataText:
-              'var menuSetup = {width: 300,height: 200,title: "Menu"}; ',
-          },
-          { description: "in проверка наличия", dataText: '"test" in obj ; ' },
-          {
-            description: "Доступ к свойству через переменную",
-            dataText:
-              'var person = {}; person.age = 25; var key = "age"; person[key]; person["age"]',
-          },
-          {
-            description: "цикл по ключам",
-            dataText:
-              'var user = {name: "Вася",surname: "Петров",user.age = 25;}for (var prop in user) {alert(prop); // name, surname, age}',
-          },
-          {
-            description: "Клонирование объектов",
-            dataText:
-              'var user = {name: "Вася",age: 30};var clone = {}; // новый пустой объект// скопируем в него все свойства user for (var key in user) {clone[key] = user[key];}// теперь clone ‐ полностью независимая копия clone.name = "Петя"; // поменяли данные в clone alert(user.name); // по‐прежнему "Вася"',
-          },
-          {
-            description:
-              "метод копирует все перечислимые собственные свойства из одного или нескольких исходных объектов в целевой объект . Он возвращает измененный целевой объект.",
-            dataText:
-              "const target = { a: 1, b: 2 };const source = { b: 4, c: 5 };const returnedTarget = Object.assign(target, source); ",
-          },
-          {
-            description: "delete удаляет свойство из объекта",
-            dataText: "delete user.name;",
-          },
-          {
-            description:
-              "Опциональная цепочка ?. останавливает вычисление и возвращает undefined, если значение перед ?. равно undefined или null.",
-            dataText: "user?.address?.street",
-          },
-          {
-            description: "проверка наличия свойства",
-            dataText: 'if("address" in User ){console.log(User.address);}; ',
-          },
-          {
-            description: "перебор всех свойств объеков",
-            dataText: "for (var key in User) {console.log(prop);}",
-          },
-          {
-            description: "функция конструктор",
-            dataText:
-              'function UserInfo(name, age) {// неявно создается новый объект this{}//this.name = name;this.age = age// return this; неявно} console.log(new UserInfo("bill", 20)); ',
           },
         ],
         [
