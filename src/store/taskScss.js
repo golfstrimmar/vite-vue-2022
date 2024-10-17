@@ -49,6 +49,12 @@ place-items: center;`,
       { i: 10, dataText: "&._is-active{}" },
       {
         i: 10,
+        dataText: `aspect-ratio: 1.5/1;
+      width: 100%;
+      height: auto;`,
+      },
+      {
+        i: 10,
         dataText:
           "* { scrollbar- width: thin;scrollbar - color: #04286f transparent;}  ",
         description: "mozilla",
