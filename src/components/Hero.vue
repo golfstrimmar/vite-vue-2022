@@ -226,6 +226,7 @@ const copyDataCommon = [
   { i: 1, dataText: 'section(id="best").best.rel', },
   { i: 2, dataText: '.container' },
   { i: 3, dataText: '.best__' },
+  { i: 3, dataText: '__' },
   { i: 15, dataText: 'img' },
 
   {
