@@ -47,12 +47,7 @@ place-items: center;`,
 
       { i: 10, dataText: "transition: all 0.2s;" },
       { i: 10, dataText: "&._is-active{}" },
-      {
-        i: 10,
-        dataText: `aspect-ratio: 1.5/1;
-      width: 100%;
-      height: auto;`,
-      },
+      { i: 10, dataText: `aspect-ratio: 1.5/1; width: 100%; height: auto;` },
       {
         i: 10,
         dataText:
