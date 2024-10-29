@@ -1,6 +1,5 @@
 <template lang="pug">
 header 
-
   .header__body
     .header__links
       router-link(v-for="link in links" :key="link.name" :to="link.href" )
@@ -17,6 +16,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter();
 // =======================
 const links = ref([
+  { name: "Wordpress", href: "/wordpress" },
   { name: "VUE", href: "/pvue" },
   { name: "JS", href: "/js" },
   { name: "Scss", href: "/scss" },
@@ -54,8 +54,8 @@ header {
   width: 100vh;
   margin: 0 auto;
   position: relative;
-  left: -94px;
-  top: 80px;
+  left: -150px;
+  top: 175px;
 }
 
 .header__links {
