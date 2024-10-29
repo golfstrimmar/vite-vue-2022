@@ -329,7 +329,9 @@ if ( $query->have_posts() ) {
 <?php the_post_thumbnail(); ?> 
 <?php next_posts_link(); ?>
 <?php previous_posts_link(); ?>
-
+<?php the_category(); ?>
+<?php the_tags(); ?>
+<?php the_author(); ?>
 
 <li class="blog__card  blog-card">
               <div class="blog-card__img rel">
