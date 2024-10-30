@@ -66,6 +66,7 @@ place-items: center;`,
       { i: 10, dataText: "background-size: cover;" },
       { i: 10, dataText: "background-position: 50%;" },
       { i: 10, dataText: "backdrop-filter: blur(15px);" },
+      { i: 10, dataText: "mix-blend-mode: difference;" },
     ],
 
     [
