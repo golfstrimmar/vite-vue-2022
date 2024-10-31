@@ -306,6 +306,20 @@ $parent_category = get_query_var( 'phone' );`,
     [
       { title: "Вывод" },
       {
+        dataText: `получает категории текущего поста и выводит их названия
+        <?php
+$categories = get_the_category();
+if ( ! empty( $categories ) ) {
+    foreach ( $categories as $category ) {
+        echo esc_html( $category->name ) . '<br>'; // Выводим название категории
+    }
+}
+?>
+
+`,
+        description: "получает категории текущего поста и выводит их названия",
+      },
+      {
         dataText: `<?php
 global $post;
 $args = array(
