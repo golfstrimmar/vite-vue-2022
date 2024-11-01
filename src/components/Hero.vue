@@ -458,6 +458,20 @@ const copyDataLinks = [
   .rangeValue 0
   input.myRange(type='range' name='myRange' min='0' max='100' value='0' step='1')`
   },
+  {
+    description: 'picture',
+    dataText: `
+    picture
+  source(srcset="image-large.jpg" media="(min-width: 800px)")
+  source(srcset="image-medium.jpg" media="(min-width: 400px)")
+  img(src="image-small.jpg" alt="Описание изображения")
+    <picture>
+  <source srcset="image-large.jpg" media="(min-width: 800px)">
+  <source srcset="image-medium.jpg" media="(min-width: 400px)">
+  <img src="image-small.jpg" alt="Описание изображения">
+</picture>
+
+    ` },
   // {
   //   description: '',
   //   dataText: `
