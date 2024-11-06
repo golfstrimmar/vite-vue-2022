@@ -107,9 +107,9 @@ place-items: center;`,
       { i: 3, dataText: "grid-auto-flow: row;" },
       {
         dataText: "grid-auto-flow: column;",
-        description: "автоматически создает равные колонки по размеру контента",
+        description: "равные колонки по размеру контента",
       }, {
-        dataText: "display: grid;\n" +
+        dataText: "выстраивает в одну колонку  по размеру контента\n" +"display: grid;\n" +
           "    grid-template-columns: min-content;\n" +
           "    grid-auto-rows: min-content;",
         description: "выстраивает в одну колонку  по размеру контента ",
@@ -117,7 +117,8 @@ place-items: center;`,
 
       {
         i: 6,
-        dataText: "grid-auto-rows: max-content;",
+        dataText: "прижимает к верху\n" +
+          "grid-auto-rows: max-content;",
         description: "прижимает к верху",
       },
       { i: 7, dataText: 'grid-template-areas: "a b c e" "a d c e";' },
