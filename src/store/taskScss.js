@@ -106,8 +106,7 @@ place-items: center;`,
       { i: 2, dataText: "gap: 37px 36px;" },
       { i: 3, dataText: "grid-auto-flow: row;" },
       {
-        dataText: "grid-auto-flow: column;",
-        description: "равные колонки по размеру контента",
+        dataText: "равные колонки по размеру контента\n" +"grid-auto-flow: column;",
       }, {
         dataText: "выстраивает в одну колонку  по размеру контента\n" +"display: grid;\n" +
           "    grid-template-columns: min-content;\n" +
