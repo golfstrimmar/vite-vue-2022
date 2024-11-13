@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { useScss } from "./taskScss";
 import { useJs } from "./taskJs";
 import { useVue } from "./taskVue";
+import { useReact } from "./taskReact";
 import { useWordpress } from "./taskWordpress";
 
 export const useTask = defineStore("taskLager", {
@@ -10,6 +11,7 @@ export const useTask = defineStore("taskLager", {
       ...useScss,
       ...useJs,
       ...useVue,
+      ...useReact,
       ...useWordpress,
     };
   },

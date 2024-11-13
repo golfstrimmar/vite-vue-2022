@@ -18,6 +18,7 @@ const router = useRouter();
 const links = ref([
   { name: "Wordpress", href: "/wordpress" },
   { name: "VUE", href: "/pvue" },
+  { name: "React", href: "/react" },
   { name: "JS", href: "/js" },
   { name: "Scss", href: "/scss" },
   { name: "Pug+Scss", href: "/" },
@@ -54,7 +55,7 @@ header {
   width: 100vh;
   margin: 0 auto;
   position: relative;
-  left: -150px;
+  left: -176px;
   top: 175px;
 }
 
