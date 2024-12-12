@@ -6,7 +6,7 @@ export const useReact = {
         dataText: `npx create-react-app my-chat-app
 cd my-chat-app
 `,
-        description: "create",
+        description: " ",
       },
       { dataText: ``, description: " " },
       {
