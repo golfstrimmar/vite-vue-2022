@@ -5,6 +5,7 @@ import JS from "@/views/JS.vue";
 import PVUE from "@/views/PVUE.vue";
 import ReactComp from "@/views/ReactComp.vue";
 import Wordpress from "@/views/Wordpress.vue";
+import NodeComp from "@/views/NodeComp.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -14,6 +15,7 @@ const router = createRouter({
     { path: "/pvue", name: "PVUE", component: PVUE },
     { path: "/react", name: "ReactComp", component: ReactComp },
     { path: "/wordpress", name: "Wordpress", component: Wordpress },
+    { path: "/node", name: "NodeComp", component: NodeComp },
   ],
 });
 

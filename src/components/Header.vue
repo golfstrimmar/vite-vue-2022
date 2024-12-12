@@ -16,12 +16,15 @@ import { useRouter } from 'vue-router'
 const router = useRouter();
 // =======================
 const links = ref([
+  { name: "Pug+Scss", href: "/" },
   { name: "Wordpress", href: "/wordpress" },
+  { name: "Node", href: "/node" },
   { name: "VUE", href: "/pvue" },
   { name: "React", href: "/react" },
   { name: "JS", href: "/js" },
   { name: "Scss", href: "/scss" },
-  { name: "Pug+Scss", href: "/" },
+
+
 ]);
 </script>
 
@@ -55,8 +58,8 @@ header {
   width: 100vh;
   margin: 0 auto;
   position: relative;
-  left: -176px;
-  top: 175px;
+  left: -204px;
+  top: 205px;
 }
 
 .header__links {
