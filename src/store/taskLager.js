@@ -4,6 +4,7 @@ import { useJs } from "./taskJs";
 import { useVue } from "./taskVue";
 import { useReact } from "./taskReact";
 import { useWordpress } from "./taskWordpress";
+import { useNode } from "./taskNode";
 
 export const useTask = defineStore("taskLager", {
   state: () => {
@@ -13,6 +14,7 @@ export const useTask = defineStore("taskLager", {
       ...useVue,
       ...useReact,
       ...useWordpress,
+      ...useNode,
     };
   },
 });
