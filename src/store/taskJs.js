@@ -232,6 +232,12 @@ export const useJs = {
       { dataText: ".indexOf(0)" },
       { dataText: ".find((item) => item.id == id)" },
       {
+        dataText: `const userNames = Object.values(onlineUsers).map((user) => user.name);
+const uniqueUserNames = [...new Set(userNames)];`,
+        description:
+          "Set в JavaScript — это коллекция значений, которая хранит только уникальные элементы. Это означает, что в одном наборе не может быть одинаковых значений. Если вы попытаетесь добавить в Set элемент, который уже существует в наборе, он просто проигнорирует это добавление.",
+      },
+      {
         dataText: "Object.values(obj)",
         description:
           "делает из объекта массивб содержащий значение каждого элемента",
