@@ -68,6 +68,10 @@ export const useJs = {
           "удаляет элемент из DOM,но не разрушает его.его можно вернуть",
         dataText: ".remove();",
       },
+      {
+        description: "Проверить свободное место на диске:",
+        dataText: "wmic logicaldisk get size,freespace,caption",
+      },
 
       { dataText: '.getAttribute("name");' },
       { dataText: '.setAttribute("name", "helloButton");' },
