@@ -6,7 +6,7 @@ import PVUE from "@/views/PVUE.vue";
 import ReactComp from "@/views/ReactComp.vue";
 import Wordpress from "@/views/Wordpress.vue";
 import NodeComp from "@/views/NodeComp.vue";
-import NextComp from "./views/NextComp.vue";
+import NextComp from "@/views/NextComp.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
