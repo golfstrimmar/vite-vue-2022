@@ -101,8 +101,7 @@ npm install --save-dev @types/cors @types/jsonwebtoken
         description: "запускаем",
       },
       {
-        dataText: `
-version: "3.8"
+        dataText: `version: "3.8"
 services:
   frontend:
     build: ./fronten
@@ -138,6 +137,76 @@ volumes:
     ],
     [
       { title: "Common" },
+      {
+        dataText: `import { useSelector, useDispatch } from "react-redux";
+
+const dispatch = useDispatch();
+  const socket = useAppSelector((state: RootState) => state.socket.socket);
+  const auctions = useAppSelector((state) => state.auctions.auctions);
+`,
+      },
+      {
+        dataText: `const [ , set] = useState<string>("");
+<number>
+<boolean>
+<File | null>
+<string | null>
+<Date>
+`,
+        description: " ",
+      },
+      {
+        dataText: `interface EndTime {
+  lotDate: string;
+  time: string;
+}
+ const [endTime, setEndTime] = useState<EndTime>({
+    lotDate: new Date().toLocaleString().slice(0, 10),
+    time: "00:00",
+  });
+`,
+        description: " ",
+      },
+      {
+        dataText: `useEffect(() => { if (socket) {
+      socket.on("auctionAdded", (data) => {
+        console.log("===auctionAdded:====", data.message);
+        setSuccessMessage(data.message);
+        setOpenModalMessage(true);
+        setTimeout(() => {
+          setOpenModalMessage(false);
+          resetForm();
+        }, 2000);
+      });
+      socket.on("erroraddingauction", (errorMessage) => {
+        setSuccessMessage(errorMessage);
+        setOpenModalMessage(true);
+        setTimeout(() => {
+          setSuccessMessage("");
+          setOpenModalMessage(false);
+        }, 2000);
+      });
+    }
+  }, [socket]);
+`,
+        description: "socket прием",
+      },
+      {
+        dataText: `  const TitleHandler = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setTitle(e.target.value);
+  };
+`,
+        description: "textarea",
+      },
+      {
+        dataText: `const handleUhrChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTime(e.target.value);
+  };
+`,
+        description: "input",
+      },
       {
         dataText: `
 `,
