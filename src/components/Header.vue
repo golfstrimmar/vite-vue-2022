@@ -59,8 +59,8 @@ header {
   width: 100vh;
   margin: 0 auto;
   position: relative;
-  left: -204px;
-  top: 205px;
+  left: -222px;
+  top: 258px;
 }
 
 .header__links {
