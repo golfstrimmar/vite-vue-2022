@@ -48,7 +48,7 @@ const handelClean = () => {
 
 <style lang="scss" scoped>
 .hero {
-	margin: 413px 0 30px 0;
+	margin: 620px 0 30px 0;
 
 	&__head {
 		display: flex;
