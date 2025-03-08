@@ -21,6 +21,7 @@ const links = ref([
   { name: "Node", href: "/node" },
   { name: "VUE", href: "/pvue" },
   { name: "React", href: "/react" },
+  { name: "Next", href: "/next" },
   { name: "JS", href: "/js" },
   { name: "Scss", href: "/scss" },
 
