@@ -1,4 +1,4 @@
-export const useReact = {
+export const useNext = {
   dataNext: [
     [
       { title: "Common" },
