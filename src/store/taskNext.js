@@ -6,17 +6,17 @@ export const useNext = {
           "инициализация проекта Next.js + TypeScript + Tailwind CSS + Express + Node.js + MongoDB + Socket.IO + Docker",
       },
       {
-        dataText: `
+        dataText: `структура
 auction-app/ ├── frontend/ # Next.js + TS + Tailwind 
 ├── backend/ # Express + Node.js + MongoDB + Socket.IO 
 ├── docker-compose.yml # Для Docker 
 └── README.md",
 `,
+        description: `структура`,
       },
       { title: "Инициализация фронтенда" },
       {
-        dataText: `
-npx create-next-app@latest frontend --typescript 
+        dataText: `npx create-next-app@latest frontend --typescript 
 npm install socket.io-client
 cd frontend
 npm install @reduxjs/toolkit react-redux axios
@@ -34,8 +34,7 @@ npm run dev --turbo
       // ========================
       { title: "Инициализация бэкенда (Express)" },
       {
-        dataText: `
-cd backend
+        dataText: `cd backend
 npm install express socket.io mongoose typescript ts-node dotenv
 npm install --save-dev @types/express @types/socket.io @types/node @types/mongoose nodemon
 npm install cors jsonwebtoken
@@ -45,8 +44,7 @@ npm install --save-dev @types/cors @types/jsonwebtoken
       },
       // ========================
       {
-        dataText: `
-"name": "backend", 
+        dataText: `"name": "backend", 
 "version": "1.0.0", 
 "main": "index.js",
 "type": "module",
@@ -62,8 +60,7 @@ npm install --save-dev @types/cors @types/jsonwebtoken
 
       // ========================
       {
-        dataText: `
-{
+        dataText: `{
    "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -94,8 +91,7 @@ npm install --save-dev @types/cors @types/jsonwebtoken
         description: "tsconfig.json",
       },
       {
-        dataText: `
-npx tsc
+        dataText: `npx tsc
 `,
         description: "потом компилируем",
       },
