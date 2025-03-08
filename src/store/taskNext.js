@@ -4,6 +4,7 @@ export const useReact = {
       { title: "Common" },
       {
         dataText: `
+        <h3>Next</h3>
 `,
         description: " ",
       },
