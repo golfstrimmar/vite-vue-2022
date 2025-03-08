@@ -1,5 +1,5 @@
 export const useReact = {
-  dataReact: [
+  dataNext: [
     [
       { title: "Common" },
       {
